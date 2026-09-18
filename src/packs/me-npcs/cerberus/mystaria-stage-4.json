@@ -14,7 +14,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/mystaria-stage-4.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/mystaria-stage-4.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -78,6 +78,18 @@
       "pf2e": {
         "linkToActorSize": true,
         "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/mystaria-stage-4.webp"
       }
     }
   },
@@ -214,7 +226,7 @@
         },
         "damageRolls": {
           "0": {
-            "damage": "2d8+9",
+            "damage": "5d8+12",
             "damageType": "slashing"
           }
         },
@@ -269,7 +281,7 @@
         },
         "damageRolls": {
           "0": {
-            "damage": "2d6+8",
+            "damage": "5d6+12",
             "damageType": "piercing"
           }
         },
@@ -618,6 +630,106 @@
       "_key": "!actors.items!e1f2a3b4c5d60004.mys4rm0000000001",
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen003"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Phoenix Armor (L)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Light-human-Phoenix.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The Sirta Foundation's Phoenix series incorporates medical-grade biosensors and VI-assisted trauma management alongside standard kinetic barriers. Originally developed for combat medics, the suit sees wide use among biotic-capable operatives who prioritize survivability in sustained engagements.</p>"
+        },
+        "rules": [],
+        "slug": "phoenix-armor-l",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "phoenix-armor",
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 20
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "light",
+        "group": "leather",
+        "acBonus": 2,
+        "strength": 1,
+        "dexCap": 3,
+        "checkPenalty": -1,
+        "speedPenalty": 0,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "8c9318ec4337d468",
+      "_key": "!actors.items!e1f2a3b4c5d60004.8c9318ec4337d468",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.0483c7d809556b42"
       }
     }
   ],

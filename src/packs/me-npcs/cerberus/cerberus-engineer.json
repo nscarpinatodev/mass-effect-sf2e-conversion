@@ -14,7 +14,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/cerberus-engineer.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/cerberus-engineer.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -78,6 +78,18 @@
       "pf2e": {
         "linkToActorSize": true,
         "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/cerberus-engineer.webp"
       }
     }
   },
@@ -199,7 +211,7 @@
         },
         "damageRolls": {
           "0": {
-            "damage": "1d6+3",
+            "damage": "3d6+4",
             "damageType": "piercing"
           }
         },
@@ -401,6 +413,218 @@
       "_key": "!actors.items!a8be7d8a58219074.1898c41bbdb46970",
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod001"
+      }
+    },
+    {
+      "folder": null,
+      "name": "M-9 Tempest",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Tempest.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-9 Tempest is an Alliance-issue submachine gun optimized for the highest sustained fire rate of any one-handed weapon in service. Its enormous heat sink holds one hundred rounds that it can expend in seconds, filling a volume with kinetic fire that makes individual accuracy less critical than statistical certainty. The Tempest is light enough that experienced users can sprint and fire simultaneously without significant penalty.</p>"
+        },
+        "rules": [],
+        "slug": "m-9-tempest",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic",
+            "agile"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "baseItem": "m-9-tempest",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 100
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d4",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 25,
+        "expend": 1,
+        "ammo": {
+          "capacity": 100,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "07e8dca4590215b6",
+      "_key": "!actors.items!a8be7d8a58219074.07e8dca4590215b6",
+      "sort": 500000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.2f2201ed226e0516"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Phoenix Armor (L)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Light-human-Phoenix.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The Sirta Foundation's Phoenix series incorporates medical-grade biosensors and VI-assisted trauma management alongside standard kinetic barriers. Originally developed for combat medics, the suit sees wide use among biotic-capable operatives who prioritize survivability in sustained engagements.</p>"
+        },
+        "rules": [],
+        "slug": "phoenix-armor-l",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "phoenix-armor",
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 20
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "light",
+        "group": "leather",
+        "acBonus": 2,
+        "strength": 1,
+        "dexCap": 3,
+        "checkPenalty": -1,
+        "speedPenalty": 0,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "e34a7c0035f759b7",
+      "_key": "!actors.items!a8be7d8a58219074.e34a7c0035f759b7",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.0483c7d809556b42"
       }
     }
   ],

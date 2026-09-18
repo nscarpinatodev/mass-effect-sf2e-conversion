@@ -14,7 +14,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/cerberus-medic.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/cerberus-medic.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -78,6 +78,18 @@
       "pf2e": {
         "linkToActorSize": true,
         "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/cerberus-medic.webp"
       }
     }
   },
@@ -196,7 +208,7 @@
         },
         "damageRolls": {
           "0": {
-            "damage": "1d4+1",
+            "damage": "2d4+5",
             "damageType": "piercing"
           }
         },
@@ -382,6 +394,217 @@
       "_key": "!actors.items!c1d2e3f4a5b60001.ce3bmed1cs000001",
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "folder": null,
+      "name": "M-4 Shuriken",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Shuriken.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-4 Shuriken is a compact submachine gun that fires three-round bursts in rapid succession. Its lightweight frame makes it easy to carry and deploy in confined spaces, though its individual round impact is modest. Mercenaries and gangsters throughout the Terminus Systems favor it for intimidation as much as combat - the distinctive chattering burst is unmistakable and tends to make opponents reconsider their position.</p>"
+        },
+        "rules": [],
+        "slug": "m-4-shuriken",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "baseItem": "m-4-shuriken",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 20
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d4",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 20,
+        "expend": 1,
+        "ammo": {
+          "capacity": 48,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "c30733d2db57f342",
+      "_key": "!actors.items!c1d2e3f4a5b60001.c30733d2db57f342",
+      "sort": 500000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.5fe02675d71c44fc"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Phoenix Armor (L)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Light-human-Phoenix.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The Sirta Foundation's Phoenix series incorporates medical-grade biosensors and VI-assisted trauma management alongside standard kinetic barriers. Originally developed for combat medics, the suit sees wide use among biotic-capable operatives who prioritize survivability in sustained engagements.</p>"
+        },
+        "rules": [],
+        "slug": "phoenix-armor-l",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "phoenix-armor",
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 20
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "light",
+        "group": "leather",
+        "acBonus": 2,
+        "strength": 1,
+        "dexCap": 3,
+        "checkPenalty": -1,
+        "speedPenalty": 0,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "e8745849be3636ab",
+      "_key": "!actors.items!c1d2e3f4a5b60001.e8745849be3636ab",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.0483c7d809556b42"
       }
     }
   ],

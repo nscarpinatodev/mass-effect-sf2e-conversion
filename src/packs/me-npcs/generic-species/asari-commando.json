@@ -123,7 +123,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/asari-commando.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/asari-commando.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -188,6 +188,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/asari-commando.webp"
+      }
     }
   },
   "items": [
@@ -199,7 +211,7 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "1d6+2",
+            "damage": "2d6+8",
             "damageType": "bludgeoning",
             "category": null
           },
@@ -267,7 +279,7 @@
         },
         "damageRolls": {
           "dmgroll0003": {
-            "damage": "1d8+3",
+            "damage": "2d8+6",
             "damageType": "piercing",
             "category": null
           }

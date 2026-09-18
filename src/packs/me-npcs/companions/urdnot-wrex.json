@@ -14,7 +14,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/wrex.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/wrex.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -79,6 +79,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/wrex.webp"
+      }
     }
   },
   "system": {
@@ -103,8 +115,8 @@
     },
     "attributes": {
       "hp": {
-        "value": 245,
-        "max": 245,
+        "value": 182,
+        "max": 182,
         "temp": 70,
         "details": ""
       },
@@ -150,7 +162,7 @@
     },
     "saves": {
       "fortitude": {
-        "value": 28,
+        "value": 27,
         "saveDetail": ""
       },
       "reflex": {
@@ -204,7 +216,7 @@
         },
         "damageRolls": {
           "0": {
-            "damage": "4d6+12",
+            "damage": "6d6+14",
             "damageType": "piercing"
           }
         },
@@ -253,11 +265,11 @@
         },
         "slug": "wrex-headbutt",
         "bonus": {
-          "value": 30
+          "value": 28
         },
         "damageRolls": {
           "0": {
-            "damage": "2d8+14",
+            "damage": "4d8+13",
             "damageType": "bludgeoning"
           }
         },
@@ -561,6 +573,219 @@
       "_key": "!actors.items!g1h2i3j4k5l60004.wrexrm0000000001",
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen002"
+      }
+    },
+    {
+      "folder": null,
+      "name": "N7 Crusader",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_N7_Crusader_Shotgun.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The N7 Crusader is a precision combat shotgun designed for N7 operatives who must engage heavily armored targets in confined environments where a sniper rifle is impractical. Its single large-bore round does not scatter - it penetrates. The kinetic payload is sufficient to punch through heavy armor, and at the ranges where a shotgun is fired, there is nowhere to dodge. Slow to cycle but absolutely decisive when it connects.</p>"
+        },
+        "rules": [],
+        "slug": "n7-crusader",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "fatal-d12",
+            "kickback"
+          ],
+          "rarity": "uncommon"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 9
+        },
+        "baseItem": "n7-crusader",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 2000
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "shotgun",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 4,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 25,
+        "expend": 1,
+        "ammo": {
+          "capacity": 4,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "superior",
+        "runes": {
+          "potency": 0,
+          "striking": 3,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "f2dfcd7e62a3c92a",
+      "_key": "!actors.items!g1h2i3j4k5l60004.f2dfcd7e62a3c92a",
+      "sort": 800000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.ea8a8b33f2b8de50"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Predator Armor (H)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Heavy-human-Predator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Hahne-Kedar's Predator series leverages the manufacturer's proven armalite fabrication to deliver reliable tactical-grade protection. Enhanced barrier efficiency and high-density plating make this suit a preferred choice for experienced soldiers who need performance they can count on.</p>"
+        },
+        "rules": [],
+        "slug": "predator-armor-hk-h",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "bulwark",
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 2
+        },
+        "quantity": 1,
+        "baseItem": "predator-armor-hk",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 650
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "heavy",
+        "group": "plate",
+        "acBonus": 5,
+        "strength": 3,
+        "dexCap": 2,
+        "checkPenalty": -2,
+        "speedPenalty": -5,
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "a00baf62bb2641e0",
+      "_key": "!actors.items!g1h2i3j4k5l60004.a00baf62bb2641e0",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.d803fb8621e9ce16"
       }
     }
   ],

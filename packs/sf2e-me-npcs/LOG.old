@@ -1,15 +1,15 @@
-2026/07/02-16:52:20.570 a154 Recovering log #219
-2026/07/02-16:52:20.575 a154 Delete type=0 #219
-2026/07/02-16:52:20.576 a154 Delete type=3 #217
-2026/07/02-16:52:20.591 a394 Level-0 table #225: started
-2026/07/02-16:52:20.605 a394 Level-0 table #225: 398171 bytes OK
-2026/07/02-16:52:20.607 a394 Delete type=0 #223
-2026/07/02-16:52:20.607 a394 Manual compaction at level-0 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
-2026/07/02-16:52:20.607 a394 Manual compaction at level-1 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at '!folders!menpcfoldr000011' @ 13897 : 1
-2026/07/02-16:52:20.607 a394 Compacting 1@1 + 1@2 files
-2026/07/02-16:52:20.622 a394 Generated table #226@1: 660 keys, 398171 bytes
-2026/07/02-16:52:20.622 a394 Compacted 1@1 + 1@2 files => 398171 bytes
-2026/07/02-16:52:20.623 a394 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/07/02-16:52:20.623 a394 Delete type=2 #221
-2026/07/02-16:52:20.623 a394 Delete type=2 #225
-2026/07/02-16:52:20.623 a394 Manual compaction at level-1 from '!folders!menpcfoldr000011' @ 13897 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
+2026/08/26-22:45:51.855 df7c Recovering log #270
+2026/08/26-22:45:51.867 df7c Delete type=0 #270
+2026/08/26-22:45:51.868 df7c Delete type=3 #268
+2026/08/26-22:45:51.896 bd7c Level-0 table #276: started
+2026/08/26-22:45:52.053 bd7c Level-0 table #276: 582486 bytes OK
+2026/08/26-22:45:52.124 bd7c Delete type=0 #274
+2026/08/26-22:45:52.125 bd7c Manual compaction at level-0 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
+2026/08/26-22:45:52.125 bd7c Manual compaction at level-1 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at '!folders!menpcfoldr000011' @ 20694 : 1
+2026/08/26-22:45:52.125 bd7c Compacting 1@1 + 1@2 files
+2026/08/26-22:45:52.156 bd7c Generated table #277@1: 808 keys, 582486 bytes
+2026/08/26-22:45:52.156 bd7c Compacted 1@1 + 1@2 files => 582486 bytes
+2026/08/26-22:45:52.166 bd7c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/08/26-22:45:52.166 bd7c Delete type=2 #272
+2026/08/26-22:45:52.166 bd7c Delete type=2 #276
+2026/08/26-22:45:52.166 bd7c Manual compaction at level-1 from '!folders!menpcfoldr000011' @ 20694 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)

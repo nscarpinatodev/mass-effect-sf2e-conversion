@@ -131,7 +131,7 @@
     "width": 4,
     "height": 4,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/creatures/Codex_ME_-_Thresher_Maws.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/Codex_ME_-_Thresher_Maws.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -195,6 +195,18 @@
       "pf2e": {
         "linkToActorSize": true,
         "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/Codex_ME_-_Thresher_Maws.webp"
       }
     }
   },

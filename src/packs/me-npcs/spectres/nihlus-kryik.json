@@ -129,7 +129,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/nihlus-kryik.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/nihlus-kryik.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -194,6 +194,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/nihlus-kryik.webp"
+      }
     }
   },
   "items": [
@@ -209,7 +221,7 @@
         },
         "damageRolls": {
           "dmg00utJl": {
-            "damage": "2d6+5",
+            "damage": "4d6+9",
             "damageType": "piercing",
             "category": null
           }
@@ -269,7 +281,7 @@
         },
         "damageRolls": {
           "dmg00ZB2s": {
-            "damage": "1d8+5",
+            "damage": "2d8+9",
             "damageType": "piercing",
             "category": null
           }
@@ -328,7 +340,7 @@
         },
         "damageRolls": {
           "dmg004msV": {
-            "damage": "1d8+4",
+            "damage": "3d8+6",
             "damageType": "slashing",
             "category": null
           },
@@ -529,6 +541,218 @@
         "default": 0
       },
       "_key": "!actors.items!5hr9BjdxnVQOlDlc.52JJmSnZ1bvtGACl"
+    },
+    {
+      "folder": null,
+      "name": "M-76 Revenant",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Revenant.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-76 Revenant is a heavy machine gun designed to provide overwhelming suppressive fire. Its enormous heat sink capacity enables sustained bursts that shred through enemy cover and armor alike. The weapon's considerable mass and recoil make precise movement difficult while firing, but its sheer volume of fire compensates with devastating effect.</p>"
+        },
+        "rules": [],
+        "slug": "m-76-revenant",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic",
+            "unwieldy"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 7
+        },
+        "baseItem": "m-76-revenant",
+        "bulk": {
+          "value": 3
+        },
+        "price": {
+          "value": {
+            "gp": 700
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "rifle",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d6",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 60,
+        "expend": 1,
+        "ammo": {
+          "capacity": 200,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "advanced",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "edfe29a3f49d0c7f",
+      "_key": "!actors.items!5hr9BjdxnVQOlDlc.edfe29a3f49d0c7f",
+      "sort": 700000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.7f648c8da806beda"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Colossus Armor (L)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Light-human-Colossus.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Kassa Fabrication's Colossus hardsuit is built around a triple-layer ceramic ablative shell reinforced with woven durasteel. Onboard micro-generators boost shield efficiency while the suit's distinctive red-and-black plating provides the highest raw damage protection available to a soldier in the field.</p>"
+        },
+        "rules": [],
+        "slug": "colossus-l",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 2
+        },
+        "quantity": 1,
+        "baseItem": "colossus",
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 120
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "light",
+        "group": "leather",
+        "acBonus": 4,
+        "strength": 1,
+        "dexCap": 3,
+        "checkPenalty": -1,
+        "speedPenalty": 0,
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "f9ab6c45055e2bb6",
+      "_key": "!actors.items!5hr9BjdxnVQOlDlc.f9ab6c45055e2bb6",
+      "sort": 800000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.07e67fbdcfb473ae"
+      }
     }
   ],
   "effects": [],

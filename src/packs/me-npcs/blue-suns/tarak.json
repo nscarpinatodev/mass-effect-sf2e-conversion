@@ -126,7 +126,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/tarak.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/tarak.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -191,6 +191,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/tarak.webp"
+      }
     }
   },
   "items": [
@@ -206,7 +218,7 @@
         },
         "damageRolls": {
           "dmg00hcZ2": {
-            "damage": "2d6+5",
+            "damage": "3d6+8",
             "damageType": "piercing",
             "category": null
           }
@@ -266,7 +278,7 @@
         },
         "damageRolls": {
           "dmg00HaA8": {
-            "damage": "1d8+5",
+            "damage": "2d8+8",
             "damageType": "slashing",
             "category": null
           },
@@ -467,6 +479,217 @@
         "default": 0
       },
       "_key": "!actors.items!CEKDJ8LCPGRHFyZl.HGrV2thGzEp1kYxY"
+    },
+    {
+      "folder": null,
+      "name": "M-96 Mattock",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Mattock_Assault_Rifle.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-96 Mattock is a hybrid weapon bridging the gap between assault rifle and sniper rifle. Its semi-automatic fire mechanism delivers high-impact rounds with precision that fully automatic platforms cannot match. Demanding of the user's discipline, the Mattock rewards careful aim with exceptional damage output and minimal recoil per shot.</p>"
+        },
+        "rules": [],
+        "slug": "m-96-mattock",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "kickback"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 5
+        },
+        "baseItem": "m-96-mattock",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 250
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "rifle",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 2,
+          "die": "d10",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 80,
+        "expend": 1,
+        "ammo": {
+          "capacity": 16,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 1,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "0bcb76bed152eaae",
+      "_key": "!actors.items!CEKDJ8LCPGRHFyZl.0bcb76bed152eaae",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.37368574c0f66326"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Mercenary Armor (M)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Medium-human-Mercenary.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Ariake Technologies' Mercenary series is built for professional soldiers who demand high performance without the premium price of Hahne-Kedar hardware. Advanced kinetic barrier emitters and impact-dampening armalite composites provide exceptional protection relative to cost.</p>"
+        },
+        "rules": [],
+        "slug": "mercenary-armor-m",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 2
+        },
+        "quantity": 1,
+        "baseItem": "mercenary-armor",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 120
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "medium",
+        "group": "chain",
+        "acBonus": 5,
+        "strength": 2,
+        "dexCap": 2,
+        "checkPenalty": -2,
+        "speedPenalty": -5,
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "9e2cb30683966d3a",
+      "_key": "!actors.items!CEKDJ8LCPGRHFyZl.9e2cb30683966d3a",
+      "sort": 700000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.22e2a3ed5d182977"
+      }
     }
   ],
   "effects": [],

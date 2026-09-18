@@ -14,7 +14,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/miranda-lawson.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/miranda-lawson.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -78,6 +78,18 @@
       "pf2e": {
         "linkToActorSize": true,
         "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/miranda-lawson.webp"
       }
     }
   },
@@ -206,7 +218,7 @@
         },
         "damageRolls": {
           "0": {
-            "damage": "2d6+8",
+            "damage": "5d6+12",
             "damageType": "piercing"
           }
         },
@@ -516,6 +528,217 @@
       "_key": "!actors.items!d1e2f3a4b5c60001.m1r4nd4l4wsr0001",
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen003"
+      }
+    },
+    {
+      "folder": null,
+      "name": "N7 Hurricane",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_N7_Hurricane_Smg.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The N7 Hurricane is the premier submachine gun in Alliance service, developed specifically for N7 operatives who require sustained fire at the upper limits of what SMG kinetics can deliver. Its enlarged heat sink holds seventy-five rounds and its oversized coil assembly fires them with enough force to threaten light armor - a capability few weapons in this size class can claim. The weapon requires two hands to manage effectively at its peak fire rate, but the volume of fire it produces has ended more than a few engagements before the enemy could mount a counter.</p>"
+        },
+        "rules": [],
+        "slug": "n7-hurricane",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic"
+          ],
+          "rarity": "uncommon"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 9
+        },
+        "baseItem": "n7-hurricane",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 2000
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 4,
+          "die": "d4",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 30,
+        "expend": 1,
+        "ammo": {
+          "capacity": 75,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "superior",
+        "runes": {
+          "potency": 0,
+          "striking": 3,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "6dd776c23d4caa04",
+      "_key": "!actors.items!d1e2f3a4b5c60001.6dd776c23d4caa04",
+      "sort": 700000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.1386a8c8c6e2c281"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Phoenix Armor (L)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Light-human-Phoenix.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The Sirta Foundation's Phoenix series incorporates medical-grade biosensors and VI-assisted trauma management alongside standard kinetic barriers. Originally developed for combat medics, the suit sees wide use among biotic-capable operatives who prioritize survivability in sustained engagements.</p>"
+        },
+        "rules": [],
+        "slug": "phoenix-armor-l",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "phoenix-armor",
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 20
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "light",
+        "group": "leather",
+        "acBonus": 2,
+        "strength": 1,
+        "dexCap": 3,
+        "checkPenalty": -1,
+        "speedPenalty": 0,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "5ea70b774a801680",
+      "_key": "!actors.items!d1e2f3a4b5c60001.5ea70b774a801680",
+      "sort": 800000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.0483c7d809556b42"
       }
     }
   ],

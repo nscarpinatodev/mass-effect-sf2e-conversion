@@ -120,7 +120,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/asari-raider.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/asari-raider.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -185,6 +185,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/asari-raider.webp"
+      }
     }
   },
   "items": [
@@ -196,7 +208,7 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "1d4+2",
+            "damage": "2d4+3",
             "damageType": "bludgeoning",
             "category": null
           }
@@ -257,7 +269,7 @@
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "1d6+1",
+            "damage": "1d6+4",
             "damageType": "piercing",
             "category": null
           }

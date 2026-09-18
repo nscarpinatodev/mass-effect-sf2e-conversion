@@ -132,7 +132,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/asari-justicar.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/asari-justicar.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -197,6 +197,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/asari-justicar.webp"
+      }
     }
   },
   "items": [
@@ -208,7 +220,7 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "2d8+7",
+            "damage": "4d8+10",
             "damageType": "force",
             "category": null
           }
@@ -269,7 +281,7 @@
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "1d10+5",
+            "damage": "2d10+7",
             "damageType": "piercing",
             "category": null
           }

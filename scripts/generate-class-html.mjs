@@ -1,4 +1,4 @@
-// Generates docs/class-compendium.html from source pack JSON files.
+// Generates docs/mass-effect-starfinder-2e-conversion.html from source pack JSON files.
 // Usage: node scripts/generate-class-html.mjs
 
 import { readFile, writeFile, mkdir, readdir } from 'fs/promises';
@@ -387,12 +387,12 @@ function renderClass(cls, classFeat, allFeats, progressionFeats, masteryFeats) {
   }
   const levels = [...featsByLevel.keys()].sort((a, b) => a - b);
 
-  const flatFeats = [];
-  for (const level of levels) {
-    const sorted = [...featsByLevel.get(level)].sort((a, b) => a.name.localeCompare(b.name));
-    for (const feat of sorted) flatFeats.push({ feat, level });
-  }
-  const featColumns = buildFeatColumns(flatFeats, colors.dark, colors.accent);
+  // Full feat text lives in the Feats section; the class carries a level index.
+  const featIndexRows = levels.map(level => {
+    const names = [...featsByLevel.get(level)].sort((a, b) => a.name.localeCompare(b.name))
+      .map(f => f.name).join(', ');
+    return `<tr><td><strong>${level}</strong></td><td>${names}</td></tr>`;
+  }).join('\n');
 
   const masteryItems = (masteryFeats ?? []).map(f => ({ feat: f, level: f.system.level.value }));
   const masteryColumns = masteryItems.length
@@ -451,16 +451,10 @@ ${masteryColumns}  </div>`
   ${buildAdvancementTable(progressionFeats, classFeat.name, masteryFeats ?? [])}
 ${masterySection}
   <h3 class="section-bar" style="background:#0f2034">Class Feats</h3>
-  <div class="action-key">
-    ${actionImg('one',      'One Action')} 1 action &nbsp;·&nbsp;
-    ${actionImg('two',      'Two Actions')} 2 actions &nbsp;·&nbsp;
-    ${actionImg('three',    'Three Actions')} 3 actions &nbsp;·&nbsp;
-    ${actionImg('reaction', 'Reaction')} reaction &nbsp;·&nbsp;
-    ${actionImg('free',     'Free Action')} free action &nbsp;·&nbsp;
-    no icon = passive
-  </div>
-  <div class="feats-area">
-${featColumns}  </div>
+  <p class="section-intro">${cls.name} feats are listed in full under <strong>Feats → Class Feats → ${titleCase(cls.name)}</strong>. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20.</p>
+  <div class="equipment-subsection"><div class="equipment-table-wrap">
+    <table class="data-table"><thead><tr><th>Level</th><th>${titleCase(cls.name)} Feats</th></tr></thead><tbody>${featIndexRows}</tbody></table>
+  </div></div>
 </div>
 </section>`;
 }
@@ -632,6 +626,59 @@ body{
   color:#0f2034;
   white-space:nowrap;
 }
+/* ── Part hierarchy (Character Options / Bestiary / Shield Mechanics) ──────── */
+.toc-part{
+  font-family:'Korataki',sans-serif;
+  font-size:0.95rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:#0f2034;
+  border-bottom:2px solid #0f2034;
+  padding-bottom:0.2rem;
+  margin:1.1rem 0 0.5rem;
+}
+.toc-part:first-child{margin-top:0}
+.toc-entry.sub{padding-left:1.4rem}
+.toc-entry.sub a{font-size:0.92rem;font-weight:400;color:#4a5568}
+.part-divider{
+  page-break-before:always;
+  break-before:page;
+  background:#0f2034;
+  color:#fff;
+  padding:1.6rem 1.5rem;
+  margin:0 0 1.25rem;
+  border-left:6px solid #4a9ed6;
+}
+.part-divider .part-eyebrow{
+  font-family:'GoodOT-Cond',sans-serif;
+  font-size:0.72rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#4a9ed6;
+  margin-bottom:0.3rem;
+}
+.part-divider h2{
+  font-family:'Korataki',sans-serif;
+  font-size:1.9rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  margin:0;
+}
+.part-divider p{
+  font-family:'GoodOT-Cond',sans-serif;
+  font-size:0.82rem;
+  color:rgba(255,255,255,.8);
+  margin:0.45rem 0 0;
+  max-width:52em;
+}
+/* Shield Mechanics */
+.mech-block{border:1px solid #e2e8f0;border-left:3px solid #4a9ed6;background:#fff;padding:0.6rem 0.8rem;margin:0 0.75rem 0.7rem;font-size:0.76rem;line-height:1.55;color:#1a1a2e}
+.mech-block h4{font-family:'Korataki',sans-serif;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:#0f2034;margin:0 0 0.3rem}
+.mech-block p{margin:0.25rem 0}
+.mech-flow{display:flex;flex-wrap:wrap;align-items:center;gap:0.4rem;margin:0.5rem 0.75rem 0.8rem;font-family:'Korataki',sans-serif;font-size:0.78rem;letter-spacing:0.05em}
+.mech-step{background:#0f2034;color:#fff;padding:0.3rem 0.7rem;border-radius:3px}
+.mech-step.b{background:#7c3aed}.mech-step.s{background:#0369a1}.mech-step.a{background:#b45309}.mech-step.h{background:#c41e3a}
+.mech-arrow{color:#718096;font-size:1rem}
 
 /* ── General Feats Section ───────────────────────────────── */
 .general-section{
@@ -1099,19 +1146,43 @@ body{
   .feats-columns{column-gap:0}
 }
 
-/* ── Ancestries ───────────────────────────────────────── */
+/* ── Ancestries ───────────────────────────── */
 .ancestry-section,.backgrounds-section,.equipment-section{margin-bottom:2.5rem;page-break-before:always;overflow:hidden}
-.ancestry-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;padding:0.75rem}
-.ancestry-card{border:1px solid #e2e8f0;border-radius:4px;background:#fff;break-inside:avoid;page-break-inside:avoid;overflow:hidden}
-.ancestry-card-header{background:#0f2034;color:#fff;padding:0.4rem 0.75rem}
-.ancestry-name{font-family:'Korataki',sans-serif;font-size:1rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.1rem}
-.ancestry-stats-bar{font-family:'GoodOT-Cond',sans-serif;font-size:0.67rem;color:rgba(255,255,255,.75);letter-spacing:0.03em}
-.ancestry-body{padding:0.5rem 0.75rem;font-size:0.7rem;line-height:1.4}
-.ancestry-flavor{color:#2d3748;font-style:italic;margin-bottom:0.3rem}
-.ancestry-heritages-label{font-family:'Slider',sans-serif;font-weight:700;font-size:0.66rem;text-transform:uppercase;letter-spacing:0.07em;color:#4a5568;margin:0.3rem 0 0.15rem}
-.heritage-entry{margin-bottom:0.18rem;color:#1a1a2e;font-size:0.69rem;line-height:1.35}
-.heritage-name{font-family:'GoodOT-Cond',sans-serif;font-weight:700;font-size:0.71rem;color:#0f2034}
-.ancestry-feat-refs{margin-top:0.3rem;font-size:0.66rem;color:#718096;font-style:italic}
+.ancestry-page{margin-bottom:1.5rem;page-break-before:always;overflow:hidden;background:#fff}
+/* Cropped rather than full 21:9 so the mechanics aside clears the first page. */
+.ancestry-banner{display:block;width:100%;height:225px;object-fit:cover;object-position:center 42%;border-bottom:3px solid #0f2034}
+.ancestry-traitline{display:flex;flex-wrap:wrap;gap:0.15rem;padding:0.3rem 0.75rem;background:#e2e8f0;border-bottom:1px solid #cbd5e0}
+.ancestry-trait{font-family:'GoodOT-Cond',sans-serif;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.05em;background:#2d3748;color:#fff;padding:0.05rem 0.3rem;border-radius:2px}
+.ancestry-trait.rarity-common{background:#4a5568}
+.ancestry-trait.rarity-uncommon{background:#b45309}
+.ancestry-trait.rarity-rare{background:#0369a1}
+/* Float, not grid: Chrome treats a grid container as monolithic in paged media,
+   so the whole two-column block jumped to the next page and orphaned the header. */
+.ancestry-layout{border-bottom:1px solid #e2e8f0;padding:0.7rem 0.9rem}
+.ancestry-layout::after{content:'';display:block;clear:both}
+.ancestry-prose{font-size:0.72rem;line-height:1.5;color:#1a1a2e}
+.ancestry-prose p{margin:0 0 0.4rem}
+.ancestry-prose ul{margin:0 0 0.45rem 1rem}
+.ancestry-prose li{margin-bottom:0.12rem}
+.ancestry-prose h4{font-family:'Slider',sans-serif;font-weight:700;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.09em;color:#0f2034;margin:0.55rem 0 0.22rem;border-bottom:1px solid #e2e8f0;padding-bottom:0.1rem}
+.ancestry-lead{font-style:italic;color:#2d3748;border-left:3px solid #4a9ed6;padding-left:0.55rem;margin-bottom:0.5rem}
+/* The mechanics aside runs 700-950px tall. Letting it fragment keeps the header
+   and banner on the same page as the prose; individual abilities stay intact. */
+/* Sized so the tallest aside (quarian) still clears the first page: wider column
+   means fewer wrapped lines, and the type is a step down from the body text. */
+.ancestry-mech{float:right;width:302px;margin:0 0 0.6rem 0.85rem;background:#0f2034;color:#dbe6f2;padding:0.6rem 0.65rem;font-size:0.605rem;line-height:1.4;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.mech-title{font-family:'Korataki',sans-serif;font-size:0.665rem;letter-spacing:0.06em;text-transform:uppercase;color:#fff;border-bottom:2px solid #4a9ed6;padding-bottom:0.16rem;margin-bottom:0.3rem}
+.mech-row{margin:0.07rem 0}
+.mech-row b{color:#7fc4ef;font-weight:700}
+.mech-sep{border:0;border-top:1px solid rgba(255,255,255,.18);margin:0.32rem 0}
+.mech-ability{margin:0.24rem 0;break-inside:avoid;page-break-inside:avoid}
+.mech-ability .mech-ab-name{font-family:'GoodOT-Cond',sans-serif;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:0.04em;font-size:0.625rem}
+.mech-ability p{margin:0.06rem 0;color:#bccfe2;font-size:0.578rem;line-height:1.36}
+.mech-ability ul{margin:0.08rem 0 0.08rem 0.8rem;color:#bccfe2;font-size:0.578rem}
+.ancestry-sub{font-family:'Korataki',sans-serif;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.07em;color:#0f2034;padding:0.26rem 0.75rem;background:#e2e8f0;margin:0}
+.heritage-block{padding:0.35rem 0.9rem;font-size:0.7rem;line-height:1.45;color:#1a1a2e;break-inside:avoid;page-break-inside:avoid}
+.heritage-block p{margin:0 0 0.25rem}
+.heritage-name{font-family:'GoodOT-Cond',sans-serif;font-weight:700;font-size:0.75rem;color:#0f2034;text-transform:uppercase;letter-spacing:0.03em}
 
 /* ── Backgrounds ──────────────────────────────────────── */
 .section-intro{font-size:0.76rem;color:#4a5568;font-style:italic;padding:0.4rem 1rem;background:#f7fafc;border-bottom:1px solid #e2e8f0}
@@ -1128,9 +1199,39 @@ body{
 .equip-table-title{font-family:'Korataki',sans-serif;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.07em;color:#0f2034;padding:0.28rem 0.75rem;background:#e2e8f0;margin:0}
 .trait-key{font-size:0.65rem;color:#718096;font-style:italic;padding:0.2rem 0.75rem;line-height:1.5}
 .trait-key strong{color:#4a5568;font-style:normal}
+
+/* ── NPC stat blocks ───────────────────────────────────────────────────────── */
+.npc-faction{margin-bottom:0.5rem}
+.npc-faction-title{font-family:'Korataki',sans-serif;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.07em;color:#0f2034;padding:0.28rem 0.75rem;background:#e2e8f0;margin:0}
+.npc-faction-title .npc-count{float:right;font-family:'GoodOT-Cond',sans-serif;color:#718096;letter-spacing:0}
+.npc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;padding:0.75rem}
+.npc-block{border:1px solid #e2e8f0;border-left:3px solid #4a9ed6;border-radius:3px;background:#fff;padding:0.45rem 0.6rem;
+  break-inside:avoid;page-break-inside:avoid;font-size:0.68rem;line-height:1.45;color:#1a1a2e}
+.npc-head{display:flex;justify-content:space-between;align-items:baseline;gap:0.5rem;
+  border-bottom:1px solid #e2e8f0;padding-bottom:0.18rem;margin-bottom:0.24rem}
+.npc-name{font-family:'Korataki',sans-serif;font-size:0.8rem;letter-spacing:0.05em;text-transform:uppercase;color:#0f2034}
+.npc-level{font-family:'GoodOT-Cond',sans-serif;font-size:0.7rem;font-weight:700;color:#4a9ed6;white-space:nowrap}
+.npc-traits{display:flex;flex-wrap:wrap;gap:0.15rem;margin-bottom:0.24rem}
+.npc-trait{font-family:'GoodOT-Cond',sans-serif;font-size:0.57rem;text-transform:uppercase;letter-spacing:0.05em;
+  background:#2d3748;color:#fff;padding:0.04rem 0.28rem;border-radius:2px}
+.npc-trait.rarity-uncommon{background:#b45309}
+.npc-trait.rarity-rare{background:#0369a1}
+.npc-trait.rarity-unique{background:#7c3aed}
+.npc-flavor{font-style:italic;color:#4a5568;font-size:0.645rem;margin:0 0 0.24rem;line-height:1.4}
+.npc-line{margin:0.08rem 0}
+.npc-line b{color:#0f2034;font-weight:700}
+.npc-rule{border:0;border-top:1px solid #e2e8f0;margin:0.26rem 0}
+.npc-strike b:first-child{color:#c41e3a}
+.npc-ability{margin:0.16rem 0}
+.npc-ability .npc-ab-name{color:#0f2034;font-weight:700}
+.npc-ability p{margin:0.08rem 0}
+.npc-ability hr{display:none}
+.npc-block .action-icon{vertical-align:-0.08em}
 @media print{
   .ancestry-section,.backgrounds-section,.equipment-section{page-break-before:always}
-  .ancestry-card{break-inside:avoid;page-break-inside:avoid}
+  .ancestry-page{page-break-before:always}
+  .mech-ability{break-inside:avoid;page-break-inside:avoid}
+  .heritage-block{break-inside:avoid;page-break-inside:avoid}
   .data-table{break-inside:auto}
 }
 `;
@@ -1300,7 +1401,7 @@ const CLASSES = [
 
 // ── General Feats section renderer ────────────────────────────────────────────
 
-function renderGeneralSection(featsByPack) {
+function renderGeneralPacks(featsByPack) {
   // featsByPack: Map of packLabel -> sorted feat array
   let body = '';
   for (const [packLabel, feats] of featsByPack) {
@@ -1309,25 +1410,11 @@ function renderGeneralSection(featsByPack) {
       return d !== 0 ? d : a.name.localeCompare(b.name);
     });
     const items = sorted.map(feat => ({ feat, level: feat.system.level.value }));
-    body += `<h3 class="general-pack-header">${packLabel}</h3>\n`;
+    body += `<h4 class="general-pack-header">${packLabel}</h4>\n`;
     body += buildFeatColumns(items, null, null);
   }
 
-  return `<section class="general-section" id="general-feats">
-<div class="class-main">
-  <div class="class-name-bar">
-    <div class="header-accent-lines"></div>
-    <div class="header-content">
-      <div>
-        <h2 class="class-name">General Feats</h2>
-        <p class="class-tagline">Available to multiple classes</p>
-      </div>
-    </div>
-  </div>
-  <p class="class-flavor">These feats appear on the feat lists of two or more classes. Any class that lists them may take them at the appropriate level.</p>
-  ${body}
-</div>
-</section>`;
+  return body;
 }
 
 // ── General Feats (powers not assigned to any class) ──────────────────────────
@@ -1384,14 +1471,16 @@ function skillLabel(c)   { return SKILL_LABELS[c] ?? c; }
 
 function extractBoosts(obj) {
   const ALL_COUNT = 6;
-  const fixed = []; let hasFree = false;
+  const fixed = []; let free = 0;
   for (const key of Object.keys(obj ?? {})) {
     const vals = obj[key].value ?? [];
-    if (vals.length >= ALL_COUNT) { hasFree = true; }
+    if (vals.length >= ALL_COUNT) free += 1;
     else if (vals.length === 1) fixed.push(abilityLabel(vals[0]));
     else if (vals.length > 1) fixed.push(vals.map(abilityLabel).join(' or '));
   }
-  return hasFree ? [...fixed, 'free'] : fixed;
+  // Ancestries with more than one wholly-unconstrained boost read "Two Free", not "Free, Free".
+  const NUM = ['', 'free', 'Two Free', 'Three Free', 'Four Free'];
+  return free ? [...fixed, NUM[free] ?? `${free} Free`] : fixed;
 }
 function extractFlaws(obj) {
   const out = [];
@@ -1403,6 +1492,134 @@ function firstPara(html) {
   return m ? m[1].replace(/<[^>]+>/g, '').trim() : '';
 }
 
+const LANGUAGE_LABELS = {
+  taldane:'Common', thessian:'Thessian', khelish:'Khelish', batarian:'Batarian',
+  drell:'Drell', elcor:'Elcor', hanar:'Hanar', krogan:'Krogan',
+  salarian:'Salarian', turian:'Turian', volus:'Volus', vorcha:'Vorcha',
+};
+const VISION_LABELS = { 'low-light-vision':'Low-Light Vision', darkvision:'Darkvision' };
+const SHORT_VISION  = { 'low-light-vision':'Low-Light', darkvision:'Dark' };
+// AoN/SF2e uses "Beliefs" where the pack text still says "Alignment and Religion".
+const ANCESTRY_HEADING_MAP = { 'Alignment and Religion':'Beliefs' };
+
+function languageLabel(c) { return LANGUAGE_LABELS[c] ?? titleCase(c); }
+
+// Ancestry descriptions follow one shape: an italic hook and an overview paragraph,
+// an <hr/>, then a run of <p><strong>Heading</strong></p> blocks.
+function parseAncestryDescription(value) {
+  const parts = value.split(/<hr\s*\/?>/);
+  const head = parts[0] ?? '';
+  const rest = parts.slice(1).join('');
+  const paras = [...head.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)].map(m => m[1]);
+  const flavor = (paras[0] ?? '').replace(/<\/?em>/g, '').trim();
+  const overview = paras.slice(1).map(p => `<p>${p}</p>`).join('');
+  const sections = [];
+  const re = /<p[^>]*><strong>([^<]+)<\/strong><\/p>([\s\S]*?)(?=<p[^>]*><strong>|$)/g;
+  let m;
+  while ((m = re.exec(rest))) {
+    let heading = m[1].trim().replace(/\.\.\.$/, '\u2026');
+    heading = ANCESTRY_HEADING_MAP[heading] ?? heading;
+    sections.push({ heading, body: m[2].trim() });
+  }
+  return { flavor, overview, sections };
+}
+
+function ancestrySlug(anc) { return anc.system?.slug ?? anc.name.toLowerCase(); }
+
+// The two level-0 entries each ancestry grants are its special abilities, not feats:
+// they belong in the mechanics block, and are filtered out of Racial Feats.
+function ancestrySpecialNames(ancestries) {
+  return new Set(ancestries.flatMap(a => Object.values(a.system?.items ?? {}).map(i => i.name)));
+}
+
+function renderAncestryMechanics(anc, ancestryFeats) {
+  const s = anc.system;
+  const boosts = extractBoosts(s.boosts).map(b => b === 'free' ? 'Free' : b);
+  const flaws  = extractFlaws(s.flaws);
+  const vision = VISION_LABELS[s.vision];
+
+  const base  = (s.languages?.value ?? []).map(languageLabel).join(', ');
+  const pool  = (s.additionalLanguages?.value ?? []).map(languageLabel).join(', ');
+  const count = s.additionalLanguages?.count ?? 0;
+  const extra = count > 0
+    ? `${count} additional language${count === 1 ? '' : 's'}, plus a number of languages equal to your Intelligence modifier (if positive)`
+    : 'a number of additional languages equal to your Intelligence modifier (if positive)';
+  const langLine = `${base}. You also gain ${extra}, chosen from ${pool}.`;
+
+  const specials = Object.values(s.items ?? {})
+    .map(i => ancestryFeats.find(f => f.name === i.name))
+    .filter(Boolean)
+    .map(f => `<div class="mech-ability"><span class="mech-ab-name">${f.name}</span>${f.system.description.value}</div>`)
+    .join('');
+
+  return `<aside class="ancestry-mech">
+      <div class="mech-title">${anc.name} Mechanics</div>
+      <div class="mech-row"><b>Hit Points</b> ${s.hp}</div>
+      <div class="mech-row"><b>Size</b> ${SIZE_LABELS[s.size] ?? s.size}</div>
+      <div class="mech-row"><b>Speed</b> ${s.speed} feet</div>
+      <div class="mech-row"><b>Attribute Boosts</b> ${boosts.join(', ')}</div>
+      <div class="mech-row"><b>Attribute Flaw${flaws.length > 1 ? 's' : ''}</b> ${flaws.length ? flaws.join(', ') : '\u2014'}</div>
+      <div class="mech-row"><b>Languages</b> ${langLine}</div>
+      <hr class="mech-sep">
+      ${vision ? `<div class="mech-ability"><span class="mech-ab-name">${vision}</span><p>You can see in dim light as though it were bright light${s.vision === 'darkvision' ? ', and in darkness as though it were dim light (in black and white only)' : ''}.</p></div>` : ''}
+      ${specials}
+    </aside>`;
+}
+
+function renderAncestryPage(anc, heritageMap, featMap, ancestryFeats) {
+  const s = anc.system;
+  const slug = ancestrySlug(anc);
+  const { flavor, overview, sections } = parseAncestryDescription(s.description.value);
+
+  const rarity = s.traits?.rarity ?? 'common';
+  const chips = [rarity, ...(s.traits?.value ?? [])]
+    .map(t => `<span class="ancestry-trait${t === rarity ? ` rarity-${rarity}` : ''}">${titleCase(t)}</span>`)
+    .join('');
+
+  const prose = overview + sections
+    .map(sec => `<h4>${sec.heading}</h4>${sec.body}`)
+    .join('');
+
+  const hs = (heritageMap.get(slug) ?? []).sort((a, b) => a.name.localeCompare(b.name));
+  const heritagesHtml = hs.length
+    ? `<h3 class="ancestry-sub">${anc.name} Heritages</h3>
+  ${hs.map(h => `<div class="heritage-block"><span class="heritage-name">${h.name}</span> ${h.system.description.value}</div>`).join('\n  ')}`
+    : '';
+
+  // Ancestry feats print in full here, the way the core rulebook does it; the
+  // Feats section carries an index back to these pages rather than a second copy.
+  const feats = (featMap.get(slug) ?? [])
+    .sort((a, b) => (a.system.level.value - b.system.level.value) || a.name.localeCompare(b.name));
+  const featsHtml = feats.length
+    ? `<h3 class="ancestry-sub" id="feats-${slug}">${anc.name} Feats</h3>
+  <p class="section-intro">Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.</p>
+  <div class="feats-area">${buildFeatColumns(feats.map(f => ({ feat: f, level: f.system.level.value })), null, null)}</div>`
+    : '';
+
+  return `<section class="ancestry-page" id="ancestry-${slug}">
+<div class="class-main">
+  <div class="class-name-bar"><div class="header-accent-lines"></div><div class="header-content">
+    <div>
+      <h2 class="class-name">${anc.name}</h2>
+      <p class="class-tagline">Ancestry</p>
+    </div>
+    <div class="header-chapter">Part I \u00b7 Ancestries</div>
+  </div></div>
+  <img class="ancestry-banner" src="images/ancestries/${slug}.jpg" alt="${anc.name}">
+  <div class="ancestry-traitline">${chips}</div>
+  <div class="ancestry-layout">
+    ${renderAncestryMechanics(anc, ancestryFeats)}
+    <div class="ancestry-prose">
+      <p class="ancestry-lead">${flavor}</p>
+      ${prose}
+    </div>
+  </div>
+  ${heritagesHtml}
+  ${featsHtml}
+</div>
+</section>`;
+}
+
 function renderAncestriesSection(ancestries, heritages, ancestryFeats) {
   const heritageMap = new Map();
   for (const h of heritages) {
@@ -1410,49 +1627,47 @@ function renderAncestriesSection(ancestries, heritages, ancestryFeats) {
     if (!heritageMap.has(slug)) heritageMap.set(slug, []);
     heritageMap.get(slug).push(h);
   }
+  const specialNames = ancestrySpecialNames(ancestries);
   const featMap = new Map();
   for (const f of ancestryFeats) {
+    if (specialNames.has(f.name)) continue;
     const traits = (f.system.traits?.value ?? []).filter(t => !['common','uncommon','rare','humanoid','construct'].includes(t));
     for (const t of traits) {
       if (!featMap.has(t)) featMap.set(t, []);
-      featMap.get(t).push(f.name);
+      featMap.get(t).push(f);
     }
   }
 
-  const cards = ancestries.map(anc => {
+  const sorted = [...ancestries].sort((a, b) => a.name.localeCompare(b.name));
+
+  const summaryRows = sorted.map(anc => {
     const s = anc.system;
-    const slug = s.slug ?? anc.name.toLowerCase();
-    const boosts = extractBoosts(s.boosts);
-    const flaws  = extractFlaws(s.flaws);
-    const size   = SIZE_LABELS[s.size] ?? s.size;
-    const flavor = firstPara(s.description.value);
-    const hs     = (heritageMap.get(slug) ?? []).sort((a,b) => a.name.localeCompare(b.name));
-    const fs     = (featMap.get(slug) ?? []).sort();
-    const statsBar = [`HP ${s.hp}`, size, `${s.speed} ft`, `+${boosts.join(', ')}`, flaws.length ? `−${flaws.join(', ')}` : ''].filter(Boolean).join(' · ');
-    const heritagesHtml = hs.map(h => {
-      const hdesc = firstPara(h.system.description.value) || h.system.description.value.replace(/<[^>]+>/g,'').trim().slice(0,110);
-      return `<div class="heritage-entry"><span class="heritage-name">${h.name}</span> — ${hdesc}</div>`;
-    }).join('');
-    const featRefs = fs.length ? `<div class="ancestry-feat-refs"><strong>Feats:</strong> ${fs.join(', ')}</div>` : '';
-    return `<div class="ancestry-card">
-  <div class="ancestry-card-header"><div class="ancestry-name">${anc.name.toUpperCase()}</div><div class="ancestry-stats-bar">${statsBar}</div></div>
-  <div class="ancestry-body">
-    <p class="ancestry-flavor">${flavor}</p>
-    ${hs.length ? `<div class="ancestry-heritages-label">Heritages</div>${heritagesHtml}` : ''}
-    ${featRefs}
-  </div>
-</div>`;
+    const boosts = extractBoosts(s.boosts).map(b => b === 'free' ? 'Free' : b).join(', ');
+    const flaws  = extractFlaws(s.flaws).join(', ') || '\u2014';
+    return `<tr><td><strong><a href="#ancestry-${ancestrySlug(anc)}">${anc.name}</a></strong></td>`
+      + `<td>${s.hp}</td><td>${SIZE_LABELS[s.size] ?? s.size}</td><td>${s.speed} ft</td>`
+      + `<td>${boosts}</td><td>${flaws}</td>`
+      + `<td>${SHORT_VISION[s.vision] ?? 'Normal'}</td>`
+      + `<td>${(heritageMap.get(ancestrySlug(anc)) ?? []).length}</td></tr>`;
   }).join('\n');
 
-  return `<section class="ancestry-section" id="ancestries">
+  const intro = `<section class="ancestry-section" id="ancestries">
 <div class="class-main">
   <div class="class-name-bar"><div class="header-accent-lines"></div><div class="header-content"><div>
     <h2 class="class-name">Ancestries</h2>
-    <p class="class-tagline">Playable Species</p>
+    <p class="class-tagline">Playable Species of the Milky Way</p>
   </div></div></div>
-  <p class="section-intro">Each ancestry grants listed ability boosts, a flaw (if any), starting HP, speed, and vision. Choose one heritage at character creation. Available ancestry feats are listed per ancestry.</p>
-  <div class="ancestry-grid">${cards}</div>
+  <p class="section-intro">Your ancestry sets your starting Hit Points, size, Speed, attribute boosts and flaw, languages, and any special senses or biology. Choose one heritage at 1st level, then an ancestry feat at 1st level and every even level thereafter. Each species has its own page below, carrying its heritages and its full ancestry feat list.</p>
+  <div class="backgrounds-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Ancestry</th><th>HP</th><th>Size</th><th>Speed</th><th>Boosts</th><th>Flaw</th><th>Vision</th><th>Herit.</th></tr></thead>
+      <tbody>${summaryRows}</tbody>
+    </table>
+  </div>
 </div></section>`;
+
+  const pages = sorted.map(anc => renderAncestryPage(anc, heritageMap, featMap, ancestryFeats)).join('\n');
+  return `${intro}\n${pages}`;
 }
 
 function renderBackgroundsSection(backgrounds) {
@@ -1480,6 +1695,347 @@ function renderBackgroundsSection(backgrounds) {
 </div></section>`;
 }
 
+const ACTION_KEY_HTML = () => `<div class="action-key">
+    ${actionImg('one','One Action')} 1 action &nbsp;·&nbsp;
+    ${actionImg('two','Two Actions')} 2 actions &nbsp;·&nbsp;
+    ${actionImg('three','Three Actions')} 3 actions &nbsp;·&nbsp;
+    ${actionImg('reaction','Reaction')} reaction &nbsp;·&nbsp;
+    ${actionImg('free','Free Action')} free action &nbsp;·&nbsp;
+    no icon = passive
+  </div>`;
+
+function partDivider(id, eyebrow, title, blurb) {
+  return `<div class="part-divider" id="${id}">
+  <div class="part-eyebrow">${eyebrow}</div>
+  <h2>${title}</h2>
+  <p>${blurb}</p>
+</div>`;
+}
+
+// Feats: class feats grouped by class, then racial (ancestry) feats, then
+// general & skill feats. Full text lives here; class sections carry an index.
+function renderFeatsSection(classFeatSets, ancestryFeats, ancestries, generalByPack) {
+  let body = `<h3 class="section-bar" style="background:#0f2034" id="feats-class">Class Feats</h3>`;
+  for (const { cls, feats } of classFeatSets) {
+    const colors = CLASS_COLORS[cls.name];
+    const items = [...feats]
+      .sort((a, b) => (a.system.level.value - b.system.level.value) || a.name.localeCompare(b.name))
+      .map(f => ({ feat: f, level: f.system.level.value }));
+    if (!items.length) continue;
+    body += `<h4 class="general-pack-header" style="background:${colors?.dark ?? '#0f2034'}">${titleCase(cls.name)}</h4>\n`;
+    body += buildFeatColumns(items, colors?.dark, colors?.accent);
+  }
+
+  body += `<h3 class="section-bar" style="background:#0f2034" id="feats-racial">Racial Feats</h3>`;
+  body += `<p class="section-intro">Ancestry feats print in full on each species' own page under <strong>Ancestries</strong>, alongside the heritages and special abilities they interact with. This index lists them all by ancestry and level.</p>`;
+  const specialNames = ancestrySpecialNames(ancestries);
+  const byAnc = new Map();
+  for (const f of ancestryFeats) {
+    if (specialNames.has(f.name)) continue;
+    const traits = f.system?.traits?.value ?? [];
+    const anc = ancestries.find(a => traits.includes(a.system?.slug ?? a.name.toLowerCase()));
+    if (!anc) continue;
+    if (!byAnc.has(anc)) byAnc.set(anc, []);
+    byAnc.get(anc).push(f);
+  }
+  const racialRows = [...byAnc]
+    .sort((a, b) => a[0].name.localeCompare(b[0].name))
+    .map(([anc, feats]) => {
+      const slug = ancestrySlug(anc);
+      const listed = [...feats]
+        .sort((a, b) => (a.system.level.value - b.system.level.value) || a.name.localeCompare(b.name))
+        .map(f => `${f.name} (${f.system.level.value})`)
+        .join(', ');
+      return `<tr><td><strong><a href="#feats-${slug}">${anc.name}</a></strong></td><td>${listed}</td></tr>`;
+    }).join('');
+  body += `<div class="equipment-table-wrap"><table class="data-table">
+    <thead><tr><th style="width:7rem">Ancestry</th><th>Feats (level)</th></tr></thead>
+    <tbody>${racialRows}</tbody>
+  </table></div>`;
+
+  body += `<h3 class="section-bar" style="background:#0f2034" id="feats-general">General &amp; Skill Feats</h3>`;
+  body += `<p class="section-intro">Powers and feats that appear on two or more class feat lists, or are open to any character meeting the prerequisites.</p>`;
+  body += renderGeneralPacks(generalByPack);
+
+  return `<section class="general-section" id="feats">
+<div class="class-main">
+  <div class="class-name-bar"><div class="header-accent-lines"></div><div class="header-content"><div>
+    <h2 class="class-name">Feats</h2>
+    <p class="class-tagline">Class · Racial · General &amp; Skill</p>
+  </div></div></div>
+  ${ACTION_KEY_HTML()}
+  ${body}
+</div>
+</section>`;
+}
+
+// ── NPCs ─────────────────────────────────────────────────────────────────────
+// me-npcs is organised into faction subfolders, each carrying a _folder.json
+// whose name/sort drive the display grouping and order.
+async function loadNpcsByFaction() {
+  const root = join(SRC, 'me-npcs');
+  let entries;
+  try { entries = await readdir(root, { withFileTypes: true }); } catch { return []; }
+  const factions = [];
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const dir = join(root, entry.name);
+    const files = (await readdir(dir)).filter(f => f.endsWith('.json'));
+    let meta = null;
+    const npcs = [];
+    for (const file of files) {
+      let doc;
+      try { doc = JSON.parse(await readFile(join(dir, file), 'utf8')); } catch { continue; }
+      if (file === '_folder.json') { meta = doc; continue; }
+      if (doc?.system?.details) npcs.push(doc);
+    }
+    if (!npcs.length) continue;
+    npcs.sort((a, b) =>
+      (a.system.details.level.value - b.system.details.level.value) || a.name.localeCompare(b.name));
+    factions.push({ name: meta?.name ?? titleCase(entry.name.replace(/-/g, ' ')), sort: meta?.sort ?? 9e9, npcs });
+  }
+  return factions.sort((a, b) => (a.sort - b.sort) || a.name.localeCompare(b.name));
+}
+
+const NPC_SIZES = { tiny:'Tiny', sm:'Small', med:'Medium', lg:'Large', huge:'Huge', grg:'Gargantuan' };
+const SIGN = n => `${n >= 0 ? '+' : ''}${n}`;
+
+function npcGlyph(item) {
+  const s = item.system ?? {};
+  const type = s.actionType?.value;
+  if (type === 'reaction') return actionImg('reaction', 'Reaction');
+  if (type === 'free')     return actionImg('free', 'Free Action');
+  if (type === 'passive')  return '';
+  return { 1: actionImg('one','1 action'), 2: actionImg('two','2 actions'), 3: actionImg('three','3 actions') }[s.actions?.value] ?? '';
+}
+
+function npcStrike(strike) {
+  const s = strike.system ?? {};
+  const traits = s.traits?.value ?? [];
+  const rangeTrait = traits.find(t => /^range-increment-\d+$/.test(t));
+  const shown = traits.filter(t => t !== rangeTrait);
+  if (rangeTrait) shown.unshift(`range increment ${rangeTrait.split('-').pop()} ft`);
+  const dmg = Object.values(s.damageRolls ?? {})
+    .map(r => `${r.damage} ${r.damageType}`).join(' plus ');
+  return `<div class="npc-line npc-strike"><b>${rangeTrait ? 'Ranged' : 'Melee'}</b> `
+    + `${actionImg('one','1 action')} ${strike.name} ${SIGN(s.bonus?.value ?? 0)}`
+    + `${shown.length ? ` (${shown.join(', ')})` : ''}`
+    + `${dmg ? `, <b>Damage</b> ${dmg}` : ''}</div>`;
+}
+
+// Authored action descriptions repeat "<p><strong>Name</strong> <glyph></p><hr>" —
+// strip that leading header so the name isn't printed twice.
+function npcAbilityBody(item) {
+  let html = item.system?.description?.value ?? '';
+  const m = html.match(/^\s*<p>\s*<strong>([^<]*)<\/strong>[\s\S]*?<\/p>\s*(?:<hr\s*\/?>)?/i);
+  if (m && m[1].trim().toLowerCase() === item.name.trim().toLowerCase()) html = html.slice(m[0].length);
+  return html.replace(/<span class="action-glyph">[^<]*<\/span>/g, '').trim();
+}
+
+function renderNpcBlock(npc) {
+  const s = npc.system;
+  const lvl = s.details.level.value;
+  const items = npc.items ?? [];
+
+  const rarity = s.traits?.rarity ?? 'common';
+  const traitTags = [
+    rarity !== 'common' ? `<span class="npc-trait rarity-${rarity}">${rarity}</span>` : '',
+    `<span class="npc-trait">${NPC_SIZES[s.traits?.size?.value] ?? 'Medium'}</span>`,
+    ...(s.traits?.value ?? []).map(t => `<span class="npc-trait">${t}</span>`),
+  ].filter(Boolean).join('');
+
+  const skills = Object.entries(s.skills ?? {})
+    .map(([k, v]) => `${titleCase(k.replace(/-/g, ' '))} ${SIGN(v.base ?? 0)}`)
+    .sort().join(', ');
+  const abilities = ['str','dex','con','int','wis','cha']
+    .map(a => `${a.charAt(0).toUpperCase() + a.slice(1)} ${SIGN(s.abilities?.[a]?.mod ?? 0)}`).join(', ');
+
+  const gear = items.filter(i => ['weapon','armor','equipment'].includes(i.type)).map(i => i.name);
+  const shieldItem = items.find(i => i.flags?.['mass-effect-sf2e-conversion']?.shieldMax);
+  const sf = shieldItem?.flags['mass-effect-sf2e-conversion'];
+
+  const strikes = items.filter(i => i.type === 'melee').map(npcStrike).join('');
+  const abils = items.filter(i => i.type === 'action').map(i => {
+    const body = npcAbilityBody(i);
+    return `<div class="npc-ability"><span class="npc-ab-name">${i.name}</span> ${npcGlyph(i)}${body ? ` ${body}` : ''}</div>`;
+  }).join('');
+
+  return `<div class="npc-block">
+  <div class="npc-head"><span class="npc-name">${npc.name}</span><span class="npc-level">Creature ${lvl}</span></div>
+  <div class="npc-traits">${traitTags}</div>
+  ${s.details.blurb ? `<p class="npc-flavor">${s.details.blurb}</p>` : ''}
+  <div class="npc-line"><b>Perception</b> ${SIGN(s.perception?.mod ?? 0)}${skills ? `; <b>Skills</b> ${skills}` : ''}</div>
+  <div class="npc-line">${abilities}</div>
+  ${gear.length ? `<div class="npc-line"><b>Items</b> ${gear.join(', ')}</div>` : ''}
+  <hr class="npc-rule">
+  <div class="npc-line"><b>AC</b> ${s.attributes.ac.value}; <b>Fort</b> ${SIGN(s.saves.fortitude.value)}, <b>Ref</b> ${SIGN(s.saves.reflex.value)}, <b>Will</b> ${SIGN(s.saves.will.value)}</div>
+  <div class="npc-line"><b>HP</b> ${s.attributes.hp.max}${sf ? `; <b>Shields</b> ${sf.shieldMax} (recharge ${sf.shieldRegen}/turn)` : ''}</div>
+  <hr class="npc-rule">
+  <div class="npc-line"><b>Speed</b> ${s.attributes.speed?.value ?? 25} feet</div>
+  ${strikes}${abils}
+</div>`;
+}
+
+// Creatures and vehicles reuse the NPC stat-block renderer; they're the same
+// actor shape, just sourced from different packs.
+function renderStatblockGroup(id, heading, blurb, groups) {
+  const total = groups.reduce((n, g) => n + g.list.length, 0);
+  const body = groups.filter(g => g.list.length).map(g => `<div class="npc-faction">
+  ${g.name ? `<h4 class="npc-faction-title">${g.name}<span class="npc-count">${g.list.length}</span></h4>` : ''}
+  <div class="npc-grid">${g.list.map(renderNpcBlock).join('\n')}</div>
+</div>`).join('\n');
+  return `<h3 class="section-bar" style="background:#0f2034" id="${id}">${heading}<span style="float:right;font-family:'GoodOT-Cond',sans-serif;font-size:0.8rem;opacity:.75">${total}</span></h3>
+  <p class="section-intro">${blurb}</p>
+  ${body}`;
+}
+
+function renderBestiarySection(npcFactions, creatures, vehicles) {
+  const byLevel = list => [...list].sort((a, b) =>
+    (a.system.details.level.value - b.system.details.level.value) || a.name.localeCompare(b.name));
+
+  // Group creatures by their leading creature trait (geth, husk, collector…)
+  const CREATURE_GROUPS = [
+    ['Reaper Forces', /husk|reaper|collector/i],
+    ['Geth', /geth/i],
+    ['Mechs', /mech/i],
+    ['Wildlife & Other', /.*/],
+  ];
+  const used = new Set();
+  const creatureGroups = CREATURE_GROUPS.map(([name, rx]) => {
+    const list = byLevel(creatures.filter(c => {
+      if (used.has(c.name)) return false;
+      const hay = `${c.name} ${(c.system.traits?.value ?? []).join(' ')}`;
+      if (!rx.test(hay)) return false;
+      used.add(c.name); return true;
+    }));
+    return { name, list };
+  });
+
+  return `<section class="npc-section" id="bestiary-body">
+<div class="class-main">
+  <div class="class-name-bar"><div class="header-accent-lines"></div><div class="header-content"><div>
+    <h2 class="class-name">Bestiary</h2>
+    <p class="class-tagline">NPCs · Creatures · Vehicles</p>
+  </div></div></div>
+  ${renderStatblockGroup('npcs', 'NPCs',
+    'Ready-to-run NPCs grouped by faction, matching the <em>ME NPCs</em> compendium. Shield values are kinetic barriers that absorb damage before Hit Points and recharge at the start of each turn.',
+    npcFactions.map(f => ({ name: f.name, list: f.npcs })))}
+  ${renderStatblockGroup('creatures', 'Creatures',
+    'Hostile lifeforms, synthetics and Reaper constructs from the <em>ME Creatures</em> compendium.',
+    creatureGroups)}
+  ${renderStatblockGroup('vehicles', 'Vehicles &amp; Ships',
+    'Crewed vehicles, gunships and capital ships. Vehicles use the same statblock format; Speed represents tactical movement.',
+    [{ name: 'Vehicles', list: byLevel(vehicles.vehicles) }, { name: 'Ships', list: byLevel(vehicles.ships) }])}
+</div></section>`;
+}
+
+function renderShieldMechanicsSection() {
+  return `<section class="equipment-section" id="shield-mechanics-body">
+<div class="class-main">
+  <div class="class-name-bar"><div class="header-accent-lines"></div><div class="header-content"><div>
+    <h2 class="class-name">Shield Mechanics</h2>
+    <p class="class-tagline">Barriers · Kinetic Shields · Combat Frames</p>
+  </div></div></div>
+  <p class="section-intro">Mass Effect layers three depletable defences on top of Hit Points. The module applies them automatically whenever damage is dealt; this section documents the order and the rules governing each layer.</p>
+
+  <h3 class="section-bar" style="background:#0f2034" id="damage-routing">Damage Routing</h3>
+  <p class="section-intro">Incoming damage is consumed by each active layer in turn. A layer only passes the remainder on once it is fully depleted.</p>
+  <div class="mech-flow">
+    <span class="mech-step b">Biotic Barrier</span><span class="mech-arrow">→</span>
+    <span class="mech-step s">Kinetic Shield</span><span class="mech-arrow">→</span>
+    <span class="mech-step a">Combat Armor Frame</span><span class="mech-arrow">→</span>
+    <span class="mech-step h">Hit Points</span>
+  </div>
+  <div class="mech-block">
+    <h4>Token Bars</h4>
+    <p>Tokens display a purple <strong>Biotic Barrier</strong> bar and a yellow <strong>Armor Points</strong> bar in addition to the standard HP bar, so every layer is visible at a glance. Both can be turned off in module settings.</p>
+  </div>
+
+  <h3 class="section-bar" style="background:#0369a1" id="kinetic-shields">Kinetic Shields</h3>
+  <div class="mech-block">
+    <h4>Capacity &amp; Recharge</h4>
+    <p>A kinetic shield provides <strong>Shield HP</strong> that absorbs damage before anything else except a biotic barrier. The baseline <em>Kinetic Shield</em> carries <strong>30 Shield HP</strong> and recharges <strong>10 HP per turn</strong>. Shield HP Mods raise the maximum; Shield Regen Mods raise the recharge rate. Only one of each may be installed at a time.</p>
+    <p>Recharging pauses for <strong>1 round</strong> after the shield takes damage (configurable; Recharge Accelerator mods reduce the delay).</p>
+  </div>
+  <div class="mech-block">
+    <h4>Depletion &amp; Taking Cover</h4>
+    <p>When a shield is reduced to 0, it stays offline until its bearer <strong>Takes Cover</strong> — it will not recharge on its own. While a shield is down at the start of a turn the module posts a reminder in chat.</p>
+  </div>
+  <div class="mech-block">
+    <h4>Overload Collapse</h4>
+    <p>A single hit dealing more than <strong>50%</strong> of the shield's maximum Shield HP overwhelms the emitter: the shield absorbs only that threshold amount and immediately <strong>collapses to 0</strong>, with the excess carrying through to the next layer. Big alpha strikes therefore punch through shields rather than being soaked by them.</p>
+  </div>
+
+  <h3 class="section-bar" style="background:#b45309" id="combat-frames">Combat Armor Frames</h3>
+  <div class="mech-block">
+    <h4>Ablative Protection</h4>
+    <p>Combat frames sit between shields and Hit Points and provide <strong>Armor Points</strong>. Armor Points are <strong>ablative</strong>: they do <em>not</em> regenerate, and when the frame is fully depleted the item is destroyed and must be replaced.</p>
+    <table class="data-table" style="margin-top:0.4rem">
+      <thead><tr><th>Frame</th><th>Armor Points</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Light Combat Frame</strong></td><td>20</td></tr>
+        <tr><td><strong>Standard Combat Frame</strong></td><td>50</td></tr>
+        <tr><td><strong>Heavy Combat Frame</strong></td><td>100</td></tr>
+        <tr><td><strong>Titan Combat Frame</strong></td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section-bar" style="background:#7c3aed" id="biotic-barrier">Biotic Barrier</h3>
+  <div class="mech-block">
+    <h4>Activation &amp; Capacity</h4>
+    <p>A biotic can raise a personal mass effect field as an action. Barrier HP is calculated at activation as <strong>5 × ⌊level ÷ 2⌋</strong> (minimum 5), and it absorbs damage <em>before</em> both shields and Hit Points.</p>
+    <p>A barrier does <strong>not</strong> recharge passively. Once depleted it must be reactivated, or refilled by spending actions or using Charge.</p>
+  </div>
+
+  <h3 class="section-bar" style="background:#c41e3a" id="ammo-vs-defences">Ammo Powers vs. Defences</h3>
+  <p class="section-intro">Ammo powers are the counterplay to the layered defences — each is tuned against a specific layer. All multipliers below are configurable in module settings.</p>
+  <div class="equipment-subsection"><div class="equipment-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Ammo</th><th>Targets</th><th>Effect</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Disruptor Rounds</strong></td><td>Kinetic Shields</td><td>Deal <strong>2×</strong> damage to shields</td></tr>
+        <tr><td><strong>Warp Rounds</strong></td><td>Biotic Barriers</td><td>Deal <strong>1.5×</strong> damage to barriers; depleting one triggers a dark-energy detonation</td></tr>
+        <tr><td><strong>Incendiary Rounds</strong></td><td>Combat Frames</td><td>Burn armor <strong>1.5×</strong> faster; critical hits add persistent fire (1d6)</td></tr>
+        <tr><td><strong>Armor-Piercing Rounds</strong></td><td>Combat Frames</td><td><strong>50%</strong> of HP damage bypasses armor entirely</td></tr>
+        <tr><td><strong>Phasic Rounds</strong></td><td>Combat Frames</td><td>Bypass frames completely, but total damage is reduced to <strong>60%</strong></td></tr>
+        <tr><td><strong>Shredder Rounds</strong></td><td>Hit Points</td><td>Most effective against targets with no shields, barriers or armor</td></tr>
+        <tr><td><strong>Cryo Rounds</strong></td><td>Hit Points</td><td>Apply the <strong>Chilled</strong> condition on direct HP damage</td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</div></section>`;
+}
+
+function renderNpcSection(factions) {
+  const total = factions.reduce((n, f) => n + f.npcs.length, 0);
+  const groups = factions.map(f => `<div class="npc-faction">
+  <h4 class="npc-faction-title">${f.name}<span class="npc-count">${f.npcs.length}</span></h4>
+  <div class="npc-grid">${f.npcs.map(renderNpcBlock).join('\n')}</div>
+</div>`).join('\n');
+
+  return `<section class="npc-section" id="npcs">
+<div class="class-main">
+  <div class="class-name-bar"><div class="header-accent-lines"></div><div class="header-content"><div>
+    <h2 class="class-name">NPCs</h2>
+    <p class="class-tagline">Adversaries &amp; Allies</p>
+  </div></div></div>
+  <p class="section-intro">${total} ready-to-run NPCs grouped by faction, matching the <em>ME NPCs</em> compendium. Shield values are kinetic barriers that absorb damage before Hit Points and recharge at the start of each turn.</p>
+  ${groups}
+</div></section>`;
+}
+
+// This document targets SF2e, which denominates prices in Credits (stored as sp;
+// 1 Credit = 1 sp, 10 sp = 1 gp). Source is authored in PF2e coin, so fold every
+// denomination down to a Credit total for display.
+function creditPrice(sys) {
+  const v = sys?.price?.value;
+  if (!v || typeof v !== 'object') return '—';
+  const total = (v.pp ?? 0) * 100 + (v.gp ?? 0) * 10 + (v.sp ?? 0) + (v.cp ?? 0) * 0.1;
+  if (!total) return '—';
+  return `${Math.round(total * 100) / 100} cr`;
+}
+
 function weaponTable(weapons, heading) {
   const DTYPE = { piercing:'P', bludgeoning:'B', slashing:'S', electricity:'E', fire:'Fire', cold:'Cold', force:'Force', void:'Void' };
   const rows = [...weapons].sort((a,b) => (a.system.level?.value??0)-(b.system.level?.value??0) || a.name.localeCompare(b.name)).map(w => {
@@ -1488,58 +2044,73 @@ function weaponTable(weapons, heading) {
     const dtype = DTYPE[s.damage?.damageType] ?? (s.damage?.damageType ?? '?');
     const range = s.range ?? '—';
     const traits= (s.traits?.value??[]).filter(t=>!['tech','common'].includes(t)).join(', ');
-    const price = s.price?.value?.gp != null ? `${s.price.value.gp}gp` : s.price?.value?.sp != null ? `${s.price.value.sp}sp` : '—';
+    const price = creditPrice(s);
     return `<tr><td><strong>${w.name}</strong></td><td>${s.level?.value??'?'}</td><td>${s.bulk?.value??'?'}</td><td>${price}</td><td>${dmg} ${dtype}</td><td>${range}ft</td><td>${traits||'—'}</td></tr>`;
   }).join('\n');
   return `<div class="equipment-subsection"><h4 class="equip-table-title">${heading}</h4><div class="equipment-table-wrap">
-    <table class="data-table"><thead><tr><th>Name</th><th>Lvl</th><th>Bulk</th><th>Price</th><th>Damage</th><th>Range</th><th>Traits</th></tr></thead><tbody>${rows}</tbody></table>
+    <table class="data-table"><thead><tr><th>Name</th><th>Lvl</th><th>Bulk</th><th>Credits</th><th>Damage</th><th>Range</th><th>Traits</th></tr></thead><tbody>${rows}</tbody></table>
   </div></div>`;
 }
 
 function armorTable(armors, heading) {
   const rows = [...armors].sort((a,b) => (a.system.level?.value??0)-(b.system.level?.value??0) || a.name.localeCompare(b.name)).map(a => {
     const s = a.system;
-    const price = s.price?.value?.gp != null ? `${s.price.value.gp}gp` : s.price?.value?.sp != null ? `${s.price.value.sp}sp` : '—';
+    const price = creditPrice(s);
     return `<tr><td><strong>${a.name}</strong></td><td>${s.level?.value??0}</td><td>${s.bulk?.value??'?'}</td><td>${price}</td><td>+${s.acBonus??'?'}</td><td>${s.dexCap??'?'}</td><td>${s.checkPenalty??0}</td><td>${s.speedPenalty??0}</td><td>${s.strength??'?'}</td></tr>`;
   }).join('\n');
   return `<div class="equipment-subsection"><h4 class="equip-table-title">${heading}</h4><div class="equipment-table-wrap">
-    <table class="data-table"><thead><tr><th>Name</th><th>Lvl</th><th>Bulk</th><th>Price</th><th>AC</th><th>Dex Cap</th><th>Check</th><th>Speed</th><th>Str</th></tr></thead><tbody>${rows}</tbody></table>
+    <table class="data-table"><thead><tr><th>Name</th><th>Lvl</th><th>Bulk</th><th>Credits</th><th>AC</th><th>Dex Cap</th><th>Check</th><th>Speed</th><th>Str</th></tr></thead><tbody>${rows}</tbody></table>
   </div></div>`;
 }
 
 function modTable(mods, heading) {
   const rows = [...mods].sort((a,b) => (a.system.level?.value??0)-(b.system.level?.value??0) || a.name.localeCompare(b.name)).map(m => {
     const s = m.system;
-    const price = s.price?.value?.gp != null ? `${s.price.value.gp}gp` : s.price?.value?.sp != null ? `${s.price.value.sp}sp` : '—';
+    const price = creditPrice(s);
     const desc  = (s.description?.value??'').replace(/<[^>]+>/g,'').trim().slice(0,100);
     return `<tr><td><strong>${m.name}</strong></td><td>${s.level?.value??'?'}</td><td>${price}</td><td>${desc}</td></tr>`;
   }).join('\n');
   return `<div class="equipment-subsection"><h4 class="equip-table-title">${heading}</h4><div class="equipment-table-wrap">
-    <table class="data-table"><thead><tr><th>Mod</th><th>Lvl</th><th>Price</th><th>Effect</th></tr></thead><tbody>${rows}</tbody></table>
+    <table class="data-table"><thead><tr><th>Mod</th><th>Lvl</th><th>Credits</th><th>Effect</th></tr></thead><tbody>${rows}</tbody></table>
   </div></div>`;
 }
 
-function renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades) {
+function renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades, shields) {
   const byGroup = { pistol:[], rifle:[], shotgun:[], sniper:[], bomb:[] };
   for (const w of weapons) { const g = w.system.group ?? 'pistol'; (byGroup[g] ?? byGroup.pistol).push(w); }
 
   const traitKey = `<p class="trait-key"><strong>automatic</strong> Burst: cone Reflex save &nbsp;·&nbsp; <strong>burst-fire</strong> 3 attacks ◆◆, half damage each &nbsp;·&nbsp; <strong>fatal-dX</strong> Crit: die→dX +1 &nbsp;·&nbsp; <strong>kickback</strong> −2 attack unless braced &nbsp;·&nbsp; <strong>scatter-X</strong> Splash within X ft &nbsp;·&nbsp; <strong>unwieldy</strong> 1 Strike/turn &nbsp;·&nbsp; <strong>volley-X</strong> −2 within X ft</p>`;
 
-  const shieldRows = [
-    ['Kinetic Shield','1','15sp','30 Shield HP; recharges 10 HP/turn'],
-    ['Shield HP Mod — Tier 1','3','60sp','+10 max HP (→ 40)'],
-    ['Shield HP Mod — Tier 2','6','250sp','+20 max HP (→ 50)'],
-    ['Shield HP Mod — Tier 3','9','700sp','+40 max HP (→ 70)'],
-    ['Shield HP Mod — Tier 4','12','1,600sp','+70 max HP (→ 100)'],
-    ['Shield Regen Mod — Tier 1','3','60sp','Recharge 15 HP/turn'],
-    ['Shield Regen Mod — Tier 2','6','250sp','Recharge 20 HP/turn'],
-    ['Shield Regen Mod — Tier 3','9','700sp','Recharge 25 HP/turn'],
-    ['Shield Regen Mod — Tier 4','12','1,600sp','Recharge 30 HP/turn'],
-  ].map(([n,l,p,e]) => `<tr><td><strong>${n}</strong></td><td>${l}</td><td>${p}</td><td>${e}</td></tr>`).join('\n');
+  // Driven from the me-shields pack so levels/prices can't drift from the data.
+  const SHIELD_EFFECTS = {
+    'Kinetic Shield': '30 Shield HP; recharges 10 HP/turn',
+    'Shield HP Mod - Tier 1': '+10 max HP (→ 40)',
+    'Shield HP Mod - Tier 2': '+20 max HP (→ 50)',
+    'Shield HP Mod - Tier 3': '+40 max HP (→ 70)',
+    'Shield HP Mod - Tier 4': '+70 max HP (→ 100)',
+    'Shield Regen Mod - Tier 1': 'Recharge 15 HP/turn',
+    'Shield Regen Mod - Tier 2': 'Recharge 20 HP/turn',
+    'Shield Regen Mod - Tier 3': 'Recharge 25 HP/turn',
+    'Shield Regen Mod - Tier 4': 'Recharge 30 HP/turn',
+  };
+  const shieldRows = shields
+    .filter(s => SHIELD_EFFECTS[s.name])
+    .sort((a, b) => (a.system.level?.value ?? 0) - (b.system.level?.value ?? 0) || a.name.localeCompare(b.name))
+    .map(s => `<tr><td><strong>${s.name.replace(' - ', ' — ')}</strong></td><td>${s.system.level?.value ?? '?'}</td>`
+      + `<td>${creditPrice(s.system)}</td><td>${SHIELD_EFFECTS[s.name]}</td></tr>`)
+    .join('\n');
+
+  const frameRows = shields
+    .filter(s => /Combat Frame$/.test(s.name))
+    .map(s => {
+      const ap = (s.system.description?.value ?? '').match(/(\d+)\s*Armor Points?/i)?.[1]
+        ?? { 'Light Combat Frame':'20','Standard Combat Frame':'50','Heavy Combat Frame':'100','Titan Combat Frame':'200' }[s.name] ?? '—';
+      return `<tr><td><strong>${s.name}</strong></td><td>${ap}</td></tr>`;
+    }).join('\n');
 
   const grenadeEntries = [...grenades].sort((a,b) => (a.system.level?.value??0)-(b.system.level?.value??0)).map(g => {
     const s = g.system;
-    const price = s.price?.value?.gp != null ? `${s.price.value.gp} gp` : '—';
+    const price = creditPrice(s);
     return `<div class="feat-entry"><div class="feat-header"><div class="feat-name-line"><span class="feat-name">${g.name}</span></div><div class="feat-level-badge">LVL ${s.level?.value??'?'} · ${price} · 3 uses</div></div><div class="feat-description">${s.description?.value??''}</div></div>`;
   }).join('\n');
 
@@ -1549,7 +2120,7 @@ function renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades
     <h2 class="class-name">Equipment</h2>
     <p class="class-tagline">Weapons · Armor · Shields · Modifications · Grenades</p>
   </div></div></div>
-  <h3 class="section-bar" style="background:#0f2034">Weapons</h3>
+  <h3 class="section-bar" style="background:#0f2034" id="equip-weapons">Weapons</h3>
   <p class="section-intro">All weapons carry the <strong>tech</strong> trait. Damage type abbreviations: P = piercing, E = electricity, B = bludgeoning, Fire, Cold, Force.</p>
   ${traitKey}
   ${weaponTable(byGroup.pistol,'Pistols &amp; SMGs')}
@@ -1557,20 +2128,26 @@ function renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades
   ${weaponTable(byGroup.shotgun,'Shotguns')}
   ${weaponTable(byGroup.sniper,'Sniper Rifles')}
   ${weaponTable(byGroup.bomb,'Heavy Weapons')}
-  <h3 class="section-bar" style="background:#0f2034">Armor</h3>
-  <p class="section-intro">All armors carry the <strong>tech</strong> trait. Heavy armors also carry <strong>bulwark</strong>. Str = Strength score required to avoid Speed penalty.</p>
+  <h3 class="section-bar" style="background:#0f2034" id="equip-weapon-mods">Weapon Mods</h3>
+  <p class="section-intro">Weapon mods install into a single weapon and provide passive or triggered bonuses. Most weapons accept one mod.</p>
+  ${modTable(weaponMods,'Weapon Mods')}
+  <h3 class="section-bar" style="background:#0f2034" id="equip-armor">Armor</h3>
+  <p class="section-intro">All armors carry the <strong>tech</strong> trait. Heavy armors also carry <strong>bulwark</strong>. Str = Strength score required to avoid the Speed penalty.</p>
   ${armorTable(armors.filter(a=>a.system.category==='light'),'Light Armor')}
   ${armorTable(armors.filter(a=>a.system.category==='medium'),'Medium Armor')}
   ${armorTable(armors.filter(a=>a.system.category==='heavy'),'Heavy Armor')}
-  <h3 class="section-bar" style="background:#0f2034">Weapon Modifications</h3>
-  ${modTable(weaponMods,'Weapon Mods')}
-  <h3 class="section-bar" style="background:#0f2034">Armor Modifications</h3>
+  <h3 class="section-bar" style="background:#0f2034" id="equip-armor-mods">Armor Mods</h3>
+  <p class="section-intro">Armor mods install into a single suit of armor. Most armors accept one mod.</p>
   ${modTable(armorMods,'Armor Mods')}
-  <h3 class="section-bar" style="background:#0f2034">Kinetic Shields &amp; Upgrades</h3>
+  <h3 class="section-bar" style="background:#0f2034" id="equip-shields">Kinetic Shields &amp; Upgrades</h3>
+  <p class="section-intro">Shield hardware and its upgrade mods. See <strong>Shield Mechanics</strong> for how these layers behave in play.</p>
   <div class="equipment-subsection"><div class="equipment-table-wrap">
-    <table class="data-table"><thead><tr><th>Item</th><th>Lvl</th><th>Price</th><th>Effect</th></tr></thead><tbody>${shieldRows}</tbody></table>
+    <table class="data-table"><thead><tr><th>Item</th><th>Lvl</th><th>Credits</th><th>Effect</th></tr></thead><tbody>${shieldRows}</tbody></table>
   </div></div>
-  <h3 class="section-bar" style="background:#0f2034">Grenades</h3>
+  <div class="equipment-subsection"><h4 class="equip-table-title">Combat Frames</h4><div class="equipment-table-wrap">
+    <table class="data-table"><thead><tr><th>Frame</th><th>Armor Points</th></tr></thead><tbody>${frameRows}</tbody></table>
+  </div></div>
+  <h3 class="section-bar" style="background:#0f2034" id="equip-grenades">Grenades</h3>
   <p class="section-intro">Grenades are consumables sold in packs of 3. All require ◆◆ to use unless noted.</p>
   <div class="equipment-table-wrap"><div class="feats-columns">${grenadeEntries}</div></div>
 </div></section>`;
@@ -1584,6 +2161,7 @@ async function main() {
   // ── Load all class sections ──────────────────────────────────────────────────
   const generalFeatsByPack = new Map(); // packLabel -> feat[]
   const classSections = [];
+  const classFeatSets = [];  // { cls, feats } consumed by the Feats section
 
   for (const cls of CLASSES) {
     const classFeat = await loadFeat(...cls.classFile);
@@ -1616,6 +2194,7 @@ async function main() {
     });
 
     classSections.push(renderClass(cls, classFeat, classSpecificFeats, progressionFeats, masteryFeats));
+    classFeatSets.push({ cls, feats: classSpecificFeats.filter(f => !(f.system?.traits?.value ?? []).includes('progression')) });
   }
 
   // ── Load explicit General Feats ──────────────────────────────────────────────
@@ -1640,10 +2219,10 @@ async function main() {
     )
   );
 
-  const generalSection = renderGeneralSection(sortedGeneralPacks);
+  // (Feats section is assembled below, once ancestry feats are loaded.)
 
   // ── Load new packs ─────────────────────────────────────────────────────────
-  const [ancestries, heritages, ancestryFeats, backgrounds, weapons, armors, weaponMods, armorMods, grenades] = await Promise.all([
+  const [ancestries, heritages, ancestryFeats, backgrounds, weapons, armors, weaponMods, armorMods, grenades, shields, creatures, vehicles, ships] = await Promise.all([
     loadDir('me-ancestries'),
     loadDir('me-heritages'),
     loadDir('me-ancestry-feats'),
@@ -1653,30 +2232,61 @@ async function main() {
     loadDir('me-weapon-mods'),
     loadDir('me-armor-mods'),
     loadDir('me-grenades'),
+    loadDir('me-shields'),
+    loadDir('me-creatures'),
+    loadDir('me-vehicles'),
+    loadDir('me-ships'),
   ]);
+
+  const npcFactions = await loadNpcsByFaction();
 
   const ancestriesSection  = renderAncestriesSection(ancestries, heritages, ancestryFeats);
   const backgroundsSection = renderBackgroundsSection(backgrounds);
-  const equipmentSection   = renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades);
+  const equipmentSection   = renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades, shields);
+  const featsSection       = renderFeatsSection(classFeatSets, ancestryFeats, ancestries, sortedGeneralPacks);
+  const bestiarySection    = renderBestiarySection(npcFactions, creatures, { vehicles, ships });
+  const shieldSection      = renderShieldMechanicsSection();
+
+  const sub = (id, label, pad = '1.4rem', colour = '') =>
+    `<div class="toc-entry sub" style="padding-left:${pad}"><a href="#${id}"${colour ? ` style="color:${colour}"` : ''}>${label}</a>`
+    + `<span class="toc-dot"></span><span class="toc-pg" id="toc-pg-${id}"${colour ? ` style="color:${colour}"` : ''}>—</span></div>`;
 
   const tocEntries = [
-    ...CLASSES.map(c => {
-      const col = CLASS_COLORS[c.name];
-      const id = c.name.toLowerCase();
-      return `<div class="toc-entry"><a href="#${id}" style="color:${col.accent}">${c.name}</a><span class="toc-dot"></span><span class="toc-pg" id="toc-pg-${id}" style="color:${col.accent}">—</span></div>`;
-    }),
-    `<div class="toc-entry"><a href="#general-feats" style="color:#4a9ed6">General Feats</a><span class="toc-dot"></span><span class="toc-pg" id="toc-pg-general-feats">—</span></div>`,
-    `<div class="toc-entry"><a href="#ancestries" style="color:#4a9ed6">Ancestries &amp; Heritages</a><span class="toc-dot"></span><span class="toc-pg" id="toc-pg-ancestries">—</span></div>`,
-    `<div class="toc-entry"><a href="#backgrounds" style="color:#4a9ed6">Backgrounds</a><span class="toc-dot"></span><span class="toc-pg" id="toc-pg-backgrounds">—</span></div>`,
-    `<div class="toc-entry"><a href="#equipment" style="color:#4a9ed6">Equipment</a><span class="toc-dot"></span><span class="toc-pg" id="toc-pg-equipment">—</span></div>`,
-  ].join('\n');
+    `<div class="toc-part">Part I · Character Options</div>`,
+    sub('ancestries', 'Ancestries &amp; Heritages'),
+    ...[...ancestries].sort((a, b) => a.name.localeCompare(b.name))
+      .map(a => sub('ancestry-' + ancestrySlug(a), a.name, '2.6rem')),
+    sub('classes', 'Classes'),
+    ...CLASSES.map(c => sub(c.name.toLowerCase(), titleCase(c.name), '2.6rem', CLASS_COLORS[c.name].accent)),
+    sub('backgrounds', 'Backgrounds'),
+    sub('feats', 'Feats'),
+    sub('feats-class', 'Class Feats', '2.6rem'),
+    sub('feats-racial', 'Racial Feats', '2.6rem'),
+    sub('feats-general', 'General &amp; Skill Feats', '2.6rem'),
+    sub('equipment', 'Equipment'),
+    sub('equip-weapons', 'Weapons', '2.6rem'),
+    sub('equip-weapon-mods', 'Weapon Mods', '2.6rem'),
+    sub('equip-armor', 'Armor', '2.6rem'),
+    sub('equip-armor-mods', 'Armor Mods', '2.6rem'),
+    sub('equip-grenades', 'Grenades', '2.6rem'),
+    `<div class="toc-part">Part II · Bestiary</div>`,
+    sub('npcs', 'NPCs'),
+    sub('creatures', 'Creatures'),
+    sub('vehicles', 'Vehicles &amp; Ships'),
+    `<div class="toc-part">Part III · Shield Mechanics</div>`,
+    sub('damage-routing', 'Damage Routing'),
+    sub('kinetic-shields', 'Kinetic Shields'),
+    sub('combat-frames', 'Combat Armor Frames'),
+    sub('biotic-barrier', 'Biotic Barrier'),
+    sub('ammo-vs-defences', 'Ammo Powers vs. Defences'),
+  ].join('');
 
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mass Effect Class Compendium</title>
+<title>Mass Effect Starfinder 2e Conversion</title>
 <style>${CSS}${ICON_CSS}</style>
 </head>
 <body>
@@ -1691,9 +2301,9 @@ async function main() {
 
 <div class="title-page">
   <img src="images/MELogo.png" alt="Mass Effect" class="title-logo">
-  <div class="title-sub">Class Compendium</div>
+  <div class="title-sub">Starfinder 2e Conversion</div>
   <div class="title-rule"></div>
-  <p class="title-body">A complete reference for all six player classes — Soldier, Engineer, Adept, Vanguard, Infiltrator, and Sentinel — including every available class feat and progression feature.</p>
+  <p class="title-body">A complete reference for the Mass Effect conversion — character options for all six classes, a bestiary of ready-to-run NPCs, creatures and vehicles, and the shield, armor and biotic barrier mechanics that drive combat.</p>
 </div>
 
 <div class="toc">
@@ -1703,23 +2313,40 @@ async function main() {
   </div>
 </div>
 
-${classSections.join('\n\n')}
-
-${generalSection}
+${partDivider('character-options', 'Part I', 'Character Options',
+  'Everything needed to build a character: ancestries and heritages, the six classes, backgrounds, the full feat catalogue, and equipment.')}
 
 ${ancestriesSection}
 
+${partDivider('classes', 'Part I · Section 2', 'Classes',
+  'The six Mass Effect classes. Each entry covers its class feature, advancement and mastery chain, plus an index of its feats — the feats themselves are catalogued under Feats.')}
+
+${classSections.join('')}
+
 ${backgroundsSection}
 
+${featsSection}
+
 ${equipmentSection}
+
+${partDivider('bestiary', 'Part II', 'Bestiary',
+  'Ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.')}
+
+${bestiarySection}
+
+${partDivider('shield-mechanics', 'Part III', 'Shield Mechanics',
+  'How biotic barriers, kinetic shields and combat armor frames layer over Hit Points — and how ammo powers cut through them.')}
+
+${shieldSection}
 
 </div>
 </body>
 </html>`;
 
   await mkdir('docs', { recursive: true });
-  await writeFile('docs/class-compendium.html', html, 'utf8');
-  console.log(`✓ Wrote docs/class-compendium.html (${html.length.toLocaleString()} chars)`);
+  await writeFile('docs/mass-effect-starfinder-2e-conversion.html', html, 'utf8');
+  console.log(`✓ Wrote docs/mass-effect-starfinder-2e-conversion.html (${html.length.toLocaleString()} chars)`);
+  console.log(`  NPC section: ${npcFactions.length} factions, ${npcFactions.reduce((n,f)=>n+f.npcs.length,0)} stat blocks`);
 }
 
 function packDisplayName(pack) {

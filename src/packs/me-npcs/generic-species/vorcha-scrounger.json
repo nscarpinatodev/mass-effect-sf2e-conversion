@@ -127,7 +127,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/vorcha-scrounger.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/vorcha-scrounger.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -192,6 +192,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/vorcha-scrounger.webp"
+      }
     }
   },
   "items": [
@@ -251,6 +263,106 @@
         "default": 0
       },
       "_key": "!actors.items!MENPC00000000033.NPCMelee003300A1"
+    },
+    {
+      "folder": null,
+      "name": "Predator Armor (M)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Medium-human-Predator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Hahne-Kedar's Predator series leverages the manufacturer's proven armalite fabrication to deliver reliable tactical-grade protection. Enhanced barrier efficiency and high-density plating make this suit a preferred choice for experienced soldiers who need performance they can count on.</p>"
+        },
+        "rules": [],
+        "slug": "predator-armor-hk-m",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "predator-armor-hk",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 280
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "medium",
+        "group": "chain",
+        "acBonus": 3,
+        "strength": 2,
+        "dexCap": 3,
+        "checkPenalty": -2,
+        "speedPenalty": -5,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "4cd092b4829dcf93",
+      "_key": "!actors.items!MENPC00000000033.4cd092b4829dcf93",
+      "sort": 200000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.e06f342e7b2b8b57"
+      }
     }
   ],
   "effects": [],

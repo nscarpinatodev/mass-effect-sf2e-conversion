@@ -28,6 +28,16 @@
           "verified": "1.1.1"
         }
       }
+    ],
+    "requires": [
+      {
+        "id": "scorpious187s-lib",
+        "type": "module",
+        "manifest": "https://github.com/nscarpinatodev/scorpious187s-lib/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "0.3.0"
+        }
+      }
     ]
   },
   "authors": [
@@ -36,7 +46,12 @@
       "flags": {}
     }
   ],
-  "scripts": ["scripts/shield-system.js", "scripts/paragon-renegade.js", "scripts/journal-viewer.js", "scripts/me-powers.js"],
+  "scripts": [
+    "scripts/shield-system.js",
+    "scripts/paragon-renegade.js",
+    "scripts/journal-viewer.js",
+    "scripts/me-powers.js"
+  ],
   "packs": [
     {
       "name": "me-ancestries",
@@ -44,7 +59,10 @@
       "path": "packs/me-ancestries",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -53,7 +71,10 @@
       "path": "packs/me-heritages",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -62,7 +83,10 @@
       "path": "packs/me-ancestry-feats",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -71,7 +95,10 @@
       "path": "packs/me-backgrounds",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -80,7 +107,10 @@
       "path": "packs/me-classes",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -89,7 +119,10 @@
       "path": "packs/me-combat-passives",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -98,7 +131,10 @@
       "path": "packs/me-class-progressions",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -107,7 +143,10 @@
       "path": "packs/me-npcs",
       "type": "Actor",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -116,7 +155,10 @@
       "path": "packs/me-creatures",
       "type": "Actor",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -125,7 +167,10 @@
       "path": "packs/me-vehicles",
       "type": "Actor",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -134,7 +179,10 @@
       "path": "packs/me-ships",
       "type": "Actor",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -143,7 +191,10 @@
       "path": "packs/me-armors",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -152,7 +203,10 @@
       "path": "packs/me-armor-mods",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -161,7 +215,10 @@
       "path": "packs/me-weapons",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -170,7 +227,10 @@
       "path": "packs/me-weapon-mods",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -179,7 +239,10 @@
       "path": "packs/me-shields",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -188,7 +251,10 @@
       "path": "packs/me-grenades",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -197,7 +263,10 @@
       "path": "packs/me-items",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -206,7 +275,10 @@
       "path": "packs/me-ammo-powers",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -215,7 +287,10 @@
       "path": "packs/me-biotic-powers",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -224,7 +299,10 @@
       "path": "packs/me-tech-powers",
       "type": "Item",
       "system": "pf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -233,7 +311,10 @@
       "path": "packs/sf2e-me-ancestries",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -242,7 +323,10 @@
       "path": "packs/sf2e-me-heritages",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -251,7 +335,10 @@
       "path": "packs/sf2e-me-ancestry-feats",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -260,7 +347,10 @@
       "path": "packs/sf2e-me-backgrounds",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -269,7 +359,10 @@
       "path": "packs/sf2e-me-classes",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -278,7 +371,10 @@
       "path": "packs/sf2e-me-combat-passives",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -287,7 +383,10 @@
       "path": "packs/sf2e-me-class-progressions",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -296,7 +395,10 @@
       "path": "packs/sf2e-me-npcs",
       "type": "Actor",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -305,7 +407,10 @@
       "path": "packs/sf2e-me-creatures",
       "type": "Actor",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -314,7 +419,10 @@
       "path": "packs/sf2e-me-vehicles",
       "type": "Actor",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -323,7 +431,10 @@
       "path": "packs/sf2e-me-ships",
       "type": "Actor",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -332,7 +443,10 @@
       "path": "packs/sf2e-me-armors",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -341,7 +455,10 @@
       "path": "packs/sf2e-me-armor-mods",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -350,7 +467,10 @@
       "path": "packs/sf2e-me-weapons",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -359,7 +479,10 @@
       "path": "packs/sf2e-me-weapon-mods",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -368,7 +491,10 @@
       "path": "packs/sf2e-me-shields",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -377,7 +503,10 @@
       "path": "packs/sf2e-me-grenades",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -386,7 +515,10 @@
       "path": "packs/sf2e-me-items",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -395,7 +527,10 @@
       "path": "packs/sf2e-me-ammo-powers",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -404,7 +539,10 @@
       "path": "packs/sf2e-me-biotic-powers",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -413,7 +551,10 @@
       "path": "packs/sf2e-me-tech-powers",
       "type": "Item",
       "system": "sf2e",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     }
   ],

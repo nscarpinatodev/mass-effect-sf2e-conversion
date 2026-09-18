@@ -3,13 +3,13 @@
   "_id": "Ba4e2our66qWW6RY",
   "name": "Blood Pack Warrior",
   "type": "npc",
-  "img": "icons/svg/mystery-man.svg",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/blood-pack-warrior.png",
   "system": {
     "attributes": {
       "hp": {
-        "value": 90,
+        "value": 70,
         "temp": 0,
-        "max": 90,
+        "max": 70,
         "details": ""
       },
       "ac": {
@@ -123,7 +123,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "icons/svg/mystery-man.svg",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/blood-pack-warrior.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -187,6 +187,18 @@
       "pf2e": {
         "linkToActorSize": true,
         "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/blood-pack-warrior.webp"
       }
     }
   },
@@ -442,6 +454,218 @@
         "default": 0
       },
       "_key": "!actors.items!Ba4e2our66qWW6RY.S8UWa5T6dT461wZc"
+    },
+    {
+      "folder": null,
+      "name": "M-23 Eviscerator",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Eviscerator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-23 Eviscerator fires razor-edged ceramic frags that shred organic matter with brutal efficiency. Produced by Hahne-Kedar for police and security markets, its jagged scatter pattern is specifically designed to maximize tissue damage in close-quarters engagements. Alliance command has expressed concerns about the weapon's use against prisoners of war - a complaint largely ignored by those carrying it.</p>"
+        },
+        "rules": [],
+        "slug": "m-23-eviscerator",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "scatter-5"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "baseItem": "m-23-eviscerator",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 100
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "shotgun",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 15,
+        "expend": 1,
+        "ammo": {
+          "capacity": 6,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "2a99c5f0e07e94f4",
+      "_key": "!actors.items!Ba4e2our66qWW6RY.2a99c5f0e07e94f4",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.6c515df2ce8a709d"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Gladiator Armor (H)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Heavy-human-Gladiator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Elkoss Combine's Gladiator line uses mass-produced polymer composites to keep costs low. While barrier output and impact absorption fall short of premium competitors, the armor offers reliable protection for mercenaries and contractors operating on tight budgets.</p>"
+        },
+        "rules": [],
+        "slug": "gladiator-armor-h",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "bulwark",
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "gladiator-armor",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 40
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "heavy",
+        "group": "plate",
+        "acBonus": 3,
+        "strength": 3,
+        "dexCap": 1,
+        "checkPenalty": -3,
+        "speedPenalty": -10,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "c828a6a79eb5a8d9",
+      "_key": "!actors.items!Ba4e2our66qWW6RY.c828a6a79eb5a8d9",
+      "sort": 700000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.574641983a502ae5"
+      }
     }
   ],
   "effects": [],

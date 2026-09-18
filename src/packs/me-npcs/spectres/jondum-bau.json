@@ -129,7 +129,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/jondum-bau.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/jondum-bau.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -194,6 +194,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/jondum-bau.webp"
+      }
     }
   },
   "items": [
@@ -209,7 +221,7 @@
         },
         "damageRolls": {
           "dmg00w0n8": {
-            "damage": "1d8+4",
+            "damage": "3d8+6",
             "damageType": "piercing",
             "category": null
           },
@@ -273,7 +285,7 @@
         },
         "damageRolls": {
           "dmg00ryYT": {
-            "damage": "1d8+4",
+            "damage": "3d8+5",
             "damageType": "slashing",
             "category": null
           },
@@ -475,6 +487,217 @@
         "default": 0
       },
       "_key": "!actors.items!jZuBASIeU177s1MC.XvluzIyD7COm10To"
+    },
+    {
+      "folder": null,
+      "name": "Scorpion",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Scorpion_Heavy_Pistol.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The Scorpion is a pistol that fires sticky explosive rounds that attach to their target before detonating a moment after impact. Enemies who survive the initial hit are forced to choose between standing still while the charge detonates or moving to let it blow - neither is a good option. The blast radius and concussive force makes it particularly effective against clustered infantry who can't scatter before the detonation chain catches them all.</p>"
+        },
+        "rules": [],
+        "slug": "scorpion",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "scatter-5"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 7
+        },
+        "baseItem": "scorpion",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 700
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 2,
+          "die": "d6",
+          "damageType": "bludgeoning",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 25,
+        "expend": 1,
+        "ammo": {
+          "capacity": 10,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "advanced",
+        "runes": {
+          "potency": 0,
+          "striking": 1,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "d544a50333ca8257",
+      "_key": "!actors.items!jZuBASIeU177s1MC.d544a50333ca8257",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.631ffa50b59a0051"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Colossus Armor (L)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Light-human-Colossus.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Kassa Fabrication's Colossus hardsuit is built around a triple-layer ceramic ablative shell reinforced with woven durasteel. Onboard micro-generators boost shield efficiency while the suit's distinctive red-and-black plating provides the highest raw damage protection available to a soldier in the field.</p>"
+        },
+        "rules": [],
+        "slug": "colossus-l",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 2
+        },
+        "quantity": 1,
+        "baseItem": "colossus",
+        "bulk": {
+          "value": 1
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 120
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "light",
+        "group": "leather",
+        "acBonus": 4,
+        "strength": 1,
+        "dexCap": 3,
+        "checkPenalty": -1,
+        "speedPenalty": 0,
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "945e26703afe8e22",
+      "_key": "!actors.items!jZuBASIeU177s1MC.945e26703afe8e22",
+      "sort": 700000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.07e67fbdcfb473ae"
+      }
     }
   ],
   "effects": [],

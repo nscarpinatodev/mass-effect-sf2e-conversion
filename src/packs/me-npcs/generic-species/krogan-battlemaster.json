@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 220,
+        "value": 154,
         "temp": 130,
-        "max": 220,
+        "max": 154,
         "details": "fast healing 3 (below half HP)"
       },
       "ac": {
@@ -127,7 +127,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/krogan-battlemaster.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/krogan-battlemaster.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -191,6 +191,18 @@
       "pf2e": {
         "linkToActorSize": true,
         "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/krogan-battlemaster.webp"
       }
     }
   },

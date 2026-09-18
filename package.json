@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "node build.mjs",
-    "clean": "node --input-type=module -e \"import { rmSync } from 'fs'; rmSync('packs', { recursive: true, force: true });\""
+    "clean": "node --input-type=module -e \"import { rmSync } from 'fs'; rmSync('packs', { recursive: true, force: true });\"",
+    "tokens": "node scripts/generate-tokens.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.0",

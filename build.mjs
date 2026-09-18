@@ -36,15 +36,58 @@ const SF2E_PACKS = PACKS.map(({ src, dest }) => ({
 // pointing at the me-* packs; when building the SF2e variants we rewrite them
 // to the matching sf2e-me-* pack so each system self-references correctly.
 const SF2E_SOURCE_RX = /(Compendium\.mass-effect-sf2e-conversion\.)(me-)/g;
+
+// Content also hard-codes `systems/pf2e/...` icon paths (strike/action glyphs,
+// feat & background icons, unidentified-item art). Those files don't exist for a
+// user running SF2e without PF2e installed, so the SF2e build repoints them at
+// the SF2e system, which ships the same icon set under the same names — with two
+// exceptions that must be mapped explicitly.
+const SF2E_ASSET_EXCEPTIONS = {
+  "systems/pf2e/icons/unidentified_item_icons/worn-item.webp":
+    "systems/sf2e/icons/unidentified_item_icons/worn-items.webp", // sf2e uses the plural
+  "systems/pf2e/icons/spells/mystic-armor.webp":
+    "systems/sf2e/icons/spells/instant-armor.webp",
+};
+const SF2E_ASSET_RX = /systems\/pf2e\//g;
+
+// SF2e denominates prices in Credits, which the system stores in `price.value.sp`
+// (its lang maps PF2E.Currency.credits -> "Credits", and its own equipment pack
+// uses {sp: N} almost exclusively). Source is authored in PF2e coin, so the SF2e
+// build folds every denomination down to a single sp total: 1 Credit = 1 sp,
+// 10 sp = 1 gp, 10 gp = 1 pp, 10 cp = 1 sp.
+const COIN_TO_SP = { pp: 100, gp: 10, sp: 1, cp: 0.1 };
+
+function toCredits(priceValue) {
+  let total = 0, found = false;
+  for (const [coin, mult] of Object.entries(COIN_TO_SP)) {
+    const n = priceValue[coin];
+    if (typeof n === "number" && n !== 0) { total += n * mult; found = true; }
+  }
+  if (!found) return null;
+  // Guard against float drift from cp (0.1) without truncating real values.
+  total = Math.round(total * 100) / 100;
+  return { sp: total };
+}
+
 function rewriteSf2eSources(value) {
   if (typeof value === "string") {
-    return value.replace(SF2E_SOURCE_RX, "$1sf2e-me-");
+    const mapped = SF2E_ASSET_EXCEPTIONS[value];
+    if (mapped) return mapped;
+    return value
+      .replace(SF2E_ASSET_RX, "systems/sf2e/")
+      .replace(SF2E_SOURCE_RX, "$1sf2e-me-");
   }
   if (Array.isArray(value)) {
     value.forEach((v, i) => { value[i] = rewriteSf2eSources(v); });
     return value;
   }
   if (value && typeof value === "object") {
+    // Convert `price: { value: {...coin} }` in place before recursing.
+    const pv = value.price?.value;
+    if (pv && typeof pv === "object" && !Array.isArray(pv)) {
+      const credits = toCredits(pv);
+      if (credits) value.price.value = credits;
+    }
     for (const k of Object.keys(value)) value[k] = rewriteSf2eSources(value[k]);
     return value;
   }

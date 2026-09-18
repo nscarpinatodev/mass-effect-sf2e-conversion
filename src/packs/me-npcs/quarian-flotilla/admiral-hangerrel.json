@@ -126,7 +126,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/admiral-hangerrel.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/admiral-hangerrel.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -191,6 +191,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/admiral-hangerrel.webp"
+      }
     }
   },
   "items": [
@@ -206,7 +218,7 @@
         },
         "damageRolls": {
           "dmg00hokm": {
-            "damage": "2d8+4",
+            "damage": "2d8+9",
             "damageType": "piercing",
             "category": null
           }
@@ -265,7 +277,7 @@
         },
         "damageRolls": {
           "dmg00CZ4e": {
-            "damage": "1d8+3",
+            "damage": "1d8+7",
             "damageType": "slashing",
             "category": null
           },
@@ -424,6 +436,219 @@
         "default": 0
       },
       "_key": "!actors.items!m6fOyytrw9P2o49T.LAgee8iOW5UBjq1c"
+    },
+    {
+      "folder": null,
+      "name": "M-11 Wraith",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Wraith_Shotgun.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-11 Wraith is a single-shot combat shotgun that sacrifices fire rate for kinetic devastation. Each round must be manually cycled, but the single shell it chambers carries enough mass-accelerated shot to drop a Phantom through their kinetic barrier in one blast. Originally designed for breach-and-clear operations, Cerberus tacticians found its two-shell capacity insufficient for sustained combat - the operatives using it countered that if two shots aren't enough, the problem was aim, not capacity.</p>"
+        },
+        "rules": [],
+        "slug": "m-11-wraith",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "scatter-5",
+            "fatal-d10",
+            "kickback"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 5
+        },
+        "baseItem": "m-11-wraith",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 250
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "shotgun",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 15,
+        "expend": 1,
+        "ammo": {
+          "capacity": 2,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "665d01fcdec0eba3",
+      "_key": "!actors.items!m6fOyytrw9P2o49T.665d01fcdec0eba3",
+      "sort": 500000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.d72ce93b0c70b4f1"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Explorer Armor (M)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Medium-human-Explorer.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Devlon Industries built the Explorer series for survey teams operating in hazardous planetary environments. Internal atmospheric seals and radiation dampeners reduce barrier efficiency compared to combat-focused designs, but the suit allows operations in environments that would otherwise be deadly.</p>"
+        },
+        "rules": [],
+        "slug": "explorer-armor-m",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "explorer-armor",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 60
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "medium",
+        "group": "chain",
+        "acBonus": 3,
+        "strength": 2,
+        "dexCap": 2,
+        "checkPenalty": -1,
+        "speedPenalty": -5,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "7e0d49d26501e8e4",
+      "_key": "!actors.items!m6fOyytrw9P2o49T.7e0d49d26501e8e4",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.b4c7ab2581a39773"
+      }
     }
   ],
   "effects": [],

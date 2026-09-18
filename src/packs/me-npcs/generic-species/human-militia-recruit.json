@@ -3,7 +3,7 @@
   "_id": "uWhXQqtZE5nhnF8N",
   "name": "Militia Recruit",
   "type": "npc",
-  "img": "icons/svg/mystery-man.svg",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/human-militia-recruit.png",
   "system": {
     "attributes": {
       "hp": {
@@ -119,7 +119,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "icons/svg/mystery-man.svg",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/human-militia-recruit.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -183,6 +183,18 @@
       "pf2e": {
         "linkToActorSize": true,
         "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/human-militia-recruit.webp"
       }
     }
   },

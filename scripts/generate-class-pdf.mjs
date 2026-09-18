@@ -1,4 +1,4 @@
-// Converts docs/class-compendium.html to docs/class-compendium.pdf
+// Converts docs/mass-effect-starfinder-2e-conversion.html to the matching .pdf
 // Usage: node scripts/generate-class-pdf.mjs
 // Requires: npm install --save-dev puppeteer-core
 
@@ -11,8 +11,8 @@ import { dirname } from 'path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 
-const HTML_PATH = resolve(ROOT, 'docs', 'class-compendium.html');
-const PDF_PATH  = resolve(ROOT, 'docs', 'class-compendium.pdf');
+const HTML_PATH = resolve(ROOT, 'docs', 'mass-effect-starfinder-2e-conversion.html');
+const PDF_PATH  = resolve(ROOT, 'docs', 'mass-effect-starfinder-2e-conversion.pdf');
 
 const CHROME_PATH = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
 
@@ -108,7 +108,8 @@ await page.evaluateHandle('document.fonts.ready');
 // then measure each section's offsetTop and convert to a page number.
 await page.emulateMediaType('print');
 
-const SECTION_IDS = ['soldier', 'engineer', 'adept', 'vanguard', 'infiltrator', 'sentinel', 'general-feats', 'ancestries', 'backgrounds', 'equipment'];
+const ANCESTRY_SLUGS = ['asari', 'batarian', 'drell', 'elcor', 'hanar', 'human', 'krogan', 'quarian', 'salarian', 'turian', 'volus', 'vorcha'];
+const SECTION_IDS = ['character-options', 'ancestries', ...ANCESTRY_SLUGS.map(s => `ancestry-${s}`), 'classes', 'soldier', 'engineer', 'adept', 'vanguard', 'infiltrator', 'sentinel', 'backgrounds', 'feats', 'feats-class', 'feats-racial', 'feats-general', 'equipment', 'equip-weapons', 'equip-weapon-mods', 'equip-armor', 'equip-armor-mods', 'equip-grenades', 'bestiary', 'npcs', 'creatures', 'vehicles', 'shield-mechanics', 'damage-routing', 'kinetic-shields', 'combat-frames', 'biotic-barrier', 'ammo-vs-defences'];
 // Letter at 96 dpi = 1056 px per page; 48 px bottom margin = 1008 px content height.
 const PAGE_H = 1008;
 
@@ -146,4 +147,4 @@ await page.pdf({
 await browser.close();
 
 const size = statSync(PDF_PATH).size;
-console.log(`Wrote docs/class-compendium.pdf (${(size / 1024 / 1024).toFixed(1)} MB)`);
+console.log(`Wrote docs/mass-effect-starfinder-2e-conversion.pdf (${(size / 1024 / 1024).toFixed(1)} MB)`);

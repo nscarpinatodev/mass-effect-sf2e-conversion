@@ -127,7 +127,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "modules/mass-effect-sf2e-conversion/assets/img/npcs/vorcha-pack-leader.png",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/vorcha-pack-leader.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -192,6 +192,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/vorcha-pack-leader.webp"
+      }
     }
   },
   "items": [
@@ -203,7 +215,7 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "1d8+4",
+            "damage": "1d8+7",
             "damageType": "piercing",
             "category": null
           }
@@ -265,7 +277,7 @@
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "2d6+4",
+            "damage": "3d6+4",
             "damageType": "piercing",
             "category": null
           }

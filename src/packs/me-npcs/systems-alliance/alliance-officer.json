@@ -3,7 +3,7 @@
   "_id": "eoXlHTq0KWhh9Mxj",
   "name": "Alliance Officer",
   "type": "npc",
-  "img": "icons/svg/mystery-man.svg",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/alliance-officer.png",
   "system": {
     "attributes": {
       "hp": {
@@ -125,7 +125,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "icons/svg/mystery-man.svg",
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/alliance-officer.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -190,6 +190,18 @@
         "linkToActorSize": true,
         "autoscale": true
       }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/alliance-officer.webp"
+      }
     }
   },
   "items": [
@@ -205,7 +217,7 @@
         },
         "damageRolls": {
           "dmg00KwbW": {
-            "damage": "1d8+3",
+            "damage": "2d8+6",
             "damageType": "piercing",
             "category": null
           }
@@ -265,7 +277,7 @@
         },
         "damageRolls": {
           "dmg00WUCq": {
-            "damage": "1d8+3",
+            "damage": "2d8+6",
             "damageType": "piercing",
             "category": null
           }
@@ -421,6 +433,217 @@
         "default": 0
       },
       "_key": "!actors.items!eoXlHTq0KWhh9Mxj.EbYSi7Ro4r7hgoCQ"
+    },
+    {
+      "folder": null,
+      "name": "Phaeston",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phaeston_Assault_Rifle.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The Phaeston is a Turian assault rifle designed around their military doctrine of precision automatic fire. Its recoil dampeners and balanced weight distribution allow full-auto fire without significant barrel climb, making it more accurate in sustained bursts than most human-designed equivalents. Alliance soldiers who get their hands on one rarely give it back willingly.</p>"
+        },
+        "rules": [],
+        "slug": "phaeston",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "baseItem": "phaeston",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 100
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "rifle",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 1,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 65,
+        "expend": 1,
+        "ammo": {
+          "capacity": 60,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "83d239ba788096c1",
+      "_key": "!actors.items!eoXlHTq0KWhh9Mxj.83d239ba788096c1",
+      "sort": 500000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.6c21c118376e6890"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Onyx Armor (M)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Medium-human-Onyx.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Aldrin Labs' Onyx series is a reliable entry-level commercial suit produced in high volumes for colonial security forces and private contractors. Standard kinetic barrier output and basic impact plating offer adequate protection for operators without access to military-grade hardware.</p>"
+        },
+        "rules": [],
+        "slug": "onyx-armor-m",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "onyx-armor",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 40
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "medium",
+        "group": "chain",
+        "acBonus": 3,
+        "strength": 2,
+        "dexCap": 1,
+        "checkPenalty": -2,
+        "speedPenalty": -5,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "4a38131b0154aa76",
+      "_key": "!actors.items!eoXlHTq0KWhh9Mxj.4a38131b0154aa76",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.e299606be139b622"
+      }
     }
   ],
   "effects": [],
