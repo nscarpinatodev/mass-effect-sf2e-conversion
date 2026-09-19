@@ -171,7 +171,9 @@ async function useTier(actor, track, tier) {
       tier === 80 ? 'Renegade 80 — Uncompromising'       : null
     );
   if (!name) return;
-  const item = actor.items.getName(name);
+  // Actors set up with the original tracker macro have en-dash names ("Paragon 40 – Inspiring Voice")
+  const normDash = s => s.replace(/\s[–-]\s/, ' — ');
+  const item = actor.items.find(i => normDash(i.name) === name);
   if (!item) return ui.notifications.warn(`${name} not found on actor.`);
   const freq = item.system?.frequency;
   if (!freq || N(freq.value) <= 0) return ui.notifications.warn('No uses left today.');
@@ -468,15 +470,26 @@ Hooks.once('init', () => {
     _addingActor = false;
     _addSearch   = '';
 
-    static open() {
+    static async open(actorId = null) {
       for (const key of [S_IGNORED, S_EXTRA]) {
         const ids = game.settings.get(PR_MODULE, key) ?? [];
         const clean = ids.filter(id => !!game.actors.get(id));
         if (clean.length !== ids.length) game.settings.set(PR_MODULE, key, clean);
       }
       ParagonRenegadeDashboard._instance?.close();
-      ParagonRenegadeDashboard._instance = new ParagonRenegadeDashboard();
-      ParagonRenegadeDashboard._instance.render(true);
+      const inst = new ParagonRenegadeDashboard();
+      if (actorId) {
+        // Opened from a character sheet: make sure the GM's list includes that actor
+        if (game.user.isGM) {
+          const ignored = game.settings.get(PR_MODULE, S_IGNORED) ?? [];
+          const tracked = inst._getTracked().some(a => a.id === actorId);
+          if (ignored.includes(actorId)) inst._showIgnored = true;
+          else if (!tracked) await game.settings.set(PR_MODULE, S_EXTRA, [...(game.settings.get(PR_MODULE, S_EXTRA) ?? []), actorId]);
+        }
+        inst._selectedId = actorId;
+      }
+      ParagonRenegadeDashboard._instance = inst;
+      inst.render(true);
     }
 
     _getTracked() {
@@ -789,7 +802,20 @@ Hooks.once('init', () => {
     menu.appendChild(li);
   });
 
-  globalThis.MassEffectPR = { open: () => ParagonRenegadeDashboard.open() };
+  // Character sheet header button: opens the tracker focused on that character.
+  // PF2e/SF2e character sheets are ApplicationV1, which fires get<Class>HeaderButtons up the chain.
+  Hooks.on('getActorSheetHeaderButtons', (app, buttons) => {
+    const actor = app.actor ?? app.document;
+    if (actor?.type !== 'character' || !actor.isOwner) return;
+    buttons.unshift({
+      label: 'Paragon/Renegade',
+      class: 'me-pr-open',
+      icon: 'fa-solid fa-scale-balanced',
+      onclick: () => ParagonRenegadeDashboard.open(actor.id),
+    });
+  });
+
+  globalThis.MassEffectPR = { open: (actorOrId) => ParagonRenegadeDashboard.open(actorOrId?.id ?? actorOrId ?? null) };
 
   Hooks.on('updateActor', (actor) => {
     const inst = ParagonRenegadeDashboard._instance;
