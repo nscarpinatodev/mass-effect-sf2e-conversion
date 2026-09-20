@@ -1,15 +1,15 @@
-2026/08/26-22:45:51.668 81a4 Recovering log #262
-2026/08/26-22:45:51.681 81a4 Delete type=0 #262
-2026/08/26-22:45:51.682 81a4 Delete type=3 #260
-2026/08/26-22:45:51.696 bd7c Level-0 table #268: started
-2026/08/26-22:45:51.707 bd7c Level-0 table #268: 50980 bytes OK
-2026/08/26-22:45:51.713 bd7c Delete type=0 #266
-2026/08/26-22:45:51.713 bd7c Manual compaction at level-0 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)
-2026/08/26-22:45:51.713 bd7c Manual compaction at level-1 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at '!items!MEFeature0000024' @ 2892 : 1
-2026/08/26-22:45:51.713 bd7c Compacting 1@1 + 1@2 files
-2026/08/26-22:45:51.725 bd7c Generated table #269@1: 55 keys, 50980 bytes
-2026/08/26-22:45:51.725 bd7c Compacted 1@1 + 1@2 files => 50980 bytes
-2026/08/26-22:45:51.730 bd7c compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/08/26-22:45:51.730 bd7c Delete type=2 #264
-2026/08/26-22:45:51.730 bd7c Delete type=2 #268
-2026/08/26-22:45:51.731 bd7c Manual compaction at level-1 from '!items!MEFeature0000024' @ 2892 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)
+2026/09/20-18:02:34.039 8460 Recovering log #272
+2026/09/20-18:02:34.044 8460 Delete type=0 #272
+2026/09/20-18:02:34.044 8460 Delete type=3 #270
+2026/09/20-18:02:34.047 8bdc Level-0 table #278: started
+2026/09/20-18:02:34.055 8bdc Level-0 table #278: 50981 bytes OK
+2026/09/20-18:02:34.057 8bdc Delete type=0 #276
+2026/09/20-18:02:34.057 8bdc Manual compaction at level-0 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)
+2026/09/20-18:02:34.057 8bdc Manual compaction at level-1 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at '!items!MEFeature0000024' @ 3002 : 1
+2026/09/20-18:02:34.057 8bdc Compacting 1@1 + 1@2 files
+2026/09/20-18:02:34.065 8bdc Generated table #279@1: 55 keys, 50981 bytes
+2026/09/20-18:02:34.065 8bdc Compacted 1@1 + 1@2 files => 50981 bytes
+2026/09/20-18:02:34.067 8bdc compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/09/20-18:02:34.067 8bdc Delete type=2 #274
+2026/09/20-18:02:34.067 8bdc Delete type=2 #278
+2026/09/20-18:02:34.067 8bdc Manual compaction at level-1 from '!items!MEFeature0000024' @ 3002 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)

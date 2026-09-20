@@ -1,0 +1,418 @@
+{
+  "name": "FENRIS Mech",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/ME2_FENRIS_Mech.webp",
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "FENRIS Mech",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/ME2_FENRIS_Mech.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/ME2_FENRIS_Mech.webp"
+      }
+    }
+  },
+  "system": {
+    "slug": "fenris-mech",
+    "details": {
+      "level": {
+        "value": 1
+      },
+      "publicNotes": "<p>FENRIS Mechs are quadruped security constructs built by Hahne-Kedar, wearing the same white plating and red running lights as the company's other models. Most people call them attack dogs, and they behave like them: they accelerate to a gallop, leap with the rear legs, bring a target down with the front ones, and taser whatever they have pinned. They are less common than the LOKI and are usually deployed alongside them &mdash; on Alliance colonies, aboard merchant freighters, and by the Blue Suns.</p><p>Their sensor package is built for detection work, reading weapons and chemical traces the way a sniffer dog would.</p><p><strong>Construct Immunities:</strong> Immune to disease, mental effects, poison, sleep, and paralysis.</p><p><strong>No Shields:</strong> A FENRIS carries no kinetic barrier and only light plating. Speed is its defence.</p><p><strong>Weakness 3 to electricity and fire:</strong> Disruptor rounds cook the chassis and incendiary rounds go straight through the plating. Either one drops a FENRIS quickly.</p><p><strong>Pack Deployment:</strong> FENRIS mechs swarm. A crate releases four or more at once, and the danger is the pack reaching a firing line together rather than any one mech's attack.</p><p><strong>Hackable Programming:</strong> A FENRIS runs the same overridable software as every Hahne-Kedar mech. A character adjacent to one, or using an omni-tool within 30 feet, can attempt a DC 17 Computers Lore (or Crafting) check as a 2-action activity to turn it against its own side for 1 minute. On a critical failure, the mech identifies the source of the intrusion and attacks that character in preference to any other target.</p>",
+      "privateNotes": "<p>The post-mortem explosion is the trap. A FENRIS that hits 0 HP does not die &mdash; it drops where it stands, and anything that damages the wreck sets it off. Players who reflexively put an extra round into a downed enemy will find out once; after that, the deactivated chassis becomes terrain they have to route around. Tell them the mech has gone still, not that it is destroyed.</p>",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      },
+      "languages": {
+        "value": [],
+        "details": ""
+      },
+      "blurb": "Hahne-Kedar quadruped security mech that runs down its target, tasers it prone, and detonates if the wreck is disturbed."
+    },
+    "attributes": {
+      "hp": {
+        "value": 20,
+        "max": 20,
+        "temp": 0,
+        "details": ""
+      },
+      "ac": {
+        "value": 16,
+        "details": ""
+      },
+      "speed": {
+        "value": 50,
+        "details": ""
+      },
+      "immunities": [
+        {
+          "type": "disease"
+        },
+        {
+          "type": "mental"
+        },
+        {
+          "type": "paralyzed"
+        },
+        {
+          "type": "poison"
+        },
+        {
+          "type": "sleep"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "electricity",
+          "value": 3
+        },
+        {
+          "type": "fire",
+          "value": 3
+        }
+      ]
+    },
+    "traits": {
+      "value": [
+        "construct",
+        "mindless"
+      ],
+      "size": {
+        "value": "sm"
+      },
+      "rarity": "common"
+    },
+    "abilities": {
+      "str": {
+        "mod": 2
+      },
+      "dex": {
+        "mod": 4
+      },
+      "con": {
+        "mod": 2
+      },
+      "int": {
+        "mod": -3
+      },
+      "wis": {
+        "mod": 0
+      },
+      "cha": {
+        "mod": -5
+      }
+    },
+    "saves": {
+      "fortitude": {
+        "value": 7,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 10,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 5,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 6
+      }
+    },
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "perception": {
+      "details": "detects weapons and chemical traces",
+      "mod": 7,
+      "senses": [
+        {
+          "type": "scent",
+          "acuity": "imprecise",
+          "range": 30
+        }
+      ],
+      "vision": true
+    },
+    "resources": {},
+    "initiative": {
+      "statistic": "perception"
+    }
+  },
+  "items": [
+    {
+      "_id": "f3nr15taser00001",
+      "name": "Taser",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "weaponType": {
+          "value": "melee"
+        },
+        "slug": "fenris-mech-taser",
+        "bonus": {
+          "value": 10
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "1d6+2",
+            "damageType": "electricity"
+          }
+        },
+        "traits": {
+          "value": [
+            "electricity",
+            "finesse",
+            "unarmed"
+          ]
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "description": {
+          "value": "<p>A contact taser in the mech's head, used once the front legs have something pinned.</p><p>On a hit, the target must succeed at a @Check[fortitude|dc:17] save or be <strong>stunned 1</strong>. On a critical hit the save is made against the same DC, and on a failure the target is instead <strong>stunned 2</strong>.</p>",
+          "gm": ""
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "rules": [],
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!f3nr15mech000001.f3nr15taser00001"
+    },
+    {
+      "_id": "f3nr15pounce0001",
+      "name": "Pounce",
+      "type": "action",
+      "img": "systems/pf2e/icons/default-icons/action.svg",
+      "system": {
+        "slug": "fenris-mech-pounce",
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "description": {
+          "value": "<p>The FENRIS accelerates and leaps from its rear legs. It Strides up to double its Speed and makes a <strong>Taser</strong> Strike at the end of the movement.</p><p>If the Strike hits, the mech also attempts an Athletics check to <strong>Trip</strong> the target as part of the same action, with a +2 circumstance bonus if it Strode at least 30 feet before the leap.</p>",
+          "gm": ""
+        },
+        "traits": {
+          "value": [
+            "move"
+          ]
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "rules": [],
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!f3nr15mech000001.f3nr15pounce0001"
+    },
+    {
+      "_id": "f3nr15deact00001",
+      "name": "Deactivation Protocol",
+      "type": "action",
+      "img": "systems/pf2e/icons/default-icons/action.svg",
+      "system": {
+        "slug": "fenris-mech-deactivation-protocol",
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "description": {
+          "value": "<p>A FENRIS reduced to 0 Hit Points is not destroyed. Its legs lock and it drops where it stands, becoming an inert obstacle: it cannot act, has AC 12, and is <strong>unconscious</strong> for the purpose of effects that target creatures.</p><p>The chassis stays live. Any damage dealt to it triggers <strong>Post-Mortem Explosion</strong>.</p>",
+          "gm": ""
+        },
+        "traits": {
+          "value": [
+            "tech"
+          ]
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "rules": [],
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 300000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!f3nr15mech000001.f3nr15deact00001"
+    },
+    {
+      "_id": "f3nr15boom000001",
+      "name": "Post-Mortem Explosion",
+      "type": "action",
+      "img": "systems/pf2e/icons/default-icons/action.svg",
+      "system": {
+        "slug": "fenris-mech-post-mortem-explosion",
+        "actionType": {
+          "value": "reaction"
+        },
+        "actions": {
+          "value": null
+        },
+        "description": {
+          "value": "<p><strong>Trigger</strong> A deactivated FENRIS takes damage of any kind.</p><hr /><p>The power cell lets go in a <strong>10-foot emanation</strong>. Each creature in the area takes @Damage[2d6[electricity]] with a @Check[reflex|dc:17|basic] save. On a critical failure a creature is also knocked <strong>prone</strong>, which will put most targets out of cover.</p><p>The mech is destroyed. A FENRIS taken apart while inactive, or reduced to 0 Hit Points by an effect that leaves no chassis behind, never gets to use this reaction.</p>",
+          "gm": ""
+        },
+        "traits": {
+          "value": [
+            "electricity",
+            "tech"
+          ]
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "rules": [],
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 400000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!f3nr15mech000001.f3nr15boom000001"
+    }
+  ],
+  "_id": "f3nr15mech000001",
+  "_key": "!actors!f3nr15mech000001",
+  "effects": []
+}

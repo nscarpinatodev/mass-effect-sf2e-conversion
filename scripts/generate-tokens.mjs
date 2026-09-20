@@ -136,8 +136,28 @@ async function bake(src, dest, size = SIZE) {
     .webp({ quality: 92, alphaQuality: 100 })
     .toBuffer();
 
-  if (!DRY) await writeFile(dest, buf);
+  if (!DRY) await writeFileRetrying(dest, buf);
   return buf.length;
+}
+
+/**
+ * Write, retrying a few times on a transient failure.
+ *
+ * This repository lives inside a OneDrive folder, and a run rewrites well over a hundred
+ * files in a few seconds. Often enough, the sync client has one of them open when we get
+ * to it and the write comes back UNKNOWN (libuv -4094) even though the file is perfectly
+ * writable a moment later. Losing the whole bake to that is not worth it.
+ */
+async function writeFileRetrying(dest, buf, attempts = 5) {
+  for (let i = 1; ; i++) {
+    try {
+      return await writeFile(dest, buf);
+    } catch (err) {
+      const transient = ['UNKNOWN', 'EBUSY', 'EPERM', 'EACCES'].includes(err.code);
+      if (!transient || i === attempts) throw err;
+      await new Promise((r) => setTimeout(r, 120 * i));
+    }
+  }
 }
 
 /** Every actor json under a pack, folders included. */
@@ -165,7 +185,7 @@ function tokenName(artPath) {
 
 await mkdir(OUT_DIR, { recursive: true });
 
-let baked = 0, wrote = 0, skipped = [];
+let baked = 0, wrote = 0, skipped = [], failed = [];
 const seen = new Map();
 
 for (const pack of PACKS) {
@@ -178,8 +198,14 @@ for (const pack of PACKS) {
     const dest = join(OUT_DIR, name);
     // Several actors legitimately share one piece of art; bake it once.
     if (!seen.has(name)) {
-      seen.set(name, await bake(art, dest));
-      baked += 1;
+      try {
+        seen.set(name, await bake(art, dest));
+        baked += 1;
+      } catch (err) {
+        // One unbakeable piece of art should not cost the other hundred and twenty.
+        failed.push(`${name} — ${err.code ?? err.message}`);
+        continue;
+      }
     }
 
     if (ART_ONLY) continue;
@@ -204,4 +230,9 @@ console.log(`${DRY ? '[dry run] ' : ''}updated ${wrote} actors across ${PACKS.jo
 if (skipped.length) {
   console.log(`skipped ${skipped.length}:`);
   for (const s of skipped) console.log('  ', s);
+}
+if (failed.length) {
+  console.log(`failed to bake ${failed.length} (re-run to pick them up):`);
+  for (const f of failed) console.log('  ', f);
+  process.exitCode = 1;
 }
