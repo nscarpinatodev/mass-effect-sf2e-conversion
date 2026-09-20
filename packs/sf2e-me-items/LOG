@@ -1,15 +1,15 @@
-2026/08/26-22:45:52.788 ddd0 Recovering log #137
-2026/08/26-22:45:52.800 ddd0 Delete type=0 #137
-2026/08/26-22:45:52.800 ddd0 Delete type=3 #135
-2026/08/26-22:45:52.804 bd7c Level-0 table #143: started
-2026/08/26-22:45:52.808 bd7c Level-0 table #143: 5148 bytes OK
-2026/08/26-22:45:52.812 bd7c Delete type=0 #141
-2026/08/26-22:45:52.812 bd7c Manual compaction at level-0 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
-2026/08/26-22:45:52.812 bd7c Manual compaction at level-1 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at '!items!meItemOmniGel001' @ 160 : 1
-2026/08/26-22:45:52.812 bd7c Compacting 1@1 + 1@2 files
-2026/08/26-22:45:52.816 bd7c Generated table #144@1: 6 keys, 5148 bytes
-2026/08/26-22:45:52.816 bd7c Compacted 1@1 + 1@2 files => 5148 bytes
-2026/08/26-22:45:52.820 bd7c compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/08/26-22:45:52.820 bd7c Delete type=2 #139
-2026/08/26-22:45:52.820 bd7c Delete type=2 #143
-2026/08/26-22:45:52.820 bd7c Manual compaction at level-1 from '!items!meItemOmniGel001' @ 160 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
+2026/09/20-17:50:52.854 35d0 Recovering log #142
+2026/09/20-17:50:52.859 35d0 Delete type=0 #142
+2026/09/20-17:50:52.859 35d0 Delete type=3 #140
+2026/09/20-17:50:52.862 8aac Level-0 table #148: started
+2026/09/20-17:50:52.865 8aac Level-0 table #148: 5148 bytes OK
+2026/09/20-17:50:52.866 8aac Delete type=0 #146
+2026/09/20-17:50:52.866 8aac Manual compaction at level-0 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
+2026/09/20-17:50:52.866 8aac Manual compaction at level-1 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at '!items!meItemOmniGel001' @ 166 : 1
+2026/09/20-17:50:52.866 8aac Compacting 1@1 + 1@2 files
+2026/09/20-17:50:52.869 8aac Generated table #149@1: 6 keys, 5148 bytes
+2026/09/20-17:50:52.869 8aac Compacted 1@1 + 1@2 files => 5148 bytes
+2026/09/20-17:50:52.870 8aac compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/09/20-17:50:52.870 8aac Delete type=2 #144
+2026/09/20-17:50:52.871 8aac Delete type=2 #148
+2026/09/20-17:50:52.871 8aac Manual compaction at level-1 from '!items!meItemOmniGel001' @ 166 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)

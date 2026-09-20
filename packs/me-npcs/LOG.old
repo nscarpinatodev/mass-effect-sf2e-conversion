@@ -1,15 +1,15 @@
-2026/08/26-22:45:48.567 6b50 Recovering log #275
-2026/08/26-22:45:48.576 6b50 Delete type=0 #275
-2026/08/26-22:45:48.576 6b50 Delete type=3 #273
-2026/08/26-22:45:48.598 bd7c Level-0 table #281: started
-2026/08/26-22:45:48.620 bd7c Level-0 table #281: 581853 bytes OK
-2026/08/26-22:45:48.623 bd7c Delete type=0 #279
-2026/08/26-22:45:48.624 bd7c Manual compaction at level-0 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
-2026/08/26-22:45:48.624 bd7c Manual compaction at level-1 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at '!folders!menpcfoldr000011' @ 20871 : 1
-2026/08/26-22:45:48.624 bd7c Compacting 1@1 + 1@2 files
-2026/08/26-22:45:48.648 bd7c Generated table #282@1: 808 keys, 581853 bytes
-2026/08/26-22:45:48.648 bd7c Compacted 1@1 + 1@2 files => 581853 bytes
-2026/08/26-22:45:48.651 bd7c compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/08/26-22:45:48.651 bd7c Delete type=2 #277
-2026/08/26-22:45:48.651 bd7c Delete type=2 #281
-2026/08/26-22:45:48.651 bd7c Manual compaction at level-1 from '!folders!menpcfoldr000011' @ 20871 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
+2026/09/20-17:50:49.596 83ac Recovering log #284
+2026/09/20-17:50:49.601 83ac Delete type=0 #284
+2026/09/20-17:50:49.601 83ac Delete type=3 #283
+2026/09/20-17:50:49.620 8aac Level-0 table #288: started
+2026/09/20-17:50:49.641 8aac Level-0 table #288: 587108 bytes OK
+2026/09/20-17:50:49.643 8aac Delete type=0 #286
+2026/09/20-17:50:49.643 8aac Manual compaction at level-0 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
+2026/09/20-17:50:49.643 8aac Manual compaction at level-1 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at '!folders!menpcfoldr000011' @ 21684 : 1
+2026/09/20-17:50:49.643 8aac Compacting 1@1 + 1@2 files
+2026/09/20-17:50:49.665 8aac Generated table #289@1: 813 keys, 587108 bytes
+2026/09/20-17:50:49.665 8aac Compacted 1@1 + 1@2 files => 587108 bytes
+2026/09/20-17:50:49.666 8aac compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/09/20-17:50:49.667 8aac Delete type=2 #282
+2026/09/20-17:50:49.667 8aac Delete type=2 #288
+2026/09/20-17:50:49.667 8aac Manual compaction at level-1 from '!folders!menpcfoldr000011' @ 21684 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
