@@ -1,703 +1,714 @@
 {
-  "id": "mass-effect-sf2e-conversion",
-  "title": "Mass Effect Compendium",
-  "description": "A Foundry VTT compendium for PF2e and SF2e featuring Mass Effect weapons, armor, mods, playable ancestries, heritages, ancestry feats, backgrounds, classes, enemy creatures, NPCs, vehicles, and ships. Includes a kinetic shield system and a Paragon/Renegade morality tracker.",
-  "version": "2.1.0-rc.2",
-  "url": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion",
-  "manifest": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/download/v2.1.0-rc.2/module.json",
-  "download": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/download/v2.1.0-rc.2/module.zip",
-  "compatibility": {
-    "minimum": "14",
-    "verified": "14"
-  },
-  "relationships": {
-    "systems": [
-      {
-        "id": "pf2e",
-        "type": "system",
-        "compatibility": {
-          "minimum": "7.0",
-          "verified": "8.1.1"
-        }
-      },
-      {
-        "id": "sf2e",
-        "type": "system",
-        "compatibility": {
-          "minimum": "1.0",
-          "verified": "1.1.1"
-        }
-      }
-    ],
-    "requires": [
-      {
-        "id": "scorpious187s-lib",
-        "type": "module",
-        "manifest": "https://github.com/nscarpinatodev/scorpious187s-lib/releases/latest/download/module.json",
-        "compatibility": {
-          "minimum": "0.3.0"
-        }
-      }
-    ]
-  },
-  "authors": [
-    {
-      "name": "nscarpinatodev",
-      "flags": {}
-    }
-  ],
-  "scripts": [
-    "scripts/shield-system.js",
-    "scripts/paragon-renegade.js",
-    "scripts/journal-viewer.js",
-    "scripts/me-powers.js"
-  ],
-  "packs": [
-    {
-      "name": "me-ancestries",
-      "label": "ME Ancestries",
-      "path": "packs/me-ancestries",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-heritages",
-      "label": "ME Heritages",
-      "path": "packs/me-heritages",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-ancestry-feats",
-      "label": "ME Ancestry Feats & Features",
-      "path": "packs/me-ancestry-feats",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-backgrounds",
-      "label": "ME Backgrounds",
-      "path": "packs/me-backgrounds",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-classes",
-      "label": "ME Classes",
-      "path": "packs/me-classes",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-combat-passives",
-      "label": "ME Combat Passives",
-      "path": "packs/me-combat-passives",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-class-progressions",
-      "label": "ME Class Progressions",
-      "path": "packs/me-class-progressions",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-npcs",
-      "label": "ME NPCs",
-      "path": "packs/me-npcs",
-      "type": "Actor",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-creatures",
-      "label": "ME Creatures",
-      "path": "packs/me-creatures",
-      "type": "Actor",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-vehicles",
-      "label": "ME Vehicles",
-      "path": "packs/me-vehicles",
-      "type": "Actor",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-ships",
-      "label": "ME Ships",
-      "path": "packs/me-ships",
-      "type": "Actor",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-armors",
-      "label": "ME Armors",
-      "path": "packs/me-armors",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-armor-mods",
-      "label": "ME Armor Mods",
-      "path": "packs/me-armor-mods",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-weapons",
-      "label": "ME Weapons",
-      "path": "packs/me-weapons",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-weapon-mods",
-      "label": "ME Weapon Mods",
-      "path": "packs/me-weapon-mods",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-shields",
-      "label": "ME Shields & Armor",
-      "path": "packs/me-shields",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-grenades",
-      "label": "ME Grenades",
-      "path": "packs/me-grenades",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-items",
-      "label": "ME Items",
-      "path": "packs/me-items",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-ammo-powers",
-      "label": "ME Ammo Powers",
-      "path": "packs/me-ammo-powers",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-biotic-powers",
-      "label": "ME Biotic Powers",
-      "path": "packs/me-biotic-powers",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "me-tech-powers",
-      "label": "ME Tech Powers",
-      "path": "packs/me-tech-powers",
-      "type": "Item",
-      "system": "pf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-ancestries",
-      "label": "ME Ancestries (SF2e)",
-      "path": "packs/sf2e-me-ancestries",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-heritages",
-      "label": "ME Heritages (SF2e)",
-      "path": "packs/sf2e-me-heritages",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-ancestry-feats",
-      "label": "ME Ancestry Feats & Features (SF2e)",
-      "path": "packs/sf2e-me-ancestry-feats",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-backgrounds",
-      "label": "ME Backgrounds (SF2e)",
-      "path": "packs/sf2e-me-backgrounds",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-classes",
-      "label": "ME Classes (SF2e)",
-      "path": "packs/sf2e-me-classes",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-combat-passives",
-      "label": "ME Combat Passives (SF2e)",
-      "path": "packs/sf2e-me-combat-passives",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-class-progressions",
-      "label": "ME Class Progressions (SF2e)",
-      "path": "packs/sf2e-me-class-progressions",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-npcs",
-      "label": "ME NPCs (SF2e)",
-      "path": "packs/sf2e-me-npcs",
-      "type": "Actor",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-creatures",
-      "label": "ME Creatures (SF2e)",
-      "path": "packs/sf2e-me-creatures",
-      "type": "Actor",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-vehicles",
-      "label": "ME Vehicles (SF2e)",
-      "path": "packs/sf2e-me-vehicles",
-      "type": "Actor",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-ships",
-      "label": "ME Ships (SF2e)",
-      "path": "packs/sf2e-me-ships",
-      "type": "Actor",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-armors",
-      "label": "ME Armors (SF2e)",
-      "path": "packs/sf2e-me-armors",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-armor-mods",
-      "label": "ME Armor Mods (SF2e)",
-      "path": "packs/sf2e-me-armor-mods",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-weapons",
-      "label": "ME Weapons (SF2e)",
-      "path": "packs/sf2e-me-weapons",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-weapon-mods",
-      "label": "ME Weapon Mods (SF2e)",
-      "path": "packs/sf2e-me-weapon-mods",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-shields",
-      "label": "ME Shields & Armor (SF2e)",
-      "path": "packs/sf2e-me-shields",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-grenades",
-      "label": "ME Grenades (SF2e)",
-      "path": "packs/sf2e-me-grenades",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-items",
-      "label": "ME Items (SF2e)",
-      "path": "packs/sf2e-me-items",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-ammo-powers",
-      "label": "ME Ammo Powers (SF2e)",
-      "path": "packs/sf2e-me-ammo-powers",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-biotic-powers",
-      "label": "ME Biotic Powers (SF2e)",
-      "path": "packs/sf2e-me-biotic-powers",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "sf2e-me-tech-powers",
-      "label": "ME Tech Powers (SF2e)",
-      "path": "packs/sf2e-me-tech-powers",
-      "type": "Item",
-      "system": "sf2e",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    }
-  ],
-  "packFolders": [
-    {
-      "name": "Mass Effect Compendium",
-      "color": "#1A3A5C",
-      "sorting": "m",
-      "folders": [
-        {
-          "name": "Player Options",
-          "color": "#2E86C1",
-          "sorting": "m",
-          "packs": [
-            "me-classes",
-            "me-combat-passives",
-            "me-class-progressions",
-            "me-ancestries",
-            "me-heritages",
-            "me-ancestry-feats",
-            "me-backgrounds",
-            "sf2e-me-classes",
-            "sf2e-me-combat-passives",
-            "sf2e-me-class-progressions",
-            "sf2e-me-ancestries",
-            "sf2e-me-heritages",
-            "sf2e-me-ancestry-feats",
-            "sf2e-me-backgrounds"
-          ]
-        },
-        {
-          "name": "GM Content",
-          "color": "#1E8449",
-          "sorting": "m",
-          "packs": [
-            "me-npcs",
-            "me-creatures",
-            "me-vehicles",
-            "me-ships",
-            "sf2e-me-npcs",
-            "sf2e-me-creatures",
-            "sf2e-me-vehicles",
-            "sf2e-me-ships"
-          ]
-        },
-        {
-          "name": "Gear",
-          "color": "#7D3C98",
-          "sorting": "m",
-          "packs": [
-            "me-armors",
-            "me-armor-mods",
-            "me-weapons",
-            "me-weapon-mods",
-            "me-shields",
-            "me-grenades",
-            "me-items",
-            "sf2e-me-armors",
-            "sf2e-me-armor-mods",
-            "sf2e-me-weapons",
-            "sf2e-me-weapon-mods",
-            "sf2e-me-shields",
-            "sf2e-me-grenades"
-          ]
-        },
-        {
-          "name": "Combat Systems",
-          "color": "#B7410E",
-          "sorting": "m",
-          "packs": [
-            "me-ammo-powers",
-            "me-biotic-powers",
-            "me-tech-powers",
-            "sf2e-me-ammo-powers",
-            "sf2e-me-biotic-powers",
-            "sf2e-me-tech-powers"
-          ]
-        }
-      ]
-    }
-  ],
-  "flags": {
-    "mass-effect-sf2e-conversion": {
-      "pf2e-homebrew": {
-        "creatureTraits": {
-          "asari": "Asari",
-          "batarian": "Batarian",
-          "drell": "Drell",
-          "elcor": "Elcor",
-          "hanar": "Hanar",
-          "krogan": "Krogan",
-          "quarian": "Quarian",
-          "salarian": "Salarian",
-          "turian": "Turian",
-          "volus": "Volus",
-          "vorcha": "Vorcha",
-          "husk": "Husk",
-          "reaper": "Reaper",
-          "varren": "Varren",
-          "thresher-maw": "Thresher Maw",
-          "klixen": "Klixen",
-          "geth": "Geth",
-          "cerberus": "Cerberus",
-          "collector": "Collector",
-          "mech": "Mech",
-          "vehicle": "Vehicle",
-          "ship": "Ship",
-          "alliance": "Alliance",
-          "aircraft": "Aircraft"
-        },
-        "featTraits": {
-          "asari": "Asari",
-          "batarian": "Batarian",
-          "biotic": "Biotic",
-          "drell": "Drell",
-          "elcor": "Elcor",
-          "hanar": "Hanar",
-          "human": "Human",
-          "krogan": "Krogan",
-          "quarian": "Quarian",
-          "salarian": "Salarian",
-          "tech": "Tech",
-          "turian": "Turian",
-          "volus": "Volus",
-          "vorcha": "Vorcha"
-        },
-        "languages": {
-          "thessian": "Thessian",
-          "batarian": "Batarian",
-          "drell": "Drell",
-          "elcor": "Elcor",
-          "hanar": "Hanar",
-          "krogan": "Krogan",
-          "khelish": "Khelish",
-          "salarian": "Salarian",
-          "turian": "Turian",
-          "volus": "Volus",
-          "vorcha": "Vorcha"
-        }
-      }
-    },
-    "pf2e-graphics": {
-      "path": "animations/me-animations.json"
-    }
-  }
+	"id": "mass-effect-sf2e-conversion",
+	"title": "Mass Effect Compendium",
+	"description": "A Foundry VTT compendium for PF2e and SF2e featuring Mass Effect weapons, armor, mods, playable ancestries, heritages, ancestry feats, backgrounds, classes, enemy creatures, NPCs, vehicles, and ships. Includes a kinetic shield system and a Paragon/Renegade morality tracker.",
+	"version": "2.1.0-rc.2",
+	"url": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion",
+	"manifest": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/download/v2.1.0-rc.2/module.json",
+	"download": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/download/v2.1.0-rc.2/module.zip",
+	"compatibility": {
+		"minimum": "14",
+		"verified": "14"
+	},
+	"relationships": {
+		"systems": [
+			{
+				"id": "pf2e",
+				"type": "system",
+				"compatibility": {
+					"minimum": "7.0",
+					"verified": "8.1.1"
+				}
+			},
+			{
+				"id": "sf2e",
+				"type": "system",
+				"compatibility": {
+					"minimum": "1.0",
+					"verified": "1.1.1"
+				}
+			}
+		],
+		"requires": [
+			{
+				"id": "scorpious187s-lib",
+				"type": "module",
+				"manifest": "https://github.com/nscarpinatodev/scorpious187s-lib/releases/latest/download/module.json",
+				"compatibility": {
+					"minimum": "0.3.0"
+				}
+			}
+		],
+		"recommends": [
+			{
+				"id": "tokenizer-2",
+				"type": "module",
+				"reason": "Bakes a frame onto this module's tokens when they are first dropped. Everything works without it; the tokens keep their shipped ring art.",
+				"compatibility": {
+					"minimum": "1.2.0"
+				}
+			}
+		]
+	},
+	"authors": [
+		{
+			"name": "nscarpinatodev",
+			"flags": {}
+		}
+	],
+	"scripts": [
+		"scripts/shield-system.js",
+		"scripts/paragon-renegade.js",
+		"scripts/journal-viewer.js",
+		"scripts/me-powers.js",
+		"scripts/token-frames.js"
+	],
+	"packs": [
+		{
+			"name": "me-ancestries",
+			"label": "ME Ancestries",
+			"path": "packs/me-ancestries",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-heritages",
+			"label": "ME Heritages",
+			"path": "packs/me-heritages",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-ancestry-feats",
+			"label": "ME Ancestry Feats & Features",
+			"path": "packs/me-ancestry-feats",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-backgrounds",
+			"label": "ME Backgrounds",
+			"path": "packs/me-backgrounds",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-classes",
+			"label": "ME Classes",
+			"path": "packs/me-classes",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-combat-passives",
+			"label": "ME Combat Passives",
+			"path": "packs/me-combat-passives",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-class-progressions",
+			"label": "ME Class Progressions",
+			"path": "packs/me-class-progressions",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-npcs",
+			"label": "ME NPCs",
+			"path": "packs/me-npcs",
+			"type": "Actor",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-creatures",
+			"label": "ME Creatures",
+			"path": "packs/me-creatures",
+			"type": "Actor",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-vehicles",
+			"label": "ME Vehicles",
+			"path": "packs/me-vehicles",
+			"type": "Actor",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-ships",
+			"label": "ME Ships",
+			"path": "packs/me-ships",
+			"type": "Actor",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-armors",
+			"label": "ME Armors",
+			"path": "packs/me-armors",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-armor-mods",
+			"label": "ME Armor Mods",
+			"path": "packs/me-armor-mods",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-weapons",
+			"label": "ME Weapons",
+			"path": "packs/me-weapons",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-weapon-mods",
+			"label": "ME Weapon Mods",
+			"path": "packs/me-weapon-mods",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-shields",
+			"label": "ME Shields & Armor",
+			"path": "packs/me-shields",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-grenades",
+			"label": "ME Grenades",
+			"path": "packs/me-grenades",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-items",
+			"label": "ME Items",
+			"path": "packs/me-items",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-ammo-powers",
+			"label": "ME Ammo Powers",
+			"path": "packs/me-ammo-powers",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-biotic-powers",
+			"label": "ME Biotic Powers",
+			"path": "packs/me-biotic-powers",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "me-tech-powers",
+			"label": "ME Tech Powers",
+			"path": "packs/me-tech-powers",
+			"type": "Item",
+			"system": "pf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-ancestries",
+			"label": "ME Ancestries (SF2e)",
+			"path": "packs/sf2e-me-ancestries",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-heritages",
+			"label": "ME Heritages (SF2e)",
+			"path": "packs/sf2e-me-heritages",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-ancestry-feats",
+			"label": "ME Ancestry Feats & Features (SF2e)",
+			"path": "packs/sf2e-me-ancestry-feats",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-backgrounds",
+			"label": "ME Backgrounds (SF2e)",
+			"path": "packs/sf2e-me-backgrounds",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-classes",
+			"label": "ME Classes (SF2e)",
+			"path": "packs/sf2e-me-classes",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-combat-passives",
+			"label": "ME Combat Passives (SF2e)",
+			"path": "packs/sf2e-me-combat-passives",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-class-progressions",
+			"label": "ME Class Progressions (SF2e)",
+			"path": "packs/sf2e-me-class-progressions",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-npcs",
+			"label": "ME NPCs (SF2e)",
+			"path": "packs/sf2e-me-npcs",
+			"type": "Actor",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-creatures",
+			"label": "ME Creatures (SF2e)",
+			"path": "packs/sf2e-me-creatures",
+			"type": "Actor",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-vehicles",
+			"label": "ME Vehicles (SF2e)",
+			"path": "packs/sf2e-me-vehicles",
+			"type": "Actor",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-ships",
+			"label": "ME Ships (SF2e)",
+			"path": "packs/sf2e-me-ships",
+			"type": "Actor",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-armors",
+			"label": "ME Armors (SF2e)",
+			"path": "packs/sf2e-me-armors",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-armor-mods",
+			"label": "ME Armor Mods (SF2e)",
+			"path": "packs/sf2e-me-armor-mods",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-weapons",
+			"label": "ME Weapons (SF2e)",
+			"path": "packs/sf2e-me-weapons",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-weapon-mods",
+			"label": "ME Weapon Mods (SF2e)",
+			"path": "packs/sf2e-me-weapon-mods",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-shields",
+			"label": "ME Shields & Armor (SF2e)",
+			"path": "packs/sf2e-me-shields",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-grenades",
+			"label": "ME Grenades (SF2e)",
+			"path": "packs/sf2e-me-grenades",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-items",
+			"label": "ME Items (SF2e)",
+			"path": "packs/sf2e-me-items",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-ammo-powers",
+			"label": "ME Ammo Powers (SF2e)",
+			"path": "packs/sf2e-me-ammo-powers",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-biotic-powers",
+			"label": "ME Biotic Powers (SF2e)",
+			"path": "packs/sf2e-me-biotic-powers",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		},
+		{
+			"name": "sf2e-me-tech-powers",
+			"label": "ME Tech Powers (SF2e)",
+			"path": "packs/sf2e-me-tech-powers",
+			"type": "Item",
+			"system": "sf2e",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"flags": {}
+		}
+	],
+	"packFolders": [
+		{
+			"name": "Mass Effect Compendium",
+			"color": "#1A3A5C",
+			"sorting": "m",
+			"folders": [
+				{
+					"name": "Player Options",
+					"color": "#2E86C1",
+					"sorting": "m",
+					"packs": [
+						"me-classes",
+						"me-combat-passives",
+						"me-class-progressions",
+						"me-ancestries",
+						"me-heritages",
+						"me-ancestry-feats",
+						"me-backgrounds",
+						"sf2e-me-classes",
+						"sf2e-me-combat-passives",
+						"sf2e-me-class-progressions",
+						"sf2e-me-ancestries",
+						"sf2e-me-heritages",
+						"sf2e-me-ancestry-feats",
+						"sf2e-me-backgrounds"
+					]
+				},
+				{
+					"name": "GM Content",
+					"color": "#1E8449",
+					"sorting": "m",
+					"packs": [
+						"me-npcs",
+						"me-creatures",
+						"me-vehicles",
+						"me-ships",
+						"sf2e-me-npcs",
+						"sf2e-me-creatures",
+						"sf2e-me-vehicles",
+						"sf2e-me-ships"
+					]
+				},
+				{
+					"name": "Gear",
+					"color": "#7D3C98",
+					"sorting": "m",
+					"packs": [
+						"me-armors",
+						"me-armor-mods",
+						"me-weapons",
+						"me-weapon-mods",
+						"me-shields",
+						"me-grenades",
+						"me-items",
+						"sf2e-me-armors",
+						"sf2e-me-armor-mods",
+						"sf2e-me-weapons",
+						"sf2e-me-weapon-mods",
+						"sf2e-me-shields",
+						"sf2e-me-grenades"
+					]
+				},
+				{
+					"name": "Combat Systems",
+					"color": "#B7410E",
+					"sorting": "m",
+					"packs": [
+						"me-ammo-powers",
+						"me-biotic-powers",
+						"me-tech-powers",
+						"sf2e-me-ammo-powers",
+						"sf2e-me-biotic-powers",
+						"sf2e-me-tech-powers"
+					]
+				}
+			]
+		}
+	],
+	"flags": {
+		"mass-effect-sf2e-conversion": {
+			"pf2e-homebrew": {
+				"creatureTraits": {
+					"asari": "Asari",
+					"batarian": "Batarian",
+					"drell": "Drell",
+					"elcor": "Elcor",
+					"hanar": "Hanar",
+					"krogan": "Krogan",
+					"quarian": "Quarian",
+					"salarian": "Salarian",
+					"turian": "Turian",
+					"volus": "Volus",
+					"vorcha": "Vorcha",
+					"husk": "Husk",
+					"reaper": "Reaper",
+					"varren": "Varren",
+					"thresher-maw": "Thresher Maw",
+					"klixen": "Klixen",
+					"geth": "Geth",
+					"cerberus": "Cerberus",
+					"collector": "Collector",
+					"mech": "Mech",
+					"vehicle": "Vehicle",
+					"ship": "Ship",
+					"alliance": "Alliance",
+					"aircraft": "Aircraft"
+				},
+				"featTraits": {
+					"asari": "Asari",
+					"batarian": "Batarian",
+					"biotic": "Biotic",
+					"drell": "Drell",
+					"elcor": "Elcor",
+					"hanar": "Hanar",
+					"human": "Human",
+					"krogan": "Krogan",
+					"quarian": "Quarian",
+					"salarian": "Salarian",
+					"tech": "Tech",
+					"turian": "Turian",
+					"volus": "Volus",
+					"vorcha": "Vorcha"
+				},
+				"languages": {
+					"thessian": "Thessian",
+					"batarian": "Batarian",
+					"drell": "Drell",
+					"elcor": "Elcor",
+					"hanar": "Hanar",
+					"krogan": "Krogan",
+					"khelish": "Khelish",
+					"salarian": "Salarian",
+					"turian": "Turian",
+					"volus": "Volus",
+					"vorcha": "Vorcha"
+				}
+			}
+		},
+		"pf2e-graphics": {
+			"path": "animations/me-animations.json"
+		}
+	}
 }
