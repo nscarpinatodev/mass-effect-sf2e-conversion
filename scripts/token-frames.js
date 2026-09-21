@@ -33,7 +33,7 @@
 const MODULE_ID = 'mass-effect-sf2e-conversion';
 const TOKENIZER_ID = 'tokenizer-2';
 const S_AUTO_FRAME = 'autoFrameTokens';
-const S_FRAME_SRC = 'tokenFrameSrc';
+const S_CONFIG = 'tokenizeConfig';
 
 /** One in-flight tokenize per actor: a crate of six mechs is one composite. */
 const inFlight = new Map();
@@ -72,14 +72,8 @@ async function frameActor(actor) {
   if (!api?.tokenize) return null;
   if (inFlight.has(actor.id)) return inFlight.get(actor.id);
 
-  const frameSrc = game.settings.get(MODULE_ID, S_FRAME_SRC) || null;
   const work = (async () => {
-    await api.tokenize(actor, {
-      frameSrc,                 // null lets Tokenizer pick by disposition
-      forceBakedRing: true,     // see the header: the shipped ring art wins otherwise
-      wildcardMode: 'keep',     // never disturb an actor set up with wildcard art
-      updateActor: true,
-    });
+    await api.tokenize(actor, tokenizeOptions());
     return actor.prototypeToken?.texture?.src ?? null;
   })();
 
@@ -89,6 +83,46 @@ async function frameActor(actor) {
   } finally {
     inFlight.delete(actor.id);
   }
+}
+
+/**
+ * What to hand tokenize().
+ *
+ * Whatever the GM chose in Tokenizer's own config dialog, with two things
+ * pinned: never disturb an actor set up with wildcard art, and bake the frame
+ * into the image unless they deliberately asked for a dynamic ring — the
+ * shipped art is already ring-ready, so leaving that to chance means no frame.
+ */
+function tokenizeOptions() {
+  const chosen = game.settings.get(MODULE_ID, S_CONFIG) ?? {};
+  const baked = chosen.forceDynamicRing ? {} : { forceBakedRing: true };
+  return { ...chosen, ...baked, wildcardMode: 'keep', updateActor: true };
+}
+
+/** A short description of the current choice, for the settings menu. */
+function frameLabel() {
+  const chosen = game.settings.get(MODULE_ID, S_CONFIG) ?? {};
+  if (chosen.forceDynamicRing) return 'Foundry dynamic ring';
+  if (!chosen.frameSrc) return "Tokenizer's default, by disposition";
+  return chosen.frameSrc.split('/').pop();
+}
+
+/**
+ * Pick the frame in Tokenizer's own dialog: its frame browser, its mask modes,
+ * and a live preview on one of this module's own actors. Whatever it returns is
+ * stored whole and spread back into tokenize().
+ */
+async function chooseFrame() {
+  const api = tokenizer();
+  if (!api?.promptConfig) {
+    ui.notifications.warn('ME Tokens | Tokenizer 2 is not available, so there is no frame browser to open.');
+    return null;
+  }
+  const config = await api.promptConfig(game.settings.get(MODULE_ID, S_CONFIG) ?? {});
+  if (!config) return null;   // cancelled
+  await game.settings.set(MODULE_ID, S_CONFIG, config);
+  ui.notifications.info(`ME Tokens | Frame set to ${frameLabel()}.`);
+  return config;
 }
 
 /** Frame the actor behind a freshly placed token, then repoint the token at it. */
@@ -105,8 +139,10 @@ async function onCreateToken(document, options, userId) {
   try {
     const src = await frameActor(actor);
     if (!src) return;
-    // A baked frame and a dynamic ring would draw two rings around the art.
-    await document.update({ 'texture.src': src, 'ring.enabled': false });
+    // A baked frame and a dynamic ring would draw two rings around the art, so the
+    // ring goes — unless the dynamic ring is what was asked for.
+    const dynamic = !!(game.settings.get(MODULE_ID, S_CONFIG) ?? {}).forceDynamicRing;
+    await document.update({ 'texture.src': src, 'ring.enabled': dynamic });
     console.log(`${MODULE_ID} | framed "${actor.name}" with Tokenizer 2`);
   } catch (err) {
     console.error(`${MODULE_ID} | Tokenizer 2 could not frame "${actor.name}"`, err);
@@ -127,8 +163,7 @@ async function frameAll({ untokenizedOnly = true } = {}) {
   const actors = game.actors.filter((a) => isModuleActor(a) && (!untokenizedOnly || !isTokenized(a)));
   if (!actors.length) return 0;
 
-  const frameSrc = game.settings.get(MODULE_ID, S_FRAME_SRC) || null;
-  await api.tokenizeBatch(actors, { frameSrc, forceBakedRing: true, wildcardMode: 'keep' });
+  await api.tokenizeBatch(actors, tokenizeOptions());
   ui.notifications.info(`ME Tokens | Framed ${actors.length} actor(s) with Tokenizer 2.`);
   return actors.length;
 }
@@ -143,22 +178,44 @@ Hooks.once('init', () => {
     default: false,
   });
 
-  game.settings.register(MODULE_ID, S_FRAME_SRC, {
-    name: 'Token Frame Image',
-    hint: 'The frame to composite. Leave blank to let Tokenizer 2 choose by token disposition, which gives hostiles, neutrals and allies their own frames.',
+  // Tokenizer's own dialog returns frame, mask, fit and ring mode together, so
+  // the whole object is what gets stored.
+  game.settings.register(MODULE_ID, S_CONFIG, {
     scope: 'world',
-    config: true,
-    type: String,
-    default: '',
-    filePicker: 'image',
+    config: false,
+    type: Object,
+    default: {},
+  });
+
+  game.settings.registerMenu(MODULE_ID, 'tokenFramePicker', {
+    name: 'Token Frame',
+    label: 'Choose Frame…',
+    hint: "Opens Tokenizer 2's frame browser, with its mask modes and a live preview. Leave it unset to let Tokenizer pick by token disposition, so hostiles, neutrals and allies differ.",
+    icon: 'fas fa-circle-notch',
+    type: FramePickerMenu,
+    restricted: true,
   });
 });
+
+/**
+ * A settings-menu entry that is really just a button: Foundry renders the
+ * registered type, and this one opens Tokenizer's dialog instead of a window of
+ * its own.
+ */
+class FramePickerMenu extends foundry.applications.api.ApplicationV2 {
+  static DEFAULT_OPTIONS = { id: 'me-token-frame-picker' };
+
+  async render() {
+    await chooseFrame();
+    return this;
+  }
+}
 
 Hooks.once('ready', () => {
   if (!game.user.isGM) return;
 
   const api = (game.modules.get(MODULE_ID).api ??= {});
-  api.frameTokens = { one: frameActor, all: frameAll, available: () => !!tokenizer() };
+  api.frameTokens = { one: frameActor, all: frameAll, chooseFrame, available: () => !!tokenizer() };
 
   // Always listen; the handler re-checks the setting, so turning it on mid-session
   // works without a reload.
