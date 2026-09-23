@@ -1,15 +1,15 @@
-2026/09/20-19:19:46.047 8500 Recovering log #282
-2026/09/20-19:19:46.052 8500 Delete type=0 #282
-2026/09/20-19:19:46.053 8500 Delete type=3 #280
-2026/09/20-19:19:46.057 2bd0 Level-0 table #288: started
-2026/09/20-19:19:46.061 2bd0 Level-0 table #288: 39284 bytes OK
-2026/09/20-19:19:46.063 2bd0 Delete type=0 #286
-2026/09/20-19:19:46.063 2bd0 Manual compaction at level-0 from '!items!MEHeritage000001' @ 72057594037927935 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at (end)
-2026/09/20-19:19:46.063 2bd0 Manual compaction at level-1 from '!items!MEHeritage000001' @ 72057594037927935 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at '!items!MEHeritage000044' @ 2508 : 1
-2026/09/20-19:19:46.063 2bd0 Compacting 1@1 + 1@2 files
-2026/09/20-19:19:46.067 2bd0 Generated table #289@1: 44 keys, 39284 bytes
-2026/09/20-19:19:46.067 2bd0 Compacted 1@1 + 1@2 files => 39284 bytes
-2026/09/20-19:19:46.068 2bd0 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/09/20-19:19:46.068 2bd0 Delete type=2 #284
-2026/09/20-19:19:46.068 2bd0 Delete type=2 #288
-2026/09/20-19:19:46.068 2bd0 Manual compaction at level-1 from '!items!MEHeritage000044' @ 2508 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at (end)
+2026/09/22-22:52:59.080 33e8 Recovering log #292
+2026/09/22-22:52:59.085 33e8 Delete type=0 #292
+2026/09/22-22:52:59.085 33e8 Delete type=3 #290
+2026/09/22-22:52:59.090 b374 Level-0 table #298: started
+2026/09/22-22:52:59.093 b374 Level-0 table #298: 39275 bytes OK
+2026/09/22-22:52:59.095 b374 Delete type=0 #296
+2026/09/22-22:52:59.095 b374 Manual compaction at level-0 from '!items!MEHeritage000001' @ 72057594037927935 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at (end)
+2026/09/22-22:52:59.095 b374 Manual compaction at level-1 from '!items!MEHeritage000001' @ 72057594037927935 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at '!items!MEHeritage000044' @ 2596 : 1
+2026/09/22-22:52:59.095 b374 Compacting 1@1 + 1@2 files
+2026/09/22-22:52:59.099 b374 Generated table #299@1: 44 keys, 39275 bytes
+2026/09/22-22:52:59.099 b374 Compacted 1@1 + 1@2 files => 39275 bytes
+2026/09/22-22:52:59.100 b374 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/09/22-22:52:59.100 b374 Delete type=2 #294
+2026/09/22-22:52:59.101 b374 Delete type=2 #298
+2026/09/22-22:52:59.101 b374 Manual compaction at level-1 from '!items!MEHeritage000044' @ 2596 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at (end)
