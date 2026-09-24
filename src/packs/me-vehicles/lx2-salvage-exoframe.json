@@ -1,0 +1,402 @@
+{
+  "name": "Elkoss Combine LX-2 Salvage Exoframe",
+  "type": "vehicle",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/vehicles/LX-2_Salvage_Exoframe.png",
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      },
+      "sf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "height": 2,
+    "width": 2,
+    "name": "LX-2 Exoframe",
+    "displayName": 20,
+    "actorLink": false,
+    "depth": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/vehicles/LX-2_Salvage_Exoframe.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false
+  },
+  "system": {
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "traits": {
+      "value": [
+        "tech"
+      ],
+      "rarity": "common",
+      "size": {
+        "value": "lg"
+      }
+    },
+    "attributes": {
+      "hp": {
+        "value": 50,
+        "max": 50,
+        "temp": 0,
+        "details": "BT 25"
+      },
+      "ac": {
+        "value": 18
+      },
+      "hardness": 8,
+      "collisionDC": {
+        "value": 20
+      },
+      "collisionDamage": {
+        "value": "2d10 bludgeoning"
+      },
+      "immunities": [
+        {
+          "type": "object-immunities",
+          "exceptions": []
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "electricity",
+          "value": 5,
+          "exceptions": []
+        }
+      ],
+      "resistances": [],
+      "emitsSound": "encounter"
+    },
+    "details": {
+      "description": "<p>A budget-grade, open-cockpit loader frame of the kind found in cargo bays, dockyards, and scrap yards across Terminus and Traverse ports. The operator straps into a harness between two hydraulic arms, each ending in a heavy three-finger clamp rated for shifting crates, hull plating, and engine components. It was never designed for combat, but a clamp that can peel a bulkhead can peel armor just as easily.</p><p>The exposed actuators and power bus make it vulnerable to overload discharges.</p>",
+      "level": {
+        "value": 3
+      },
+      "price": 600,
+      "space": {
+        "long": 10,
+        "wide": 10,
+        "high": 10
+      },
+      "crew": "1 pilot",
+      "passengers": "none",
+      "pilotingCheck": "Piloting (DC 18)",
+      "AC": 18,
+      "speed": "25 feet",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "saves": {
+      "fortitude": {
+        "value": 11
+      }
+    }
+  },
+  "items": [
+    {
+      "_id": "lx2claw000000001",
+      "name": "Hydraulic Claw",
+      "type": "action",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Reach</strong> 10 feet</p><p>The pilot swings one of the exoframe's clamp arms. Make a melee attack roll: [[/r 1d20+11 #Hydraulic Claw]]{+11} (a PC pilot may use their Piloting modifier instead if higher).</p><p><strong>Damage</strong> @Damage[(2d8+4)[bludgeoning]]</p><p>The two arms work independently; this action counts toward the pilot's multiple attack penalty.</p>"
+        },
+        "rules": [],
+        "slug": "lx2-exoframe-hydraulic-claw",
+        "traits": {
+          "value": [
+            "attack",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "otherTags": []
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "offensive",
+        "requirements": {
+          "value": ""
+        },
+        "trigger": {
+          "value": ""
+        },
+        "deathNote": false,
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "_key": "!actors.items!lx2exoframe00001.lx2claw000000001",
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "sort": 100000
+    },
+    {
+      "_id": "lx2vise000000001",
+      "name": "Vise Grip",
+      "type": "action",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Requirements</strong> The pilot hit a Medium or smaller creature with a Hydraulic Claw this turn.</p><p>The clamp closes and locks. The target is <strong>grabbed</strong> by that arm until the end of the pilot's next turn or until it Escapes (DC 20). While a creature is held, that arm can't be used for Hydraulic Claw.</p><p>If the pilot spends 1 action to Sustain the grip, the target takes @Damage[(1d8+4)[bludgeoning]] as the clamp tightens and the grab extends to the end of the pilot's next turn.</p>"
+        },
+        "rules": [],
+        "slug": "lx2-exoframe-vise-grip",
+        "traits": {
+          "value": [
+            "manipulate"
+          ],
+          "rarity": "common",
+          "otherTags": []
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "offensive",
+        "requirements": {
+          "value": ""
+        },
+        "trigger": {
+          "value": ""
+        },
+        "deathNote": false,
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "_key": "!actors.items!lx2exoframe00001.lx2vise000000001",
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "sort": 200000
+    },
+    {
+      "_id": "lx2shear00000001",
+      "name": "Shear",
+      "type": "action",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Reach</strong> 10 feet</p><p>Both clamps close on a single target and wrench in opposite directions, the same motion used to strip plating off a wreck. Make one melee attack roll: [[/r 1d20+11 #Shear]]{+11}. This counts as two attacks for the multiple attack penalty.</p><p><strong>Damage</strong> @Damage[(3d8+4)[slashing]]</p><p>Shear ignores 5 points of the target's Hardness, or 10 points if the target is an object, vehicle, or construct.</p><p><strong>Requirements</strong> Neither arm is holding a creature or object.</p>"
+        },
+        "rules": [],
+        "slug": "lx2-exoframe-shear",
+        "traits": {
+          "value": [
+            "attack",
+            "manipulate"
+          ],
+          "rarity": "common",
+          "otherTags": []
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "requirements": {
+          "value": ""
+        },
+        "trigger": {
+          "value": ""
+        },
+        "deathNote": false,
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "_key": "!actors.items!lx2exoframe00001.lx2shear00000001",
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "sort": 300000
+    },
+    {
+      "_id": "lx2heave00000001",
+      "name": "Heave",
+      "type": "action",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Requirements</strong> The exoframe is holding a creature with Vise Grip, or an unattended object of up to 10 Bulk.</p><p>The pilot hurls the held creature or object up to 20 feet in a straight line. A thrown creature takes @Damage[(2d6+4)[bludgeoning]] with a @Check[reflex|dc:20|basic] save and lands prone on a failure.</p><p>An object can instead be thrown at a creature within 20 feet: make a ranged attack roll [[/r 1d20+9 #Heave]]{+9}, dealing @Damage[(2d6+4)[bludgeoning]] on a hit.</p>"
+        },
+        "rules": [],
+        "slug": "lx2-exoframe-heave",
+        "traits": {
+          "value": [
+            "manipulate"
+          ],
+          "rarity": "common",
+          "otherTags": []
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "requirements": {
+          "value": ""
+        },
+        "trigger": {
+          "value": ""
+        },
+        "deathNote": false,
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "_key": "!actors.items!lx2exoframe00001.lx2heave00000001",
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "sort": 400000
+    }
+  ],
+  "_id": "lx2exoframe00001",
+  "_key": "!actors!lx2exoframe00001",
+  "effects": []
+}
