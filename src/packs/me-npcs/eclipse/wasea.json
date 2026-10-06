@@ -23,7 +23,13 @@
         "value": 30,
         "otherSpeeds": [],
         "details": ""
-      }
+      },
+      "immunities": [
+        {
+          "type": "frightened"
+        }
+      ],
+      "resistances": []
     },
     "initiative": {
       "statistic": "perception"

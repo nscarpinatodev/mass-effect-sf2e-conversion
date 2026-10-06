@@ -127,7 +127,13 @@
       "speed": {
         "value": 30,
         "details": ""
-      }
+      },
+      "immunities": [
+        {
+          "type": "fear-effects"
+        }
+      ],
+      "resistances": []
     },
     "traits": {
       "value": [

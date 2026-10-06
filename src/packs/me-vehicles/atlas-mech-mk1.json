@@ -1,0 +1,309 @@
+{
+  "name": "Atlas Mech Mk.I",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/atlas-mech.png",
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Atlas Mech Mk.I",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/atlas-mech.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/atlas-mech.webp"
+      }
+    }
+  },
+  "system": {
+    "slug": "atlas-mech-mk1",
+    "details": {
+      "level": {
+        "value": 9
+      },
+      "publicNotes": "<p>The Mk.I is the first production Atlas: a piloted combat walker Cerberus fields as heavy fire support, pairing a missile launcher with a heavy cannon behind thick composite armor. It predates the kinetic barrier and Titan frame of later marks, which makes it the one a squad can realistically take apart.</p><p>When the Atlas is reduced to 0 HP, the pilot may eject and continue fighting as a Cerberus Centurion.</p><p><strong>Construct Immunities:</strong> Immune to disease, mental effects, poison, sleep, and paralysis.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      },
+      "languages": {
+        "value": [],
+        "details": ""
+      },
+      "blurb": "Large Cerberus combat walker armed with missiles and heavy cannon; pilot may eject when destroyed."
+    },
+    "attributes": {
+      "hp": {
+        "value": 175,
+        "max": 175,
+        "temp": 0,
+        "details": ""
+      },
+      "ac": {
+        "value": 29,
+        "details": ""
+      },
+      "speed": {
+        "value": 25,
+        "details": ""
+      },
+      "immunities": [
+        {
+          "type": "disease"
+        },
+        {
+          "type": "mental"
+        },
+        {
+          "type": "poison"
+        },
+        {
+          "type": "sleep"
+        },
+        {
+          "type": "paralyzed"
+        }
+      ]
+    },
+    "traits": {
+      "value": [
+        "construct",
+        "cerberus",
+        "mech"
+      ],
+      "size": {
+        "value": "lg"
+      },
+      "rarity": "uncommon"
+    },
+    "abilities": {
+      "str": {
+        "mod": 7
+      },
+      "dex": {
+        "mod": 1
+      },
+      "con": {
+        "mod": 6
+      },
+      "int": {
+        "mod": -3
+      },
+      "wis": {
+        "mod": 0
+      },
+      "cha": {
+        "mod": -5
+      }
+    },
+    "saves": {
+      "fortitude": {
+        "value": 22,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 16,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 15,
+        "saveDetail": ""
+      }
+    },
+    "skills": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "perception": {
+      "details": "",
+      "mod": 20,
+      "senses": [],
+      "vision": true
+    },
+    "resources": {},
+    "initiative": {
+      "statistic": "perception"
+    }
+  },
+  "items": [
+    {
+      "_id": "4tl4smechw000001",
+      "name": "Heavy Cannon",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "weaponType": {
+          "value": "ranged"
+        },
+        "slug": "atlas-mech-cannon",
+        "bonus": {
+          "value": 21
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "3d8+9",
+            "damageType": "piercing"
+          }
+        },
+        "traits": {
+          "value": [
+            "fatal-d12",
+            "range-increment-100"
+          ]
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "rules": [],
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!b1c2d3e4f5a60004.4tl4smechw000001"
+    },
+    {
+      "_id": "4tl4smecha000001",
+      "name": "Missile Barrage",
+      "type": "action",
+      "img": "systems/pf2e/icons/default-icons/action.svg",
+      "system": {
+        "slug": "atlas-mech-missile-barrage",
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "description": {
+          "value": "<p>The Atlas fires missiles at up to 2 targets within 120 feet. Each target takes @Damage[3d10+8[piercing]] (@Check[reflex|dc:27|basic] for half). Recharge [[/br 1d4 #rounds]] rounds.</p>",
+          "gm": ""
+        },
+        "traits": {
+          "value": []
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "rules": [],
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!b1c2d3e4f5a60004.4tl4smecha000001"
+    }
+  ],
+  "_id": "b1c2d3e4f5a60004",
+  "_key": "!actors!b1c2d3e4f5a60004",
+  "effects": []
+}

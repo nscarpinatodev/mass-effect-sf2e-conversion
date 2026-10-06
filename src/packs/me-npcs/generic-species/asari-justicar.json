@@ -23,7 +23,13 @@
         "value": 30,
         "otherSpeeds": [],
         "details": ""
-      }
+      },
+      "immunities": [
+        {
+          "type": "controlled"
+        }
+      ],
+      "resistances": []
     },
     "initiative": {
       "statistic": "perception"

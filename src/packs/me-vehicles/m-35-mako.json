@@ -200,13 +200,11 @@
             "damageType": "bludgeoning"
           }
         },
-        "range": {
-          "value": 200
-        },
         "traits": {
           "value": [
             "brutal",
-            "splash-10"
+            "splash-10",
+            "range-increment-200"
           ]
         },
         "attackEffects": {
@@ -256,12 +254,10 @@
             "damageType": "piercing"
           }
         },
-        "range": {
-          "value": 80
-        },
         "traits": {
           "value": [
-            "agile"
+            "agile",
+            "range-increment-80"
           ]
         },
         "attackEffects": {

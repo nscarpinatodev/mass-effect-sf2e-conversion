@@ -206,14 +206,12 @@
             "damageType": "fire"
           }
         },
-        "range": {
-          "value": 200
-        },
         "traits": {
           "value": [
             "brutal",
             "splash-15",
-            "homing"
+            "homing",
+            "range-increment-200"
           ]
         },
         "attackEffects": {

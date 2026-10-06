@@ -127,7 +127,25 @@
       "speed": {
         "value": 20,
         "details": ""
-      }
+      },
+      "immunities": [
+        {
+          "type": "disease"
+        },
+        {
+          "type": "mental"
+        },
+        {
+          "type": "poison"
+        },
+        {
+          "type": "sleep"
+        },
+        {
+          "type": "paralyzed"
+        }
+      ],
+      "resistances": []
     },
     "traits": {
       "value": [

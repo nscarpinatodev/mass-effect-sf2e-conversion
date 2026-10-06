@@ -127,7 +127,16 @@
       "speed": {
         "value": 30,
         "details": ""
-      }
+      },
+      "immunities": [
+        {
+          "type": "fear-effects"
+        },
+        {
+          "type": "confused"
+        }
+      ],
+      "resistances": []
     },
     "traits": {
       "value": [

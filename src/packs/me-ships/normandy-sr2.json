@@ -206,12 +206,10 @@
             "damageType": "fire"
           }
         },
-        "range": {
-          "value": 2000
-        },
         "traits": {
           "value": [
-            "brutal"
+            "brutal",
+            "range-increment-2000"
           ]
         },
         "attackEffects": {
@@ -261,12 +259,10 @@
             "damageType": "piercing"
           }
         },
-        "range": {
-          "value": 1000
-        },
         "traits": {
           "value": [
-            "brutal"
+            "brutal",
+            "range-increment-1000"
           ]
         },
         "attackEffects": {
