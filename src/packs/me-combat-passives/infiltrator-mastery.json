@@ -14,9 +14,26 @@
     "slug": "me-infiltrator-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Tactical training integrates tech powers seamlessly into your combat routine. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action). While Tactical Cloak is active, you gain a <strong>+2 bonus</strong> to Stealth checks.</p><p><em>Classes: Infiltrator.</em></p>"
+      "value": "<p>Tactical training integrates tech powers seamlessly into your combat routine. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action). While Tactical Cloak is active, you gain a <strong>+2 bonus</strong> to Stealth checks.</p><p><em>Classes: Infiltrator.</em></p><hr/><p><em>Automation: Tech powers show their reduced action cost; the Stealth bonus applies while the Tactical Cloak effect is on you. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.powerEfficiency.tech",
+        "value": 1
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "stealth",
+        "type": "circumstance",
+        "value": 2,
+        "predicate": [
+          "self:effect:me-effect-tactical-cloak"
+        ],
+        "label": "Infiltrator Mastery"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

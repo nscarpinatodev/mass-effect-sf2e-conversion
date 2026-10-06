@@ -30,7 +30,10 @@
       "otherTags": [
         "ammo-power"
       ],
-      "value": [],
+      "value": [
+        "soldier",
+        "infiltrator"
+      ],
       "rarity": "common"
     },
     "publication": {

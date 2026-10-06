@@ -14,7 +14,7 @@
     "slug": "me-adept-mastery-superior",
     "description": {
       "gm": "",
-      "value": "<p>You have mastered the art of mass effect manipulation. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action), gain <strong>+1 to their save DCs</strong>, and you may use one as a free action after triggering a Biotic Explosion once per round. Your constant biotic field adds <strong>+2 damage</strong> to all Strikes and grants you resistance 5 to void damage.</p><p><em>Prerequisite: Improved Adept Mastery.</em></p>"
+      "value": "<p>You have mastered the art of mass effect manipulation. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action), gain <strong>+2 to their save DCs</strong> (total), and you may use one as a free action after triggering a Biotic Explosion once per round. Your constant biotic field adds <strong>+2 damage</strong> to all Strikes and grants you resistance 5 to void damage.</p><p><em>Prerequisite: Improved Adept Mastery.</em></p><hr/><p><em>Automation: Your class DC bonus rises to +2 total; the Strike damage and void resistance are applied automatically.</em></p>"
     },
     "rules": [
       {
@@ -23,6 +23,18 @@
         "type": "untyped",
         "value": 2,
         "label": "Superior Adept Mastery"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "untyped",
+        "value": 1,
+        "label": "Superior Adept Mastery"
+      },
+      {
+        "key": "Resistance",
+        "type": "void",
+        "value": 5
       }
     ],
     "_migration": {

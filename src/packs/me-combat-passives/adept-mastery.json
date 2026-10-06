@@ -14,9 +14,23 @@
     "slug": "me-adept-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Refined biotic focus reduces the effort required to shape mass effect fields. All biotic powers you use have their action cost <strong>reduced by 1</strong> (minimum 1 action). Your biotic power save DCs increase by <strong>+1</strong>.</p><p><em>Classes: Adept.</em></p>"
+      "value": "<p>Refined biotic focus reduces the effort required to shape mass effect fields. All biotic powers you use have their action cost <strong>reduced by 1</strong> (minimum 1 action). Your biotic power save DCs increase by <strong>+1</strong>.</p><p><em>Classes: Adept.</em></p><hr/><p><em>Automation: Biotic powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.powerEfficiency.biotic",
+        "value": 1
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "untyped",
+        "value": 1,
+        "label": "Adept Mastery"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

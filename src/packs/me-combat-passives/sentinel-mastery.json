@@ -14,9 +14,22 @@
     "slug": "me-sentinel-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Dual biotic and tech training allows you to deploy both disciplines with exceptional efficiency. Biotic and tech powers you use each have their action cost <strong>reduced by 1</strong> (minimum 1 action).</p><p><em>Classes: Sentinel.</em></p>"
+      "value": "<p>Dual biotic and tech training allows you to deploy both disciplines with exceptional efficiency. Biotic and tech powers you use each have their action cost <strong>reduced by 1</strong> (minimum 1 action).</p><p><em>Classes: Sentinel.</em></p><hr/><p><em>Automation: Biotic and tech powers show their reduced action cost. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.powerEfficiency.biotic",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.powerEfficiency.tech",
+        "value": 1
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

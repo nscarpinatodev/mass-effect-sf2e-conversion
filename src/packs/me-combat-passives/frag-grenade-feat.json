@@ -14,7 +14,7 @@
     "slug": "me-frag-grenade",
     "description": {
       "gm": "",
-      "value": "<p>You hurl a standard-issue fragmentation grenade that detonates on impact, shredding targets with lethal shrapnel.</p><p>Choose a point within <strong>60 feet</strong>. All creatures in a <strong>10-foot burst</strong> centered on that point must attempt a <strong>Reflex save</strong> against your class DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes <strong>2d6 piercing</strong> damage.</p><p><strong>Failure</strong> The target takes <strong>4d6 piercing</strong> damage and its Speed is reduced by <strong>10 feet</strong> until the end of your next turn.</p><p><strong>Critical Failure</strong> The target takes <strong>6d6 piercing</strong> damage, its Speed is reduced by 10 feet until the end of your next turn, and it is knocked <strong>prone</strong>.</p><p><strong>Cooldown:</strong> 3 rounds.</p>"
+      "value": "<p>You hurl a standard-issue fragmentation grenade that detonates on impact, shredding targets with lethal shrapnel.</p><p>Choose a point within <strong>60 feet</strong>. All creatures in a @Template[burst|distance:10]{10-foot burst} centered on that point must attempt a @Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-frag-grenade] save against your class DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes <strong>2d6 piercing</strong> damage.</p><p><strong>Failure</strong> The target takes <strong>4d6 piercing</strong> damage and its Speed is reduced by <strong>10 feet</strong> until the end of your next turn.</p><p><strong>Critical Failure</strong> The target takes <strong>6d6 piercing</strong> damage, its Speed is reduced by 10 feet until the end of your next turn, and it is knocked <strong>prone</strong>.</p><p><strong>Cooldown:</strong> 3 rounds.</p><hr/><p><em>When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -25,6 +25,7 @@
     "traits": {
       "otherTags": [],
       "value": [
+        "soldier",
         "manipulate"
       ],
       "rarity": "common"

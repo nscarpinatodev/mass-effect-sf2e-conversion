@@ -61,6 +61,7 @@
 		"scripts/paragon-renegade.js",
 		"scripts/journal-viewer.js",
 		"scripts/me-powers.js",
+		"scripts/me-classes.js",
 		"scripts/token-frames.js"
 	],
 	"packs": [

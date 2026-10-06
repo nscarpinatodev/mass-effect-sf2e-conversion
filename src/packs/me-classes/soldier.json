@@ -1,9 +1,9 @@
 {
-  "_key": "!items!meClassSoldier00",
-  "_id": "meClassSoldier00",
+  "_key": "!items!meClsSoldier0000",
+  "_id": "meClsSoldier0000",
   "folder": null,
   "name": "Soldier",
-  "type": "feat",
+  "type": "class",
   "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
   "effects": [],
   "flags": {},
@@ -11,28 +11,19 @@
     "default": 0
   },
   "system": {
-    "slug": "me-class-soldier",
+    "slug": "soldier",
     "description": {
       "gm": "",
-      "value": "<p>Masters of combat in every environment, Soldiers rely on weapon proficiency, tactical awareness, and a suite of ammo powers to dominate the battlefield. They eschew biotic and tech powers in favor of being the best shot in any engagement.</p><p><strong>Bonus:</strong> +4 HP from combat conditioning.</p><hr><p><strong>Signature Abilities:</strong> Adrenaline Rush, Concussive Shot, Fortification</p><p><strong>Power Access:</strong> All ammo powers (<em>ME Ammo Powers</em> compendium). Soldiers do not natively access biotic or tech power feats.</p><p><strong>Weapons:</strong> Proficient with all weapon groups - assault rifles, shotguns, sniper rifles, pistols, submachine guns, heavy weapons.</p><p><strong>Armor:</strong> Heavy, medium, and light armor. Heavy armor preferred.</p><p><strong>Playstyle:</strong> Front-line combatant. Soldiers are the most resilient class and the most weapon-versatile. Their ammo powers let them adapt to any enemy type without investing in biotic or tech abilities. In a squad, the Soldier is the one who goes through the front door.</p>"
+      "value": "<p>Masters of combat in every environment, Soldiers rely on weapon proficiency, tactical awareness, and a suite of ammo powers to dominate the battlefield. They eschew biotic and tech powers in favor of being the best shot in any engagement.</p><hr><p><strong>Key Attribute:</strong> Constitution or Strength</p><p><strong>Hit Points:</strong> 10 plus your Constitution modifier per level</p><h2>Initial Proficiencies</h2><p><strong>Perception:</strong> Trained</p><p><strong>Saving Throws:</strong> Expert in Fortitude, Expert in Reflex, Trained in Will</p><p><strong>Skills:</strong> Trained in Athletics, plus a number of additional skills equal to 3 plus your Intelligence modifier</p><p><strong>Attacks:</strong> Trained in simple weapons, martial weapons, and unarmed attacks</p><p><strong>Defenses:</strong> Trained in light, medium, heavy armor, and unarmored defense</p><p><strong>Class DC:</strong> Trained; your ammo powers use it</p><h2>Class Progression</h2><table><thead><tr><th>Level</th><th>Features</th></tr></thead><tbody><tr><td>1</td><td>Soldier Durability, Soldier Mastery</td></tr><tr><td>3</td><td>Will Expertise</td></tr><tr><td>5</td><td>Perception Expertise, Soldier Weapon Expertise</td></tr><tr><td>7</td><td>Fortitude Mastery, Improved Soldier Mastery, Weapon Specialization</td></tr><tr><td>9</td><td>Soldier Expertise</td></tr><tr><td>11</td><td>Armor Expertise</td></tr><tr><td>13</td><td>Soldier Weapon Mastery, Superior Soldier Mastery</td></tr><tr><td>15</td><td>Greater Weapon Specialization, Reflex Mastery</td></tr><tr><td>17</td><td>Armor Mastery</td></tr><tr><td>19</td><td>Master Soldier</td></tr></tbody></table><p>Class feats at 1st level and every even level; skill feats at every even level; general feats at 3rd, 7th, 11th, 15th, and 19th; skill increases at every odd level from 3rd.</p><hr><p><strong>Signature Abilities:</strong> Adrenaline Rush, Concussive Shot, Fortification</p><p><strong>Power Access:</strong> All ammo powers (<em>ME Ammo Powers</em> compendium). Soldiers do not natively access biotic or tech power feats.</p><p><strong>Weapons:</strong> Proficient with all weapon groups - assault rifles, shotguns, sniper rifles, pistols, submachine guns, heavy weapons.</p><p><strong>Armor:</strong> Heavy, medium, and light armor. Heavy armor preferred.</p><p><strong>Playstyle:</strong> Front-line combatant. Soldiers are the most resilient class and the most weapon-versatile. Their ammo powers let them adapt to any enemy type without investing in biotic or tech abilities. In a squad, the Soldier is the one who goes through the front door.</p>"
     },
-    "rules": [
-      {
-        "key": "FlatModifier",
-        "selector": "hp",
-        "value": 4,
-        "label": "Soldier Durability"
-      }
-    ],
+    "rules": [],
     "_migration": {
-      "version": 0.955,
-      "lastMigration": null,
+      "version": 0.959,
       "previous": null
     },
     "traits": {
-      "otherTags": [],
-      "value": [],
-      "rarity": "common"
+      "rarity": "common",
+      "value": []
     },
     "publication": {
       "title": "Mass Effect Compendium",
@@ -40,26 +31,200 @@
       "license": "ORC",
       "remaster": true
     },
-    "level": {
-      "value": 1
+    "ancestryFeatLevels": {
+      "value": [
+        1,
+        5,
+        9,
+        13,
+        17
+      ]
     },
-    "prerequisites": {
-      "value": []
+    "attacks": {
+      "advanced": 0,
+      "martial": 1,
+      "other": {
+        "name": "",
+        "rank": 0
+      },
+      "simple": 1,
+      "unarmed": 1
     },
-    "actionType": {
-      "value": "passive"
+    "classFeatLevels": {
+      "value": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
     },
-    "actions": {
-      "value": null
+    "defenses": {
+      "light": 1,
+      "medium": 1,
+      "heavy": 1,
+      "unarmored": 1
     },
-    "category": "classfeature",
-    "subfeatures": {
-      "proficiencies": {},
-      "senses": {},
-      "suppressedFeatures": []
+    "generalFeatLevels": {
+      "value": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ]
     },
-    "onlyLevel1": false,
-    "maxTakable": 1,
-    "location": null
+    "hp": 10,
+    "items": {
+      "sol00": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 1,
+        "name": "Soldier Durability",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meClassSoldier00"
+      },
+      "sol01": {
+        "img": "icons/skills/ranged/target-bullseye-arrow-red-white.webp",
+        "level": 1,
+        "name": "Soldier Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSoldierMast000"
+      },
+      "sol02": {
+        "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
+        "level": 3,
+        "name": "Will Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWillExpert"
+      },
+      "sol03": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 5,
+        "name": "Perception Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfPercExpert"
+      },
+      "sol04": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 5,
+        "name": "Soldier Weapon Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfSolWpnExp0"
+      },
+      "sol05": {
+        "img": "icons/magic/defensive/armor-shield-barrier-steel.webp",
+        "level": 7,
+        "name": "Fortitude Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfFortMaster"
+      },
+      "sol06": {
+        "img": "icons/skills/ranged/target-bullseye-arrow-red-white.webp",
+        "level": 7,
+        "name": "Improved Soldier Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSoldierMastIm0"
+      },
+      "sol07": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 7,
+        "name": "Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpec000"
+      },
+      "sol08": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 9,
+        "name": "Soldier Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCSoldierExp00"
+      },
+      "sol09": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 11,
+        "name": "Armor Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfArmorExp00"
+      },
+      "sol10": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 13,
+        "name": "Soldier Weapon Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfSolWpnMst0"
+      },
+      "sol11": {
+        "img": "icons/skills/ranged/target-bullseye-arrow-red-white.webp",
+        "level": 13,
+        "name": "Superior Soldier Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSoldierMastSu0"
+      },
+      "sol12": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 15,
+        "name": "Greater Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpecGr0"
+      },
+      "sol13": {
+        "img": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
+        "level": 15,
+        "name": "Reflex Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfReflMaster"
+      },
+      "sol14": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 17,
+        "name": "Armor Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfArmorMst00"
+      },
+      "sol15": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 19,
+        "name": "Master Soldier",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCSoldierMst00"
+      }
+    },
+    "keyAbility": {
+      "selected": null,
+      "value": [
+        "con",
+        "str"
+      ]
+    },
+    "perception": 1,
+    "savingThrows": {
+      "fortitude": 2,
+      "reflex": 2,
+      "will": 1
+    },
+    "skillFeatLevels": {
+      "value": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
+    },
+    "skillIncreaseLevels": {
+      "value": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19
+      ]
+    },
+    "spellcasting": 0,
+    "trainedSkills": {
+      "additional": 3,
+      "value": [
+        "athletics"
+      ]
+    }
   }
 }

@@ -24,7 +24,9 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "infiltrator"
+      ],
       "rarity": "common"
     },
     "publication": {

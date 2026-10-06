@@ -1,0 +1,66 @@
+{
+  "_key": "!items!meDCAdeptLeg0000",
+  "_id": "meDCAdeptLeg0000",
+  "folder": null,
+  "name": "Legendary Adept",
+  "type": "feat",
+  "img": "icons/magic/control/debuff-energy-hold-levitate-teal-blue.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "legendary-adept",
+    "description": {
+      "gm": "",
+      "value": "<p>Your command of your biotic powers deepens. Your proficiency rank for your adept class DC increases to legendary. Your powers use your class DC.</p>"
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.classDCs.adept.rank",
+        "value": 4
+      }
+    ],
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "adept"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 19
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

@@ -14,9 +14,30 @@
     "slug": "me-vanguard-mastery-superior",
     "description": {
       "gm": "",
-      "value": "<p>Your barrier and body move as one unstoppable force. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action), Biotic Charge restores <strong>5 HP</strong> to your Biotic Barrier, and after using Biotic Charge or Nova your next Strike deals <strong>+1d6 void</strong> damage. While your Biotic Barrier is at full HP, you gain a <strong>+1 status bonus</strong> to attack rolls and damage.</p><p><em>Prerequisite: Improved Vanguard Mastery.</em></p>"
+      "value": "<p>Your barrier and body move as one unstoppable force. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action), Biotic Charge restores <strong>5 HP</strong> to your Biotic Barrier, and after using Biotic Charge or Nova your next Strike deals <strong>+1d6 void</strong> damage. While your Biotic Barrier is at full HP, you gain a <strong>+1 status bonus</strong> to attack rolls and damage.</p><p><em>Prerequisite: Improved Vanguard Mastery.</em></p><hr/><p><em>Automation: The +1 to attack and damage switches on by itself whenever your Biotic Barrier is at full HP.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "strike-attack-roll",
+        "type": "status",
+        "value": 1,
+        "predicate": [
+          "self:me-barrier:full"
+        ],
+        "label": "Superior Vanguard Mastery"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "strike-damage",
+        "type": "status",
+        "value": 1,
+        "predicate": [
+          "self:me-barrier:full"
+        ],
+        "label": "Superior Vanguard Mastery"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

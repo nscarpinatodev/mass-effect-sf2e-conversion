@@ -14,7 +14,7 @@
     "slug": "me-soldier-mastery-superior",
     "description": {
       "gm": "",
-      "value": "<p>You are a living weapon, honed to perfection through countless battles. Your weapon Strikes deal <strong>+2 additional damage</strong> (total +6 with all mastery tiers) and you retain all prior mastery bonuses. Once per turn when you critically hit with a weapon attack, the target is <strong>Stunned 1</strong>.</p><p><em>Prerequisite: Improved Soldier Mastery.</em></p>"
+      "value": "<p>You are a living weapon, honed to perfection through countless battles. Your weapon Strikes deal <strong>+2 additional damage</strong> (total +6 with all mastery tiers) and you retain all prior mastery bonuses. Once per turn when you critically hit with a weapon attack, the target is <strong>Stunned 1</strong>.</p><p><em>Prerequisite: Improved Soldier Mastery.</em></p><hr/><p><em>Automation: The extra Strike damage is applied automatically, and a critical hit posts a Stunned 1 reminder.</em></p>"
     },
     "rules": [
       {
@@ -23,6 +23,15 @@
         "type": "untyped",
         "value": 2,
         "label": "Superior Soldier Mastery"
+      },
+      {
+        "key": "Note",
+        "selector": "strike-attack-roll",
+        "outcome": [
+          "criticalSuccess"
+        ],
+        "title": "Superior Soldier Mastery",
+        "text": "<p>Once per turn, the target is <strong>Stunned 1</strong>.</p>"
       }
     ],
     "_migration": {

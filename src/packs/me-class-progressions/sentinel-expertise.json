@@ -1,0 +1,66 @@
+{
+  "_key": "!items!meDCSentinelExp0",
+  "_id": "meDCSentinelExp0",
+  "folder": null,
+  "name": "Sentinel Expertise",
+  "type": "feat",
+  "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "sentinel-expertise",
+    "description": {
+      "gm": "",
+      "value": "<p>Your command of your biotic and tech powers deepens. Your proficiency rank for your sentinel class DC increases to expert. Your powers use your class DC.</p>"
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.classDCs.sentinel.rank",
+        "value": 2
+      }
+    ],
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "sentinel"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 7
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

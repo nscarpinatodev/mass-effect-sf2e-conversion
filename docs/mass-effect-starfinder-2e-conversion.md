@@ -1083,19 +1083,59 @@ At the end of each of your turns, you can attempt a DC 15 flat check to reduce t
 
 ### SOLDIER
 
-#### Class Feature
-
-**Soldier** *(Level 1)*
-
 Masters of combat in every environment, Soldiers rely on weapon proficiency, tactical awareness, and a suite of ammo powers to dominate the battlefield. They eschew biotic and tech powers in favor of being the best shot in any engagement.
-**Bonus:** +4 HP from combat conditioning.
 
----
+**Key Attribute:** Constitution or Strength
+
+**Hit Points:** 10 plus your Constitution modifier per level
+
 **Signature Abilities:** Adrenaline Rush, Concussive Shot, Fortification
+
 **Power Access:** All ammo powers (*ME Ammo Powers* compendium). Soldiers do not natively access biotic or tech power feats.
+
 **Weapons:** Proficient with all weapon groups - assault rifles, shotguns, sniper rifles, pistols, submachine guns, heavy weapons.
+
 **Armor:** Heavy, medium, and light armor. Heavy armor preferred.
+
 **Playstyle:** Front-line combatant. Soldiers are the most resilient class and the most weapon-versatile. Their ammo powers let them adapt to any enemy type without investing in biotic or tech abilities. In a squad, the Soldier is the one who goes through the front door.
+
+#### Initial Proficiencies
+
+- **Perception:** Trained in Perception
+- **Saving Throws:** Expert in Fortitude; Expert in Reflex; Trained in Will
+- **Skills:** Trained in Athletics; Trained in a number of additional skills equal to 3 plus your Intelligence modifier
+- **Attacks:** Trained in simple and martial weapons; Trained in unarmed attacks
+- **Defenses:** Trained in light armor, medium armor, heavy armor, and unarmored defense
+- **Class DC:** Trained in Soldier class DC
+
+#### Advancement
+
+| Level | Class Features |
+|---|---|
+| 1 | Soldier Durability, Soldier Mastery, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 2 | Class Feat, Skill Feat |
+| 3 | Will Expertise, General Feat, Skill Increase |
+| 4 | Class Feat, Skill Feat |
+| 5 | Perception Expertise, Soldier Weapon Expertise, Ancestry Feat, Skill Increase, Attribute Boosts |
+| 6 | Class Feat, Skill Feat |
+| 7 | Fortitude Mastery, Improved Soldier Mastery, Weapon Specialization, General Feat, Skill Increase |
+| 8 | Class Feat, Skill Feat |
+| 9 | Soldier Expertise, Ancestry Feat, Skill Increase |
+| 10 | Class Feat, Skill Feat, Attribute Boosts |
+| 11 | Armor Expertise, General Feat, Skill Increase |
+| 12 | Class Feat, Skill Feat |
+| 13 | Soldier Weapon Mastery, Superior Soldier Mastery, Ancestry Feat, Skill Increase |
+| 14 | Class Feat, Skill Feat |
+| 15 | Greater Weapon Specialization, Reflex Mastery, General Feat, Skill Increase, Attribute Boosts |
+| 16 | Class Feat, Skill Feat |
+| 17 | Armor Mastery, Ancestry Feat, Skill Increase |
+| 18 | Class Feat, Skill Feat |
+| 19 | Master Soldier, General Feat, Skill Increase |
+| 20 | Class Feat, Skill Feat, Attribute Boosts |
+
+#### Soldier Durability — Level 1
+
++4 HP from combat conditioning.
 
 ---
 
@@ -1109,6 +1149,9 @@ Intensive combat training sharpens your instincts and weapon handling. Your weap
 *Classes: Soldier.*
 
 ---
+*Automation: Strike damage and the +1 to attack rolls against off-guard targets are applied automatically.*
+
+---
 
 #### Improved Soldier Mastery — Level 7
 *Prerequisite: Soldier Mastery*
@@ -1117,12 +1160,18 @@ Years of combat experience make you a force multiplier on the battlefield. Your 
 *Prerequisite: Soldier Mastery.*
 
 ---
+*Automation: The extra Strike damage is applied automatically. The free Strike after Adrenaline Rush is yours to take.*
+
+---
 
 #### Superior Soldier Mastery — Level 13
 *Prerequisite: Improved Soldier Mastery*
 
 You are a living weapon, honed to perfection through countless battles. Your weapon Strikes deal **+2 additional damage** (total +6 with all mastery tiers) and you retain all prior mastery bonuses. Once per turn when you critically hit with a weapon attack, the target is **Stunned 1**.
 *Prerequisite: Improved Soldier Mastery.*
+
+---
+*Automation: The extra Strike damage is applied automatically, and a critical hit posts a Stunned 1 reminder.*
 
 ---
 
@@ -1146,19 +1195,59 @@ You are a living weapon, honed to perfection through countless battles. Your wea
 
 ### ENGINEER
 
-#### Class Feature
-
-**Engineer** *(Level 1)*
-
 Specialists in technical warfare, Engineers control the battlefield through drone deployment, electronic warfare, and the ability to strip enemy shields and set enemies on fire. They are the definitive tech class, capable of solving almost any tactical problem with the right tool.
-**Bonus:** +2 circumstance bonus to Will saves (trained mind, resistant to hacking and mental subversion).
 
----
+**Key Attribute:** Intelligence
+
+**Hit Points:** 8 plus your Constitution modifier per level
+
 **Signature Abilities:** Combat Drone, Sentry Turret, Incinerate, Overload, AI Hacking, Cryo Blast
+
 **Power Access:** All tech powers (*ME Tech Powers* compendium). Engineers do not natively access biotic power feats.
+
 **Weapons:** Pistols, submachine guns. Light weapons preferred; heavy weapons and sniper rifles are not standard.
+
 **Armor:** Light and medium armor only. Combat Drone provides area denial that compensates for lighter armor.
+
 **Playstyle:** Force multiplier and control specialist. Engineers rarely trade shots directly - they strip defenses, deploy drones and turrets, and create conditions that the rest of the squad exploits. Best when given time to set up.
+
+#### Initial Proficiencies
+
+- **Perception:** Trained in Perception
+- **Saving Throws:** Trained in Fortitude; Expert in Reflex; Expert in Will
+- **Skills:** Trained in Crafting; Trained in a number of additional skills equal to 4 plus your Intelligence modifier
+- **Attacks:** Trained in simple weapons; Trained in martial pistols and submachine guns; Trained in unarmed attacks
+- **Defenses:** Trained in light armor, medium armor, and unarmored defense
+- **Class DC:** Trained in Engineer class DC
+
+#### Advancement
+
+| Level | Class Features |
+|---|---|
+| 1 | Engineer Mastery, Engineer Systems Knowledge, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 2 | Class Feat, Skill Feat |
+| 3 | Fortitude Expertise, General Feat, Skill Increase |
+| 4 | Class Feat, Skill Feat |
+| 5 | Ancestry Feat, Skill Increase, Attribute Boosts |
+| 6 | Class Feat, Skill Feat |
+| 7 | Engineer Expertise, Improved Engineer Mastery, General Feat, Skill Increase |
+| 8 | Class Feat, Skill Feat |
+| 9 | Will Mastery, Ancestry Feat, Skill Increase |
+| 10 | Class Feat, Skill Feat, Attribute Boosts |
+| 11 | Medium Armor Expertise, Perception Expertise, Weapon Expertise, General Feat, Skill Increase |
+| 12 | Class Feat, Skill Feat |
+| 13 | Superior Engineer Mastery, Weapon Specialization, Ancestry Feat, Skill Increase |
+| 14 | Class Feat, Skill Feat |
+| 15 | Master Engineer, General Feat, Skill Increase, Attribute Boosts |
+| 16 | Class Feat, Skill Feat |
+| 17 | Reflex Mastery, Ancestry Feat, Skill Increase |
+| 18 | Class Feat, Skill Feat |
+| 19 | Legendary Engineer, General Feat, Skill Increase |
+| 20 | Class Feat, Skill Feat, Attribute Boosts |
+
+#### Engineer Systems Knowledge — Level 1
+
++2 circumstance bonus to Will saves (trained mind, resistant to hacking and mental subversion).
 
 ---
 
@@ -1172,12 +1261,18 @@ Optimized omni-tool firmware and systematic power deployment reduces the overhea
 *Classes: Engineer.*
 
 ---
+*Automation: Tech powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+
+---
 
 #### Improved Engineer Mastery — Level 7
 *Prerequisite: Engineer Mastery*
 
-Your system-level tech optimization reaches an advanced state. All tech powers have their action cost **reduced by 1** (minimum 1 action) and their DCs gain **+1**. Once per round when a tech power you used deals damage, you may reduce one active power cooldown by **1 round**. Your Combat Drone gains **+2 HP per your level**.
+Your system-level tech optimization reaches an advanced state. All tech powers have their action cost **reduced by 1** (minimum 1 action) and their DCs keep the **+1**. Once per round when a tech power you used deals damage, you may reduce one active power cooldown by **1 round**. Your Combat Drone gains **+2 HP per your level**.
 *Prerequisite: Engineer Mastery.*
+
+---
+*Automation: Cooldown reduction and the Combat Drone's extra HP are tracked by hand.*
 
 ---
 
@@ -1186,6 +1281,9 @@ Your system-level tech optimization reaches an advanced state. All tech powers h
 
 Your mastery of omni-tool systems reaches the pinnacle of technical achievement. All tech powers have their action cost **reduced by 1** (minimum 1 action), their DCs gain **+2** (total), and you may reduce a cooldown once per round when dealing damage. Tech powers used against **Flat-Footed** targets deal **+1d6 bonus damage**. Your Combat Drone gains **+2 HP per your level**.
 *Prerequisite: Improved Engineer Mastery.*
+
+---
+*Automation: Your class DC bonus rises to +2 total. The +1d6 against off-guard targets and the drone HP are tracked by hand.*
 
 ---
 
@@ -1208,19 +1306,59 @@ Your mastery of omni-tool systems reaches the pinnacle of technical achievement.
 
 ### ADEPT
 
-#### Class Feature
-
-**Adept** *(Level 1)*
-
 The most powerful biotic class in the galaxy, Adepts use mass effect fields to dominate, suspend, and destroy enemies with devastating efficiency. Their biotic combos - particularly the Biotic Explosion chain - are the most powerful burst damage in the game.
-**Bonus:** +2 circumstance bonus to Fortitude saves (years of biotic conditioning hardens the body against physical trauma).
 
----
+**Key Attribute:** Charisma
+
+**Hit Points:** 6 plus your Constitution modifier per level
+
 **Signature Abilities:** Singularity, Warp, Throw, Stasis, Pull, Dark Channel, Dominate
+
 **Power Access:** All biotic powers (*ME Biotic Powers* compendium). Adepts do not natively access tech power feats.
+
 **Weapons:** Pistols and submachine guns only. Adepts depend on powers, not guns.
+
 **Armor:** Light armor only. Biotic Barrier compensates for the lack of physical protection.
+
 **Playstyle:** Crowd control and combo detonation. An Adept's power is in setup - priming multiple enemies simultaneously with Singularity, then detonating with Throw or Warp for cascading Biotic Explosions. Fragile without their barrier up; devastating when they control positioning.
+
+#### Initial Proficiencies
+
+- **Perception:** Trained in Perception
+- **Saving Throws:** Trained in Fortitude; Expert in Reflex; Expert in Will
+- **Skills:** Trained in Occultism; Trained in a number of additional skills equal to 3 plus your Intelligence modifier
+- **Attacks:** Trained in simple weapons; Trained in martial pistols and submachine guns; Trained in unarmed attacks
+- **Defenses:** Trained in light armor and unarmored defense
+- **Class DC:** Trained in Adept class DC
+
+#### Advancement
+
+| Level | Class Features |
+|---|---|
+| 1 | Adept Mastery, Biotic Conditioning, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 2 | Class Feat, Skill Feat |
+| 3 | Fortitude Expertise, General Feat, Skill Increase |
+| 4 | Class Feat, Skill Feat |
+| 5 | Ancestry Feat, Skill Increase, Attribute Boosts |
+| 6 | Class Feat, Skill Feat |
+| 7 | Adept Expertise, Improved Adept Mastery, General Feat, Skill Increase |
+| 8 | Class Feat, Skill Feat |
+| 9 | Will Mastery, Ancestry Feat, Skill Increase |
+| 10 | Class Feat, Skill Feat, Attribute Boosts |
+| 11 | Light Armor Expertise, Perception Expertise, Weapon Expertise, General Feat, Skill Increase |
+| 12 | Class Feat, Skill Feat |
+| 13 | Superior Adept Mastery, Weapon Specialization, Ancestry Feat, Skill Increase |
+| 14 | Class Feat, Skill Feat |
+| 15 | Master Adept, General Feat, Skill Increase, Attribute Boosts |
+| 16 | Class Feat, Skill Feat |
+| 17 | Reflex Mastery, Ancestry Feat, Skill Increase |
+| 18 | Class Feat, Skill Feat |
+| 19 | Legendary Adept, General Feat, Skill Increase |
+| 20 | Class Feat, Skill Feat, Attribute Boosts |
+
+#### Biotic Conditioning — Level 1
+
++2 circumstance bonus to Fortitude saves (years of biotic conditioning hardens the body against physical trauma).
 
 ---
 
@@ -1234,20 +1372,29 @@ Refined biotic focus reduces the effort required to shape mass effect fields. Al
 *Classes: Adept.*
 
 ---
+*Automation: Biotic powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+
+---
 
 #### Improved Adept Mastery — Level 7
 *Prerequisite: Adept Mastery*
 
-Your biotic efficiency reaches exceptional levels. All biotic powers have their action cost **reduced by 1** (minimum 1 action) and your biotic power DCs gain **+1**. Once per round, after triggering a Biotic Explosion, you may use a biotic power as a **free action**.
+Your biotic efficiency reaches exceptional levels. All biotic powers have their action cost **reduced by 1** (minimum 1 action) and your biotic power DCs keep the **+1**. Once per round, after triggering a Biotic Explosion, you may use a biotic power as a **free action**.
 *Prerequisite: Adept Mastery.*
+
+---
+*Automation: The free biotic power after a Biotic Explosion is yours to take.*
 
 ---
 
 #### Superior Adept Mastery — Level 13
 *Prerequisite: Improved Adept Mastery*
 
-You have mastered the art of mass effect manipulation. All biotic powers have their action cost **reduced by 1** (minimum 1 action), gain **+1 to their save DCs**, and you may use one as a free action after triggering a Biotic Explosion once per round. Your constant biotic field adds **+2 damage** to all Strikes and grants you resistance 5 to void damage.
+You have mastered the art of mass effect manipulation. All biotic powers have their action cost **reduced by 1** (minimum 1 action), gain **+2 to their save DCs** (total), and you may use one as a free action after triggering a Biotic Explosion once per round. Your constant biotic field adds **+2 damage** to all Strikes and grants you resistance 5 to void damage.
 *Prerequisite: Improved Adept Mastery.*
+
+---
+*Automation: Your class DC bonus rises to +2 total; the Strike damage and void resistance are applied automatically.*
 
 ---
 
@@ -1270,19 +1417,59 @@ You have mastered the art of mass effect manipulation. All biotic powers have th
 
 ### VANGUARD
 
-#### Class Feature
-
-**Vanguard** *(Level 1)*
-
 The most aggressive class in the galaxy, Vanguards combine biotic power with close-range weapon mastery. Their signature abilities - Charge and Nova - define a high-risk, high-reward playstyle built around closing distance, overwhelming enemies, and recharging defenses through momentum.
-**Bonus:** +2 circumstance bonus to Reflex saves (constant movement and biotic enhancement make Vanguards extremely hard to pin down).
 
----
+**Key Attribute:** Charisma
+
+**Hit Points:** 10 plus your Constitution modifier per level
+
 **Signature Abilities:** Charge, Nova, Biotic Barrier, Reave, Pull, Shockwave
+
 **Power Access:** Charge, Nova, Biotic Barrier, and the close-range biotic suite from the *ME Biotic Powers* compendium. Vanguards have limited access to long-range biotic control powers (no Singularity, limited Warp). No native tech power access.
+
 **Weapons:** Shotguns (primary), pistols (secondary). Vanguards close the distance with Charge and finish with a shotgun burst.
+
 **Armor:** Heavy armor preferred. Vanguards tank through aggression - Charge restores shield HP, Nova is a last resort. They need the HP to survive the approach.
+
 **Playstyle:** Aggressive melee-range biotic fighter. Charge into a group, Nova for point-blank devastation, shotgun any survivors, and rely on Charge's shield recharge to stay alive. Extremely effective in close quarters; exposed at range.
+
+#### Initial Proficiencies
+
+- **Perception:** Trained in Perception
+- **Saving Throws:** Expert in Fortitude; Trained in Reflex; Expert in Will
+- **Skills:** Trained in Athletics; Trained in a number of additional skills equal to 3 plus your Intelligence modifier
+- **Attacks:** Trained in simple weapons; Trained in martial shotguns and pistols; Trained in unarmed attacks
+- **Defenses:** Trained in light armor, medium armor, heavy armor, and unarmored defense
+- **Class DC:** Trained in Vanguard class DC
+
+#### Advancement
+
+| Level | Class Features |
+|---|---|
+| 1 | Vanguard Mastery, Vanguard Momentum, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 2 | Class Feat, Skill Feat |
+| 3 | Reflex Expertise, General Feat, Skill Increase |
+| 4 | Class Feat, Skill Feat |
+| 5 | Weapon Expertise, Ancestry Feat, Skill Increase, Attribute Boosts |
+| 6 | Class Feat, Skill Feat |
+| 7 | Improved Vanguard Mastery, Vanguard Expertise, Weapon Specialization, General Feat, Skill Increase |
+| 8 | Class Feat, Skill Feat |
+| 9 | Fortitude Mastery, Ancestry Feat, Skill Increase |
+| 10 | Class Feat, Skill Feat, Attribute Boosts |
+| 11 | Armor Expertise, Perception Expertise, General Feat, Skill Increase |
+| 12 | Class Feat, Skill Feat |
+| 13 | Superior Vanguard Mastery, Weapon Mastery, Ancestry Feat, Skill Increase |
+| 14 | Class Feat, Skill Feat |
+| 15 | Greater Weapon Specialization, Master Vanguard, General Feat, Skill Increase, Attribute Boosts |
+| 16 | Class Feat, Skill Feat |
+| 17 | Will Mastery, Ancestry Feat, Skill Increase |
+| 18 | Class Feat, Skill Feat |
+| 19 | Legendary Vanguard, General Feat, Skill Increase |
+| 20 | Class Feat, Skill Feat, Attribute Boosts |
+
+#### Vanguard Momentum — Level 1
+
++2 circumstance bonus to Reflex saves (constant movement and biotic enhancement make Vanguards extremely hard to pin down).
 
 ---
 
@@ -1296,6 +1483,9 @@ Combat biotic training sharpens your body and barrier into a unified weapon. All
 *Classes: Vanguard.*
 
 ---
+*Automation: Biotic powers show their reduced action cost. Using Charge refills 5 HP of your Biotic Barrier. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+
+---
 
 #### Improved Vanguard Mastery — Level 7
 *Prerequisite: Vanguard Mastery*
@@ -1304,12 +1494,18 @@ Your combat biotic synergy reaches its peak efficiency. All biotic powers have t
 *Prerequisite: Vanguard Mastery.*
 
 ---
+*Automation: Using Charge or Nova gives you a Vanguard Momentum effect until the end of your turn; your Strikes deal the extra 1d6 void while it lasts. Remove it after the Strike.*
+
+---
 
 #### Superior Vanguard Mastery — Level 13
 *Prerequisite: Improved Vanguard Mastery*
 
 Your barrier and body move as one unstoppable force. All biotic powers have their action cost **reduced by 1** (minimum 1 action), Biotic Charge restores **5 HP** to your Biotic Barrier, and after using Biotic Charge or Nova your next Strike deals **+1d6 void** damage. While your Biotic Barrier is at full HP, you gain a **+1 status bonus** to attack rolls and damage.
 *Prerequisite: Improved Vanguard Mastery.*
+
+---
+*Automation: The +1 to attack and damage switches on by itself whenever your Biotic Barrier is at full HP.*
 
 ---
 
@@ -1332,19 +1528,59 @@ Your barrier and body move as one unstoppable force. All biotic powers have thei
 
 ### INFILTRATOR
 
-#### Class Feature
-
-**Infiltrator** *(Level 1)*
-
 Elite marksmen who combine precision weapon skills with just enough tech to gain and exploit an edge. Infiltrators rely on Tactical Cloak to set up devastating precision strikes, then use tech powers to strip defenses and neutralize specific threats.
-**Bonus:** +2 circumstance bonus to Stealth checks (trained in concealment and operational silence).
 
----
+**Key Attribute:** Intelligence
+
+**Hit Points:** 8 plus your Constitution modifier per level
+
 **Signature Abilities:** Tactical Cloak, Incinerate, AI Hacking (or Sabotage), Energy Drain
+
 **Power Access:** Tactical Cloak (core, always available), plus a limited selection of tech powers from the *ME Tech Powers* compendium - typically one offensive power (Incinerate or Cryo Blast) and one utility/crowd control power (AI Hacking, Sabotage, or Energy Drain). No biotic power access.
+
 **Weapons:** Sniper rifles (primary), pistols and submachine guns (secondary). The Tactical Cloak precision bonus is designed for sniper follow-through.
+
 **Armor:** Light and medium armor. Infiltrators rely on positioning and cloak rather than taking hits.
+
 **Playstyle:** Precision control from range. Cloak to reposition, uncloak for a precision sniper shot (+2d6 from Tactical Cloak), strip one enemy's defenses with Incinerate or Energy Drain, and use AI Hacking to remove a synthetic threat from the fight entirely. High single-target damage; low survivability in open combat.
+
+#### Initial Proficiencies
+
+- **Perception:** Expert in Perception
+- **Saving Throws:** Trained in Fortitude; Expert in Reflex; Expert in Will
+- **Skills:** Trained in Stealth; Trained in a number of additional skills equal to 4 plus your Intelligence modifier
+- **Attacks:** Trained in simple weapons; Trained in martial sniper rifles, pistols, and submachine guns; Trained in unarmed attacks
+- **Defenses:** Trained in light armor, medium armor, and unarmored defense
+- **Class DC:** Trained in Infiltrator class DC
+
+#### Advancement
+
+| Level | Class Features |
+|---|---|
+| 1 | Infiltrator Mastery, Infiltrator Training, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 2 | Class Feat, Skill Feat |
+| 3 | Fortitude Expertise, General Feat, Skill Increase |
+| 4 | Class Feat, Skill Feat |
+| 5 | Weapon Expertise, Ancestry Feat, Skill Increase, Attribute Boosts |
+| 6 | Class Feat, Skill Feat |
+| 7 | Improved Infiltrator Mastery, Infiltrator Expertise, Perception Mastery, Weapon Specialization, General Feat, Skill Increase |
+| 8 | Class Feat, Skill Feat |
+| 9 | Reflex Mastery, Ancestry Feat, Skill Increase |
+| 10 | Class Feat, Skill Feat, Attribute Boosts |
+| 11 | Medium Armor Expertise, General Feat, Skill Increase |
+| 12 | Class Feat, Skill Feat |
+| 13 | Superior Infiltrator Mastery, Weapon Mastery, Ancestry Feat, Skill Increase |
+| 14 | Class Feat, Skill Feat |
+| 15 | Greater Weapon Specialization, Master Infiltrator, General Feat, Skill Increase, Attribute Boosts |
+| 16 | Class Feat, Skill Feat |
+| 17 | Will Mastery, Ancestry Feat, Skill Increase |
+| 18 | Class Feat, Skill Feat |
+| 19 | Legendary Infiltrator, General Feat, Skill Increase |
+| 20 | Class Feat, Skill Feat, Attribute Boosts |
+
+#### Infiltrator Training — Level 1
+
++2 circumstance bonus to Stealth checks (trained in concealment and operational silence).
 
 ---
 
@@ -1358,6 +1594,9 @@ Tactical training integrates tech powers seamlessly into your combat routine. Al
 *Classes: Infiltrator.*
 
 ---
+*Automation: Tech powers show their reduced action cost; the Stealth bonus applies while the Tactical Cloak effect is on you. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+
+---
 
 #### Improved Infiltrator Mastery — Level 7
 *Prerequisite: Infiltrator Mastery*
@@ -1366,12 +1605,18 @@ Your tactical precision reaches a lethal edge. All tech powers have their action
 *Prerequisite: Infiltrator Mastery.*
 
 ---
+*Automation: The extra 2d6 precision is added to Strikes while the Tactical Cloak effect is on you, on top of the cloak's own 2d6.*
+
+---
 
 #### Superior Infiltrator Mastery — Level 13
 *Prerequisite: Improved Infiltrator Mastery*
 
 You are the perfect predator — invisible, precise, and lethal. All tech powers have their action cost **reduced by 1** (minimum 1 action) and you retain all prior mastery bonuses. While Tactical Cloak is active, you gain **Resistance 5** to all damage. Tech powers used against **Flat-Footed** targets have their DC increased by **2**.
 *Prerequisite: Improved Infiltrator Mastery.*
+
+---
+*Automation: Resistance 5 to all damage applies while the Tactical Cloak effect is on you. The +2 DC against off-guard targets is tracked by hand.*
 
 ---
 
@@ -1394,19 +1639,59 @@ You are the perfect predator — invisible, precise, and lethal. All tech powers
 
 ### SENTINEL
 
-#### Class Feature
-
-**Sentinel** *(Level 1)*
-
 The most defensively robust class in the game, Sentinels combine Tech Armor with a selection of both tech and biotic powers. They sacrifice the peak offensive output of pure specialists in exchange for unmatched survivability and tactical versatility.
-**Bonus:** +1 circumstance bonus to all saving throws (combined biotic/tech training creates comprehensive defensive conditioning).
 
----
+**Key Attribute:** Charisma or Intelligence
+
+**Hit Points:** 10 plus your Constitution modifier per level
+
 **Signature Abilities:** Tech Armor, Throw, Warp, Overload, Cryo Blast
+
 **Power Access:** A hybrid selection from both *ME Biotic Powers* and *ME Tech Powers* compendiums. Sentinels can take biotic powers from the control/debuff suite (Throw, Warp, Stasis) and defensive/utility tech powers (Tech Armor, Overload, Cryo Blast). They do not access the highest-tier powers of either type.
+
 **Weapons:** Assault rifles and shotguns. More weapon-versatile than pure biotic/tech classes.
+
 **Armor:** Medium and heavy armor, supplemented by Tech Armor. The combination makes Sentinels the hardest class to kill outright.
+
 **Playstyle:** Durable generalist. Sentinels don't dominate any single tactical dimension but handle every situation adequately. Tech Armor provides a damage-buffer layer on top of regular armor. Throw and Warp enable biotic combos at lower power level, while Overload and Cryo Blast handle shields and crowd control. Best for players who want to be the team's anchor rather than its specialist.
+
+#### Initial Proficiencies
+
+- **Perception:** Trained in Perception
+- **Saving Throws:** Expert in Fortitude; Trained in Reflex; Expert in Will
+- **Skills:** Trained in Occultism and Crafting; Trained in a number of additional skills equal to 3 plus your Intelligence modifier
+- **Attacks:** Trained in simple weapons; Trained in martial assault rifles and shotguns; Trained in unarmed attacks
+- **Defenses:** Trained in light armor, medium armor, heavy armor, and unarmored defense
+- **Class DC:** Trained in Sentinel class DC
+
+#### Advancement
+
+| Level | Class Features |
+|---|---|
+| 1 | Sentinel Conditioning, Sentinel Mastery, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 2 | Class Feat, Skill Feat |
+| 3 | Reflex Expertise, General Feat, Skill Increase |
+| 4 | Class Feat, Skill Feat |
+| 5 | Weapon Expertise, Ancestry Feat, Skill Increase, Attribute Boosts |
+| 6 | Class Feat, Skill Feat |
+| 7 | Improved Sentinel Mastery, Sentinel Expertise, Weapon Specialization, General Feat, Skill Increase |
+| 8 | Class Feat, Skill Feat |
+| 9 | Will Mastery, Ancestry Feat, Skill Increase |
+| 10 | Class Feat, Skill Feat, Attribute Boosts |
+| 11 | Armor Expertise, Perception Expertise, General Feat, Skill Increase |
+| 12 | Class Feat, Skill Feat |
+| 13 | Superior Sentinel Mastery, Weapon Mastery, Ancestry Feat, Skill Increase |
+| 14 | Class Feat, Skill Feat |
+| 15 | Greater Weapon Specialization, Master Sentinel, General Feat, Skill Increase, Attribute Boosts |
+| 16 | Class Feat, Skill Feat |
+| 17 | Fortitude Mastery, Ancestry Feat, Skill Increase |
+| 18 | Class Feat, Skill Feat |
+| 19 | Armor Mastery, Legendary Sentinel, General Feat, Skill Increase |
+| 20 | Class Feat, Skill Feat, Attribute Boosts |
+
+#### Sentinel Conditioning — Level 1
+
++1 circumstance bonus to all saving throws (combined biotic/tech training creates comprehensive defensive conditioning).
 
 ---
 
@@ -1420,6 +1705,9 @@ Dual biotic and tech training allows you to deploy both disciplines with excepti
 *Classes: Sentinel.*
 
 ---
+*Automation: Biotic and tech powers show their reduced action cost. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+
+---
 
 #### Improved Sentinel Mastery — Level 7
 *Prerequisite: Sentinel Mastery*
@@ -1428,12 +1716,18 @@ You have refined your dual-discipline approach into a seamless defense. Biotic a
 *Prerequisite: Sentinel Mastery.*
 
 ---
+*Automation: Turn on the toggle on your sheet after using both kinds of power in one turn, and off again at the start of your next turn. Like Tech Armor, this is a circumstance bonus, so the two don't stack.*
+
+---
 
 #### Superior Sentinel Mastery — Level 13
 *Prerequisite: Improved Sentinel Mastery*
 
 Your hybrid discipline reaches its apex, blending biotic and tech into a seamless defensive and offensive system. Biotic and tech powers each have their action cost **reduced by 1** (minimum 1 action) and you retain the AC bonus from using both in the same turn. Tech Armor's damage reduction increases by **2**. Your biotic and tech powers deal **+1d4 bonus damage**.
 *Prerequisite: Improved Sentinel Mastery.*
+
+---
+*Automation: Tech Armor's damage reduction and the +1d4 power damage are tracked by hand.*
 
 ---
 
@@ -1451,6 +1745,48 @@ Your hybrid discipline reaches its apex, blending biotic and tech into a seamles
 | 16 | Battle Hardened |
 | 18 | Sentinel's Resolve |
 | 20 | Apex Sentinel |
+
+---
+
+### CLASS PROFICIENCY FEATURES
+
+*Shared by the classes that list them in their Advancement table. Each class's own DC features (such as Adept Expertise, Master Adept and Legendary Adept) raise that class DC to expert, master and legendary; every power uses your class DC.*
+
+**Armor Expertise** Your proficiency ranks for light, medium, and heavy armor and for unarmored defense increase to expert.
+
+**Armor Mastery** Your proficiency ranks for light, medium, and heavy armor and for unarmored defense increase to master.
+
+**Fortitude Expertise** Your proficiency rank for Fortitude saves increases to expert.
+
+**Fortitude Mastery** Your proficiency rank for Fortitude saves increases to master. When you roll a success on a Fortitude save, you get a critical success instead.
+
+**Greater Weapon Specialization** Your damage from Weapon Specialization increases to 4 with weapons and unarmed attacks in which you are an expert, 6 if you are a master, and 8 if you are legendary.
+
+**Light Armor Expertise** Your proficiency ranks for light armor and unarmored defense increase to expert.
+
+**Medium Armor Expertise** Your proficiency ranks for light armor, medium armor, and unarmored defense increase to expert.
+
+**Perception Expertise** Your proficiency rank for Perception increases to expert.
+
+**Perception Mastery** Your proficiency rank for Perception increases to master.
+
+**Reflex Expertise** Your proficiency rank for Reflex saves increases to expert.
+
+**Reflex Mastery** Your proficiency rank for Reflex saves increases to master. When you roll a success on a Reflex save, you get a critical success instead.
+
+**Soldier Weapon Expertise** Your proficiency ranks for unarmed attacks, simple weapons, and martial weapons increase to expert.
+
+**Soldier Weapon Mastery** Your proficiency ranks for unarmed attacks, simple weapons, and martial weapons increase to master.
+
+**Weapon Expertise** Your proficiency ranks for unarmed attacks, simple weapons, and the weapons your class trains you in increase to expert.
+
+**Weapon Mastery** Your proficiency ranks for unarmed attacks, simple weapons, and the weapons your class trains you in increase to master.
+
+**Weapon Specialization** You deal 2 additional damage with weapons and unarmed attacks in which you are an expert. This damage increases to 3 if you are a master, and to 4 if you are legendary.
+
+**Will Expertise** Your proficiency rank for Will saves increases to expert.
+
+**Will Mastery** Your proficiency rank for Will saves increases to master. When you roll a success on a Will save, you get a critical success instead.
 
 ---
 
@@ -1526,12 +1862,15 @@ Remove this effect to return to standard ammunition.
 #### Frag Grenade ◆◆ — Level 1
 
 You hurl a standard-issue fragmentation grenade that detonates on impact, shredding targets with lethal shrapnel.
-Choose a point within **60 feet**. All creatures in a **10-foot burst** centered on that point must attempt a **Reflex save** against your class DC.
+Choose a point within **60 feet**. All creatures in a 10-foot burst centered on that point must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **2d6 piercing** damage.
 **Failure** The target takes **4d6 piercing** damage and its Speed is reduced by **10 feet** until the end of your next turn.
 **Critical Failure** The target takes **6d6 piercing** damage, its Speed is reduced by 10 feet until the end of your next turn, and it is knocked **prone**.
 **Cooldown:** 3 rounds.
+
+---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -1699,7 +2038,7 @@ All creatures in a **10-foot radius** burst within **30 feet** must attempt a **
 #### Incinerate ◆◆ — Level 1
 
 You launch a superheated plasma projectile from your omni-tool that burns through armor and sets targets ablaze.
-Choose a creature within **30 feet**. It must attempt a @Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-tech-incinerate] save. Incinerate ignores up to 5 points of fire resistance.
+Choose a creature within **30 feet**. It must attempt a Reflex save. Incinerate ignores up to 5 points of fire resistance.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 fire** damage.
 **Failure** The target takes **2d6 fire** damage and **1d4 persistent fire** damage. The target cannot regain HP until the start of your next turn. Armor Frames hit by Incinerate take 1.5× damage.
@@ -1818,11 +2157,14 @@ When Overload destroys a kinetic shield, it chains to **all shielded targets wit
 *Prerequisite: Superior Engineer Mastery*
 
 You synthesize a custom explosive payload on the fly, combining incendiary and electromagnetic charges in a single devastating burst.
-Target a point within **30 feet**. All creatures in a **15-foot burst** must attempt a **Reflex** DC 22 save.
+Target a point within **30 feet**. All creatures in a 15-foot burst must attempt a basic Reflex save against your class DC.
 **Critical Success:** Unaffected.
 **Success:** Half damage.
 **Failure:** **4d6 fire + 4d6 electricity** damage. Electricity damage is doubled against shields.
 **Critical Failure:** **8d6 fire + 8d6 electricity** damage; Stunned 1.
+
+---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 *Prerequisite: Superior Engineer Mastery. Classes: Engineer.*
 
 ---
@@ -1853,12 +2195,15 @@ All tech powers you use deal **+1d6 electricity damage** in addition to their no
 #### Cluster Grenade ◆◆ — Level 1
 
 You scatter a cluster of mass-effect kinetic charges across a wide area, creating a rapid chain of biotic detonations on impact.
-Choose a point within **60 feet**. All creatures in a **10-foot burst** centered on that point must attempt a **Reflex save** against your class DC.
+Choose a point within **60 feet**. All creatures in a 10-foot burst centered on that point must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 force** damage.
 **Failure** The target takes **2d6 force** damage and is pushed **5 feet** outward from the burst center.
 **Critical Failure** The target takes **4d6 force** damage, is pushed **10 feet** outward from the burst center, and is knocked **prone**.
 **Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -2176,7 +2521,7 @@ Remove this effect to return to standard ammunition.
 #### Incinerate ◆◆ — Level 1
 
 You launch a superheated plasma projectile from your omni-tool that burns through armor and sets targets ablaze.
-Choose a creature within **30 feet**. It must attempt a @Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-tech-incinerate] save. Incinerate ignores up to 5 points of fire resistance.
+Choose a creature within **30 feet**. It must attempt a Reflex save. Incinerate ignores up to 5 points of fire resistance.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 fire** damage.
 **Failure** The target takes **2d6 fire** damage and **1d4 persistent fire** damage. The target cannot regain HP until the start of your next turn. Armor Frames hit by Incinerate take 1.5× damage.
@@ -2204,12 +2549,15 @@ Choose a qualifying target within **30 feet**. The target must attempt a **Will*
 #### Sticky Grenade ◆◆ — Level 1
 
 You deploy a high-adhesive incendiary charge that clings to the first surface it contacts and burns steadily, denying the area.
-Choose a point within **30 feet**. All creatures in a **5-foot burst** centered on that point must attempt a **Reflex save** against your class DC.
+Choose a point within **30 feet**. All creatures in a 5-foot burst centered on that point must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **2d6 fire** damage.
 **Failure** The target takes **4d6 fire** damage and gains **Persistent 1d6 fire** damage (DC 12 flat check to end).
 **Critical Failure** The target takes **6d6 fire** damage and gains **Persistent 2d6 fire** damage (DC 15 flat check to end).
 **Cooldown:** 3 rounds.
+
+---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -2310,12 +2658,15 @@ All creatures in a **10-foot radius** burst within **30 feet** must attempt a **
 #### Lift Grenade ◆◆ — Level 1
 
 You throw a hybrid tech-biotic device that projects a localized mass-effect lift field on detonation, suspending targets in the air.
-Choose a point within **60 feet**. All creatures in a **15-foot burst** centered on that point must attempt a **Reflex save** against your class DC.
+Choose a point within **60 feet**. All creatures in a 15-foot burst centered on that point must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
-**Success** The target is lifted **5 feet** off the ground and becomes **Flat-Footed** until the end of your next turn.
+**Success** The target is lifted **5 feet** off the ground and becomes **Off-Guard** until the end of your next turn.
 **Failure** The target is lifted **10 feet** and becomes **Grabbed** (suspended by the biotic field). The Grabbed condition ends at the start of your next turn or when the target Escapes (DC equals your class DC).
 **Critical Failure** As failure, and the target takes **2d6 void** damage and is **Stunned 1**.
 **Cooldown:** 3 rounds.
+
+---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -2983,18 +3334,21 @@ Grenades are consumable items sold in packs of 3. All grenades require ◆◆ to
 
 A pressure-triggered explosive mine that detonates when a creature moves within range. Deploy it defensively or place it in a chokepoint.
 **Place (2 actions):** Place the mine at a point within **15 feet**. The mine arms at the start of your next turn. It remains active for 1 hour or until triggered.
-**Trigger:** Any creature (enemy or ally) that moves into or through the mine's **5-foot space** triggers it. All creatures in a **10-foot burst** must attempt a **Reflex** DC 16 save.
+**Trigger:** Any creature (enemy or ally) that moves into or through the mine's **5-foot space** triggers it. All creatures in a 10-foot burst must attempt a DC 16 basic Reflex save.
 **Critical Success** Unaffected.
 **Success** Half damage.
 **Failure** **3d6 bludgeoning** damage and **Knocked Prone**.
 **Critical Failure** **6d6 bludgeoning** damage, Knocked Prone, and **Stunned 1**.
 
 ---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 #### Arc Grenade ◆◆ — Level 2 · L Bulk · 1,200 cr
 
 A grenade packed with an electromagnetic charge that releases a burst of electricity on detonation. Particularly effective against kinetic shields.
-**Throw (2 actions):** Throw at a point within **30 feet**. All creatures in a **10-foot burst** must attempt a **Reflex** DC 17 save.
+**Throw (2 actions):** Throw at a point within **30 feet**. All creatures in a 10-foot burst must attempt a DC 17 basic Reflex save.
 **Critical Success** Unaffected.
 **Success** Half damage.
 **Failure** **2d8 electricity** damage.
@@ -3002,22 +3356,28 @@ A grenade packed with an electromagnetic charge that releases a burst of electri
 Electricity damage from Arc Grenades is doubled against kinetic shields (handled automatically by the shield system).
 
 ---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 #### Cryo Grenade ◆◆ — Level 2 · L Bulk · 1,000 cr
 
 A grenade that releases a cloud of cryogenic gas on detonation, flash-freezing everything in the blast radius.
-**Throw (2 actions):** Throw at a point within **30 feet**. All creatures in a **10-foot burst** must attempt a **Fortitude** DC 17 save.
+**Throw (2 actions):** Throw at a point within **30 feet**. All creatures in a 10-foot burst must attempt a DC 17 Fortitude save.
 **Critical Success** Unaffected.
 **Success** **1d6 cold** damage.
 **Failure** **2d6 cold** damage and the creature is **Slowed 1** until the end of its next turn.
 **Critical Failure** **4d6 cold** damage and the creature is **Immobilized** until the end of its next turn.
 
 ---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 #### Incendiary Grenade ◆◆ — Level 2 · L Bulk · 1,000 cr
 
 A thermite-packed grenade that detonates in a spray of burning gel on impact.
-**Throw (2 actions):** Throw at a point within **30 feet**. All creatures in a **10-foot burst** must attempt a **Reflex** DC 17 save.
+**Throw (2 actions):** Throw at a point within **30 feet**. All creatures in a 10-foot burst must attempt a DC 17 Reflex save.
 **Critical Success** Unaffected.
 **Success** Half damage.
 **Failure** **2d6 fire** damage and **1d4 persistent fire** damage.
@@ -3025,11 +3385,14 @@ A thermite-packed grenade that detonates in a spray of burning gel on impact.
 Incendiary Grenades apply 1.5× damage to Combat Armor Frames (same as Incendiary Rounds).
 
 ---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 #### Cluster Grenade ◆◆ — Level 3 · L Bulk · 1,500 cr
 
 A grenade that splits into multiple submunitions mid-air, saturating a wide area with overlapping explosions.
-**Throw (2 actions):** Throw at a point within **30 feet**. The grenade splits into 3 submunitions that land in a **20-foot burst**, each covering a **5-foot burst**. Each creature in the overall area must attempt a **Reflex** DC 18 save for each submunition that lands in their space.
+**Throw (2 actions):** Throw at a point within **30 feet**. The grenade splits into 3 submunitions that land in a 20-foot burst, each covering a 5-foot burst. Each creature in the overall area must attempt a DC 18 Reflex save for each submunition that lands in their space.
 **Critical Success** Unaffected (per submunition).
 **Success** Half damage (per submunition).
 **Failure** **1d6 bludgeoning** damage per submunition (max 3d6).
@@ -3037,21 +3400,27 @@ A grenade that splits into multiple submunitions mid-air, saturating a wide area
 A creature can be hit by at most 3 submunitions.
 
 ---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 #### Lift Grenade ◆◆ — Level 4 · L Bulk · 2,000 cr
 
 A grenade packed with a mass effect field generator that triggers a localized anti-gravity burst on detonation, suspending enemies in the air.
-**Throw (2 actions):** Throw at a point within **30 feet**. All creatures in a **10-foot burst** must attempt a **Reflex** DC 19 save.
+**Throw (2 actions):** Throw at a point within **30 feet**. All creatures in a 10-foot burst must attempt a DC 19 Reflex save.
 **Critical Success** Unaffected.
 **Success** The creature is lifted 5 feet off the ground and is **Off-Guard** until the start of your next turn.
 **Failure** The creature is lifted 10 feet into the air and becomes **Grabbed** (by the field) and **Off-Guard** until the end of your next turn. When the effect ends, the creature falls and takes fall damage.
 **Critical Failure** As failure, but the creature is lifted 20 feet and suspended until the end of your next turn. This sets up a *Biotic Explosion* combo (Lifted condition acts as a biotic primer).
 
 ---
+*When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 # PART II — BESTIARY
 
-*171 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
+*175 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
 
 ---
 
@@ -3074,8 +3443,8 @@ Alliance tech specialist and drone operator.
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
-**Overload** ◆◆ **Range** 60 feet, one creature. Deals [[/r 2d6[electricity]]] damage (basic Reflex save, DC 19); kinetic barriers and synthetics take double.
-**Deploy Combat Drone** ◆◆ Deploys a combat drone (AC 17, HP 15, fly 30) that makes a ranged zap Strike (+9, [[/r 1d6[electricity]]]) on the engineer's turn. One drone at a time.
+**Overload** ◆◆ **Range** 60 feet, one creature. Deals 2d6 electricity damage (basic Reflex save, DC 19); kinetic barriers and synthetics take double.
+**Deploy Combat Drone** ◆◆ Deploys a combat drone (AC 17, HP 15, fly 30) that makes a ranged zap Strike (+9, 1d6 electricity) on the engineer's turn. One drone at a time.
 
 ---
 
@@ -3092,7 +3461,7 @@ Alliance field medic with medi-gel.
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
-**Apply Medi-Gel** ◆◆ **Range** touch (or thrown 30 feet as a dispenser). The medic restores [[/r 2d8+3]] Hit Points to a living creature and removes the persistent bleed condition.
+**Apply Medi-Gel** ◆◆ **Range** touch (or thrown 30 feet as a dispenser). The medic restores 2d8+3 Hit Points to a living creature and removes the persistent bleed condition.
 
 ---
 
@@ -3128,7 +3497,7 @@ Elite N7 special-forces operator.
 **Speed** 25 feet
 **Ranged** ◆ M-8 Avenger +16 (range increment 70 ft, automatic), **Damage** 3d6+10 piercing
 **Melee** ◆ Omni-Blade +15 (agile, finesse), **Damage** 2d8+8 slashing plus 1d6 fire
-**Tactical Cloak** ◆ The operative becomes hidden until the end of its next turn or until it attacks. Its next Strike while cloaked deals an extra [[/r 2d6[precision]]] damage.
+**Tactical Cloak** ◆ The operative becomes hidden until the end of its next turn or until it attacks. Its next Strike while cloaked deals an extra 2d6 precision damage.
 **Adrenaline Rush** ◆ The operative gains a third action this turn, usable only to Strike, Stride, or Take Cover.
 
 ---
@@ -3294,7 +3663,7 @@ Salarian Spectre and counter-intelligence specialist.
 **Ranged** ◆ Scorpion Pistol +17 (range increment 50 ft), **Damage** 3d8+6 piercing plus 1d6 fire
 **Melee** ◆ Omni-Blade +16 (agile, finesse), **Damage** 3d8+5 slashing plus 1d4 fire
 **Neural Shock** ◆◆ **Range** 30 feet, one creature. The target must succeed at a Fortitude save (DC 25) or be stunned 1 (stunned 2 on a critical failure) as its nervous system is overloaded.
-**Tactical Cloak** ◆ Bau vanishes behind a light-bending field, becoming hidden until the end of his next turn or until he makes an attack. His next Strike while cloaked deals an extra [[/r 2d6[precision]]] damage.
+**Tactical Cloak** ◆ Bau vanishes behind a light-bending field, becoming hidden until the end of his next turn or until he makes an attack. His next Strike while cloaked deals an extra 2d6 precision damage.
 
 ---
 
@@ -3332,8 +3701,8 @@ Ruthless asari Spectre and biotic powerhouse.
 **Speed** 30 feet
 **Ranged** ◆ Heavy Pistol +18 (range increment 50 ft), **Damage** 3d8+12 piercing
 **Melee** ◆ Biotic Slam +18 (agile, finesse, force, unarmed), **Damage** 2d10+10 bludgeoning plus 1d6 force
-**Biotic Charge** ◆◆ Vasir streaks up to 50 feet in a straight line to a creature she can see and makes a melee Strike dealing an extra [[/r 2d6[force]]] damage. On a hit, her barrier restores 15 Shield HP.
-**Biotic Nova** ◆◆ **Area** 15-foot emanation. Vasir detonates her barrier in a shockwave, dealing [[/r 4d6[force]]] damage (basic Reflex save, DC 27) to all other creatures in the area. Her barrier is reduced to 0 Shield HP afterward.
+**Biotic Charge** ◆◆ Vasir streaks up to 50 feet in a straight line to a creature she can see and makes a melee Strike dealing an extra 2d6 force damage. On a hit, her barrier restores 15 Shield HP.
+**Biotic Nova** ◆◆ **Area** 15-foot emanation. Vasir detonates her barrier in a shockwave, dealing 4d6 force damage (basic Reflex save, DC 27) to all other creatures in the area. Her barrier is reduced to 0 Shield HP afterward.
 
 ---
 
@@ -3811,7 +4180,7 @@ Blue Suns rocket-launcher specialist.
 **Ranged** ◆ Rocket Launcher +11 (range increment 80 ft), **Damage** 2d8+4 fire
 **Ranged** ◆ Sidearm +9 (range increment 40 ft), **Damage** 1d8+2 piercing
 **Missile Barrage** ◆◆ **Range** 80 feet; **Area** 15-foot burst.
-The Heavy fires an explosive rocket. Each creature in the area takes [[/r 2d8+4[fire]]] damage plus [[/r 1d6[bludgeoning]]] (basic Reflex save, DC 21). The Heavy cannot fire again until the start of its next turn.
+The Heavy fires an explosive rocket. Each creature in the area takes 2d8+4 fire damage plus 1d6 bludgeoning (basic Reflex save, DC 21). The Heavy cannot fire again until the start of its next turn.
 
 ---
 
@@ -3851,7 +4220,7 @@ Batarian leader of the Blue Suns on Omega.
 **Ranged** ◆ Custom Assault Rifle +16 (range increment 60 ft, automatic), **Damage** 3d6+8 piercing
 **Melee** ◆ Vibro-Blade +16 (agile, finesse), **Damage** 2d8+8 slashing plus 1d6 electricity
 **Gunship Strafe** ◆◆ **Area** 60-foot line, 5 feet wide.
-Tarak calls in a strafing run from his gunship (or lays down a withering hail of fire). Each creature in the line takes [[/r 4d6[piercing]]] damage (basic Reflex save, DC 23).
+Tarak calls in a strafing run from his gunship (or lays down a withering hail of fire). Each creature in the line takes 4d6 piercing damage (basic Reflex save, DC 23).
 **Slaver's Cruelty** ↺ **Trigger** Tarak reduces a creature to 0 HP.
 
 ---
@@ -3892,8 +4261,8 @@ Eclipse tech specialist and drone operator.
 **Speed** 30 feet
 **Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
 **Overload** ◆◆ **Range** 60 feet, one creature.
-The engineer sends an overcharge pulse. The target takes [[/r 2d6[electricity]]] damage (basic Reflex save, DC 19). Kinetic barriers take double this damage before it carries to Hit Points.
-**Deploy Combat Drone** ◆◆ The engineer launches a hovering combat drone into an adjacent space (AC 17, HP 15, Speed fly 30). On the engineer's turn it can direct the drone to make a ranged zap Strike (+9, [[/r 1d6[electricity]]]). The engineer can have only one drone active at a time.
+The engineer sends an overcharge pulse. The target takes 2d6 electricity damage (basic Reflex save, DC 19). Kinetic barriers take double this damage before it carries to Hit Points.
+**Deploy Combat Drone** ◆◆ The engineer launches a hovering combat drone into an adjacent space (AC 17, HP 15, Speed fly 30). On the engineer's turn it can direct the drone to make a ranged zap Strike (+9, 1d6 electricity). The engineer can have only one drone active at a time.
 
 ---
 
@@ -3912,7 +4281,7 @@ Eclipse missile and heavy-weapons specialist.
 **Ranged** ◆ Missile Launcher +11 (range increment 80 ft), **Damage** 2d8+4 fire
 **Ranged** ◆ Sidearm +9 (range increment 40 ft), **Damage** 1d8+2 piercing
 **Missile Barrage** ◆◆ **Range** 80 feet; **Area** 15-foot burst.
-Each creature in the area takes [[/r 2d8+4[fire]]] plus [[/r 1d6[bludgeoning]]] damage (basic Reflex save, DC 21). The Heavy cannot fire again until the start of its next turn.
+Each creature in the area takes 2d8+4 fire plus 1d6 bludgeoning damage (basic Reflex save, DC 21). The Heavy cannot fire again until the start of its next turn.
 
 ---
 
@@ -3930,7 +4299,7 @@ Biotic shock trooper of Eclipse.
 **Speed** 30 feet
 **Ranged** ◆ Shotgun +13 (range increment 20 ft), **Damage** 3d6+4 piercing
 **Melee** ◆ Biotic Strike +13 (agile, finesse, force, unarmed), **Damage** 2d6+4 bludgeoning plus 1d4 force
-**Biotic Charge** ◆◆ The Vanguard hurls itself in a biotic slipstream up to 40 feet in a straight line to an enemy it can see, ignoring difficult terrain. It then makes a melee Strike that deals an extra [[/r 1d6[force]]] damage. On a hit, the Vanguard's barrier immediately restores 10 Shield HP.
+**Biotic Charge** ◆◆ The Vanguard hurls itself in a biotic slipstream up to 40 feet in a straight line to an enemy it can see, ignoring difficult terrain. It then makes a melee Strike that deals an extra 1d6 force damage. On a hit, the Vanguard's barrier immediately restores 10 Shield HP.
 
 ---
 
@@ -3949,7 +4318,7 @@ Heavily armored Eclipse enforcer with a flamethrower.
 **Ranged** ◆ Incendiary Thrower +14 (range increment 15 ft), **Damage** 3d6+7 fire
 **Melee** ◆ Armored Fist +14, **Damage** 2d10+7 bludgeoning
 **Immolate** ◆◆ **Area** 15-foot cone.
-The Enforcer sprays burning fuel. Each creature in the cone takes [[/r 2d6+3[fire]]] damage (basic Reflex save, DC 22) and 1d6 persistent fire damage on a failure.
+The Enforcer sprays burning fuel. Each creature in the cone takes 2d6+3 fire damage (basic Reflex save, DC 22) and 1d6 persistent fire damage on a failure.
 
 ---
 
@@ -3967,7 +4336,7 @@ Salarian leader of Eclipse on Omega.
 **Speed** 30 feet
 **Ranged** ◆ Custom Pistol +14 (range increment 50 ft), **Damage** 2d8+9 piercing
 **Overload Burst** ◆◆ **Range** 60 feet; **Area** 10-foot burst.
-Each creature in the area takes [[/r 3d6[electricity]]] damage (basic Reflex save, DC 22); kinetic barriers take double before it carries to HP.
+Each creature in the area takes 3d6 electricity damage (basic Reflex save, DC 22); kinetic barriers take double before it carries to HP.
 **Deploy Security Mech** ◆◆ Jaroth activates a LOKI mech from a nearby cache (use the LOKI Mech statblock). He can have up to two active at once and directs one to act on his initiative.
 
 ---
@@ -3987,7 +4356,7 @@ Asari Eclipse lieutenant, strung out on red sand.
 **Ranged** ◆ Machine Pistol +14 (range increment 40 ft, automatic), **Damage** 3d6+6 piercing
 **Melee** ◆ Amplified Biotic Strike +14 (agile, finesse, force, unarmed), **Damage** 2d8+6 bludgeoning plus 1d6 force
 **Biotic Throw** ◆◆ **Range** 30 feet, one creature.
-Wasea hurls a target that fails a Fortitude save (DC 22) up to 15 feet and knocks it prone, dealing [[/r 2d6[bludgeoning]]] on a critical failure.
+Wasea hurls a target that fails a Fortitude save (DC 22) up to 15 feet and knocks it prone, dealing 2d6 bludgeoning on a critical failure.
 
 ---
 
@@ -4006,7 +4375,7 @@ Unhinged asari founder and leader of Eclipse.
 **Ranged** ◆ Prototype SMG +16 (range increment 40 ft, automatic), **Damage** 3d6+8 piercing
 **Melee** ◆ Biotic Lash +16 (agile, finesse, force, unarmed), **Damage** 2d8+8 bludgeoning plus 1d6 force
 **Biotic Detonation** ◆◆ **Range** 30 feet; **Area** 15-foot burst.
-Jona collapses a mass effect field into a violent implosion. Each creature in the area takes [[/r 4d6[force]]] damage (basic Fortitude save, DC 24) and is knocked prone on a failure.
+Jona collapses a mass effect field into a violent implosion. Each creature in the area takes 4d6 force damage (basic Fortitude save, DC 24) and is knocked prone on a failure.
 **Execute** ◆ Jona shoots one of her own faltering mercenaries within reach or line of sight. That ally is reduced to 0 HP, and each enemy within 30 feet that witnesses it must succeed at a Will save (DC 24) or be frightened 2.
 
 ---
@@ -4046,7 +4415,7 @@ Vorcha flamethrower fanatic of the Blood Pack.
 **Ranged** ◆ Flamethrower +10 (range increment 15 ft), **Damage** 2d6+3 fire
 **Melee** ◆ Claws +10 (agile, unarmed), **Damage** 1d8+3 slashing
 **Immolate** ◆◆ **Area** 15-foot cone.
-Each creature in the cone takes [[/r 2d6+3[fire]]] damage (basic Reflex save, DC 19) plus 1d6 persistent fire damage on a failure.
+Each creature in the cone takes 2d6+3 fire damage (basic Reflex save, DC 19) plus 1d6 persistent fire damage on a failure.
 **Vorcha Regeneration** At the start of each of its turns, the vorcha regains 10 Hit Points and adapts to recent harm. The first time each round it would be reduced to 0 HP by a damage type it has already taken this encounter, it instead remains at 1 HP. This ability is deactivated for 1 round if the vorcha takes fire or acid damage.
 
 ---
@@ -4065,7 +4434,7 @@ Krogan heavy of the Blood Pack.
 **Speed** 25 feet
 **Ranged** ◆ Combat Shotgun +13 (range increment 20 ft), **Damage** 2d8+5 piercing
 **Melee** ◆ Krogan Headbutt +14 (unarmed), **Damage** 1d10+5 bludgeoning
-**Krogan Charge** ◆◆ The warrior Strides up to double its Speed in a straight line and makes a melee Strike. If it moved at least 15 feet, the Strike deals an extra [[/r 2d6[bludgeoning]]] damage and the target must succeed at a Fortitude save (DC 21) or be knocked prone.
+**Krogan Charge** ◆◆ The warrior Strides up to double its Speed in a straight line and makes a melee Strike. If it moved at least 15 feet, the Strike deals an extra 2d6 bludgeoning damage and the target must succeed at a Fortitude save (DC 21) or be knocked prone.
 **Redundant Physiology** The krogan's duplicated organs make it brutally hard to kill. It is not knocked out at 0 HP unless the damage is a critical hit or from fire; otherwise it acts on 1 HP until reduced a second time. It also gains a +2 circumstance bonus to saves against being sickened, poisoned, or made to bleed.
 **Blood Rage** ◇ **Trigger** The krogan is reduced to half its Hit Points or fewer.
 
@@ -4088,7 +4457,7 @@ Krogan Blood Pack lieutenant.
 **Speed** 25 feet
 **Ranged** ◆ Heavy Shotgun +15 (range increment 20 ft), **Damage** 2d8+6 piercing
 **Melee** ◆ Krogan Headbutt +16 (unarmed), **Damage** 1d12+6 bludgeoning
-**Krogan Charge** ◆◆ Wrang Strides up to double his Speed in a straight line and makes a melee Strike. If he moved at least 15 feet, the Strike deals an extra [[/r 2d6[bludgeoning]]] damage and the target must succeed at a Fortitude save (DC 23) or be knocked prone.
+**Krogan Charge** ◆◆ Wrang Strides up to double his Speed in a straight line and makes a melee Strike. If he moved at least 15 feet, the Strike deals an extra 2d6 bludgeoning damage and the target must succeed at a Fortitude save (DC 23) or be knocked prone.
 **Redundant Physiology** The krogan's duplicated organs make it brutally hard to kill. It is not knocked out at 0 HP unless the damage is a critical hit or from fire; otherwise it acts on 1 HP until reduced a second time. It also gains a +2 circumstance bonus to saves against being sickened, poisoned, or made to bleed.
 **Blood Rage** ◇ **Trigger** The krogan is reduced to half its Hit Points or fewer.
 
@@ -4111,7 +4480,7 @@ Krogan warlord and leader of the Blood Pack on Omega.
 **Speed** 30 feet
 **Ranged** ◆ Claymore Shotgun +17 (range increment 20 ft), **Damage** 3d8+6 piercing
 **Melee** ◆ Krogan Headbutt +18 (unarmed), **Damage** 2d10+6 bludgeoning
-**Berserker Charge** ◆◆ Garm Strides up to triple his Speed in a straight line, trampling through creatures' spaces, and makes a melee Strike with a +2 circumstance bonus to damage. Each creature whose space he moved through takes [[/r 2d8[bludgeoning]]] damage (basic Reflex save, DC 24).
+**Berserker Charge** ◆◆ Garm Strides up to triple his Speed in a straight line, trampling through creatures' spaces, and makes a melee Strike with a +2 circumstance bonus to damage. Each creature whose space he moved through takes 2d8 bludgeoning damage (basic Reflex save, DC 24).
 **Regenerative Fury** Garm has fast healing 15 while above 0 HP. If reduced to 0 HP, he does not fall unless the triggering damage was a critical hit or fire damage; otherwise he remains at 1 HP with his fast healing suppressed for 1 round.
 **Redundant Physiology** The krogan's duplicated organs make it brutally hard to kill. It is not knocked out at 0 HP unless the damage is a critical hit or from fire; otherwise it acts on 1 HP until reduced a second time. It also gains a +2 circumstance bonus to saves against being sickened, poisoned, or made to bleed.
 
@@ -4202,8 +4571,8 @@ Brilliant, amoral quarian scientist-admiral.
 **HP** 60; **Shields** 40 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 1d8+2 piercing
-**Deploy Reprogrammed Drone** ◆◆ Daro'Xen activates a captured combat drone (AC 18, HP 18, fly 30). It makes a ranged zap Strike (+11, [[/r 1d6+2[electricity]]]) on her turn. She can have one active at a time.
-**Overload** ◆◆ **Range** 60 feet, one creature. The target takes [[/r 2d6[electricity]]] damage (basic Reflex save, DC 22); kinetic barriers and synthetic creatures take double.
+**Deploy Reprogrammed Drone** ◆◆ Daro'Xen activates a captured combat drone (AC 18, HP 18, fly 30). It makes a ranged zap Strike (+11, 1d6+2 electricity) on her turn. She can have one active at a time.
+**Overload** ◆◆ **Range** 60 feet, one creature. The target takes 2d6 electricity damage (basic Reflex save, DC 22); kinetic barriers and synthetic creatures take double.
 
 ---
 
@@ -4239,7 +4608,7 @@ Tali's father; driven engineer-admiral obsessed with the homeworld.
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 2d8+4 piercing
 **Melee** ◆ Omni-Blade +12 (agile, finesse), **Damage** 2d8+6 slashing plus 1d4 fire
-**Sabotage** ◆◆ **Range** 60 feet. Rael'Zorah hacks a target's tech. A synthetic creature or a target's kinetic barrier takes [[/r 2d6[electricity]]] damage; a creature wielding a tech weapon must succeed at a Reflex save (DC 20) or have it misfire, becoming unusable for 1 round.
+**Sabotage** ◆◆ **Range** 60 feet. Rael'Zorah hacks a target's tech. A synthetic creature or a target's kinetic barrier takes 2d6 electricity damage; a creature wielding a tech weapon must succeed at a Reflex save (DC 20) or have it misfire, becoming unusable for 1 round.
 
 ---
 
@@ -4524,7 +4893,7 @@ Blunt asari matriarch; Liara's father, working a bar on Illium.
 **Speed** 30 feet
 **Melee** ◆ Biotic Warhammer +15 (force, unarmed), **Damage** 2d8+5 bludgeoning plus 1d6 force
 **Ranged** ◆ Heavy Pistol +14 (range increment 50 ft), **Damage** 1d8+4 piercing
-**Matriarch's Throw** ◆◆ **Range** 40 feet, one creature. The target must succeed at a Fortitude save (DC 23) or be hurled up to 20 feet and knocked prone, taking [[/r 2d6[bludgeoning]]] plus [[/r 1d6[force]]] damage (half on a success).
+**Matriarch's Throw** ◆◆ **Range** 40 feet, one creature. The target must succeed at a Fortitude save (DC 23) or be hurled up to 20 feet and knocked prone, taking 2d6 bludgeoning plus 1d6 force damage (half on a success).
 
 ---
 
@@ -4542,7 +4911,7 @@ Rogue turian Spectre, indoctrinated herald of Sovereign.
 **Speed** 30 feet
 **Ranged** ◆ Custom Assault Rifle +20 (range increment 70 ft, automatic), **Damage** 3d8+13 piercing
 **Melee** ◆ Biotic Slam +20 (agile, finesse, force, unarmed), **Damage** 2d12+12 bludgeoning plus 1d6 force
-**Biotic Overload** ◆◆ **Area** 20-foot burst within 60 feet. Each creature takes [[/r 5d6[force]]] damage (basic Reflex save, DC 28) and is knocked prone on a failure.
+**Biotic Overload** ◆◆ **Area** 20-foot burst within 60 feet. Each creature takes 5d6 force damage (basic Reflex save, DC 28) and is knocked prone on a failure.
 **Indoctrinated Zeal** ↺ **Trigger** Saren is critically hit, or an ally within 30 feet is reduced to 0 HP.
 
 ---
@@ -4566,7 +4935,7 @@ Humanity's first Spectre and the galaxy's best hope.
 **Ranged** ◆ M-3 Predator +22 (range increment 50 ft), **Damage** 3d8+8 piercing
 **Melee** ◆ Omni-Blade +21 (agile, finesse), **Damage** 3d8+9 slashing plus 1d6 fire
 **Adrenaline Rush** ◆ Time seems to slow. Shepard gains a third action this turn, which can only be used to Strike, Stride, or Take Cover.
-**Concussive Shot** ◆◆ **Range** 60 feet, one creature. Shepard fires a kinetic slug dealing [[/r 2d10+7[bludgeoning]]] damage (basic Fortitude save, DC 30); on a failure the target is also pushed 10 feet and knocked prone.
+**Concussive Shot** ◆◆ **Range** 60 feet, one creature. Shepard fires a kinetic slug dealing 2d10+7 bludgeoning damage (basic Fortitude save, DC 30); on a failure the target is also pushed 10 feet and knocked prone.
 **Squad Command** ◆ Each ally within 60 feet who can hear Shepard gains a +2 status bonus to their next attack roll or save and can immediately Step as a free action.
 
 ---
@@ -4835,7 +5204,7 @@ Field medic supporting a squad with medi-gel.
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
-**Apply Medi-Gel** ◆◆ **Range** touch (or thrown 30 feet). Restores [[/r 2d8+3]] Hit Points to a living creature and removes persistent bleed.
+**Apply Medi-Gel** ◆◆ **Range** touch (or thrown 30 feet). Restores 2d8+3 Hit Points to a living creature and removes persistent bleed.
 
 ---
 
@@ -4869,8 +5238,8 @@ Tech specialist with drones and disruptor attacks.
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
-**Overload** ◆◆ **Range** 60 feet, one creature. Deals [[/r 2d6[electricity]]] damage (basic Reflex save, DC 19); kinetic barriers and synthetics take double.
-**Deploy Combat Drone** ◆◆ Deploys a combat drone (AC 17, HP 15, fly 30) that makes a ranged zap Strike (+9, [[/r 1d6[electricity]]]) on the engineer's turn. One drone at a time.
+**Overload** ◆◆ **Range** 60 feet, one creature. Deals 2d6 electricity damage (basic Reflex save, DC 19); kinetic barriers and synthetics take double.
+**Deploy Combat Drone** ◆◆ Deploys a combat drone (AC 17, HP 15, fly 30) that makes a ranged zap Strike (+9, 1d6 electricity) on the engineer's turn. One drone at a time.
 
 ---
 
@@ -4955,7 +5324,7 @@ Aggressive close-assault trooper with a shotgun.
 **Speed** 25 feet
 **Ranged** ◆ Shotgun +11 (range increment 20 ft), **Damage** 2d6+4 piercing
 **Melee** ◆ Combat Knife +11 (agile, finesse), **Damage** 1d6+4 slashing
-**Breaching Charge** ◆◆ The trooper Strides up to its Speed and makes a Shotgun Strike. If it moved at least 10 feet toward the target, the Strike deals an extra [[/r 1d6[piercing]]] damage.
+**Breaching Charge** ◆◆ The trooper Strides up to its Speed and makes a Shotgun Strike. If it moved at least 10 feet toward the target, the Strike deals an extra 1d6 piercing damage.
 
 ---
 
@@ -5008,7 +5377,7 @@ Agile drell marksman with perfect recall.
 **Speed** 30 feet
 **Ranged** ◆ Viper Sniper Rifle +14 (range increment 100 ft), **Damage** 2d8+4 piercing
 **Ranged** ◆ Heavy Pistol +14 (range increment 50 ft), **Damage** 1d8+4 piercing
-**Marksman's Focus** ◆ The sharpshooter's next ranged Strike this turn ignores cover and gains a +2 circumstance bonus; against a flat-footed target it deals an extra [[/r 2d6[precision]]] damage.
+**Marksman's Focus** ◆ The sharpshooter's next ranged Strike this turn ignores cover and gains a +2 circumstance bonus; against a flat-footed target it deals an extra 2d6 precision damage.
 
 ---
 
@@ -5026,7 +5395,7 @@ Soldier laying down suppressing fire with a machine gun.
 **Speed** 20 feet
 **Ranged** ◆ Light Machine Gun +11 (range increment 60 ft, automatic), **Damage** 3d6+4 piercing
 **Ranged** ◆ Sidearm +9 (range increment 40 ft), **Damage** 1d8+4 piercing
-**Suppressing Fire** ◆◆ **Area** 30-foot line or a 10-foot burst within 60 feet. Each creature in the area must succeed at a Reflex save (DC 21) or be unable to take reactions and take a –10-foot penalty to Speed until the start of the gunner's next turn (also taking [[/r 1d8[piercing]]] on a critical failure).
+**Suppressing Fire** ◆◆ **Area** 30-foot line or a 10-foot burst within 60 feet. Each creature in the area must succeed at a Reflex save (DC 21) or be unable to take reactions and take a –10-foot penalty to Speed until the start of the gunner's next turn (also taking 1d8 piercing on a critical failure).
 
 ---
 
@@ -5044,8 +5413,8 @@ Tech-and-biotic hybrid specialist with defensive armor.
 **Speed** 25 feet
 **Ranged** ◆ Submachine Gun +12 (range increment 40 ft, automatic), **Damage** 2d6+4 piercing
 **Melee** ◆ Biotic Strike +12 (agile, finesse, force, unarmed), **Damage** 2d6+6 bludgeoning plus 1d4 force
-**Warp** ◆◆ **Range** 40 feet, one creature. Deals [[/r 2d6[force]]] damage (basic Fortitude save, DC 20). On a failure the target also takes 1d6 persistent force damage as the field tears at it.
-**Tech Armor Detonation** ◆ The sentinel overloads its tech armor in a burst. Each adjacent creature takes [[/r 2d6[electricity]]] damage (basic Reflex save, DC 20) and is pushed 5 feet. The sentinel's Tech Armor resistance is suppressed until the start of its next turn.
+**Warp** ◆◆ **Range** 40 feet, one creature. Deals 2d6 force damage (basic Fortitude save, DC 20). On a failure the target also takes 1d6 persistent force damage as the field tears at it.
+**Tech Armor Detonation** ◆ The sentinel overloads its tech armor in a burst. Each adjacent creature takes 2d6 electricity damage (basic Reflex save, DC 20) and is pushed 5 feet. The sentinel's Tech Armor resistance is suppressed until the start of its next turn.
 
 ---
 
@@ -5063,8 +5432,8 @@ Salarian Special Tasks Group operative.
 **Speed** 30 feet
 **Ranged** ◆ Machine Pistol +14 (range increment 40 ft, automatic), **Damage** 2d6+4 piercing
 **Melee** ◆ Omni-Blade +14 (agile, finesse), **Damage** 2d8+4 slashing plus 1d4 fire
-**Tactical Cloak** ◆ The commando becomes hidden until the end of its next turn or until it attacks. Its next Strike while cloaked deals an extra [[/r 2d6[precision]]] damage.
-**Incinerate** ◆◆ **Range** 40 feet, one creature. Deals [[/r 2d6[fire]]] damage (basic Reflex save, DC 20) plus 1d6 persistent fire on a failure; ignores armor bonuses from kinetic barriers.
+**Tactical Cloak** ◆ The commando becomes hidden until the end of its next turn or until it attacks. Its next Strike while cloaked deals an extra 2d6 precision damage.
+**Incinerate** ◆◆ **Range** 40 feet, one creature. Deals 2d6 fire damage (basic Reflex save, DC 20) plus 1d6 persistent fire on a failure; ignores armor bonuses from kinetic barriers.
 
 ---
 
@@ -5082,7 +5451,7 @@ Marksman armed with a high-powered sniper rifle.
 **Speed** 25 feet
 **Ranged** ◆ Sniper Rifle +14 (range increment 120 ft), **Damage** 2d10+4 piercing
 **Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 1d8+2 piercing
-**Take Aim** ◆ The sniper's next ranged Strike this turn ignores the target's cover and lesser cover and gains a +2 circumstance bonus to the attack roll. On a hit against a flat-footed target it deals an extra [[/r 2d6[precision]]] damage.
+**Take Aim** ◆ The sniper's next ranged Strike this turn ignores the target's cover and lesser cover and gains a +2 circumstance bonus to the attack roll. On a hit against a flat-footed target it deals an extra 2d6 precision damage.
 
 ---
 
@@ -5728,6 +6097,30 @@ The Geth Colossus is the largest geth ground combat platform, appearing in Mass 
 
 ### MECHS
 
+##### FENRIS Mech — Creature 1
+
+*Small · Construct · Mindless*
+
+Hahne-Kedar quadruped security mech that runs down its target, tasers it prone, and detonates if the wreck is disturbed.
+
+**Perception** +7; **Skills** Athletics +6
+**Abilities** Str +2, Dex +4, Con +2, Int -3, Wis +0, Cha -5
+**AC** 16; **Fort** +7, **Ref** +10, **Will** +5
+**HP** 20
+**Speed** 50 feet
+**Melee** ◆ Taser +10 (electricity, finesse, unarmed), **Damage** 1d6+2 electricity
+**Pounce** ◆◆ The FENRIS accelerates and leaps from its rear legs. It Strides up to double its Speed and makes a **Taser** Strike at the end of the movement.
+If the Strike hits, the mech also attempts an Athletics check to **Trip** the target as part of the same action, with a +2 circumstance bonus if it Strode at least 30 feet before the leap.
+**Deactivation Protocol** A FENRIS reduced to 0 Hit Points is not destroyed. Its legs lock and it drops where it stands, becoming an inert obstacle: it cannot act, has AC 12, and is **unconscious** for the purpose of effects that target creatures.
+The chassis stays live. Any damage dealt to it triggers **Post-Mortem Explosion**.
+**Post-Mortem Explosion** ↺ **Trigger** A deactivated FENRIS takes damage of any kind.
+
+---
+The power cell lets go in a **10-foot emanation**. Each creature in the area takes 2d6 electricity with a DC 17 basic Reflex save. On a critical failure a creature is also knocked **prone**, which will put most targets out of cover.
+The mech is destroyed. A FENRIS taken apart while inactive, or reduced to 0 Hit Points by an effect that leaves no chassis behind, never gets to use this reaction.
+
+---
+
 ##### LOKI Mech — Creature 1
 
 *Medium · Construct · Cerberus · Mindless*
@@ -5756,7 +6149,7 @@ Upgraded Cerberus combat robot with kinetic shields and a barrier pulse area att
 **HP** 75; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Submachine Gun +14 (range increment 50 ft), **Damage** 2d6+4 piercing
-**Barrier Pulse** ◆◆ The Rampart Mech discharges its shield energy in a 15-foot burst. Each creature in the area takes @Damage[3d6[bludgeoning]] (@Check[reflex|dc:22|basic] for half). The Mech's kinetic shield is reduced to 0 HP after use. This ability cannot be used again until the shield recharges to full.
+**Barrier Pulse** ◆◆ The Rampart Mech discharges its shield energy in a 15-foot burst. Each creature in the area takes 3d6 bludgeoning (DC 22 basic Reflex for half). The Mech's kinetic shield is reduced to 0 HP after use. This ability cannot be used again until the shield recharges to full.
 
 ---
 
@@ -5772,23 +6165,7 @@ Hulking Cerberus anti-infantry robot armed with a minigun and rocket launcher.
 **HP** 130
 **Speed** 20 feet
 **Ranged** ◆ Minigun +18 (range increment 60 ft, automatic), **Damage** 3d6+6 piercing
-**Rocket Salvo** ◆◆ The YMIR fires a rocket at a target point within 120 feet. Each creature within 20 feet of the impact takes @Damage[4d10[fire]] (@Check[reflex|dc:24|basic] for half). Recharge [[/br 1d3 #rounds]] rounds.
-
----
-
-##### Atlas Mech — Creature 9
-
-*Rare · Medium · Construct · Cerberus · Mindless*
-
-Large Cerberus combat walker armed with missiles and heavy cannon; pilot may eject when destroyed.
-
-**Perception** +20
-**Abilities** Str +7, Dex +1, Con +6, Int -3, Wis +0, Cha -5
-**AC** 29; **Fort** +22, **Ref** +16, **Will** +15
-**HP** 175
-**Speed** 25 feet
-**Ranged** ◆ Heavy Cannon +21 (range increment 100 ft, fatal-d12), **Damage** 3d8+9 piercing
-**Missile Barrage** ◆◆ The Atlas fires missiles at up to 2 targets within 120 feet. Each target takes @Damage[3d10+8[piercing]] (@Check[reflex|dc:27|basic] for half). Recharge [[/br 1d4 #rounds]] rounds.
+**Rocket Salvo** ◆◆ The YMIR fires a rocket at a target point within 120 feet. Each creature within 20 feet of the impact takes 4d10 fire (DC 24 basic Reflex for half). Recharge 1d3 rounds.
 
 ---
 
@@ -5891,6 +6268,33 @@ The thresher maw burrows up to its burrow speed and erupts from the ground. Each
 
 ### VEHICLES
 
+##### Elkoss Combine LX-2 Salvage Exoframe — Creature 3
+
+*Large · Tech*
+
+**Perception** +0
+**Abilities** Str +0, Dex +0, Con +0, Int +0, Wis +0, Cha +0
+**AC** 18; **Fort** +11
+**HP** 50
+**Speed** 25 feet
+**Hydraulic Claw** ◆ **Reach** 10 feet
+The pilot swings one of the exoframe's clamp arms. Make a melee attack roll: +11 (a PC pilot may use their Piloting modifier instead if higher).
+**Damage** 2d8+4 bludgeoning
+The two arms work independently; this action counts toward the pilot's multiple attack penalty.
+**Vise Grip** ◆ **Requirements** The pilot hit a Medium or smaller creature with a Hydraulic Claw this turn.
+The clamp closes and locks. The target is **grabbed** by that arm until the end of the pilot's next turn or until it Escapes (DC 20). While a creature is held, that arm can't be used for Hydraulic Claw.
+If the pilot spends 1 action to Sustain the grip, the target takes 1d8+4 bludgeoning as the clamp tightens and the grab extends to the end of the pilot's next turn.
+**Shear** ◆◆ **Reach** 10 feet
+Both clamps close on a single target and wrench in opposite directions, the same motion used to strip plating off a wreck. Make one melee attack roll: +11. This counts as two attacks for the multiple attack penalty.
+**Damage** 3d8+4 slashing
+Shear ignores 5 points of the target's Hardness, or 10 points if the target is an object, vehicle, or construct.
+**Requirements** Neither arm is holding a creature or object.
+**Heave** ◆◆ **Requirements** The exoframe is holding a creature with Vise Grip, or an unattended object of up to 10 Bulk.
+The pilot hurls the held creature or object up to 20 feet in a straight line. A thrown creature takes 2d6+4 bludgeoning with a DC 20 basic Reflex save and lands prone on a failure.
+An object can instead be thrown at a creature within 20 feet: make a ranged attack roll +9, dealing 2d6+4 bludgeoning on a hit.
+
+---
+
 ##### UT-47A Kodiak Shuttle — Creature 7
 
 *Large · Vehicle · Aircraft*
@@ -5902,7 +6306,7 @@ The UT-47A Kodiak is the standard Alliance/Cerberus drop shuttle used for insert
 **AC** 22; **Fort** +17, **Ref** +15, **Will** +10
 **HP** 100
 **Speed** 0 feet
-**Melee** ◆ Chin Gun +17, **Damage** 2d8+6 piercing
+**Ranged** ◆ Chin Gun +17 (range increment 60 ft), **Damage** 2d8+6 piercing
 
 ---
 
@@ -5917,9 +6321,25 @@ The M-35 Mako is the Alliance's all-terrain infantry fighting vehicle.
 **AC** 26; **Fort** +20, **Ref** +14, **Will** +10
 **HP** 175
 **Speed** 50 feet
-**Melee** ◆ 155mm Cannon +20 (brutal, splash-10), **Damage** 4d8+14 bludgeoning
-**Melee** ◆ Machine Guns +18 (agile), **Damage** 2d8+10 piercing
+**Ranged** ◆ 155mm Cannon +20 (range increment 200 ft, brutal, splash-10), **Damage** 4d8+14 bludgeoning
+**Ranged** ◆ Machine Guns +18 (range increment 80 ft, agile), **Damage** 2d8+10 piercing
 **Jump Jets** ◆ The Mako fires its jump jets, leaping up to 30 feet vertically or 60 feet horizontally. This movement does not trigger Reactions. This ability can be used once per round.
+
+---
+
+##### Atlas Mech Mk.I — Creature 9
+
+*Uncommon · Large · Construct · Cerberus · Mech*
+
+Large Cerberus combat walker armed with missiles and heavy cannon; pilot may eject when destroyed.
+
+**Perception** +20
+**Abilities** Str +7, Dex +1, Con +6, Int -3, Wis +0, Cha -5
+**AC** 29; **Fort** +22, **Ref** +16, **Will** +15
+**HP** 175
+**Speed** 25 feet
+**Ranged** ◆ Heavy Cannon +21 (range increment 100 ft, fatal-d12), **Damage** 3d8+9 piercing
+**Missile Barrage** ◆◆ The Atlas fires missiles at up to 2 targets within 120 feet. Each target takes 3d10+8 piercing (DC 27 basic Reflex for half). Recharge 1d4 rounds.
 
 ---
 
@@ -5934,7 +6354,7 @@ The M-44 Hammerhead is a fast hover-tank designed for speed over durability.
 **AC** 28; **Fort** +20, **Ref** +22, **Will** +12
 **HP** 120
 **Speed** 80 feet
-**Melee** ◆ Guided Missile +24 (brutal, splash-15, homing), **Damage** 4d10+12 fire
+**Ranged** ◆ Guided Missile +24 (range increment 200 ft, brutal, splash-15, homing), **Damage** 4d10+12 fire
 **Boost Dash** ◆ The Hammerhead boosts its thrusters, moving up to double its Speed in a straight line. This movement does not trigger Reactions. The Hammerhead can pass through squares occupied by creatures of Large or smaller size during this movement, dealing 2d6 bludgeoning damage (DC 26 Reflex save to avoid) to each creature it passes through.
 
 ---
@@ -5951,12 +6371,12 @@ The Cerberus Gunship is a heavily-armored, rapid-response combat aircraft used a
 **AC** 31; **Fort** +25, **Ref** +21, **Will** +15
 **HP** 220; **Shields** 30 (recharge 10/turn)
 **Speed** 0 feet
-**Melee** ◆ Mass Accelerator Cannon +26 (brutal), **Damage** 3d10+14 piercing
+**Ranged** ◆ Mass Accelerator Cannon +26 (range increment 200 ft, brutal), **Damage** 3d10+14 piercing
 **Rocket Barrage** ◆◆ The gunship fires a barrage of 3 rockets at a single target or spread across a 30-foot line. Each rocket deals 3d8+10 fire damage, and each target struck must succeed at a DC 30 Reflex save or be knocked prone (no save if directly hit by all three). Can be used once every 1d4 rounds.
 
 ---
 
-##### Atlas Mech — Creature 13
+##### Atlas Mech Mk.II — Creature 13
 
 *Uncommon · Large · Construct · Cerberus · Mech*
 
@@ -5968,9 +6388,45 @@ The Cerberus Atlas Mech is a bipedal combat exosuit piloted by a human operator.
 **AC** 32; **Fort** +27, **Ref** +20, **Will** +22
 **HP** 195; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Melee** ◆ Mass Accelerator Cannon +27 (brutal), **Damage** 3d10+14 piercing
-**Melee** ◆ Rocket Pod +23 (splash-15), **Damage** 4d6+12 fire
+**Ranged** ◆ Mass Accelerator Cannon +27 (range increment 120 ft, brutal), **Damage** 3d10+14 piercing
+**Ranged** ◆ Rocket Pod +23 (range increment 80 ft, splash-15), **Damage** 4d6+12 fire
 **Melee** ◆ Stomp +27 (reach-10), **Damage** 3d8+16 bludgeoning
+
+---
+
+##### Atlas Mech Mk.III — Creature 16
+
+*Rare · Large · Construct · Cerberus · Mech*
+
+The Cerberus Atlas Mech is a bipedal combat exosuit piloted by a human operator.
+
+**Perception** +27; **Skills** Athletics +31
+**Abilities** Str +10, Dex +1, Con +8, Int +2, Wis +2, Cha +0
+**Items** Kinetic Shield, Shield HP Mod - Tier 4, Shield Regen Mod - Tier 4
+**AC** 35; **Fort** +30, **Ref** +23, **Will** +25
+**HP** 255; **Shields** 30 (recharge 10/turn)
+**Speed** 30 feet
+**Ranged** ◆ Mass Accelerator Cannon +30 (range increment 120 ft, brutal), **Damage** 4d10+15 piercing
+**Ranged** ◆ Rocket Pod +26 (range increment 80 ft, splash-15), **Damage** 5d6+13 fire
+**Melee** ◆ Stomp +30 (reach-10), **Damage** 4d8+17 bludgeoning
+
+---
+
+##### Atlas Mech Mk.IV — Creature 19
+
+*Rare · Large · Construct · Cerberus · Mech*
+
+The Cerberus Atlas Mech is a bipedal combat exosuit piloted by a human operator.
+
+**Perception** +30; **Skills** Athletics +34
+**Abilities** Str +11, Dex +1, Con +9, Int +2, Wis +2, Cha +0
+**Items** Kinetic Shield, Shield HP Mod - Tier 4, Shield Regen Mod - Tier 4
+**AC** 38; **Fort** +33, **Ref** +26, **Will** +28
+**HP** 315; **Shields** 30 (recharge 10/turn)
+**Speed** 30 feet
+**Ranged** ◆ Mass Accelerator Cannon +33 (range increment 120 ft, brutal), **Damage** 4d10+20 piercing
+**Ranged** ◆ Rocket Pod +29 (range increment 80 ft, splash-15), **Damage** 6d6+15 fire
+**Melee** ◆ Stomp +33 (reach-10), **Damage** 4d8+22 bludgeoning
 
 ---
 
@@ -5987,7 +6443,7 @@ A standard Systems Alliance frigate, the backbone of Alliance patrol and escort 
 **AC** 30; **Fort** +25, **Ref** +21, **Will** +16
 **HP** 500
 **Speed** 0 feet
-**Melee** ◆ Broadside Cannons +26 (brutal), **Damage** 5d10+16 piercing
+**Ranged** ◆ Broadside Cannons +26 (range increment 1000 ft, brutal), **Damage** 5d10+16 piercing
 
 ---
 
@@ -6002,7 +6458,7 @@ A Salarian Union frigate optimized for speed and electronic warfare.
 **AC** 31; **Fort** +23, **Ref** +23, **Will** +18
 **HP** 480
 **Speed** 0 feet
-**Melee** ◆ Broadside Cannons +27 (brutal), **Damage** 5d10+15 piercing
+**Ranged** ◆ Broadside Cannons +27 (range increment 1000 ft, brutal), **Damage** 5d10+15 piercing
 **ECM Burst** ◆◆ The Salarian frigate releases a focused electronic countermeasures pulse targeting one ship within 500 feet. The target must succeed at a DC 30 Will save or suffer a -2 status penalty to attack rolls and AC until the end of the Salarian frigate's next turn (no effect on success).
 
 ---
@@ -6018,7 +6474,7 @@ The SSV Normandy SR-1 is a joint Alliance-Spectre stealth frigate, the most adva
 **AC** 33; **Fort** +28, **Ref** +24, **Will** +18
 **HP** 600
 **Speed** 0 feet
-**Melee** ◆ Mass Accelerator Broadside +30 (brutal), **Damage** 6d10+20 piercing
+**Ranged** ◆ Mass Accelerator Broadside +30 (range increment 1000 ft, brutal), **Damage** 6d10+20 piercing
 **Stealth Systems** ◆ The Normandy activates its experimental stealth drive, becoming Undetected by conventional sensor systems. While stealthed, it cannot fire weapons. The stealth drive can be maintained indefinitely but shuts down automatically if the ship fires or takes damage. Reactivating the stealth drive requires 1 action.
 
 ---
@@ -6034,7 +6490,7 @@ A Systems Alliance cruiser providing the balance of firepower and durability bet
 **AC** 34; **Fort** +30, **Ref** +23, **Will** +18
 **HP** 900
 **Speed** 0 feet
-**Melee** ◆ Broadside Cannons +31 (brutal), **Damage** 8d10+22 piercing
+**Ranged** ◆ Broadside Cannons +31 (range increment 1500 ft, brutal), **Damage** 8d10+22 piercing
 
 ---
 
@@ -6049,7 +6505,7 @@ An Asari Republics cruiser featuring elegant hull lines and powerful kinetic bar
 **AC** 34; **Fort** +29, **Ref** +24, **Will** +20
 **HP** 850; **Shields** 200 (recharge 40/turn)
 **Speed** 0 feet
-**Melee** ◆ Broadside Cannons +31 (brutal), **Damage** 8d10+21 piercing
+**Ranged** ◆ Broadside Cannons +31 (range increment 1500 ft, brutal), **Damage** 8d10+21 piercing
 
 ---
 
@@ -6064,7 +6520,7 @@ A Turian Hierarchy cruiser, distinguished by heavier armor and superior point de
 **AC** 35; **Fort** +32, **Ref** +23, **Will** +18
 **HP** 950
 **Speed** 0 feet
-**Melee** ◆ Mass Accelerator Batteries +32 (brutal), **Damage** 8d10+23 piercing
+**Ranged** ◆ Mass Accelerator Batteries +32 (range increment 1500 ft, brutal), **Damage** 8d10+23 piercing
 
 ---
 
@@ -6079,8 +6535,8 @@ The SSV Normandy SR-2 is the Cerberus-rebuilt successor to the original Normandy
 **AC** 36; **Fort** +32, **Ref** +26, **Will** +20
 **HP** 800
 **Speed** 0 feet
-**Melee** ◆ Thanix Cannon +34 (brutal), **Damage** 8d12+28 fire
-**Melee** ◆ Mass Accelerator Broadside +32 (brutal), **Damage** 6d10+22 piercing
+**Ranged** ◆ Thanix Cannon +34 (range increment 2000 ft, brutal), **Damage** 8d12+28 fire
+**Ranged** ◆ Mass Accelerator Broadside +32 (range increment 1000 ft, brutal), **Damage** 6d10+22 piercing
 **Stealth Systems** ◆ The Normandy activates its stealth drive, becoming Undetected by conventional sensor systems. While stealthed, it cannot fire weapons. The stealth drive shuts down automatically if the ship fires or takes damage.
 
 ---
@@ -6096,8 +6552,8 @@ A Systems Alliance dreadnought - a kilometer-long spinal gun platform representi
 **AC** 39; **Fort** +36, **Ref** +25, **Will** +22
 **HP** 1800
 **Speed** 0 feet
-**Melee** ◆ Spinal Mass Accelerator +38 (brutal), **Damage** 10d12+36 piercing
-**Melee** ◆ Broadside Cannons +36 (brutal), **Damage** 8d10+28 piercing
+**Ranged** ◆ Spinal Mass Accelerator +38 (range increment 5000 ft, brutal), **Damage** 10d12+36 piercing
+**Ranged** ◆ Broadside Cannons +36 (range increment 2000 ft, brutal), **Damage** 8d10+28 piercing
 
 ---
 
@@ -6112,7 +6568,7 @@ The Destiny Ascension is the Asari Republics' flagship dreadnought and the most 
 **AC** 41; **Fort** +38, **Ref** +28, **Will** +25
 **HP** 2000; **Shields** 500 (recharge 100/turn)
 **Speed** 0 feet
-**Melee** ◆ Spinal Mass Accelerator +40 (brutal, line-1000), **Damage** 12d12+40 piercing
+**Ranged** ◆ Spinal Mass Accelerator +40 (range increment 5000 ft, brutal, line-1000), **Damage** 12d12+40 piercing
 
 ---
 

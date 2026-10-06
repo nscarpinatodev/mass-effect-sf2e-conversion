@@ -1,0 +1,66 @@
+{
+  "_key": "!items!meClassAdept0000",
+  "_id": "meClassAdept0000",
+  "folder": null,
+  "name": "Biotic Conditioning",
+  "type": "feat",
+  "img": "icons/magic/control/debuff-energy-hold-levitate-teal-blue.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "biotic-conditioning",
+    "description": {
+      "gm": "",
+      "value": "<p>+2 circumstance bonus to Fortitude saves (years of biotic conditioning hardens the body against physical trauma).</p>"
+    },
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "fortitude",
+        "type": "circumstance",
+        "value": 2,
+        "label": "Biotic Conditioning"
+      }
+    ],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

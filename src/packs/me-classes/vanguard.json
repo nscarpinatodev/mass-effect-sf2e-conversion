@@ -1,39 +1,45 @@
 {
-  "_key": "!items!meClassVanguard0",
-  "_id": "meClassVanguard0",
+  "_key": "!items!meClsVanguard000",
+  "_id": "meClsVanguard000",
   "folder": null,
   "name": "Vanguard",
-  "type": "feat",
-  "img": "icons/magic/movement/abstract-ribbons-blue-purple.webp",
+  "type": "class",
+  "img": "icons/magic/movement/trail-streak-impact-blue.webp",
   "effects": [],
   "flags": {},
   "ownership": {
     "default": 0
   },
   "system": {
-    "slug": "me-class-vanguard",
+    "slug": "vanguard",
     "description": {
       "gm": "",
-      "value": "<p>The most aggressive class in the galaxy, Vanguards combine biotic power with close-range weapon mastery. Their signature abilities - Charge and Nova - define a high-risk, high-reward playstyle built around closing distance, overwhelming enemies, and recharging defenses through momentum.</p><p><strong>Bonus:</strong> +2 circumstance bonus to Reflex saves (constant movement and biotic enhancement make Vanguards extremely hard to pin down).</p><hr><p><strong>Signature Abilities:</strong> Charge, Nova, Biotic Barrier, Reave, Pull, Shockwave</p><p><strong>Power Access:</strong> Charge, Nova, Biotic Barrier, and the close-range biotic suite from the <em>ME Biotic Powers</em> compendium. Vanguards have limited access to long-range biotic control powers (no Singularity, limited Warp). No native tech power access.</p><p><strong>Weapons:</strong> Shotguns (primary), pistols (secondary). Vanguards close the distance with Charge and finish with a shotgun burst.</p><p><strong>Armor:</strong> Heavy armor preferred. Vanguards tank through aggression - Charge restores shield HP, Nova is a last resort. They need the HP to survive the approach.</p><p><strong>Playstyle:</strong> Aggressive melee-range biotic fighter. Charge into a group, Nova for point-blank devastation, shotgun any survivors, and rely on Charge's shield recharge to stay alive. Extremely effective in close quarters; exposed at range.</p>"
+      "value": "<p>The most aggressive class in the galaxy, Vanguards combine biotic power with close-range weapon mastery. Their signature abilities - Charge and Nova - define a high-risk, high-reward playstyle built around closing distance, overwhelming enemies, and recharging defenses through momentum.</p><hr><p><strong>Key Attribute:</strong> Charisma</p><p><strong>Hit Points:</strong> 10 plus your Constitution modifier per level</p><h2>Initial Proficiencies</h2><p><strong>Perception:</strong> Trained</p><p><strong>Saving Throws:</strong> Expert in Fortitude, Trained in Reflex, Expert in Will</p><p><strong>Skills:</strong> Trained in Athletics, plus a number of additional skills equal to 3 plus your Intelligence modifier</p><p><strong>Attacks:</strong> Trained in simple weapons, martial shotguns and pistols, and unarmed attacks</p><p><strong>Defenses:</strong> Trained in light, medium, heavy armor, and unarmored defense</p><p><strong>Class DC:</strong> Trained; your biotic powers use it</p><h2>Class Progression</h2><table><thead><tr><th>Level</th><th>Features</th></tr></thead><tbody><tr><td>1</td><td>Vanguard Mastery, Vanguard Momentum</td></tr><tr><td>3</td><td>Reflex Expertise</td></tr><tr><td>5</td><td>Weapon Expertise</td></tr><tr><td>7</td><td>Improved Vanguard Mastery, Vanguard Expertise, Weapon Specialization</td></tr><tr><td>9</td><td>Fortitude Mastery</td></tr><tr><td>11</td><td>Armor Expertise, Perception Expertise</td></tr><tr><td>13</td><td>Superior Vanguard Mastery, Weapon Mastery</td></tr><tr><td>15</td><td>Greater Weapon Specialization, Master Vanguard</td></tr><tr><td>17</td><td>Will Mastery</td></tr><tr><td>19</td><td>Legendary Vanguard</td></tr></tbody></table><p>Class feats at 1st level and every even level; skill feats at every even level; general feats at 3rd, 7th, 11th, 15th, and 19th; skill increases at every odd level from 3rd.</p><hr><p><strong>Signature Abilities:</strong> Charge, Nova, Biotic Barrier, Reave, Pull, Shockwave</p><p><strong>Power Access:</strong> Charge, Nova, Biotic Barrier, and the close-range biotic suite from the <em>ME Biotic Powers</em> compendium. Vanguards have limited access to long-range biotic control powers (no Singularity, limited Warp). No native tech power access.</p><p><strong>Weapons:</strong> Shotguns (primary), pistols (secondary). Vanguards close the distance with Charge and finish with a shotgun burst.</p><p><strong>Armor:</strong> Heavy armor preferred. Vanguards tank through aggression - Charge restores shield HP, Nova is a last resort. They need the HP to survive the approach.</p><p><strong>Playstyle:</strong> Aggressive melee-range biotic fighter. Charge into a group, Nova for point-blank devastation, shotgun any survivors, and rely on Charge's shield recharge to stay alive. Extremely effective in close quarters; exposed at range.</p>"
     },
     "rules": [
       {
-        "key": "FlatModifier",
-        "selector": "reflex",
-        "type": "circumstance",
-        "value": 2,
-        "label": "Vanguard Momentum"
+        "key": "MartialProficiency",
+        "label": "Shotguns and Pistols",
+        "slug": "me-shotguns-and-pistols",
+        "definition": [
+          "item:category:martial",
+          {
+            "or": [
+              "item:group:shotgun",
+              "item:group:pistol"
+            ]
+          }
+        ],
+        "sameAs": "simple"
       }
     ],
     "_migration": {
-      "version": 0.955,
-      "lastMigration": null,
+      "version": 0.959,
       "previous": null
     },
     "traits": {
-      "otherTags": [],
-      "value": [],
-      "rarity": "common"
+      "rarity": "common",
+      "value": []
     },
     "publication": {
       "title": "Mass Effect Compendium",
@@ -41,26 +47,199 @@
       "license": "ORC",
       "remaster": true
     },
-    "level": {
-      "value": 1
+    "ancestryFeatLevels": {
+      "value": [
+        1,
+        5,
+        9,
+        13,
+        17
+      ]
     },
-    "prerequisites": {
-      "value": []
+    "attacks": {
+      "advanced": 0,
+      "martial": 0,
+      "other": {
+        "name": "",
+        "rank": 0
+      },
+      "simple": 1,
+      "unarmed": 1
     },
-    "actionType": {
-      "value": "passive"
+    "classFeatLevels": {
+      "value": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
     },
-    "actions": {
-      "value": null
+    "defenses": {
+      "light": 1,
+      "medium": 1,
+      "heavy": 1,
+      "unarmored": 1
     },
-    "category": "classfeature",
-    "subfeatures": {
-      "proficiencies": {},
-      "senses": {},
-      "suppressedFeatures": []
+    "generalFeatLevels": {
+      "value": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ]
     },
-    "onlyLevel1": false,
-    "maxTakable": 1,
-    "location": null
+    "hp": 10,
+    "items": {
+      "van00": {
+        "img": "icons/magic/movement/abstract-ribbons-blue-purple.webp",
+        "level": 1,
+        "name": "Vanguard Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meVanguardMast00"
+      },
+      "van01": {
+        "img": "icons/magic/movement/trail-streak-impact-blue.webp",
+        "level": 1,
+        "name": "Vanguard Momentum",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meClassVanguard0"
+      },
+      "van02": {
+        "img": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
+        "level": 3,
+        "name": "Reflex Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfReflExpert"
+      },
+      "van03": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 5,
+        "name": "Weapon Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
+      },
+      "van04": {
+        "img": "icons/magic/movement/abstract-ribbons-blue-purple.webp",
+        "level": 7,
+        "name": "Improved Vanguard Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meVanguardMastI0"
+      },
+      "van05": {
+        "img": "icons/magic/movement/trail-streak-impact-blue.webp",
+        "level": 7,
+        "name": "Vanguard Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCVanguardExp0"
+      },
+      "van06": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 7,
+        "name": "Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpec000"
+      },
+      "van07": {
+        "img": "icons/magic/defensive/armor-shield-barrier-steel.webp",
+        "level": 9,
+        "name": "Fortitude Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfFortMaster"
+      },
+      "van08": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 11,
+        "name": "Armor Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfArmorExp00"
+      },
+      "van09": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 11,
+        "name": "Perception Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfPercExpert"
+      },
+      "van10": {
+        "img": "icons/magic/movement/abstract-ribbons-blue-purple.webp",
+        "level": 13,
+        "name": "Superior Vanguard Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meVanguardMastS0"
+      },
+      "van11": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 13,
+        "name": "Weapon Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnMaster0"
+      },
+      "van12": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 15,
+        "name": "Greater Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpecGr0"
+      },
+      "van13": {
+        "img": "icons/magic/movement/trail-streak-impact-blue.webp",
+        "level": 15,
+        "name": "Master Vanguard",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCVanguardMst0"
+      },
+      "van14": {
+        "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
+        "level": 17,
+        "name": "Will Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWillMaster"
+      },
+      "van15": {
+        "img": "icons/magic/movement/trail-streak-impact-blue.webp",
+        "level": 19,
+        "name": "Legendary Vanguard",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCVanguardLeg0"
+      }
+    },
+    "keyAbility": {
+      "selected": null,
+      "value": [
+        "cha"
+      ]
+    },
+    "perception": 1,
+    "savingThrows": {
+      "fortitude": 2,
+      "reflex": 1,
+      "will": 2
+    },
+    "skillFeatLevels": {
+      "value": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
+    },
+    "skillIncreaseLevels": {
+      "value": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19
+      ]
+    },
+    "spellcasting": 0,
+    "trainedSkills": {
+      "additional": 3,
+      "value": [
+        "athletics"
+      ]
+    }
   }
 }

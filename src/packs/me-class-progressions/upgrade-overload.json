@@ -24,7 +24,10 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "engineer",
+        "sentinel"
+      ],
       "rarity": "common"
     },
     "publication": {

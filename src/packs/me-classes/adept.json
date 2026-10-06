@@ -1,39 +1,44 @@
 {
-  "_key": "!items!meClassAdept0000",
-  "_id": "meClassAdept0000",
+  "_key": "!items!meClsAdept000000",
+  "_id": "meClsAdept000000",
   "folder": null,
   "name": "Adept",
-  "type": "feat",
-  "img": "icons/magic/light/orb-shining-teal.webp",
+  "type": "class",
+  "img": "icons/magic/control/debuff-energy-hold-levitate-teal-blue.webp",
   "effects": [],
   "flags": {},
   "ownership": {
     "default": 0
   },
   "system": {
-    "slug": "me-class-adept",
+    "slug": "adept",
     "description": {
       "gm": "",
-      "value": "<p>The most powerful biotic class in the galaxy, Adepts use mass effect fields to dominate, suspend, and destroy enemies with devastating efficiency. Their biotic combos - particularly the Biotic Explosion chain - are the most powerful burst damage in the game.</p><p><strong>Bonus:</strong> +2 circumstance bonus to Fortitude saves (years of biotic conditioning hardens the body against physical trauma).</p><hr><p><strong>Signature Abilities:</strong> Singularity, Warp, Throw, Stasis, Pull, Dark Channel, Dominate</p><p><strong>Power Access:</strong> All biotic powers (<em>ME Biotic Powers</em> compendium). Adepts do not natively access tech power feats.</p><p><strong>Weapons:</strong> Pistols and submachine guns only. Adepts depend on powers, not guns.</p><p><strong>Armor:</strong> Light armor only. Biotic Barrier compensates for the lack of physical protection.</p><p><strong>Playstyle:</strong> Crowd control and combo detonation. An Adept's power is in setup - priming multiple enemies simultaneously with Singularity, then detonating with Throw or Warp for cascading Biotic Explosions. Fragile without their barrier up; devastating when they control positioning.</p>"
+      "value": "<p>The most powerful biotic class in the galaxy, Adepts use mass effect fields to dominate, suspend, and destroy enemies with devastating efficiency. Their biotic combos - particularly the Biotic Explosion chain - are the most powerful burst damage in the game.</p><hr><p><strong>Key Attribute:</strong> Charisma</p><p><strong>Hit Points:</strong> 6 plus your Constitution modifier per level</p><h2>Initial Proficiencies</h2><p><strong>Perception:</strong> Trained</p><p><strong>Saving Throws:</strong> Trained in Fortitude, Expert in Reflex, Expert in Will</p><p><strong>Skills:</strong> Trained in Occultism, plus a number of additional skills equal to 3 plus your Intelligence modifier</p><p><strong>Attacks:</strong> Trained in simple weapons, martial pistols and submachine guns, and unarmed attacks</p><p><strong>Defenses:</strong> Trained in light armor, and unarmored defense</p><p><strong>Class DC:</strong> Trained; your biotic powers use it</p><h2>Class Progression</h2><table><thead><tr><th>Level</th><th>Features</th></tr></thead><tbody><tr><td>1</td><td>Adept Mastery, Biotic Conditioning</td></tr><tr><td>3</td><td>Fortitude Expertise</td></tr><tr><td>7</td><td>Adept Expertise, Improved Adept Mastery</td></tr><tr><td>9</td><td>Will Mastery</td></tr><tr><td>11</td><td>Light Armor Expertise, Perception Expertise, Weapon Expertise</td></tr><tr><td>13</td><td>Superior Adept Mastery, Weapon Specialization</td></tr><tr><td>15</td><td>Master Adept</td></tr><tr><td>17</td><td>Reflex Mastery</td></tr><tr><td>19</td><td>Legendary Adept</td></tr></tbody></table><p>Class feats at 1st level and every even level; skill feats at every even level; general feats at 3rd, 7th, 11th, 15th, and 19th; skill increases at every odd level from 3rd.</p><hr><p><strong>Signature Abilities:</strong> Singularity, Warp, Throw, Stasis, Pull, Dark Channel, Dominate</p><p><strong>Power Access:</strong> All biotic powers (<em>ME Biotic Powers</em> compendium). Adepts do not natively access tech power feats.</p><p><strong>Weapons:</strong> Pistols and submachine guns only. Adepts depend on powers, not guns.</p><p><strong>Armor:</strong> Light armor only. Biotic Barrier compensates for the lack of physical protection.</p><p><strong>Playstyle:</strong> Crowd control and combo detonation. An Adept's power is in setup - priming multiple enemies simultaneously with Singularity, then detonating with Throw or Warp for cascading Biotic Explosions. Fragile without their barrier up; devastating when they control positioning.</p>"
     },
     "rules": [
       {
-        "key": "FlatModifier",
-        "selector": "fortitude",
-        "type": "circumstance",
-        "value": 2,
-        "label": "Biotic Conditioning"
+        "key": "MartialProficiency",
+        "label": "Pistols and Submachine Guns",
+        "slug": "me-pistols-and-submachine-guns",
+        "definition": [
+          "item:category:martial",
+          {
+            "or": [
+              "item:group:pistol"
+            ]
+          }
+        ],
+        "sameAs": "simple"
       }
     ],
     "_migration": {
-      "version": 0.955,
-      "lastMigration": null,
+      "version": 0.959,
       "previous": null
     },
     "traits": {
-      "otherTags": [],
-      "value": [],
-      "rarity": "common"
+      "rarity": "common",
+      "value": []
     },
     "publication": {
       "title": "Mass Effect Compendium",
@@ -41,26 +46,187 @@
       "license": "ORC",
       "remaster": true
     },
-    "level": {
-      "value": 1
+    "ancestryFeatLevels": {
+      "value": [
+        1,
+        5,
+        9,
+        13,
+        17
+      ]
     },
-    "prerequisites": {
-      "value": []
+    "attacks": {
+      "advanced": 0,
+      "martial": 0,
+      "other": {
+        "name": "",
+        "rank": 0
+      },
+      "simple": 1,
+      "unarmed": 1
     },
-    "actionType": {
-      "value": "passive"
+    "classFeatLevels": {
+      "value": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
     },
-    "actions": {
-      "value": null
+    "defenses": {
+      "light": 1,
+      "medium": 0,
+      "heavy": 0,
+      "unarmored": 1
     },
-    "category": "classfeature",
-    "subfeatures": {
-      "proficiencies": {},
-      "senses": {},
-      "suppressedFeatures": []
+    "generalFeatLevels": {
+      "value": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ]
     },
-    "onlyLevel1": false,
-    "maxTakable": 1,
-    "location": null
+    "hp": 6,
+    "items": {
+      "ade00": {
+        "img": "icons/magic/light/orb-shining-teal.webp",
+        "level": 1,
+        "name": "Adept Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meAdeptMastery00"
+      },
+      "ade01": {
+        "img": "icons/magic/control/debuff-energy-hold-levitate-teal-blue.webp",
+        "level": 1,
+        "name": "Biotic Conditioning",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meClassAdept0000"
+      },
+      "ade02": {
+        "img": "icons/magic/defensive/armor-shield-barrier-steel.webp",
+        "level": 3,
+        "name": "Fortitude Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfFortExpert"
+      },
+      "ade03": {
+        "img": "icons/magic/control/debuff-energy-hold-levitate-teal-blue.webp",
+        "level": 7,
+        "name": "Adept Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCAdeptExp0000"
+      },
+      "ade04": {
+        "img": "icons/magic/light/orb-shining-teal.webp",
+        "level": 7,
+        "name": "Improved Adept Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meAdeptMastImpr0"
+      },
+      "ade05": {
+        "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
+        "level": 9,
+        "name": "Will Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWillMaster"
+      },
+      "ade06": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 11,
+        "name": "Light Armor Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfLightArmEx"
+      },
+      "ade07": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 11,
+        "name": "Perception Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfPercExpert"
+      },
+      "ade08": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 11,
+        "name": "Weapon Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
+      },
+      "ade09": {
+        "img": "icons/magic/light/orb-shining-teal.webp",
+        "level": 13,
+        "name": "Superior Adept Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meAdeptMastSupe0"
+      },
+      "ade10": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 13,
+        "name": "Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpec000"
+      },
+      "ade11": {
+        "img": "icons/magic/control/debuff-energy-hold-levitate-teal-blue.webp",
+        "level": 15,
+        "name": "Master Adept",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCAdeptMst0000"
+      },
+      "ade12": {
+        "img": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
+        "level": 17,
+        "name": "Reflex Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfReflMaster"
+      },
+      "ade13": {
+        "img": "icons/magic/control/debuff-energy-hold-levitate-teal-blue.webp",
+        "level": 19,
+        "name": "Legendary Adept",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCAdeptLeg0000"
+      }
+    },
+    "keyAbility": {
+      "selected": null,
+      "value": [
+        "cha"
+      ]
+    },
+    "perception": 1,
+    "savingThrows": {
+      "fortitude": 1,
+      "reflex": 2,
+      "will": 2
+    },
+    "skillFeatLevels": {
+      "value": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
+    },
+    "skillIncreaseLevels": {
+      "value": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19
+      ]
+    },
+    "spellcasting": 0,
+    "trainedSkills": {
+      "additional": 3,
+      "value": [
+        "occultism"
+      ]
+    }
   }
 }

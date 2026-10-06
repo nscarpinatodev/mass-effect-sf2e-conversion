@@ -10,6 +10,7 @@
 
 import { readFile, writeFile, mkdir, readdir } from 'fs/promises';
 import { join } from 'path';
+import { flattenEnrichers, indexPacks, summarizeClass } from './doc-helpers.mjs';
 
 const SRC = 'src/packs';
 
@@ -97,8 +98,19 @@ function titleCase(s) {
   return String(s).replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 
+// Vehicles carry only a Fortitude save.
+function savesMd(s) {
+  const sign = (n) => (n >= 0 ? `+${n}` : `${n}`);
+  return [['fortitude', 'Fort'], ['reflex', 'Ref'], ['will', 'Will']]
+    .filter(([k]) => s.saves?.[k]?.value != null)
+    .map(([k, label]) => `**${label}** ${sign(s.saves[k].value)}`)
+    .join(', ');
+}
+
 function htmlToMd(html) {
-  return html
+  return flattenEnrichers(html)
+    .replace(/<h\d[^>]*>([\s\S]*?)<\/h\d>/g, '\n**$1**\n')
+    .replace(/<tr>([\s\S]*?)<\/tr>/g, (_, row) => `| ${[...row.matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/g)].map(m => m[1]).join(' | ')} |\n`)
     .replace(/<strong>([\s\S]*?)<\/strong>/g, '**$1**')
     .replace(/<em>([\s\S]*?)<\/em>/g, '*$1*')
     .replace(/<hr\s*\/?>/g, '\n---\n')
@@ -620,7 +632,7 @@ function renderNpcs(factions) {
       const gear = items.filter(i => ['weapon','armor','equipment'].includes(i.type)).map(i => i.name);
       if (gear.length) L.push(`**Items** ${gear.join(', ')}`);
       const shield = items.find(i => i.flags?.['mass-effect-sf2e-conversion']?.shieldMax)?.flags['mass-effect-sf2e-conversion'];
-      L.push(`**AC** ${s.attributes.ac.value}; **Fort** ${SIGN(s.saves.fortitude.value)}, **Ref** ${SIGN(s.saves.reflex.value)}, **Will** ${SIGN(s.saves.will.value)}`);
+      L.push(`**AC** ${s.attributes.ac.value}; ${savesMd(s)}`);
       L.push(`**HP** ${s.attributes.hp.max}${shield ? `; **Shields** ${shield.shieldMax} (recharge ${shield.shieldRegen}/turn)` : ''}`);
       L.push(`**Speed** ${s.attributes.speed?.value ?? 25} feet`);
       for (const st of items.filter(i => i.type === 'melee')) {
@@ -703,7 +715,7 @@ function statblockMd(npc) {
   const gear = items.filter(i => ['weapon','armor','equipment'].includes(i.type)).map(i => i.name);
   if (gear.length) L.push(`**Items** ${gear.join(', ')}`);
   const sh = items.find(i => i.flags?.['mass-effect-sf2e-conversion']?.shieldMax)?.flags['mass-effect-sf2e-conversion'];
-  L.push(`**AC** ${s.attributes.ac.value}; **Fort** ${SIGN(s.saves.fortitude.value)}, **Ref** ${SIGN(s.saves.reflex.value)}, **Will** ${SIGN(s.saves.will.value)}`);
+  L.push(`**AC** ${s.attributes.ac.value}; ${savesMd(s)}`);
   L.push(`**HP** ${s.attributes.hp.max}${sh ? `; **Shields** ${sh.shieldMax} (recharge ${sh.shieldRegen}/turn)` : ''}`);
   L.push(`**Speed** ${s.attributes.speed?.value ?? 25} feet`);
   for (const st of items.filter(i => i.type === 'melee')) {
@@ -853,8 +865,13 @@ async function main() {
   lines.push('---');
   lines.push('');
 
+  const packIndex = await indexPacks(SRC);
+  const proficiencyFeatures = new Map();
   for (const cls of CLASSES) {
     const classFeat = await loadFeat(...cls.classFile);
+    for (const g of summarizeClass(classFeat, packIndex).grants) {
+      if (g.item._id.startsWith('meProf')) proficiencyFeatures.set(g.item._id, g.item);
+    }
 
     // Load mastery chain
     const masteryFeats = [];
@@ -881,14 +898,35 @@ async function main() {
       return d !== 0 ? d : a.name.localeCompare(b.name);
     });
 
+    const info = summarizeClass(classFeat, packIndex);
     lines.push(`### ${cls.name}`);
     lines.push('');
-    lines.push('#### Class Feature');
+    lines.push(htmlToMd(`<p>${info.flavor}</p>`));
     lines.push('');
-    lines.push(`**${classFeat.name}** *(Level 1)*`);
+    lines.push(`**Key Attribute:** ${info.keyAttributes.join(' or ')}`);
     lines.push('');
-    lines.push(htmlToMd(classFeat.system.description.value));
+    lines.push(`**Hit Points:** ${info.hp} plus your Constitution modifier per level`);
     lines.push('');
+    for (const m of info.mechanics) lines.push(htmlToMd(m), '');
+    lines.push('#### Initial Proficiencies');
+    lines.push('');
+    for (const { group, items } of info.proficiencies) lines.push(`- **${group}:** ${items.join('; ')}`);
+    lines.push('');
+    lines.push('#### Advancement');
+    lines.push('');
+    lines.push('| Level | Class Features |');
+    lines.push('|---|---|');
+    for (let lvl = 1; lvl <= 20; lvl++) {
+      const parts = info.grants.filter(g => g.level === lvl).map(g => g.name);
+      if (info.classFeatLevels.has(lvl)) parts.push('Class Feat');
+      parts.push(...(info.standard[lvl] ?? []));
+      lines.push(`| ${lvl} | ${parts.join(', ')} |`);
+    }
+    lines.push('');
+    if (info.signatureFeature) {
+      lines.push(renderFeat(info.signatureFeature));
+      lines.push('');
+    }
     lines.push('---');
     lines.push('');
 
@@ -928,6 +966,19 @@ async function main() {
       lines.push('---');
       lines.push('');
     }
+  }
+
+  if (proficiencyFeatures.size) {
+    lines.push('### CLASS PROFICIENCY FEATURES');
+    lines.push('');
+    lines.push('*Shared by the classes that list them in their Advancement table. Each class\'s own DC features (such as Adept Expertise, Master Adept and Legendary Adept) raise that class DC to expert, master and legendary; every power uses your class DC.*');
+    lines.push('');
+    for (const f of [...proficiencyFeatures.values()].sort((a, b) => a.name.localeCompare(b.name))) {
+      lines.push(`**${f.name}** ${htmlToMd(f.system.description.value)}`);
+      lines.push('');
+    }
+    lines.push('---');
+    lines.push('');
   }
 
   const generalFeats = [];

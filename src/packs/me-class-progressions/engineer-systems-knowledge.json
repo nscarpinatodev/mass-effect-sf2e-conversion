@@ -1,0 +1,66 @@
+{
+  "_key": "!items!meClassEngineer0",
+  "_id": "meClassEngineer0",
+  "folder": null,
+  "name": "Engineer Systems Knowledge",
+  "type": "feat",
+  "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "engineer-systems-knowledge",
+    "description": {
+      "gm": "",
+      "value": "<p>+2 circumstance bonus to Will saves (trained mind, resistant to hacking and mental subversion).</p>"
+    },
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "will",
+        "type": "circumstance",
+        "value": 2,
+        "label": "Engineer Systems Knowledge"
+      }
+    ],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

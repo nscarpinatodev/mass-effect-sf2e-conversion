@@ -14,7 +14,7 @@
     "slug": "me-soldier-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>Years of combat experience make you a force multiplier on the battlefield. Your weapon Strikes deal <strong>+2 additional damage</strong> (total +4 with Soldier Mastery) and you retain the <strong>+1 bonus</strong> to attack rolls against Flat-Footed enemies. Once per round when you use Adrenaline Rush, you may immediately make a Strike as a <strong>free action</strong>.</p><p><em>Prerequisite: Soldier Mastery.</em></p>"
+      "value": "<p>Years of combat experience make you a force multiplier on the battlefield. Your weapon Strikes deal <strong>+2 additional damage</strong> (total +4 with Soldier Mastery) and you retain the <strong>+1 bonus</strong> to attack rolls against Flat-Footed enemies. Once per round when you use Adrenaline Rush, you may immediately make a Strike as a <strong>free action</strong>.</p><p><em>Prerequisite: Soldier Mastery.</em></p><hr/><p><em>Automation: The extra Strike damage is applied automatically. The free Strike after Adrenaline Rush is yours to take.</em></p>"
     },
     "rules": [
       {

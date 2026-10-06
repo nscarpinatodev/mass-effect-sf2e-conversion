@@ -14,9 +14,27 @@
     "slug": "me-vanguard-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>Your combat biotic synergy reaches its peak efficiency. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and Biotic Charge restores <strong>5 HP</strong> to your Biotic Barrier. After using Biotic Charge or Nova, your next Strike this turn deals <strong>+1d6 void</strong> damage.</p><p><em>Prerequisite: Vanguard Mastery.</em></p>"
+      "value": "<p>Your combat biotic synergy reaches its peak efficiency. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and Biotic Charge restores <strong>5 HP</strong> to your Biotic Barrier. After using Biotic Charge or Nova, your next Strike this turn deals <strong>+1d6 void</strong> damage.</p><p><em>Prerequisite: Vanguard Mastery.</em></p><hr/><p><em>Automation: Using Charge or Nova gives you a Vanguard Momentum effect until the end of your turn; your Strikes deal the extra 1d6 void while it lasts. Remove it after the Strike.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "override",
+        "path": "flags.mass-effect-sf2e-conversion.momentumStrike",
+        "value": true
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "void",
+        "predicate": [
+          "self:effect:me-effect-vanguard-momentum"
+        ],
+        "label": "Improved Vanguard Mastery"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

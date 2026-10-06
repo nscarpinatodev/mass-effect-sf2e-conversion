@@ -14,7 +14,7 @@
     "slug": "me-engineer-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>Your system-level tech optimization reaches an advanced state. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and their DCs gain <strong>+1</strong>. Once per round when a tech power you used deals damage, you may reduce one active power cooldown by <strong>1 round</strong>. Your Combat Drone gains <strong>+2 HP per your level</strong>.</p><p><em>Prerequisite: Engineer Mastery.</em></p>"
+      "value": "<p>Your system-level tech optimization reaches an advanced state. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and their DCs keep the <strong>+1</strong>. Once per round when a tech power you used deals damage, you may reduce one active power cooldown by <strong>1 round</strong>. Your Combat Drone gains <strong>+2 HP per your level</strong>.</p><p><em>Prerequisite: Engineer Mastery.</em></p><hr/><p><em>Automation: Cooldown reduction and the Combat Drone's extra HP are tracked by hand.</em></p>"
     },
     "rules": [],
     "_migration": {

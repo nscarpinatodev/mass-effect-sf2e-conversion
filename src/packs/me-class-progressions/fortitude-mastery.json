@@ -1,0 +1,71 @@
+{
+  "_key": "!items!meProfFortMaster",
+  "_id": "meProfFortMaster",
+  "folder": null,
+  "name": "Fortitude Mastery",
+  "type": "feat",
+  "img": "icons/magic/defensive/armor-shield-barrier-steel.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "fortitude-mastery",
+    "description": {
+      "gm": "",
+      "value": "<p>Your proficiency rank for Fortitude saves increases to master. When you roll a success on a Fortitude save, you get a critical success instead.</p>"
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.saves.fortitude.rank",
+        "value": 3
+      },
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "fortitude",
+        "adjustment": {
+          "success": "to-critical-success"
+        }
+      }
+    ],
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 7
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

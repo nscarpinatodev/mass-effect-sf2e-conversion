@@ -14,7 +14,7 @@
     "slug": "me-soldier-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Intensive combat training sharpens your instincts and weapon handling. Your weapon Strikes deal <strong>+2 damage</strong>. You gain a <strong>+1 bonus</strong> to attack rolls against enemies who are Flat-Footed.</p><p><em>Classes: Soldier.</em></p>"
+      "value": "<p>Intensive combat training sharpens your instincts and weapon handling. Your weapon Strikes deal <strong>+2 damage</strong>. You gain a <strong>+1 bonus</strong> to attack rolls against enemies who are Flat-Footed.</p><p><em>Classes: Soldier.</em></p><hr/><p><em>Automation: Strike damage and the +1 to attack rolls against off-guard targets are applied automatically.</em></p>"
     },
     "rules": [
       {
@@ -22,6 +22,16 @@
         "selector": "strike-damage",
         "type": "untyped",
         "value": 2,
+        "label": "Soldier Mastery"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "strike-attack-roll",
+        "type": "circumstance",
+        "value": 1,
+        "predicate": [
+          "target:condition:off-guard"
+        ],
         "label": "Soldier Mastery"
       }
     ],

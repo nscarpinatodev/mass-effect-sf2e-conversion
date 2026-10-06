@@ -14,7 +14,7 @@
     "slug": "me-adept-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>Your biotic efficiency reaches exceptional levels. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and your biotic power DCs gain <strong>+1</strong>. Once per round, after triggering a Biotic Explosion, you may use a biotic power as a <strong>free action</strong>.</p><p><em>Prerequisite: Adept Mastery.</em></p>"
+      "value": "<p>Your biotic efficiency reaches exceptional levels. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and your biotic power DCs keep the <strong>+1</strong>. Once per round, after triggering a Biotic Explosion, you may use a biotic power as a <strong>free action</strong>.</p><p><em>Prerequisite: Adept Mastery.</em></p><hr/><p><em>Automation: The free biotic power after a Biotic Explosion is yours to take.</em></p>"
     },
     "rules": [],
     "_migration": {

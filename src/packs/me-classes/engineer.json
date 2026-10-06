@@ -1,39 +1,44 @@
 {
-  "_key": "!items!meClassEngineer0",
-  "_id": "meClassEngineer0",
+  "_key": "!items!meClsEngineer000",
+  "_id": "meClsEngineer000",
   "folder": null,
   "name": "Engineer",
-  "type": "feat",
-  "img": "icons/equipment/wrist/bracer-runed-steel-orange.webp",
+  "type": "class",
+  "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
   "effects": [],
   "flags": {},
   "ownership": {
     "default": 0
   },
   "system": {
-    "slug": "me-class-engineer",
+    "slug": "engineer",
     "description": {
       "gm": "",
-      "value": "<p>Specialists in technical warfare, Engineers control the battlefield through drone deployment, electronic warfare, and the ability to strip enemy shields and set enemies on fire. They are the definitive tech class, capable of solving almost any tactical problem with the right tool.</p><p><strong>Bonus:</strong> +2 circumstance bonus to Will saves (trained mind, resistant to hacking and mental subversion).</p><hr><p><strong>Signature Abilities:</strong> Combat Drone, Sentry Turret, Incinerate, Overload, AI Hacking, Cryo Blast</p><p><strong>Power Access:</strong> All tech powers (<em>ME Tech Powers</em> compendium). Engineers do not natively access biotic power feats.</p><p><strong>Weapons:</strong> Pistols, submachine guns. Light weapons preferred; heavy weapons and sniper rifles are not standard.</p><p><strong>Armor:</strong> Light and medium armor only. Combat Drone provides area denial that compensates for lighter armor.</p><p><strong>Playstyle:</strong> Force multiplier and control specialist. Engineers rarely trade shots directly - they strip defenses, deploy drones and turrets, and create conditions that the rest of the squad exploits. Best when given time to set up.</p>"
+      "value": "<p>Specialists in technical warfare, Engineers control the battlefield through drone deployment, electronic warfare, and the ability to strip enemy shields and set enemies on fire. They are the definitive tech class, capable of solving almost any tactical problem with the right tool.</p><hr><p><strong>Key Attribute:</strong> Intelligence</p><p><strong>Hit Points:</strong> 8 plus your Constitution modifier per level</p><h2>Initial Proficiencies</h2><p><strong>Perception:</strong> Trained</p><p><strong>Saving Throws:</strong> Trained in Fortitude, Expert in Reflex, Expert in Will</p><p><strong>Skills:</strong> Trained in Crafting, plus a number of additional skills equal to 4 plus your Intelligence modifier</p><p><strong>Attacks:</strong> Trained in simple weapons, martial pistols and submachine guns, and unarmed attacks</p><p><strong>Defenses:</strong> Trained in light, medium armor, and unarmored defense</p><p><strong>Class DC:</strong> Trained; your tech powers use it</p><h2>Class Progression</h2><table><thead><tr><th>Level</th><th>Features</th></tr></thead><tbody><tr><td>1</td><td>Engineer Mastery, Engineer Systems Knowledge</td></tr><tr><td>3</td><td>Fortitude Expertise</td></tr><tr><td>7</td><td>Engineer Expertise, Improved Engineer Mastery</td></tr><tr><td>9</td><td>Will Mastery</td></tr><tr><td>11</td><td>Medium Armor Expertise, Perception Expertise, Weapon Expertise</td></tr><tr><td>13</td><td>Superior Engineer Mastery, Weapon Specialization</td></tr><tr><td>15</td><td>Master Engineer</td></tr><tr><td>17</td><td>Reflex Mastery</td></tr><tr><td>19</td><td>Legendary Engineer</td></tr></tbody></table><p>Class feats at 1st level and every even level; skill feats at every even level; general feats at 3rd, 7th, 11th, 15th, and 19th; skill increases at every odd level from 3rd.</p><hr><p><strong>Signature Abilities:</strong> Combat Drone, Sentry Turret, Incinerate, Overload, AI Hacking, Cryo Blast</p><p><strong>Power Access:</strong> All tech powers (<em>ME Tech Powers</em> compendium). Engineers do not natively access biotic power feats.</p><p><strong>Weapons:</strong> Pistols, submachine guns. Light weapons preferred; heavy weapons and sniper rifles are not standard.</p><p><strong>Armor:</strong> Light and medium armor only. Combat Drone provides area denial that compensates for lighter armor.</p><p><strong>Playstyle:</strong> Force multiplier and control specialist. Engineers rarely trade shots directly - they strip defenses, deploy drones and turrets, and create conditions that the rest of the squad exploits. Best when given time to set up.</p>"
     },
     "rules": [
       {
-        "key": "FlatModifier",
-        "selector": "will",
-        "type": "circumstance",
-        "value": 2,
-        "label": "Engineer Systems Knowledge"
+        "key": "MartialProficiency",
+        "label": "Pistols and Submachine Guns",
+        "slug": "me-pistols-and-submachine-guns",
+        "definition": [
+          "item:category:martial",
+          {
+            "or": [
+              "item:group:pistol"
+            ]
+          }
+        ],
+        "sameAs": "simple"
       }
     ],
     "_migration": {
-      "version": 0.955,
-      "lastMigration": null,
+      "version": 0.959,
       "previous": null
     },
     "traits": {
-      "otherTags": [],
-      "value": [],
-      "rarity": "common"
+      "rarity": "common",
+      "value": []
     },
     "publication": {
       "title": "Mass Effect Compendium",
@@ -41,26 +46,187 @@
       "license": "ORC",
       "remaster": true
     },
-    "level": {
-      "value": 1
+    "ancestryFeatLevels": {
+      "value": [
+        1,
+        5,
+        9,
+        13,
+        17
+      ]
     },
-    "prerequisites": {
-      "value": []
+    "attacks": {
+      "advanced": 0,
+      "martial": 0,
+      "other": {
+        "name": "",
+        "rank": 0
+      },
+      "simple": 1,
+      "unarmed": 1
     },
-    "actionType": {
-      "value": "passive"
+    "classFeatLevels": {
+      "value": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
     },
-    "actions": {
-      "value": null
+    "defenses": {
+      "light": 1,
+      "medium": 1,
+      "heavy": 0,
+      "unarmored": 1
     },
-    "category": "classfeature",
-    "subfeatures": {
-      "proficiencies": {},
-      "senses": {},
-      "suppressedFeatures": []
+    "generalFeatLevels": {
+      "value": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ]
     },
-    "onlyLevel1": false,
-    "maxTakable": 1,
-    "location": null
+    "hp": 8,
+    "items": {
+      "eng00": {
+        "img": "icons/equipment/wrist/bracer-runed-steel-orange.webp",
+        "level": 1,
+        "name": "Engineer Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEngineerMast00"
+      },
+      "eng01": {
+        "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
+        "level": 1,
+        "name": "Engineer Systems Knowledge",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meClassEngineer0"
+      },
+      "eng02": {
+        "img": "icons/magic/defensive/armor-shield-barrier-steel.webp",
+        "level": 3,
+        "name": "Fortitude Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfFortExpert"
+      },
+      "eng03": {
+        "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
+        "level": 7,
+        "name": "Engineer Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCEngineerExp0"
+      },
+      "eng04": {
+        "img": "icons/equipment/wrist/bracer-runed-steel-orange.webp",
+        "level": 7,
+        "name": "Improved Engineer Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEngineerMastI0"
+      },
+      "eng05": {
+        "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
+        "level": 9,
+        "name": "Will Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWillMaster"
+      },
+      "eng06": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 11,
+        "name": "Medium Armor Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfMedArmExp0"
+      },
+      "eng07": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 11,
+        "name": "Perception Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfPercExpert"
+      },
+      "eng08": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 11,
+        "name": "Weapon Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
+      },
+      "eng09": {
+        "img": "icons/equipment/wrist/bracer-runed-steel-orange.webp",
+        "level": 13,
+        "name": "Superior Engineer Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEngineerMastS0"
+      },
+      "eng10": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 13,
+        "name": "Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpec000"
+      },
+      "eng11": {
+        "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
+        "level": 15,
+        "name": "Master Engineer",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCEngineerMst0"
+      },
+      "eng12": {
+        "img": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
+        "level": 17,
+        "name": "Reflex Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfReflMaster"
+      },
+      "eng13": {
+        "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
+        "level": 19,
+        "name": "Legendary Engineer",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCEngineerLeg0"
+      }
+    },
+    "keyAbility": {
+      "selected": null,
+      "value": [
+        "int"
+      ]
+    },
+    "perception": 1,
+    "savingThrows": {
+      "fortitude": 1,
+      "reflex": 2,
+      "will": 2
+    },
+    "skillFeatLevels": {
+      "value": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
+    },
+    "skillIncreaseLevels": {
+      "value": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19
+      ]
+    },
+    "spellcasting": 0,
+    "trainedSkills": {
+      "additional": 4,
+      "value": [
+        "crafting"
+      ]
+    }
   }
 }

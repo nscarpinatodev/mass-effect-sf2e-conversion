@@ -14,7 +14,7 @@
     "slug": "me-lift-grenade",
     "description": {
       "gm": "",
-      "value": "<p>You throw a hybrid tech-biotic device that projects a localized mass-effect lift field on detonation, suspending targets in the air.</p><p>Choose a point within <strong>60 feet</strong>. All creatures in a <strong>15-foot burst</strong> centered on that point must attempt a <strong>Reflex save</strong> against your class DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is lifted <strong>5 feet</strong> off the ground and becomes <strong>Flat-Footed</strong> until the end of your next turn.</p><p><strong>Failure</strong> The target is lifted <strong>10 feet</strong> and becomes <strong>Grabbed</strong> (suspended by the biotic field). The Grabbed condition ends at the start of your next turn or when the target Escapes (DC equals your class DC).</p><p><strong>Critical Failure</strong> As failure, and the target takes <strong>2d6 void</strong> damage and is <strong>Stunned 1</strong>.</p><p><strong>Cooldown:</strong> 3 rounds.</p>"
+      "value": "<p>You throw a hybrid tech-biotic device that projects a localized mass-effect lift field on detonation, suspending targets in the air.</p><p>Choose a point within <strong>60 feet</strong>. All creatures in a @Template[burst|distance:15]{15-foot burst} centered on that point must attempt a @Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-lift-grenade] save against your class DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is lifted <strong>5 feet</strong> off the ground and becomes <strong>Off-Guard</strong> until the end of your next turn.</p><p><strong>Failure</strong> The target is lifted <strong>10 feet</strong> and becomes <strong>Grabbed</strong> (suspended by the biotic field). The Grabbed condition ends at the start of your next turn or when the target Escapes (DC equals your class DC).</p><p><strong>Critical Failure</strong> As failure, and the target takes <strong>2d6 void</strong> damage and is <strong>Stunned 1</strong>.</p><p><strong>Cooldown:</strong> 3 rounds.</p><hr/><p><em>When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -25,6 +25,7 @@
     "traits": {
       "otherTags": [],
       "value": [
+        "sentinel",
         "biotic",
         "manipulate"
       ],

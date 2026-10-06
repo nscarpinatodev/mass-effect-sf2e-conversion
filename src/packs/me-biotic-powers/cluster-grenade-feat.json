@@ -14,7 +14,7 @@
     "slug": "me-biotic-cluster-grenade",
     "description": {
       "gm": "",
-      "value": "<p>You scatter a cluster of mass-effect kinetic charges across a wide area, creating a rapid chain of biotic detonations on impact.</p><p>Choose a point within <strong>60 feet</strong>. All creatures in a <strong>10-foot burst</strong> centered on that point must attempt a <strong>Reflex save</strong> against your class DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes <strong>1d6 force</strong> damage.</p><p><strong>Failure</strong> The target takes <strong>2d6 force</strong> damage and is pushed <strong>5 feet</strong> outward from the burst center.</p><p><strong>Critical Failure</strong> The target takes <strong>4d6 force</strong> damage, is pushed <strong>10 feet</strong> outward from the burst center, and is knocked <strong>prone</strong>.</p><p><strong>Cooldown:</strong> 7 - your Charisma modifier rounds (minimum 1).</p>"
+      "value": "<p>You scatter a cluster of mass-effect kinetic charges across a wide area, creating a rapid chain of biotic detonations on impact.</p><p>Choose a point within <strong>60 feet</strong>. All creatures in a @Template[burst|distance:10]{10-foot burst} centered on that point must attempt a @Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-cluster-grenade] save against your class DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes <strong>1d6 force</strong> damage.</p><p><strong>Failure</strong> The target takes <strong>2d6 force</strong> damage and is pushed <strong>5 feet</strong> outward from the burst center.</p><p><strong>Critical Failure</strong> The target takes <strong>4d6 force</strong> damage, is pushed <strong>10 feet</strong> outward from the burst center, and is knocked <strong>prone</strong>.</p><p><strong>Cooldown:</strong> 7 - your Charisma modifier rounds (minimum 1).</p><hr/><p><em>When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -25,6 +25,7 @@
     "traits": {
       "otherTags": [],
       "value": [
+        "adept",
         "biotic",
         "manipulate"
       ],

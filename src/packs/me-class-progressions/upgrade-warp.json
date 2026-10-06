@@ -24,7 +24,10 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "adept",
+        "sentinel"
+      ],
       "rarity": "common"
     },
     "publication": {

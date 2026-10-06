@@ -14,9 +14,23 @@
     "slug": "me-engineer-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Optimized omni-tool firmware and systematic power deployment reduces the overhead of all tech abilities. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and their save DCs gain <strong>+1</strong>.</p><p><em>Classes: Engineer.</em></p>"
+      "value": "<p>Optimized omni-tool firmware and systematic power deployment reduces the overhead of all tech abilities. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and their save DCs gain <strong>+1</strong>.</p><p><em>Classes: Engineer.</em></p><hr/><p><em>Automation: Tech powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.powerEfficiency.tech",
+        "value": 1
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "untyped",
+        "value": 1,
+        "label": "Engineer Mastery"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

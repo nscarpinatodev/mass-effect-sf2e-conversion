@@ -1,39 +1,45 @@
 {
-  "_key": "!items!meClassSentinel0",
-  "_id": "meClassSentinel0",
+  "_key": "!items!meClsSentinel000",
+  "_id": "meClsSentinel000",
   "folder": null,
   "name": "Sentinel",
-  "type": "feat",
-  "img": "icons/magic/defensive/shield-barrier-deflect.webp",
+  "type": "class",
+  "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
   "effects": [],
   "flags": {},
   "ownership": {
     "default": 0
   },
   "system": {
-    "slug": "me-class-sentinel",
+    "slug": "sentinel",
     "description": {
       "gm": "",
-      "value": "<p>The most defensively robust class in the game, Sentinels combine Tech Armor with a selection of both tech and biotic powers. They sacrifice the peak offensive output of pure specialists in exchange for unmatched survivability and tactical versatility.</p><p><strong>Bonus:</strong> +1 circumstance bonus to all saving throws (combined biotic/tech training creates comprehensive defensive conditioning).</p><hr><p><strong>Signature Abilities:</strong> Tech Armor, Throw, Warp, Overload, Cryo Blast</p><p><strong>Power Access:</strong> A hybrid selection from both <em>ME Biotic Powers</em> and <em>ME Tech Powers</em> compendiums. Sentinels can take biotic powers from the control/debuff suite (Throw, Warp, Stasis) and defensive/utility tech powers (Tech Armor, Overload, Cryo Blast). They do not access the highest-tier powers of either type.</p><p><strong>Weapons:</strong> Assault rifles and shotguns. More weapon-versatile than pure biotic/tech classes.</p><p><strong>Armor:</strong> Medium and heavy armor, supplemented by Tech Armor. The combination makes Sentinels the hardest class to kill outright.</p><p><strong>Playstyle:</strong> Durable generalist. Sentinels don't dominate any single tactical dimension but handle every situation adequately. Tech Armor provides a damage-buffer layer on top of regular armor. Throw and Warp enable biotic combos at lower power level, while Overload and Cryo Blast handle shields and crowd control. Best for players who want to be the team's anchor rather than its specialist.</p>"
+      "value": "<p>The most defensively robust class in the game, Sentinels combine Tech Armor with a selection of both tech and biotic powers. They sacrifice the peak offensive output of pure specialists in exchange for unmatched survivability and tactical versatility.</p><hr><p><strong>Key Attribute:</strong> Charisma or Intelligence</p><p><strong>Hit Points:</strong> 10 plus your Constitution modifier per level</p><h2>Initial Proficiencies</h2><p><strong>Perception:</strong> Trained</p><p><strong>Saving Throws:</strong> Expert in Fortitude, Trained in Reflex, Expert in Will</p><p><strong>Skills:</strong> Trained in Occultism, Crafting, plus a number of additional skills equal to 3 plus your Intelligence modifier</p><p><strong>Attacks:</strong> Trained in simple weapons, martial assault rifles and shotguns, and unarmed attacks</p><p><strong>Defenses:</strong> Trained in light, medium, heavy armor, and unarmored defense</p><p><strong>Class DC:</strong> Trained; your biotic and tech powers use it</p><h2>Class Progression</h2><table><thead><tr><th>Level</th><th>Features</th></tr></thead><tbody><tr><td>1</td><td>Sentinel Conditioning, Sentinel Mastery</td></tr><tr><td>3</td><td>Reflex Expertise</td></tr><tr><td>5</td><td>Weapon Expertise</td></tr><tr><td>7</td><td>Improved Sentinel Mastery, Sentinel Expertise, Weapon Specialization</td></tr><tr><td>9</td><td>Will Mastery</td></tr><tr><td>11</td><td>Armor Expertise, Perception Expertise</td></tr><tr><td>13</td><td>Superior Sentinel Mastery, Weapon Mastery</td></tr><tr><td>15</td><td>Greater Weapon Specialization, Master Sentinel</td></tr><tr><td>17</td><td>Fortitude Mastery</td></tr><tr><td>19</td><td>Armor Mastery, Legendary Sentinel</td></tr></tbody></table><p>Class feats at 1st level and every even level; skill feats at every even level; general feats at 3rd, 7th, 11th, 15th, and 19th; skill increases at every odd level from 3rd.</p><hr><p><strong>Signature Abilities:</strong> Tech Armor, Throw, Warp, Overload, Cryo Blast</p><p><strong>Power Access:</strong> A hybrid selection from both <em>ME Biotic Powers</em> and <em>ME Tech Powers</em> compendiums. Sentinels can take biotic powers from the control/debuff suite (Throw, Warp, Stasis) and defensive/utility tech powers (Tech Armor, Overload, Cryo Blast). They do not access the highest-tier powers of either type.</p><p><strong>Weapons:</strong> Assault rifles and shotguns. More weapon-versatile than pure biotic/tech classes.</p><p><strong>Armor:</strong> Medium and heavy armor, supplemented by Tech Armor. The combination makes Sentinels the hardest class to kill outright.</p><p><strong>Playstyle:</strong> Durable generalist. Sentinels don't dominate any single tactical dimension but handle every situation adequately. Tech Armor provides a damage-buffer layer on top of regular armor. Throw and Warp enable biotic combos at lower power level, while Overload and Cryo Blast handle shields and crowd control. Best for players who want to be the team's anchor rather than its specialist.</p>"
     },
     "rules": [
       {
-        "key": "FlatModifier",
-        "selector": "saving-throw",
-        "type": "circumstance",
-        "value": 1,
-        "label": "Sentinel Conditioning"
+        "key": "MartialProficiency",
+        "label": "Assault Rifles and Shotguns",
+        "slug": "me-assault-rifles-and-shotguns",
+        "definition": [
+          "item:category:martial",
+          {
+            "or": [
+              "item:group:rifle",
+              "item:group:shotgun"
+            ]
+          }
+        ],
+        "sameAs": "simple"
       }
     ],
     "_migration": {
-      "version": 0.955,
-      "lastMigration": null,
+      "version": 0.959,
       "previous": null
     },
     "traits": {
-      "otherTags": [],
-      "value": [],
-      "rarity": "common"
+      "rarity": "common",
+      "value": []
     },
     "publication": {
       "title": "Mass Effect Compendium",
@@ -41,26 +47,207 @@
       "license": "ORC",
       "remaster": true
     },
-    "level": {
-      "value": 1
+    "ancestryFeatLevels": {
+      "value": [
+        1,
+        5,
+        9,
+        13,
+        17
+      ]
     },
-    "prerequisites": {
-      "value": []
+    "attacks": {
+      "advanced": 0,
+      "martial": 0,
+      "other": {
+        "name": "",
+        "rank": 0
+      },
+      "simple": 1,
+      "unarmed": 1
     },
-    "actionType": {
-      "value": "passive"
+    "classFeatLevels": {
+      "value": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
     },
-    "actions": {
-      "value": null
+    "defenses": {
+      "light": 1,
+      "medium": 1,
+      "heavy": 1,
+      "unarmored": 1
     },
-    "category": "classfeature",
-    "subfeatures": {
-      "proficiencies": {},
-      "senses": {},
-      "suppressedFeatures": []
+    "generalFeatLevels": {
+      "value": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ]
     },
-    "onlyLevel1": false,
-    "maxTakable": 1,
-    "location": null
+    "hp": 10,
+    "items": {
+      "sen00": {
+        "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
+        "level": 1,
+        "name": "Sentinel Conditioning",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meClassSentinel0"
+      },
+      "sen01": {
+        "img": "icons/magic/symbols/ring-circle-runes-teal.webp",
+        "level": 1,
+        "name": "Sentinel Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSentinelMast00"
+      },
+      "sen02": {
+        "img": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
+        "level": 3,
+        "name": "Reflex Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfReflExpert"
+      },
+      "sen03": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 5,
+        "name": "Weapon Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
+      },
+      "sen04": {
+        "img": "icons/magic/symbols/ring-circle-runes-teal.webp",
+        "level": 7,
+        "name": "Improved Sentinel Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSentinelMastI0"
+      },
+      "sen05": {
+        "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
+        "level": 7,
+        "name": "Sentinel Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCSentinelExp0"
+      },
+      "sen06": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 7,
+        "name": "Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpec000"
+      },
+      "sen07": {
+        "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
+        "level": 9,
+        "name": "Will Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWillMaster"
+      },
+      "sen08": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 11,
+        "name": "Armor Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfArmorExp00"
+      },
+      "sen09": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 11,
+        "name": "Perception Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfPercExpert"
+      },
+      "sen10": {
+        "img": "icons/magic/symbols/ring-circle-runes-teal.webp",
+        "level": 13,
+        "name": "Superior Sentinel Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSentinelMastS0"
+      },
+      "sen11": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 13,
+        "name": "Weapon Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnMaster0"
+      },
+      "sen12": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 15,
+        "name": "Greater Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpecGr0"
+      },
+      "sen13": {
+        "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
+        "level": 15,
+        "name": "Master Sentinel",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCSentinelMst0"
+      },
+      "sen14": {
+        "img": "icons/magic/defensive/armor-shield-barrier-steel.webp",
+        "level": 17,
+        "name": "Fortitude Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfFortMaster"
+      },
+      "sen15": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 19,
+        "name": "Armor Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfArmorMst00"
+      },
+      "sen16": {
+        "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
+        "level": 19,
+        "name": "Legendary Sentinel",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCSentinelLeg0"
+      }
+    },
+    "keyAbility": {
+      "selected": null,
+      "value": [
+        "cha",
+        "int"
+      ]
+    },
+    "perception": 1,
+    "savingThrows": {
+      "fortitude": 2,
+      "reflex": 1,
+      "will": 2
+    },
+    "skillFeatLevels": {
+      "value": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
+    },
+    "skillIncreaseLevels": {
+      "value": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19
+      ]
+    },
+    "spellcasting": 0,
+    "trainedSkills": {
+      "additional": 3,
+      "value": [
+        "occultism",
+        "crafting"
+      ]
+    }
   }
 }

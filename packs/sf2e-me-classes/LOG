@@ -1,15 +1,14 @@
-2026/10/06-16:00:19.177 743c Recovering log #227
-2026/10/06-16:00:19.182 743c Delete type=0 #227
-2026/10/06-16:00:19.182 743c Delete type=3 #225
-2026/10/06-16:00:19.185 bd14 Level-0 table #233: started
-2026/10/06-16:00:19.187 bd14 Level-0 table #233: 7864 bytes OK
-2026/10/06-16:00:19.189 bd14 Delete type=0 #231
-2026/10/06-16:00:19.189 bd14 Manual compaction at level-0 from '!items!meClassAdept0000' @ 72057594037927935 : 1 .. '!items!meClassVanguard0' @ 0 : 0; will stop at (end)
-2026/10/06-16:00:19.189 bd14 Manual compaction at level-1 from '!items!meClassAdept0000' @ 72057594037927935 : 1 .. '!items!meClassVanguard0' @ 0 : 0; will stop at '!items!meClassVanguard0' @ 276 : 1
-2026/10/06-16:00:19.189 bd14 Compacting 1@1 + 1@2 files
-2026/10/06-16:00:19.192 bd14 Generated table #234@1: 6 keys, 7864 bytes
-2026/10/06-16:00:19.192 bd14 Compacted 1@1 + 1@2 files => 7864 bytes
-2026/10/06-16:00:19.194 bd14 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/06-16:00:19.194 bd14 Delete type=2 #229
-2026/10/06-16:00:19.194 bd14 Delete type=2 #233
-2026/10/06-16:00:19.194 bd14 Manual compaction at level-1 from '!items!meClassVanguard0' @ 276 : 1 .. '!items!meClassVanguard0' @ 0 : 0; will stop at (end)
+2026/10/06-16:45:17.184 28e8 Recovering log #247
+2026/10/06-16:45:17.188 28e8 Delete type=0 #247
+2026/10/06-16:45:17.188 28e8 Delete type=3 #246
+2026/10/06-16:45:17.191 6a88 Level-0 table #251: started
+2026/10/06-16:45:17.196 6a88 Level-0 table #251: 20509 bytes OK
+2026/10/06-16:45:17.197 6a88 Delete type=0 #249
+2026/10/06-16:45:17.197 6a88 Manual compaction at level-0 from '!items!meClsAdept000000' @ 72057594037927935 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at '!items!meClsVanguard000' @ 300 : 1
+2026/10/06-16:45:17.197 6a88 Compacting 1@0 + 1@1 files
+2026/10/06-16:45:17.201 6a88 Generated table #252@0: 12 keys, 20607 bytes
+2026/10/06-16:45:17.201 6a88 Compacted 1@0 + 1@1 files => 20607 bytes
+2026/10/06-16:45:17.203 6a88 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/10/06-16:45:17.203 6a88 Delete type=2 #245
+2026/10/06-16:45:17.203 6a88 Delete type=2 #251
+2026/10/06-16:45:17.203 6a88 Manual compaction at level-0 from '!items!meClsVanguard000' @ 300 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at (end)

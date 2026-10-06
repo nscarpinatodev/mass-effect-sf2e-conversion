@@ -14,9 +14,17 @@
     "slug": "me-engineer-mastery-superior",
     "description": {
       "gm": "",
-      "value": "<p>Your mastery of omni-tool systems reaches the pinnacle of technical achievement. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action), their DCs gain <strong>+2</strong> (total), and you may reduce a cooldown once per round when dealing damage. Tech powers used against <strong>Flat-Footed</strong> targets deal <strong>+1d6 bonus damage</strong>. Your Combat Drone gains <strong>+2 HP per your level</strong>.</p><p><em>Prerequisite: Improved Engineer Mastery.</em></p>"
+      "value": "<p>Your mastery of omni-tool systems reaches the pinnacle of technical achievement. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action), their DCs gain <strong>+2</strong> (total), and you may reduce a cooldown once per round when dealing damage. Tech powers used against <strong>Flat-Footed</strong> targets deal <strong>+1d6 bonus damage</strong>. Your Combat Drone gains <strong>+2 HP per your level</strong>.</p><p><em>Prerequisite: Improved Engineer Mastery.</em></p><hr/><p><em>Automation: Your class DC bonus rises to +2 total. The +1d6 against off-guard targets and the drone HP are tracked by hand.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "untyped",
+        "value": 1,
+        "label": "Superior Engineer Mastery"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

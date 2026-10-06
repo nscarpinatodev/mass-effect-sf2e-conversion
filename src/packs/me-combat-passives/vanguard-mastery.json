@@ -14,9 +14,22 @@
     "slug": "me-vanguard-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Combat biotic training sharpens your body and barrier into a unified weapon. All biotic powers you use have their action cost <strong>reduced by 1</strong> (minimum 1 action). After using Biotic Charge, your Biotic Barrier regains <strong>5 HP</strong>.</p><p><em>Classes: Vanguard.</em></p>"
+      "value": "<p>Combat biotic training sharpens your body and barrier into a unified weapon. All biotic powers you use have their action cost <strong>reduced by 1</strong> (minimum 1 action). After using Biotic Charge, your Biotic Barrier regains <strong>5 HP</strong>.</p><p><em>Classes: Vanguard.</em></p><hr/><p><em>Automation: Biotic powers show their reduced action cost. Using Charge refills 5 HP of your Biotic Barrier. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.powerEfficiency.biotic",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.chargeBarrier",
+        "value": 5
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

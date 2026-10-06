@@ -1,9 +1,9 @@
 {
-  "_key": "!items!meClassInfiltrat",
-  "_id": "meClassInfiltrat",
+  "_key": "!items!meClsInfiltrat00",
+  "_id": "meClsInfiltrat00",
   "folder": null,
   "name": "Infiltrator",
-  "type": "feat",
+  "type": "class",
   "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
   "effects": [],
   "flags": {},
@@ -11,29 +11,35 @@
     "default": 0
   },
   "system": {
-    "slug": "me-class-infiltrator",
+    "slug": "infiltrator",
     "description": {
       "gm": "",
-      "value": "<p>Elite marksmen who combine precision weapon skills with just enough tech to gain and exploit an edge. Infiltrators rely on Tactical Cloak to set up devastating precision strikes, then use tech powers to strip defenses and neutralize specific threats.</p><p><strong>Bonus:</strong> +2 circumstance bonus to Stealth checks (trained in concealment and operational silence).</p><hr><p><strong>Signature Abilities:</strong> Tactical Cloak, Incinerate, AI Hacking (or Sabotage), Energy Drain</p><p><strong>Power Access:</strong> Tactical Cloak (core, always available), plus a limited selection of tech powers from the <em>ME Tech Powers</em> compendium - typically one offensive power (Incinerate or Cryo Blast) and one utility/crowd control power (AI Hacking, Sabotage, or Energy Drain). No biotic power access.</p><p><strong>Weapons:</strong> Sniper rifles (primary), pistols and submachine guns (secondary). The Tactical Cloak precision bonus is designed for sniper follow-through.</p><p><strong>Armor:</strong> Light and medium armor. Infiltrators rely on positioning and cloak rather than taking hits.</p><p><strong>Playstyle:</strong> Precision control from range. Cloak to reposition, uncloak for a precision sniper shot (+2d6 from Tactical Cloak), strip one enemy's defenses with Incinerate or Energy Drain, and use AI Hacking to remove a synthetic threat from the fight entirely. High single-target damage; low survivability in open combat.</p>"
+      "value": "<p>Elite marksmen who combine precision weapon skills with just enough tech to gain and exploit an edge. Infiltrators rely on Tactical Cloak to set up devastating precision strikes, then use tech powers to strip defenses and neutralize specific threats.</p><hr><p><strong>Key Attribute:</strong> Intelligence</p><p><strong>Hit Points:</strong> 8 plus your Constitution modifier per level</p><h2>Initial Proficiencies</h2><p><strong>Perception:</strong> Expert</p><p><strong>Saving Throws:</strong> Trained in Fortitude, Expert in Reflex, Expert in Will</p><p><strong>Skills:</strong> Trained in Stealth, plus a number of additional skills equal to 4 plus your Intelligence modifier</p><p><strong>Attacks:</strong> Trained in simple weapons, martial sniper rifles, pistols, and submachine guns, and unarmed attacks</p><p><strong>Defenses:</strong> Trained in light, medium armor, and unarmored defense</p><p><strong>Class DC:</strong> Trained; your tech powers use it</p><h2>Class Progression</h2><table><thead><tr><th>Level</th><th>Features</th></tr></thead><tbody><tr><td>1</td><td>Infiltrator Mastery, Infiltrator Training</td></tr><tr><td>3</td><td>Fortitude Expertise</td></tr><tr><td>5</td><td>Weapon Expertise</td></tr><tr><td>7</td><td>Improved Infiltrator Mastery, Infiltrator Expertise, Perception Mastery, Weapon Specialization</td></tr><tr><td>9</td><td>Reflex Mastery</td></tr><tr><td>11</td><td>Medium Armor Expertise</td></tr><tr><td>13</td><td>Superior Infiltrator Mastery, Weapon Mastery</td></tr><tr><td>15</td><td>Greater Weapon Specialization, Master Infiltrator</td></tr><tr><td>17</td><td>Will Mastery</td></tr><tr><td>19</td><td>Legendary Infiltrator</td></tr></tbody></table><p>Class feats at 1st level and every even level; skill feats at every even level; general feats at 3rd, 7th, 11th, 15th, and 19th; skill increases at every odd level from 3rd.</p><hr><p><strong>Signature Abilities:</strong> Tactical Cloak, Incinerate, AI Hacking (or Sabotage), Energy Drain</p><p><strong>Power Access:</strong> Tactical Cloak (core, always available), plus a limited selection of tech powers from the <em>ME Tech Powers</em> compendium - typically one offensive power (Incinerate or Cryo Blast) and one utility/crowd control power (AI Hacking, Sabotage, or Energy Drain). No biotic power access.</p><p><strong>Weapons:</strong> Sniper rifles (primary), pistols and submachine guns (secondary). The Tactical Cloak precision bonus is designed for sniper follow-through.</p><p><strong>Armor:</strong> Light and medium armor. Infiltrators rely on positioning and cloak rather than taking hits.</p><p><strong>Playstyle:</strong> Precision control from range. Cloak to reposition, uncloak for a precision sniper shot (+2d6 from Tactical Cloak), strip one enemy's defenses with Incinerate or Energy Drain, and use AI Hacking to remove a synthetic threat from the fight entirely. High single-target damage; low survivability in open combat.</p>"
     },
     "rules": [
       {
-        "key": "FlatModifier",
-        "selector": "stealth",
-        "type": "circumstance",
-        "value": 2,
-        "label": "Infiltrator Training"
+        "key": "MartialProficiency",
+        "label": "Sniper Rifles, Pistols, and Submachine Guns",
+        "slug": "me-sniper-rifles-pistols-and-submachine-guns",
+        "definition": [
+          "item:category:martial",
+          {
+            "or": [
+              "item:group:sniper",
+              "item:group:pistol"
+            ]
+          }
+        ],
+        "sameAs": "simple"
       }
     ],
     "_migration": {
-      "version": 0.955,
-      "lastMigration": null,
+      "version": 0.959,
       "previous": null
     },
     "traits": {
-      "otherTags": [],
-      "value": [],
-      "rarity": "common"
+      "rarity": "common",
+      "value": []
     },
     "publication": {
       "title": "Mass Effect Compendium",
@@ -41,26 +47,199 @@
       "license": "ORC",
       "remaster": true
     },
-    "level": {
-      "value": 1
+    "ancestryFeatLevels": {
+      "value": [
+        1,
+        5,
+        9,
+        13,
+        17
+      ]
     },
-    "prerequisites": {
-      "value": []
+    "attacks": {
+      "advanced": 0,
+      "martial": 0,
+      "other": {
+        "name": "",
+        "rank": 0
+      },
+      "simple": 1,
+      "unarmed": 1
     },
-    "actionType": {
-      "value": "passive"
+    "classFeatLevels": {
+      "value": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
     },
-    "actions": {
-      "value": null
+    "defenses": {
+      "light": 1,
+      "medium": 1,
+      "heavy": 0,
+      "unarmored": 1
     },
-    "category": "classfeature",
-    "subfeatures": {
-      "proficiencies": {},
-      "senses": {},
-      "suppressedFeatures": []
+    "generalFeatLevels": {
+      "value": [
+        3,
+        7,
+        11,
+        15,
+        19
+      ]
     },
-    "onlyLevel1": false,
-    "maxTakable": 1,
-    "location": null
+    "hp": 8,
+    "items": {
+      "inf00": {
+        "img": "icons/magic/perception/eye-ringed-violet.webp",
+        "level": 1,
+        "name": "Infiltrator Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meInfiltrMast000"
+      },
+      "inf01": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 1,
+        "name": "Infiltrator Training",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meClassInfiltrat"
+      },
+      "inf02": {
+        "img": "icons/magic/defensive/armor-shield-barrier-steel.webp",
+        "level": 3,
+        "name": "Fortitude Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfFortExpert"
+      },
+      "inf03": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 5,
+        "name": "Weapon Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
+      },
+      "inf04": {
+        "img": "icons/magic/perception/eye-ringed-violet.webp",
+        "level": 7,
+        "name": "Improved Infiltrator Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meInfiltrMastIm0"
+      },
+      "inf05": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 7,
+        "name": "Infiltrator Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCInfiltraExp0"
+      },
+      "inf06": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 7,
+        "name": "Perception Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfPercMaster"
+      },
+      "inf07": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 7,
+        "name": "Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpec000"
+      },
+      "inf08": {
+        "img": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
+        "level": 9,
+        "name": "Reflex Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfReflMaster"
+      },
+      "inf09": {
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+        "level": 11,
+        "name": "Medium Armor Expertise",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfMedArmExp0"
+      },
+      "inf10": {
+        "img": "icons/magic/perception/eye-ringed-violet.webp",
+        "level": 13,
+        "name": "Superior Infiltrator Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meInfiltrMastSu0"
+      },
+      "inf11": {
+        "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+        "level": 13,
+        "name": "Weapon Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnMaster0"
+      },
+      "inf12": {
+        "img": "icons/skills/targeting/crosshair-triple-strike-orange.webp",
+        "level": 15,
+        "name": "Greater Weapon Specialization",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnSpecGr0"
+      },
+      "inf13": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 15,
+        "name": "Master Infiltrator",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCInfiltraMst0"
+      },
+      "inf14": {
+        "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
+        "level": 17,
+        "name": "Will Mastery",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWillMaster"
+      },
+      "inf15": {
+        "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "level": 19,
+        "name": "Legendary Infiltrator",
+        "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCInfiltraLeg0"
+      }
+    },
+    "keyAbility": {
+      "selected": null,
+      "value": [
+        "int"
+      ]
+    },
+    "perception": 2,
+    "savingThrows": {
+      "fortitude": 1,
+      "reflex": 2,
+      "will": 2
+    },
+    "skillFeatLevels": {
+      "value": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
+    },
+    "skillIncreaseLevels": {
+      "value": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19
+      ]
+    },
+    "spellcasting": 0,
+    "trainedSkills": {
+      "additional": 4,
+      "value": [
+        "stealth"
+      ]
+    }
   }
 }

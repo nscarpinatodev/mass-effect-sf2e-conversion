@@ -14,9 +14,18 @@
     "slug": "me-infiltrator-mastery-superior",
     "description": {
       "gm": "",
-      "value": "<p>You are the perfect predator — invisible, precise, and lethal. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and you retain all prior mastery bonuses. While Tactical Cloak is active, you gain <strong>Resistance 5</strong> to all damage. Tech powers used against <strong>Flat-Footed</strong> targets have their DC increased by <strong>2</strong>.</p><p><em>Prerequisite: Improved Infiltrator Mastery.</em></p>"
+      "value": "<p>You are the perfect predator — invisible, precise, and lethal. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and you retain all prior mastery bonuses. While Tactical Cloak is active, you gain <strong>Resistance 5</strong> to all damage. Tech powers used against <strong>Flat-Footed</strong> targets have their DC increased by <strong>2</strong>.</p><p><em>Prerequisite: Improved Infiltrator Mastery.</em></p><hr/><p><em>Automation: Resistance 5 to all damage applies while the Tactical Cloak effect is on you. The +2 DC against off-guard targets is tracked by hand.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "Resistance",
+        "type": "all-damage",
+        "value": 5,
+        "predicate": [
+          "self:effect:me-effect-tactical-cloak"
+        ]
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

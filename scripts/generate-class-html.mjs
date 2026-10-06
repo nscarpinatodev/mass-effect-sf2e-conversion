@@ -3,6 +3,7 @@
 
 import { readFile, writeFile, mkdir, readdir } from 'fs/promises';
 import { join } from 'path';
+import { flattenEnrichers, indexPacks, summarizeClass } from './doc-helpers.mjs';
 
 const SRC = 'src/packs';
 const ICONS_DIR = join('docs', 'images', 'actions');
@@ -31,89 +32,6 @@ const CLASS_COLORS = {
   VANGUARD:    { accent: '#9333ea', dark: '#6b21a8', text: '#f3e8ff' },
   INFILTRATOR: { accent: '#0f766e', dark: '#0a5e58', text: '#ccfbf1' },
   SENTINEL:    { accent: '#b45309', dark: '#854000', text: '#fef3c7' },
-};
-
-const KEY_ABILITIES = {
-  SOLDIER:     'Strength',
-  ENGINEER:    'Intelligence',
-  ADEPT:       'Charisma',
-  VANGUARD:    'Strength',
-  INFILTRATOR: 'Dexterity',
-  SENTINEL:    'Constitution',
-};
-
-const STANDARD_ADVANCEMENT = {
-  1:  ['Ancestry Feat', 'Initial Proficiencies'],
-  2:  ['Skill Feat'],
-  3:  ['General Feat', 'Skill Increase'],
-  4:  ['Skill Feat'],
-  5:  ['Ancestry Feat', 'Attribute Boosts', 'Skill Increase'],
-  6:  ['Skill Feat'],
-  7:  ['General Feat', 'Skill Increase'],
-  8:  ['Skill Feat'],
-  9:  ['Ancestry Feat', 'Skill Increase'],
-  10: ['Attribute Boosts', 'Skill Feat'],
-  11: ['General Feat', 'Skill Increase'],
-  12: ['Skill Feat'],
-  13: ['Ancestry Feat', 'Skill Increase'],
-  14: ['Skill Feat'],
-  15: ['Attribute Boosts', 'General Feat', 'Skill Increase'],
-  16: ['Skill Feat'],
-  17: ['Ancestry Feat', 'Skill Increase'],
-  18: ['Skill Feat'],
-  19: ['General Feat', 'Skill Increase'],
-  20: ['Attribute Boosts', 'Skill Feat'],
-};
-
-const CLASS_PROFICIENCIES = {
-  SOLDIER: [
-    { group: 'Perception',     items: ['Expert in Perception'] },
-    { group: 'Saving Throws',  items: ['Expert in Fortitude', 'Trained in Reflex', 'Trained in Will'] },
-    { group: 'Skills',         items: ['Trained in Athletics', 'Trained in a number of additional skills equal to 3 + your Intelligence modifier'] },
-    { group: 'Attacks',        items: ['Expert in martial weapons', 'Trained in advanced weapons', 'Trained in unarmed attacks'] },
-    { group: 'Defenses',       items: ['Trained in light, medium, and heavy armor'] },
-    { group: 'Class DC',       items: ['Trained in Soldier class DC'] },
-  ],
-  ENGINEER: [
-    { group: 'Perception',     items: ['Trained in Perception'] },
-    { group: 'Saving Throws',  items: ['Trained in Fortitude', 'Trained in Reflex', 'Expert in Will'] },
-    { group: 'Skills',         items: ['Trained in Computers or Engineering (your choice)', 'Trained in a number of additional skills equal to 4 + your Intelligence modifier'] },
-    { group: 'Attacks',        items: ['Trained in martial weapons', 'Trained in unarmed attacks'] },
-    { group: 'Defenses',       items: ['Trained in light armor'] },
-    { group: 'Class DC',       items: ['Trained in Engineer class DC'] },
-  ],
-  ADEPT: [
-    { group: 'Perception',     items: ['Trained in Perception'] },
-    { group: 'Saving Throws',  items: ['Expert in Fortitude', 'Trained in Reflex', 'Expert in Will'] },
-    { group: 'Skills',         items: ['Trained in a number of skills equal to 3 + your Intelligence modifier'] },
-    { group: 'Attacks',        items: ['Trained in simple weapons', 'Trained in unarmed attacks'] },
-    { group: 'Defenses',       items: ['Trained in light armor'] },
-    { group: 'Class DC',       items: ['Trained in Adept class DC'] },
-  ],
-  VANGUARD: [
-    { group: 'Perception',     items: ['Expert in Perception'] },
-    { group: 'Saving Throws',  items: ['Trained in Fortitude', 'Expert in Reflex', 'Trained in Will'] },
-    { group: 'Skills',         items: ['Trained in Athletics', 'Trained in a number of additional skills equal to 3 + your Intelligence modifier'] },
-    { group: 'Attacks',        items: ['Expert in martial weapons', 'Trained in unarmed attacks'] },
-    { group: 'Defenses',       items: ['Trained in light, medium, and heavy armor'] },
-    { group: 'Class DC',       items: ['Trained in Vanguard class DC'] },
-  ],
-  INFILTRATOR: [
-    { group: 'Perception',     items: ['Expert in Perception'] },
-    { group: 'Saving Throws',  items: ['Trained in Fortitude', 'Expert in Reflex', 'Trained in Will'] },
-    { group: 'Skills',         items: ['Trained in Stealth', 'Trained in a number of additional skills equal to 4 + your Intelligence modifier'] },
-    { group: 'Attacks',        items: ['Expert in martial weapons', 'Trained in unarmed attacks'] },
-    { group: 'Defenses',       items: ['Trained in light and medium armor'] },
-    { group: 'Class DC',       items: ['Trained in Infiltrator class DC'] },
-  ],
-  SENTINEL: [
-    { group: 'Perception',     items: ['Trained in Perception'] },
-    { group: 'Saving Throws',  items: ['Expert in Fortitude', 'Trained in Reflex', 'Expert in Will'] },
-    { group: 'Skills',         items: ['Trained in Medicine', 'Trained in a number of additional skills equal to 3 + your Intelligence modifier'] },
-    { group: 'Attacks',        items: ['Trained in martial weapons', 'Trained in unarmed attacks'] },
-    { group: 'Defenses',       items: ['Trained in light, medium, and heavy armor'] },
-    { group: 'Class DC',       items: ['Trained in Sentinel class DC'] },
-  ],
 };
 
 const CLASS_ROLEPLAY = {
@@ -215,8 +133,6 @@ const CLASS_ROLEPLAY = {
   },
 };
 
-const CLASS_FEAT_LEVELS = new Set([1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]);
-
 async function loadFeat(packDir, filename) {
   const p = join(SRC, packDir, filename);
   const raw = await readFile(p, 'utf8');
@@ -248,15 +164,6 @@ function ordinal(n) {
   return `${n}TH`;
 }
 
-function parseClassDescription(html) {
-  const [before = '', after = ''] = html.split(/<hr\s*\/?>/i);
-  const paras = [...before.matchAll(/<p>([\s\S]*?)<\/p>/g)];
-  const flavor = paras[0] ? paras[0][1].replace(/<[^>]+>/g, '').trim() : '';
-  const bonus  = paras[1] ? paras[1][0] : '';
-  const mechanics = [...after.matchAll(/<p>([\s\S]*?)<\/p>/g)].map(m => m[0]);
-  return { flavor, bonus, mechanics };
-}
-
 function renderFeatEntry(feat) {
   const s = feat.system;
   const sym    = actionSymbol(s.actionType.value, s.actions.value);
@@ -284,28 +191,13 @@ function renderFeatEntry(feat) {
 </div>`;
 }
 
-function buildAdvancementTable(progressionFeats, classFeatureName, masteryFeats = []) {
-  const byLevel = new Map();
-  for (const feat of masteryFeats) {
-    const lvl = feat.system.level.value;
-    if (!byLevel.has(lvl)) byLevel.set(lvl, []);
-    byLevel.get(lvl).push(`<strong>${feat.name}</strong>`);
-  }
-  for (const feat of progressionFeats) {
-    const lvl = feat.system.level.value;
-    if (!byLevel.has(lvl)) byLevel.set(lvl, []);
-    byLevel.get(lvl).push(feat.name);
-  }
-
+function buildAdvancementTable(info) {
   let rows = '';
   for (let lvl = 1; lvl <= 20; lvl++) {
-    const named = byLevel.get(lvl) || [];
-    const std = STANDARD_ADVANCEMENT[lvl] || [];
-    const parts = [];
-    if (lvl === 1) parts.push(`<em>${classFeatureName ?? 'Class Feature'}</em>`);
-    parts.push(...named);
-    if (CLASS_FEAT_LEVELS.has(lvl)) parts.push('Class Feat');
-    parts.push(...std.map(s => `<span class="adv-std">${s}</span>`));
+    const parts = info.grants.filter(g => g.level === lvl).map(g =>
+      g.item.system.category === 'classfeature' && !g.item._id.startsWith('meProf') ? `<strong>${g.name}</strong>` : g.name);
+    if (info.classFeatLevels.has(lvl)) parts.push('Class Feat');
+    parts.push(...(info.standard[lvl] ?? []).map(s => `<span class="adv-std">${s}</span>`));
     const cell = parts.length ? parts.join(', ') : '—';
     const rowClass = lvl % 2 === 0 ? ' class="even-row"' : '';
     rows += `<tr${rowClass}><td class="adv-level">${lvl}</td><td>${cell}</td></tr>`;
@@ -347,9 +239,8 @@ function buildFeatColumns(flatItems, darkColor, accentColor) {
   return `<div class="feats-columns">${html}</div>`;
 }
 
-function renderProficiencies(className) {
-  const profs = CLASS_PROFICIENCIES[className];
-  if (!profs) return '';
+function renderProficiencies(profs) {
+  if (!profs?.length) return '';
   const groups = profs.map(({ group, items }) => {
     const itemsHtml = items.map(i => `<div class="prof-item">${i}</div>`).join('');
     return `<div class="prof-group"><div class="prof-group-name">${group}</div>${itemsHtml}</div>`;
@@ -374,10 +265,11 @@ function renderRoleplay(className) {
   return `<div class="roleplay-section"><div class="roleplay-header">Roleplaying the ${titleCase(className)}</div>${contextHtml}${mightHtml}${otherHtml}</div>`;
 }
 
-function renderClass(cls, classFeat, allFeats, progressionFeats, masteryFeats) {
+function renderClass(cls, info, allFeats, masteryFeats) {
   const colors = CLASS_COLORS[cls.name];
-  const keyAbility = KEY_ABILITIES[cls.name] ?? '';
-  const { flavor, bonus, mechanics } = parseClassDescription(classFeat.system.description.value);
+  const keyAbility = info.keyAttributes.join(' or ');
+  const { flavor, mechanics } = info;
+  const feature = info.signatureFeature;
 
   const featsByLevel = new Map();
   for (const feat of allFeats) {
@@ -400,11 +292,12 @@ function renderClass(cls, classFeat, allFeats, progressionFeats, masteryFeats) {
     : '';
 
   const keyAbilityHtml = keyAbility
-    ? `<div class="class-stat-box class-stat-key"><span class="stat-label">Key Ability Score</span><div class="stat-value stat-value-key">${keyAbility}</div></div>`
+    ? `<div class="class-stat-box class-stat-key"><span class="stat-label">Key Attribute</span><div class="stat-value stat-value-key">${keyAbility}</div></div>`
     : '';
 
-  const bonusHtml = bonus
-    ? `<div class="class-stat-box"><span class="stat-label">Hit Points</span><div class="stat-value">${bonus.replace(/<\/?p>/g, '')}</div></div>`
+  const bonusHtml = `<div class="class-stat-box"><span class="stat-label">Hit Points</span><div class="stat-value">${info.hp} plus your Constitution modifier</div></div>`;
+  const featureHtml = feature
+    ? `<div class="mech-item"><span class="mech-label">${feature.name}</span><span class="mech-value">${feature.system.description.value.replace(/<\/?p>/g, '').trim()}</span></div>`
     : '';
 
   const mechItems = mechanics.map(m => {
@@ -431,7 +324,7 @@ ${masteryColumns}  </div>`
     <div class="header-content">
       <div>
         <h2 class="class-name">${titleCase(cls.name)}</h2>
-        <p class="class-tagline">${classFeat.name}</p>
+        <p class="class-tagline">${feature?.name ?? ''}</p>
       </div>
     </div>
   </div>
@@ -441,14 +334,14 @@ ${masteryColumns}  </div>`
     <div class="class-stats-col">
       ${keyAbilityHtml}
       ${bonusHtml}
-      ${renderProficiencies(cls.name)}
+      ${renderProficiencies(info.proficiencies)}
       <div class="class-feat-note">Class feats available at levels: 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20</div>
     </div>
-    <div class="class-mechanics-col">${mechItems}${renderRoleplay(cls.name)}</div>
+    <div class="class-mechanics-col">${featureHtml}${mechItems}${renderRoleplay(cls.name)}</div>
   </div>
 
   <h3 class="section-bar" style="background:#0f2034">Advancement</h3>
-  ${buildAdvancementTable(progressionFeats, classFeat.name, masteryFeats ?? [])}
+  ${buildAdvancementTable(info)}
 ${masterySection}
   <h3 class="section-bar" style="background:#0f2034">Class Feats</h3>
   <p class="section-intro">${cls.name} feats are listed in full under <strong>Feats → Class Feats → ${titleCase(cls.name)}</strong>. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20.</p>
@@ -1868,7 +1761,7 @@ function renderNpcBlock(npc) {
   <div class="npc-line">${abilities}</div>
   ${gear.length ? `<div class="npc-line"><b>Items</b> ${gear.join(', ')}</div>` : ''}
   <hr class="npc-rule">
-  <div class="npc-line"><b>AC</b> ${s.attributes.ac.value}; <b>Fort</b> ${SIGN(s.saves.fortitude.value)}, <b>Ref</b> ${SIGN(s.saves.reflex.value)}, <b>Will</b> ${SIGN(s.saves.will.value)}</div>
+  <div class="npc-line"><b>AC</b> ${s.attributes.ac.value}; ${[['fortitude', 'Fort'], ['reflex', 'Ref'], ['will', 'Will']].filter(([k]) => s.saves?.[k]?.value != null).map(([k, l]) => `<b>${l}</b> ${SIGN(s.saves[k].value)}`).join(', ')}</div>
   <div class="npc-line"><b>HP</b> ${s.attributes.hp.max}${sf ? `; <b>Shields</b> ${sf.shieldMax} (recharge ${sf.shieldRegen}/turn)` : ''}</div>
   <hr class="npc-rule">
   <div class="npc-line"><b>Speed</b> ${s.attributes.speed?.value ?? 25} feet</div>
@@ -2163,16 +2056,15 @@ async function main() {
   const classSections = [];
   const classFeatSets = [];  // { cls, feats } consumed by the Feats section
 
+  const packIndex = await indexPacks(SRC);
   for (const cls of CLASSES) {
-    const classFeat = await loadFeat(...cls.classFile);
+    const info = summarizeClass(await loadFeat(...cls.classFile), packIndex);
     const classSpecificFeats = [];
-    const progressionFeats = [];
 
     for (const [pack, filename] of cls.feats) {
       try {
         const feat = await loadFeat(pack, filename);
         classSpecificFeats.push(feat);
-        if (pack === 'me-class-progressions') progressionFeats.push(feat);
       } catch (e) {
         console.warn(`  WARNING: could not load ${pack}/${filename}: ${e.message}`);
       }
@@ -2193,7 +2085,7 @@ async function main() {
       return d !== 0 ? d : a.name.localeCompare(b.name);
     });
 
-    classSections.push(renderClass(cls, classFeat, classSpecificFeats, progressionFeats, masteryFeats));
+    classSections.push(renderClass(cls, info, classSpecificFeats, masteryFeats));
     classFeatSets.push({ cls, feats: classSpecificFeats.filter(f => !(f.system?.traits?.value ?? []).includes('progression')) });
   }
 
@@ -2344,7 +2236,7 @@ ${shieldSection}
 </html>`;
 
   await mkdir('docs', { recursive: true });
-  await writeFile('docs/mass-effect-starfinder-2e-conversion.html', html, 'utf8');
+  await writeFile('docs/mass-effect-starfinder-2e-conversion.html', flattenEnrichers(html), 'utf8');
   console.log(`✓ Wrote docs/mass-effect-starfinder-2e-conversion.html (${html.length.toLocaleString()} chars)`);
   console.log(`  NPC section: ${npcFactions.length} factions, ${npcFactions.reduce((n,f)=>n+f.npcs.length,0)} stat blocks`);
 }

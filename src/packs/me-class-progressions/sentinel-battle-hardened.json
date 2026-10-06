@@ -31,7 +31,9 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "sentinel"
+      ],
       "rarity": "common"
     },
     "publication": {

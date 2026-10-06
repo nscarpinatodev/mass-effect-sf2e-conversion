@@ -14,7 +14,7 @@
     "slug": "me-engineer-omni-grenade",
     "description": {
       "gm": "",
-      "value": "<p>You synthesize a custom explosive payload on the fly, combining incendiary and electromagnetic charges in a single devastating burst.</p><p>Target a point within <strong>30 feet</strong>. All creatures in a <strong>15-foot burst</strong> must attempt a <strong>Reflex</strong> DC 22 save.</p><p><strong>Critical Success:</strong> Unaffected.</p><p><strong>Success:</strong> Half damage.</p><p><strong>Failure:</strong> <strong>4d6 fire + 4d6 electricity</strong> damage. Electricity damage is doubled against shields.</p><p><strong>Critical Failure:</strong> <strong>8d6 fire + 8d6 electricity</strong> damage; Stunned 1.</p><p><em>Prerequisite: Superior Engineer Mastery. Classes: Engineer.</em></p>"
+      "value": "<p>You synthesize a custom explosive payload on the fly, combining incendiary and electromagnetic charges in a single devastating burst.</p><p>Target a point within <strong>30 feet</strong>. All creatures in a @Template[burst|distance:15]{15-foot burst} must attempt a @Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic|options:me-power:me-engineer-omni-grenade] save against your class DC.</p><p><strong>Critical Success:</strong> Unaffected.</p><p><strong>Success:</strong> Half damage.</p><p><strong>Failure:</strong> <strong>4d6 fire + 4d6 electricity</strong> damage. Electricity damage is doubled against shields.</p><p><strong>Critical Failure:</strong> <strong>8d6 fire + 8d6 electricity</strong> damage; Stunned 1.</p><hr/><p><em>When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.</em></p><p><em>Prerequisite: Superior Engineer Mastery. Classes: Engineer.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -25,6 +25,7 @@
     "traits": {
       "otherTags": [],
       "value": [
+        "engineer",
         "tech",
         "fire",
         "electricity"
