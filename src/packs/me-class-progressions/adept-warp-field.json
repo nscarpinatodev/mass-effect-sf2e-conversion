@@ -14,7 +14,7 @@
     "slug": "me-adept-warp-field",
     "description": {
       "gm": "",
-      "value": "<p>You generate a sustained dark energy aura that continuously destabilizes everything around you.</p><p>You project a <strong>15-foot warp aura</strong> for <strong>1 minute</strong>. At the start of each of your turns, all enemies within the aura take <strong>1d4 void damage</strong> and must succeed on a <strong>Fortitude</strong> save (DC = your class DC) or become Flat-Footed until the start of your next turn. Dismiss as a free action.</p><p><em>Prerequisite: Warp Upgrade. Classes: Adept.</em></p>"
+      "value": "<p>You generate a sustained dark energy aura that continuously destabilizes everything around you.</p><p>You project a @Template[emanation|distance:15]{15-foot warp aura} for <strong>1 minute</strong>. At the start of each of your turns, all enemies within the aura take <strong>1d4 void damage</strong> and must succeed on a @Check[fortitude|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-adept-warp-field] save against your class DC or become Off-Guard until the start of your next turn. Dismiss as a free action.</p><hr/><p><em>When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.</em></p><p><em>Prerequisite: Warp Upgrade. Classes: Adept.</em></p>"
     },
     "rules": [],
     "_migration": {

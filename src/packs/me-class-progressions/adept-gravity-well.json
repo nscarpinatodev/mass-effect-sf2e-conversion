@@ -14,7 +14,7 @@
     "slug": "me-adept-gravity-well",
     "description": {
       "gm": "",
-      "value": "<p>The singularity fields you generate have grown powerful enough to distort space itself on a larger scale.</p><p>Singularity's radius increases to <strong>30 feet</strong> (up from 25 feet with Singularity Upgrade). Any creature entering the field for the first time must succeed on a Reflex save against your class DC or be <strong>Grabbed</strong> immediately. Creatures already inside the field are <strong>Slowed 1</strong> for as long as they remain within it.</p><p><em>Prerequisite: Singularity Upgrade. Classes: Adept.</em></p>"
+      "value": "<p>The singularity fields you generate have grown powerful enough to distort space itself on a larger scale.</p><p>Singularity's radius increases to <strong>30 feet</strong> (up from 25 feet with Singularity Upgrade). Any creature entering the field for the first time must succeed on a @Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-adept-gravity-well] save against your class DC or be <strong>Grabbed</strong> immediately. Creatures already inside the field are <strong>Slowed 1</strong> for as long as they remain within it.</p><hr/><p><em>When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).</em></p><p><em>Prerequisite: Singularity Upgrade. Classes: Adept.</em></p>"
     },
     "rules": [],
     "_migration": {

@@ -14,7 +14,7 @@
     "slug": "me-effect-tech-armor",
     "description": {
       "gm": "",
-      "value": "<p>An energy-reinforced exoskeleton surrounds you, boosting your defenses. You gain a <strong>+2 circumstance bonus to AC</strong>.</p><p>If you take 20 or more damage from a single hit while this effect is active, it detonates: all creatures in a <strong>10-foot emanation</strong> take <strong>2d6 electricity</strong> damage (Reflex DC 18 basic save) and this effect ends. This detonation can be triggered intentionally as a free action on your turn.</p>"
+      "value": "<p>An energy-reinforced exoskeleton surrounds you, boosting your defenses. You gain a <strong>+2 circumstance bonus to AC</strong>.</p><p>If you take 20 or more damage from a single hit while this effect is active, it detonates: all creatures in a <strong>@Template[emanation|distance:10]{10-foot emanation}</strong> take <strong>2d6 electricity</strong> damage (@Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic|options:me-power:me-tech-armor-detonation] save against your class DC) and this effect ends. This detonation can be triggered intentionally as a free action on your turn.</p>"
     },
     "rules": [
       {

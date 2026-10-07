@@ -119,6 +119,243 @@ const POWERS = {
     degrees: basic('{4d6[fire],4d6[electricity]}', { criticalFailure: { conditions: ['stunned:1'] } }),
   },
 
+  // ── Biotic powers ──
+  'me-biotic-charge': {
+    name: 'Biotic Charge', save: 'reflex', trait: 'biotic',
+    degrees: {
+      success:         { damage: '1d6[bludgeoning]' },
+      failure:         { damage: '3d6[bludgeoning]', conditions: ['prone'], casterBarrier: 0.5 },
+      criticalFailure: { damage: '6d6[bludgeoning]', conditions: ['prone'], casterBarrier: 1, note: 'Pushed 5 feet away from the Vanguard.' },
+    },
+  },
+  'me-biotic-dark-channel': {
+    name: 'Dark Channel', save: 'fortitude', trait: 'biotic',
+    degrees: {
+      success:         { damage: '1d6[void]' },
+      failure:         { damage: '1d6[void]', persistent: { formula: '1d6', type: 'void', dc: 15 }, note: 'At 0 HP, the persistent void damage jumps to the nearest enemy within 30 feet.' },
+      criticalFailure: { damage: '1d6[void]', persistent: { formula: '2d6', type: 'void', dc: 18 }, note: 'At 0 HP, the persistent void damage jumps to the nearest enemy within 30 feet.' },
+    },
+  },
+  'me-biotic-dominate': {
+    name: 'Dominate', save: 'will', trait: 'biotic',
+    degrees: {
+      success:         { conditions: ['confused'], note: 'Confused until the end of its next turn.' },
+      failure:         { conditions: ['controlled'], note: 'Controlled for 1 round; a new Will save at the end of each of its turns ends it.' },
+      criticalFailure: { conditions: ['controlled', 'stupefied:2'], note: 'Controlled and Stupefied 2 for 1 minute; a new Will save at the end of each of its turns ends it.' },
+    },
+  },
+  'me-biotic-flare': {
+    name: 'Flare', save: 'reflex', trait: 'biotic', area: true,
+    degrees: {
+      criticalSuccess: { damage: '6d6[void]', scale: 0.5 },
+      success:         { damage: '6d6[void]' },
+      failure:         { damage: '6d6[void]', depleteBarrier: true },
+      criticalFailure: { damage: '6d6[void]', scale: 2, depleteBarrier: true, conditions: ['prone'] },
+    },
+  },
+  'me-biotic-lash': {
+    name: 'Lash', save: 'reflex', trait: 'biotic',
+    degrees: {
+      success:         { damage: '1d6[bludgeoning]' },
+      failure:         { damage: '2d6[bludgeoning]', note: 'Pulled up to 30 feet toward the caster; Off-Guard until the start of their next turn if it ends adjacent.' },
+      criticalFailure: { damage: '4d6[bludgeoning]', conditions: ['grabbed'], note: 'Pulled up to 30 feet toward the caster and Grabbed until the start of their next turn.' },
+    },
+  },
+  'me-biotic-lift': {
+    name: 'Lift', save: 'reflex', trait: 'biotic',
+    degrees: {
+      success:         { conditions: ['off-guard'], note: 'Lifted 5 feet; Off-Guard until the start of the caster\'s next turn.' },
+      failure:         { conditions: ['grabbed'], note: 'Lifted 10 feet until the start of the caster\'s next turn, then falls.' },
+      criticalFailure: { conditions: ['grabbed'], note: 'Lifted 20 feet and suspended until the end of the caster\'s next turn, then falls.' },
+    },
+  },
+  'me-biotic-nova': {
+    name: 'Nova', save: 'fortitude', trait: 'biotic', area: true,
+    // The barrier HP recorded when Nova was used (see the Nova hook below)
+    damage: ({ caster }) => {
+      const hp = caster?.getFlag(MODULE_ID, 'novaCharge');
+      return hp > 0 ? `${hp}[force]` : null;
+    },
+    degrees: {
+      success:         { scale: 0.5 },
+      failure:         { note: 'Pushed 5 feet away from the Vanguard.' },
+      criticalFailure: { scale: 2, conditions: ['prone'], note: 'Pushed 10 feet away from the Vanguard.' },
+    },
+  },
+  'me-biotic-pull': {
+    name: 'Pull', save: 'reflex', trait: 'biotic',
+    degrees: {
+      success:         { note: 'Pulled 10 feet toward the caster.' },
+      failure:         { conditions: ['grabbed'], note: 'Pulled up to 20 feet toward the caster; Grabbed until the start of their next turn.' },
+      criticalFailure: { conditions: ['grabbed'], note: 'Pulled 30 feet; knocked Prone too if it ends adjacent to the caster.' },
+    },
+  },
+  'me-biotic-reave': {
+    name: 'Reave', save: 'fortitude', trait: 'biotic',
+    degrees: {
+      success:         { damage: '1d8[void]', note: 'Cannot regain HP until the start of the caster\'s next turn.' },
+      failure:         { damage: '2d8[void]', casterHeal: '1d8', note: 'Cannot regain HP for 1 round.' },
+      criticalFailure: { damage: '4d8[void]', casterHeal: '2d8', note: 'Cannot regain HP for 1 minute.' },
+    },
+  },
+  'me-biotic-shockwave': {
+    name: 'Shockwave', save: 'reflex', trait: 'biotic', area: true,
+    degrees: {
+      success:         { damage: '1d6[bludgeoning]' },
+      failure:         { damage: '2d6[bludgeoning]', note: 'Pushed 10 feet away from the caster.' },
+      criticalFailure: { damage: '4d6[bludgeoning]', conditions: ['prone'], note: 'Pushed 10 feet away from the caster.' },
+    },
+  },
+  'me-biotic-singularity': {
+    name: 'Singularity', save: 'reflex', trait: 'biotic',
+    degrees: {
+      success:         { note: 'Pulled 10 feet toward the singularity\'s center.' },
+      failure:         { conditions: ['restrained'], note: 'Pulled to the center and Restrained while the singularity lasts (Escape against the caster\'s class DC).' },
+      criticalFailure: { conditions: ['restrained'], note: 'As failure, and takes 2d6 bludgeoning at the start of each of its turns while Restrained.' },
+    },
+  },
+  'me-biotic-slam': {
+    name: 'Slam', save: 'fortitude', trait: 'biotic',
+    degrees: {
+      success:         { damage: '1d6[bludgeoning]', note: 'Moved 5 feet in a direction of the caster\'s choice.' },
+      failure:         { damage: '3d6[bludgeoning]', conditions: ['stunned:1', 'prone'] },
+      criticalFailure: { damage: '6d6[bludgeoning]', conditions: ['stunned:2', 'prone'], note: 'Speed halved until the end of its next turn.' },
+    },
+  },
+  'me-biotic-stasis': {
+    name: 'Stasis', save: 'will', trait: 'biotic',
+    degrees: {
+      success:         { conditions: ['immobilized'], note: 'Until the start of the caster\'s next turn.' },
+      failure:         { conditions: ['paralyzed'], note: 'Until the start of the caster\'s next turn; a new Will save at the end of each of its turns ends it.' },
+      criticalFailure: { conditions: ['paralyzed'], note: 'For 1 minute; a new Will save at the end of each of its turns ends it.' },
+    },
+  },
+  'me-biotic-throw': {
+    name: 'Throw', save: 'fortitude', trait: 'biotic',
+    degrees: {
+      success:         { note: 'Pushed 5 feet away from the caster.' },
+      failure:         { damage: '2d8[bludgeoning]', note: 'Pushed 10 feet. Into a solid object: 1d6 more bludgeoning and Prone.' },
+      criticalFailure: { damage: '4d8[bludgeoning]', note: 'Pushed 20 feet. Into an obstacle: 2d6 more bludgeoning and Prone.' },
+    },
+  },
+  'me-biotic-warp': {
+    name: 'Warp', save: 'fortitude', trait: 'biotic',
+    degrees: {
+      success:         { damage: '1d6[void]' },
+      failure:         { damage: '2d6[void]', persistent: { formula: '1d4', type: 'void' }, note: 'Cannot regain HP until the start of the caster\'s next turn.' },
+      criticalFailure: { damage: '4d6[void]', persistent: { formula: '1d4', type: 'void' }, note: 'Cannot regain HP until the start of the caster\'s next turn. An active Biotic Barrier detonates for 2d6 void in a 10-foot burst.' },
+    },
+  },
+  'me-adept-warp-field': {
+    name: 'Warp Field', save: 'fortitude', trait: 'biotic', area: true,
+    degrees: {
+      criticalSuccess: { damage: '1d4[void]' },
+      success:         { damage: '1d4[void]' },
+      failure:         { damage: '1d4[void]', conditions: ['off-guard'], note: 'Off-Guard until the start of the caster\'s next turn.' },
+      criticalFailure: { damage: '1d4[void]', conditions: ['off-guard'], note: 'Off-Guard until the start of the caster\'s next turn.' },
+    },
+  },
+  'me-adept-gravity-well': {
+    name: 'Gravity Well', save: 'reflex', trait: 'biotic',
+    degrees: {
+      failure:         { conditions: ['grabbed'] },
+      criticalFailure: { conditions: ['grabbed'] },
+    },
+  },
+
+  // ── Tech powers ──
+  'me-tech-ai-hacking': {
+    name: 'AI Hacking', save: 'will', trait: 'tech',
+    degrees: {
+      success:         { conditions: ['stunned:1'] },
+      failure:         { conditions: ['controlled'], note: 'An ally of the caster for up to 1 minute; ends if an ally deals it more than 10 damage in one hit.' },
+      criticalFailure: { conditions: ['controlled'], note: 'As failure, with a +2 circumstance bonus to attack rolls and saves while controlled.' },
+    },
+  },
+  'me-tech-armor-detonation': {
+    name: 'Tech Armor Detonation', save: 'reflex', trait: 'tech', area: true,
+    degrees: basic('2d6[electricity]'),
+  },
+  'me-tech-combat-drone-explosion': {
+    name: 'Combat Drone Explosion', save: 'reflex', trait: 'tech', area: true,
+    degrees: basic('1d6[electricity]'),
+  },
+  'me-tech-defense-drone': {
+    name: 'Defense Drone', save: 'reflex', trait: 'tech', area: true,
+    degrees: basic('1d6[electricity]'),
+  },
+  'me-tech-cryo-blast': {
+    name: 'Cryo Blast', save: 'fortitude', trait: 'tech', area: true,
+    degrees: {
+      success:         { damage: '1d6[cold]' },
+      failure:         { damage: '2d6[cold]', conditions: ['slowed:1'], note: 'Slowed until the end of its next turn.' },
+      criticalFailure: { damage: '4d6[cold]', conditions: ['immobilized'], note: 'Immobilized until the end of its next turn.' },
+    },
+  },
+  'me-tech-damping': {
+    name: 'Damping', save: 'will', trait: 'tech',
+    degrees: {
+      success:         { conditions: ['stupefied:1'], note: 'Until the start of the caster\'s next turn.' },
+      failure:         { conditions: ['stupefied:2'], note: 'Cannot use tech or biotic powers until the start of the caster\'s next turn.' },
+      criticalFailure: { conditions: ['stupefied:2'], note: 'Cannot use tech or biotic powers until the end of its next turn.' },
+    },
+  },
+  'me-tech-energy-drain': {
+    name: 'Energy Drain', save: 'fortitude', trait: 'tech',
+    degrees: {
+      success:         { drain: { shields: 10, damage: '1d8[electricity]', gainShielded: 0, gainUnshielded: 0 } },
+      failure:         { drain: { shields: 20, damage: '2d8[electricity]', gainShielded: 'drained', gainUnshielded: 10 } },
+      criticalFailure: { drain: { shields: 40, damage: '4d8[electricity]', gainShielded: 20, gainUnshielded: 20 } },
+    },
+  },
+  'me-tech-neural-shock': {
+    name: 'Neural Shock', save: 'fortitude', trait: 'tech',
+    degrees: {
+      success:         { damage: '1d6[electricity]' },
+      failure:         { damage: '2d6[electricity]', conditions: ['stunned:1'] },
+      criticalFailure: { damage: '4d6[electricity]', conditions: ['stunned:3'], note: 'Off-Guard until the end of its next turn, even after Stunned ends.' },
+    },
+  },
+  'me-tech-overload': {
+    name: 'Overload', save: 'reflex', trait: 'tech',
+    degrees: {
+      success:         { damage: '1d8[electricity]' },
+      failure:         { damage: '2d8[electricity]', vsSynthetic: '3d8[electricity]' },
+      criticalFailure: { damage: '4d8[electricity]', vsSynthetic: '5d8[electricity]', conditions: ['stunned:1'] },
+    },
+  },
+  'me-tech-sabotage': {
+    name: 'Sabotage', save: 'will', trait: 'tech',
+    degrees: {
+      success:         { conditions: ['confused'], note: 'Until the end of the caster\'s next turn.' },
+      failure:         { conditions: ['confused'], note: 'Attacks the nearest creature for 1 round; a new Will save at the end of each of its turns ends it.' },
+      criticalFailure: { conditions: ['confused'], note: 'Attacks the nearest creature for 1 minute, dealing maximum damage; a new Will save at the end of each of its turns ends it.' },
+    },
+  },
+  'me-engineer-system-override': {
+    name: 'System Override', save: 'will', trait: 'tech',
+    degrees: {
+      success:         { conditions: ['stunned:1'] },
+      failure:         { damage: '3d6[electricity]', conditions: ['stunned:2'] },
+      criticalFailure: { damage: '6d6[electricity]', conditions: ['stunned:3', 'controlled'], note: 'Controlled as by AI Hacking for 1 round.' },
+    },
+  },
+  'me-engineer-network-shutdown': {
+    name: 'Network Shutdown', save: 'will', trait: 'tech', area: true,
+    degrees: {
+      success:         { conditions: ['stunned:1'] },
+      failure:         { damage: '4d6[electricity]', conditions: ['stunned:2'] },
+      criticalFailure: { damage: '8d6[electricity]', conditions: ['stunned:3'], note: 'Cannot use tech abilities for 1 round.' },
+    },
+  },
+  'me-infiltrator-death-from-above': {
+    name: 'Death From Above', save: 'will', trait: 'tech',
+    degrees: {
+      failure:         { conditions: ['frightened:2'] },
+      criticalFailure: { conditions: ['frightened:2'] },
+    },
+  },
+
   // ── Powers ──
   'me-tech-incinerate': {
     name: 'Incinerate',
@@ -162,8 +399,16 @@ Hooks.on('createChatMessage', async (message) => {
     ?? canvas?.scene?.tokens?.get(message.speaker?.token)
     ?? actor.getActiveTokens(true, true)[0] ?? null;
 
-  const degree = power.degrees[ctx.outcome];
-  if (!degree) {
+  const caster = await resolveCaster(message, ctx);
+  const degree = { ...(power.degrees[ctx.outcome] ?? {}) };
+
+  // Dark Matter: critical failures against the Adept's biotic powers frighten
+  const frighten = caster?.flags?.[MODULE_ID]?.critFailFrightened;
+  if (ctx.outcome === 'criticalFailure' && power.trait === 'biotic' && frighten) {
+    degree.conditions = [...(degree.conditions ?? []), `frightened:${frighten}`];
+  }
+
+  if (!Object.keys(degree).length) {
     postResult(actor, power.name, ctx.outcome, ['No effect.']);
     return;
   }
@@ -171,38 +416,50 @@ Hooks.on('createChatMessage', async (message) => {
   const log = [];
 
   // ── Direct damage (routes through the shield system via applyDamage) ──
-  if (degree.damage) {
+  const spec = (degree.vsSynthetic && isSynthetic(actor)) ? degree.vsSynthetic : (degree.damage ?? power.damage);
+  const formula = typeof spec === 'function' ? spec({ actor, caster }) : spec;
+  if (spec && !formula) log.push('No damage recorded for this use; roll it by hand.');
+  if (formula) {
     try {
       const origin = message.flags?.pf2e?.origin?.uuid ?? ctx.origin?.uuid ?? '';
-      const roll = await rollPowerDamage(power.area ? `${slug}|${origin}` : null, degree);
+      const roll = await rollPowerDamage(power.area ? `${slug}|${origin}` : null, { ...degree, damage: formula });
       if (roll) {
         await actor.applyDamage({ damage: roll, token: tokenDoc?.object ?? tokenDoc });
-        log.push(`${roll.total} ${describeFormula(degree.damage)} damage`);
+        log.push(`${roll.total} ${describeFormula(formula)} damage`);
       } else {
         log.push('No damage (halved to 0)');
       }
     } catch (err) {
       console.warn('ME Powers | applyDamage failed, posting roll instead', err);
-      const roll = await new Roll(stripTags(degree.damage)).evaluate();
+      const roll = await new Roll(stripTags(formula)).evaluate();
       roll.toMessage({ flavor: `${power.name} damage`, speaker: { alias: power.name } });
       log.push(`${roll.total} damage (apply manually)`);
     }
   }
 
-  // ── Persistent damage (PersistentDamage rule element on a new effect) ──
+  // ── Energy Drain: shields if it has them, otherwise damage ──
+  if (degree.drain) {
+    const d = degree.drain;
+    const shields = actor.system.attributes.hp?.temp ?? 0;
+    let gain;
+    if (shields > 0) {
+      const drained = Math.min(d.shields, shields);
+      await actor.update({ 'system.attributes.hp.temp': shields - drained });
+      log.push(`${drained} shield HP drained`);
+      gain = d.gainShielded === 'drained' ? drained : d.gainShielded;
+    } else {
+      const roll = await new game.pf2e.DamageRoll(d.damage).evaluate();
+      await actor.applyDamage({ damage: roll, token: tokenDoc?.object ?? tokenDoc });
+      log.push(`${roll.total} ${describeFormula(d.damage)} damage`);
+      gain = d.gainUnshielded;
+    }
+    if (gain > 0) log.push(await giveCasterShields(caster, gain));
+  }
+
+  // ── Persistent damage (the system's own persistent-damage condition) ──
   if (degree.persistent) {
     const p = degree.persistent;
-    await actor.createEmbeddedDocuments('Item', [{
-      name: `${power.name} — Persistent ${cap(p.type)}`,
-      type: 'effect',
-      img: 'icons/magic/fire/flame-burning-orange.webp',
-      system: {
-        slug: `me-persistent-${slug}`,
-        description: { value: `<p>${p.formula} persistent ${p.type} damage from ${power.name}. DC ${p.dc ?? 15} flat check to end.</p>` },
-        duration: { value: -1, unit: 'unlimited' },
-        rules: [{ key: 'PersistentDamage', formula: p.formula, damageType: p.type, dc: p.dc ?? 15 }],
-      },
-    }]);
+    await addPersistentDamage(actor, p.formula, p.type, p.dc ?? 15);
     log.push(`${p.formula} persistent ${p.type}`);
   }
 
@@ -215,6 +472,29 @@ Hooks.on('createChatMessage', async (message) => {
     } catch (err) {
       console.warn(`ME Powers | could not apply condition "${c}"`, err);
       log.push(`${cap(name)} (apply manually)`);
+    }
+  }
+
+  // ── Barriers ──
+  if (degree.depleteBarrier) {
+    const barrier = getBarrier(actor);
+    if (barrier && (barrier.flags[MODULE_ID].barrierCurrent ?? 0) > 0) {
+      await setBarrier(barrier, 0);
+      log.push('Biotic Barrier depleted');
+    }
+  }
+  if (degree.casterBarrier) log.push(await refillCasterBarrier(caster, degree.casterBarrier));
+
+  // ── Healing for the caster ──
+  if (degree.casterHeal) {
+    if (caster) {
+      const roll = await new Roll(degree.casterHeal).evaluate();
+      const hp = caster.system.attributes.hp;
+      const healed = Math.min(roll.total, hp.max - hp.value);
+      if (healed > 0) await caster.update({ 'system.attributes.hp.value': hp.value + healed });
+      log.push(`${caster.name} regains ${healed} HP`);
+    } else {
+      log.push(`The caster regains ${degree.casterHeal} HP (apply manually)`);
     }
   }
 
@@ -293,20 +573,34 @@ Hooks.on('createChatMessage', async (message) => {
   const flags = actor.flags?.[MODULE_ID] ?? {};
   const slug = item.slug;
 
-  if (slug === 'me-biotic-charge' && flags.chargeBarrier) {
-    const barrier = actor.itemTypes.effect.find((e) => e.flags?.[MODULE_ID]?.barrierMax != null);
-    if (barrier) {
-      const max = barrier.flags[MODULE_ID].barrierMax;
-      const now = barrier.flags[MODULE_ID].barrierCurrent ?? 0;
-      const next = Math.min(max, now + flags.chargeBarrier);
-      if (next > now) {
-        await barrier.update({
-          [`flags.${MODULE_ID}.barrierCurrent`]: next,
-          'system.badge': { type: 'counter', value: next, max },
-        });
-        postResult(actor, 'Vanguard Mastery', 'success', [`Biotic Barrier ${now} → ${next}`]);
-      }
+  const barrier = getBarrier(actor);
+
+  // Charge refills the barrier on use, whatever the target rolls: the most
+  // generous of Vanguard Mastery (flat), Unstoppable Charge (25%) and Apex Vanguard (full).
+  if (slug === 'me-biotic-charge' && barrier) {
+    const max = barrier.flags[MODULE_ID].barrierMax;
+    const now = barrier.flags[MODULE_ID].barrierCurrent ?? 0;
+    const has = (s) => actor.items.some((i) => i.slug === s);
+    const refill = Math.max(
+      Number(flags.chargeBarrier) || 0,
+      has('me-vanguard-unstoppable-charge') ? Math.ceil(max / 4) : 0,
+      has('me-vanguard-apex-vanguard') ? max : 0,
+    );
+    const next = Math.min(max, now + refill);
+    if (next > now) {
+      await setBarrier(barrier, next);
+      postResult(actor, 'Biotic Charge', 'success', [`Biotic Barrier ${now} → ${next}`]);
     }
+  }
+
+  // Nova spends the whole barrier; its HP becomes the damage every target saves against.
+  if (slug === 'me-biotic-nova') {
+    const now = barrier?.flags[MODULE_ID].barrierCurrent ?? 0;
+    await actor.setFlag(MODULE_ID, 'novaCharge', now);
+    if (now > 0) await setBarrier(barrier, 0);
+    postResult(actor, 'Nova', 'success', [now > 0
+      ? `Detonates ${now} barrier HP as force damage`
+      : 'No barrier HP to detonate (Nova needs an active Biotic Barrier)']);
   }
 
   if ((slug === 'me-biotic-charge' || slug === 'me-biotic-nova') && flags.momentumStrike
@@ -324,6 +618,63 @@ Hooks.on('createChatMessage', async (message) => {
     }]);
   }
 });
+
+// ── TARGETS AND CASTERS ─────────────────────────────────────────────────────
+const SYNTHETIC_TRAITS = ['construct', 'geth', 'mech', 'robot'];
+const isSynthetic = (actor) => actor.type === 'vehicle'
+  || (actor.system.traits?.value ?? []).some((t) => SYNTHETIC_TRAITS.includes(t));
+
+/** The actor who used the power: the save message's origin item, else its origin actor. */
+async function resolveCaster(message, ctx) {
+  for (const uuid of [message.flags?.pf2e?.origin?.uuid, ctx.origin?.item, ctx.origin?.actor]) {
+    if (typeof uuid !== 'string') continue;
+    const doc = await fromUuid(uuid).catch(() => null);
+    const actor = doc instanceof Actor ? doc : doc?.actor;
+    if (actor) return actor;
+  }
+  return null;
+}
+
+// Biotic Barrier effect, as the shield system keeps it
+const getBarrier = (actor) => actor?.itemTypes.effect.find((e) => e.flags?.[MODULE_ID]?.barrierMax != null) ?? null;
+
+async function setBarrier(barrier, value) {
+  const max = barrier.flags[MODULE_ID].barrierMax;
+  await barrier.update({
+    [`flags.${MODULE_ID}.barrierCurrent`]: value,
+    'system.badge': { type: 'counter', value, max },
+  });
+}
+
+async function refillCasterBarrier(caster, fraction) {
+  const barrier = getBarrier(caster);
+  if (!barrier) return caster ? `${caster.name} has no Biotic Barrier to recharge` : 'Recharge the caster\'s Biotic Barrier by hand';
+  const max = barrier.flags[MODULE_ID].barrierMax;
+  const now = barrier.flags[MODULE_ID].barrierCurrent ?? 0;
+  const next = Math.min(max, now + Math.ceil(max * fraction));
+  if (next > now) await setBarrier(barrier, next);
+  return `${caster.name}'s Biotic Barrier ${now} → ${next}`;
+}
+
+/** Energy Drain: the caster's shields (temp HP) rise, capped at their kinetic shield's maximum. */
+async function giveCasterShields(caster, amount) {
+  if (!caster) return `The caster gains ${amount} shield HP (apply manually)`;
+  const gear = [...caster.itemTypes.equipment, ...caster.itemTypes.effect];
+  const shield = gear.find((i) => i.flags?.[MODULE_ID]?.shieldMax != null);
+  const bonus = Math.max(0, ...gear.map((i) => Number(i.flags?.[MODULE_ID]?.shieldHpBonus) || 0));
+  const cap = shield ? (shield.flags[MODULE_ID].shieldMax ?? 0) + bonus : Infinity;
+  const now = caster.system.attributes.hp?.temp ?? 0;
+  const next = Math.max(now, Math.min(cap, now + amount));
+  if (next > now) await caster.update({ 'system.attributes.hp.temp': next });
+  return `${caster.name}'s shields ${now} → ${next}`;
+}
+
+/** The system's own persistent-damage condition; there is no PersistentDamage rule element. */
+async function addPersistentDamage(actor, formula, damageType, dc = 15) {
+  const condition = game.pf2e.ConditionManager.getCondition('persistent-damage').toObject();
+  condition.system.persistent = { formula, damageType, dc };
+  await actor.createEmbeddedDocuments('Item', [condition]);
+}
 
 // ── DAMAGE ROLLS ────────────────────────────────────────────────────────────
 // An area is rolled once and every creature in it takes that roll (halved or

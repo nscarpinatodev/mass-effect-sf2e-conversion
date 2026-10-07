@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node build.mjs",
     "clean": "node --input-type=module -e \"import { rmSync } from 'fs'; rmSync('packs', { recursive: true, force: true });\"",
-    "tokens": "node scripts/generate-tokens.mjs"
+    "tokens": "node scripts/generate-tokens.mjs",
+    "test": "node tests/power-engine.test.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.0",

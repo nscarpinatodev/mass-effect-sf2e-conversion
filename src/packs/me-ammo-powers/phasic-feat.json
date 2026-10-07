@@ -18,7 +18,7 @@
     "slug": "me-feat-phasic",
     "description": {
       "gm": "",
-      "value": "<p>You have been trained in the use of phasic rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Rounds coated in a mass effect field that phases through all defensive layers. Phasic rounds bypass kinetic shields, biotic barriers, and Combat Armor Frames entirely â€” damage is dealt directly to HP. However, the phasing effect reduces total damage dealt to <strong>40%</strong>.</p><p>Remove this effect to return to standard ammunition.</p>"
+      "value": "<p>You have been trained in the use of phasic rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Rounds coated in a mass effect field that phases through all defensive layers. Phasic rounds bypass kinetic shields, biotic barriers, and Combat Armor Frames entirely — damage is dealt directly to HP. However, the phasing effect reduces total damage dealt to <strong>40%</strong>.</p><p>Remove this effect to return to standard ammunition.</p>"
     },
     "rules": [],
     "_migration": {

@@ -14,9 +14,23 @@
     "slug": "me-adept-dark-matter",
     "description": {
       "gm": "",
-      "value": "<p>You have unlocked a deeper understanding of dark energy manipulation, pushing your biotic abilities beyond any recorded limit.</p><p>All biotic power save DCs you use increase by <strong>2</strong>. Your biotic damage ignores up to <strong>5 points</strong> of void damage resistance. Enemies that critically fail saves against your biotic powers become <strong>Frightened 2</strong> in addition to normal effects.</p><p><em>Prerequisite: Superior Adept Mastery. Classes: Adept.</em></p>"
+      "value": "<p>You have unlocked a deeper understanding of dark energy manipulation, pushing your biotic abilities beyond any recorded limit.</p><p>All biotic power save DCs you use increase by <strong>2</strong>. Your biotic damage ignores up to <strong>5 points</strong> of void damage resistance. Enemies that critically fail saves against your biotic powers become <strong>Frightened 2</strong> in addition to normal effects.</p><hr/><p><em>Automation: the +2 is added to your class DC, which your powers use, and creatures that critically fail a save against your biotic powers become Frightened 2. Void resistance is not bypassed automatically.</em></p><p><em>Prerequisite: Superior Adept Mastery. Classes: Adept.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "untyped",
+        "value": 2,
+        "label": "Dark Matter"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.critFailFrightened",
+        "value": 2
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

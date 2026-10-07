@@ -14,7 +14,7 @@
     "slug": "me-engineer-network-shutdown",
     "description": {
       "gm": "",
-      "value": "<p>You broadcast a catastrophic shutdown signal across all synthetic systems in the area, freezing them mid-operation.</p><p>All <strong>synthetic</strong> enemies within <strong>30 feet</strong> must attempt a <strong>Will</strong> DC 22 save.</p><p><strong>Success:</strong> Stunned 1.</p><p><strong>Failure:</strong> Stunned 2 and take 4d6 electricity damage.</p><p><strong>Critical Failure:</strong> Stunned 3 and take 8d6 electricity damage; can't use tech abilities for 1 round.</p><p><em>Prerequisite: System Override. Classes: Engineer.</em></p>"
+      "value": "<p>You broadcast a catastrophic shutdown signal across all synthetic systems in the area, freezing them mid-operation.</p><p>All <strong>synthetic</strong> enemies within a @Template[emanation|distance:30]{30-foot emanation} must attempt a @Check[will|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-engineer-network-shutdown] save against your class DC.</p><p><strong>Success:</strong> Stunned 1.</p><p><strong>Failure:</strong> Stunned 2 and take 4d6 electricity damage.</p><p><strong>Critical Failure:</strong> Stunned 3 and take 8d6 electricity damage; can't use tech abilities for 1 round.</p><hr/><p><em>When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.</em></p><p><em>Prerequisite: System Override. Classes: Engineer.</em></p>"
     },
     "rules": [],
     "_migration": {

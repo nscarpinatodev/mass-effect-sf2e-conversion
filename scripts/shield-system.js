@@ -902,22 +902,13 @@ function postChat(actor, content) {
   });
 }
 
+// The system's own persistent-damage condition, so it rolls at end of turn and
+// offers the DC 15 flat check. (There is no PersistentDamage rule element.)
 async function createPersistentFireEffect(actor) {
   const dice = game.settings.get(MODULE_ID, 'incendiaryPersistentDice');
-  await actor.createEmbeddedDocuments('Item', [{
-    name: 'Persistent Fire Damage',
-    type: 'effect',
-    img: 'icons/magic/fire/flame-burning-orange.webp',
-    flags: {},
-    system: {
-      slug: 'me-persistent-fire',
-      description: {
-        value: `<p>Taking ${dice} persistent fire damage from Incendiary Rounds. At the end of each turn, attempt a DC 15 Flat check to end this effect.</p>`,
-      },
-      duration: { value: -1, unit: 'unlimited' },
-      rules: [{ key: 'PersistentDamage', formula: dice, damageType: 'fire' }],
-    },
-  }]);
+  const condition = game.pf2e.ConditionManager.getCondition('persistent-damage').toObject();
+  condition.system.persistent = { formula: dice, damageType: 'fire', dc: 15 };
+  await actor.createEmbeddedDocuments('Item', [condition]);
 }
 
 async function createChilledEffect(actor) {

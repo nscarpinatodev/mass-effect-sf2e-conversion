@@ -14,7 +14,7 @@
     "slug": "me-infiltrator-death-from-above",
     "description": {
       "gm": "",
-      "value": "<p>A critical strike made from the shadows carries terrifying force multipliers that push damage beyond the edge of comprehension.</p><p>When you score a <strong>critical hit</strong> with a Strike made while Tactical Cloak is active, you deal an additional <strong>2d6 precision damage</strong> (stacks with Assassination Protocol's +3d6 for a total of +5d6 on a crit). Enemies that witness this must succeed on a <strong>Will</strong> DC 20 save or become <strong>Frightened 2</strong>.</p><p><em>Prerequisite: Assassination Protocol. Classes: Infiltrator.</em></p>"
+      "value": "<p>A critical strike made from the shadows carries terrifying force multipliers that push damage beyond the edge of comprehension.</p><p>When you score a <strong>critical hit</strong> with a Strike made while Tactical Cloak is active, you deal an additional <strong>2d6 precision damage</strong> (stacks with Assassination Protocol's +3d6 for a total of +5d6 on a crit). Enemies that witness this must succeed on a @Check[will|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-infiltrator-death-from-above] save against your class DC or become <strong>Frightened 2</strong>.</p><hr/><p><em>When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).</em></p><p><em>Prerequisite: Assassination Protocol. Classes: Infiltrator.</em></p>"
     },
     "rules": [],
     "_migration": {
