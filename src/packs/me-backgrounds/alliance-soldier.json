@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>You served in the Systems Alliance military, humanity's primary defense force and its voice in galactic politics. Years of training, deployment, and combat experience hardened your body and sharpened your instincts. Whether you survived the Skyllian Blitz, patrolled the Terminus border, or served aboard an Alliance frigate, military service left an indelible mark on how you move, think, and solve problems.</p><p>You are trained in Athletics and gain the Alliance Military Lore skill. You boost Constitution or Strength, and gain a free boost.</p>"
+      "value": "<p>You served in the Systems Alliance military, humanity's primary defense force and its voice in galactic politics. Years of training, deployment, and combat experience hardened your body and sharpened your instincts. Whether you survived the Skyllian Blitz, patrolled the Terminus border, or served aboard an Alliance frigate, military service left an indelible mark on how you move, think, and solve problems.</p><p>You are trained in Athletics and the Systems Alliance Lore skill, and you gain the Quick Jump skill feat. You boost Constitution or Strength, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "alliance-soldier",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Alliance Military",
+    "items": {
+      "allsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Quick Jump",
+        "uuid": "Compendium.pf2e.feats-srd.Item.ZBhvJ9O8MvBFAlhq"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Systems Alliance Lore"
+      ],
       "value": [
-        "ath"
+        "athletics"
       ]
     },
     "_migration": {

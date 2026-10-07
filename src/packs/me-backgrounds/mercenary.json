@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Blue Suns, Eclipse, Blood Pack, and dozens of smaller outfits provide the galaxy with armed professionals willing to do what standing militaries won't or can't. You were one of them. The work was rarely clean, always dangerous, and paid well enough that you kept taking contracts. You've learned to evaluate threats fast, because in your line of work you don't get a second chance to reassess.</p><p>You are trained in Athletics and gain the Mercenary Operations Lore skill. You boost Strength or Constitution, and gain a free boost.</p>"
+      "value": "<p>The Blue Suns, Eclipse, Blood Pack, and dozens of smaller outfits provide the galaxy with armed professionals willing to do what standing militaries won't or can't. You were one of them. The work was rarely clean, always dangerous, and paid well enough that you kept taking contracts. You've learned to evaluate threats fast, because in your line of work you don't get a second chance to reassess.</p><p>You are trained in Athletics and the Mercenary Lore skill, and you gain the Titan Wrestler skill feat. You boost Strength or Constitution, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "mercenary",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Mercenary Operations",
+    "items": {
+      "mersf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Titan Wrestler",
+        "uuid": "Compendium.pf2e.feats-srd.Item.KxaYlC50zzHysJj8"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Mercenary Lore"
+      ],
       "value": [
-        "ath"
+        "athletics"
       ]
     },
     "_migration": {

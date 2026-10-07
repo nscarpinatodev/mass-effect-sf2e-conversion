@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The asari homeworld is everything the species has spent three thousand years becoming - prosperous, cultured, suffused with biotic tradition and diplomatic sophistication. Thessia's schools are among the galaxy's finest. Its biotic academies are the oldest. Growing up here means you absorbed a civilization's worth of accumulated knowledge - including the biotic theory that underlies everything from L2 amplifiers to singularity fields. The galaxy looks different when you can read its physics.</p><p>You are trained in Occultism and gain the Thessian Culture Lore skill. You boost Intelligence or Wisdom, and gain a free boost.</p>"
+      "value": "<p>The asari homeworld is everything the species has spent three thousand years becoming - prosperous, cultured, suffused with biotic tradition and diplomatic sophistication. Thessia's schools are among the galaxy's finest. Its biotic academies are the oldest. Growing up here means you absorbed a civilization's worth of accumulated knowledge - including the biotic theory that underlies everything from L2 amplifiers to singularity fields. The galaxy looks different when you can read its physics.</p><p>You are trained in Occultism and the Thessia Lore skill, and you gain the Schooled in Secrets skill feat. You boost Intelligence or Wisdom, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "thessia",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Thessian Culture",
+    "items": {
+      "thesf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Schooled in Secrets",
+        "uuid": "Compendium.pf2e.feats-srd.Item.lEgYzFHransLkSvI"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Thessia Lore"
+      ],
       "value": [
-        "occ"
+        "occultism"
       ]
     },
     "_migration": {

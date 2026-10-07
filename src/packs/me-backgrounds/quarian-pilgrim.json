@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>Your Pilgrimage took you away from the Flotilla and into a galaxy that had no reason to trust you. Quarians are tolerated at best, viewed with suspicion at worst. The year or more you spent away from the Fleet - finding something to bring back, finding yourself in the process - changed you in ways that even the Fleet elders couldn't have predicted. You brought back more than a gift.</p><p>You are trained in Crafting and gain the Migrant Fleet Lore skill. You boost Wisdom or Dexterity, and gain a free boost.</p>"
+      "value": "<p>Your Pilgrimage took you away from the Flotilla and into a galaxy that had no reason to trust you. Quarians are tolerated at best, viewed with suspicion at worst. The year or more you spent away from the Fleet - finding something to bring back, finding yourself in the process - changed you in ways that even the Fleet elders couldn't have predicted. You brought back more than a gift.</p><p>You are trained in Crafting and the Migrant Fleet Lore skill, and you gain the Specialty Crafting skill feat. You boost Wisdom or Dexterity, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "quarian-pilgrim",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Migrant Fleet",
+    "items": {
+      "quasf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Specialty Crafting",
+        "uuid": "Compendium.pf2e.feats-srd.Item.QLeMH5mQgh28sa5o"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Migrant Fleet Lore"
+      ],
       "value": [
-        "cra"
+        "crafting"
       ]
     },
     "_migration": {

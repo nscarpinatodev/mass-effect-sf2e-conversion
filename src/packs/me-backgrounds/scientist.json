@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The fundamental questions - of life, mass effect fields, dark energy, the Protheans, what lies beyond the relay network - pulled you into a life of research. You've worked in corporate labs, university positions, or independent settings where funding was uncertain and curiosity was the only constant. Science is the only methodology you trust completely, which makes you both valuable and occasionally difficult to work with.</p><p>You are trained in Arcana and gain the Scientific Research Lore skill. You boost Intelligence or Wisdom, and gain a free boost.</p>"
+      "value": "<p>The fundamental questions - of life, mass effect fields, dark energy, the Protheans, what lies beyond the relay network - pulled you into a life of research. You've worked in corporate labs, university positions, or independent settings where funding was uncertain and curiosity was the only constant. Science is the only methodology you trust completely, which makes you both valuable and occasionally difficult to work with.</p><p>You are trained in Arcana and the Academia Lore skill, and you gain the Quick Identification skill feat. With your GM's permission, you can instead take a Lore for your field, such as Prothean Lore or Xenobiology Lore. You boost Intelligence or Wisdom, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "scientist",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Scientific Research",
+    "items": {
+      "scisf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Quick Identification",
+        "uuid": "Compendium.pf2e.feats-srd.Item.IlOQuCQIhjJpig3S"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Academia Lore"
+      ],
       "value": [
-        "arc"
+        "arcana"
       ]
     },
     "_migration": {

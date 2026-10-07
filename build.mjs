@@ -50,6 +50,10 @@ const SF2E_ASSET_EXCEPTIONS = {
 };
 const SF2E_ASSET_RX = /systems\/pf2e\//g;
 
+// Backgrounds grant system skill feats. The feats shared by both systems keep the
+// same document id; only the compendium differs (pf2e.feats-srd vs sf2e.feats).
+const SF2E_FEATS_RX = /Compendium\.pf2e\.feats-srd\./g;
+
 // SF2e denominates prices in Credits, which the system stores in `price.value.sp`
 // (its lang maps PF2E.Currency.credits -> "Credits", and its own equipment pack
 // uses {sp: N} almost exclusively). Source is authored in PF2e coin, so the SF2e
@@ -75,7 +79,8 @@ function rewriteSf2eSources(value) {
     if (mapped) return mapped;
     return value
       .replace(SF2E_ASSET_RX, "systems/sf2e/")
-      .replace(SF2E_SOURCE_RX, "$1sf2e-me-");
+      .replace(SF2E_SOURCE_RX, "$1sf2e-me-")
+      .replace(SF2E_FEATS_RX, "Compendium.sf2e.feats.");
   }
   if (Array.isArray(value)) {
     value.forEach((v, i) => { value[i] = rewriteSf2eSources(v); });

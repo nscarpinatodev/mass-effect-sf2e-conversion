@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Council's Special Tactics and Reconnaissance operatives answer to no one but the Council itself, receive no public acknowledgment, and operate by a mandate that begins and ends with results. You were identified as a potential candidate - screened, evaluated, and subjected to a preparation process that most people never know exists. Whether you've been formally inducted yet or not, you were changed by the process.</p><p>You are trained in Stealth and gain the Spectre Operations Lore skill. You boost Strength or Dexterity, and gain a free boost.</p>"
+      "value": "<p>The Council's Special Tactics and Reconnaissance operatives answer to no one but the Council itself, receive no public acknowledgment, and operate by a mandate that begins and ends with results. You were identified as a potential candidate - screened, evaluated, and subjected to a preparation process that most people never know exists. Whether you've been formally inducted yet or not, you were changed by the process.</p><p>You are trained in Stealth and the Spectre Lore skill, and you gain the Terrain Stalker skill feat. You boost Strength or Dexterity, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "spectre-candidate",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Spectre Operations",
+    "items": {
+      "spesf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Terrain Stalker",
+        "uuid": "Compendium.pf2e.feats-srd.Item.beyw5bdA5hkQbmaG"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Spectre Lore"
+      ],
       "value": [
-        "ste"
+        "stealth"
       ]
     },
     "_migration": {

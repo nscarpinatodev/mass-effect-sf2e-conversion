@@ -1360,7 +1360,7 @@ const SKILL_LABELS   = { acr:'Acrobatics', arc:'Arcana', ath:'Athletics', cra:'C
 const SIZE_LABELS    = { sm:'Small', med:'Medium', lg:'Large', huge:'Huge' };
 
 function abilityLabel(c) { return ABILITY_LABELS[c] ?? c.toUpperCase(); }
-function skillLabel(c)   { return SKILL_LABELS[c] ?? c; }
+function skillLabel(c)   { return SKILL_LABELS[c] ?? titleCase(c); }
 
 function extractBoosts(obj) {
   const ALL_COUNT = 6;
@@ -1568,9 +1568,10 @@ function renderBackgroundsSection(backgrounds) {
     const s = bg.system;
     const boosts = extractBoosts(s.boosts).join(', ');
     const skills = (s.trainedSkills?.value ?? []).map(skillLabel).join(', ') || '—';
-    const lore   = s.trainedLore ?? '—';
+    const lore   = (s.trainedSkills?.lore ?? []).join(', ') || s.trainedLore || '—';
+    const feat   = Object.values(s.items ?? {}).map(i => i.name).join(', ') || '—';
     const desc   = firstPara(s.description.value) || s.description.value.replace(/<[^>]+>/g,'').trim().slice(0,110);
-    return `<tr><td><strong>${bg.name}</strong></td><td>${boosts}</td><td>${skills}</td><td>${lore}</td><td>${desc}</td></tr>`;
+    return `<tr><td><strong>${bg.name}</strong></td><td>${boosts}</td><td>${skills}</td><td>${lore}</td><td>${feat}</td><td>${desc}</td></tr>`;
   }).join('\n');
   return `<section class="backgrounds-section" id="backgrounds">
 <div class="class-main">
@@ -1581,7 +1582,7 @@ function renderBackgroundsSection(backgrounds) {
   <p class="section-intro">Each background grants two ability boosts, skill training, a Lore skill, and one 1st-level skill feat.</p>
   <div class="backgrounds-table-wrap">
     <table class="data-table">
-      <thead><tr><th>Background</th><th>Boosts</th><th>Skill</th><th>Lore</th><th>Description</th></tr></thead>
+      <thead><tr><th>Background</th><th>Boosts</th><th>Skill</th><th>Lore</th><th>Skill Feat</th><th>Description</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
   </div>

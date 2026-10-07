@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Terminus Systems exist outside Council space and outside Council law. You grew up in a region where medical care was whatever you could provide yourself, law enforcement was whoever had the bigger weapon, and trust was the most dangerous luxury available. That environment taught you to assess injuries fast and treat them faster - survival in the Terminus often depends on being able to get back up before your enemies notice you went down.</p><p>You are trained in Medicine and gain the Terminus Systems Lore skill. You boost Wisdom or Constitution, and gain a free boost.</p>"
+      "value": "<p>The Terminus Systems exist outside Council space and outside Council law. You grew up in a region where medical care was whatever you could provide yourself, law enforcement was whoever had the bigger weapon, and trust was the most dangerous luxury available. That environment taught you to assess injuries fast and treat them faster - survival in the Terminus often depends on being able to get back up before your enemies notice you went down.</p><p>You are trained in Medicine and the Terminus Systems Lore skill, and you gain the Battle Medicine skill feat. You boost Wisdom or Constitution, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "terminus-survivor",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Terminus Systems",
+    "items": {
+      "tersf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Battle Medicine",
+        "uuid": "Compendium.pf2e.feats-srd.Item.wYerMk6F1RZb0Fwt"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Terminus Systems Lore"
+      ],
       "value": [
-        "med"
+        "medicine"
       ]
     },
     "_migration": {

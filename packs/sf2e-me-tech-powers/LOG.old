@@ -1,15 +1,3 @@
-2026/10/06-16:45:17.112 a5e8 Recovering log #251
-2026/10/06-16:45:17.117 a5e8 Delete type=0 #251
-2026/10/06-16:45:17.117 a5e8 Delete type=3 #250
-2026/10/06-16:45:17.121 6a88 Level-0 table #255: started
-2026/10/06-16:45:17.124 6a88 Level-0 table #255: 16352 bytes OK
-2026/10/06-16:45:17.126 6a88 Delete type=0 #253
-2026/10/06-16:45:17.126 6a88 Manual compaction at level-0 from '!items!meEffDefMatrix00' @ 72057594037927935 : 1 .. '!items!meTechTactCloak0' @ 0 : 0; will stop at (end)
-2026/10/06-16:45:17.126 6a88 Manual compaction at level-1 from '!items!meEffDefMatrix00' @ 72057594037927935 : 1 .. '!items!meTechTactCloak0' @ 0 : 0; will stop at '!items!meTechTactCloak0' @ 1046 : 1
-2026/10/06-16:45:17.126 6a88 Compacting 1@1 + 1@2 files
-2026/10/06-16:45:17.130 6a88 Generated table #256@1: 21 keys, 16352 bytes
-2026/10/06-16:45:17.130 6a88 Compacted 1@1 + 1@2 files => 16352 bytes
-2026/10/06-16:45:17.132 6a88 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/06-16:45:17.132 6a88 Delete type=2 #249
-2026/10/06-16:45:17.132 6a88 Delete type=2 #255
-2026/10/06-16:45:17.132 6a88 Manual compaction at level-1 from '!items!meTechTactCloak0' @ 1046 : 1 .. '!items!meTechTactCloak0' @ 0 : 0; will stop at (end)
+2026/10/06-18:01:39.969 4c10 Recovering log #261
+2026/10/06-18:01:39.975 4c10 Delete type=0 #261
+2026/10/06-18:01:39.975 4c10 Delete type=3 #259

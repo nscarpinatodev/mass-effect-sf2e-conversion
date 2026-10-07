@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>There is nowhere else in the galaxy quite like Omega. The Terminus's largest station has no government, no law, and no shortage of people willing to fill those vacancies violently. You grew up here, which means you learned early that visibility is a liability, that everyone wants something, and that the station's endless crowds are simultaneously your greatest danger and your best cover. Aria T'Loak keeps Omega from destroying itself. Everything else is negotiable.</p><p>You are trained in Stealth and gain the Omega Underworld Lore skill. You boost Dexterity or Charisma, and gain a free boost.</p>"
+      "value": "<p>There is nowhere else in the galaxy quite like Omega. The Terminus's largest station has no government, no law, and no shortage of people willing to fill those vacancies violently. You grew up here, which means you learned early that visibility is a liability, that everyone wants something, and that the station's endless crowds are simultaneously your greatest danger and your best cover. Aria T'Loak keeps Omega from destroying itself. Everything else is negotiable.</p><p>You are trained in Stealth and the Omega Lore skill, and you gain the Experienced Smuggler skill feat. You boost Dexterity or Charisma, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "omega",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Omega Underworld",
+    "items": {
+      "omesf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Experienced Smuggler",
+        "uuid": "Compendium.pf2e.feats-srd.Item.t3btih0O5RUwWynt"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Omega Lore"
+      ],
       "value": [
-        "ste"
+        "stealth"
       ]
     },
     "_migration": {

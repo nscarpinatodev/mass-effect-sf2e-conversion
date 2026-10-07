@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>Humanity's homeworld carries the weight of the species' entire history - every war, every art form, every scientific breakthrough, every catastrophic failure. Earth is the cultural core of the Systems Alliance and the reference point against which humanity measures everything it has become in the galaxy. Growing up here means you were shaped by that history: the music, the politics, the literature, the sports, and the contradictions of a species that nearly destroyed its own planet and then decided to expand into someone else's galaxy.</p><p>You are trained in Performance and gain the Human History Lore skill. You boost Charisma or Wisdom, and gain a free boost.</p>"
+      "value": "<p>Humanity's homeworld carries the weight of the species' entire history - every war, every art form, every scientific breakthrough, every catastrophic failure. Earth is the cultural core of the Systems Alliance and the reference point against which humanity measures everything it has become in the galaxy. Growing up here means you were shaped by that history: the music, the politics, the literature, the sports, and the contradictions of a species that nearly destroyed its own planet and then decided to expand into someone else's galaxy.</p><p>You are trained in Performance and the Earth Lore skill, and you gain the Impressive Performance skill feat. You boost Charisma or Wisdom, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "earth-native",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Human History",
+    "items": {
+      "earsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Impressive Performance",
+        "uuid": "Compendium.pf2e.feats-srd.Item.xqAdXRd2gSQcqp5E"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Earth Lore"
+      ],
       "value": [
-        "prf"
+        "performance"
       ]
     },
     "_migration": {

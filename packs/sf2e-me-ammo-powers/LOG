@@ -1,15 +1,15 @@
-2026/10/06-16:45:17.060 b780 Recovering log #257
-2026/10/06-16:45:17.066 b780 Delete type=0 #257
-2026/10/06-16:45:17.066 b780 Delete type=3 #255
-2026/10/06-16:45:17.069 6a88 Level-0 table #263: started
-2026/10/06-16:45:17.072 6a88 Level-0 table #263: 7605 bytes OK
-2026/10/06-16:45:17.073 6a88 Delete type=0 #261
-2026/10/06-16:45:17.074 6a88 Manual compaction at level-0 from '!items!meAmmoAPierceEff' @ 72057594037927935 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at (end)
-2026/10/06-16:45:17.074 6a88 Manual compaction at level-1 from '!items!meAmmoAPierceEff' @ 72057594037927935 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at '!items!meAmmoWarpFeat00' @ 749 : 1
-2026/10/06-16:45:17.074 6a88 Compacting 1@1 + 1@2 files
-2026/10/06-16:45:17.077 6a88 Generated table #264@1: 14 keys, 7605 bytes
-2026/10/06-16:45:17.077 6a88 Compacted 1@1 + 1@2 files => 7605 bytes
-2026/10/06-16:45:17.079 6a88 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/06-16:45:17.079 6a88 Delete type=2 #259
-2026/10/06-16:45:17.080 6a88 Delete type=2 #263
-2026/10/06-16:45:17.080 6a88 Manual compaction at level-1 from '!items!meAmmoWarpFeat00' @ 749 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at (end)
+2026/10/06-19:08:19.683 9b6c Recovering log #271
+2026/10/06-19:08:19.688 9b6c Delete type=0 #271
+2026/10/06-19:08:19.688 9b6c Delete type=3 #270
+2026/10/06-19:08:19.691 a56c Level-0 table #275: started
+2026/10/06-19:08:19.694 a56c Level-0 table #275: 7593 bytes OK
+2026/10/06-19:08:19.696 a56c Delete type=0 #273
+2026/10/06-19:08:19.696 a56c Manual compaction at level-0 from '!items!meAmmoAPierceEff' @ 72057594037927935 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at (end)
+2026/10/06-19:08:19.696 a56c Manual compaction at level-1 from '!items!meAmmoAPierceEff' @ 72057594037927935 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at '!items!meAmmoWarpFeat00' @ 777 : 1
+2026/10/06-19:08:19.696 a56c Compacting 1@1 + 1@2 files
+2026/10/06-19:08:19.700 a56c Generated table #276@1: 14 keys, 7593 bytes
+2026/10/06-19:08:19.700 a56c Compacted 1@1 + 1@2 files => 7593 bytes
+2026/10/06-19:08:19.701 a56c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/06-19:08:19.701 a56c Delete type=2 #269
+2026/10/06-19:08:19.701 a56c Delete type=2 #275
+2026/10/06-19:08:19.702 a56c Manual compaction at level-1 from '!items!meAmmoWarpFeat00' @ 777 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at (end)

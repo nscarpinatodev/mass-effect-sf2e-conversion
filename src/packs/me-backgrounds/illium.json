@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>Technically, Illium is a lawfully governed asari world. Practically, it operates as a free market with diplomatic immunity - a planet where anything can be bought, sold, or contracted if the paperwork is correct. You navigated that system, which means you know how to read a contract, understand which regulations are enforced, and recognize when someone is using legality as a tool rather than a constraint. The smile and the clause are both part of the negotiation.</p><p>You are trained in Deception and gain the Illium Trade Law Lore skill. You boost Intelligence or Charisma, and gain a free boost.</p>"
+      "value": "<p>Technically, Illium is a lawfully governed asari world. Practically, it operates as a free market with diplomatic immunity - a planet where anything can be bought, sold, or contracted if the paperwork is correct. You navigated that system, which means you know how to read a contract, understand which regulations are enforced, and recognize when someone is using legality as a tool rather than a constraint. The smile and the clause are both part of the negotiation.</p><p>You are trained in Deception and the Illium Lore skill, and you gain the Charming Liar skill feat. You boost Intelligence or Charisma, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "illium",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Illium Trade Law",
+    "items": {
+      "illsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Charming Liar",
+        "uuid": "Compendium.pf2e.feats-srd.Item.B6HbYsLBWb1RR6Fx"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Illium Lore"
+      ],
       "value": [
-        "dec"
+        "deception"
       ]
     },
     "_migration": {

@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Presidium gleams for visiting dignitaries. The Wards are where everyone else lives. Millions of beings from dozens of species crowd into residential towers, commercial districts, and service corridors that most Presidium residents never see. Growing up in the Wards means learning the rhythms of a genuinely multicultural society - who trusts whom, which districts belong to which communities, and what the actual power structures are beneath the ones on the organization chart.</p><p>You are trained in Society and gain the Citadel Wards Lore skill. You boost Charisma or Wisdom, and gain a free boost.</p>"
+      "value": "<p>The Presidium gleams for visiting dignitaries. The Wards are where everyone else lives. Millions of beings from dozens of species crowd into residential towers, commercial districts, and service corridors that most Presidium residents never see. Growing up in the Wards means learning the rhythms of a genuinely multicultural society - who trusts whom, which districts belong to which communities, and what the actual power structures are beneath the ones on the organization chart.</p><p>You are trained in Society and the Citadel Lore skill, and you gain the Streetwise skill feat. You boost Charisma or Wisdom, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "citadel-wards",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Citadel Wards",
+    "items": {
+      "citsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Streetwise",
+        "uuid": "Compendium.pf2e.feats-srd.Item.X2jGFfLU5qI5XVot"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Citadel Lore"
+      ],
       "value": [
-        "soc"
+        "society"
       ]
     },
     "_migration": {

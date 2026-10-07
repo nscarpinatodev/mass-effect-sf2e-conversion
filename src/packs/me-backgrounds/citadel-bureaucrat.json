@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Citadel's administrative machinery is vast enough that millions of careers disappear into it without trace. Yours didn't. You navigated the Presidium's endless layered jurisdictions, learned which regulations were enforced and which were merely words, and developed an instinct for institutional power that most people never acquire. The Council doesn't govern the galaxy so much as it ratifies what the bureaucracy has already decided.</p><p>You are trained in Society and gain the Citadel Politics Lore skill. You boost Intelligence or Charisma, and gain a free boost.</p>"
+      "value": "<p>The Citadel's administrative machinery is vast enough that millions of careers disappear into it without trace. Yours didn't. You navigated the Presidium's endless layered jurisdictions, learned which regulations were enforced and which were merely words, and developed an instinct for institutional power that most people never acquire. The Council doesn't govern the galaxy so much as it ratifies what the bureaucracy has already decided.</p><p>You are trained in Society and the Citadel Council Lore skill, and you gain the Experienced Professional skill feat. You boost Intelligence or Charisma, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "citadel-bureaucrat",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Citadel Politics",
+    "items": {
+      "citsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Experienced Professional",
+        "uuid": "Compendium.pf2e.feats-srd.Item.sMm0UfYxEPpq2Yzd"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Citadel Council Lore"
+      ],
       "value": [
-        "soc"
+        "society"
       ]
     },
     "_migration": {

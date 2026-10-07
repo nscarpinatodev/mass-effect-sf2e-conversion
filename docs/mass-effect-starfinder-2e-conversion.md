@@ -1794,31 +1794,31 @@ Your hybrid discipline reaches its apex, blending biotic and tech into a seamles
 
 *Choose one background during character creation. Backgrounds grant two ability boosts, skill training, a Lore skill, and a 1st-level skill feat.*
 
-| Background | Ability Boosts | Skill | Lore | Description |
-|---|---|---|---|---|
-| Alliance Soldier | Con or Str, Cha or Con or Dex or Int or Str or Wis | Athletics | Alliance Military | You served in the Systems Alliance military, humanity's primary defense force and its voice in galactic politics. Years of training, deployment, and combat experience hardened your body and sharpened your instincts. Whether you survived the Skyllian Blitz, patrolled the Terminus border, or served aboard an Alliance frigate, military service left an indelible mark on how you move, think, and solve problems. |
-| Biotic Prodigy | Con or Cha, Cha or Con or Dex or Int or Str or Wis | Occultism | Biotic Theory | Element zero exposure before birth - or a rare, unexplained neurological event - gifted you with exceptional biotic potential. You were identified early and sent for training at a biotic academy, where instructors noted your unusual raw ability even among students with similar exposure. Most biotics develop adequate field application. You developed something else entirely. |
-| Cerberus Agent | Int or Str, Cha or Con or Dex or Int or Str or Wis | Intimidation | Cerberus Operations | You believed - or needed to believe - in humanity's manifest destiny among the stars. Cerberus recruited you, trained you, and deployed you against threats the Alliance refused to acknowledge. The organization gave you resources, a mission, and the uncomfortable knowledge of what humanity's enemies are actually capable of. Whatever doubts you carry now, the skills remain. |
-| Citadel Bureaucrat | Int or Cha, Cha or Con or Dex or Int or Str or Wis | Society | Citadel Politics | The Citadel's administrative machinery is vast enough that millions of careers disappear into it without trace. Yours didn't. You navigated the Presidium's endless layered jurisdictions, learned which regulations were enforced and which were merely words, and developed an instinct for institutional power that most people never acquire. The Council doesn't govern the galaxy so much as it ratifies what the bureaucracy has already decided. |
-| Citadel Wards | Cha or Wis, Cha or Con or Dex or Int or Str or Wis | Society | Citadel Wards | The Presidium gleams for visiting dignitaries. The Wards are where everyone else lives. Millions of beings from dozens of species crowd into residential towers, commercial districts, and service corridors that most Presidium residents never see. Growing up in the Wards means learning the rhythms of a genuinely multicultural society - who trusts whom, which districts belong to which communities, and what the actual power structures are beneath the ones on the organization chart. |
-| Colonist | Con or Wis, Cha or Con or Dex or Int or Str or Wis | Survival | Frontier Survival | You grew up somewhere humanity wasn't supposed to be able to survive - a colony world at the edge of explored space, an outpost that measured its isolation in months of travel time, a settlement that built everything it needed from whatever the planet provided. That experience gave you a pragmatic relationship with hardship that people raised in the inner systems simply don't have. |
-| Corporate Operative | Int or Cha, Cha or Con or Dex or Int or Str or Wis | Diplomacy | Corporate Affairs | The major corporations operating in galactic space - Eldfell-Ashland, Binary Helix, Synthetic Insights - answer to no government and employ their own security, intelligence, and negotiation assets. You were one of those assets. Your work required knowing when to talk, when to listen, and when to let the contract speak for itself. |
-| Earth Native | Cha or Wis, Cha or Con or Dex or Int or Str or Wis | Performance | Human History | Humanity's homeworld carries the weight of the species' entire history - every war, every art form, every scientific breakthrough, every catastrophic failure. Earth is the cultural core of the Systems Alliance and the reference point against which humanity measures everything it has become in the galaxy. Growing up here means you were shaped by that history: the music, the politics, the literature, the sports, and the contradictions of a species that nearly destroyed its own planet and then decided to expand into someone else's galaxy. |
-| Illium | Int or Cha, Cha or Con or Dex or Int or Str or Wis | Deception | Illium Trade Law | Technically, Illium is a lawfully governed asari world. Practically, it operates as a free market with diplomatic immunity - a planet where anything can be bought, sold, or contracted if the paperwork is correct. You navigated that system, which means you know how to read a contract, understand which regulations are enforced, and recognize when someone is using legality as a tool rather than a constraint. The smile and the clause are both part of the negotiation. |
-| Infiltrator | Dex or Int, Cha or Con or Dex or Int or Str or Wis | Deception | Intelligence Operations | You gathered information that wasn't meant to be gathered. Whether you worked for Alliance Intelligence, a private security firm, or a client you never met in person, your value was your ability to be somewhere you weren't supposed to be and leave without anyone knowing you'd been there. The work changed how you process every room you enter. |
-| Mercenary | Str or Con, Cha or Con or Dex or Int or Str or Wis | Athletics | Mercenary Operations | The Blue Suns, Eclipse, Blood Pack, and dozens of smaller outfits provide the galaxy with armed professionals willing to do what standing militaries won't or can't. You were one of them. The work was rarely clean, always dangerous, and paid well enough that you kept taking contracts. You've learned to evaluate threats fast, because in your line of work you don't get a second chance to reassess. |
-| Noble | Cha or Int, Cha or Con or Dex or Int or Str or Wis | Diplomacy | Aristocracy | Wealth and influence are not the same thing, but you have both. Your family - or the institution you were born into - provided access to education, connections, and resources that most people spend careers trying to acquire. You've been in rooms where galaxy-shaping decisions were made, watched them be made badly, and understood that the real power usually belongs to whoever controls what gets said next. |
-| Omega | Dex or Cha, Cha or Con or Dex or Int or Str or Wis | Stealth | Omega Underworld | There is nowhere else in the galaxy quite like Omega. The Terminus's largest station has no government, no law, and no shortage of people willing to fill those vacancies violently. You grew up here, which means you learned early that visibility is a liability, that everyone wants something, and that the station's endless crowds are simultaneously your greatest danger and your best cover. Aria T'Loak keeps Omega from destroying itself. Everything else is negotiable. |
-| Omni-Tool Engineer | Int or Dex, Cha or Con or Dex or Int or Str or Wis | Crafting | Engineering | You didn't just learn to use an omni-tool. You learned to understand it - the hardware layer, the firmware, the edge cases the manufacturer never anticipated, and the modifications that turn consumer hardware into something else entirely. That knowledge made you valuable to anyone who needed tech that worked in conditions where it wasn't supposed to. |
-| Palaven | Dex or Wis, Cha or Con or Dex or Int or Str or Wis | Acrobatics | Turian Military Doctrine | Every turian serves. This is not metaphor or tradition - it is the organizing principle of an entire civilization. Palaven's mandatory military service structures society around collective duty, hierarchy, and the understanding that the individual exists in service of something larger. Your fifteen years of service gave you military training, a place in the hierarchy, and a set of physical instincts that civilian life cannot replicate. You learned to move through danger efficiently, because fear doesn't excuse failure. |
-| Quarian Pilgrim | Wis or Dex, Cha or Con or Dex or Int or Str or Wis | Crafting | Migrant Fleet | Your Pilgrimage took you away from the Flotilla and into a galaxy that had no reason to trust you. Quarians are tolerated at best, viewed with suspicion at worst. The year or more you spent away from the Fleet - finding something to bring back, finding yourself in the process - changed you in ways that even the Fleet elders couldn't have predicted. You brought back more than a gift. |
-| Scientist | Int or Wis, Cha or Con or Dex or Int or Str or Wis | Arcana | Scientific Research | The fundamental questions - of life, mass effect fields, dark energy, the Protheans, what lies beyond the relay network - pulled you into a life of research. You've worked in corporate labs, university positions, or independent settings where funding was uncertain and curiosity was the only constant. Science is the only methodology you trust completely, which makes you both valuable and occasionally difficult to work with. |
-| Smuggler | Dex or Cha, Cha or Con or Dex or Int or Str or Wis | Thievery | Underworld | The galaxy runs on legal commerce and officially sanctioned contracts. The parts that matter, though, frequently don't. You've moved cargo that couldn't be declared, navigated inspection protocols designed to fail against creative interpretation, and developed a working relationship with people who exist in the spaces between law and its enforcement. You know what things are actually worth and who actually wants them. |
-| Spectre Candidate | Str or Dex, Cha or Con or Dex or Int or Str or Wis | Stealth | Spectre Operations | The Council's Special Tactics and Reconnaissance operatives answer to no one but the Council itself, receive no public acknowledgment, and operate by a mandate that begins and ends with results. You were identified as a potential candidate - screened, evaluated, and subjected to a preparation process that most people never know exists. Whether you've been formally inducted yet or not, you were changed by the process. |
-| Sur'Kesh | Int or Dex, Cha or Con or Dex or Int or Str or Wis | Nature | Sur'Kesh Science | The salarian homeworld is a humid jungle world of extraordinary biological complexity - ecosystems dense enough that new species are still being catalogued, and a culture sophisticated enough to be cataloguing them. Sur'Kesh produced the Special Tasks Group, the galaxy's most effective intelligence service, and the scientific methodologies that underpin much of modern research. Growing up here means an instinctive relationship with living systems - their structures, their vulnerabilities, and their potential applications. |
-| Terminus Survivor | Wis or Con, Cha or Con or Dex or Int or Str or Wis | Medicine | Terminus Systems | The Terminus Systems exist outside Council space and outside Council law. You grew up in a region where medical care was whatever you could provide yourself, law enforcement was whoever had the bigger weapon, and trust was the most dangerous luxury available. That environment taught you to assess injuries fast and treat them faster - survival in the Terminus often depends on being able to get back up before your enemies notice you went down. |
-| Thessia | Int or Wis, Cha or Con or Dex or Int or Str or Wis | Occultism | Thessian Culture | The asari homeworld is everything the species has spent three thousand years becoming - prosperous, cultured, suffused with biotic tradition and diplomatic sophistication. Thessia's schools are among the galaxy's finest. Its biotic academies are the oldest. Growing up here means you absorbed a civilization's worth of accumulated knowledge - including the biotic theory that underlies everything from L2 amplifiers to singularity fields. The galaxy looks different when you can read its physics. |
-| Tuchanka | Str or Con, Cha or Con or Dex or Int or Str or Wis | Intimidation | Tuchanka Warlords | Before the Genophage, Tuchanka was a krogan world of warring clans and fierce territorial contests. After it, the planet became something else - a blasted, radiation-scarred demonstration of what happens when a species is biologically broken by design. Growing up here demanded physical toughness and the ability to project power, because the alternative was to become prey. Tuchanka does not produce diplomats. It produces survivors who understand exactly what they survived. |
+| Background | Ability Boosts | Skill | Lore | Skill Feat | Description |
+|---|---|---|---|---|---|
+| Alliance Soldier | Con or Str, Cha or Con or Dex or Int or Str or Wis | Athletics | Systems Alliance Lore | Quick Jump | You served in the Systems Alliance military, humanity's primary defense force and its voice in galactic politics. Years of training, deployment, and combat experience hardened your body and sharpened your instincts. Whether you survived the Skyllian Blitz, patrolled the Terminus border, or served aboard an Alliance frigate, military service left an indelible mark on how you move, think, and solve problems. |
+| Biotic Prodigy | Con or Cha, Cha or Con or Dex or Int or Str or Wis | Occultism | Element Zero Lore | Oddity Identification | Element zero exposure before birth - or a rare, unexplained neurological event - gifted you with exceptional biotic potential. You were identified early and sent for training at a biotic academy, where instructors noted your unusual raw ability even among students with similar exposure. Most biotics develop adequate field application. You developed something else entirely. |
+| Cerberus Agent | Int or Str, Cha or Con or Dex or Int or Str or Wis | Intimidation | Cerberus Lore | Quick Coercion | You believed - or needed to believe - in humanity's manifest destiny among the stars. Cerberus recruited you, trained you, and deployed you against threats the Alliance refused to acknowledge. The organization gave you resources, a mission, and the uncomfortable knowledge of what humanity's enemies are actually capable of. Whatever doubts you carry now, the skills remain. |
+| Citadel Bureaucrat | Int or Cha, Cha or Con or Dex or Int or Str or Wis | Society | Citadel Council Lore | Experienced Professional | The Citadel's administrative machinery is vast enough that millions of careers disappear into it without trace. Yours didn't. You navigated the Presidium's endless layered jurisdictions, learned which regulations were enforced and which were merely words, and developed an instinct for institutional power that most people never acquire. The Council doesn't govern the galaxy so much as it ratifies what the bureaucracy has already decided. |
+| Citadel Wards | Cha or Wis, Cha or Con or Dex or Int or Str or Wis | Society | Citadel Lore | Streetwise | The Presidium gleams for visiting dignitaries. The Wards are where everyone else lives. Millions of beings from dozens of species crowd into residential towers, commercial districts, and service corridors that most Presidium residents never see. Growing up in the Wards means learning the rhythms of a genuinely multicultural society - who trusts whom, which districts belong to which communities, and what the actual power structures are beneath the ones on the organization chart. |
+| Colonist | Con or Wis, Cha or Con or Dex or Int or Str or Wis | Survival | Frontier Lore | Forager | You grew up somewhere humanity wasn't supposed to be able to survive - a colony world at the edge of explored space, an outpost that measured its isolation in months of travel time, a settlement that built everything it needed from whatever the planet provided. That experience gave you a pragmatic relationship with hardship that people raised in the inner systems simply don't have. |
+| Corporate Operative | Int or Cha, Cha or Con or Dex or Int or Str or Wis | Diplomacy | Corporate Lore | Bargain Hunter | The major corporations operating in galactic space - Eldfell-Ashland, Binary Helix, Synthetic Insights - answer to no government and employ their own security, intelligence, and negotiation assets. You were one of those assets. Your work required knowing when to talk, when to listen, and when to let the contract speak for itself. |
+| Earth Native | Cha or Wis, Cha or Con or Dex or Int or Str or Wis | Performance | Earth Lore | Impressive Performance | Humanity's homeworld carries the weight of the species' entire history - every war, every art form, every scientific breakthrough, every catastrophic failure. Earth is the cultural core of the Systems Alliance and the reference point against which humanity measures everything it has become in the galaxy. Growing up here means you were shaped by that history: the music, the politics, the literature, the sports, and the contradictions of a species that nearly destroyed its own planet and then decided to expand into someone else's galaxy. |
+| Illium | Int or Cha, Cha or Con or Dex or Int or Str or Wis | Deception | Illium Lore | Charming Liar | Technically, Illium is a lawfully governed asari world. Practically, it operates as a free market with diplomatic immunity - a planet where anything can be bought, sold, or contracted if the paperwork is correct. You navigated that system, which means you know how to read a contract, understand which regulations are enforced, and recognize when someone is using legality as a tool rather than a constraint. The smile and the clause are both part of the negotiation. |
+| Infiltrator | Dex or Int, Cha or Con or Dex or Int or Str or Wis | Deception | Infiltrator Lore | Lie to Me | You gathered information that wasn't meant to be gathered. Whether you worked for Alliance Intelligence, a private security firm, or a client you never met in person, your value was your ability to be somewhere you weren't supposed to be and leave without anyone knowing you'd been there. The work changed how you process every room you enter. |
+| Mercenary | Str or Con, Cha or Con or Dex or Int or Str or Wis | Athletics | Mercenary Lore | Titan Wrestler | The Blue Suns, Eclipse, Blood Pack, and dozens of smaller outfits provide the galaxy with armed professionals willing to do what standing militaries won't or can't. You were one of them. The work was rarely clean, always dangerous, and paid well enough that you kept taking contracts. You've learned to evaluate threats fast, because in your line of work you don't get a second chance to reassess. |
+| Noble | Cha or Int, Cha or Con or Dex or Int or Str or Wis | Diplomacy | Politics Lore | Hobnobber | Wealth and influence are not the same thing, but you have both. Your family - or the institution you were born into - provided access to education, connections, and resources that most people spend careers trying to acquire. You've been in rooms where galaxy-shaping decisions were made, watched them be made badly, and understood that the real power usually belongs to whoever controls what gets said next. |
+| Omega | Dex or Cha, Cha or Con or Dex or Int or Str or Wis | Stealth | Omega Lore | Experienced Smuggler | There is nowhere else in the galaxy quite like Omega. The Terminus's largest station has no government, no law, and no shortage of people willing to fill those vacancies violently. You grew up here, which means you learned early that visibility is a liability, that everyone wants something, and that the station's endless crowds are simultaneously your greatest danger and your best cover. Aria T'Loak keeps Omega from destroying itself. Everything else is negotiable. |
+| Omni-Tool Engineer | Int or Dex, Cha or Con or Dex or Int or Str or Wis | Crafting | Omni-Tool Lore | Quick Repair | You didn't just learn to use an omni-tool. You learned to understand it - the hardware layer, the firmware, the edge cases the manufacturer never anticipated, and the modifications that turn consumer hardware into something else entirely. That knowledge made you valuable to anyone who needed tech that worked in conditions where it wasn't supposed to. |
+| Palaven | Dex or Wis, Cha or Con or Dex or Int or Str or Wis | Acrobatics | Palaven Lore | Cat Fall | Every turian serves. This is not metaphor or tradition - it is the organizing principle of an entire civilization. Palaven's mandatory military service structures society around collective duty, hierarchy, and the understanding that the individual exists in service of something larger. Your fifteen years of service gave you military training, a place in the hierarchy, and a set of physical instincts that civilian life cannot replicate. You learned to move through danger efficiently, because fear doesn't excuse failure. |
+| Quarian Pilgrim | Wis or Dex, Cha or Con or Dex or Int or Str or Wis | Crafting | Migrant Fleet Lore | Specialty Crafting | Your Pilgrimage took you away from the Flotilla and into a galaxy that had no reason to trust you. Quarians are tolerated at best, viewed with suspicion at worst. The year or more you spent away from the Fleet - finding something to bring back, finding yourself in the process - changed you in ways that even the Fleet elders couldn't have predicted. You brought back more than a gift. |
+| Scientist | Int or Wis, Cha or Con or Dex or Int or Str or Wis | Arcana | Academia Lore | Quick Identification | The fundamental questions - of life, mass effect fields, dark energy, the Protheans, what lies beyond the relay network - pulled you into a life of research. You've worked in corporate labs, university positions, or independent settings where funding was uncertain and curiosity was the only constant. Science is the only methodology you trust completely, which makes you both valuable and occasionally difficult to work with. |
+| Smuggler | Dex or Cha, Cha or Con or Dex or Int or Str or Wis | Thievery | Smuggling Lore | Subtle Theft | The galaxy runs on legal commerce and officially sanctioned contracts. The parts that matter, though, frequently don't. You've moved cargo that couldn't be declared, navigated inspection protocols designed to fail against creative interpretation, and developed a working relationship with people who exist in the spaces between law and its enforcement. You know what things are actually worth and who actually wants them. |
+| Spectre Candidate | Str or Dex, Cha or Con or Dex or Int or Str or Wis | Stealth | Spectre Lore | Terrain Stalker | The Council's Special Tactics and Reconnaissance operatives answer to no one but the Council itself, receive no public acknowledgment, and operate by a mandate that begins and ends with results. You were identified as a potential candidate - screened, evaluated, and subjected to a preparation process that most people never know exists. Whether you've been formally inducted yet or not, you were changed by the process. |
+| Sur'Kesh | Int or Dex, Cha or Con or Dex or Int or Str or Wis | Nature | Sur'Kesh Lore | Dubious Knowledge | The salarian homeworld is a humid jungle world of extraordinary biological complexity - ecosystems dense enough that new species are still being catalogued, and a culture sophisticated enough to be cataloguing them. Sur'Kesh produced the Special Tasks Group, the galaxy's most effective intelligence service, and the scientific methodologies that underpin much of modern research. Growing up here means an instinctive relationship with living systems - their structures, their vulnerabilities, and their potential applications. |
+| Terminus Survivor | Wis or Con, Cha or Con or Dex or Int or Str or Wis | Medicine | Terminus Systems Lore | Battle Medicine | The Terminus Systems exist outside Council space and outside Council law. You grew up in a region where medical care was whatever you could provide yourself, law enforcement was whoever had the bigger weapon, and trust was the most dangerous luxury available. That environment taught you to assess injuries fast and treat them faster - survival in the Terminus often depends on being able to get back up before your enemies notice you went down. |
+| Thessia | Int or Wis, Cha or Con or Dex or Int or Str or Wis | Occultism | Thessia Lore | Schooled in Secrets | The asari homeworld is everything the species has spent three thousand years becoming - prosperous, cultured, suffused with biotic tradition and diplomatic sophistication. Thessia's schools are among the galaxy's finest. Its biotic academies are the oldest. Growing up here means you absorbed a civilization's worth of accumulated knowledge - including the biotic theory that underlies everything from L2 amplifiers to singularity fields. The galaxy looks different when you can read its physics. |
+| Tuchanka | Str or Con, Cha or Con or Dex or Int or Str or Wis | Intimidation | Tuchanka Lore | Intimidating Glare | Before the Genophage, Tuchanka was a krogan world of warring clans and fierce territorial contests. After it, the planet became something else - a blasted, radiation-scarred demonstration of what happens when a species is biologically broken by design. Growing up here demanded physical toughness and the ability to project power, because the alternative was to become prey. Tuchanka does not produce diplomats. It produces survivors who understand exactly what they survived. |
 
 ---
 
@@ -2018,20 +2018,26 @@ Your active ammo powers each deal **+2 additional damage dice** (replaces Devast
 You deploy a hovering AI combat drone that harasses enemies and draws their fire away from your allies.
 You deploy a Combat Drone at a point within **30 feet**. The drone occupies a 5-foot space, has **20 HP**, AC 15, and cannot be healed. It acts on your initiative and persists for up to **1 minute** or until destroyed.
 On each of your turns, you can direct the drone as a free action. The drone's presence applies **Off-Guard** to one adjacent enemy of your choice (your choice, once per your turn). As an action, you can order it to make a ranged Strike (+4 attack, 1d6 electricity, 20-foot range) against a target within 30 feet.
-If the drone is destroyed, it explodes in a **5-foot burst** dealing 1d6 electricity damage (Reflex DC 15 basic save).
+If the drone is destroyed, it explodes in a 5-foot burst dealing 1d6 electricity damage (basic Reflex save against your class DC).
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
 #### Cryo Blast ◆◆ — Level 1
 
 You fire a cryogenic burst from your omni-tool that flash-freezes targets in a wide area, slowing their movements.
-All creatures in a **10-foot radius** burst within **30 feet** must attempt a **Fortitude** save against your class DC.
+All creatures in a 10-foot radius burst within **30 feet** must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 cold** damage.
 **Failure** The target takes **2d6 cold** damage and is **Slowed 1** until the end of its next turn.
 **Critical Failure** The target takes **4d6 cold** damage and is **Immobilized** until the end of its next turn. If the target is already Slowed, it is Immobilized instead.
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -2053,7 +2059,7 @@ Choose a creature within **30 feet**. It must attempt a Reflex save. Incinerate 
 #### Overload ◆◆ — Level 1
 
 You fire a concentrated electromagnetic pulse that shreds kinetic shields and fries synthetic circuitry.
-Choose a creature within **30 feet**. The target must attempt a **Reflex** save against your class DC. Electricity damage dealt to kinetic shields is doubled by the shield system.
+Choose a creature within **30 feet**. The target must attempt a Reflex save against your class DC. Electricity damage dealt to kinetic shields is doubled by the shield system.
 **Critical Success** Unaffected.
 **Success** The target takes **1d8 electricity** damage.
 **Failure** The target takes **2d8 electricity** damage. Synthetic or mech creatures take an additional **1d8 electricity** damage.
@@ -2061,17 +2067,23 @@ Choose a creature within **30 feet**. The target must attempt a **Reflex** save 
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Sabotage ◆◆ — Level 1
 
 You hack a synthetic enemy's combat VI, turning it against its own allies and causing it to attack everything in sight.
 **Requirements** The target must be a synthetic, mech, or drone-type creature.
-Choose a qualifying target within **30 feet**. The target must attempt a **Will** save against your class DC.
+Choose a qualifying target within **30 feet**. The target must attempt a Will save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target is **Confused** until the end of your next turn.
 **Failure** The target treats all creatures as enemies and attacks the nearest target each round for 1 round. At the end of each of its turns, it can attempt a new Will save to end the effect.
 **Critical Failure** As failure, but the effect lasts for 1 minute. The target also attacks with its maximum damage each round.
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -2116,12 +2128,15 @@ Your Combat Drone gains **one additional attack per round** (total two attacks o
 *Prerequisite: AI Hacking*
 
 You hack deeper into an enemy's nervous system or control chip than standard AI Hacking allows, affecting even organic targets.
-Choose a creature within **30 feet**. It must attempt a **Will** save against your class DC.
+Choose a creature within **30 feet**. It must attempt a Will save against your class DC.
 **Critical Success:** Unaffected.
 **Success:** The target is **Stunned 1**.
 **Failure:** The target is **Stunned 2** and takes **3d6 electricity** damage.
 **Critical Failure:** The target is **Stunned 3**, takes 6d6 electricity damage, and acts as if affected by AI Hacking for 1 round.
 Works on organic and synthetic creatures alike.
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 *Prerequisite: AI Hacking. Classes: Engineer.*
 
 ---
@@ -2173,10 +2188,13 @@ Target a point within **30 feet**. All creatures in a 15-foot burst must attempt
 *Prerequisite: System Override*
 
 You broadcast a catastrophic shutdown signal across all synthetic systems in the area, freezing them mid-operation.
-All **synthetic** enemies within **30 feet** must attempt a **Will** DC 22 save.
+All **synthetic** enemies within a 30-foot emanation must attempt a Will save against your class DC.
 **Success:** Stunned 1.
 **Failure:** Stunned 2 and take 4d6 electricity damage.
 **Critical Failure:** Stunned 3 and take 8d6 electricity damage; can't use tech abilities for 1 round.
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 *Prerequisite: System Override. Classes: Engineer.*
 
 ---
@@ -2210,7 +2228,7 @@ Choose a point within **60 feet**. All creatures in a 10-foot burst centered on 
 #### Pull ◆ — Level 1
 
 You project a focused mass effect field that seizes a single target and yanks them toward you.
-Choose a creature within **30 feet**. The target must attempt a **Reflex** save against your class DC.
+Choose a creature within **30 feet**. The target must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
@@ -2218,11 +2236,14 @@ Choose a creature within **30 feet**. The target must attempt a **Reflex** save 
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Shockwave ◆◆ — Level 1
 
 You slam biotic energy into the ground, sending a rolling kinetic shockwave along the surface that topples everything in its path.
-All creatures in a **60-foot line** must attempt a **Reflex** save against your class DC.
+All creatures in a 60-foot line must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The creature takes **1d6 bludgeoning** damage.
 **Failure** The creature takes **2d6 bludgeoning** damage and is pushed 10 feet away from you.
@@ -2230,11 +2251,14 @@ All creatures in a **60-foot line** must attempt a **Reflex** save against your 
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 #### Singularity ◆◆◆ — Level 1
 
 You create a localized mass effect gravity well that pulls nearby enemies in and suspends them helplessly.
-You create a Singularity at a point within **60 feet**. All creatures within a **20-foot radius** burst centered on that point must attempt a **Reflex** save against your class DC.
+You create a Singularity at a point within **60 feet**. All creatures within a 20-foot radius burst centered on that point must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The creature is pulled 10 feet toward the singularity's center.
 **Failure** The creature is pulled to the singularity's center and becomes **Restrained** (Escape DC equals your class DC). The singularity persists until the start of your next turn; you may Sustain it as a free action each round for up to 1 minute.
@@ -2242,11 +2266,14 @@ You create a Singularity at a point within **60 feet**. All creatures within a *
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 #### Throw ◆◆ — Level 1
 
 You project a mass effect field that hurls a creature or object with violent force.
-Choose a creature or unattended object within **60 feet**. The target must attempt a **Fortitude** save against your class DC.
+Choose a creature or unattended object within **60 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target is pushed 5 feet away from you.
 **Failure** The target takes **2d8 bludgeoning** damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
@@ -2254,16 +2281,22 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Warp ◆◆ — Level 1
 
 You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.
-Choose a creature within **60 feet**. The target must attempt a **Fortitude** save against your class DC.
+Choose a creature within **60 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 void** damage.
 **Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
 **Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -2298,7 +2331,10 @@ On a **failure**, the target also becomes **Frightened 1** in addition to normal
 *Prerequisite: Warp Upgrade*
 
 You generate a sustained dark energy aura that continuously destabilizes everything around you.
-You project a **15-foot warp aura** for **1 minute**. At the start of each of your turns, all enemies within the aura take **1d4 void damage** and must succeed on a **Fortitude** save (DC = your class DC) or become Flat-Footed until the start of your next turn. Dismiss as a free action.
+You project a 15-foot warp aura for **1 minute**. At the start of each of your turns, all enemies within the aura take **1d4 void damage** and must succeed on a Fortitude save against your class DC or become Off-Guard until the start of your next turn. Dismiss as a free action.
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 *Prerequisite: Warp Upgrade. Classes: Adept.*
 
 ---
@@ -2308,6 +2344,9 @@ You project a **15-foot warp aura** for **1 minute**. At the start of each of yo
 
 The singularity fields you generate have grown powerful enough to distort space itself on a larger scale.
 Singularity's radius increases to **30 feet** (up from 25 feet with Singularity Upgrade). Any creature entering the field for the first time must succeed on a Reflex save against your class DC or be **Grabbed** immediately. Creatures already inside the field are **Slowed 1** for as long as they remain within it.
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 *Prerequisite: Singularity Upgrade. Classes: Adept.*
 
 ---
@@ -2326,6 +2365,9 @@ Whenever you trigger a Biotic Explosion, **one adjacent enemy within 10 feet** o
 
 You have unlocked a deeper understanding of dark energy manipulation, pushing your biotic abilities beyond any recorded limit.
 All biotic power save DCs you use increase by **2**. Your biotic damage ignores up to **5 points** of void damage resistance. Enemies that critically fail saves against your biotic powers become **Frightened 2** in addition to normal effects.
+
+---
+*Automation: the +2 is added to your class DC, which your powers use, and creatures that critically fail a save against your biotic powers become Frightened 2. Void resistance is not bypassed automatically.*
 *Prerequisite: Superior Adept Mastery. Classes: Adept.*
 
 ---
@@ -2344,12 +2386,15 @@ While in Ascendant Form: all biotic powers you use are **free actions**; all bio
 
 #### Biotic Charge ◆◆ — Level 1
 
-You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to **60 feet** in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a **Reflex save** against your class DC.
+You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to **60 feet** in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 bludgeoning** damage.
 **Failure** The target takes **3d6 bludgeoning** damage and is knocked **prone**. Your Biotic Barrier recharges half of its maximum barrier HP.
 **Critical Failure** As failure, but **6d6 bludgeoning** and pushed **5 feet** away from you. Your Biotic Barrier recharges to full.
 **Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -2385,20 +2430,23 @@ Remove this effect to return to standard ammunition.
 
 You discharge all of your biotic barrier energy in a devastating point-blank explosion, obliterating everything around you at the cost of your defenses.
 **Requirements** You have an active Biotic Barrier with at least 1 HP remaining.
-You expend your entire Biotic Barrier in a **10-foot emanation**. The damage equals the barrier's current HP at the time of detonation. All creatures in the area must attempt a **Fortitude save** against your class DC.
+You expend your entire Biotic Barrier in a 10-foot emanation. The damage equals the barrier's current HP at the time of detonation. All creatures in the area must attempt a basic Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** Half damage.
 **Failure** Full damage and pushed **5 feet** away from you.
 **Critical Failure** Double damage, pushed **10 feet** away, and knocked **prone**.
-Your Biotic Barrier is immediately depleted after using this power.
+Your Biotic Barrier is immediately depleted after using this power. Using Nova records the barrier's HP as this detonation's **force** damage and empties the barrier.
 **Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
 #### Pull ◆ — Level 1
 
 You project a focused mass effect field that seizes a single target and yanks them toward you.
-Choose a creature within **30 feet**. The target must attempt a **Reflex** save against your class DC.
+Choose a creature within **30 feet**. The target must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
@@ -2406,16 +2454,22 @@ Choose a creature within **30 feet**. The target must attempt a **Reflex** save 
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Shockwave ◆◆ — Level 1
 
 You slam biotic energy into the ground, sending a rolling kinetic shockwave along the surface that topples everything in its path.
-All creatures in a **60-foot line** must attempt a **Reflex** save against your class DC.
+All creatures in a 60-foot line must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The creature takes **1d6 bludgeoning** damage.
 **Failure** The creature takes **2d6 bludgeoning** damage and is pushed 10 feet away from you.
 **Critical Failure** As failure, but **4d6 bludgeoning** and also **Knocked Prone**.
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -2537,12 +2591,15 @@ Choose a creature within **30 feet**. It must attempt a Reflex save. Incinerate 
 
 You hack a synthetic enemy's combat VI, turning it against its own allies and causing it to attack everything in sight.
 **Requirements** The target must be a synthetic, mech, or drone-type creature.
-Choose a qualifying target within **30 feet**. The target must attempt a **Will** save against your class DC.
+Choose a qualifying target within **30 feet**. The target must attempt a Will save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target is **Confused** until the end of your next turn.
 **Failure** The target treats all creatures as enemies and attacks the nearest target each round for 1 round. At the end of each of its turns, it can attempt a new Will save to end the effect.
 **Critical Failure** As failure, but the effect lasts for 1 minute. The target also attacks with its maximum damage each round.
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -2627,7 +2684,10 @@ Once per encounter, when you reduce an enemy to 0 HP, **Tactical Cloak automatic
 *Prerequisite: Assassination Protocol*
 
 A critical strike made from the shadows carries terrifying force multipliers that push damage beyond the edge of comprehension.
-When you score a **critical hit** with a Strike made while Tactical Cloak is active, you deal an additional **2d6 precision damage** (stacks with Assassination Protocol's +3d6 for a total of +5d6 on a crit). Enemies that witness this must succeed on a **Will** DC 20 save or become **Frightened 2**.
+When you score a **critical hit** with a Strike made while Tactical Cloak is active, you deal an additional **2d6 precision damage** (stacks with Assassination Protocol's +3d6 for a total of +5d6 on a crit). Enemies that witness this must succeed on a Will save against your class DC or become **Frightened 2**.
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 *Prerequisite: Assassination Protocol. Classes: Infiltrator.*
 
 ---
@@ -2646,12 +2706,15 @@ The **first Strike you make each turn** while Tactical Cloak is active is treate
 #### Cryo Blast ◆◆ — Level 1
 
 You fire a cryogenic burst from your omni-tool that flash-freezes targets in a wide area, slowing their movements.
-All creatures in a **10-foot radius** burst within **30 feet** must attempt a **Fortitude** save against your class DC.
+All creatures in a 10-foot radius burst within **30 feet** must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 cold** damage.
 **Failure** The target takes **2d6 cold** damage and is **Slowed 1** until the end of its next turn.
 **Critical Failure** The target takes **4d6 cold** damage and is **Immobilized** until the end of its next turn. If the target is already Slowed, it is Immobilized instead.
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -2673,7 +2736,7 @@ Choose a point within **60 feet**. All creatures in a 15-foot burst centered on 
 #### Overload ◆◆ — Level 1
 
 You fire a concentrated electromagnetic pulse that shreds kinetic shields and fries synthetic circuitry.
-Choose a creature within **30 feet**. The target must attempt a **Reflex** save against your class DC. Electricity damage dealt to kinetic shields is doubled by the shield system.
+Choose a creature within **30 feet**. The target must attempt a Reflex save against your class DC. Electricity damage dealt to kinetic shields is doubled by the shield system.
 **Critical Success** Unaffected.
 **Success** The target takes **1d8 electricity** damage.
 **Failure** The target takes **2d8 electricity** damage. Synthetic or mech creatures take an additional **1d8 electricity** damage.
@@ -2681,19 +2744,25 @@ Choose a creature within **30 feet**. The target must attempt a **Reflex** save 
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Tech Armor ◆◆ — Level 1
 
 You activate a hardlight exoskeleton projected from your omni-tool, reinforcing your body with a crackling energy shell that detonates if overwhelmed.
-You gain the Tech Armor effect: **+2 circumstance bonus to AC**. If you take 20 or more damage from a single hit while this effect is active, it detonates â€” all creatures in a **10-foot emanation** take **2d6 electricity** damage (Reflex DC 18 basic save) and the effect ends. You may also voluntarily detonate it as a free action on your turn.
+You gain the Tech Armor effect: **+2 circumstance bonus to AC**. If you take 20 or more damage from a single hit while this effect is active, it detonates — all creatures in a 10-foot emanation take **2d6 electricity** damage (basic Reflex save against your class DC) and the effect ends. You may also voluntarily detonate it as a free action on your turn.
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
 #### Throw ◆◆ — Level 1
 
 You project a mass effect field that hurls a creature or object with violent force.
-Choose a creature or unattended object within **60 feet**. The target must attempt a **Fortitude** save against your class DC.
+Choose a creature or unattended object within **60 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target is pushed 5 feet away from you.
 **Failure** The target takes **2d8 bludgeoning** damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
@@ -2701,16 +2770,22 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Warp ◆◆ — Level 1
 
 You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.
-Choose a creature within **60 feet**. The target must attempt a **Fortitude** save against your class DC.
+Choose a creature within **60 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 void** damage.
 **Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
 **Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -2816,12 +2891,15 @@ Adrenaline Rush and Fortification can both be activated **simultaneously as free
 
 You perform a deep hack of a synthetic enemy's core AI, fully subverting its combat programming and converting it to fight for your side.
 **Requirements** The target must be a synthetic or mech-type creature that is not immune to mental effects.
-Choose a qualifying target within **30 feet**. The target must attempt a **Will** save against your class DC.
+Choose a qualifying target within **30 feet**. The target must attempt a Will save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target is **Stunned 1**.
 **Failure** The target becomes your ally for up to **1 minute**, fighting as directed. This effect ends immediately if the target takes damage from one of your allies exceeding 10 HP in a single hit. At the end of each minute, it can attempt a new Will save to end the effect.
 **Critical Failure** As failure, but the target also has a +2 circumstance bonus to attack rolls and saving throws while under your control (its combat programming has been maximized).
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -2837,24 +2915,30 @@ Remove this effect to return to standard ammunition.
 #### Damping ◆◆ — Level 1
 
 You deploy a proximity mine that emits a dampening pulse, scrambling the neural implants and omni-tool interfaces of all nearby enemies.
-You place a Damping Mine at a point within **30 feet**. All creatures in a **10-foot radius** burst must attempt a **Will** save against your class DC.
+You place a Damping Mine at a point within **30 feet**. All creatures in a 10-foot radius burst must attempt a Will save against your class DC.
 **Critical Success** Unaffected.
-**Success** The creature is **Stupefied 1** until the start of your next turn (it can use Tech and Biotic powers, but at a â€“1 penalty to DCs and attack rolls with them).
+**Success** The creature is **Stupefied 1** until the start of your next turn (it can use Tech and Biotic powers, but at a –1 penalty to DCs and attack rolls with them).
 **Failure** The creature cannot use Tech or Biotic powers until the start of your next turn and is **Stupefied 2**.
 **Critical Failure** As failure, but the effect lasts until the end of the affected creature's next turn.
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 #### Dark Channel ◆◆ — Level 1
 
-You mark a target with a persistent dark energy curse that eats away at them from within â€” and leaps to a new host when they fall.
-Choose a creature within **30 feet**. The target must attempt a **Fortitude** save against your class DC.
+You mark a target with a persistent dark energy curse that eats away at them from within — and leaps to a new host when they fall.
+Choose a creature within **30 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 void** damage.
 **Failure** The target takes **1d6 void** damage and gains **1d6 persistent void** damage (DC 15 flat check to end). When a creature affected by Dark Channel is reduced to 0 HP, the persistent void damage automatically transfers to the nearest enemy within **30 feet**.
 **Critical Failure** As failure, but **2d6 persistent void** damage (DC 18 flat check to end).
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -2872,9 +2956,12 @@ The Decoy lasts for **1 minute**, until destroyed, or until you use Decoy again 
 
 You deploy a hovering electrocution drone that follows you and automatically zaps any enemy that ventures too close.
 You deploy a Defense Drone that orbits you. The drone has **10 HP**, is immune to electricity, and cannot move independently (it follows you). It persists for up to **1 minute** or until destroyed.
-At the start of each of your turns, the drone automatically zaps all enemies within **10 feet** of you: each must attempt a **Reflex** DC 18 save or take **1d6 electricity** damage (half on a success).
+At the start of each of your turns, the drone automatically zaps all enemies within **10 feet** of you: each must attempt a basic Reflex save against your class DC or take **1d6 electricity** damage (half on a success).
 Additionally, any enemy that hits you with a melee attack while the drone is active takes **1d4 electricity** damage (no save) as the drone retaliates.
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -2890,7 +2977,7 @@ You gain the Defense Matrix effect: **resistance 3 to all damage**. You can Purg
 
 You reach into an organic creature's nervous system with a mass effect field and seize direct control of their actions, turning them against their own allies.
 **Requirements** The target must be an organic creature.
-Choose a creature within **30 feet**. The target must attempt a **Will** save against your class DC.
+Choose a creature within **30 feet**. The target must attempt a Will save against your class DC.
 **Critical Success** Unaffected.
 **Success** The creature is **Confused** until the end of its next turn.
 **Failure** The creature is under your control for 1 round, treating you and your allies as friends and enemies as foes. It uses its actions as you direct. At the end of each of its turns, it can attempt a new Will save to end the effect.
@@ -2898,11 +2985,14 @@ Choose a creature within **30 feet**. The target must attempt a **Will** save ag
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Energy Drain ◆◆ — Level 1
 
 You fire an omni-tool beam that siphons kinetic barrier energy directly from a target and transfers it to your own shields.
-Choose a creature within **30 feet**. The target must attempt a **Fortitude** save against your class DC.
+Choose a creature within **30 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d8 electricity** damage, or loses 10 shield HP if it has an active kinetic shield.
 **Failure** Against a shielded target: drain up to **20 HP of shields**; you gain that amount as temp HP (stacking with existing shields, up to your maximum). Against an unshielded target: **2d8 electricity** damage and you regain 10 temp HP.
@@ -2910,16 +3000,22 @@ Choose a creature within **30 feet**. The target must attempt a **Fortitude** sa
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Flare ◆◆◆ — Level 1
 
 You gather and compress an enormous sphere of biotic dark energy and hurl it forward in a slow-moving but catastrophically destructive projectile.
-You launch a Flare projectile at a point within **60 feet**. On impact, it detonates in a **15-foot radius** burst. All creatures in the area must attempt a **Reflex** save against your class DC.
+You launch a Flare projectile at a point within **60 feet**. On impact, it detonates in a 15-foot radius burst. All creatures in the area must attempt a Reflex save against your class DC.
 **Critical Success** Half damage.
 **Success** Full damage.
 **Failure** **6d6 void** damage. Any Biotic Barriers in the area are immediately depleted.
 **Critical Failure** **12d6 void** damage, all Biotic Barriers depleted, and targets are knocked prone.
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -2934,7 +3030,7 @@ Your kinetic shield maximum is doubled until the start of your next turn. Immedi
 #### Lash ◆◆ — Level 1
 
 You extend a whip-like biotic tendril that snares an enemy and violently yanks them toward you, dealing damage on impact.
-Choose a creature within **30 feet**. The target must attempt a **Reflex** save against your class DC.
+Choose a creature within **30 feet**. The target must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 bludgeoning** damage.
 **Failure** The target is pulled up to **30 feet** toward you and takes **2d6 bludgeoning** damage. If pulled adjacent to you, it is Off-Guard until the start of your next turn.
@@ -2942,11 +3038,14 @@ Choose a creature within **30 feet**. The target must attempt a **Reflex** save 
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Lift ◆◆ — Level 1
 
 You unleash an anti-gravity sphere that violently hurls nearby creatures into the air, leaving them floating helplessly.
-All creatures in a **10-foot radius** burst within **30 feet** must attempt a **Reflex** save against your class DC.
+All creatures in a 10-foot radius burst within **30 feet** must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
 **Success** The creature is lifted 5 feet off the ground and becomes **Off-Guard** until the start of your next turn.
 **Failure** The creature is lifted 10 feet into the air and becomes **Grabbed** and **Off-Guard** until the start of your next turn. When the effect ends, the creature falls and takes appropriate fall damage.
@@ -2954,12 +3053,15 @@ All creatures in a **10-foot radius** burst within **30 feet** must attempt a **
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
 
 #### Neural Shock ◆◆ — Level 1
 
 You fire a targeted bio-electric pulse through a specialized omni-tool attachment that overloads an organic creature's nervous system.
 **Requirements** The target must be an organic creature.
-Choose a qualifying creature within **30 feet**. The target must attempt a **Fortitude** save against your class DC.
+Choose a qualifying creature within **30 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 electricity** damage.
 **Failure** The target takes **2d6 electricity** damage and is **Stunned 1**.
@@ -2967,11 +3069,14 @@ Choose a qualifying creature within **30 feet**. The target must attempt a **For
 **Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Phasic Rounds ◆◆ — Level 1
 
 You have been trained in the use of phasic rounds. Using two actions, you can modify your ammunition to gain the following features:
-Rounds coated in a mass effect field that phases through all defensive layers. Phasic rounds bypass kinetic shields, biotic barriers, and Combat Armor Frames entirely â€” damage is dealt directly to HP. However, the phasing effect reduces total damage dealt to **40%**.
+Rounds coated in a mass effect field that phases through all defensive layers. Phasic rounds bypass kinetic shields, biotic barriers, and Combat Armor Frames entirely — damage is dealt directly to HP. However, the phasing effect reduces total damage dealt to **40%**.
 Remove this effect to return to standard ammunition.
 
 ---
@@ -2979,12 +3084,15 @@ Remove this effect to return to standard ammunition.
 #### Reave ◆◆ — Level 1
 
 You drain the vital energy from a foe, siphoning their life force and preventing them from recovering while bolstering your own resilience.
-Choose a creature within **30 feet**. The target must attempt a **Fortitude** save against your class DC.
+Choose a creature within **30 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d8 void** damage and cannot regain HP until the start of your next turn.
 **Failure** The target takes **2d8 void** damage, cannot regain HP for 1 round, and you regain **1d8 HP**.
 **Critical Failure** As failure, but **4d8 void** damage, you regain **2d8 HP**, and the target cannot regain HP for 1 minute (or until the end of combat).
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -3000,7 +3108,7 @@ Remove this effect to return to standard ammunition.
 #### Slam ◆◆ — Level 1
 
 You seize a target with a biotic field, lift them helplessly into the air, then slam them into the ground with crushing force.
-Choose a creature within **30 feet**. The target must attempt a **Fortitude** save against your class DC.
+Choose a creature within **30 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 bludgeoning** damage and is moved 5 feet in any direction.
 **Failure** The target is lifted 10 feet into the air and then slammed down, taking **3d6 bludgeoning** damage and becoming **Stunned 1** and **Prone**.
@@ -3008,16 +3116,22 @@ Choose a creature within **30 feet**. The target must attempt a **Fortitude** sa
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
 
 ---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
 
 #### Stasis ◆◆ — Level 1
 
 You encase a single target in an impenetrable mass effect stasis field, freezing them completely in place.
-Choose a creature within **30 feet**. The target must attempt a **Will** save against your class DC.
+Choose a creature within **30 feet**. The target must attempt a Will save against your class DC.
 **Critical Success** Unaffected.
 **Success** The creature is **Immobilized** until the start of your next turn.
 **Failure** The creature is **Paralyzed** until the start of your next turn. At the end of each of its turns, it can attempt a new Will save to end the effect early.
 **Critical Failure** The creature is **Paralyzed** for 1 minute. At the end of each of its turns, it can attempt a new Will save (same DC) to end the effect early.
 **Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+
+---
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 

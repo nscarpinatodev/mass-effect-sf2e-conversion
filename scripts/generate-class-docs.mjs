@@ -495,14 +495,15 @@ function renderAncestries(ancestries, heritages, ancestryFeats) {
 function renderBackgrounds(backgrounds) {
   const L = ['## BACKGROUNDS', ''];
   L.push('*Choose one background during character creation. Backgrounds grant two ability boosts, skill training, a Lore skill, and a 1st-level skill feat.*', '');
-  L.push('| Background | Ability Boosts | Skill | Lore | Description |', '|---|---|---|---|---|');
+  L.push('| Background | Ability Boosts | Skill | Lore | Skill Feat | Description |', '|---|---|---|---|---|---|');
   for (const b of [...backgrounds].sort((x, y) => x.name.localeCompare(y.name))) {
     const s = b.system;
     const boosts = boostList(s.boosts).join(', ') || '—';
     const skills = (s.trainedSkills?.value ?? []).map(k => SKILL_LABELS[k] ?? titleCase(k)).join(', ') || '—';
-    const lore   = s.trainedLore || '—';
+    const lore   = (s.trainedSkills?.lore ?? []).join(', ') || s.trainedLore || '—';
+    const feat   = Object.values(s.items ?? {}).map(i => i.name).join(', ') || '—';
     const desc   = firstPara(s.description?.value) || plain(s.description?.value, 110);
-    L.push(`| ${b.name} | ${boosts} | ${skills} | ${lore} | ${desc} |`);
+    L.push(`| ${b.name} | ${boosts} | ${skills} | ${lore} | ${feat} | ${desc} |`);
   }
   L.push('', '---', '');
   return L;

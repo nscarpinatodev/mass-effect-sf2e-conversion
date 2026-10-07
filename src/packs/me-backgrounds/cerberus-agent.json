@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>You believed - or needed to believe - in humanity's manifest destiny among the stars. Cerberus recruited you, trained you, and deployed you against threats the Alliance refused to acknowledge. The organization gave you resources, a mission, and the uncomfortable knowledge of what humanity's enemies are actually capable of. Whatever doubts you carry now, the skills remain.</p><p>You are trained in Intimidation and gain the Cerberus Operations Lore skill. You boost Intelligence or Strength, and gain a free boost.</p>"
+      "value": "<p>You believed - or needed to believe - in humanity's manifest destiny among the stars. Cerberus recruited you, trained you, and deployed you against threats the Alliance refused to acknowledge. The organization gave you resources, a mission, and the uncomfortable knowledge of what humanity's enemies are actually capable of. Whatever doubts you carry now, the skills remain.</p><p>You are trained in Intimidation and the Cerberus Lore skill, and you gain the Quick Coercion skill feat. You boost Intelligence or Strength, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "cerberus-agent",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Cerberus Operations",
+    "items": {
+      "cersf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Quick Coercion",
+        "uuid": "Compendium.pf2e.feats-srd.Item.ar2DUlvDK4LDcH9J"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Cerberus Lore"
+      ],
       "value": [
-        "itm"
+        "intimidation"
       ]
     },
     "_migration": {

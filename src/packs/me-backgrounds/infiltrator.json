@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>You gathered information that wasn't meant to be gathered. Whether you worked for Alliance Intelligence, a private security firm, or a client you never met in person, your value was your ability to be somewhere you weren't supposed to be and leave without anyone knowing you'd been there. The work changed how you process every room you enter.</p><p>You are trained in Deception and gain the Intelligence Operations Lore skill. You boost Dexterity or Intelligence, and gain a free boost.</p>"
+      "value": "<p>You gathered information that wasn't meant to be gathered. Whether you worked for Alliance Intelligence, a private security firm, or a client you never met in person, your value was your ability to be somewhere you weren't supposed to be and leave without anyone knowing you'd been there. The work changed how you process every room you enter.</p><p>You are trained in Deception and the Infiltrator Lore skill, and you gain the Lie to Me skill feat. You boost Dexterity or Intelligence, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "infiltrator",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Intelligence Operations",
+    "items": {
+      "infsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Lie to Me",
+        "uuid": "Compendium.pf2e.feats-srd.Item.Dvz54d6aPhjsmUux"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Infiltrator Lore"
+      ],
       "value": [
-        "dec"
+        "deception"
       ]
     },
     "_migration": {

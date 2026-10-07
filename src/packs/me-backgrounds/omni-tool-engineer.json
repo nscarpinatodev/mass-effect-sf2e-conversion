@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>You didn't just learn to use an omni-tool. You learned to understand it - the hardware layer, the firmware, the edge cases the manufacturer never anticipated, and the modifications that turn consumer hardware into something else entirely. That knowledge made you valuable to anyone who needed tech that worked in conditions where it wasn't supposed to.</p><p>You are trained in Crafting and gain the Engineering Lore skill. You boost Intelligence or Dexterity, and gain a free boost.</p>"
+      "value": "<p>You didn't just learn to use an omni-tool. You learned to understand it - the hardware layer, the firmware, the edge cases the manufacturer never anticipated, and the modifications that turn consumer hardware into something else entirely. That knowledge made you valuable to anyone who needed tech that worked in conditions where it wasn't supposed to.</p><p>You are trained in Crafting and the Omni-Tool Lore skill, and you gain the Quick Repair skill feat. You boost Intelligence or Dexterity, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "omni-tool-engineer",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Engineering",
+    "items": {
+      "omnsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Quick Repair",
+        "uuid": "Compendium.pf2e.feats-srd.Item.ASy9AKEIRxPYUi5o"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Omni-Tool Lore"
+      ],
       "value": [
-        "cra"
+        "crafting"
       ]
     },
     "_migration": {

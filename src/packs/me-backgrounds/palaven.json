@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>Every turian serves. This is not metaphor or tradition - it is the organizing principle of an entire civilization. Palaven's mandatory military service structures society around collective duty, hierarchy, and the understanding that the individual exists in service of something larger. Your fifteen years of service gave you military training, a place in the hierarchy, and a set of physical instincts that civilian life cannot replicate. You learned to move through danger efficiently, because fear doesn't excuse failure.</p><p>You are trained in Acrobatics and gain the Turian Military Doctrine Lore skill. You boost Dexterity or Wisdom, and gain a free boost.</p>"
+      "value": "<p>Every turian serves. This is not metaphor or tradition - it is the organizing principle of an entire civilization. Palaven's mandatory military service structures society around collective duty, hierarchy, and the understanding that the individual exists in service of something larger. Your fifteen years of service gave you military training, a place in the hierarchy, and a set of physical instincts that civilian life cannot replicate. You learned to move through danger efficiently, because fear doesn't excuse failure.</p><p>You are trained in Acrobatics and the Palaven Lore skill, and you gain the Cat Fall skill feat. You boost Dexterity or Wisdom, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "palaven",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Turian Military Doctrine",
+    "items": {
+      "palsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Cat Fall",
+        "uuid": "Compendium.pf2e.feats-srd.Item.LQw0yIMDUJJkq1nD"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Palaven Lore"
+      ],
       "value": [
-        "acr"
+        "acrobatics"
       ]
     },
     "_migration": {

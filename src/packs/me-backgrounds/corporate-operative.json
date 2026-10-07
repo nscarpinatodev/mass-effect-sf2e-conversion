@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The major corporations operating in galactic space - Eldfell-Ashland, Binary Helix, Synthetic Insights - answer to no government and employ their own security, intelligence, and negotiation assets. You were one of those assets. Your work required knowing when to talk, when to listen, and when to let the contract speak for itself.</p><p>You are trained in Diplomacy and gain the Corporate Affairs Lore skill. You boost Intelligence or Charisma, and gain a free boost.</p>"
+      "value": "<p>The major corporations operating in galactic space - Eldfell-Ashland, Binary Helix, Synthetic Insights - answer to no government and employ their own security, intelligence, and negotiation assets. You were one of those assets. Your work required knowing when to talk, when to listen, and when to let the contract speak for itself.</p><p>You are trained in Diplomacy and the Corporate Lore skill, and you gain the Bargain Hunter skill feat. You boost Intelligence or Charisma, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "corporate-operative",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Corporate Affairs",
+    "items": {
+      "corsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Bargain Hunter",
+        "uuid": "Compendium.pf2e.feats-srd.Item.5nc5ridFBfYpn2Om"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Corporate Lore"
+      ],
       "value": [
-        "dip"
+        "diplomacy"
       ]
     },
     "_migration": {

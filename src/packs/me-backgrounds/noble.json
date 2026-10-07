@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>Wealth and influence are not the same thing, but you have both. Your family - or the institution you were born into - provided access to education, connections, and resources that most people spend careers trying to acquire. You've been in rooms where galaxy-shaping decisions were made, watched them be made badly, and understood that the real power usually belongs to whoever controls what gets said next.</p><p>You are trained in Diplomacy and gain the Aristocracy Lore skill. You boost Charisma or Intelligence, and gain a free boost.</p>"
+      "value": "<p>Wealth and influence are not the same thing, but you have both. Your family - or the institution you were born into - provided access to education, connections, and resources that most people spend careers trying to acquire. You've been in rooms where galaxy-shaping decisions were made, watched them be made badly, and understood that the real power usually belongs to whoever controls what gets said next.</p><p>You are trained in Diplomacy and the Politics Lore skill, and you gain the Hobnobber skill feat. You boost Charisma or Intelligence, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "noble",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Aristocracy",
+    "items": {
+      "nobsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Hobnobber",
+        "uuid": "Compendium.pf2e.feats-srd.Item.4RjDxgvNXNl5GG9d"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Politics Lore"
+      ],
       "value": [
-        "dip"
+        "diplomacy"
       ]
     },
     "_migration": {

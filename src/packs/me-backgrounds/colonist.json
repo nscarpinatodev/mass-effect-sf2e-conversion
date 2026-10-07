@@ -7,7 +7,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>You grew up somewhere humanity wasn't supposed to be able to survive - a colony world at the edge of explored space, an outpost that measured its isolation in months of travel time, a settlement that built everything it needed from whatever the planet provided. That experience gave you a pragmatic relationship with hardship that people raised in the inner systems simply don't have.</p><p>You are trained in Survival and gain the Frontier Survival Lore skill. You boost Constitution or Wisdom, and gain a free boost.</p>"
+      "value": "<p>You grew up somewhere humanity wasn't supposed to be able to survive - a colony world at the edge of explored space, an outpost that measured its isolation in months of travel time, a settlement that built everything it needed from whatever the planet provided. That experience gave you a pragmatic relationship with hardship that people raised in the inner systems simply don't have.</p><p>You are trained in Survival and the Frontier Lore skill, and you gain the Forager skill feat. With your GM's permission, you can instead take a Lore for your home colony, such as Mindoir Lore or Eden Prime Lore. You boost Constitution or Wisdom, and gain a free boost.</p>"
     },
     "rules": [],
     "slug": "colonist",
@@ -34,11 +34,20 @@
         ]
       }
     },
-    "items": {},
-    "trainedLore": "Frontier Survival",
+    "items": {
+      "colsf": {
+        "img": "icons/sundries/books/book-red-exclamation.webp",
+        "level": 1,
+        "name": "Forager",
+        "uuid": "Compendium.pf2e.feats-srd.Item.8qebBeOJsyRIchcu"
+      }
+    },
     "trainedSkills": {
+      "lore": [
+        "Frontier Lore"
+      ],
       "value": [
-        "sur"
+        "survival"
       ]
     },
     "_migration": {

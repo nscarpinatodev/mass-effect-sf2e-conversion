@@ -1,3 +1,15 @@
-2026/10/06-16:45:27.126 126c Recovering log #254
-2026/10/06-16:45:27.130 126c Delete type=0 #254
-2026/10/06-16:45:27.131 126c Delete type=3 #252
+2026/10/06-19:08:19.065 8348 Recovering log #265
+2026/10/06-19:08:19.070 8348 Delete type=0 #265
+2026/10/06-19:08:19.070 8348 Delete type=3 #264
+2026/10/06-19:08:19.073 a56c Level-0 table #269: started
+2026/10/06-19:08:19.075 a56c Level-0 table #269: 17645 bytes OK
+2026/10/06-19:08:19.077 a56c Delete type=0 #267
+2026/10/06-19:08:19.077 a56c Manual compaction at level-0 from '!items!meEffDefMatrix00' @ 72057594037927935 : 1 .. '!items!meTechTactCloak0' @ 0 : 0; will stop at (end)
+2026/10/06-19:08:19.077 a56c Manual compaction at level-1 from '!items!meEffDefMatrix00' @ 72057594037927935 : 1 .. '!items!meTechTactCloak0' @ 0 : 0; will stop at '!items!meTechTactCloak0' @ 1088 : 1
+2026/10/06-19:08:19.077 a56c Compacting 1@1 + 1@2 files
+2026/10/06-19:08:19.081 a56c Generated table #270@1: 21 keys, 17645 bytes
+2026/10/06-19:08:19.081 a56c Compacted 1@1 + 1@2 files => 17645 bytes
+2026/10/06-19:08:19.083 a56c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/06-19:08:19.083 a56c Delete type=2 #263
+2026/10/06-19:08:19.083 a56c Delete type=2 #269
+2026/10/06-19:08:19.083 a56c Manual compaction at level-1 from '!items!meTechTactCloak0' @ 1088 : 1 .. '!items!meTechTactCloak0' @ 0 : 0; will stop at (end)
