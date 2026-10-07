@@ -2,10 +2,10 @@
 	"id": "mass-effect-sf2e-conversion",
 	"title": "Mass Effect Compendium",
 	"description": "A Foundry VTT compendium for PF2e and SF2e featuring Mass Effect weapons, armor, mods, playable ancestries, heritages, ancestry feats, backgrounds, classes, enemy creatures, NPCs, vehicles, and ships. Includes a kinetic shield system and a Paragon/Renegade morality tracker.",
-	"version": "2.1.0",
+	"version": "2.2.0-rc.1",
 	"url": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion",
-	"manifest": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/download/v2.1.0/module.json",
-	"download": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/download/v2.1.0/module.zip",
+	"manifest": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/download/v2.2.0-rc.1/module.json",
+	"download": "https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/download/v2.2.0-rc.1/module.zip",
 	"compatibility": {
 		"minimum": "14",
 		"verified": "14"
