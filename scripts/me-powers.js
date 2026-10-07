@@ -417,7 +417,16 @@ Hooks.on('createChatMessage', async (message) => {
 
   // ── Direct damage (routes through the shield system via applyDamage) ──
   const spec = (degree.vsSynthetic && isSynthetic(actor)) ? degree.vsSynthetic : (degree.damage ?? power.damage);
-  const formula = typeof spec === 'function' ? spec({ actor, caster }) : spec;
+  const base = typeof spec === 'function' ? spec({ actor, caster }) : spec;
+  // Extra damage the caster's gear and features add to the power's damage roll
+  const cflags = caster?.flags?.[MODULE_ID] ?? {};
+  const extra = [];
+  if (POWER_TRAITS.includes(power.trait)) {
+    if (Number(cflags.powerDamageBonus) > 0) extra.push(String(cflags.powerDamageBonus)); // Power Amplifier
+    if (cflags.powerBonusDice) extra.push(cflags.powerBonusDice);                         // Superior Sentinel Mastery
+  }
+  if (slug === 'me-biotic-charge' && cflags.chargeUpgrade === 'damage') extra.push('2d6'); // Charge Upgrade
+  const formula = base && extra.length ? addTerms(base, extra) : base;
   if (spec && !formula) log.push('No damage recorded for this use; roll it by hand.');
   if (formula) {
     try {
@@ -536,7 +545,22 @@ function actionCut(actor, item) {
   return Math.max(0, ...POWER_TRAITS.filter((t) => traits.includes(t)).map((t) => Number(efficiency[t]) || 0));
 }
 
+/** Largest ammoCapacityMultiplier among the mods installed in this weapon. */
+function capacityMultiplier(item) {
+  if (item.type !== 'weapon') return 1;
+  return Math.max(1, ...(item.subitems?.contents ?? [])
+    .map((s) => Number(s.flags?.[MODULE_ID]?.ammoCapacityMultiplier) || 1));
+}
+
 function applyMasteryData(actor) {
+  // Magazine Upgrade I raises capacity by half; ItemAlteration can only
+  // multiply by whole numbers, so it is applied here, from the stored value.
+  for (const weapon of actor.itemTypes.weapon) {
+    const mult = capacityMultiplier(weapon);
+    const base = weapon._source.system.ammo?.capacity;
+    if (mult > 1 && base > 0) weapon.system.ammo.capacity = Math.ceil(base * mult);
+  }
+
   for (const item of actor.itemTypes.feat) {
     const cut = actionCut(actor, item);
     const base = item._source.system.actions?.value;   // never compound on a re-prepare
@@ -555,11 +579,18 @@ function applyMasteryData(actor) {
 // the power's real cost. Drop that echo; any other edit goes through.
 Hooks.on('preUpdateItem', (item, changes) => {
   const actor = item.actor;
-  if (!actor || !actionCut(actor, item)) return;
-  const sent = foundry.utils.getProperty(changes, 'system.actions.value');
-  if (sent !== undefined && sent === item.system.actions.value && sent !== item._source.system.actions?.value) {
-    delete changes.system.actions.value;
-  }
+  if (!actor) return;
+  const echo = (path) => {
+    const sent = foundry.utils.getProperty(changes, path);
+    const shown = foundry.utils.getProperty(item, path);
+    const stored = foundry.utils.getProperty(item._source, path);
+    if (sent !== undefined && sent === shown && sent !== stored) {
+      const keys = path.split('.');
+      delete keys.slice(0, -1).reduce((o, k) => o?.[k], changes)?.[keys.at(-1)];
+    }
+  };
+  if (actionCut(actor, item)) echo('system.actions.value');
+  if (capacityMultiplier(item) > 1) echo('system.ammo.capacity');
 });
 
 // Charge and Nova: run on the client that posted the card, which owns the actor.
@@ -584,7 +615,7 @@ Hooks.on('createChatMessage', async (message) => {
     const refill = Math.max(
       Number(flags.chargeBarrier) || 0,
       has('me-vanguard-unstoppable-charge') ? Math.ceil(max / 4) : 0,
-      has('me-vanguard-apex-vanguard') ? max : 0,
+      has('me-vanguard-apex-vanguard') || flags.chargeUpgrade === 'barrier' ? max : 0,
     );
     const next = Math.min(max, now + refill);
     if (next > now) {
@@ -703,7 +734,11 @@ async function rollPowerDamage(areaKey, degree) {
 }
 
 // ── HELPERS ─────────────────────────────────────────────────────────────────
-const cap =s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+/** Add terms to the first damage instance: "2d6[fire]" + ["2", "1d4"] -> "(2d6+2+1d4)[fire]". */
+function addTerms(formula, terms) {
+  return formula.replace(/^(\{?)([^\[{,]+)\[/, (_, brace, dice) => `${brace}(${[dice.trim(), ...terms].join('+')})[`);
+}
+const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 const stripTags = f => f.replace(/\[[^\]]*\]/g, '');
 function describeFormula(f) {
   const types = [...f.matchAll(/\[([^\]]+)\]/g)].map((m) => m[1].replace(/persistent,?/, '').trim());

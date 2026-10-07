@@ -11,12 +11,12 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A recoil-absorbing stock and foregrip assembly that counteracts the muzzle climb and barrel drift caused by sustained automatic fire. The damper allows the shooter to maintain a tighter grouping during full-auto bursts without physical strength compensating for weapon movement. Designed for use with rifles and submachine guns. Grants a +1 item bonus to attack rolls made with automatic fire.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a weapon with the automatic trait.</p>"
+      "value": "<p>A recoil-absorbing stock and foregrip assembly that counteracts the muzzle climb and barrel drift caused by sustained automatic fire. The damper allows the shooter to maintain a tighter grouping during full-auto bursts without physical strength compensating for weapon movement. Designed for use with rifles and submachine guns. Grants a +1 item bonus to attack rolls made with automatic fire.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a weapon with the automatic trait.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +1 is added to this weapon's attack rolls when it fires automatic.</em></p>"
     },
     "rules": [
       {
         "key": "FlatModifier",
-        "selector": "attack-roll",
+        "selector": "{item|parentItem.id}-attack",
         "type": "item",
         "value": 1,
         "predicate": [
@@ -34,8 +34,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -59,8 +58,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

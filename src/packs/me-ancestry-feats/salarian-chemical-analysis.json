@@ -13,7 +13,7 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>Salarian olfactory and dermal sensor systems can perform crude chemical analysis on substances in contact with or near their skin. You can identify poisons, pharmaceuticals, chemical accelerants, contaminated water, atmospheric composition anomalies, and a range of other substances by exposure. This is not as precise as a laboratory analysis, but it is immediate, free, and available at all times.</p><p>You can attempt a Medicine or Nature check (your choice) to identify a poison, drug, or unknown chemical substance by smell and dermal contact, without requiring any tools. The DC is the same as normal identification, but you gain a +2 circumstance bonus to the check. Additionally, you automatically detect whether a substance you consume or touch is a poison before its effects trigger, giving you a chance to spit it out or drop it before taking damage (a DC 15 Fortitude save to avoid the initial effects if you act immediately).</p>"
+      "value": "<p>Salarian olfactory and dermal sensor systems can perform crude chemical analysis on substances in contact with or near their skin. You can identify poisons, pharmaceuticals, chemical accelerants, contaminated water, atmospheric composition anomalies, and a range of other substances by exposure. This is not as precise as a laboratory analysis, but it is immediate, free, and available at all times.</p><p>You can attempt a Medicine or Nature check (your choice) to identify a poison, drug, or unknown chemical substance by smell and dermal contact, without requiring any tools. The DC is the same as normal identification, but you gain a +2 circumstance bonus to the check. Additionally, you automatically detect whether a substance you consume or touch is a poison before its effects trigger, giving you a chance to spit it out or drop it before taking damage (a DC 15 Fortitude save to avoid the initial effects if you act immediately).</p><hr/><p><em>Automation: Turn on the toggle while identifying a substance; the +2 applies to Medicine and Nature.</em></p>"
     },
     "level": {
       "value": 1
@@ -27,7 +27,28 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "chemical-analysis",
+        "toggleable": true,
+        "label": "Identifying a substance by contact"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": [
+          "medicine",
+          "nature"
+        ],
+        "type": "circumstance",
+        "value": 2,
+        "label": "Chemical Analysis",
+        "predicate": [
+          "chemical-analysis"
+        ]
+      }
+    ],
     "slug": "chemical-analysis",
     "traits": {
       "rarity": "common",

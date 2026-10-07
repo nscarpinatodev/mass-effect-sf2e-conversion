@@ -11,17 +11,14 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A longer barrel with an extended kinetic acceleration chamber that increases the muzzle velocity of outgoing rounds. The additional distance allows the mass effect coils more time to impart momentum, resulting in harder-hitting impacts across all fire modes. Compatible with any ranged weapon. Grants a +1 item bonus to weapon damage rolls.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A longer barrel with an extended kinetic acceleration chamber that increases the muzzle velocity of outgoing rounds. The additional distance allows the mass effect coils more time to impart momentum, resulting in harder-hitting impacts across all fire modes. Compatible with any ranged weapon. Grants a +1 item bonus to weapon damage rolls.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +1 is added to this weapon's damage.</em></p>"
     },
     "rules": [
       {
         "key": "FlatModifier",
-        "selector": "strike-damage",
+        "selector": "{item|parentItem.id}-damage",
         "type": "item",
         "value": 1,
-        "predicate": [
-          "item:ranged"
-        ],
         "label": "Extended Barrel I"
       }
     ],
@@ -34,8 +31,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -59,8 +55,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

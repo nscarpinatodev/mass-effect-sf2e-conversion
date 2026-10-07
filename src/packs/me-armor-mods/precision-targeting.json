@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A biometric targeting overlay system that combines thermal imaging, structural weak-point mapping, and real-time ballistic compensation to guide rounds into joints, optics, and other critical target vulnerabilities. When properly applied, the system transforms a competent shot into a devastating one. When you make a targeted attack (aiming for a specific location or vulnerability), you deal an additional 1d6 precision damage on a hit.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A biometric targeting overlay system that combines thermal imaging, structural weak-point mapping, and real-time ballistic compensation to guide rounds into joints, optics, and other critical target vulnerabilities. When properly applied, the system transforms a competent shot into a devastating one. When you make a targeted attack (aiming for a specific location or vulnerability), you deal an additional 1d6 precision damage on a hit.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [
       {
@@ -41,8 +41,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -66,11 +65,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

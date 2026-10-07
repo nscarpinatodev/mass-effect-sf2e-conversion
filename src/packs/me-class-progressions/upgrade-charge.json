@@ -14,9 +14,31 @@
     "slug": "me-upgrade-charge",
     "description": {
       "gm": "",
-      "value": "<p>Your biotic charge technique has evolved. You may choose one of the following options to improve your Biotic Charge ability:</p><ul><li>Your Biotic Charge distance increases by <strong>30 feet</strong>, and its damage increases by <strong>2d6</strong>.</li><li>Your Biotic Charge distance and damage remain the same, but your Biotic Barrier always recharges to <strong>full</strong>, regardless of whether your target succeeds their Reflex save against your Biotic Charge.</li></ul><p><em>Prerequisite: Biotic Charge. Classes: Vanguard.</em></p>"
+      "value": "<p>Your biotic charge technique has evolved. You may choose one of the following options to improve your Biotic Charge ability:</p><ul><li>Your Biotic Charge distance increases by <strong>30 feet</strong>, and its damage increases by <strong>2d6</strong>.</li><li>Your Biotic Charge distance and damage remain the same, but your Biotic Barrier always recharges to <strong>full</strong>, regardless of whether your target succeeds their Reflex save against your Biotic Charge.</li></ul><hr/><p><em>Automation: Your choice is made when you take the feat. The extra 2d6 is added to Charge's damage, or using Charge refills your barrier.</em></p><p><em>Prerequisite: Biotic Charge. Classes: Vanguard.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ChoiceSet",
+        "flag": "chargeUpgrade",
+        "prompt": "Choose how your Biotic Charge improves.",
+        "choices": [
+          {
+            "label": "+30 feet and +2d6 damage",
+            "value": "damage"
+          },
+          {
+            "label": "Biotic Barrier always recharges to full",
+            "value": "barrier"
+          }
+        ]
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "override",
+        "path": "flags.mass-effect-sf2e-conversion.chargeUpgrade",
+        "value": "{item|flags.system.rulesSelections.chargeUpgrade}"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

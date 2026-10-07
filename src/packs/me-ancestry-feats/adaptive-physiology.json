@@ -13,7 +13,7 @@
     "category": "ancestryfeature",
     "description": {
       "gm": "",
-      "value": "<p>The same undifferentiated cell clusters that drive vorcha rapid healing also respond to sustained environmental stress by adapting the body for future exposure. A vorcha who survives a fire emerges with greater heat resistance. One who endures repeated acid burns becomes harder to damage with corrosives. This adaptation is not instantaneous-it requires sustained exposure over hours and will not save a vorcha from a killing blow-but over time, it makes vorcha increasingly difficult to kill with the same method twice.</p><p>After spending at least 24 hours exposed to a specific type of energy damage (fire, cold, acid, electricity, or sonic), you gain resistance 5 to that damage type. This resistance changes when you gain a new adaptation-you cannot maintain multiple resistances simultaneously. The adaptation fades if you go more than a week without relevant exposure.</p>"
+      "value": "<p>The same undifferentiated cell clusters that drive vorcha rapid healing also respond to sustained environmental stress by adapting the body for future exposure. A vorcha who survives a fire emerges with greater heat resistance. One who endures repeated acid burns becomes harder to damage with corrosives. This adaptation is not instantaneous-it requires sustained exposure over hours and will not save a vorcha from a killing blow-but over time, it makes vorcha increasingly difficult to kill with the same method twice.</p><p>After spending at least 24 hours exposed to a specific type of energy damage (fire, cold, acid, electricity, or sonic), you gain resistance 5 to that damage type. This resistance changes when you gain a new adaptation-you cannot maintain multiple resistances simultaneously. The adaptation fades if you go more than a week without relevant exposure.</p><hr/><p><em>Automation: Turn on Adaptive Physiology on your sheet and pick the damage type you have adapted to; resistance 5 to it applies.</em></p>"
     },
     "level": {
       "value": 0
@@ -27,7 +27,77 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "adaptive-physiology",
+        "toggleable": true,
+        "label": "Adaptive Physiology",
+        "suboptions": [
+          {
+            "label": "Fire",
+            "value": "fire"
+          },
+          {
+            "label": "Cold",
+            "value": "cold"
+          },
+          {
+            "label": "Acid",
+            "value": "acid"
+          },
+          {
+            "label": "Electricity",
+            "value": "electricity"
+          },
+          {
+            "label": "Sonic",
+            "value": "sonic"
+          }
+        ]
+      },
+      {
+        "key": "Resistance",
+        "type": "fire",
+        "value": 5,
+        "predicate": [
+          "adaptive-physiology:fire"
+        ]
+      },
+      {
+        "key": "Resistance",
+        "type": "cold",
+        "value": 5,
+        "predicate": [
+          "adaptive-physiology:cold"
+        ]
+      },
+      {
+        "key": "Resistance",
+        "type": "acid",
+        "value": 5,
+        "predicate": [
+          "adaptive-physiology:acid"
+        ]
+      },
+      {
+        "key": "Resistance",
+        "type": "electricity",
+        "value": 5,
+        "predicate": [
+          "adaptive-physiology:electricity"
+        ]
+      },
+      {
+        "key": "Resistance",
+        "type": "sonic",
+        "value": 5,
+        "predicate": [
+          "adaptive-physiology:sonic"
+        ]
+      }
+    ],
     "slug": "adaptive-physiology",
     "traits": {
       "otherTags": [],

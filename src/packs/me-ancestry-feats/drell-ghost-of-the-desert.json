@@ -13,7 +13,7 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>Rakhana before the resource collapse was a world of brutal heat, scarce water, and predators adapted to hunt across open ground. The drell who survived there were hunters first and prey second, and that relationship with concealment and stillness is written into the species at a level that training reinforces but doesn't create. You move like something that does not want to be found.</p><p>You gain a +2 circumstance bonus to Stealth checks when in arid, rocky, or open terrain. You can attempt to Hide and Sneak even without cover or concealment, though you take a -2 penalty to the check if there is nothing to obscure you. When you are Hiding or Sneaking, you can move at full Speed rather than the usual halved speed.</p>"
+      "value": "<p>Rakhana before the resource collapse was a world of brutal heat, scarce water, and predators adapted to hunt across open ground. The drell who survived there were hunters first and prey second, and that relationship with concealment and stillness is written into the species at a level that training reinforces but doesn't create. You move like something that does not want to be found.</p><p>You gain a +2 circumstance bonus to Stealth checks when in arid, rocky, or open terrain. You can attempt to Hide and Sneak even without cover or concealment, though you take a -2 penalty to the check if there is nothing to obscure you. When you are Hiding or Sneaking, you can move at full Speed rather than the usual halved speed.</p><hr/><p><em>Automation: Turn on the toggle in arid, rocky, or open terrain; the +2 applies to Stealth.</em></p>"
     },
     "level": {
       "value": 5
@@ -27,7 +27,25 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "ghost-of-the-desert",
+        "toggleable": true,
+        "label": "In arid, rocky, or open terrain"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "stealth",
+        "type": "circumstance",
+        "value": 2,
+        "label": "Ghost of the Desert",
+        "predicate": [
+          "ghost-of-the-desert"
+        ]
+      }
+    ],
     "slug": "ghost-of-the-desert",
     "traits": {
       "rarity": "common",

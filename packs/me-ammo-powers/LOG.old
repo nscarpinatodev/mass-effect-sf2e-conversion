@@ -1,3 +1,15 @@
-2026/10/06-18:01:39.811 5734 Recovering log #267
-2026/10/06-18:01:39.815 5734 Delete type=0 #267
-2026/10/06-18:01:39.815 5734 Delete type=3 #265
+2026/10/06-19:08:19.015 8a00 Recovering log #271
+2026/10/06-19:08:19.021 8a00 Delete type=0 #271
+2026/10/06-19:08:19.021 8a00 Delete type=3 #270
+2026/10/06-19:08:19.023 a56c Level-0 table #275: started
+2026/10/06-19:08:19.026 a56c Level-0 table #275: 7581 bytes OK
+2026/10/06-19:08:19.028 a56c Delete type=0 #273
+2026/10/06-19:08:19.029 a56c Manual compaction at level-0 from '!items!meAmmoAPierceEff' @ 72057594037927935 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at (end)
+2026/10/06-19:08:19.029 a56c Manual compaction at level-1 from '!items!meAmmoAPierceEff' @ 72057594037927935 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at '!items!meAmmoWarpFeat00' @ 777 : 1
+2026/10/06-19:08:19.029 a56c Compacting 1@1 + 1@2 files
+2026/10/06-19:08:19.031 a56c Generated table #276@1: 14 keys, 7581 bytes
+2026/10/06-19:08:19.031 a56c Compacted 1@1 + 1@2 files => 7581 bytes
+2026/10/06-19:08:19.033 a56c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/06-19:08:19.033 a56c Delete type=2 #269
+2026/10/06-19:08:19.033 a56c Delete type=2 #275
+2026/10/06-19:08:19.033 a56c Manual compaction at level-1 from '!items!meAmmoWarpFeat00' @ 777 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at (end)

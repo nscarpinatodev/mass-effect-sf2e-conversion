@@ -13,7 +13,7 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>Turian military doctrine is built around unit cohesion-the idea that a soldier's effectiveness is a function of where they are relative to their unit, not just their individual capability. You internalized this during your service, and it shows in how you position yourself in combat. You don't just fight. You fight in relation to the people fighting next to you, and that relationship multiplies what both of you can do.</p><p>When you are adjacent to at least one ally, you gain a +1 circumstance bonus to attack rolls and a +1 circumstance bonus to AC. When you and an ally are flanking a creature, your flanking bonus to attack rolls increases to +3 (rather than the standard +2). You can use the Aid reaction even if you do not have the Aid skill feat, though you must still meet the check requirements normally.</p>"
+      "value": "<p>Turian military doctrine is built around unit cohesion-the idea that a soldier's effectiveness is a function of where they are relative to their unit, not just their individual capability. You internalized this during your service, and it shows in how you position yourself in combat. You don't just fight. You fight in relation to the people fighting next to you, and that relationship multiplies what both of you can do.</p><p>When you are adjacent to at least one ally, you gain a +1 circumstance bonus to attack rolls and a +1 circumstance bonus to AC. When you and an ally are flanking a creature, your flanking bonus to attack rolls increases to +3 (rather than the standard +2). You can use the Aid reaction even if you do not have the Aid skill feat, though you must still meet the check requirements normally.</p><hr/><p><em>Automation: Turn on the toggle while adjacent to an ally; the +1 applies to attack rolls and AC. The larger flanking bonus is applied by hand.</em></p>"
     },
     "level": {
       "value": 1
@@ -27,7 +27,35 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "formation-fighter",
+        "toggleable": true,
+        "label": "Adjacent to an ally"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "attack-roll",
+        "type": "circumstance",
+        "value": 1,
+        "label": "Formation Fighter",
+        "predicate": [
+          "formation-fighter"
+        ]
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "ac",
+        "type": "circumstance",
+        "value": 1,
+        "label": "Formation Fighter",
+        "predicate": [
+          "formation-fighter"
+        ]
+      }
+    ],
     "slug": "formation-fighter",
     "traits": {
       "rarity": "common",

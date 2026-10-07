@@ -1,15 +1,15 @@
-2026/10/06-18:01:21.960 9d78 Recovering log #329
-2026/10/06-18:01:21.966 9d78 Delete type=0 #329
-2026/10/06-18:01:21.966 9d78 Delete type=3 #327
-2026/10/06-18:01:21.970 5a74 Level-0 table #335: started
-2026/10/06-18:01:21.977 5a74 Level-0 table #335: 46144 bytes OK
-2026/10/06-18:01:21.977 5a74 Delete type=0 #333
-2026/10/06-18:01:21.978 5a74 Manual compaction at level-0 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)
-2026/10/06-18:01:21.978 5a74 Manual compaction at level-1 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at '!items!VorchaAncestry01' @ 792 : 1
-2026/10/06-18:01:21.978 5a74 Compacting 1@1 + 1@2 files
-2026/10/06-18:01:21.984 5a74 Generated table #336@1: 12 keys, 46144 bytes
-2026/10/06-18:01:21.984 5a74 Compacted 1@1 + 1@2 files => 46144 bytes
-2026/10/06-18:01:21.986 5a74 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/06-18:01:21.986 5a74 Delete type=2 #331
-2026/10/06-18:01:21.986 5a74 Delete type=2 #335
-2026/10/06-18:01:21.986 5a74 Manual compaction at level-1 from '!items!VorchaAncestry01' @ 792 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)
+2026/10/06-19:08:18.520 9d98 Recovering log #334
+2026/10/06-19:08:18.525 9d98 Delete type=0 #334
+2026/10/06-19:08:18.525 9d98 Delete type=3 #332
+2026/10/06-19:08:18.529 a56c Level-0 table #340: started
+2026/10/06-19:08:18.535 a56c Level-0 table #340: 46146 bytes OK
+2026/10/06-19:08:18.536 a56c Delete type=0 #338
+2026/10/06-19:08:18.537 a56c Manual compaction at level-0 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)
+2026/10/06-19:08:18.537 a56c Manual compaction at level-1 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at '!items!VorchaAncestry01' @ 804 : 1
+2026/10/06-19:08:18.537 a56c Compacting 1@1 + 1@2 files
+2026/10/06-19:08:18.544 a56c Generated table #341@1: 12 keys, 46146 bytes
+2026/10/06-19:08:18.544 a56c Compacted 1@1 + 1@2 files => 46146 bytes
+2026/10/06-19:08:18.545 a56c compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/06-19:08:18.545 a56c Delete type=2 #336
+2026/10/06-19:08:18.546 a56c Delete type=2 #340
+2026/10/06-19:08:18.546 a56c Manual compaction at level-1 from '!items!VorchaAncestry01' @ 804 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)

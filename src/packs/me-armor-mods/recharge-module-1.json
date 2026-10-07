@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A power cycling optimization module that streamlines the energy routing between the suit's main reactor cell and its ability-generation systems. By eliminating inefficiencies in the standard cooling and recharge loop, it meaningfully reduces the downtime between power uses. Reduces power recharge time by 1 round.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A power cycling optimization module that streamlines the energy routing between the suit's main reactor cell and its ability-generation systems. By eliminating inefficiencies in the standard cooling and recharge loop, it meaningfully reduces the downtime between power uses. Reduces power recharge time by 1 round.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. Power cooldowns are tracked by hand.</em></p>"
     },
     "rules": [],
     "slug": "recharge-module-1",
@@ -23,8 +23,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -48,11 +47,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

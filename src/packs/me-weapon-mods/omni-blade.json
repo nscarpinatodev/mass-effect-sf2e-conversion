@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A micro-fabricated crystalline blade generated from the weapon's omni-tool interface and bonded to the barrel or foregrip. Unlike standalone omni-blades, the weapon-mounted version is structurally reinforced against the recoil forces of sustained fire and can be deployed without removing the hand from the grip. The blade glows orange with thermal energy from the weapon's heat dissipation system. Your weapon gains the versatile (slashing) trait and deals 1d6 slashing damage on melee Strikes.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A micro-fabricated crystalline blade generated from the weapon's omni-tool interface and bonded to the barrel or foregrip. Unlike standalone omni-blades, the weapon-mounted version is structurally reinforced against the recoil forces of sustained fire and can be deployed without removing the hand from the grip. The blade glows orange with thermal energy from the weapon's heat dissipation system. Your weapon gains the versatile (slashing) trait and deals 1d6 slashing damage on melee Strikes.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The Omni-Blade Strike appears on your sheet while the host weapon is equipped.</em></p>"
     },
     "rules": [
       {
@@ -44,8 +44,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -69,8 +68,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

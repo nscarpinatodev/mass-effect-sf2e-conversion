@@ -101,7 +101,8 @@
       "strikeConditionValue": null,
       "criticalConditionType": "",
       "criticalConditionValue": null
-    }
+    },
+    "subitems": []
   },
   "_id": "0730d1dabc8ed4e8",
   "_key": "!items!0730d1dabc8ed4e8"

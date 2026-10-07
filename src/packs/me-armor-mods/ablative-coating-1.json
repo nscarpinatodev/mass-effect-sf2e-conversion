@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A layer of impact-absorbing nanocomposite material bonded to the inner surface of the armor chassis. Microscale shock absorbers distribute kinetic energy across the suit's structural lattice, reducing trauma transfer to the wearer. Increases maximum Hit Points by 5.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A layer of impact-absorbing nanocomposite material bonded to the inner surface of the armor chassis. Microscale shock absorbers distribute kinetic energy across the suit's structural lattice, reducing trauma transfer to the wearer. Increases maximum Hit Points by 5.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [
       {
@@ -31,8 +31,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -56,11 +55,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

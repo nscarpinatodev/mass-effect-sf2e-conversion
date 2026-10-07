@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A full-suit cryogenic insulation system incorporating active thermal countermeasures - small resistance heating elements throughout the suit that engage automatically when temperature sensors detect hazardous cold. Originally developed for Alliance Marines operating in arctic and deep-space environments. Provides resistance 10 to cold damage.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A full-suit cryogenic insulation system incorporating active thermal countermeasures - small resistance heating elements throughout the suit that engage automatically when temperature sensors detect hazardous cold. Originally developed for Alliance Marines operating in arctic and deep-space environments. Provides resistance 10 to cold damage.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [
       {
@@ -30,8 +30,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -55,11 +54,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

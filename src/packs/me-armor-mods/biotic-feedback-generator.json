@@ -11,9 +11,17 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A dark energy resonance amplifier tuned specifically to biotic L5 implant frequencies. The device creates a sympathetic field loop that reinforces the user's own dark energy output, enhancing the precision and control of mass effect field manipulation. Developed by Sirta Foundation researchers studying elite biotic performance. Grants a +2 item bonus to biotic ability checks and attack rolls.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure. Requires an active biotic implant.</p>"
+      "value": "<p>A dark energy resonance amplifier tuned specifically to biotic L5 implant frequencies. The device creates a sympathetic field loop that reinforces the user's own dark energy output, enhancing the precision and control of mass effect field manipulation. Developed by Sirta Foundation researchers studying elite biotic performance. Grants a +2 item bonus to biotic ability checks and attack rolls.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure. Requires an active biotic implant.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. Powers use your class DC, so the +2 is added there. Item bonuses to class DC don't stack.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "item",
+        "value": 2,
+        "label": "Biotic Feedback Generator"
+      }
+    ],
     "slug": "biotic-feedback-generator",
     "_migration": {
       "version": 0.955,
@@ -23,8 +31,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -48,11 +55,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

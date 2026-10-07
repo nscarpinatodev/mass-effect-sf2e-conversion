@@ -377,6 +377,24 @@ Hooks.on('deleteItem', async (item, _options, _userId) => {
   }
 });
 
+// Installing or removing a Shield Capacitor changes the shield maximum without
+// creating or deleting an item (the armor's attachment list changes instead), and
+// so does equipping or unequipping that armor. Trim shields to the new maximum.
+Hooks.on('updateItem', async (item, changes) => {
+  if (!game.user.isGM) return;
+  const actor = item.parent;
+  if (!actor || !item.isOfType?.('physical')) return;
+  if (changes.system?.subitems === undefined && changes.system?.equipped === undefined) return;
+  const shield = getShieldEffect(actor);
+  if (!shield) return;
+  const hpMod = getShieldHpMod(actor);
+  const max = (shield.getFlag(MODULE_ID, 'shieldMax') ?? 0) + (hpMod ? (hpMod.getFlag(MODULE_ID, 'shieldHpBonus') ?? 0) : 0);
+  const temp = actor.system.attributes.hp.temp ?? 0;
+  if (temp > max) {
+    await actor.update({ 'system.attributes.hp.temp': max }, { [MODULE_ID]: { shieldRemoval: true } });
+  }
+});
+
 // ── DAMAGE ROUTING ────────────────────────────────────────────────────────────
 // Priority: Barrier → Shield → Armor → HP
 
@@ -788,9 +806,20 @@ function isAmmoEffect(item) {
 
 // A mod with the `invested` trait only applies while actually invested.
 // Items without the trait (legacy shield/regen mods) keep working on presence.
+// A mod counts when it is installed in equipped armor (the system reports an
+// installed item as equipped exactly when its host is), or, for mods from
+// before installation existed, when it is a loose item that is invested.
 function modInvestedOK(item) {
+  if (item.system?.usage?.value?.startsWith('installed')) return !!item.isEquipped;
   const needsInvest = item.system?.traits?.value?.includes('invested');
   return !needsInvest || item.system?.equipped?.invested === true;
+}
+
+// Top-level equipment and effects, plus everything installed in inventory items
+function modCandidates(actor) {
+  if (!actor?.itemTypes) return [];
+  const installed = (actor.inventory?.contents ?? []).flatMap((i) => i.subitems?.contents ?? []);
+  return [...actor.itemTypes.equipment, ...actor.itemTypes.effect, ...installed];
 }
 
 function isRegenMod(item) {
@@ -800,9 +829,7 @@ function isRegenMod(item) {
 }
 
 function getRegenMod(actor) {
-  return actor?.itemTypes?.equipment?.find(isRegenMod)
-    ?? actor?.itemTypes?.effect?.find(isRegenMod)
-    ?? null;
+  return modCandidates(actor).find(isRegenMod) ?? null;
 }
 
 function isRechargeDelayMod(item) {
@@ -812,9 +839,7 @@ function isRechargeDelayMod(item) {
 }
 
 function getRechargeDelayMod(actor) {
-  return actor?.itemTypes?.equipment?.find(isRechargeDelayMod)
-    ?? actor?.itemTypes?.effect?.find(isRechargeDelayMod)
-    ?? null;
+  return modCandidates(actor).find(isRechargeDelayMod) ?? null;
 }
 
 function isShieldHpMod(item) {
@@ -824,9 +849,7 @@ function isShieldHpMod(item) {
 }
 
 function getShieldHpMod(actor) {
-  return actor?.itemTypes?.equipment?.find(isShieldHpMod)
-    ?? actor?.itemTypes?.effect?.find(isShieldHpMod)
-    ?? null;
+  return modCandidates(actor).find(isShieldHpMod) ?? null;
 }
 
 // Returns true when the most recent damage-roll message was a critical hit.

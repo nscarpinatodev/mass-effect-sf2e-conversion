@@ -209,6 +209,9 @@ Batarian society is organized around a rigid caste system, and navigating that s
 You gain a +1 circumstance bonus to Diplomacy and Intimidation checks against creatures who occupy a defined social or professional role (guards, officials, subordinates, commanders, servants). Once per day you can use Society to Sense Motive in place of Perception-rolling your Society check against the creature's Deception DC-to determine a creature's rank, authority level, or position within their organization.
 
 ---
+*Automation: Turn on the toggle when dealing with someone in a defined role; the +1 applies to Diplomacy and Intimidation.*
+
+---
 
 ### DRELL
 
@@ -294,6 +297,9 @@ Rakhana before the resource collapse was a world of brutal heat, scarce water, a
 You gain a +2 circumstance bonus to Stealth checks when in arid, rocky, or open terrain. You can attempt to Hide and Sneak even without cover or concealment, though you take a -2 penalty to the check if there is nothing to obscure you. When you are Hiding or Sneaking, you can move at full Speed rather than the usual halved speed.
 
 ---
+*Automation: Turn on the toggle in arid, rocky, or open terrain; the +2 applies to Stealth.*
+
+---
 
 ### ELCOR
 
@@ -347,6 +353,9 @@ Petozi, Calyn, Xeltan, Olorm, Drevyn, Harrot, Lukar, Marab, Sofora, Tandril
 **Quadruped Stability** Elcor evolved on the high-gravity world of Dekuuna walking on four massive limbs, giving them a physical foundation that is extraordinarily difficult to displace. Their wide stance and distributed mass make forced movement and knockdowns far less effective against them than against bipedal species.
 You gain a +2 circumstance bonus to your Fortitude DC against Shove and Trip attempts, and to Fortitude saves against effects that would move you against your will or knock you prone. Whenever you would be pushed or pulled, reduce the distance by 5 feet (minimum 0).
 
+---
+*Automation: The +2 applies to your Fortitude DC against Shove and Trip and to Fortitude saves against forced movement and being knocked prone.*
+
 **Pheromone Awareness** Elcor evolved with a rich pheromone-based communication system that still functions as a constant environmental sensor. They detect chemical emotional signals from creatures around them even when those creatures are making no sound and showing no visible body language-an awareness that extends to their own emotional regulation.
 You gain a +1 circumstance bonus to Will saving throws against emotion and fear effects (those with the *emotion* or *fear* trait). Additionally, you cannot be deceived by effects that fabricate emotional states through pheromones or chemical means, as you can detect the artificiality of manufactured scent.
 
@@ -360,6 +369,9 @@ You gain 2 additional Hit Points per level (in addition to your ancestry's base 
 
 **Warrior Caste Elcor** Elcor warriors are a sobering reminder that slow does not mean harmless. Warrior caste elcor are trained to carry heavy weapons mounted to their dorsal harness-a rig that turns them into walking artillery platforms-and to use their massive frame as a battering ram when the situation calls for direct contact. You are from that tradition, and you have internalized the fundamental truth that size and patience together are almost always enough.
 You gain a natural unarmed attack that deals 1d8 bludgeoning damage and has the Shove trait. You can wield heavy weapons without the normal penalties for being a quadruped, provided the weapon is mounted or braced on your body. You gain a +2 circumstance bonus to Bulk limits.
+
+---
+*Automation: The slam appears among your Strikes, and your Bulk limits rise by 2.*
 
 #### Elcor Feats
 
@@ -547,6 +559,9 @@ Human military and colonial history in the three decades since first contact has
 When you would gain persistent damage, you attempt a DC 15 flat check to avoid gaining it; on a success, the persistent damage is negated entirely. You gain a +1 circumstance bonus to the flat check to end persistent damage at the end of your turn. Additionally, you gain a +1 circumstance bonus to Fortitude saves against effects that would cause you to be sickened or drained.
 
 ---
+*Automation: The +1 applies to Fortitude saves against sickened and drained. The flat checks against persistent damage are rolled by hand.*
+
+---
 
 ### KROGAN
 
@@ -715,6 +730,9 @@ Your environmental suit has been adapted for extended planetary use, reducing ma
 Quarians grow up interfacing with technology through an omni-tool as a matter of basic survival-the suit's environmental systems, the Fleet's communication networks, the ship's engineering substrates. By the time a quarian is old enough for their Pilgrimage, the omni-tool is not a device they use. It is an extension of how they process the world. You have the kind of hardware fluency that comes from necessity, and it shows in the speed and ease with which you work.
 You gain a +1 circumstance bonus to Crafting and Society checks involving technology, electronics, or networked systems. When you use Crafting to Repair a technological device, you reduce the time required by half. When you critically succeed on a Crafting check to identify or interact with technology, you also learn one additional property or function of the device beyond what the check normally reveals.
 
+---
+*Automation: Turn on the toggle for checks involving technology; the +1 applies to Crafting and Society.*
+
 ##### Suit Integrity — Level 1
 
 Every quarian who leaves the Migrant Fleet understands that their environmental suit is the primary barrier between them and an immune system that has never had to defend itself against a normal pathogen load. You have spent enough time maintaining, repairing, and improvising repairs on that suit that you know its failure modes as well as you know your own heartbeat-and you know how to keep it functional under conditions that would compromise a less experienced operator's equipment.
@@ -809,6 +827,9 @@ You gain a +2 circumstance bonus to initiative rolls. When you roll initiative u
 Salarian olfactory and dermal sensor systems can perform crude chemical analysis on substances in contact with or near their skin. You can identify poisons, pharmaceuticals, chemical accelerants, contaminated water, atmospheric composition anomalies, and a range of other substances by exposure. This is not as precise as a laboratory analysis, but it is immediate, free, and available at all times.
 You can attempt a Medicine or Nature check (your choice) to identify a poison, drug, or unknown chemical substance by smell and dermal contact, without requiring any tools. The DC is the same as normal identification, but you gain a +2 circumstance bonus to the check. Additionally, you automatically detect whether a substance you consume or touch is a poison before its effects trigger, giving you a chance to spit it out or drop it before taking damage (a DC 15 Fortitude save to avoid the initial effects if you act immediately).
 
+---
+*Automation: Turn on the toggle while identifying a substance; the +2 applies to Medicine and Nature.*
+
 ##### STG Methods — Level 5
 
 The Special Tasks Group is the Salarian Union's intelligence and covert operations arm-small-team operators who specialize in getting in, doing the thing no one is supposed to know happened, and getting out before anyone has assembled a coherent account of what occurred. You have trained in or been exposed to STG methods, and they have left a distinctive mark on how you approach problems that other people call obstacles.
@@ -893,6 +914,9 @@ You become trained in Intimidation and gain the Mercenary Lore skill. You gain a
 
 Turian military doctrine is built around unit cohesion-the idea that a soldier's effectiveness is a function of where they are relative to their unit, not just their individual capability. You internalized this during your service, and it shows in how you position yourself in combat. You don't just fight. You fight in relation to the people fighting next to you, and that relationship multiplies what both of you can do.
 When you are adjacent to at least one ally, you gain a +1 circumstance bonus to attack rolls and a +1 circumstance bonus to AC. When you and an ally are flanking a creature, your flanking bonus to attack rolls increases to +3 (rather than the standard +2). You can use the Aid reaction even if you do not have the Aid skill feat, though you must still meet the check requirements normally.
+
+---
+*Automation: Turn on the toggle while adjacent to an ally; the +1 applies to attack rolls and AC. The larger flanking bonus is applied by hand.*
 
 ##### Hierarchy Command ◆ — Level 5
 
@@ -983,6 +1007,9 @@ You become trained in Stealth and Thievery and gain the Underworld Lore skill. Y
 The volus did not invent currency, but they refined it, standardized it, and turned it into the infrastructure of Citadel civilization. A species that has spent millennia thinking about value-real value, not the number on a tag-develops an instinct for it that operates below the conscious level. You know what things are worth. You can usually tell when someone is lying about what things are worth. And you have a distinctive read on the moment when a negotiation is about to break down versus the moment when the other party is about to agree to something they will later regret.
 You can always determine the approximate market value of any item you examine (within 10%). You gain a +2 circumstance bonus to Deception checks to misrepresent the value of goods and to Perception checks (Sense Motive) to detect when someone is misrepresenting value to you. When you critically succeed on a check to Earn Income, you earn an additional 50% of the base income.
 
+---
+*Automation: Turn on the toggle when goods and their value are in play; the +2 applies to Deception and Perception.*
+
 ##### Ammonia Reserve — Level 5
 
 Volus suits maintain a pressurized ammonia-nitrogen atmosphere, but the biological systems underneath are adapted to manage ammonia concentrations that would be lethal to most species-and to do so under variable conditions. When your suit is compromised or you are exposed to unusual atmospheric conditions, your body has reserves and tolerances that give you more time than biology alone would suggest.
@@ -1044,6 +1071,9 @@ You gain fast healing 2: at the start of each of your turns, if you are below ha
 
 **Adaptive Physiology** The same undifferentiated cell clusters that drive vorcha rapid healing also respond to sustained environmental stress by adapting the body for future exposure. A vorcha who survives a fire emerges with greater heat resistance. One who endures repeated acid burns becomes harder to damage with corrosives. This adaptation is not instantaneous-it requires sustained exposure over hours and will not save a vorcha from a killing blow-but over time, it makes vorcha increasingly difficult to kill with the same method twice.
 After spending at least 24 hours exposed to a specific type of energy damage (fire, cold, acid, electricity, or sonic), you gain resistance 5 to that damage type. This resistance changes when you gain a new adaptation-you cannot maintain multiple resistances simultaneously. The adaptation fades if you go more than a week without relevant exposure.
+
+---
+*Automation: Turn on Adaptive Physiology on your sheet and pick the damage type you have adapted to; resistance 5 to it applies.*
 
 #### Vorcha Heritages
 
@@ -1727,7 +1757,7 @@ Your hybrid discipline reaches its apex, blending biotic and tech into a seamles
 *Prerequisite: Improved Sentinel Mastery.*
 
 ---
-*Automation: Tech Armor's damage reduction and the +1d4 power damage are tracked by hand.*
+*Automation: The +1d4 is added to the damage of your biotic and tech powers. Tech Armor has no damage reduction for the +2 to raise, so that part is left to your GM.*
 
 ---
 
@@ -2490,6 +2520,9 @@ Using Vanguard Rush places both Biotic Charge and Nova on their individual coold
 Your biotic charge technique has evolved. You may choose one of the following options to improve your Biotic Charge ability:
 - Your Biotic Charge distance increases by **30 feet**, and its damage increases by **2d6**.
 - Your Biotic Charge distance and damage remain the same, but your Biotic Barrier always recharges to **full**, regardless of whether your target succeeds their Reflex save against your Biotic Charge.
+
+---
+*Automation: Your choice is made when you take the feat. The extra 2d6 is added to Charge's damage, or using Charge refills your barrier.*
 *Prerequisite: Biotic Charge. Classes: Vanguard.*
 
 ---

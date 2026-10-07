@@ -11,24 +11,25 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A thermal imaging scope that overlays heat signatures onto the targeting display, allowing the sniper to identify biological targets behind light cover and track movement through smoke or debris. The heat signature mapping highlights organ-dense areas and joint gaps in armor, guiding rounds toward targets' most vulnerable points. Designed for sniper rifles. On a successful aimed shot, deal an additional 1d6 precision damage.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a sniper rifle.</p>"
+      "value": "<p>A thermal imaging scope that overlays heat signatures onto the targeting display, allowing the sniper to identify biological targets behind light cover and track movement through smoke or debris. The heat signature mapping highlights organ-dense areas and joint gaps in armor, guiding rounds toward targets' most vulnerable points. Designed for sniper rifles. On a successful aimed shot, deal an additional 1d6 precision damage.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a sniper rifle.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. Turn on the Aimed Shot toggle for this rifle; its Strikes then add the precision damage.</em></p>"
     },
     "rules": [
       {
         "key": "RollOption",
-        "option": "aimed-shot",
+        "domain": "all",
+        "option": "{item|parentItem.id}-aimed-shot",
         "toggleable": true,
-        "label": "Aimed Shot"
+        "label": "Aimed Shot (Thermal Scope)"
       },
       {
         "key": "DamageDice",
-        "selector": "strike-damage",
+        "selector": "{item|parentItem.id}-damage",
         "diceNumber": 1,
         "dieSize": "d6",
         "category": "precision",
         "predicate": [
           "item:group:sniper",
-          "aimed-shot"
+          "{item|parentItem.id}-aimed-shot"
         ],
         "label": "Thermal Scope I"
       }
@@ -42,8 +43,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -67,8 +67,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

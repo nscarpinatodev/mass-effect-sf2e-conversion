@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>High-output military-grade leg actuators with full-body kinetic assist, including hip, knee, and ankle joints that work in concert to multiply the wearer's natural stride length and frequency. The system includes a combat movement VI that anticipates directional changes and pre-loads actuator tension, making the suit feel almost weightless during sprints and direction changes. Increases your Speed by 10 feet.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>High-output military-grade leg actuators with full-body kinetic assist, including hip, knee, and ankle joints that work in concert to multiply the wearer's natural stride length and frequency. The system includes a combat movement VI that anticipates directional changes and pre-loads actuator tension, making the suit feel almost weightless during sprints and direction changes. Increases your Speed by 10 feet.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [
       {
@@ -31,8 +31,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -56,11 +55,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

@@ -13,7 +13,7 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>Batarian society is organized around a rigid caste system, and navigating that system has given you a finely tuned sense for social hierarchies of any kind-where the power sits, who defers to whom, who is resentful of that deference, and where the leverage points are. You have found that most species organize themselves in hierarchies that are not that different from the Hegemony's, once you strip away the cosmetic differences.</p><p>You gain a +1 circumstance bonus to Diplomacy and Intimidation checks against creatures who occupy a defined social or professional role (guards, officials, subordinates, commanders, servants). Once per day you can use Society to Sense Motive in place of Perception-rolling your Society check against the creature's Deception DC-to determine a creature's rank, authority level, or position within their organization.</p>"
+      "value": "<p>Batarian society is organized around a rigid caste system, and navigating that system has given you a finely tuned sense for social hierarchies of any kind-where the power sits, who defers to whom, who is resentful of that deference, and where the leverage points are. You have found that most species organize themselves in hierarchies that are not that different from the Hegemony's, once you strip away the cosmetic differences.</p><p>You gain a +1 circumstance bonus to Diplomacy and Intimidation checks against creatures who occupy a defined social or professional role (guards, officials, subordinates, commanders, servants). Once per day you can use Society to Sense Motive in place of Perception-rolling your Society check against the creature's Deception DC-to determine a creature's rank, authority level, or position within their organization.</p><hr/><p><em>Automation: Turn on the toggle when dealing with someone in a defined role; the +1 applies to Diplomacy and Intimidation.</em></p>"
     },
     "level": {
       "value": 5
@@ -27,7 +27,28 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "castes-and-leverage",
+        "toggleable": true,
+        "label": "Target holds a defined social or professional role"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": [
+          "diplomacy",
+          "intimidation"
+        ],
+        "type": "circumstance",
+        "value": 1,
+        "label": "Castes and Leverage",
+        "predicate": [
+          "castes-and-leverage"
+        ]
+      }
+    ],
     "slug": "castes-and-leverage",
     "traits": {
       "rarity": "common",

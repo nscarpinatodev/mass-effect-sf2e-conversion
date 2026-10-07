@@ -11,17 +11,14 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A military-specification extended barrel with a reinforced acceleration chamber and precision-tuned coil spacing. Rounds exit with significantly greater force than a standard barrel configuration allows, and the added length improves accuracy over the weapon's effective range as a secondary benefit. Compatible with any ranged weapon. Grants a +2 item bonus to weapon damage rolls.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A military-specification extended barrel with a reinforced acceleration chamber and precision-tuned coil spacing. Rounds exit with significantly greater force than a standard barrel configuration allows, and the added length improves accuracy over the weapon's effective range as a secondary benefit. Compatible with any ranged weapon. Grants a +2 item bonus to weapon damage rolls.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +2 is added to this weapon's damage.</em></p>"
     },
     "rules": [
       {
         "key": "FlatModifier",
-        "selector": "strike-damage",
+        "selector": "{item|parentItem.id}-damage",
         "type": "item",
         "value": 2,
-        "predicate": [
-          "item:ranged"
-        ],
         "label": "Extended Barrel II"
       }
     ],
@@ -34,8 +31,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -59,8 +55,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A high-conductance superconducting mesh integrated throughout the suit structure, capable of safely shunting even sustained high-voltage arc discharge into the ground without harm to the wearer. Originally developed for Alliance engineers working around mass effect drive cores. Provides resistance 10 to electricity damage.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A high-conductance superconducting mesh integrated throughout the suit structure, capable of safely shunting even sustained high-voltage arc discharge into the ground without harm to the wearer. Originally developed for Alliance engineers working around mass effect drive cores. Provides resistance 10 to electricity damage.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [
       {
@@ -30,8 +30,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -55,11 +54,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

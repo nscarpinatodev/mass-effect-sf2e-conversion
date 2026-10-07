@@ -219,6 +219,58 @@ console.log('On use: Charge refills by the best Vanguard feature; Nova records a
   assert(nova.flags[MOD].novaCharge === 17 && b4.flags[MOD].barrierCurrent === 0, `records 17, barrier 0 (got ${nova.flags[MOD].novaCharge}, ${b4.flags[MOD].barrierCurrent})`);
 }
 
+console.log('Power Amplifier: item bonus to biotic and tech power damage only');
+{
+  const caster = new Actor('Engineer', { flags: { powerDamageBonus: 2 } });
+  const human = new Actor('Human', { traits: ['humanoid'] }), other = new Actor('Other');
+  await save('me-tech-overload', 'failure', human, { caster, origin: 'Item.ovl-amp' });
+  await save('me-frag-grenade', 'failure', other, { caster, origin: 'Item.frag-amp' });
+  assert(human.damage[0] === 18, `2d8 + 2 = ${human.damage}`);
+  assert(other.damage[0] === 24, `grenade feat (no power trait) unchanged: ${other.damage}`);
+}
+
+console.log('Charge Upgrade and Superior Sentinel Mastery add to power damage');
+{
+  const vanguard = new Actor('Vanguard', { flags: { chargeUpgrade: 'damage' } });
+  const sentinel = new Actor('Sentinel', { flags: { powerBonusDice: '1d4', powerDamageBonus: 1 } });
+  const t1 = new Actor('T1'), t2 = new Actor('T2');
+  await save('me-biotic-charge', 'failure', t1, { caster: vanguard, origin: 'Item.charge-up' });
+  await save('me-biotic-warp', 'failure', t2, { caster: sentinel, origin: 'Item.warp-sent' });
+  assert(t1.damage[0] === 30, `3d6 + 2d6 = ${t1.damage}`);
+  assert(t2.damage[0] === 17, `2d6 + 1 + 1d4 = ${t2.damage}`);
+
+  const useHook = hooks.on.createChatMessage[1];
+  const b = barrierItem(1, 30);
+  const v = new Actor('Barrier Vanguard', { items: [b], flags: { chargeUpgrade: 'barrier' } });
+  v.items = [b];
+  uuids['Item.use2'] = { slug: 'me-biotic-charge', actor: v };
+  await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.use2' } } } });
+  assert(b.flags[MOD].barrierCurrent === 30, `barrier option refills to full on use (got ${b.flags[MOD].barrierCurrent})`);
+}
+
+console.log('Derived data: action costs and Magazine Upgrade I, never compounding');
+{
+  class Character { prepareDerivedData() {} }
+  ctx.CONFIG.PF2E = { Actor: { documentClasses: { character: Character } } };
+  for (const f of hooks.once.init ?? []) f();
+  const feat = {
+    type: 'feat', _source: { system: { actions: { value: 2 } } },
+    system: { actionType: { value: 'action' }, actions: { value: 2 }, traits: { value: ['biotic'] } },
+  };
+  const weapon = {
+    type: 'weapon', _source: { system: { ammo: { capacity: 12 } } }, system: { ammo: { capacity: 12 } },
+    subitems: { contents: [{ flags: { [MOD]: { ammoCapacityMultiplier: 1.5 } } }] },
+  };
+  const actor = {
+    flags: { [MOD]: { powerEfficiency: { biotic: 1 } } }, rollOptions: { all: {} },
+    itemTypes: { feat: [feat], weapon: [weapon], effect: [] },
+  };
+  Character.prototype.prepareDerivedData.call(actor);
+  Character.prototype.prepareDerivedData.call(actor);
+  assert(feat.system.actions.value === 1, `2-action biotic power costs 1 (got ${feat.system.actions.value})`);
+  assert(weapon.system.ammo.capacity === 18, `capacity 12 -> 18 after two prepares (got ${weapon.system.ammo.capacity})`);
+}
+
 console.log('Every save button in the packs has a registry entry');
 {
   const registered = new Set([...src.matchAll(/^  '([\w-]+)': \{\s*\n\s*name:/gm)].map((m) => m[1]));

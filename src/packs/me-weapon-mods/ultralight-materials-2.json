@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A full-frame reconstruction in featherlight alloys so responsive the weapon barely registers in the hand, freeing the wearer's focus for split-second power use. Originally developed for Salarian STG agents who weave gunfire and tech in the same breath.</p><p>Once per turn, you may activate a biotic or tech power that normally costs <strong>1 action</strong> as a <strong>free action</strong>, provided that power is not on cooldown.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A full-frame reconstruction in featherlight alloys so responsive the weapon barely registers in the hand, freeing the wearer's focus for split-second power use. Originally developed for Salarian STG agents who weave gunfire and tech in the same breath.</p><p>Once per turn, you may activate a biotic or tech power that normally costs <strong>1 action</strong> as a <strong>free action</strong>, provided that power is not on cooldown.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The free-action power is yours to use.</em></p>"
     },
     "rules": [],
     "slug": "ultralight-materials-2",
@@ -23,8 +23,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -48,8 +47,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

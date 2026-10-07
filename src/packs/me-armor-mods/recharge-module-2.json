@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A high-capacity power cell and smart routing module that dramatically accelerates the cooldown cycle for tech and biotic abilities. The system includes a predictive charge algorithm that begins the recharge sequence earlier in the activation window, shaving significant time from consecutive power use. Reduces power recharge time by 2 rounds.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A high-capacity power cell and smart routing module that dramatically accelerates the cooldown cycle for tech and biotic abilities. The system includes a predictive charge algorithm that begins the recharge sequence earlier in the activation window, shaving significant time from consecutive power use. Reduces power recharge time by 2 rounds.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. Power cooldowns are tracked by hand.</em></p>"
     },
     "rules": [],
     "slug": "recharge-module-2",
@@ -23,8 +23,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -48,11 +47,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

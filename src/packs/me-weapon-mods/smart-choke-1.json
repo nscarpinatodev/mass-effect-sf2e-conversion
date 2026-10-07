@@ -11,9 +11,21 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>An adjustable choke collar that narrows the shot spread at the muzzle, tightening pellet groupings at range. The choke's internal geometry is tuned to maintain lethality at the tighter spread angle rather than just redirecting the pellets. Useful when a shotgun needs to reach targets beyond its standard effective envelope. Designed for shotguns. Increases the weapon's range increment by 10 feet.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a shotgun.</p>"
+      "value": "<p>An adjustable choke collar that narrows the shot spread at the muzzle, tightening pellet groupings at range. The choke's internal geometry is tuned to maintain lethality at the tighter spread angle rather than just redirecting the pellets. Useful when a shotgun needs to reach targets beyond its standard effective envelope. Designed for shotguns. Increases the weapon's range increment by 10 feet.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a shotgun.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This shotgun's range increment rises by 10 feet.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ItemAlteration",
+        "itemType": "weapon",
+        "mode": "add",
+        "property": "range-increment",
+        "value": 10,
+        "predicate": [
+          "item:id:{item|parentItem.id}",
+          "item:group:shotgun"
+        ]
+      }
+    ],
     "slug": "smart-choke-1",
     "_migration": {
       "version": 0.955,
@@ -23,8 +35,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -48,8 +59,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>Heavy-duty combat actuators that replace the standard elbow and shoulder servo assemblies with hydraulic force amplifiers, dramatically increasing the kinetic energy delivered in each close-combat strike. The system is tuned for combat applications rather than general movement, meaning strikes hit with a force well beyond what the wearer's musculature alone could generate. Grants a +2 item bonus to melee damage rolls.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>Heavy-duty combat actuators that replace the standard elbow and shoulder servo assemblies with hydraulic force amplifiers, dramatically increasing the kinetic energy delivered in each close-combat strike. The system is tuned for combat applications rather than general movement, meaning strikes hit with a force well beyond what the wearer's musculature alone could generate. Grants a +2 item bonus to melee damage rolls.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [
       {
@@ -34,8 +34,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -59,11 +58,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

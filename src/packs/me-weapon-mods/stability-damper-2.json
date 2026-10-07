@@ -11,12 +11,12 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>An advanced gyroscopic stabilization system integrated into the weapon's frame that actively counteracts recoil forces during automatic fire. The internal gyros detect barrel deviation in real time and correct before the next round fires, keeping the weapon on-target regardless of fire rate. Originally developed for Cerberus heavy infantry operating automatic weapons at extreme sustained rates. Grants a +2 item bonus to attack rolls made with automatic fire.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a weapon with the automatic trait.</p>"
+      "value": "<p>An advanced gyroscopic stabilization system integrated into the weapon's frame that actively counteracts recoil forces during automatic fire. The internal gyros detect barrel deviation in real time and correct before the next round fires, keeping the weapon on-target regardless of fire rate. Originally developed for Cerberus heavy infantry operating automatic weapons at extreme sustained rates. Grants a +2 item bonus to attack rolls made with automatic fire.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a weapon with the automatic trait.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +2 is added to this weapon's attack rolls when it fires automatic.</em></p>"
     },
     "rules": [
       {
         "key": "FlatModifier",
-        "selector": "attack-roll",
+        "selector": "{item|parentItem.id}-attack",
         "type": "item",
         "value": 2,
         "predicate": [
@@ -34,8 +34,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -59,8 +58,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

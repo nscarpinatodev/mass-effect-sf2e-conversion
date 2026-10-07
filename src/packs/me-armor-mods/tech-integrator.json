@@ -11,9 +11,17 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A custom heuristics module that integrates directly with the wearer's omni-tool, replacing the standard combat VI with a specialized offensive technology suite. The module pre-computes optimal hack vectors, incinerate plasma trajectories, and combat drone deployment windows, allowing the user to execute tech abilities with significantly improved effectiveness and accuracy. Grants a +2 item bonus to tech ability checks and attack rolls.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure. Requires an omni-tool.</p>"
+      "value": "<p>A custom heuristics module that integrates directly with the wearer's omni-tool, replacing the standard combat VI with a specialized offensive technology suite. The module pre-computes optimal hack vectors, incinerate plasma trajectories, and combat drone deployment windows, allowing the user to execute tech abilities with significantly improved effectiveness and accuracy. Grants a +2 item bonus to tech ability checks and attack rolls.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure. Requires an omni-tool.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. Powers use your class DC, so the +2 is added there. Item bonuses to class DC don't stack.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "item",
+        "value": 2,
+        "label": "Tech Integrator"
+      }
+    ],
     "slug": "tech-integrator",
     "_migration": {
       "version": 0.955,
@@ -23,8 +31,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -48,11 +55,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

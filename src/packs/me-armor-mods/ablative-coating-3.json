@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>Military-grade lattice shunting technology derived from dreadnought hull plating adapted for infantry scale. The coating actively redistributes impact forces through a reactive polymer mesh, dramatically expanding the trauma tolerance of the wearer's suit. Increases maximum Hit Points by 20.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>Military-grade lattice shunting technology derived from dreadnought hull plating adapted for infantry scale. The coating actively redistributes impact forces through a reactive polymer mesh, dramatically expanding the trauma tolerance of the wearer's suit. Increases maximum Hit Points by 20.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [
       {
@@ -31,8 +31,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -56,11 +55,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

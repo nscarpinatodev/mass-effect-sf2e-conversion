@@ -53,6 +53,10 @@
     },
     "onlyLevel1": false,
     "maxTakable": 1,
-    "location": null
+    "location": null,
+    "selfEffect": {
+      "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEffFortifictn0",
+      "name": "Fortification"
+    }
   }
 }

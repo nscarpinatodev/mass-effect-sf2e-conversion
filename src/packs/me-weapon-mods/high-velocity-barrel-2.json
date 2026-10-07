@@ -11,9 +11,16 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>An advanced high-velocity barrel with a tungsten-lined bore and enhanced mass effect coil configuration. Rounds exit at velocities that defeat medium armor plating and penetrate kinetic barrier fields before the field can fully dampen the impact. Originally developed for anti-Geth operations where standard round velocities proved insufficient. Your weapon's attacks ignore 10 points of physical resistance.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>An advanced high-velocity barrel with a tungsten-lined bore and enhanced mass effect coil configuration. Rounds exit at velocities that defeat medium armor plating and penetrate kinetic barrier fields before the field can fully dampen the impact. Originally developed for anti-Geth operations where standard round velocities proved insufficient. Your weapon's attacks ignore 10 points of physical resistance.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. Neither system lets an attachment ignore resistance, so the damage card shows a reminder to apply it.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "Note",
+        "selector": "{item|parentItem.id}-damage",
+        "title": "High-Velocity Barrel II",
+        "text": "<p>This Strike ignores up to 10 points of physical resistance.</p>"
+      }
+    ],
     "slug": "high-velocity-barrel-2",
     "_migration": {
       "version": 0.955,
@@ -23,8 +30,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -48,8 +54,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

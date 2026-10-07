@@ -11,9 +11,20 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A high-voltage frame-mounted stun emitter that delivers a full nervous system override on contact, briefly overwhelming the target's ability to take voluntary action. The system includes a charge capacitor that can sustain multiple discharges per engagement without drawing from the weapon's heat sink. Developed by Alliance Intelligence for close-quarters capture operations. Designed for pistols. When you Strike with a pistol as a melee weapon and hit, the target is stunned 1.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a pistol.</p>"
+      "value": "<p>A high-voltage frame-mounted stun emitter that delivers a full nervous system override on contact, briefly overwhelming the target's ability to take voluntary action. The system includes a charge capacitor that can sustain multiple discharges per engagement without drawing from the weapon's heat sink. Developed by Alliance Intelligence for close-quarters capture operations. Designed for pistols. When you Strike with a pistol as a melee weapon and hit, the target is stunned 1.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a pistol.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. A hit shows the effect as a reminder.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "Note",
+        "selector": "{item|parentItem.id}-attack",
+        "title": "Melee Stunner II",
+        "text": "<p>If this was a melee Strike, the target is <strong>Stunned 1</strong>.</p>",
+        "outcome": [
+          "success",
+          "criticalSuccess"
+        ]
+      }
+    ],
     "slug": "melee-stunner-2",
     "_migration": {
       "version": 0.955,
@@ -23,8 +34,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -48,8 +58,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

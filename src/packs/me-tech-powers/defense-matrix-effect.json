@@ -19,7 +19,7 @@
     "rules": [
       {
         "key": "Resistance",
-        "type": "all",
+        "type": "all-damage",
         "value": 3,
         "label": "Defense Matrix"
       }

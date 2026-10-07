@@ -19,7 +19,7 @@
     "rules": [
       {
         "key": "Resistance",
-        "type": "all",
+        "type": "all-damage",
         "value": 8,
         "label": "Improved Fortification"
       },
@@ -48,9 +48,10 @@
       "remaster": true
     },
     "duration": {
-      "value": -1,
-      "unit": "unlimited",
-      "expiry": null
+      "value": 1,
+      "unit": "rounds",
+      "expiry": "turn-start",
+      "sustained": false
     },
     "badge": null
   }

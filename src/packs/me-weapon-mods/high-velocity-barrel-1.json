@@ -11,9 +11,16 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A specially rifled barrel with hardened interior lining that increases round velocity to levels sufficient to punch through light armor plating. Rounds traveling at these velocities carry enough kinetic force that conventional armor weaves cannot fully absorb the impact. Your weapon's attacks ignore 5 points of physical resistance.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A specially rifled barrel with hardened interior lining that increases round velocity to levels sufficient to punch through light armor plating. Rounds traveling at these velocities carry enough kinetic force that conventional armor weaves cannot fully absorb the impact. Your weapon's attacks ignore 5 points of physical resistance.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. Neither system lets an attachment ignore resistance, so the damage card shows a reminder to apply it.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "Note",
+        "selector": "{item|parentItem.id}-damage",
+        "title": "High-Velocity Barrel I",
+        "text": "<p>This Strike ignores up to 5 points of physical resistance.</p>"
+      }
+    ],
     "slug": "high-velocity-barrel-1",
     "_migration": {
       "version": 0.955,
@@ -23,8 +30,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -48,8 +54,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

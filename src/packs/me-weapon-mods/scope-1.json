@@ -11,9 +11,20 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A low-magnification targeting scope with an integrated rangefinder and windage compensation system. Allows the user to reliably engage targets at distances beyond the weapon's standard effective range. Compatible with any ranged weapon. Increases the weapon's range increment by 20 feet.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A low-magnification targeting scope with an integrated rangefinder and windage compensation system. Allows the user to reliably engage targets at distances beyond the weapon's standard effective range. Compatible with any ranged weapon. Increases the weapon's range increment by 20 feet.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This weapon's range increment rises by 20 feet.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ItemAlteration",
+        "itemType": "weapon",
+        "mode": "add",
+        "property": "range-increment",
+        "value": 20,
+        "predicate": [
+          "item:id:{item|parentItem.id}"
+        ]
+      }
+    ],
     "slug": "scope-1",
     "_migration": {
       "version": 0.955,
@@ -23,8 +34,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -48,8 +58,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

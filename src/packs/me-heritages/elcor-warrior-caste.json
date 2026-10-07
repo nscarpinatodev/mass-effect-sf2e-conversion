@@ -11,7 +11,7 @@
     },
     "description": {
       "gm": "",
-      "value": "<p>Elcor warriors are a sobering reminder that slow does not mean harmless. Warrior caste elcor are trained to carry heavy weapons mounted to their dorsal harness-a rig that turns them into walking artillery platforms-and to use their massive frame as a battering ram when the situation calls for direct contact. You are from that tradition, and you have internalized the fundamental truth that size and patience together are almost always enough.</p><p>You gain a natural unarmed attack that deals 1d8 bludgeoning damage and has the Shove trait. You can wield heavy weapons without the normal penalties for being a quadruped, provided the weapon is mounted or braced on your body. You gain a +2 circumstance bonus to Bulk limits.</p>"
+      "value": "<p>Elcor warriors are a sobering reminder that slow does not mean harmless. Warrior caste elcor are trained to carry heavy weapons mounted to their dorsal harness-a rig that turns them into walking artillery platforms-and to use their massive frame as a battering ram when the situation calls for direct contact. You are from that tradition, and you have internalized the fundamental truth that size and patience together are almost always enough.</p><p>You gain a natural unarmed attack that deals 1d8 bludgeoning damage and has the Shove trait. You can wield heavy weapons without the normal penalties for being a quadruped, provided the weapon is mounted or braced on your body. You gain a +2 circumstance bonus to Bulk limits.</p><hr/><p><em>Automation: The slam appears among your Strikes, and your Bulk limits rise by 2.</em></p>"
     },
     "publication": {
       "title": "Mass Effect Actor and Ancestry Compendium",
@@ -19,7 +19,38 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "Strike",
+        "category": "unarmed",
+        "slug": "warrior-caste-slam",
+        "label": "Warrior Caste Slam",
+        "group": "brawling",
+        "damage": {
+          "base": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d8"
+          }
+        },
+        "traits": [
+          "unarmed",
+          "shove"
+        ]
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "inventory.bulk.encumberedAfterAddend",
+        "value": 2
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "inventory.bulk.maxAddend",
+        "value": 2
+      }
+    ],
     "traits": {
       "rarity": "common",
       "value": [],

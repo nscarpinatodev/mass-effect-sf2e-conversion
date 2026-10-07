@@ -11,9 +11,16 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A neural interface booster and omni-tool amplification module that increases the output power of both tech and biotic abilities. For tech users, it improves omni-tool field generation efficiency; for biotics, it enhances the dark energy focusing resonators built into the suit. Grants a +1 item bonus to ability/spell damage rolls (tech and biotic powers).</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A neural interface booster and omni-tool amplification module that increases the output power of both tech and biotic abilities. For tech users, it improves omni-tool field generation efficiency; for biotics, it enhances the dark energy focusing resonators built into the suit. Grants a +1 item bonus to ability/spell damage rolls (tech and biotic powers).</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. The +1 is added to the damage your biotic and tech powers deal.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.powerDamageBonus",
+        "value": 1
+      }
+    ],
     "slug": "power-amplifier-1",
     "_migration": {
       "version": 0.955,
@@ -23,8 +30,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -48,11 +54,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

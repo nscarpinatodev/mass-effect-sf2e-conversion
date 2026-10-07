@@ -15,7 +15,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>An auxiliary power-routing module that primes the kinetic barrier emitters the instant fire slackens, eliminating the lag between a hit and the start of the recharge cycle.</p><p>Your kinetic barrier normally waits <strong>one full round</strong> after taking damage before it begins recharging. This module removes that delay — your barrier resumes recharging on your next turn, even if it was hit on the previous round.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>An auxiliary power-routing module that primes the kinetic barrier emitters the instant fire slackens, eliminating the lag between a hit and the start of the recharge cycle.</p><p>Your kinetic barrier normally waits <strong>one full round</strong> after taking damage before it begins recharging. This module removes that delay — your barrier resumes recharging on your next turn, even if it was hit on the previous round.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [],
     "slug": "recharge-accelerator-1",
@@ -27,8 +27,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -52,11 +51,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

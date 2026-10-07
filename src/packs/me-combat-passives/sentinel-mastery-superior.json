@@ -14,9 +14,16 @@
     "slug": "me-sentinel-mastery-superior",
     "description": {
       "gm": "",
-      "value": "<p>Your hybrid discipline reaches its apex, blending biotic and tech into a seamless defensive and offensive system. Biotic and tech powers each have their action cost <strong>reduced by 1</strong> (minimum 1 action) and you retain the AC bonus from using both in the same turn. Tech Armor's damage reduction increases by <strong>2</strong>. Your biotic and tech powers deal <strong>+1d4 bonus damage</strong>.</p><p><em>Prerequisite: Improved Sentinel Mastery.</em></p><hr/><p><em>Automation: Tech Armor's damage reduction and the +1d4 power damage are tracked by hand.</em></p>"
+      "value": "<p>Your hybrid discipline reaches its apex, blending biotic and tech into a seamless defensive and offensive system. Biotic and tech powers each have their action cost <strong>reduced by 1</strong> (minimum 1 action) and you retain the AC bonus from using both in the same turn. Tech Armor's damage reduction increases by <strong>2</strong>. Your biotic and tech powers deal <strong>+1d4 bonus damage</strong>.</p><p><em>Prerequisite: Improved Sentinel Mastery.</em></p><hr/><p><em>Automation: The +1d4 is added to the damage of your biotic and tech powers. Tech Armor has no damage reduction for the +2 to raise, so that part is left to your GM.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "override",
+        "path": "flags.mass-effect-sf2e-conversion.powerBonusDice",
+        "value": "1d4"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

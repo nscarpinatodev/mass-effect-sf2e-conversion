@@ -13,7 +13,7 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>Human military and colonial history in the three decades since first contact has been dense with the kind of experience that leaves a mark-the Relay 314 Incident, the colonial attacks, the constant pressure of operating in a galaxy full of species that had millennia of head start. Those who survived adapted. You carry that adaptation in the way you handle damage that would stop someone who hadn't learned what you have.</p><p>When you would gain persistent damage, you attempt a DC 15 flat check to avoid gaining it; on a success, the persistent damage is negated entirely. You gain a +1 circumstance bonus to the flat check to end persistent damage at the end of your turn. Additionally, you gain a +1 circumstance bonus to Fortitude saves against effects that would cause you to be sickened or drained.</p>"
+      "value": "<p>Human military and colonial history in the three decades since first contact has been dense with the kind of experience that leaves a mark-the Relay 314 Incident, the colonial attacks, the constant pressure of operating in a galaxy full of species that had millennia of head start. Those who survived adapted. You carry that adaptation in the way you handle damage that would stop someone who hadn't learned what you have.</p><p>When you would gain persistent damage, you attempt a DC 15 flat check to avoid gaining it; on a success, the persistent damage is negated entirely. You gain a +1 circumstance bonus to the flat check to end persistent damage at the end of your turn. Additionally, you gain a +1 circumstance bonus to Fortitude saves against effects that would cause you to be sickened or drained.</p><hr/><p><em>Automation: The +1 applies to Fortitude saves against sickened and drained. The flat checks against persistent damage are rolled by hand.</em></p>"
     },
     "level": {
       "value": 5
@@ -27,7 +27,23 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "fortitude",
+        "type": "circumstance",
+        "value": 1,
+        "label": "Battle-Hardened",
+        "predicate": [
+          {
+            "or": [
+              "inflicts:sickened",
+              "inflicts:drained"
+            ]
+          }
+        ]
+      }
+    ],
     "slug": "battle-hardened",
     "traits": {
       "rarity": "common",

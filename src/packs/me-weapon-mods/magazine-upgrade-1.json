@@ -4,14 +4,18 @@
   "type": "equipment",
   "effects": [],
   "img": "modules/mass-effect-sf2e-conversion/assets/img/armor-mods/ME3_SMG_Heat_Sink.png",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "ammoCapacityMultiplier": 1.5
+    }
+  },
   "ownership": {
     "default": 0
   },
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>An extended heat sink and thermal clip assembly that increases the number of rounds a weapon can fire before requiring a heat sink swap. The larger thermal mass absorbs more heat per cycle, allowing the weapon to sustain fire well past the point a standard configuration would demand a reload. Compatible with any ranged weapon. Increases the weapon's ammo capacity by 50% (round up).</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>An extended heat sink and thermal clip assembly that increases the number of rounds a weapon can fire before requiring a heat sink swap. The larger thermal mass absorbs more heat per cycle, allowing the weapon to sustain fire well past the point a standard configuration would demand a reload. Compatible with any ranged weapon. Increases the weapon's ammo capacity by 50% (round up).</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This weapon's ammo capacity rises by half, rounded up.</em></p>"
     },
     "rules": [],
     "slug": "magazine-upgrade-1",
@@ -23,8 +27,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -48,8 +51,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

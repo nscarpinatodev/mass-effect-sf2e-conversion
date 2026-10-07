@@ -13,7 +13,7 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>The volus did not invent currency, but they refined it, standardized it, and turned it into the infrastructure of Citadel civilization. A species that has spent millennia thinking about value-real value, not the number on a tag-develops an instinct for it that operates below the conscious level. You know what things are worth. You can usually tell when someone is lying about what things are worth. And you have a distinctive read on the moment when a negotiation is about to break down versus the moment when the other party is about to agree to something they will later regret.</p><p>You can always determine the approximate market value of any item you examine (within 10%). You gain a +2 circumstance bonus to Deception checks to misrepresent the value of goods and to Perception checks (Sense Motive) to detect when someone is misrepresenting value to you. When you critically succeed on a check to Earn Income, you earn an additional 50% of the base income.</p>"
+      "value": "<p>The volus did not invent currency, but they refined it, standardized it, and turned it into the infrastructure of Citadel civilization. A species that has spent millennia thinking about value-real value, not the number on a tag-develops an instinct for it that operates below the conscious level. You know what things are worth. You can usually tell when someone is lying about what things are worth. And you have a distinctive read on the moment when a negotiation is about to break down versus the moment when the other party is about to agree to something they will later regret.</p><p>You can always determine the approximate market value of any item you examine (within 10%). You gain a +2 circumstance bonus to Deception checks to misrepresent the value of goods and to Perception checks (Sense Motive) to detect when someone is misrepresenting value to you. When you critically succeed on a check to Earn Income, you earn an additional 50% of the base income.</p><hr/><p><em>Automation: Turn on the toggle when goods and their value are in play; the +2 applies to Deception and Perception.</em></p>"
     },
     "level": {
       "value": 1
@@ -27,7 +27,28 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "market-instinct",
+        "toggleable": true,
+        "label": "Dealing in the value of goods"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": [
+          "deception",
+          "perception"
+        ],
+        "type": "circumstance",
+        "value": 2,
+        "label": "Market Instinct",
+        "predicate": [
+          "market-instinct"
+        ]
+      }
+    ],
     "slug": "market-instinct",
     "traits": {
       "rarity": "common",

@@ -15,7 +15,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A high-density barrier capacitor array using superconducting loop technology to sustain a substantially larger kinetic field than standard emitter hardware. The expanded field envelope intercepts more incoming mass-accelerated rounds before collapsing, giving the wearer a meaningful advantage in sustained engagements. Increases kinetic barrier pool by 10.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A high-density barrier capacitor array using superconducting loop technology to sustain a substantially larger kinetic field than standard emitter hardware. The expanded field envelope intercepts more incoming mass-accelerated rounds before collapsing, giving the wearer a meaningful advantage in sustained engagements. Increases kinetic barrier pool by 10.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [],
     "slug": "shield-capacitor-2",
@@ -27,8 +27,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -52,11 +51,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

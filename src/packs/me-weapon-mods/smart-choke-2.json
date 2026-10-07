@@ -11,9 +11,21 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A precision variable-choke system controlled by a targeting VI that dynamically adjusts spread angle based on target range data fed from the weapon's sensors. At close range it widens for maximum coverage; at distance it tightens to near-rifle precision. The result is a shotgun that can perform effectively at ranges previously requiring a dedicated rifle. Designed for shotguns. Increases the weapon's range increment by 20 feet.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a shotgun.</p>"
+      "value": "<p>A precision variable-choke system controlled by a targeting VI that dynamically adjusts spread angle based on target range data fed from the weapon's sensors. At close range it widens for maximum coverage; at distance it tightens to near-rifle precision. The result is a shotgun that can perform effectively at ranges previously requiring a dedicated rifle. Designed for shotguns. Increases the weapon's range increment by 20 feet.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a shotgun.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This shotgun's range increment rises by 20 feet.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ItemAlteration",
+        "itemType": "weapon",
+        "mode": "add",
+        "property": "range-increment",
+        "value": 20,
+        "predicate": [
+          "item:id:{item|parentItem.id}",
+          "item:group:shotgun"
+        ]
+      }
+    ],
     "slug": "smart-choke-2",
     "_migration": {
       "version": 0.955,
@@ -23,8 +35,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -48,8 +59,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

@@ -13,7 +13,7 @@
     "category": "ancestryfeature",
     "description": {
       "gm": "",
-      "value": "<p>Elcor evolved on the high-gravity world of Dekuuna walking on four massive limbs, giving them a physical foundation that is extraordinarily difficult to displace. Their wide stance and distributed mass make forced movement and knockdowns far less effective against them than against bipedal species.</p><p>You gain a +2 circumstance bonus to your Fortitude DC against Shove and Trip attempts, and to Fortitude saves against effects that would move you against your will or knock you prone. Whenever you would be pushed or pulled, reduce the distance by 5 feet (minimum 0).</p>"
+      "value": "<p>Elcor evolved on the high-gravity world of Dekuuna walking on four massive limbs, giving them a physical foundation that is extraordinarily difficult to displace. Their wide stance and distributed mass make forced movement and knockdowns far less effective against them than against bipedal species.</p><p>You gain a +2 circumstance bonus to your Fortitude DC against Shove and Trip attempts, and to Fortitude saves against effects that would move you against your will or knock you prone. Whenever you would be pushed or pulled, reduce the distance by 5 feet (minimum 0).</p><hr/><p><em>Automation: The +2 applies to your Fortitude DC against Shove and Trip and to Fortitude saves against forced movement and being knocked prone.</em></p>"
     },
     "level": {
       "value": 0
@@ -27,7 +27,38 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "fortitude-dc",
+        "type": "circumstance",
+        "value": 2,
+        "label": "Quadruped Stability",
+        "predicate": [
+          {
+            "or": [
+              "action:shove",
+              "action:trip"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "fortitude",
+        "type": "circumstance",
+        "value": 2,
+        "label": "Quadruped Stability",
+        "predicate": [
+          {
+            "or": [
+              "forced-movement",
+              "inflicts:prone"
+            ]
+          }
+        ]
+      }
+    ],
     "slug": "quadruped-stability",
     "traits": {
       "otherTags": [],

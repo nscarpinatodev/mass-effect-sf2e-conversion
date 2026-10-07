@@ -11,9 +11,20 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A compact electroshock emitter fitted to the weapon's frame near the barrel that discharges on contact during a pistol-whip or frame strike. The charge is calibrated to disrupt nervous system function without lethal effect, creating a brief window of incapacitation that operatives can exploit. Designed for pistols. When you Strike with a pistol as a melee weapon and hit, the target is flat-footed until the start of your next turn.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a pistol.</p>"
+      "value": "<p>A compact electroshock emitter fitted to the weapon's frame near the barrel that discharges on contact during a pistol-whip or frame strike. The charge is calibrated to disrupt nervous system function without lethal effect, creating a brief window of incapacitation that operatives can exploit. Designed for pistols. When you Strike with a pistol as a melee weapon and hit, the target is flat-footed until the start of your next turn.</p><p><strong>Activate</strong> - Install on weapon during a 10-minute field maintenance procedure. Requires a pistol.</p><hr/><p><em>Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. A hit shows the effect as a reminder.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "Note",
+        "selector": "{item|parentItem.id}-attack",
+        "title": "Melee Stunner I",
+        "text": "<p>If this was a melee Strike, the target is <strong>Off-Guard</strong> until the start of your next turn.</p>",
+        "outcome": [
+          "success",
+          "criticalSuccess"
+        ]
+      }
+    ],
     "slug": "melee-stunner-1",
     "_migration": {
       "version": 0.955,
@@ -23,8 +34,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -48,8 +58,7 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
       "value": "installed-in-a-weapon"

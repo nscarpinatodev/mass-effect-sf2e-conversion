@@ -11,9 +11,20 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>A micro-suspension system installed in the joints and weight-bearing structures of the armor that absorbs and counters the movement resistance created by the suit's mass. By dynamically compensating for the armor's inertia, the wearer experiences significantly less impediment to agility-dependent tasks. Reduces the armor's check penalty by 1.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>A micro-suspension system installed in the joints and weight-bearing structures of the armor that absorbs and counters the movement resistance created by the suit's mass. By dynamically compensating for the armor's inertia, the wearer experiences significantly less impediment to agility-dependent tasks. Reduces the armor's check penalty by 1.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. The host armor's check penalty drops by 1.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ItemAlteration",
+        "itemType": "armor",
+        "mode": "add",
+        "property": "check-penalty",
+        "value": 1,
+        "predicate": [
+          "item:id:{item|parentItem.id}"
+        ]
+      }
+    ],
     "slug": "kinetic-dampeners",
     "_migration": {
       "version": 0.955,
@@ -23,8 +34,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "common"
     },
@@ -48,11 +58,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",

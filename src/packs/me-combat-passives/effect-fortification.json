@@ -19,7 +19,7 @@
     "rules": [
       {
         "key": "Resistance",
-        "type": "all",
+        "type": "all-damage",
         "value": 5,
         "label": "Fortification"
       }
@@ -41,9 +41,10 @@
       "remaster": true
     },
     "duration": {
-      "value": -1,
-      "unit": "unlimited",
-      "expiry": null
+      "value": 1,
+      "unit": "rounds",
+      "expiry": "turn-start",
+      "sustained": false
     },
     "badge": null
   }

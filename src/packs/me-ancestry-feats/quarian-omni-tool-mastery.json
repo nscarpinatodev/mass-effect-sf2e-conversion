@@ -13,7 +13,7 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>Quarians grow up interfacing with technology through an omni-tool as a matter of basic survival-the suit's environmental systems, the Fleet's communication networks, the ship's engineering substrates. By the time a quarian is old enough for their Pilgrimage, the omni-tool is not a device they use. It is an extension of how they process the world. You have the kind of hardware fluency that comes from necessity, and it shows in the speed and ease with which you work.</p><p>You gain a +1 circumstance bonus to Crafting and Society checks involving technology, electronics, or networked systems. When you use Crafting to Repair a technological device, you reduce the time required by half. When you critically succeed on a Crafting check to identify or interact with technology, you also learn one additional property or function of the device beyond what the check normally reveals.</p>"
+      "value": "<p>Quarians grow up interfacing with technology through an omni-tool as a matter of basic survival-the suit's environmental systems, the Fleet's communication networks, the ship's engineering substrates. By the time a quarian is old enough for their Pilgrimage, the omni-tool is not a device they use. It is an extension of how they process the world. You have the kind of hardware fluency that comes from necessity, and it shows in the speed and ease with which you work.</p><p>You gain a +1 circumstance bonus to Crafting and Society checks involving technology, electronics, or networked systems. When you use Crafting to Repair a technological device, you reduce the time required by half. When you critically succeed on a Crafting check to identify or interact with technology, you also learn one additional property or function of the device beyond what the check normally reveals.</p><hr/><p><em>Automation: Turn on the toggle for checks involving technology; the +1 applies to Crafting and Society.</em></p>"
     },
     "level": {
       "value": 1
@@ -27,7 +27,28 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "omni-tool-mastery",
+        "toggleable": true,
+        "label": "Working with technology"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": [
+          "crafting",
+          "society"
+        ],
+        "type": "circumstance",
+        "value": 1,
+        "label": "Omni-Tool Mastery",
+        "predicate": [
+          "omni-tool-mastery"
+        ]
+      }
+    ],
     "slug": "omni-tool-mastery",
     "traits": {
       "rarity": "common",

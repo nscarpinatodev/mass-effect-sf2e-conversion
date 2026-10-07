@@ -11,7 +11,7 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>An advanced ballistic VI suite integrating real-time target modeling, predictive movement algorithms, and kinetic coil feedback that optimizes round velocity for each trigger pull. The system substantially improves effective damage output across all weapon platforms by ensuring rounds strike optimal impact angles against barrier fields, armor weaves, and organic tissue. Grants a +2 item bonus to weapon damage rolls.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p>"
+      "value": "<p>An advanced ballistic VI suite integrating real-time target modeling, predictive movement algorithms, and kinetic coil feedback that optimizes round velocity for each trigger pull. The system substantially improves effective damage output across all weapon platforms by ensuring rounds strike optimal impact angles against barrier fields, armor weaves, and organic tissue. Grants a +2 item bonus to weapon damage rolls.</p><p><strong>Activate</strong> - Install in armor during a 10-minute field maintenance procedure.</p><hr/><p><em>Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. </em></p>"
     },
     "rules": [
       {
@@ -31,8 +31,7 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "tech",
-        "invested"
+        "tech"
       ],
       "rarity": "uncommon"
     },
@@ -56,11 +55,10 @@
       }
     },
     "equipped": {
-      "carryType": "worn",
-      "invested": null
+      "carryType": "worn"
     },
     "usage": {
-      "value": "worn"
+      "value": "installed-in-armor"
     },
     "identification": {
       "status": "identified",
