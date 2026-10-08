@@ -8,7 +8,7 @@
     "attributes": {
       "hp": {
         "value": 20,
-        "temp": 15,
+        "temp": 30,
         "max": 20,
         "details": ""
       },
@@ -39,7 +39,7 @@
         "value": 1
       },
       "blurb": "Barely-trained conscript with a pistol.",
-      "publicNotes": "<p>A raw recruit or colonial militia volunteer — willing but green. Useful as low-threat mooks or to represent frightened civilians pressed into a fight.</p><p><strong>Kinetic Barrier:</strong> 15 Shield HP. Recharges 5 HP per turn.</p>",
+      "publicNotes": "<p>A raw recruit or colonial militia volunteer — willing but green. Useful as low-threat mooks or to represent frightened civilians pressed into a fight.</p><p><strong>Kinetic Barrier:</strong> 30 Shield HP. Recharges 10 HP per turn.</p>",
       "privateNotes": "",
       "publication": {
         "title": "Mass Effect Compendium",
@@ -322,22 +322,51 @@
       "name": "Kinetic Shield",
       "type": "equipment",
       "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
       "system": {
         "slug": "me-kinetic-shield",
         "description": {
-          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>",
-          "gm": ""
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
         },
         "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
           "value": 1
         },
         "price": {
           "value": {
             "sp": 150
           }
-        },
-        "bulk": {
-          "value": 1
         },
         "equipped": {
           "carryType": "worn",
@@ -346,35 +375,24 @@
         "usage": {
           "value": "other"
         },
-        "traits": {
-          "value": [],
-          "rarity": "common"
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
         },
-        "rules": [],
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        }
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 300000,
-      "flags": {
-        "mass-effect-sf2e-conversion": {
-          "shieldMax": 15,
-          "shieldRegen": 5
-        }
-      },
-      "ownership": {
-        "default": 0
+        "subitems": [],
+        "specific": null
       },
       "_key": "!actors.items!uWhXQqtZE5nhnF8N.WYhsh10GStPPN8OD",
+      "sort": 300000,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
       }

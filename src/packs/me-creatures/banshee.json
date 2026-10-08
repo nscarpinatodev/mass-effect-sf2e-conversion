@@ -117,7 +117,7 @@
       "hp": {
         "value": 210,
         "max": 210,
-        "temp": 80,
+        "temp": 0,
         "details": ""
       },
       "ac": {
@@ -357,9 +357,41 @@
       "_id": "589d263c9d44daed",
       "name": "Biotic Barrier",
       "type": "effect",
-      "img": "systems/pf2e/icons/spells/mystic-armor.webp",
+      "img": "icons/magic/lightning/barrier-shield-crackling-orb-pink.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "barrier": true,
+          "barrierMax": 80,
+          "barrierCurrent": 80
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
       "system": {
-        "slug": "npc-biotic-barrier-banshee",
+        "slug": "me-biotic-barrier",
+        "description": {
+          "gm": "",
+          "value": "<p>A biotic barrier. HP = 5 × ⌊level ÷ 2⌋, calculated at activation.</p><p>Absorbs damage before shields and actual HP. Does not recharge per turn - spend 2 actions to reactivate at full strength. The barrier persists at 0 HP as an empty field; it is not removed when depleted. Certain abilities (such as Charge) can restore HP without a full reactivation.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
         "duration": {
           "value": -1,
           "unit": "unlimited",
@@ -368,38 +400,14 @@
         "badge": {
           "type": "counter",
           "value": 80,
-          "max": 80,
-          "label": "Barrier Points"
-        },
-        "rules": [],
-        "description": {
-          "value": "",
-          "gm": ""
-        },
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
+          "max": 80
         }
       },
-      "effects": [],
-      "folder": null,
+      "_key": "!actors.items!c5c767165ca51f25.589d263c9d44daed",
       "sort": 400000,
-      "flags": {
-        "mass-effect-sf2e-conversion": {
-          "barrierMax": 80,
-          "barrierCurrent": 80
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!c5c767165ca51f25.589d263c9d44daed"
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meBioticBarrier0"
+      }
     }
   ],
   "_id": "c5c767165ca51f25",

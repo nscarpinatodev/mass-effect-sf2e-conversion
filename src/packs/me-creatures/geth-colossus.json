@@ -117,7 +117,7 @@
       "hp": {
         "value": 215,
         "max": 215,
-        "temp": 80,
+        "temp": 70,
         "details": ""
       },
       "ac": {
@@ -304,8 +304,39 @@
       "name": "Titan Combat Frame",
       "type": "effect",
       "img": "modules/mass-effect-sf2e-conversion/assets/img/icons/combat-armor-frame.png",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "armorMax": 200,
+          "armorCurrent": 200
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
       "system": {
         "slug": "me-armor-frame-t4",
+        "description": {
+          "gm": "",
+          "value": "<p>An ablative combat armor frame providing <strong>200 Armor Points</strong>.</p><p>Armor Points absorb damage that gets through shields, before it reaches your HP. The frame is destroyed when all Armor Points are depleted.</p><p><strong>Incendiary Rounds</strong> burn through armor 50% faster. <strong>Phasic Rounds</strong> bypass the armor frame entirely. <strong>Armor-Piercing Rounds</strong> allow 50% of damage to bleed through to shields/HP.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
         "duration": {
           "value": -1,
           "unit": "unlimited",
@@ -316,36 +347,172 @@
           "value": 200,
           "max": 200,
           "label": "Armor Points"
-        },
-        "rules": [],
-        "description": {
-          "value": "",
-          "gm": ""
-        },
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
         }
       },
-      "effects": [],
-      "folder": null,
+      "_key": "!actors.items!fb2dc44473813faa.5232ab8639c5285d",
       "sort": 300000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meTitanCombatFrm"
+      }
+    },
+    {
+      "_id": "fb2dc44473shld00",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "armorMax": 200,
-          "armorCurrent": 200
+          "shieldMax": 30,
+          "shieldRegen": 10
         }
       },
       "ownership": {
         "default": 0
       },
-      "_key": "!actors.items!fb2dc44473813faa.5232ab8639c5285d"
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!fb2dc44473813faa.fb2dc44473shld00",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "fb2dc44473shx000",
+      "name": "Shield HP Mod - Tier 3",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 40
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t3",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 9
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 7000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!fb2dc44473813faa.fb2dc44473shx000",
+      "sort": 900001,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod003"
+      }
     }
   ],
   "_id": "fb2dc44473813faa",

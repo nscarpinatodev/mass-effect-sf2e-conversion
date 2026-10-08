@@ -99,7 +99,7 @@
       "level": {
         "value": 10
       },
-      "publicNotes": "<p>Miranda Lawson is a Cerberus operative and the daughter of Henry Lawson, genetically engineered to physical and intellectual perfection. She served as Cerberus's liaison for the Lazarus Project and is one of the most capable operatives in the organization. Miranda is a powerful biotic and a deadly combatant who can dominate enemies with Warp and Throw while also serving as a capable tactician.</p><p><strong>Genetic Perfection:</strong> Miranda has a +1 circumstance bonus to all saves and a +2 circumstance bonus to Deception and Diplomacy checks due to her engineered charisma.</p><p><strong>Warp (2 actions):</strong> Miranda targets a creature within 60 feet. The target takes 3d10+6 force damage (DC 28 Will for half). On a critical failure, the target is also Weakened 2 (takes +2 damage from all sources) until the end of their next turn.</p><p><strong>Throw (2 actions):</strong> Miranda unleashes a biotic throw at a target within 60 feet. Target must succeed on DC 28 Reflex or be flung 20 feet in a direction Miranda chooses and take 2d10 bludgeoning damage (half on success, no effect on critical success).</p><p><strong>Kinetic Barrier:</strong> 80 Shield HP. Recharges 20 HP per turn.</p>",
+      "publicNotes": "<p>Miranda Lawson is a Cerberus operative and the daughter of Henry Lawson, genetically engineered to physical and intellectual perfection. She served as Cerberus's liaison for the Lazarus Project and is one of the most capable operatives in the organization. Miranda is a powerful biotic and a deadly combatant who can dominate enemies with Warp and Throw while also serving as a capable tactician.</p><p><strong>Genetic Perfection:</strong> Miranda has a +1 circumstance bonus to all saves and a +2 circumstance bonus to Deception and Diplomacy checks due to her engineered charisma.</p><p><strong>Warp (2 actions):</strong> Miranda targets a creature within 60 feet. The target takes 3d10+6 force damage (DC 28 Will for half). On a critical failure, the target is also Weakened 2 (takes +2 damage from all sources) until the end of their next turn.</p><p><strong>Throw (2 actions):</strong> Miranda unleashes a biotic throw at a target within 60 feet. Target must succeed on DC 28 Reflex or be flung 20 feet in a direction Miranda chooses and take 2d10 bludgeoning damage (half on success, no effect on critical success).</p><p><strong>Kinetic Barrier:</strong> 70 Shield HP. Recharges 20 HP per turn.</p>",
       "privateNotes": "",
       "publication": {
         "title": "Mass Effect Compendium",
@@ -117,7 +117,7 @@
       "hp": {
         "value": 165,
         "max": 165,
-        "temp": 80,
+        "temp": 70,
         "details": ""
       },
       "ac": {
@@ -347,190 +347,6 @@
       "_key": "!actors.items!d1e2f3a4b5c60001.m1r4nd4l4wsa0002"
     },
     {
-      "_id": "m1r4nd4l4wss0001",
-      "name": "Kinetic Shield",
-      "type": "equipment",
-      "img": "icons/magic/defensive/shield-barrier-blue.webp",
-      "system": {
-        "slug": "me-kinetic-shield",
-        "description": {
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p>",
-          "gm": ""
-        },
-        "level": {
-          "value": 1
-        },
-        "price": {
-          "value": {
-            "sp": 150
-          }
-        },
-        "bulk": {
-          "value": 1
-        },
-        "equipped": {
-          "carryType": "worn",
-          "inSlot": true
-        },
-        "usage": {
-          "value": "other"
-        },
-        "traits": {
-          "value": [],
-          "rarity": "common"
-        },
-        "rules": [],
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        }
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 400000,
-      "flags": {
-        "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!d1e2f3a4b5c60001.m1r4nd4l4wss0001",
-      "_stats": {
-        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
-      }
-    },
-    {
-      "_id": "m1r4nd4l4wsm0001",
-      "name": "Shield HP Mod - Tier 3",
-      "type": "equipment",
-      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
-      "system": {
-        "slug": "me-shield-hp-mod-t3",
-        "description": {
-          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p>",
-          "gm": ""
-        },
-        "level": {
-          "value": 9
-        },
-        "price": {
-          "value": {
-            "sp": 7000
-          }
-        },
-        "bulk": {
-          "value": 0
-        },
-        "equipped": {
-          "carryType": "worn",
-          "inSlot": true
-        },
-        "usage": {
-          "value": "other"
-        },
-        "traits": {
-          "value": [],
-          "rarity": "common"
-        },
-        "rules": [],
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        }
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 500000,
-      "flags": {
-        "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 40
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!d1e2f3a4b5c60001.m1r4nd4l4wsm0001",
-      "_stats": {
-        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod003"
-      }
-    },
-    {
-      "_id": "m1r4nd4l4wsr0001",
-      "name": "Shield Regen Mod - Tier 3",
-      "type": "equipment",
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
-      "system": {
-        "slug": "me-shield-regen-mod-t3",
-        "description": {
-          "value": "<p>Boosts kinetic shield recharge rate by <strong>+100%</strong> (base 10 → 20 HP/turn).</p>",
-          "gm": ""
-        },
-        "level": {
-          "value": 9
-        },
-        "price": {
-          "value": {
-            "sp": 7000
-          }
-        },
-        "bulk": {
-          "value": 0
-        },
-        "equipped": {
-          "carryType": "worn",
-          "inSlot": true
-        },
-        "usage": {
-          "value": "other"
-        },
-        "traits": {
-          "value": [],
-          "rarity": "common"
-        },
-        "rules": [],
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        }
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 600000,
-      "flags": {
-        "mass-effect-sf2e-conversion": {
-          "regenMult": 2
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!d1e2f3a4b5c60001.m1r4nd4l4wsr0001",
-      "_stats": {
-        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen003"
-      }
-    },
-    {
       "folder": null,
       "name": "N7 Hurricane",
       "type": "weapon",
@@ -739,6 +555,244 @@
       "sort": 800000,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.0483c7d809556b42"
+      }
+    },
+    {
+      "_id": "m1r4nd4l4wss0001",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!d1e2f3a4b5c60001.m1r4nd4l4wss0001",
+      "sort": 400000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "m1r4nd4l4wsm0001",
+      "name": "Shield HP Mod - Tier 3",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 40
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t3",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 9
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 7000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!d1e2f3a4b5c60001.m1r4nd4l4wsm0001",
+      "sort": 400001,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod003"
+      }
+    },
+    {
+      "_id": "m1r4nd4l4wsr0001",
+      "name": "Shield Regen Mod - Tier 2",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "regenMult": 2
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-regen-mod-t2",
+        "description": {
+          "gm": "",
+          "value": "<p>Boosts kinetic shield recharge rate by <strong>+100%</strong> (base 10 → 20 HP/turn).</p><p>Only one Shield Regen Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 6
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-regen-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 2500
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!d1e2f3a4b5c60001.m1r4nd4l4wsr0001",
+      "sort": 400002,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen002"
       }
     }
   ],

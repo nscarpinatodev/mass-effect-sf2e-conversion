@@ -8,7 +8,7 @@
     "attributes": {
       "hp": {
         "value": 120,
-        "temp": 80,
+        "temp": 70,
         "max": 120,
         "details": ""
       },
@@ -39,7 +39,7 @@
         "value": 7
       },
       "blurb": "Systems Alliance professional combat marine",
-      "publicNotes": "<p>Systems Alliance marines are the professional military backbone of humanity's presence in the galaxy. They train for conditions ranging from orbital insertion to ship-to-ship boarding, and their equipment reflects a military budget that few private organizations can match. When Alliance marines are deployed somewhere, the situation has escalated past the point where diplomacy was going to resolve it.</p><p><strong>Alliance Training:</strong> Can Interact to reload a weapon and Stride up to half speed as a single action.</p><p><strong>Suppressing Fire (2 actions):</strong> The marine saturates a 10-ft square within 60 ft with fire. Until the start of the marine's next turn, each creature that enters or begins its turn in the square must succeed at a DC 23 Reflex save or take 2d6+4 piercing damage and become flat-footed until the end of their next turn.</p><p><strong>Kinetic Barrier:</strong> 80 Shield HP. Recharges 20 HP per turn.</p>",
+      "publicNotes": "<p>Systems Alliance marines are the professional military backbone of humanity's presence in the galaxy. They train for conditions ranging from orbital insertion to ship-to-ship boarding, and their equipment reflects a military budget that few private organizations can match. When Alliance marines are deployed somewhere, the situation has escalated past the point where diplomacy was going to resolve it.</p><p><strong>Alliance Training:</strong> Can Interact to reload a weapon and Stride up to half speed as a single action.</p><p><strong>Suppressing Fire (2 actions):</strong> The marine saturates a 10-ft square within 60 ft with fire. Until the start of the marine's next turn, each creature that enters or begins its turn in the square must succeed at a DC 23 Reflex save or take 2d6+4 piercing damage and become flat-footed until the end of their next turn.</p><p><strong>Kinetic Barrier:</strong> 70 Shield HP. Recharges 10 HP per turn.</p>",
       "privateNotes": "",
       "publication": {
         "title": "Mass Effect Actor and Ancestry Compendium",
@@ -323,90 +323,6 @@
       "_key": "!actors.items!MENPC00000000020.NPCRanged000001A"
     },
     {
-      "_id": "NPCShield000001A",
-      "name": "Kinetic Shield",
-      "type": "equipment",
-      "img": "icons/magic/defensive/shield-barrier-blue.webp",
-      "flags": {},
-      "system": {
-        "description": {
-          "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>80 Shield HP</strong>. Recharges <strong>20 HP per turn</strong>.</p>"
-        },
-        "rules": [],
-        "slug": "me-kinetic-shield",
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "traits": {
-          "otherTags": [],
-          "value": [],
-          "rarity": "common"
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        },
-        "level": {
-          "value": 1
-        },
-        "quantity": 1,
-        "baseItem": null,
-        "bulk": {
-          "value": 1
-        },
-        "hp": {
-          "value": 0,
-          "max": 0
-        },
-        "hardness": 0,
-        "price": {
-          "value": {
-            "sp": 150
-          }
-        },
-        "equipped": {
-          "carryType": "worn",
-          "invested": null
-        },
-        "containerId": null,
-        "size": "med",
-        "material": {
-          "type": null,
-          "grade": null
-        },
-        "identification": {
-          "status": "identified",
-          "unidentified": {
-            "name": "",
-            "img": "",
-            "data": {
-              "description": {
-                "value": ""
-              }
-            }
-          }
-        },
-        "usage": {
-          "value": "other"
-        },
-        "subitems": []
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 400000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!MENPC00000000020.NPCShield000001A",
-      "_stats": {
-        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
-      }
-    },
-    {
       "_id": "NPCAction000001A",
       "name": "Suppressing Fire",
       "type": "action",
@@ -658,6 +574,165 @@
       },
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.97cabaca9a77a75c"
+      }
+    },
+    {
+      "_id": "NPCShield000001A",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!MENPC00000000020.NPCShield000001A",
+      "sort": 400000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "MENPC00000shld00",
+      "name": "Shield HP Mod - Tier 3",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 40
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t3",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 9
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 7000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!MENPC00000000020.MENPC00000shld00",
+      "sort": 400001,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod003"
       }
     }
   ],

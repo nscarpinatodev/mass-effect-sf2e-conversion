@@ -40,7 +40,7 @@
         "value": 5
       },
       "blurb": "Batarian criminal operative commanding a slaving crew",
-      "publicNotes": "<p>Batarian slavers operate throughout the Terminus Systems and occasionally beyond, running operations that target isolated colonies and established trafficking routes. They are experienced in coordinating small groups under fire-necessary when your workforce actively tries to escape and the competition shoots first. Most have military backgrounds that predate their criminal careers, and it shows in how they handle armed resistance.</p><p><strong>Four-Eyed:</strong> +2 circ. bonus to Perception checks vs. hidden or undetected creatures.</p><p><strong>Tactical Command (free action, 1/round):</strong> One ally within 30 ft can use the Strike action as a free action on its next turn.</p><p><strong>Kinetic Barrier:</strong> 50 Shield HP. Recharges 15 HP per turn.</p>",
+      "publicNotes": "<p>Batarian slavers operate throughout the Terminus Systems and occasionally beyond, running operations that target isolated colonies and established trafficking routes. They are experienced in coordinating small groups under fire-necessary when your workforce actively tries to escape and the competition shoots first. Most have military backgrounds that predate their criminal careers, and it shows in how they handle armed resistance.</p><p><strong>Four-Eyed:</strong> +2 circ. bonus to Perception checks vs. hidden or undetected creatures.</p><p><strong>Tactical Command (free action, 1/round):</strong> One ally within 30 ft can use the Strike action as a free action on its next turn.</p><p><strong>Kinetic Barrier:</strong> 50 Shield HP. Recharges 10 HP per turn.</p>",
       "privateNotes": "",
       "publication": {
         "title": "Mass Effect Actor and Ancestry Compendium",
@@ -327,90 +327,6 @@
       "_key": "!actors.items!MENPC00000000016.NPCRanged000001A"
     },
     {
-      "_id": "NPCShield000001A",
-      "name": "Kinetic Shield",
-      "type": "equipment",
-      "img": "icons/magic/defensive/shield-barrier-blue.webp",
-      "flags": {},
-      "system": {
-        "description": {
-          "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>50 Shield HP</strong>. Recharges <strong>15 HP per turn</strong>.</p>"
-        },
-        "rules": [],
-        "slug": "me-kinetic-shield",
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "traits": {
-          "otherTags": [],
-          "value": [],
-          "rarity": "common"
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        },
-        "level": {
-          "value": 1
-        },
-        "quantity": 1,
-        "baseItem": null,
-        "bulk": {
-          "value": 1
-        },
-        "hp": {
-          "value": 0,
-          "max": 0
-        },
-        "hardness": 0,
-        "price": {
-          "value": {
-            "sp": 150
-          }
-        },
-        "equipped": {
-          "carryType": "worn",
-          "invested": null
-        },
-        "containerId": null,
-        "size": "med",
-        "material": {
-          "type": null,
-          "grade": null
-        },
-        "identification": {
-          "status": "identified",
-          "unidentified": {
-            "name": "",
-            "img": "",
-            "data": {
-              "description": {
-                "value": ""
-              }
-            }
-          }
-        },
-        "usage": {
-          "value": "other"
-        },
-        "subitems": []
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 300000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!MENPC00000000016.NPCShield000001A",
-      "_stats": {
-        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
-      }
-    },
-    {
       "_id": "NPCAction000001A",
       "name": "Tactical Command",
       "type": "action",
@@ -661,6 +577,165 @@
       },
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.22e2a3ed5d182977"
+      }
+    },
+    {
+      "_id": "NPCShield000001A",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!MENPC00000000016.NPCShield000001A",
+      "sort": 300000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "MENPC00000shld00",
+      "name": "Shield HP Mod - Tier 2",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 20
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t2",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 30 → 50).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 6
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 2500
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!MENPC00000000016.MENPC00000shld00",
+      "sort": 300001,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod002"
       }
     }
   ],

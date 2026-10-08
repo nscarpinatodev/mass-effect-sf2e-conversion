@@ -117,7 +117,7 @@
       "hp": {
         "value": 160,
         "max": 160,
-        "temp": 40,
+        "temp": 0,
         "details": ""
       },
       "ac": {
@@ -291,8 +291,39 @@
       "name": "Heavy Combat Frame",
       "type": "effect",
       "img": "modules/mass-effect-sf2e-conversion/assets/img/icons/combat-armor-frame.png",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "armorMax": 100,
+          "armorCurrent": 100
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
       "system": {
         "slug": "me-armor-frame-t3",
+        "description": {
+          "gm": "",
+          "value": "<p>An ablative combat armor frame providing <strong>100 Armor Points</strong>.</p><p>Armor Points absorb damage that gets through shields, before it reaches your HP. The frame is destroyed when all Armor Points are depleted.</p><p><strong>Incendiary Rounds</strong> burn through armor 50% faster. <strong>Phasic Rounds</strong> bypass the armor frame entirely. <strong>Armor-Piercing Rounds</strong> allow 50% of damage to bleed through to shields/HP.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
         "duration": {
           "value": -1,
           "unit": "unlimited",
@@ -303,36 +334,13 @@
           "value": 100,
           "max": 100,
           "label": "Armor Points"
-        },
-        "rules": [],
-        "description": {
-          "value": "",
-          "gm": ""
-        },
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
         }
       },
-      "effects": [],
-      "folder": null,
+      "_key": "!actors.items!b8468b6645ad8fc9.e68acfaa42238638",
       "sort": 300000,
-      "flags": {
-        "mass-effect-sf2e-conversion": {
-          "armorMax": 100,
-          "armorCurrent": 100
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!b8468b6645ad8fc9.e68acfaa42238638"
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meHvyCombatFrame"
+      }
     }
   ],
   "_id": "b8468b6645ad8fc9",

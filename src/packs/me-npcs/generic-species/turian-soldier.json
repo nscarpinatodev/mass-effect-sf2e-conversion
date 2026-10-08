@@ -40,7 +40,7 @@
         "value": 3
       },
       "blurb": "Turian Hierarchy line infantry",
-      "publicNotes": "<p>Turian soldiers are the galaxy's most consistent professional military product: disciplined, well-equipped, and trained to function as part of a cohesive unit under conditions most species' militaries would consider extreme. They use cover effectively and coordinate naturally with allied units.</p><p><strong>Formation Fighter:</strong> When adjacent to an ally, gains +1 circumstance bonus to attack rolls and AC.</p><p><strong>Kinetic Barrier:</strong> 30 Shield HP. Recharges 9 HP per turn.</p>",
+      "publicNotes": "<p>Turian soldiers are the galaxy's most consistent professional military product: disciplined, well-equipped, and trained to function as part of a cohesive unit under conditions most species' militaries would consider extreme. They use cover effectively and coordinate naturally with allied units.</p><p><strong>Formation Fighter:</strong> When adjacent to an ally, gains +1 circumstance bonus to attack rolls and AC.</p><p><strong>Kinetic Barrier:</strong> 30 Shield HP. Recharges 10 HP per turn.</p>",
       "privateNotes": "",
       "publication": {
         "title": "Mass Effect Actor and Ancestry Compendium",
@@ -321,90 +321,6 @@
       "_key": "!actors.items!MENPC00000000009.NPCRanged000001A"
     },
     {
-      "_id": "NPCShield000001A",
-      "name": "Kinetic Shield",
-      "type": "equipment",
-      "img": "icons/magic/defensive/shield-barrier-blue.webp",
-      "flags": {},
-      "system": {
-        "description": {
-          "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>9 HP per turn</strong>.</p>"
-        },
-        "rules": [],
-        "slug": "me-kinetic-shield",
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "traits": {
-          "otherTags": [],
-          "value": [],
-          "rarity": "common"
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        },
-        "level": {
-          "value": 1
-        },
-        "quantity": 1,
-        "baseItem": null,
-        "bulk": {
-          "value": 1
-        },
-        "hp": {
-          "value": 0,
-          "max": 0
-        },
-        "hardness": 0,
-        "price": {
-          "value": {
-            "sp": 150
-          }
-        },
-        "equipped": {
-          "carryType": "worn",
-          "invested": null
-        },
-        "containerId": null,
-        "size": "med",
-        "material": {
-          "type": null,
-          "grade": null
-        },
-        "identification": {
-          "status": "identified",
-          "unidentified": {
-            "name": "",
-            "img": "",
-            "data": {
-              "description": {
-                "value": ""
-              }
-            }
-          }
-        },
-        "usage": {
-          "value": "other"
-        },
-        "subitems": []
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 400000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!MENPC00000000009.NPCShield000001A",
-      "_stats": {
-        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
-      }
-    },
-    {
       "_key": "!actors.items!MENPC00000000009.3d2a1cf645058f03",
       "_id": "3d2a1cf645058f03",
       "name": "M-15 Vindicator",
@@ -613,6 +529,86 @@
       },
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.b2bed78739b43fc4"
+      }
+    },
+    {
+      "_id": "NPCShield000001A",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!MENPC00000000009.NPCShield000001A",
+      "sort": 400000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
       }
     }
   ],

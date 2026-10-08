@@ -311,49 +311,7 @@
       "name": "Kinetic Shield",
       "type": "equipment",
       "img": "icons/magic/defensive/shield-barrier-blue.webp",
-      "system": {
-        "slug": "me-kinetic-shield",
-        "description": {
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>",
-          "gm": ""
-        },
-        "level": {
-          "value": 1
-        },
-        "price": {
-          "value": {
-            "sp": 150
-          }
-        },
-        "bulk": {
-          "value": 1
-        },
-        "equipped": {
-          "carryType": "worn",
-          "inSlot": true
-        },
-        "usage": {
-          "value": "other"
-        },
-        "traits": {
-          "value": [],
-          "rarity": "common"
-        },
-        "rules": [],
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        }
-      },
       "effects": [],
-      "folder": null,
-      "sort": 300000,
       "flags": {
         "mass-effect-sf2e-conversion": {
           "shieldMax": 30,
@@ -363,29 +321,41 @@
       "ownership": {
         "default": 0
       },
-      "_key": "!actors.items!7f4a5324298fa292.7b8ccc7ee8181154"
-    },
-    {
-      "_id": "11bfe199c30b7e69",
-      "name": "Shield HP Mod - Tier 1",
-      "type": "equipment",
-      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
       "system": {
-        "slug": "me-shield-hp-mod-t1",
+        "slug": "me-kinetic-shield",
         "description": {
-          "value": "<p>Increases kinetic shield capacity by <strong>+10 HP</strong> (base 30 → 40).</p><p>Only one Shield HP Mod can be installed at a time.</p>",
-          "gm": ""
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
         },
         "level": {
-          "value": 3
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
         },
         "price": {
           "value": {
-            "sp": 600
+            "sp": 150
           }
-        },
-        "bulk": {
-          "value": 0
         },
         "equipped": {
           "carryType": "worn",
@@ -394,25 +364,34 @@
         "usage": {
           "value": "other"
         },
-        "traits": {
-          "value": [],
-          "rarity": "common"
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
         },
-        "rules": [],
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        }
+        "subitems": [],
+        "specific": null
       },
+      "_key": "!actors.items!7f4a5324298fa292.7b8ccc7ee8181154",
+      "sort": 300000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "11bfe199c30b7e69",
+      "name": "Shield HP Mod - Tier 1",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
       "effects": [],
-      "folder": null,
-      "sort": 400000,
       "flags": {
         "mass-effect-sf2e-conversion": {
           "shieldHpBonus": 10
@@ -421,29 +400,41 @@
       "ownership": {
         "default": 0
       },
-      "_key": "!actors.items!7f4a5324298fa292.11bfe199c30b7e69"
-    },
-    {
-      "_id": "6520a109f44c7c6d",
-      "name": "Shield Regen Mod - Tier 1",
-      "type": "equipment",
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
       "system": {
-        "slug": "me-shield-regen-mod-t1",
+        "slug": "me-shield-hp-mod-t1",
         "description": {
-          "value": "<p>Boosts kinetic shield recharge rate by <strong>+50%</strong> (base 10 → 15 HP/turn).</p><p>Only one Shield Regen Mod can be installed at a time.</p>",
-          "gm": ""
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+10 HP</strong> (base 30 → 40).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
         },
         "level": {
           "value": 3
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
         },
         "price": {
           "value": {
             "sp": 600
           }
-        },
-        "bulk": {
-          "value": 0
         },
         "equipped": {
           "carryType": "worn",
@@ -452,25 +443,34 @@
         "usage": {
           "value": "other"
         },
-        "traits": {
-          "value": [],
-          "rarity": "common"
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
         },
-        "rules": [],
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        }
+        "subitems": [],
+        "specific": null
       },
+      "_key": "!actors.items!7f4a5324298fa292.11bfe199c30b7e69",
+      "sort": 300001,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod001"
+      }
+    },
+    {
+      "_id": "6520a109f44c7c6d",
+      "name": "Shield Regen Mod - Tier 1",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
       "effects": [],
-      "folder": null,
-      "sort": 500000,
       "flags": {
         "mass-effect-sf2e-conversion": {
           "regenMult": 1.5
@@ -479,7 +479,70 @@
       "ownership": {
         "default": 0
       },
-      "_key": "!actors.items!7f4a5324298fa292.6520a109f44c7c6d"
+      "system": {
+        "slug": "me-shield-regen-mod-t1",
+        "description": {
+          "gm": "",
+          "value": "<p>Boosts kinetic shield recharge rate by <strong>+50%</strong> (base 10 → 15 HP/turn).</p><p>Only one Shield Regen Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-regen-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 600
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!7f4a5324298fa292.6520a109f44c7c6d",
+      "sort": 300002,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen001"
+      }
     }
   ],
   "_id": "7f4a5324298fa292",

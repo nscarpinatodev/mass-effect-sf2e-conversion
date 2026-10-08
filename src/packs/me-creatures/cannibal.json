@@ -117,7 +117,7 @@
       "hp": {
         "value": 85,
         "max": 85,
-        "temp": 30,
+        "temp": 0,
         "details": ""
       },
       "ac": {
@@ -340,8 +340,39 @@
       "name": "Standard Combat Frame",
       "type": "effect",
       "img": "modules/mass-effect-sf2e-conversion/assets/img/icons/combat-armor-frame.png",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "armorMax": 50,
+          "armorCurrent": 50
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
       "system": {
         "slug": "me-armor-frame-t2",
+        "description": {
+          "gm": "",
+          "value": "<p>An ablative combat armor frame providing <strong>50 Armor Points</strong>.</p><p>Armor Points absorb damage that gets through shields, before it reaches your HP. The frame is destroyed when all Armor Points are depleted.</p><p><strong>Incendiary Rounds</strong> burn through armor 50% faster. <strong>Phasic Rounds</strong> bypass the armor frame entirely. <strong>Armor-Piercing Rounds</strong> allow 50% of damage to bleed through to shields/HP.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
         "duration": {
           "value": -1,
           "unit": "unlimited",
@@ -352,36 +383,13 @@
           "value": 50,
           "max": 50,
           "label": "Armor Points"
-        },
-        "rules": [],
-        "description": {
-          "value": "",
-          "gm": ""
-        },
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
         }
       },
-      "effects": [],
-      "folder": null,
+      "_key": "!actors.items!aeede87dbc69cfc1.38e76a81ae274946",
       "sort": 400000,
-      "flags": {
-        "mass-effect-sf2e-conversion": {
-          "armorMax": 50,
-          "armorCurrent": 50
-        }
-      },
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!aeede87dbc69cfc1.38e76a81ae274946"
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meStdCombatFrame"
+      }
     }
   ],
   "_id": "aeede87dbc69cfc1",

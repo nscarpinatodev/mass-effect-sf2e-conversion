@@ -3567,7 +3567,7 @@ A grenade packed with a mass effect field generator that triggers a localized an
 
 # PART II — BESTIARY
 
-*175 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
+*182 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
 
 ---
 
@@ -3585,7 +3585,7 @@ Alliance tech specialist and drone operator.
 
 **Perception** +11; **Skills** Computers +12, Crafting +11, Thievery +10
 **Abilities** Str +1, Dex +3, Con +2, Int +4, Wis +2, Cha +1
-**Items** Kinetic Shield, M-9 Tempest, Onyx Armor (L)
+**Items** M-9 Tempest, Onyx Armor (L), Kinetic Shield
 **AC** 19; **Fort** +8, **Ref** +10, **Will** +9
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -3603,7 +3603,7 @@ Alliance field medic with medi-gel.
 
 **Perception** +12; **Skills** Athletics +8, Medicine +13, Society +9
 **Abilities** Str +1, Dex +3, Con +2, Int +3, Wis +4, Cha +2
-**Items** Kinetic Shield, M-9 Tempest, Onyx Armor (L)
+**Items** M-9 Tempest, Onyx Armor (L), Kinetic Shield
 **AC** 19; **Fort** +9, **Ref** +9, **Will** +11
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -3620,9 +3620,9 @@ Systems Alliance commissioned officer.
 
 **Perception** +12; **Skills** Athletics +10, Diplomacy +12, Intimidation +11, Warfare +12
 **Abilities** Str +2, Dex +3, Con +2, Int +3, Wis +3, Cha +4
-**Items** Kinetic Shield, Phaeston, Onyx Armor (M)
+**Items** Phaeston, Onyx Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 20; **Fort** +10, **Ref** +11, **Will** +12
-**HP** 55; **Shields** 35 (recharge 10/turn)
+**HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ M-8 Avenger +12 (range increment 60 ft, automatic), **Damage** 2d8+6 piercing
 **Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 2d8+6 piercing
@@ -3638,9 +3638,9 @@ Elite N7 special-forces operator.
 
 **Perception** +15; **Skills** Acrobatics +14, Athletics +14, Intimidation +14, Stealth +15, Warfare +14
 **Abilities** Str +3, Dex +5, Con +3, Int +3, Wis +3, Cha +3
-**Items** Kinetic Shield, M-96 Mattock, Onyx Armor (L)
+**Items** M-96 Mattock, Onyx Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 24; **Fort** +13, **Ref** +15, **Will** +13
-**HP** 95; **Shields** 50 (recharge 15/turn)
+**HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ M-8 Avenger +16 (range increment 70 ft, automatic), **Damage** 3d6+10 piercing
 **Melee** ◆ Omni-Blade +15 (agile, finesse), **Damage** 2d8+8 slashing plus 1d6 fire
@@ -3657,9 +3657,9 @@ Systems Alliance professional combat marine
 
 **Perception** +14; **Skills** Athletics +15, Medicine +13, Stealth +13, Survival +13
 **Abilities** Str +4, Dex +3, Con +3, Int +2, Wis +3, Cha +2
-**Items** Kinetic Shield, M-8 Avenger, Predator H Armor
+**Items** M-8 Avenger, Predator H Armor, Kinetic Shield, Shield HP Mod - Tier 3
 **AC** 25; **Fort** +16, **Ref** +14, **Will** +14
-**HP** 120
+**HP** 120; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Knife +16 (agile, finesse), **Damage** 3d6+7 slashing
 **Melee** ◆ M-8 Avenger +15 (analog, reload-2), **Damage** 4d6+9 piercing
@@ -3675,7 +3675,7 @@ Decorated Alliance N7 veteran and mentor to Shepard; inspiring battlefield leade
 
 **Perception** +22; **Skills** Athletics +22, Diplomacy +18, Intimidation +20, Piloting +18
 **Abilities** Str +4, Dex +4, Con +4, Int +3, Wis +4, Cha +3
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-99 Saber, Onyx Armor (M)
+**Items** M-99 Saber, Onyx Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 28; **Fort** +20, **Ref** +20, **Will** +22
 **HP** 180; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -3704,6 +3704,127 @@ Commander of the Alliance Fifth Fleet; strategic genius whose presence strengthe
 ---
 
 ### CITADEL & COUNCIL
+
+##### C-Sec Desk Officer — Creature 0
+
+*Medium · Humanoid · C Sec*
+
+Precinct dispatch, records, and the first face at the front desk.
+
+**Perception** +6; **Skills** Computers +6, Diplomacy +5, Society +6
+**Abilities** Str +0, Dex +2, Con +1, Int +2, Wis +2, Cha +2
+**Items** M-3 Predator
+**AC** 15; **Fort** +4, **Ref** +6, **Will** +6
+**HP** 15
+**Speed** 25 feet
+**Ranged** ◆ M-3 Predator +6 (range increment 30 ft, agile), **Damage** 1d6+2 piercing
+**Melee** ◆ Fist +4 (agile, nonlethal, unarmed), **Damage** 1d4 bludgeoning
+**Call for Backup** ◆ The desk officer signals the precinct. A pair of C-Sec Patrol Officers arrives at the nearest entrance in 1d4 rounds. Once per encounter.
+**Lockdown** ◆◆ Using a precinct terminal, the desk officer seals the doors and shutters in the surrounding offices. Opening one takes a DC 16 Thievery or Computers check to override it, or a DC 20 Athletics check to force it.
+
+---
+
+##### C-Sec Forensics Technician — Creature 1
+
+*Medium · Humanoid · C Sec*
+
+Crime-scene analyst: omni-tool, evidence bags, and a sidearm they would rather not draw.
+
+**Perception** +10; **Skills** Computers +7, Crafting +7, Medicine +7, Society +6
+**Abilities** Str +0, Dex +2, Con +1, Int +4, Wis +3, Cha +0
+**Items** M-3 Predator, Explorer Armor (L), Kinetic Shield
+**AC** 15; **Fort** +5, **Ref** +7, **Will** +9
+**HP** 18; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-3 Predator +5 (range increment 30 ft, agile), **Damage** 1d6+2 piercing
+**Forensic Sweep** ◆ The technician's omni-tool sweeps a 15-foot emanation for residue, prints, and recent signatures. They Seek with a +2 circumstance bonus to find hidden objects, traces, and creatures that passed through the area in the last hour.
+**Dazzler Flash** ◆ The omni-tool emits a calibrated strobe at one creature within 15 feet, which must attempt a DC 17 Fortitude save.
+**Success** Unaffected.
+**Failure** Dazzled until the end of its next turn.
+**Critical Failure** Blinded until the start of its next turn, then dazzled until the end of that turn.
+
+---
+
+##### C-Sec Patrol Officer — Creature 1
+
+*Medium · Humanoid · C Sec*
+
+Beat cop on the Citadel wards: sidearm, stun baton, and a voice that carries.
+
+**Perception** +7; **Skills** Athletics +6, Intimidation +6, Society +5
+**Abilities** Str +2, Dex +2, Con +2, Int +0, Wis +1, Cha +1
+**Items** M-3 Predator, Predator Armor (L), Kinetic Shield
+**AC** 16; **Fort** +7, **Ref** +7, **Will** +4
+**HP** 20; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-3 Predator +7 (range increment 30 ft, agile), **Damage** 1d6+3 piercing
+**Melee** ◆ Stun Baton +7 (agile, nonlethal), **Damage** 1d6+3 bludgeoning
+**Halt! C-Sec!** ◆ The officer Demoralizes a creature within 30 feet. The target does not need to understand the officer's language, and on a success it is also off-guard against the officer until the start of the officer's next turn.
+
+---
+
+##### C-Sec Enforcement Officer — Creature 2
+
+*Medium · Humanoid · C Sec*
+
+Armored enforcement: rifle for firefights, baton for arrests.
+
+**Perception** +8; **Skills** Athletics +8, Intimidation +7, Society +5
+**Abilities** Str +3, Dex +3, Con +2, Int +0, Wis +1, Cha +1
+**Items** M-8 Avenger, Predator Armor (M), Kinetic Shield
+**AC** 18; **Fort** +11, **Ref** +8, **Will** +8
+**HP** 30; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-8 Avenger +10 (range increment 60 ft, automatic), **Damage** 1d10+4 piercing
+**Melee** ◆ Stun Baton +9 (agile, nonlethal), **Damage** 1d6+4 bludgeoning
+**Takedown** ◆◆ The officer makes a Stun Baton Strike. On a hit, the target must attempt a DC 18 Fortitude save.
+**Success** Unaffected.
+**Failure** Stunned 1.
+**Critical Failure** Stunned 2.
+**Cuff** ◆ The officer binds an adjacent creature that is grabbed, paralyzed, restrained, or unconscious. It becomes restrained until it Escapes (DC 18) or someone frees it with a DC 18 Thievery check.
+
+---
+
+##### C-Sec Detective — Creature 3
+
+*Medium · Humanoid · C Sec*
+
+Plainclothes investigator who knows the wards, their informants, and their lies.
+
+**Perception** +12; **Skills** Computers +9, Deception +9, Diplomacy +9, Intimidation +9, Society +10, Thievery +7
+**Abilities** Str +1, Dex +3, Con +1, Int +3, Wis +3, Cha +2
+**Items** M-5 Phalanx, Duelist Armor (L), Kinetic Shield, Shield HP Mod - Tier 1
+**AC** 18; **Fort** +6, **Ref** +9, **Will** +12
+**HP** 45; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-5 Phalanx +10 (range increment 30 ft), **Damage** 1d10+6 piercing
+**Melee** ◆ Fist +9 (agile, nonlethal, unarmed), **Damage** 1d6+3 bludgeoning
+**Read the Room** ◇ **Trigger** The detective rolls initiative. **Effect** The detective studies one creature they can see and learns its lowest save and whether it is carrying a concealed weapon.
+**Exploit the Tell** The detective's Strikes deal an extra 1d6 precision damage to off-guard creatures.
+
+---
+
+##### C-Sec Tactical Officer — Creature 4
+
+*Medium · Humanoid · C Sec*
+
+Emergency response team: heavy armor, shotgun, and flashbangs for hostage calls.
+
+**Perception** +11; **Skills** Acrobatics +10, Athletics +12, Intimidation +10
+**Abilities** Str +4, Dex +3, Con +3, Int +0, Wis +1, Cha +0
+**Items** M-27 Scimitar, Guardian Armor (H), Kinetic Shield, Shield HP Mod - Tier 1, Shield Regen Mod - Tier 1
+**AC** 21; **Fort** +14, **Ref** +11, **Will** +8
+**HP** 60; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-27 Scimitar +13 (range increment 20 ft), **Damage** 2d10+7 piercing
+**Melee** ◆ Combat Knife +13 (agile, finesse), **Damage** 2d6+5 slashing
+**Flashbang** ◆◆ The officer throws a flashbang at a point within 30 feet. Each creature in a 10-foot burst must attempt a DC 21 Fortitude save. Recharge 1d4 rounds.
+**Success** Deafened until the end of its next turn.
+**Failure** Blinded until the start of its next turn and deafened for 1 minute.
+**Critical Failure** As failure, and stunned 1.
+**Breach and Clear** ◆◆ The officer Strides up to their Speed through a doorway or opening, then Strikes. A creature that has not yet acted this encounter is off-guard against that Strike.
+
+---
 
 ##### Councilor Sparatus — Creature 4
 
@@ -3776,6 +3897,25 @@ Human Ambassador and later Councilor; political operative who advances humanity'
 
 ---
 
+##### C-Sec Captain — Creature 5
+
+*Medium · Humanoid · C Sec*
+
+Precinct commander: runs the ward's officers and takes the field when it matters.
+
+**Perception** +15; **Skills** Athletics +11, Diplomacy +12, Intimidation +13, Society +12
+**Abilities** Str +2, Dex +3, Con +2, Int +2, Wis +3, Cha +3
+**Items** M-5 Phalanx, Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**AC** 22; **Fort** +12, **Ref** +12, **Will** +15
+**HP** 75; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-5 Phalanx +14 (range increment 30 ft), **Damage** 2d8+7 piercing
+**Melee** ◆ Stun Baton +13 (agile, nonlethal), **Damage** 2d6+7 bludgeoning
+**Coordinate Response** ◆ One allied C-Sec officer within 30 feet who can hear the captain can immediately Stride or Strike as a reaction.
+**C-Sec Authority** In areas under Citadel jurisdiction, the captain has a +2 circumstance bonus to Intimidation checks, and C-Sec officers who can see the captain are not frightened by enemies' Demoralize attempts.
+
+---
+
 ##### Commander Bailey — Creature 6
 
 *Unique · Medium · Human · Humanoid · Unique*
@@ -3784,7 +3924,7 @@ Head of C-Sec on the Citadel wards; pragmatic lawman who deals straight and figh
 
 **Perception** +16; **Skills** Athletics +13, Diplomacy +14, Intimidation +17, Society +14
 **Abilities** Str +2, Dex +3, Con +2, Int +3, Wis +3, Cha +3
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, Predator Armor (M)
+**Items** Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 23; **Fort** +14, **Ref** +14, **Will** +16
 **HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -3803,9 +3943,9 @@ Salarian Spectre and counter-intelligence specialist.
 
 **Perception** +17; **Skills** Acrobatics +15, Computers +16, Deception +15, Society +15, Stealth +17
 **Abilities** Str +2, Dex +5, Con +3, Int +5, Wis +4, Cha +3
-**Items** Kinetic Shield, Scorpion, Colossus Armor (L)
+**Items** Scorpion, Colossus Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 25; **Fort** +13, **Ref** +16, **Will** +16
-**HP** 100; **Shields** 50 (recharge 15/turn)
+**HP** 100; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Ranged** ◆ Scorpion Pistol +17 (range increment 50 ft), **Damage** 3d8+6 piercing plus 1d6 fire
 **Melee** ◆ Omni-Blade +16 (agile, finesse), **Damage** 3d8+5 slashing plus 1d4 fire
@@ -3822,9 +3962,9 @@ Veteran turian Spectre and mentor.
 
 **Perception** +17; **Skills** Acrobatics +15, Athletics +14, Intimidation +15, Stealth +16, Warfare +15
 **Abilities** Str +3, Dex +5, Con +3, Int +3, Wis +4, Cha +3
-**Items** Kinetic Shield, M-76 Revenant, Colossus Armor (L)
+**Items** M-76 Revenant, Colossus Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 25; **Fort** +14, **Ref** +16, **Will** +15
-**HP** 105; **Shields** 55 (recharge 15/turn)
+**HP** 105; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Phaeston Assault Rifle +17 (range increment 70 ft, automatic), **Damage** 4d6+9 piercing
 **Ranged** ◆ Heavy Pistol +17 (range increment 50 ft), **Damage** 2d8+9 piercing
@@ -3842,9 +3982,9 @@ Ruthless asari Spectre and biotic powerhouse.
 
 **Perception** +18; **Skills** Acrobatics +18, Athletics +15, Deception +16, Intimidation +17, Stealth +17
 **Abilities** Str +3, Dex +5, Con +4, Int +4, Wis +4, Cha +4
-**Items** Kinetic Shield, Scorpion, Colossus Armor (L)
+**Items** Scorpion, Colossus Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
 **AC** 27; **Fort** +16, **Ref** +18, **Will** +17
-**HP** 140; **Shields** 60 (recharge 20/turn)
+**HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Ranged** ◆ Heavy Pistol +18 (range increment 50 ft), **Damage** 3d8+12 piercing
 **Melee** ◆ Biotic Slam +18 (agile, finesse, force, unarmed), **Damage** 2d10+10 bludgeoning plus 1d6 force
@@ -3861,9 +4001,9 @@ Elite Council Spectre - autonomous operative, extreme threat
 
 **Perception** +18; **Skills** Acrobatics +17, Athletics +17, Deception +17, Intimidation +18, Society +16, Stealth +17, Survival +16
 **Abilities** Str +4, Dex +4, Con +3, Int +3, Wis +4, Cha +3
-**Items** Kinetic Shield, M-76 Revenant, Predator H Armor
+**Items** M-76 Revenant, Predator H Armor, Kinetic Shield, Shield HP Mod - Tier 4
 **AC** 27; **Fort** +18, **Ref** +17, **Will** +17
-**HP** 140
+**HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Combat Knife +19 (agile, finesse), **Damage** 3d6+7 piercing
 **Melee** ◆ Spectre-Issue Assault Rifle +19 (analog, reload-2), **Damage** 3d8+12 piercing
@@ -3880,7 +4020,7 @@ Cerberus field medic who heals and stabilizes allies during combat.
 
 **Perception** +9; **Skills** Medicine +12
 **Abilities** Str +0, Dex +1, Con +2, Int +2, Wis +3, Cha +1
-**Items** Kinetic Shield, M-4 Shuriken, Phoenix Armor (L)
+**Items** M-4 Shuriken, Phoenix Armor (L), Kinetic Shield
 **AC** 16; **Fort** +9, **Ref** +7, **Will** +9
 **HP** 28; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -3898,7 +4038,7 @@ Standard Cerberus paramilitary soldier equipped with an assault rifle and kineti
 
 **Perception** +9; **Skills** Athletics +7
 **Abilities** Str +2, Dex +2, Con +1, Int +0, Wis +0, Cha -1
-**Items** Kinetic Shield, M-8 Avenger, Phoenix Armor (M)
+**Items** M-8 Avenger, Phoenix Armor (M), Kinetic Shield
 **AC** 17; **Fort** +9, **Ref** +9, **Will** +6
 **HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -3914,7 +4054,7 @@ Veteran Cerberus shock trooper specializing in close-quarters combat with shotgu
 
 **Perception** +10; **Skills** Athletics +12, Intimidation +9
 **Abilities** Str +3, Dex +2, Con +2, Int +0, Wis +1, Cha +0
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-23 Eviscerator, Phoenix Armor (M)
+**Items** M-23 Eviscerator, Phoenix Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 20; **Fort** +12, **Ref** +10, **Will** +8
 **HP** 48; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -3931,7 +4071,7 @@ Cerberus shock trooper with a riot shield and stun baton.
 
 **Perception** +10; **Skills** Athletics +11, Intimidation +9
 **Abilities** Str +4, Dex +2, Con +3, Int +0, Wis +1, Cha +0
-**Items** Kinetic Shield, M-9 Tempest, Phoenix Armor (H)
+**Items** M-9 Tempest, Phoenix Armor (H), Kinetic Shield
 **AC** 19; **Fort** +11, **Ref** +8, **Will** +8
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -3965,7 +4105,7 @@ Cerberus operative at the start of her augmentation program; agile infiltrator w
 
 **Perception** +10; **Skills** Acrobatics +10, Athletics +6, Intimidation +6, Piloting +8, Stealth +12
 **Abilities** Str +1, Dex +4, Con +1, Int +2, Wis +1, Cha +0
-**Items** Kinetic Shield, M-9 Tempest, Phoenix Armor (M)
+**Items** M-9 Tempest, Phoenix Armor (M), Kinetic Shield
 **AC** 19; **Fort** +8, **Ref** +11, **Will** +7
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -3984,7 +4124,7 @@ Cerberus squad leader armed with a Mattock rifle and smoke grenades, directing a
 
 **Perception** +13; **Skills** Athletics +11, Tactics +13
 **Abilities** Str +2, Dex +3, Con +2, Int +2, Wis +2, Cha +1
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, Phaeston, Phoenix Armor (M)
+**Items** Phaeston, Phoenix Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 21; **Fort** +13, **Ref** +12, **Will** +11
 **HP** 62; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -4001,7 +4141,7 @@ Cerberus field technician who deploys combat turrets and provides technical supp
 
 **Perception** +12; **Skills** Computers +12, Crafting +14
 **Abilities** Str +1, Dex +2, Con +2, Int +4, Wis +2, Cha +0
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-9 Tempest, Phoenix Armor (L)
+**Items** M-9 Tempest, Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 21; **Fort** +13, **Ref** +11, **Will** +13
 **HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -4034,7 +4174,7 @@ Cerberus intelligence agent operating under civilian cover, skilled in espionage
 
 **Perception** +14; **Skills** Deception +17, Society +14, Stealth +15
 **Abilities** Str +1, Dex +4, Con +2, Int +3, Wis +3, Cha +4
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-5 Phalanx, Phoenix Armor (M)
+**Items** M-5 Phalanx, Phoenix Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 22; **Fort** +11, **Ref** +14, **Will** +14
 **HP** 65; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4099,7 +4239,7 @@ Mid-grade Cerberus augmented operative; M-13 Raptor sniper rifle, M-25 Hornet SM
 
 **Perception** +12; **Skills** Acrobatics +12, Athletics +7, Intimidation +8, Piloting +10, Stealth +15
 **Abilities** Str +2, Dex +5, Con +2, Int +2, Wis +1, Cha +0
-**Items** Kinetic Shield, Phoenix Armor (L)
+**Items** Phoenix Armor (L), Kinetic Shield
 **AC** 22; **Fort** +11, **Ref** +14, **Will** +10
 **HP** 90; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4119,7 +4259,7 @@ Biotic-augmented Cerberus soldier who uses a mass-effect lash to pull enemies ou
 
 **Perception** +15; **Skills** Athletics +16, Intimidation +15
 **Abilities** Str +3, Dex +3, Con +3, Int +2, Wis +2, Cha +3
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, M-96 Mattock, Phoenix Armor (M)
+**Items** M-96 Mattock, Phoenix Armor (M), Kinetic Shield, Shield HP Mod - Tier 2
 **AC** 23; **Fort** +16, **Ref** +15, **Will** +15
 **HP** 100; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4137,7 +4277,7 @@ Senior Cerberus officer overseeing complex operations, granting bonuses to nearb
 
 **Perception** +16; **Skills** Diplomacy +17, Intimidation +17, Tactics +16
 **Abilities** Str +2, Dex +3, Con +2, Int +4, Wis +3, Cha +4
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, M-96 Mattock, Phoenix Armor (M)
+**Items** M-96 Mattock, Phoenix Armor (M), Kinetic Shield, Shield HP Mod - Tier 2
 **AC** 24; **Fort** +14, **Ref** +15, **Will** +17
 **HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -4153,7 +4293,7 @@ Elite Cerberus assassin with phase cloaking, monomolecular blade, and heavy cybe
 
 **Perception** +20; **Skills** Acrobatics +21, Athletics +17, Stealth +22
 **Abilities** Str +3, Dex +5, Con +3, Int +2, Wis +2, Cha +1
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3, Scorpion, Phoenix Armor (L)
+**Items** Scorpion, Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
 **AC** 27; **Fort** +17, **Ref** +21, **Will** +18
 **HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
@@ -4171,7 +4311,7 @@ Phantom Aspirant with implanted monofilament blade; neural-integrated cloak prov
 
 **Perception** +17; **Skills** Acrobatics +18, Athletics +10, Intimidation +11, Piloting +13, Stealth +21
 **Abilities** Str +2, Dex +6, Con +3, Int +3, Wis +2, Cha +0
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1, Phoenix Armor (L)
+**Items** Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 26; **Fort** +15, **Ref** +19, **Will** +14
 **HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4191,7 +4331,7 @@ Genetically perfected Cerberus operative and powerful biotic. Liaison for the La
 
 **Perception** +22; **Skills** Athletics +18, Deception +26, Diplomacy +26, Stealth +21
 **Abilities** Str +2, Dex +5, Con +3, Int +5, Wis +4, Cha +6
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3, N7 Hurricane, Phoenix Armor (L)
+**Items** N7 Hurricane, Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
 **AC** 29; **Fort** +19, **Ref** +21, **Will** +23
 **HP** 165; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4209,7 +4349,7 @@ Cerberus assassin and cybernetically enhanced former N7; deadly with omni-blade 
 
 **Perception** +24; **Skills** Acrobatics +27, Athletics +25, Stealth +27
 **Abilities** Str +5, Dex +7, Con +4, Int +3, Wis +4, Cha +2
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3, Black Widow, Phoenix Armor (L)
+**Items** Black Widow, Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3
 **AC** 33; **Fort** +22, **Ref** +27, **Will** +22
 **HP** 200; **Shields** 30 (recharge 10/turn)
 **Speed** 40 feet
@@ -4227,7 +4367,7 @@ Proto-Phantom at the threshold of full conversion; Phantom-grade monofilament bl
 
 **Perception** +23; **Skills** Acrobatics +24, Athletics +18, Intimidation +17, Piloting +18, Stealth +27
 **Abilities** Str +3, Dex +7, Con +4, Int +4, Wis +3, Cha +0
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3, Phoenix Armor (L)
+**Items** Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3
 **AC** 31; **Fort** +21, **Ref** +25, **Will** +20
 **HP** 200; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
@@ -4247,7 +4387,7 @@ Founder and leader of Cerberus; brilliant strategist partially indoctrinated by 
 
 **Perception** +28; **Skills** Deception +34, Diplomacy +32, Intimidation +32, Politics +30
 **Abilities** Str +3, Dex +4, Con +4, Int +8, Wis +6, Cha +8
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3, Phoenix Armor (M)
+**Items** Phoenix Armor (M), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
 **AC** 35; **Fort** +25, **Ref** +24, **Will** +29
 **HP** 240; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4266,9 +4406,9 @@ Rank-and-file mercenary of the Blue Suns.
 
 **Perception** +8; **Skills** Athletics +7, Intimidation +6
 **Abilities** Str +2, Dex +3, Con +2, Int +0, Wis +1, Cha +0
-**Items** Kinetic Shield, M-8 Avenger, Mercenary Armor (M)
+**Items** M-8 Avenger, Mercenary Armor (M), Kinetic Shield
 **AC** 18; **Fort** +8, **Ref** +9, **Will** +5
-**HP** 30; **Shields** 25 (recharge 10/turn)
+**HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Assault Rifle +9 (range increment 60 ft, automatic), **Damage** 2d6+3 piercing
 **Melee** ◆ Combat Knife +9 (agile, finesse), **Damage** 2d6+3 slashing
@@ -4283,9 +4423,9 @@ Veteran heavy trooper of the Blue Suns.
 
 **Perception** +10; **Skills** Athletics +10, Intimidation +8
 **Abilities** Str +3, Dex +3, Con +3, Int +0, Wis +1, Cha +0
-**Items** Kinetic Shield, Phaeston, Mercenary Armor (M)
+**Items** Phaeston, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 19; **Fort** +11, **Ref** +9, **Will** +7
-**HP** 50; **Shields** 40 (recharge 10/turn)
+**HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Heavy Assault Rifle +11 (range increment 60 ft, automatic), **Damage** 2d8+4 piercing
 **Melee** ◆ Combat Knife +11 (agile, finesse), **Damage** 2d6+4 slashing
@@ -4300,9 +4440,9 @@ Blue Suns squad leader and tactician.
 
 **Perception** +12; **Skills** Athletics +11, Intimidation +12, Warfare +11
 **Abilities** Str +3, Dex +4, Con +3, Int +2, Wis +2, Cha +2
-**Items** Kinetic Shield, M-9 Tempest, Mercenary Armor (M)
+**Items** M-9 Tempest, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 21; **Fort** +11, **Ref** +12, **Will** +10
-**HP** 60; **Shields** 40 (recharge 10/turn)
+**HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Submachine Gun +13 (range increment 40 ft, automatic), **Damage** 3d6+4 piercing
 **Melee** ◆ Combat Knife +13 (agile, finesse), **Damage** 3d6+4 slashing
@@ -4320,7 +4460,7 @@ Blue Suns rocket-launcher specialist.
 
 **Perception** +10; **Skills** Athletics +12, Intimidation +9
 **Abilities** Str +4, Dex +2, Con +4, Int +0, Wis +1, Cha +0
-**Items** Kinetic Shield, M-100 Grenade Launcher, Mercenary Armor (H)
+**Items** M-100 Grenade Launcher, Mercenary Armor (H), Kinetic Shield
 **AC** 19; **Fort** +13, **Ref** +9, **Will** +9
 **HP** 70; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
@@ -4339,9 +4479,9 @@ Founder and financier of the Blue Suns.
 
 **Perception** +14; **Skills** Deception +14, Diplomacy +13, Intimidation +14, Society +13, Warfare +14
 **Abilities** Str +2, Dex +4, Con +3, Int +4, Wis +3, Cha +4
-**Items** Kinetic Shield, M-5 Phalanx, Mercenary Armor (M)
+**Items** M-5 Phalanx, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 22; **Fort** +12, **Ref** +14, **Will** +13
-**HP** 85; **Shields** 45 (recharge 15/turn)
+**HP** 85; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Custom Pistol +14 (range increment 50 ft), **Damage** 2d8+9 piercing
 **Coordinate Mercenaries** ◆ Vido directs his forces with cold precision. Up to two allied Blue Suns mercenaries within 60 feet that can hear him each gain a +1 status bonus to attack rolls until the start of Vido's next turn.
@@ -4360,9 +4500,9 @@ Batarian leader of the Blue Suns on Omega.
 
 **Perception** +15; **Skills** Athletics +14, Intimidation +16, Piloting +13, Warfare +14
 **Abilities** Str +4, Dex +4, Con +4, Int +2, Wis +3, Cha +3
-**Items** Kinetic Shield, M-96 Mattock, Mercenary Armor (M)
+**Items** M-96 Mattock, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 24; **Fort** +15, **Ref** +14, **Will** +13
-**HP** 105; **Shields** 50 (recharge 15/turn)
+**HP** 105; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Custom Assault Rifle +16 (range increment 60 ft, automatic), **Damage** 3d6+8 piercing
 **Melee** ◆ Vibro-Blade +16 (agile, finesse), **Damage** 2d8+8 slashing plus 1d6 electricity
@@ -4385,9 +4525,9 @@ Hired gun of the Eclipse mercenary company.
 
 **Perception** +8; **Skills** Acrobatics +8, Stealth +8
 **Abilities** Str +1, Dex +3, Con +2, Int +1, Wis +1, Cha +1
-**Items** Kinetic Shield, M-4 Shuriken, Duelist Armor (M)
+**Items** M-4 Shuriken, Duelist Armor (M), Kinetic Shield
 **AC** 18; **Fort** +7, **Ref** +10, **Will** +6
-**HP** 30; **Shields** 25 (recharge 10/turn)
+**HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Submachine Gun +9 (range increment 40 ft, automatic), **Damage** 2d6+3 piercing
 **Melee** ◆ Combat Knife +9 (agile, finesse), **Damage** 2d6+1 slashing
@@ -4402,7 +4542,7 @@ Eclipse tech specialist and drone operator.
 
 **Perception** +11; **Skills** Computers Lore +12, Crafting +11, Thievery +10
 **Abilities** Str +0, Dex +3, Con +2, Int +4, Wis +2, Cha +1
-**Items** Kinetic Shield, M-9 Tempest, Duelist Armor (L)
+**Items** M-9 Tempest, Duelist Armor (L), Kinetic Shield
 **AC** 19; **Fort** +8, **Ref** +10, **Will** +9
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4421,7 +4561,7 @@ Eclipse missile and heavy-weapons specialist.
 
 **Perception** +10; **Skills** Athletics +12, Intimidation +10
 **Abilities** Str +4, Dex +2, Con +4, Int +1, Wis +1, Cha +1
-**Items** Kinetic Shield, M-100 Grenade Launcher, Duelist Armor (H)
+**Items** M-100 Grenade Launcher, Duelist Armor (H), Kinetic Shield
 **AC** 19; **Fort** +13, **Ref** +9, **Will** +9
 **HP** 70; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
@@ -4440,9 +4580,9 @@ Biotic shock trooper of Eclipse.
 
 **Perception** +11; **Skills** Acrobatics +12, Athletics +10, Intimidation +11
 **Abilities** Str +2, Dex +4, Con +3, Int +2, Wis +2, Cha +3
-**Items** Kinetic Shield, M-23 Eviscerator, Duelist Armor (M)
+**Items** M-23 Eviscerator, Duelist Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 20; **Fort** +10, **Ref** +13, **Will** +11
-**HP** 55; **Shields** 40 (recharge 10/turn)
+**HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Ranged** ◆ Shotgun +13 (range increment 20 ft), **Damage** 3d6+4 piercing
 **Melee** ◆ Biotic Strike +13 (agile, finesse, force, unarmed), **Damage** 2d6+4 bludgeoning plus 1d4 force
@@ -4458,9 +4598,9 @@ Heavily armored Eclipse enforcer with a flamethrower.
 
 **Perception** +12; **Skills** Athletics +14, Intimidation +12
 **Abilities** Str +5, Dex +2, Con +4, Int +1, Wis +2, Cha +1
-**Items** Kinetic Shield, M-451 Firestorm, Duelist Armor (H)
+**Items** M-451 Firestorm, Duelist Armor (H), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 22; **Fort** +14, **Ref** +11, **Will** +11
-**HP** 90; **Shields** 50 (recharge 15/turn)
+**HP** 90; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
 **Ranged** ◆ Incendiary Thrower +14 (range increment 15 ft), **Damage** 3d6+7 fire
 **Melee** ◆ Armored Fist +14, **Damage** 2d10+7 bludgeoning
@@ -4477,9 +4617,9 @@ Salarian leader of Eclipse on Omega.
 
 **Perception** +14; **Skills** Computers Lore +15, Crafting +14, Deception +13, Stealth +13
 **Abilities** Str +1, Dex +4, Con +3, Int +5, Wis +3, Cha +3
-**Items** Kinetic Shield, M-5 Phalanx, Duelist Armor (M)
+**Items** M-5 Phalanx, Duelist Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 22; **Fort** +11, **Ref** +14, **Will** +13
-**HP** 75; **Shields** 45 (recharge 15/turn)
+**HP** 75; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Ranged** ◆ Custom Pistol +14 (range increment 50 ft), **Damage** 2d8+9 piercing
 **Overload Burst** ◆◆ **Range** 60 feet; **Area** 10-foot burst.
@@ -4496,9 +4636,9 @@ Asari Eclipse lieutenant, strung out on red sand.
 
 **Perception** +13; **Skills** Acrobatics +13, Athletics +12, Intimidation +14
 **Abilities** Str +2, Dex +4, Con +3, Int +2, Wis +2, Cha +4
-**Items** Kinetic Shield, M-5 Phalanx, Duelist Armor (M)
+**Items** M-5 Phalanx, Duelist Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 22; **Fort** +12, **Ref** +14, **Will** +12
-**HP** 80; **Shields** 45 (recharge 15/turn)
+**HP** 80; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Ranged** ◆ Machine Pistol +14 (range increment 40 ft, automatic), **Damage** 3d6+6 piercing
 **Melee** ◆ Amplified Biotic Strike +14 (agile, finesse, force, unarmed), **Damage** 2d8+6 bludgeoning plus 1d6 force
@@ -4515,9 +4655,9 @@ Unhinged asari founder and leader of Eclipse.
 
 **Perception** +14; **Skills** Acrobatics +14, Athletics +13, Deception +15, Intimidation +17
 **Abilities** Str +2, Dex +4, Con +4, Int +3, Wis +2, Cha +5
-**Items** Kinetic Shield, M-5 Phalanx, Duelist Armor (M)
+**Items** M-5 Phalanx, Duelist Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 24; **Fort** +13, **Ref** +15, **Will** +14
-**HP** 105; **Shields** 50 (recharge 15/turn)
+**HP** 105; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Ranged** ◆ Prototype SMG +16 (range increment 40 ft, automatic), **Damage** 3d6+8 piercing
 **Melee** ◆ Biotic Lash +16 (agile, finesse, force, unarmed), **Damage** 2d8+8 bludgeoning plus 1d6 force
@@ -4621,9 +4761,9 @@ Krogan warlord and leader of the Blood Pack on Omega.
 
 **Perception** +15; **Skills** Athletics +18, Intimidation +16, Survival +13
 **Abilities** Str +6, Dex +3, Con +6, Int +1, Wis +3, Cha +3
-**Items** Kinetic Shield, M-11 Wraith, Gladiator Armor (H)
+**Items** M-11 Wraith, Gladiator Armor (H), Kinetic Shield, Shield HP Mod - Tier 1, Shield Regen Mod - Tier 1
 **AC** 24; **Fort** +18, **Ref** +12, **Will** +13
-**HP** 98; **Shields** 40 (recharge 15/turn)
+**HP** 98; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Ranged** ◆ Claymore Shotgun +17 (range increment 20 ft), **Damage** 3d8+6 piercing
 **Melee** ◆ Krogan Headbutt +18 (unarmed), **Damage** 2d10+6 bludgeoning
@@ -4643,9 +4783,9 @@ Quarian technical specialist and battlefield engineer
 
 **Perception** +8; **Skills** Crafting +12, Engineering Lore +12, Society +10, Stealth +9
 **Abilities** Str +1, Dex +3, Con +1, Int +4, Wis +2, Cha +1
-**Items** Kinetic Shield, M-27 Scimitar, Explorer Armor (L)
+**Items** M-27 Scimitar, Explorer Armor (L), Kinetic Shield
 **AC** 18; **Fort** +9, **Ref** +10, **Will** +9
-**HP** 35
+**HP** 35; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Omni-Blade +9 (agile, finesse, tech), **Damage** 2d6+4 slashing plus 1d4 fire
 **Melee** ◆ Pistol +9 (analog), **Damage** 2d6+3 piercing
@@ -4662,9 +4802,9 @@ Level-headed admiral and family friend of the Zorahs.
 
 **Perception** +13; **Skills** Computers +11, Diplomacy +14, Piloting +11, Society +13
 **Abilities** Str +1, Dex +3, Con +2, Int +3, Wis +4, Cha +4
-**Items** Kinetic Shield
+**Items** Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 20; **Fort** +10, **Ref** +11, **Will** +13
-**HP** 55; **Shields** 35 (recharge 10/turn)
+**HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +11 (range increment 40 ft), **Damage** 1d8+2 piercing
 **Mediate** ◆ Shala'Raan attempts to calm a tense situation, gaining a +2 circumstance bonus to a Diplomacy check to Request or to shift a creature's attitude one step toward indifferent.
@@ -4679,9 +4819,9 @@ Idealist admiral who argues against war with the geth.
 
 **Perception** +12; **Skills** Computers +12, Diplomacy +14, Medicine +11, Society +13
 **Abilities** Str +1, Dex +2, Con +2, Int +4, Wis +4, Cha +4
-**Items** Kinetic Shield
+**Items** Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 20; **Fort** +9, **Ref** +10, **Will** +13
-**HP** 55; **Shields** 35 (recharge 10/turn)
+**HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +11 (range increment 40 ft), **Damage** 1d8+1 piercing
 **Voice of Reason** ◆ Zaal'Koris attempts a Diplomacy check to make a heartfelt appeal, gaining a +2 circumstance bonus to de-escalate hostilities or talk down a single creature able to understand him.
@@ -4696,9 +4836,9 @@ Quarian Migrant Fleet combat marine
 
 **Perception** +10; **Skills** Acrobatics +10, Athletics +9, Crafting +10, Stealth +10
 **Abilities** Str +2, Dex +3, Con +2, Int +3, Wis +2, Cha +1
-**Items** Kinetic Shield, M-8 Avenger, Liberator Armor (M)
+**Items** M-8 Avenger, Liberator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 21; **Fort** +11, **Ref** +11, **Will** +9
-**HP** 52
+**HP** 52; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Omni-Blade +11 (finesse, tech), **Damage** 2d8+4 slashing plus 1d4 fire
 **Melee** ◆ Assault Rifle +11 (analog, reload-2), **Damage** 2d8+4 piercing
@@ -4713,9 +4853,9 @@ Brilliant, amoral quarian scientist-admiral.
 
 **Perception** +14; **Skills** Computers +15, Crafting +15, Science +15, Thievery +12
 **Abilities** Str +0, Dex +3, Con +2, Int +6, Wis +3, Cha +2
-**Items** Kinetic Shield
+**Items** Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 21; **Fort** +10, **Ref** +12, **Will** +13
-**HP** 60; **Shields** 40 (recharge 10/turn)
+**HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 1d8+2 piercing
 **Deploy Reprogrammed Drone** ◆◆ Daro'Xen activates a captured combat drone (AC 18, HP 18, fly 30). It makes a ranged zap Strike (+11, 1d6+2 electricity) on her turn. She can have one active at a time.
@@ -4731,9 +4871,9 @@ Hawkish admiral of the Migrant Fleet's military.
 
 **Perception** +13; **Skills** Athletics +12, Intimidation +13, Piloting +12, Warfare +14
 **Abilities** Str +3, Dex +3, Con +3, Int +3, Wis +2, Cha +3
-**Items** Kinetic Shield, M-11 Wraith, Explorer Armor (M)
+**Items** M-11 Wraith, Explorer Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 22; **Fort** +13, **Ref** +12, **Will** +11
-**HP** 80; **Shields** 45 (recharge 15/turn)
+**HP** 80; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Combat Shotgun +14 (range increment 20 ft), **Damage** 2d8+9 piercing
 **Melee** ◆ Omni-Blade +13 (agile, finesse), **Damage** 1d8+7 slashing plus 1d4 fire
@@ -4749,9 +4889,9 @@ Tali's father; driven engineer-admiral obsessed with the homeworld.
 
 **Perception** +13; **Skills** Computers +15, Crafting +14, Science +14, Warfare +12
 **Abilities** Str +2, Dex +3, Con +2, Int +5, Wis +3, Cha +2
-**Items** Kinetic Shield, M-5 Phalanx, Explorer Armor (M)
+**Items** M-5 Phalanx, Explorer Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 21; **Fort** +11, **Ref** +12, **Will** +12
-**HP** 65; **Shields** 40 (recharge 10/turn)
+**HP** 65; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 2d8+4 piercing
 **Melee** ◆ Omni-Blade +12 (agile, finesse), **Damage** 2d8+6 slashing plus 1d4 fire
@@ -4767,7 +4907,7 @@ Quarian engineer and hacker; peerless with technology and synthetic systems, dea
 
 **Perception** +21; **Skills** Computers +26, Engineering +24, Piloting +20, Stealth +19
 **Abilities** Str +1, Dex +5, Con +2, Int +6, Wis +4, Cha +3
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1, Explorer Armor (L)
+**Items** Explorer Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 27; **Fort** +17, **Ref** +21, **Will** +22
 **HP** 155; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4787,7 +4927,7 @@ Alliance marine aboard the Normandy; exceptional physical specimen and close-qua
 
 **Perception** +14; **Skills** Athletics +22, Intimidation +16
 **Abilities** Str +7, Dex +3, Con +5, Int +1, Wis +2, Cha +2
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-76 Revenant, Predator Armor (M)
+**Items** M-76 Revenant, Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 24; **Fort** +20, **Ref** +15, **Will** +14
 **HP** 130; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4805,7 +4945,7 @@ Salarian scientist and former STG operative; the galaxy's foremost geneticist an
 
 **Perception** +18; **Skills** Computers +22, Medicine +22, Science +24, Survival +18
 **Abilities** Str +1, Dex +4, Con +2, Int +8, Wis +4, Cha +2
-**Items** Kinetic Shield, Scorpion, Predator Armor (M)
+**Items** Scorpion, Predator Armor (M), Kinetic Shield
 **AC** 22; **Fort** +12, **Ref** +16, **Will** +16
 **HP** 110; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
@@ -4824,7 +4964,7 @@ Tank-bred krogan warrior; perfected for combat from birth, carrying the genetic 
 
 **Perception** +20; **Skills** Athletics +24, Intimidation +18, Survival +18
 **Abilities** Str +7, Dex +2, Con +7, Int +1, Wis +2, Cha +1
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, N7 Crusader, Predator Armor (H)
+**Items** N7 Crusader, Predator Armor (H), Kinetic Shield, Shield HP Mod - Tier 2
 **AC** 28; **Fort** +23, **Ref** +18, **Will** +18
 **HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4843,7 +4983,7 @@ Subject Zero; the most powerful human biotic alive, built from Cerberus cruelty 
 
 **Perception** +19; **Skills** Acrobatics +20, Athletics +20, Intimidation +18
 **Abilities** Str +3, Dex +5, Con +4, Int +2, Wis +2, Cha +2
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, N7 Crusader, Predator Armor (L)
+**Items** N7 Crusader, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 26; **Fort** +19, **Ref** +20, **Will** +18
 **HP** 165; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4863,7 +5003,7 @@ A unique geth platform of 1,183 programs; hunter-killer turned philosopher, patc
 
 **Perception** +22; **Skills** Athletics +20, Computers +24, Engineering +22, Stealth +22
 **Abilities** Str +4, Dex +5, Con +3, Int +6, Wis +4, Cha +0
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, N7 Valiant, Predator Armor (L)
+**Items** N7 Valiant, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 2
 **AC** 29; **Fort** +20, **Ref** +22, **Will** +20
 **HP** 175; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4883,7 +5023,7 @@ Former C-Sec officer and master sniper; Shepard's most dependable companion. Alw
 
 **Perception** +22; **Skills** Athletics +19, Intimidation +18, Piloting +20, Stealth +22
 **Abilities** Str +3, Dex +6, Con +3, Int +4, Wis +4, Cha +2
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1, N7 Valiant, Predator Armor (L)
+**Items** N7 Valiant, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 28; **Fort** +19, **Ref** +22, **Will** +20
 **HP** 170; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4901,7 +5041,7 @@ Asari archaeologist, biotic powerhouse, and galaxy-spanning information broker (
 
 **Perception** +22; **Skills** Arcana +26, Computers +22, Diplomacy +22, Medicine +20
 **Abilities** Str +1, Dex +4, Con +3, Int +6, Wis +5, Cha +6
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1, N7 Hurricane, Predator Armor (M)
+**Items** N7 Hurricane, Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 27; **Fort** +18, **Ref** +19, **Will** +24
 **HP** 160; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4920,7 +5060,7 @@ Asari justicar of 400 years; absolute biotic power bound by a code that cannot b
 
 **Perception** +22; **Skills** Athletics +20, Intimidation +22, Religion +24, Society +18
 **Abilities** Str +2, Dex +5, Con +3, Int +3, Wis +6, Cha +5
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2, N7 Hurricane, Predator Armor (L)
+**Items** N7 Hurricane, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
 **AC** 28; **Fort** +19, **Ref** +21, **Will** +24
 **HP** 165; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4961,7 +5101,7 @@ Ancient krogan battlemaster and clan chief; centuries of war made flesh, with bi
 
 **Perception** +22; **Skills** Athletics +28, Intimidation +22, Survival +20
 **Abilities** Str +8, Dex +2, Con +8, Int +2, Wis +3, Cha +3
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2, N7 Crusader, Predator Armor (H)
+**Items** N7 Crusader, Predator Armor (H), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
 **AC** 30; **Fort** +27, **Ref** +20, **Will** +24
 **HP** 182; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -4982,9 +5122,8 @@ Overzealous civilian who idolizes Commander Shepard.
 
 **Perception** +4; **Skills** Diplomacy +5, Shepard Lore +9, Society +6
 **Abilities** Str +1, Dex +1, Con +1, Int +2, Wis -1, Cha +2
-**Items** Kinetic Shield
 **AC** 15; **Fort** +5, **Ref** +5, **Will** +3
-**HP** 18; **Shields** 15 (recharge 5/turn)
+**HP** 18
 **Speed** 25 feet
 **Ranged** ◆ Borrowed Pistol +5 (range increment 40 ft), **Damage** 1d8 piercing
 **Misguided Heroics** ◆ Conrad makes an impassioned, poorly-judged speech invoking Commander Shepard. He attempts a Diplomacy check to Make an Impression; on a success the target is too bewildered or charmed to attack him until the end of its next turn unless he acts hostile first.
@@ -5016,7 +5155,7 @@ Salarian STG captain; tactician and leader who holds the line when everyone else
 
 **Perception** +18; **Skills** Intimidation +16, Stealth +16, Survival +16, Tactics +18
 **Abilities** Str +1, Dex +4, Con +2, Int +5, Wis +4, Cha +4
-**Items** Kinetic Shield, M-5 Phalanx, Predator Armor (M)
+**Items** M-5 Phalanx, Predator Armor (M), Kinetic Shield
 **AC** 22; **Fort** +13, **Ref** +15, **Will** +16
 **HP** 85; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
@@ -5034,9 +5173,9 @@ Blunt asari matriarch; Liara's father, working a bar on Illium.
 
 **Perception** +15; **Skills** Athletics +13, Diplomacy +14, Intimidation +15, Society +14, Warfare +13
 **Abilities** Str +3, Dex +3, Con +4, Int +3, Wis +4, Cha +4
-**Items** Kinetic Shield, M-5 Phalanx, Predator Armor (M)
+**Items** M-5 Phalanx, Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
 **AC** 23; **Fort** +14, **Ref** +13, **Will** +15
-**HP** 100; **Shields** 45 (recharge 15/turn)
+**HP** 100; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Biotic Warhammer +15 (force, unarmed), **Damage** 2d8+5 bludgeoning plus 1d6 force
 **Ranged** ◆ Heavy Pistol +14 (range increment 50 ft), **Damage** 1d8+4 piercing
@@ -5052,9 +5191,9 @@ Rogue turian Spectre, indoctrinated herald of Sovereign.
 
 **Perception** +19; **Skills** Acrobatics +17, Athletics +17, Computers +17, Intimidation +20, Warfare +18
 **Abilities** Str +4, Dex +5, Con +5, Int +4, Wis +3, Cha +4
-**Items** Kinetic Shield, M-99 Saber, Predator Armor (L)
+**Items** M-99 Saber, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
 **AC** 28; **Fort** +18, **Ref** +18, **Will** +16
-**HP** 170; **Shields** 70 (recharge 20/turn)
+**HP** 170; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Ranged** ◆ Custom Assault Rifle +20 (range increment 70 ft, automatic), **Damage** 3d8+13 piercing
 **Melee** ◆ Biotic Slam +20 (agile, finesse, force, unarmed), **Damage** 2d12+12 bludgeoning plus 1d6 force
@@ -5074,9 +5213,9 @@ Humanity's first Spectre and the galaxy's best hope.
 
 **Perception** +20; **Skills** Athletics +19, Diplomacy +20, Intimidation +20, Society +17, Warfare +19
 **Abilities** Str +4, Dex +5, Con +4, Int +3, Wis +3, Cha +5
-**Items** Kinetic Shield, M-99 Saber, Predator Armor (L)
+**Items** M-99 Saber, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
 **AC** 30; **Fort** +19, **Ref** +19, **Will** +18
-**HP** 185; **Shields** 75 (recharge 20/turn)
+**HP** 185; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ M-8 Avenger +22 (range increment 70 ft, automatic), **Damage** 4d8+12 piercing
 **Ranged** ◆ M-3 Predator +22 (range increment 50 ft), **Damage** 3d8+8 piercing
@@ -5095,7 +5234,7 @@ Absolute ruler of Omega; centuries-old asari crime lord who enforces her will th
 
 **Perception** +24; **Skills** Deception +24, Intimidation +28, Society +22, Stealth +20
 **Abilities** Str +2, Dex +5, Con +4, Int +5, Wis +5, Cha +7
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2, N7 Eagle, Predator Armor (L)
+**Items** N7 Eagle, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
 **AC** 30; **Fort** +21, **Ref** +22, **Will** +26
 **HP** 190; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -5163,16 +5302,25 @@ Asari mercenary combatant
 
 **Perception** +5; **Skills** Acrobatics +7, Intimidation +6
 **Abilities** Str +2, Dex +2, Con +1, Int +1, Wis +1, Cha +3
-**Items** Kinetic Shield, M-3 Predator, Mantis Armor (L)
+**Items** M-3 Predator, Mantis Armor (L), Kinetic Shield
 **AC** 15; **Fort** +8, **Ref** +7, **Will** +7
-**HP** 20
+**HP** 20; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Strike +6 (agile, finesse), **Damage** 2d4+3 bludgeoning
 **Melee** ◆ Autotarget Rifle +6 (analog, automatic, reload-2), **Damage** 1d6+4 piercing
-**Activate Biotic Barrier (NPC)** ◆◆ **Activate Biotic Barrier** 
-
----
-The creature projects a protective mass effect field, gaining a biotic barrier with 5 HP. The barrier absorbs damage before shields and actual HP. Reactivating replaces any remaining barrier HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
+| **Level** | **Barrier HP** |
+| 1-3 | 5 |
+| 4-5 | 10 |
+| 6-7 | 15 |
+| 8-9 | 20 |
+| 10-11 | 25 |
+| 12-13 | 30 |
+| 14-15 | 35 |
+| 16-17 | 40 |
+| 18-19 | 45 |
+| 20 | 50 |
 
 ---
 
@@ -5214,7 +5362,6 @@ Hanar religious attendant and support caster
 
 **Perception** +6; **Skills** Diplomacy +8, Medicine +5, Religion +7
 **Abilities** Str +0, Dex +2, Con +0, Int +2, Wis +2, Cha +4
-**Items** Kinetic Shield
 **AC** 14; **Fort** +5, **Ref** +7, **Will** +9
 **HP** 16
 **Speed** 20 feet
@@ -5233,7 +5380,7 @@ Barely-trained conscript with a pistol.
 **Abilities** Str +2, Dex +2, Con +2, Int +0, Wis +1, Cha +0
 **Items** Kinetic Shield
 **AC** 16; **Fort** +7, **Ref** +6, **Will** +4
-**HP** 20; **Shields** 15 (recharge 5/turn)
+**HP** 20; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Pistol +7 (range increment 40 ft), **Damage** 1d8+1 piercing
 **Melee** ◆ Fist +6 (agile, finesse, nonlethal, unarmed), **Damage** 1d4+2 bludgeoning
@@ -5263,9 +5410,9 @@ Aggressive vorcha melee combatant
 
 **Perception** +4; **Skills** Athletics +7, Intimidation +4
 **Abilities** Str +3, Dex +2, Con +3, Int -1, Wis +0, Cha -1
-**Items** Kinetic Shield, AT-12 Raider, Gladiator Armor (L)
+**Items** AT-12 Raider, Gladiator Armor (L), Kinetic Shield
 **AC** 14; **Fort** +9, **Ref** +7, **Will** +4
-**HP** 22
+**HP** 22; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Feral Bite +7 (agile, finesse, unarmed), **Damage** 1d6+3 piercing
 **Melee** ◆ Claw +7 (agile, unarmed), **Damage** 1d4+3 slashing
@@ -5281,9 +5428,9 @@ Batarian Hegemony combat infantry
 
 **Perception** +8; **Skills** Athletics +7, Intimidation +6, Stealth +6
 **Abilities** Str +3, Dex +2, Con +2, Int +1, Wis +2, Cha +0
-**Items** Kinetic Shield, M-8 Avenger, Mantis Armor (M)
+**Items** M-8 Avenger, Mantis Armor (M), Kinetic Shield
 **AC** 16; **Fort** +9, **Ref** +8, **Will** +7
-**HP** 30
+**HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Strike +8, **Damage** 2d6+3 bludgeoning
 **Melee** ◆ Assault Rifle +8 (analog, reload-2), **Damage** 1d8+6 piercing
@@ -5313,9 +5460,9 @@ Contracted human combatant
 
 **Perception** +6; **Skills** Acrobatics +7, Athletics +6, Stealth +7
 **Abilities** Str +2, Dex +3, Con +1, Int +1, Wis +1, Cha +1
-**Items** Kinetic Shield, M-8 Avenger, Gladiator Armor (L)
+**Items** M-8 Avenger, Gladiator Armor (L), Kinetic Shield
 **AC** 16; **Fort** +8, **Ref** +9, **Will** +6
-**HP** 30
+**HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Pistol Whip +8 (agile), **Damage** 2d4+3 bludgeoning
 **Melee** ◆ Autotarget Rifle +9 (analog, automatic, reload-2), **Damage** 2d6+3 piercing
@@ -5330,7 +5477,7 @@ Volus trade operative, non-combat encounter or hostile negotiator
 
 **Perception** +7; **Skills** Deception +10, Diplomacy +10, Intimidation +8, Society +10
 **Abilities** Str +0, Dex +1, Con +0, Int +4, Wis +3, Cha +4
-**Items** Kinetic Shield, M-3 Predator, Onyx Armor (L)
+**Items** M-3 Predator, Onyx Armor (L)
 **AC** 15; **Fort** +6, **Ref** +7, **Will** +9
 **HP** 24
 **Speed** 20 feet
@@ -5346,7 +5493,7 @@ Field medic supporting a squad with medi-gel.
 
 **Perception** +12; **Skills** Athletics +8, Medicine +13
 **Abilities** Str +1, Dex +3, Con +2, Int +3, Wis +4, Cha +2
-**Items** Kinetic Shield, M-9 Tempest, Predator Armor (L)
+**Items** M-9 Tempest, Predator Armor (L), Kinetic Shield
 **AC** 19; **Fort** +9, **Ref** +9, **Will** +11
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -5363,9 +5510,9 @@ Contracted drell combat specialist
 
 **Perception** +9; **Skills** Acrobatics +11, Athletics +8, Stealth +11, Thievery +9
 **Abilities** Str +2, Dex +4, Con +1, Int +2, Wis +2, Cha +1
-**Items** Kinetic Shield, M-5 Phalanx, Survivor Armor (L)
+**Items** M-5 Phalanx, Survivor Armor (L), Kinetic Shield
 **AC** 20; **Fort** +9, **Ref** +11, **Will** +9
-**HP** 40
+**HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Combat Blade +11 (agile, finesse), **Damage** 2d6+4 slashing
 **Melee** ◆ Pistol +11 (analog), **Damage** 2d6+6 piercing
@@ -5380,7 +5527,7 @@ Tech specialist with drones and disruptor attacks.
 
 **Perception** +11; **Skills** Computers +12, Crafting +12, Thievery +10
 **Abilities** Str +1, Dex +3, Con +2, Int +4, Wis +2, Cha +1
-**Items** Kinetic Shield, M-9 Tempest, Predator Armor (L)
+**Items** M-9 Tempest, Predator Armor (L), Kinetic Shield
 **AC** 19; **Fort** +8, **Ref** +10, **Will** +9
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -5398,9 +5545,9 @@ Fanatical hanar Enkindler devotee
 
 **Perception** +9; **Skills** Diplomacy +11, Intimidation +10, Religion +10
 **Abilities** Str +0, Dex +3, Con +1, Int +2, Wis +3, Cha +5
-**Items** Kinetic Shield, M-6 Carnifex, Predator Armor (M)
+**Items** M-6 Carnifex, Predator Armor (M), Kinetic Shield
 **AC** 18; **Fort** +8, **Ref** +10, **Will** +12
-**HP** 38
+**HP** 38; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
 **Melee** ◆ Tentacle Lash +9 (agile, finesse, reach-5, unarmed), **Damage** 2d6+1 bludgeoning
 **Melee** ◆ Pistol +9 (analog), **Damage** 2d6+6 piercing
@@ -5416,7 +5563,7 @@ Trained professional soldier with an assault rifle.
 
 **Perception** +10; **Skills** Athletics +10, Intimidation +8
 **Abilities** Str +3, Dex +3, Con +3, Int +1, Wis +2, Cha +1
-**Items** Kinetic Shield, Phaeston, Predator Armor (M)
+**Items** Phaeston, Predator Armor (M), Kinetic Shield
 **AC** 19; **Fort** +11, **Ref** +9, **Will** +8
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -5448,9 +5595,9 @@ Salarian research operative with field-deployed chemical arsenal
 
 **Perception** +10; **Skills** Arcana +12, Crafting +12, Medicine +11, Nature +12, Society +12
 **Abilities** Str +0, Dex +2, Con +1, Int +5, Wis +3, Cha +2
-**Items** Kinetic Shield, M-9 Tempest, Phoenix Armor (L)
+**Items** M-9 Tempest, Phoenix Armor (L), Kinetic Shield
 **AC** 17; **Fort** +8, **Ref** +9, **Will** +10
-**HP** 32
+**HP** 32; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
 **Melee** ◆ Omni-Blade +7 (agile, finesse, tech), **Damage** 1d4+0 slashing
 **Melee** ◆ Chemical Dispenser +9 (poison, splash-5), **Damage** 1d8 poison
@@ -5465,7 +5612,7 @@ Aggressive close-assault trooper with a shotgun.
 
 **Perception** +9; **Skills** Athletics +11, Intimidation +8
 **Abilities** Str +4, Dex +3, Con +3, Int +0, Wis +1, Cha +1
-**Items** Kinetic Shield, M-23 Eviscerator, Predator Armor (M)
+**Items** M-23 Eviscerator, Predator Armor (M), Kinetic Shield
 **AC** 19; **Fort** +11, **Ref** +9, **Will** +7
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -5483,9 +5630,9 @@ Turian Hierarchy line infantry
 
 **Perception** +8; **Skills** Athletics +8, Intimidation +7, Survival +7
 **Abilities** Str +3, Dex +2, Con +2, Int +1, Wis +2, Cha +1
-**Items** Kinetic Shield, M-15 Vindicator, Mercenary Armor (H)
+**Items** M-15 Vindicator, Mercenary Armor (H), Kinetic Shield
 **AC** 19; **Fort** +11, **Ref** +9, **Will** +8
-**HP** 40
+**HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Knife +10 (agile, finesse), **Damage** 2d6+4 piercing
 **Melee** ◆ Assault Rifle +10 (analog, reload-2), **Damage** 2d8+4 piercing
@@ -5500,9 +5647,9 @@ Contracted drell elimination specialist
 
 **Perception** +11; **Skills** Acrobatics +12, Athletics +9, Deception +10, Stealth +13, Thievery +11
 **Abilities** Str +2, Dex +5, Con +1, Int +2, Wis +3, Cha +2
-**Items** Kinetic Shield, M-92 Mantis, Assassin Armor (L)
+**Items** M-92 Mantis, Assassin Armor (L), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 21; **Fort** +10, **Ref** +13, **Will** +11
-**HP** 55
+**HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Venomous Touch +12 (agile, finesse, poison), **Damage** 1d8+5 piercing plus 1d4 poison
 **Melee** ◆ Sniper Rifle +12 (reload-1, aimed), **Damage** 2d8+5 piercing
@@ -5518,7 +5665,7 @@ Agile drell marksman with perfect recall.
 
 **Perception** +14; **Skills** Acrobatics +14, Athletics +11, Stealth +13
 **Abilities** Str +2, Dex +5, Con +2, Int +2, Wis +3, Cha +2
-**Items** Kinetic Shield, M-97 Viper, Predator Armor (L)
+**Items** M-97 Viper, Predator Armor (L), Kinetic Shield
 **AC** 21; **Fort** +9, **Ref** +14, **Will** +11
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -5536,9 +5683,9 @@ Soldier laying down suppressing fire with a machine gun.
 
 **Perception** +10; **Skills** Athletics +12, Intimidation +9
 **Abilities** Str +4, Dex +2, Con +4, Int +0, Wis +1, Cha +0
-**Items** Kinetic Shield, M-9 Tempest, Predator Armor (H)
+**Items** M-9 Tempest, Predator Armor (H), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 19; **Fort** +13, **Ref** +9, **Will** +8
-**HP** 70; **Shields** 35 (recharge 10/turn)
+**HP** 70; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
 **Ranged** ◆ Light Machine Gun +11 (range increment 60 ft, automatic), **Damage** 3d6+4 piercing
 **Ranged** ◆ Sidearm +9 (range increment 40 ft), **Damage** 1d8+4 piercing
@@ -5554,9 +5701,9 @@ Tech-and-biotic hybrid specialist with defensive armor.
 
 **Perception** +12; **Skills** Athletics +10, Computers +12, Crafting +11
 **Abilities** Str +2, Dex +3, Con +3, Int +4, Wis +3, Cha +2
-**Items** Kinetic Shield, M-9 Tempest, Predator Armor (M)
+**Items** M-9 Tempest, Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1, Shield Regen Mod - Tier 1
 **AC** 21; **Fort** +11, **Ref** +10, **Will** +12
-**HP** 65; **Shields** 40 (recharge 15/turn)
+**HP** 65; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Submachine Gun +12 (range increment 40 ft, automatic), **Damage** 2d6+4 piercing
 **Melee** ◆ Biotic Strike +12 (agile, finesse, force, unarmed), **Damage** 2d6+6 bludgeoning plus 1d4 force
@@ -5573,7 +5720,7 @@ Salarian Special Tasks Group operative.
 
 **Perception** +14; **Skills** Acrobatics +13, Computers +12, Deception +11, Stealth +14
 **Abilities** Str +1, Dex +5, Con +2, Int +4, Wis +3, Cha +2
-**Items** Kinetic Shield, M-9 Tempest, Predator Armor (L)
+**Items** M-9 Tempest, Predator Armor (L), Kinetic Shield
 **AC** 21; **Fort** +9, **Ref** +14, **Will** +11
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -5592,7 +5739,7 @@ Marksman armed with a high-powered sniper rifle.
 
 **Perception** +14; **Skills** Acrobatics +11, Perception +14, Stealth +13
 **Abilities** Str +1, Dex +5, Con +2, Int +2, Wis +3, Cha +0
-**Items** Kinetic Shield, M-97 Viper, Predator Armor (L)
+**Items** M-97 Viper, Predator Armor (L), Kinetic Shield
 **AC** 20; **Fort** +9, **Ref** +13, **Will** +11
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
@@ -5610,9 +5757,9 @@ Disciplined turian line soldier and crack shot.
 
 **Perception** +13; **Skills** Athletics +11, Intimidation +11, Warfare +12
 **Abilities** Str +3, Dex +4, Con +3, Int +2, Wis +3, Cha +1
-**Items** Kinetic Shield, Phaeston, Predator Armor (M)
+**Items** Phaeston, Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 21; **Fort** +11, **Ref** +12, **Will** +11
-**HP** 60; **Shields** 35 (recharge 10/turn)
+**HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Phaeston Rifle +13 (range increment 70 ft, automatic), **Damage** 2d8+4 piercing
 **Melee** ◆ Omni-Blade +12 (agile, finesse), **Damage** 2d8+4 slashing plus 1d4 fire
@@ -5628,9 +5775,9 @@ Dominant vorcha establishing pack hierarchy through combat
 
 **Perception** +9; **Skills** Athletics +12, Intimidation +10, Survival +8
 **Abilities** Str +4, Dex +3, Con +4, Int +0, Wis +1, Cha +2
-**Items** Kinetic Shield, M-23 Eviscerator, Scorpion Armor (M)
+**Items** M-23 Eviscerator, Scorpion Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 19; **Fort** +13, **Ref** +11, **Will** +8
-**HP** 60
+**HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Feral Bite +12 (agile, finesse, unarmed), **Damage** 1d8+7 piercing
 **Melee** ◆ Scattergun +10 (reload-1, scatter-5), **Damage** 3d6+4 piercing
@@ -5645,18 +5792,27 @@ Elite asari biotic combat specialist
 
 **Perception** +12; **Skills** Acrobatics +12, Athletics +11, Intimidation +14
 **Abilities** Str +2, Dex +3, Con +2, Int +2, Wis +2, Cha +5
-**Items** Kinetic Shield, M-5 Phalanx, Predator Armor (M)
+**Items** M-5 Phalanx, Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 2
 **AC** 22; **Fort** +12, **Ref** +12, **Will** +13
-**HP** 70
+**HP** 70; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Biotic Strike +13 (agile, finesse, force, unarmed), **Damage** 2d6+8 bludgeoning plus 1d6 force
 **Melee** ◆ Pistol +13 (analog), **Damage** 2d8+6 piercing
 **Biotic Throw** ◆◆ **Range** 30 feet. One creature.
 The commando seizes a target in a mass effect field and hurls them. The target must succeed at a Fortitude save (DC 22) or be moved up to 15 feet in any direction and knocked prone (also taking 2d6 bludgeoning damage on a critical failure). A successful save means the target is moved 5 feet and not knocked prone.
-**Activate Biotic Barrier (NPC)** ◆◆ **Activate Biotic Barrier** 
-
----
-The commando projects a protective mass effect field, gaining a biotic barrier with 12 HP. The barrier absorbs damage before shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
+| **Level** | **Barrier HP** |
+| 1-3 | 5 |
+| 4-5 | 10 |
+| 6-7 | 15 |
+| 8-9 | 20 |
+| 10-11 | 25 |
+| 12-13 | 30 |
+| 14-15 | 35 |
+| 16-17 | 40 |
+| 18-19 | 45 |
+| 20 | 50 |
 
 ---
 
@@ -5668,9 +5824,9 @@ Batarian criminal operative commanding a slaving crew
 
 **Perception** +13; **Skills** Athletics +13, Deception +12, Intimidation +13, Stealth +12
 **Abilities** Str +4, Dex +3, Con +3, Int +2, Wis +2, Cha +3
-**Items** Kinetic Shield, M-6 Carnifex, Mercenary Armor (M)
+**Items** M-6 Carnifex, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 2
 **AC** 22; **Fort** +14, **Ref** +12, **Will** +11
-**HP** 72
+**HP** 72; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Blade +14 (agile), **Damage** 2d8+8 slashing
 **Melee** ◆ Carnifex Pistol +12 (analog, reload-1), **Damage** 3d6+8 piercing
@@ -5689,9 +5845,9 @@ Battle-hardened veteran soldier and squad leader.
 
 **Perception** +13; **Skills** Athletics +12, Intimidation +12, Warfare +12
 **Abilities** Str +3, Dex +4, Con +3, Int +2, Wis +3, Cha +2
-**Items** Kinetic Shield, M-96 Mattock, Predator Armor (M)
+**Items** M-96 Mattock, Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1, Shield Regen Mod - Tier 1
 **AC** 22; **Fort** +13, **Ref** +13, **Will** +11
-**HP** 75; **Shields** 40 (recharge 15/turn)
+**HP** 75; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Ranged** ◆ Assault Rifle +14 (range increment 60 ft, automatic), **Damage** 3d6+8 piercing
 **Melee** ◆ Omni-Blade +13 (agile, finesse), **Damage** 2d8+6 slashing plus 1d4 fire
@@ -5710,9 +5866,9 @@ Elite krogan combat specialist
 
 **Perception** +11; **Skills** Athletics +14, Intimidation +12
 **Abilities** Str +5, Dex +1, Con +5, Int +0, Wis +1, Cha +2
-**Items** Kinetic Shield, M-300 Claymore, Colossus Armor (H)
+**Items** M-300 Claymore, Colossus Armor (H), Kinetic Shield, Shield HP Mod - Tier 2
 **AC** 22; **Fort** +15, **Ref** +10, **Will** +10
-**HP** 95
+**HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Headbutt +14 (forceful, unarmed), **Damage** 2d8+5 bludgeoning
 **Melee** ◆ Claymore Shotgun +13 (reload-2, scatter-10), **Damage** 2d10+5 piercing
@@ -5727,9 +5883,9 @@ Special Tasks Group infiltration and intelligence operative
 
 **Perception** +12; **Skills** Acrobatics +13, Deception +12, Medicine +11, Society +14, Stealth +14, Thievery +12
 **Abilities** Str +1, Dex +4, Con +1, Int +5, Wis +3, Cha +2
-**Items** Kinetic Shield, M-97 Viper, Assassin Armor (L)
+**Items** M-97 Viper, Assassin Armor (L), Kinetic Shield, Shield HP Mod - Tier 2
 **AC** 23; **Fort** +11, **Ref** +13, **Will** +12
-**HP** 65
+**HP** 65; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
 **Melee** ◆ Combat Strike +12 (agile, finesse), **Damage** 1d6+3 bludgeoning
 **Melee** ◆ M-97 Viper Sniper Rifle +13 (reload-1), **Damage** 2d8+9 piercing
@@ -5744,9 +5900,9 @@ Unlikely but effective volus mercenary operative
 
 **Perception** +11; **Skills** Crafting +13, Deception +11, Stealth +10, Thievery +11
 **Abilities** Str +1, Dex +2, Con +2, Int +4, Wis +3, Cha +2
-**Items** Kinetic Shield, M-77 Paladin, Mercenary Armor (M)
+**Items** M-77 Paladin, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 2
 **AC** 21; **Fort** +12, **Ref** +11, **Will** +12
-**HP** 60
+**HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
 **Melee** ◆ Disruptor Pulse +11 (tech), **Damage** 3d6+5 electricity
 **Melee** ◆ Heavy Pistol +12 (analog, reload-1), **Damage** 2d8+9 piercing
@@ -5762,9 +5918,9 @@ Ancient asari law enforcer bound by an absolute code
 
 **Perception** +18; **Skills** Acrobatics +17, Athletics +14, Diplomacy +20, Intimidation +18, Religion +17, Society +17
 **Abilities** Str +2, Dex +4, Con +2, Int +3, Wis +4, Cha +6
-**Items** Kinetic Shield, M-5 Phalanx, Duelist Armor (L)
+**Items** M-5 Phalanx, Duelist Armor (L), Kinetic Shield, Shield HP Mod - Tier 4
 **AC** 27; **Fort** +18, **Ref** +17, **Will** +20
-**HP** 160
+**HP** 160; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Biotic Strike +19 (agile, unarmed), **Damage** 4d8+10 force
 **Melee** ◆ M-5 Phalanx +17 (analog, reload-1), **Damage** 2d10+7 piercing
@@ -5784,9 +5940,9 @@ Ancient krogan warrior of legendary endurance - boss encounter
 
 **Perception** +19; **Skills** Athletics +22, Intimidation +20, Survival +17
 **Abilities** Str +8, Dex +2, Con +7, Int +1, Wis +3, Cha +4
-**Items** Kinetic Shield, M-300 Claymore, Colossus Armor (H)
+**Items** M-300 Claymore, Colossus Armor (H), Kinetic Shield, Shield HP Mod - Tier 4
 **AC** 29; **Fort** +23, **Ref** +18, **Will** +19
-**HP** 154
+**HP** 154; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Headbutt +22 (forceful, unarmed), **Damage** 3d8+8 bludgeoning
 **Melee** ◆ M-300 Claymore +20 (reload-2, scatter-15), **Damage** 3d12+8 piercing
@@ -5873,8 +6029,9 @@ Heretic Geth are geth platforms that chose to follow the Old Machines rather tha
 
 **Perception** +12; **Skills** Athletics +14, Lore Reaper Tactics +11, Stealth +12
 **Abilities** Str +4, Dex +2, Con +3, Int +2, Wis +1, Cha -5
+**Items** Kinetic Shield
 **AC** 22; **Fort** +14, **Ref** +12, **Will** +9
-**HP** 70
+**HP** 70; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
 **Melee** ◆ Reaper-Augmented Strike +14 (agile), **Damage** 2d6+6 bludgeoning
 
@@ -6200,8 +6357,9 @@ The Geth Armature is a large quadrupedal walker platform used as a mobile anti-v
 
 **Perception** +22; **Skills** Athletics +26
 **Abilities** Str +8, Dex +1, Con +6, Int +1, Wis +2, Cha -3
+**Items** Kinetic Shield, Shield HP Mod - Tier 1
 **AC** 29; **Fort** +25, **Ref** +18, **Will** +20
-**HP** 160
+**HP** 160; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Ranged** ◆ Plasma Cannon +24 (range increment 150 ft), **Damage** 3d8+12 fire
 **Melee** ◆ Stomp +26 (reach-10), **Damage** 2d10+14 bludgeoning
@@ -6234,8 +6392,9 @@ The Geth Colossus is the largest geth ground combat platform, appearing in Mass 
 
 **Perception** +26; **Skills** Athletics +32
 **Abilities** Str +10, Dex -1, Con +8, Int +2, Wis +2, Cha -2
+**Items** Kinetic Shield, Shield HP Mod - Tier 3
 **AC** 33; **Fort** +30, **Ref** +20, **Will** +24
-**HP** 215
+**HP** 215; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
 **Ranged** ◆ Siege Cannon +28 (range increment 200 ft, brutal, splash-15), **Damage** 4d10+16 bludgeoning
 **Melee** ◆ Stomp +30 (reach-10), **Damage** 3d10+18 bludgeoning

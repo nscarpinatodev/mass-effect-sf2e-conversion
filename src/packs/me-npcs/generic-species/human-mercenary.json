@@ -8,7 +8,7 @@
     "attributes": {
       "hp": {
         "value": 30,
-        "temp": 25,
+        "temp": 30,
         "max": 30,
         "details": ""
       },
@@ -39,7 +39,7 @@
         "value": 2
       },
       "blurb": "Contracted human combatant",
-      "publicNotes": "<p>Human mercenaries are ubiquitous in the Terminus Systems and increasingly common throughout Citadel space. They vary enormously in competence, but the ones who survive long enough to find regular contracts have generally figured out the basics: shoot well, know when to take cover, and don't die for anyone who hasn't paid in advance.</p><p><strong>Kinetic Barrier:</strong> 25 Shield HP. Recharges 7 HP per turn.</p>",
+      "publicNotes": "<p>Human mercenaries are ubiquitous in the Terminus Systems and increasingly common throughout Citadel space. They vary enormously in competence, but the ones who survive long enough to find regular contracts have generally figured out the basics: shoot well, know when to take cover, and don't die for anyone who hasn't paid in advance.</p><p><strong>Kinetic Barrier:</strong> 30 Shield HP. Recharges 10 HP per turn.</p>",
       "privateNotes": "",
       "publication": {
         "title": "Mass Effect Actor and Ancestry Compendium",
@@ -320,90 +320,6 @@
       "_key": "!actors.items!MENPC00000000004.NPCRanged000001A"
     },
     {
-      "_id": "NPCShield000001A",
-      "name": "Kinetic Shield",
-      "type": "equipment",
-      "img": "icons/magic/defensive/shield-barrier-blue.webp",
-      "flags": {},
-      "system": {
-        "description": {
-          "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>25 Shield HP</strong>. Recharges <strong>7 HP per turn</strong>.</p>"
-        },
-        "rules": [],
-        "slug": "me-kinetic-shield",
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "traits": {
-          "otherTags": [],
-          "value": [],
-          "rarity": "common"
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        },
-        "level": {
-          "value": 1
-        },
-        "quantity": 1,
-        "baseItem": null,
-        "bulk": {
-          "value": 1
-        },
-        "hp": {
-          "value": 0,
-          "max": 0
-        },
-        "hardness": 0,
-        "price": {
-          "value": {
-            "sp": 150
-          }
-        },
-        "equipped": {
-          "carryType": "worn",
-          "invested": null
-        },
-        "containerId": null,
-        "size": "med",
-        "material": {
-          "type": null,
-          "grade": null
-        },
-        "identification": {
-          "status": "identified",
-          "unidentified": {
-            "name": "",
-            "img": "",
-            "data": {
-              "description": {
-                "value": ""
-              }
-            }
-          }
-        },
-        "usage": {
-          "value": "other"
-        },
-        "subitems": []
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 400000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!MENPC00000000004.NPCShield000001A",
-      "_stats": {
-        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
-      }
-    },
-    {
       "_key": "!actors.items!MENPC00000000004.aa598bca2d23d607",
       "_id": "aa598bca2d23d607",
       "name": "M-8 Avenger",
@@ -611,6 +527,86 @@
       },
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.e4f31fc58419f580"
+      }
+    },
+    {
+      "_id": "NPCShield000001A",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!MENPC00000000004.NPCShield000001A",
+      "sort": 400000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
       }
     }
   ],
