@@ -3022,6 +3022,7 @@ body{
   </div></div>
   <div class="equipment-subsection"><h4 class="equip-table-title">Sniper Rifles</h4><div class="equipment-table-wrap">
     <table class="data-table"><thead><tr><th>Name</th><th>Lvl</th><th>Bulk</th><th>Credits</th><th>Damage</th><th>Range</th><th>Traits</th></tr></thead><tbody><tr><td><strong>M-92 Mantis</strong></td><td>1</td><td>2</td><td>300 cr</td><td>2d8 P</td><td>120ft</td><td>fatal-d10, kickback, volley-30</td></tr>
+<tr><td><strong>M-13 Raptor</strong></td><td>3</td><td>1</td><td>900 cr</td><td>2d6 P</td><td>120ft</td><td>deadly-d10, volley-30</td></tr>
 <tr><td><strong>M-97 Viper</strong></td><td>3</td><td>2</td><td>1000 cr</td><td>2d8 P</td><td>120ft</td><td>volley-30</td></tr>
 <tr><td><strong>M-90 Indra</strong></td><td>5</td><td>2</td><td>2500 cr</td><td>2d6 P</td><td>120ft</td><td>automatic, volley-30</td></tr>
 <tr><td><strong>Collector Sniper Rifle</strong></td><td>7</td><td>2</td><td>10000 cr</td><td>3d8 Fire</td><td>150ft</td><td>volley-30</td></tr>
@@ -3206,7 +3207,7 @@ body{
     <h2 class="class-name">Bestiary</h2>
     <p class="class-tagline">NPCs · Creatures · Vehicles</p>
   </div></div></div>
-  <h3 class="section-bar" style="background:#0f2034" id="npcs">NPCs<span style="float:right;font-family:'GoodOT-Cond',sans-serif;font-size:0.8rem;opacity:.75">128</span></h3>
+  <h3 class="section-bar" style="background:#0f2034" id="npcs">NPCs<span style="float:right;font-family:'GoodOT-Cond',sans-serif;font-size:0.8rem;opacity:.75">130</span></h3>
   <p class="section-intro">Ready-to-run NPCs grouped by faction, matching the <em>ME NPCs</em> compendium. Shield values are kinetic barriers that absorb damage before Hit Points and recharge at the start of each turn.</p>
   <div class="npc-faction">
   <h4 class="npc-faction-title">Systems Alliance<span class="npc-count">7</span></h4>
@@ -3310,7 +3311,7 @@ body{
 </div></div>
 </div>
 <div class="npc-faction">
-  <h4 class="npc-faction-title">Citadel & Council<span class="npc-count">12</span></h4>
+  <h4 class="npc-faction-title">Citadel & Council<span class="npc-count">13</span></h4>
   <div class="npc-grid"><div class="npc-block">
   <div class="npc-head"><span class="npc-name">C-Sec Desk Officer</span><span class="npc-level">Creature 0</span></div>
   <div class="npc-traits"><span class="npc-trait">Medium</span><span class="npc-trait">humanoid</span><span class="npc-trait">c-sec</span></div>
@@ -3366,6 +3367,20 @@ body{
   <hr class="npc-rule">
   <div class="npc-line"><b>Speed</b> 25 feet</div>
   <div class="npc-line npc-strike"><b>Ranged</b> <span class="action-icon ai-one" role="img" aria-label="1 action" title="1 action"></span> M-8 Avenger +10 (range increment 60 ft, automatic), <b>Damage</b> 1d10+4 piercing</div><div class="npc-line npc-strike"><b>Melee</b> <span class="action-icon ai-one" role="img" aria-label="1 action" title="1 action"></span> Stun Baton +9 (agile, nonlethal), <b>Damage</b> 1d6+4 bludgeoning</div><div class="npc-ability"><span class="npc-ab-name">Takedown</span> <span class="action-icon ai-two" role="img" aria-label="2 actions" title="2 actions"></span> <p>The officer makes a Stun Baton Strike. On a hit, the target must attempt a DC 18 Fortitude save.</p><p><strong>Success</strong> Unaffected.</p><p><strong>Failure</strong> Stunned 1.</p><p><strong>Critical Failure</strong> Stunned 2.</p></div><div class="npc-ability"><span class="npc-ab-name">Cuff</span> <span class="action-icon ai-one" role="img" aria-label="1 action" title="1 action"></span> <p>The officer binds an adjacent creature that is grabbed, paralyzed, restrained, or unconscious. It becomes restrained until it Escapes (DC 18) or someone frees it with a DC 18 Thievery check.</p></div>
+</div>
+<div class="npc-block">
+  <div class="npc-head"><span class="npc-name">Harkin</span><span class="npc-level">Creature 2</span></div>
+  <div class="npc-traits"><span class="npc-trait rarity-unique">unique</span><span class="npc-trait">Medium</span><span class="npc-trait">human</span><span class="npc-trait">humanoid</span></div>
+  <p class="npc-flavor">Disgraced ex-C-Sec officer drinking away his pension in Chora's Den; sells what he knows.</p>
+  <div class="npc-line"><b>Perception</b> +9; <b>Skills</b> Athletics +5, Deception +7, Intimidation +6, Society +8</div>
+  <div class="npc-line">Str +1, Dex +2, Con +2, Int +1, Wis +0, Cha +1</div>
+  <div class="npc-line"><b>Items</b> M-3 Predator</div>
+  <hr class="npc-rule">
+  <div class="npc-line"><b>AC</b> 16; <b>Fort</b> +8, <b>Ref</b> +8, <b>Will</b> +5</div>
+  <div class="npc-line"><b>HP</b> 30</div>
+  <hr class="npc-rule">
+  <div class="npc-line"><b>Speed</b> 25 feet</div>
+  <div class="npc-line npc-strike"><b>Ranged</b> <span class="action-icon ai-one" role="img" aria-label="1 action" title="1 action"></span> M-3 Predator +9 (range increment 30 ft, agile), <b>Damage</b> 1d8+4 piercing</div><div class="npc-line npc-strike"><b>Melee</b> <span class="action-icon ai-one" role="img" aria-label="1 action" title="1 action"></span> Fist +7 (agile, nonlethal, unarmed), <b>Damage</b> 1d4+3 bludgeoning</div><div class="npc-ability"><span class="npc-ab-name">Old Badge</span>  <p>Harkin spent years in C-Sec before they threw him out. He has a +2 circumstance bonus to Society checks to Recall Knowledge about C-Sec, the wards' gangs, and who on the Citadel is paying whom.</p></div><div class="npc-ability"><span class="npc-ab-name">Liquid Courage</span>  <p>Harkin is rarely sober. He takes a -1 penalty to Perception and attack rolls, and has a +1 status bonus to saves against fear.</p></div><div class="npc-ability"><span class="npc-ab-name">Name Your Price</span> <span class="action-icon ai-one" role="img" aria-label="1 action" title="1 action"></span> <p>Harkin sells what he knows. For a bribe the GM sets (often a drink and a few hundred credits), he gives up a lead: a name, a location, or what C-Sec is covering up. A successful DC 18 Intimidation check gets the same lead without paying, and earns his lasting resentment.</p></div>
 </div>
 <div class="npc-block">
   <div class="npc-head"><span class="npc-name">C-Sec Detective</span><span class="npc-level">Creature 3</span></div>
@@ -3729,7 +3744,7 @@ body{
   <p class="npc-flavor">Mid-grade Cerberus augmented operative; M-13 Raptor sniper rifle, M-25 Hornet SMG, and rechargeable phase cloak.</p>
   <div class="npc-line"><b>Perception</b> +12; <b>Skills</b> Acrobatics +12, Athletics +7, Intimidation +8, Piloting +10, Stealth +15</div>
   <div class="npc-line">Str +2, Dex +5, Con +2, Int +2, Wis +1, Cha +0</div>
-  <div class="npc-line"><b>Items</b> Phoenix Armor (L), Kinetic Shield</div>
+  <div class="npc-line"><b>Items</b> Phoenix Armor (L), Kinetic Shield, M-13 Raptor</div>
   <hr class="npc-rule">
   <div class="npc-line"><b>AC</b> 22; <b>Fort</b> +11, <b>Ref</b> +14, <b>Will</b> +10</div>
   <div class="npc-line"><b>HP</b> 90; <b>Shields</b> 30 (recharge 10/turn)</div>
@@ -4384,7 +4399,7 @@ body{
 </div></div>
 </div>
 <div class="npc-faction">
-  <h4 class="npc-faction-title">Notable Figures<span class="npc-count">7</span></h4>
+  <h4 class="npc-faction-title">Notable Figures<span class="npc-count">8</span></h4>
   <div class="npc-grid"><div class="npc-block">
   <div class="npc-head"><span class="npc-name">Conrad Verner</span><span class="npc-level">Creature 1</span></div>
   <div class="npc-traits"><span class="npc-trait rarity-unique">unique</span><span class="npc-trait">Medium</span><span class="npc-trait">human</span><span class="npc-trait">humanoid</span></div>
@@ -4398,6 +4413,20 @@ body{
   <hr class="npc-rule">
   <div class="npc-line"><b>Speed</b> 25 feet</div>
   <div class="npc-line npc-strike"><b>Ranged</b> <span class="action-icon ai-one" role="img" aria-label="1 action" title="1 action"></span> Borrowed Pistol +5 (range increment 40 ft), <b>Damage</b> 1d8 piercing</div><div class="npc-ability"><span class="npc-ab-name">Misguided Heroics</span> <span class="action-icon ai-one" role="img" aria-label="1 action" title="1 action"></span> <p>Conrad makes an impassioned, poorly-judged speech invoking Commander Shepard. He attempts a Diplomacy check to Make an Impression; on a success the target is too bewildered or charmed to attack him until the end of its next turn unless he acts hostile first.</p></div>
+</div>
+<div class="npc-block">
+  <div class="npc-head"><span class="npc-name">Barla Von</span><span class="npc-level">Creature 2</span></div>
+  <div class="npc-traits"><span class="npc-trait rarity-unique">unique</span><span class="npc-trait">Small</span><span class="npc-trait">volus</span><span class="npc-trait">humanoid</span></div>
+  <p class="npc-flavor">Volus financial adviser on the Presidium, and a discreet agent of the Shadow Broker.</p>
+  <div class="npc-line"><b>Perception</b> +11; <b>Skills</b> Computers +8, Deception +8, Diplomacy +9, Society +10</div>
+  <div class="npc-line">Str -1, Dex +0, Con +1, Int +3, Wis +3, Cha +3</div>
+  
+  <hr class="npc-rule">
+  <div class="npc-line"><b>AC</b> 15; <b>Fort</b> +8, <b>Ref</b> +5, <b>Will</b> +11</div>
+  <div class="npc-line"><b>HP</b> 25</div>
+  <hr class="npc-rule">
+  <div class="npc-line"><b>Speed</b> 25 feet</div>
+  <div class="npc-line npc-strike"><b>Ranged</b> <span class="action-icon ai-one" role="img" aria-label="1 action" title="1 action"></span> Holdout Pistol +6 (range increment 30 ft, agile, concealable), <b>Damage</b> 1d6+2 piercing</div><div class="npc-ability"><span class="npc-ab-name">Shadow Broker's Ear</span>  <p>Barla Von is an agent of the Shadow Broker. Once per day he can answer a question about a person, organization or event on the Citadel as if he had critically succeeded at a Recall Knowledge check, for a price set by the GM, usually credits, a favor, or information of equal value.</p></div><div class="npc-ability"><span class="npc-ab-name">Pressure Suit</span>  <p>Barla Von depends on his environment suit. A critical hit that deals slashing or piercing damage breaches it: he is sickened 1 until someone spends 1 minute sealing the breach (DC 15 Crafting or Medicine).</p></div><div class="npc-ability"><span class="npc-ab-name">Call in a Favor</span> <span class="action-icon ai-reaction" role="img" aria-label="Reaction" title="Reaction"></span> <p><strong>Trigger</strong> A creature Barla Von can see threatens him. <strong>Effect</strong> He reminds it, pointedly, of who his clients are. The creature must attempt a DC 18 Will save; on a failure it can't take hostile actions against him until the end of its next turn. Once per day.</p></div>
 </div>
 <div class="npc-block">
   <div class="npc-head"><span class="npc-name">Sha'ira, the Consort</span><span class="npc-level">Creature 5</span></div>

@@ -3277,6 +3277,7 @@ Until the start of your next turn, you gain **Resistance 12** to all damage, a *
 | Name | Level | Bulk | Credits | Damage | Type | Range | Traits |
 |---|---|---|---|---|---|---|---|
 | M-92 Mantis | 1 | 2 | 300 cr | 2d8 | P | 120 ft | fatal-d10, kickback, volley-30 |
+| M-13 Raptor | 3 | 1 | 900 cr | 2d6 | P | 120 ft | deadly-d10, volley-30 |
 | M-97 Viper | 3 | 2 | 1,000 cr | 2d8 | P | 120 ft | volley-30 |
 | M-90 Indra | 5 | 2 | 2,500 cr | 2d6 | P | 120 ft | automatic, volley-30 |
 | Collector Sniper Rifle | 7 | 2 | 10,000 cr | 3d8 | Fire | 150 ft | volley-30 |
@@ -3567,7 +3568,7 @@ A grenade packed with a mass effect field generator that triggers a localized an
 
 # PART II — BESTIARY
 
-*182 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
+*184 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
 
 ---
 
@@ -3782,6 +3783,26 @@ Armored enforcement: rifle for firefights, baton for arrests.
 **Failure** Stunned 1.
 **Critical Failure** Stunned 2.
 **Cuff** ◆ The officer binds an adjacent creature that is grabbed, paralyzed, restrained, or unconscious. It becomes restrained until it Escapes (DC 18) or someone frees it with a DC 18 Thievery check.
+
+---
+
+##### Harkin — Creature 2
+
+*Unique · Medium · Human · Humanoid*
+
+Disgraced ex-C-Sec officer drinking away his pension in Chora's Den; sells what he knows.
+
+**Perception** +9; **Skills** Athletics +5, Deception +7, Intimidation +6, Society +8
+**Abilities** Str +1, Dex +2, Con +2, Int +1, Wis +0, Cha +1
+**Items** M-3 Predator
+**AC** 16; **Fort** +8, **Ref** +8, **Will** +5
+**HP** 30
+**Speed** 25 feet
+**Ranged** ◆ M-3 Predator +9 (range increment 30 ft, agile), **Damage** 1d8+4 piercing
+**Melee** ◆ Fist +7 (agile, nonlethal, unarmed), **Damage** 1d4+3 bludgeoning
+**Old Badge** Harkin spent years in C-Sec before they threw him out. He has a +2 circumstance bonus to Society checks to Recall Knowledge about C-Sec, the wards' gangs, and who on the Citadel is paying whom.
+**Liquid Courage** Harkin is rarely sober. He takes a -1 penalty to Perception and attack rolls, and has a +1 status bonus to saves against fear.
+**Name Your Price** ◆ Harkin sells what he knows. For a bribe the GM sets (often a drink and a few hundred credits), he gives up a lead: a name, a location, or what C-Sec is covering up. A successful DC 18 Intimidation check gets the same lead without paying, and earns his lasting resentment.
 
 ---
 
@@ -4239,7 +4260,7 @@ Mid-grade Cerberus augmented operative; M-13 Raptor sniper rifle, M-25 Hornet SM
 
 **Perception** +12; **Skills** Acrobatics +12, Athletics +7, Intimidation +8, Piloting +10, Stealth +15
 **Abilities** Str +2, Dex +5, Con +2, Int +2, Wis +1, Cha +0
-**Items** Phoenix Armor (L), Kinetic Shield
+**Items** Phoenix Armor (L), Kinetic Shield, M-13 Raptor
 **AC** 22; **Fort** +11, **Ref** +14, **Will** +10
 **HP** 90; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
@@ -5127,6 +5148,24 @@ Overzealous civilian who idolizes Commander Shepard.
 **Speed** 25 feet
 **Ranged** ◆ Borrowed Pistol +5 (range increment 40 ft), **Damage** 1d8 piercing
 **Misguided Heroics** ◆ Conrad makes an impassioned, poorly-judged speech invoking Commander Shepard. He attempts a Diplomacy check to Make an Impression; on a success the target is too bewildered or charmed to attack him until the end of its next turn unless he acts hostile first.
+
+---
+
+##### Barla Von — Creature 2
+
+*Unique · Small · Volus · Humanoid*
+
+Volus financial adviser on the Presidium, and a discreet agent of the Shadow Broker.
+
+**Perception** +11; **Skills** Computers +8, Deception +8, Diplomacy +9, Society +10
+**Abilities** Str -1, Dex +0, Con +1, Int +3, Wis +3, Cha +3
+**AC** 15; **Fort** +8, **Ref** +5, **Will** +11
+**HP** 25
+**Speed** 25 feet
+**Ranged** ◆ Holdout Pistol +6 (range increment 30 ft, agile, concealable), **Damage** 1d6+2 piercing
+**Shadow Broker's Ear** Barla Von is an agent of the Shadow Broker. Once per day he can answer a question about a person, organization or event on the Citadel as if he had critically succeeded at a Recall Knowledge check, for a price set by the GM, usually credits, a favor, or information of equal value.
+**Pressure Suit** Barla Von depends on his environment suit. A critical hit that deals slashing or piercing damage breaches it: he is sickened 1 until someone spends 1 minute sealing the breach (DC 15 Crafting or Medicine).
+**Call in a Favor** ↺ **Trigger** A creature Barla Von can see threatens him. **Effect** He reminds it, pointedly, of who his clients are. The creature must attempt a DC 18 Will save; on a failure it can't take hostile actions against him until the end of its next turn. Once per day.
 
 ---
 

@@ -187,7 +187,7 @@
       }
     },
     "ring": {
-      "enabled": true,
+      "enabled": false,
       "colors": {
         "ring": null,
         "background": null
@@ -195,7 +195,7 @@
       "effects": 1,
       "subject": {
         "scale": 1,
-        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/human-soldier.webp"
+        "texture": null
       }
     }
   },

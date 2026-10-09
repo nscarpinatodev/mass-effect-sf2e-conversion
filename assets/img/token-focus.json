@@ -1,3 +1,7 @@
 {
-  "_comment": "Focus points for token art the silhouette cannot speak for: game stills with no transparency, and the occasional figure the shoulder scan reads wrong. Keyed by file name in assets/img/creatures or assets/img/npcs; x and y are fractions of the image, pointing at the middle of the head. Run: node scripts/generate-tokens.mjs --art-only && node scripts/token-contact-sheet.mjs"
+  "_comment": "Focus points for token art the silhouette cannot speak for: game stills with no transparency, and the occasional figure the shoulder scan reads wrong. Keyed by file name in assets/img/creatures or assets/img/npcs; x and y are fractions of the image, pointing at the middle of the head. Run: node scripts/generate-tokens.mjs --art-only && node scripts/token-contact-sheet.mjs",
+  "barla-von.webp": {
+    "x": 0.31,
+    "y": 0.27
+  }
 }

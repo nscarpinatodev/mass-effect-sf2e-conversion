@@ -1,14 +1,14 @@
-2026/10/08-03:42:05.095 af28 Recovering log #270
-2026/10/08-03:42:05.101 af28 Delete type=0 #270
-2026/10/08-03:42:05.101 af28 Delete type=3 #268
-2026/10/08-03:42:05.105 2814 Level-0 table #276: started
-2026/10/08-03:42:05.110 2814 Level-0 table #276: 20509 bytes OK
-2026/10/08-03:42:05.111 2814 Delete type=0 #274
-2026/10/08-03:42:05.112 2814 Manual compaction at level-0 from '!items!meClsAdept000000' @ 72057594037927935 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at '!items!meClsVanguard000' @ 330 : 1
-2026/10/08-03:42:05.112 2814 Compacting 1@0 + 1@1 files
-2026/10/08-03:42:05.115 2814 Generated table #277@0: 12 keys, 20607 bytes
-2026/10/08-03:42:05.115 2814 Compacted 1@0 + 1@1 files => 20607 bytes
-2026/10/08-03:42:05.117 2814 compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/10/08-03:42:05.118 2814 Delete type=2 #272
-2026/10/08-03:42:05.118 2814 Delete type=2 #276
-2026/10/08-03:42:05.118 2814 Manual compaction at level-0 from '!items!meClsVanguard000' @ 330 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at (end)
+2026/10/08-21:46:01.580 8a54 Recovering log #280
+2026/10/08-21:46:01.586 8a54 Delete type=0 #280
+2026/10/08-21:46:01.586 8a54 Delete type=3 #278
+2026/10/08-21:46:01.589 b6b0 Level-0 table #286: started
+2026/10/08-21:46:01.594 b6b0 Level-0 table #286: 20509 bytes OK
+2026/10/08-21:46:01.595 b6b0 Delete type=0 #284
+2026/10/08-21:46:01.596 b6b0 Manual compaction at level-0 from '!items!meClsAdept000000' @ 72057594037927935 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at '!items!meClsVanguard000' @ 342 : 1
+2026/10/08-21:46:01.596 b6b0 Compacting 1@0 + 1@1 files
+2026/10/08-21:46:01.600 b6b0 Generated table #287@0: 12 keys, 20607 bytes
+2026/10/08-21:46:01.600 b6b0 Compacted 1@0 + 1@1 files => 20607 bytes
+2026/10/08-21:46:01.601 b6b0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/10/08-21:46:01.602 b6b0 Delete type=2 #282
+2026/10/08-21:46:01.602 b6b0 Delete type=2 #286
+2026/10/08-21:46:01.602 b6b0 Manual compaction at level-0 from '!items!meClsVanguard000' @ 342 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at (end)
