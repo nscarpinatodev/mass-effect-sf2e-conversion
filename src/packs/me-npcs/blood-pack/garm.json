@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 98,
+        "value": 218,
         "temp": 40,
-        "max": 98,
+        "max": 218,
         "details": ""
       },
       "ac": {
-        "value": 24,
+        "value": 33,
         "details": ""
       },
       "allSaves": {
@@ -37,7 +37,7 @@
         "details": ""
       },
       "level": {
-        "value": 6
+        "value": 12
       },
       "blurb": "Krogan warlord and leader of the Blood Pack on Omega.",
       "publicNotes": "<p>Garm leads the Blood Pack on Omega, one of the most dangerous krogan in the Terminus Systems. Fitted with military-grade shield tech atop his already monstrous constitution, he considers a good fight the only thing worth living for — and he is very hard to kill.</p><p><strong>Reinforced Barrier:</strong> 40 Shield HP. Recharges 15 HP per turn.</p><p><strong>Redundant Physiology & Blood Rage:</strong> See abilities below.</p>",
@@ -56,53 +56,53 @@
     },
     "abilities": {
       "str": {
-        "mod": 6
+        "mod": 7
       },
       "dex": {
-        "mod": 3
+        "mod": 4
       },
       "con": {
-        "mod": 6
+        "mod": 7
       },
       "int": {
-        "mod": 1
+        "mod": 3
       },
       "wis": {
-        "mod": 3
+        "mod": 4
       },
       "cha": {
-        "mod": 3
+        "mod": 4
       }
     },
     "perception": {
       "details": "",
-      "mod": 15,
+      "mod": 23,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 18,
+        "value": 27,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 12,
+        "value": 20,
         "saveDetail": ""
       },
       "will": {
-        "value": 13,
+        "value": 21,
         "saveDetail": ""
       }
     },
     "skills": {
       "athletics": {
-        "base": 18
+        "base": 28
       },
       "intimidation": {
-        "base": 16
+        "base": 26
       },
       "survival": {
-        "base": 13
+        "base": 22
       }
     },
     "traits": {
@@ -211,11 +211,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 17
+          "value": 26
         },
         "damageRolls": {
           "dmg00xaRS": {
-            "damage": "4d8+9",
+            "damage": "5d8+15",
             "damageType": "piercing",
             "category": null
           }
@@ -277,11 +277,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 18
+          "value": 27
         },
         "damageRolls": {
           "dmg00ZQVv": {
-            "damage": "2d10+6",
+            "damage": "3d10+12",
             "damageType": "bludgeoning",
             "category": null
           }
@@ -334,7 +334,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Berserker Charge</strong> <span class=\"action-glyph\">2</span> (recharge 5–6)</p><hr /><p>Garm Strides up to triple his Speed in a straight line, trampling through creatures' spaces, and makes a melee Strike with a +2 circumstance bonus to damage. Each creature whose space he moved through takes [[/r 2d8[bludgeoning]]] damage (basic Reflex save, DC 24).</p>",
+          "value": "<p><strong>Berserker Charge</strong> <span class=\"action-glyph\">2</span> (recharge 5–6)</p><hr /><p>Garm Strides up to triple his Speed in a straight line, trampling through creatures' spaces, and makes a melee Strike with a +2 circumstance bonus to damage. Each creature whose space he moved through takes [[/r 3d8+2[bludgeoning]]] damage (basic Reflex save, DC 32).</p>",
           "gm": ""
         },
         "rules": [],

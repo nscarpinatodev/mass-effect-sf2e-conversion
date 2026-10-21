@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 85,
+        "value": 235,
         "temp": 50,
-        "max": 85,
+        "max": 235,
         "details": ""
       },
       "ac": {
-        "value": 22,
+        "value": 31,
         "details": ""
       },
       "allSaves": {
@@ -36,7 +36,7 @@
         "details": ""
       },
       "level": {
-        "value": 5
+        "value": 11
       },
       "blurb": "Founder and financier of the Blue Suns.",
       "publicNotes": "<p>Vido Santiago co-founded the Blue Suns and turned it into a galactic criminal enterprise through cold business sense and a complete absence of scruples. He prefers to let others do the fighting, directing operations from behind layers of expendable muscle — but he is a capable gunman when cornered.</p><p><strong>Kinetic Barrier:</strong> 50 Shield HP. Recharges 15 HP per turn.</p>",
@@ -55,59 +55,59 @@
     },
     "abilities": {
       "str": {
-        "mod": 2
+        "mod": 3
       },
       "dex": {
-        "mod": 4
+        "mod": 5
       },
       "con": {
-        "mod": 3
+        "mod": 4
       },
       "int": {
-        "mod": 4
+        "mod": 5
       },
       "wis": {
-        "mod": 3
+        "mod": 4
       },
       "cha": {
-        "mod": 4
+        "mod": 5
       }
     },
     "perception": {
       "details": "",
-      "mod": 14,
+      "mod": 23,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 12,
+        "value": 21,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 14,
+        "value": 23,
         "saveDetail": ""
       },
       "will": {
-        "value": 13,
+        "value": 22,
         "saveDetail": ""
       }
     },
     "skills": {
       "deception": {
-        "base": 14
+        "base": 24
       },
       "diplomacy": {
-        "base": 13
+        "base": 23
       },
       "intimidation": {
-        "base": 14
+        "base": 24
       },
       "society": {
-        "base": 13
+        "base": 23
       },
       "warfare": {
-        "base": 14
+        "base": 24
       }
     },
     "traits": {
@@ -216,11 +216,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 15
+          "value": 24
         },
         "damageRolls": {
           "dmg00Cp28": {
-            "damage": "3d6+8",
+            "damage": "3d6+14",
             "damageType": "piercing",
             "category": null
           }

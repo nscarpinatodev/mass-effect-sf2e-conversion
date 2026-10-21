@@ -1,0 +1,682 @@
+{
+  "_key": "!actors!bloodpackbtlmstr",
+  "_id": "bloodpackbtlmstr",
+  "name": "Blood Pack Battlemaster",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/blood-pack-warrior.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 139,
+        "temp": 0,
+        "max": 139,
+        "details": ""
+      },
+      "ac": {
+        "value": 24,
+        "details": ""
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 25,
+        "otherSpeeds": [],
+        "details": ""
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [
+          "taldane",
+          "kroganese"
+        ],
+        "details": ""
+      },
+      "level": {
+        "value": 7
+      },
+      "blurb": "Veteran krogan who leads Blood Pack assault squads into the worst of a fight.",
+      "publicNotes": "<p>A krogan who has outlived enough fights to lead the next one. Blood Pack battlemasters take point on every assault and expect the vorcha behind them to keep up.</p><p><strong>Redundant Physiology & Blood Rage:</strong> See abilities below.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 6
+      },
+      "dex": {
+        "mod": 2
+      },
+      "con": {
+        "mod": 6
+      },
+      "int": {
+        "mod": 0
+      },
+      "wis": {
+        "mod": 2
+      },
+      "cha": {
+        "mod": 1
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 15,
+      "senses": [],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 20,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 13,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 14,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 19
+      },
+      "intimidation": {
+        "base": 17
+      },
+      "survival": {
+        "base": 15
+      }
+    },
+    "traits": {
+      "value": [
+        "humanoid",
+        "krogan"
+      ],
+      "rarity": "uncommon",
+      "size": {
+        "value": "med"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Blood Pack Battlemaster",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/blood-pack-warrior.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/blood-pack-warrior.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "_id": "Jo0E8vBIvWYWY8wl",
+      "name": "M-23 Eviscerator",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Eviscerator.png",
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 18
+        },
+        "damageRolls": {
+          "dmg00Jo0E": {
+            "damage": "4d8+10",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "tech",
+            "scatter-5",
+            "range-increment-15"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "<p>A heavy krogan shotgun.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "attackEffects": {
+          "value": []
+        },
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "2a99c5f0e07e94f4"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!bloodpackbtlmstr.Jo0E8vBIvWYWY8wl"
+    },
+    {
+      "_id": "ibrjEdRpkj7Lm9zL",
+      "name": "Krogan Headbutt",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 18
+        },
+        "damageRolls": {
+          "dmg00ibrj": {
+            "damage": "1d10+10",
+            "damageType": "bludgeoning",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "unarmed"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "<p>A brutal armored headbutt.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "attackEffects": {
+          "value": []
+        },
+        "range": null,
+        "subjectToMAP": true
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!bloodpackbtlmstr.ibrjEdRpkj7Lm9zL"
+    },
+    {
+      "_id": "AUY2wksoxKYf8clO",
+      "name": "Krogan Charge",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "flags": {},
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Krogan Charge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>The warrior Strides up to double its Speed in a straight line and makes a melee Strike. If it moved at least 15 feet, the Strike deals an extra [[/r 3d6[bludgeoning]]] damage and the target must succeed at a Fortitude save (DC 25) or be knocked prone.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "krogan"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!bloodpackbtlmstr.AUY2wksoxKYf8clO"
+    },
+    {
+      "_id": "mby8epgd9aBq5P2b",
+      "name": "Redundant Physiology",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "flags": {},
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Redundant Physiology</strong></p><hr /><p>The krogan's duplicated organs make it brutally hard to kill. It is not knocked out at 0 HP unless the damage is a critical hit or from fire; otherwise it acts on 1 HP until reduced a second time. It also gains a +2 circumstance bonus to saves against being sickened, poisoned, or made to bleed.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "krogan"
+          ]
+        },
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "defensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 400000,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!bloodpackbtlmstr.mby8epgd9aBq5P2b"
+    },
+    {
+      "_id": "S8UWa5T6dT461wZc",
+      "name": "Blood Rage",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/FreeAction.webp",
+      "flags": {},
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Blood Rage</strong> <span class=\"action-glyph\">F</span></p><p><strong>Trigger</strong> The krogan is reduced to half its Hit Points or fewer.</p><hr /><p>The krogan enters a battle fury, gaining a +2 status bonus to melee damage and fast healing 5 until the end of the encounter. While enraged it takes a –1 penalty to AC.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "krogan",
+            "emotion",
+            "mental"
+          ]
+        },
+        "actionType": {
+          "value": "free"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 500000,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!bloodpackbtlmstr.S8UWa5T6dT461wZc"
+    },
+    {
+      "folder": null,
+      "name": "M-23 Eviscerator",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Eviscerator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-23 Eviscerator fires razor-edged ceramic frags that shred organic matter with brutal efficiency. Produced by Hahne-Kedar for police and security markets, its jagged scatter pattern is specifically designed to maximize tissue damage in close-quarters engagements. Alliance command has expressed concerns about the weapon's use against prisoners of war - a complaint largely ignored by those carrying it.</p>"
+        },
+        "rules": [],
+        "slug": "m-23-eviscerator",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "scatter-5"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "baseItem": "m-23-eviscerator",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 100
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "shotgun",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 15,
+        "expend": 1,
+        "ammo": {
+          "capacity": 6,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "2a99c5f0e07e94f4",
+      "_key": "!actors.items!bloodpackbtlmstr.2a99c5f0e07e94f4",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.6c515df2ce8a709d"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Gladiator Armor (H)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Heavy-human-Gladiator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Elkoss Combine's Gladiator line uses mass-produced polymer composites to keep costs low. While barrier output and impact absorption fall short of premium competitors, the armor offers reliable protection for mercenaries and contractors operating on tight budgets.</p>"
+        },
+        "rules": [],
+        "slug": "gladiator-armor-h",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "bulwark",
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "gladiator-armor",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 40
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "heavy",
+        "group": "plate",
+        "acBonus": 3,
+        "strength": 3,
+        "dexCap": 1,
+        "checkPenalty": -3,
+        "speedPenalty": -10,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "c828a6a79eb5a8d9",
+      "_key": "!actors.items!bloodpackbtlmstr.c828a6a79eb5a8d9",
+      "sort": 700000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.574641983a502ae5"
+      }
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000007",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

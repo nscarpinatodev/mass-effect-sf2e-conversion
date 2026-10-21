@@ -1,15 +1,15 @@
-2026/10/21-04:30:36.383 f8d4 Recovering log #373
-2026/10/21-04:30:36.392 f8d4 Delete type=0 #373
-2026/10/21-04:30:36.392 f8d4 Delete type=3 #371
-2026/10/21-04:30:36.396 d600 Level-0 table #379: started
-2026/10/21-04:30:36.403 d600 Level-0 table #379: 30116 bytes OK
-2026/10/21-04:30:36.408 d600 Delete type=0 #377
-2026/10/21-04:30:36.408 d600 Manual compaction at level-0 from '!actors!018df662e4af7e0e' @ 72057594037927935 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at (end)
-2026/10/21-04:30:36.408 d600 Manual compaction at level-1 from '!actors!018df662e4af7e0e' @ 72057594037927935 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at '!actors.items!lx2exoframe00001.lx2vise000000001' @ 1981 : 1
-2026/10/21-04:30:36.408 d600 Compacting 1@1 + 1@2 files
-2026/10/21-04:30:36.413 d600 Generated table #380@1: 47 keys, 30116 bytes
-2026/10/21-04:30:36.413 d600 Compacted 1@1 + 1@2 files => 30116 bytes
-2026/10/21-04:30:36.414 d600 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/21-04:30:36.415 d600 Delete type=2 #375
-2026/10/21-04:30:36.415 d600 Delete type=2 #379
-2026/10/21-04:30:36.415 d600 Manual compaction at level-1 from '!actors.items!lx2exoframe00001.lx2vise000000001' @ 1981 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at (end)
+2026/10/21-11:14:00.403 a4e4 Recovering log #378
+2026/10/21-11:14:00.414 a4e4 Delete type=0 #378
+2026/10/21-11:14:00.414 a4e4 Delete type=3 #376
+2026/10/21-11:14:00.419 bcb0 Level-0 table #384: started
+2026/10/21-11:14:00.425 bcb0 Level-0 table #384: 30118 bytes OK
+2026/10/21-11:14:00.429 bcb0 Delete type=0 #382
+2026/10/21-11:14:00.429 bcb0 Manual compaction at level-0 from '!actors!018df662e4af7e0e' @ 72057594037927935 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at (end)
+2026/10/21-11:14:00.429 bcb0 Manual compaction at level-1 from '!actors!018df662e4af7e0e' @ 72057594037927935 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at '!actors.items!lx2exoframe00001.lx2vise000000001' @ 2028 : 1
+2026/10/21-11:14:00.429 bcb0 Compacting 1@1 + 1@2 files
+2026/10/21-11:14:00.434 bcb0 Generated table #385@1: 47 keys, 30118 bytes
+2026/10/21-11:14:00.434 bcb0 Compacted 1@1 + 1@2 files => 30118 bytes
+2026/10/21-11:14:00.438 bcb0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/21-11:14:00.438 bcb0 Delete type=2 #380
+2026/10/21-11:14:00.439 bcb0 Delete type=2 #384
+2026/10/21-11:14:00.439 bcb0 Manual compaction at level-1 from '!actors.items!lx2exoframe00001.lx2vise000000001' @ 2028 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at (end)

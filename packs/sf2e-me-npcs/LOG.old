@@ -1,15 +1,15 @@
-2026/10/21-11:13:59.978 a4e4 Recovering log #398
-2026/10/21-11:13:59.988 a4e4 Delete type=0 #398
-2026/10/21-11:13:59.988 a4e4 Delete type=3 #396
-2026/10/21-11:14:00.008 bcb0 Level-0 table #404: started
-2026/10/21-11:14:00.034 bcb0 Level-0 table #404: 759853 bytes OK
-2026/10/21-11:14:00.038 bcb0 Delete type=0 #402
-2026/10/21-11:14:00.038 bcb0 Manual compaction at level-0 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
-2026/10/21-11:14:00.038 bcb0 Manual compaction at level-1 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at '!folders!menpcfoldr000011' @ 39486 : 1
-2026/10/21-11:14:00.038 bcb0 Compacting 1@1 + 1@2 files
-2026/10/21-11:14:00.070 bcb0 Generated table #405@1: 968 keys, 759853 bytes
-2026/10/21-11:14:00.070 bcb0 Compacted 1@1 + 1@2 files => 759853 bytes
-2026/10/21-11:14:00.074 bcb0 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/21-11:14:00.074 bcb0 Delete type=2 #400
-2026/10/21-11:14:00.074 bcb0 Delete type=2 #404
-2026/10/21-11:14:00.074 bcb0 Manual compaction at level-1 from '!folders!menpcfoldr000011' @ 39486 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
+2026/10/21-11:22:06.170 6454 Recovering log #407
+2026/10/21-11:22:06.181 6454 Delete type=0 #407
+2026/10/21-11:22:06.181 6454 Delete type=3 #406
+2026/10/21-11:22:06.197 a6e8 Level-0 table #411: started
+2026/10/21-11:22:06.224 a6e8 Level-0 table #411: 807164 bytes OK
+2026/10/21-11:22:06.227 a6e8 Delete type=0 #409
+2026/10/21-11:22:06.227 a6e8 Manual compaction at level-0 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)
+2026/10/21-11:22:06.227 a6e8 Manual compaction at level-1 from '!actors!2GgJKkt0s0XfLK0j' @ 72057594037927935 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at '!folders!menpcfoldr000011' @ 40509 : 1
+2026/10/21-11:22:06.227 a6e8 Compacting 1@1 + 1@2 files
+2026/10/21-11:22:06.258 a6e8 Generated table #412@1: 1030 keys, 807164 bytes
+2026/10/21-11:22:06.258 a6e8 Compacted 1@1 + 1@2 files => 807164 bytes
+2026/10/21-11:22:06.262 a6e8 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/21-11:22:06.262 a6e8 Delete type=2 #405
+2026/10/21-11:22:06.262 a6e8 Delete type=2 #411
+2026/10/21-11:22:06.262 a6e8 Manual compaction at level-1 from '!folders!menpcfoldr000011' @ 40509 : 1 .. '!folders!menpcfoldr000011' @ 0 : 0; will stop at (end)

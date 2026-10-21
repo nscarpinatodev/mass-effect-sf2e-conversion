@@ -97,7 +97,7 @@
     "slug": "commander-bailey",
     "details": {
       "level": {
-        "value": 6
+        "value": 7
       },
       "publicNotes": "<p>Commander Armando-Owen Bailey is the gruff, pragmatic head of C-Sec on the Citadel's wards. He keeps the peace with a combination of street-level authority and a willingness to bend rules when the situation demands it. He is not hostile to outside operators — he will deal straight and expects the same in return. When he is forced to fight, he fights dirty and efficiently.</p><p><strong>C-Sec Authority:</strong> In areas under Citadel jurisdiction, Bailey has a +4 circumstance bonus to Intimidation checks and may attempt to Demoralize as a free action once per round.</p>",
       "privateNotes": "",
@@ -115,13 +115,13 @@
     },
     "attributes": {
       "hp": {
-        "value": 95,
-        "max": 95,
+        "value": 115,
+        "max": 115,
         "temp": 40,
         "details": ""
       },
       "ac": {
-        "value": 23,
+        "value": 24,
         "details": ""
       },
       "speed": {
@@ -162,30 +162,30 @@
     },
     "saves": {
       "fortitude": {
-        "value": 14,
+        "value": 15,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 14,
+        "value": 15,
         "saveDetail": ""
       },
       "will": {
-        "value": 16,
+        "value": 17,
         "saveDetail": ""
       }
     },
     "skills": {
       "intimidation": {
-        "base": 17
+        "base": 19
       },
       "athletics": {
-        "base": 13
+        "base": 15
       },
       "society": {
-        "base": 14
+        "base": 16
       },
       "diplomacy": {
-        "base": 14
+        "base": 16
       }
     },
     "_migration": {
@@ -194,7 +194,7 @@
     },
     "perception": {
       "details": "",
-      "mod": 16,
+      "mod": 17,
       "senses": [],
       "vision": true
     },
@@ -215,11 +215,11 @@
         },
         "slug": "bailey-predator",
         "bonus": {
-          "value": 17
+          "value": 18
         },
         "damageRolls": {
           "0": {
-            "damage": "2d6+9",
+            "damage": "2d6+10",
             "damageType": "piercing",
             "category": null
           }
@@ -272,11 +272,11 @@
       "system": {
         "slug": "bailey-baton",
         "bonus": {
-          "value": 17
+          "value": 18
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+10",
+            "damage": "3d6+12",
             "damageType": "bludgeoning"
           }
         },

@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 55,
+        "value": 130,
         "temp": 40,
-        "max": 55,
+        "max": 130,
         "details": ""
       },
       "ac": {
-        "value": 20,
+        "value": 26,
         "details": ""
       },
       "allSaves": {
@@ -37,7 +37,7 @@
         "details": ""
       },
       "level": {
-        "value": 4
+        "value": 8
       },
       "blurb": "Level-headed admiral and family friend of the Zorahs.",
       "publicNotes": "<p>Shala'Raan is a steadying presence on the Admiralty Board, a pragmatic mediator who tries to hold the fractious admirals together. Close to the Zorah family, she balances duty to the fleet against personal loyalty with quiet grace.</p><p><strong>Kinetic Barrier:</strong> 40 Shield HP. Recharges 10 HP per turn.</p>",
@@ -56,56 +56,56 @@
     },
     "abilities": {
       "str": {
-        "mod": 1
-      },
-      "dex": {
-        "mod": 3
-      },
-      "con": {
         "mod": 2
       },
-      "int": {
+      "dex": {
+        "mod": 4
+      },
+      "con": {
         "mod": 3
       },
-      "wis": {
+      "int": {
         "mod": 4
       },
+      "wis": {
+        "mod": 5
+      },
       "cha": {
-        "mod": 4
+        "mod": 5
       }
     },
     "perception": {
       "details": "",
-      "mod": 13,
+      "mod": 18,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 10,
+        "value": 15,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 11,
+        "value": 16,
         "saveDetail": ""
       },
       "will": {
-        "value": 13,
+        "value": 18,
         "saveDetail": ""
       }
     },
     "skills": {
       "diplomacy": {
-        "base": 14
+        "base": 20
       },
       "society": {
-        "base": 13
+        "base": 19
       },
       "piloting": {
-        "base": 11
+        "base": 17
       },
       "computers": {
-        "base": 11
+        "base": 17
       }
     },
     "traits": {
@@ -214,11 +214,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 14
+          "value": 20
         },
         "damageRolls": {
           "dmg00Av6a": {
-            "damage": "2d6+7",
+            "damage": "2d6+11",
             "damageType": "piercing",
             "category": null
           }

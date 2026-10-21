@@ -1,15 +1,15 @@
-2026/10/21-04:30:35.651 752c Recovering log #240
-2026/10/21-04:30:35.663 752c Delete type=0 #240
-2026/10/21-04:30:35.663 752c Delete type=3 #238
-2026/10/21-04:30:35.667 d600 Level-0 table #246: started
-2026/10/21-04:30:35.672 d600 Level-0 table #246: 31920 bytes OK
-2026/10/21-04:30:35.677 d600 Delete type=0 #244
-2026/10/21-04:30:35.677 d600 Manual compaction at level-0 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)
-2026/10/21-04:30:35.677 d600 Manual compaction at level-1 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at '!items!meVanguardMastS0' @ 2760 : 1
-2026/10/21-04:30:35.677 d600 Compacting 1@1 + 1@2 files
-2026/10/21-04:30:35.684 d600 Generated table #247@1: 59 keys, 31920 bytes
-2026/10/21-04:30:35.684 d600 Compacted 1@1 + 1@2 files => 31920 bytes
-2026/10/21-04:30:35.688 d600 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/21-04:30:35.688 d600 Delete type=2 #242
-2026/10/21-04:30:35.688 d600 Delete type=2 #246
-2026/10/21-04:30:35.688 d600 Manual compaction at level-1 from '!items!meVanguardMastS0' @ 2760 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)
+2026/10/21-11:13:59.548 ebac Recovering log #245
+2026/10/21-11:13:59.560 ebac Delete type=0 #245
+2026/10/21-11:13:59.560 ebac Delete type=3 #243
+2026/10/21-11:13:59.566 bcb0 Level-0 table #251: started
+2026/10/21-11:13:59.572 bcb0 Level-0 table #251: 31922 bytes OK
+2026/10/21-11:13:59.576 bcb0 Delete type=0 #249
+2026/10/21-11:13:59.577 bcb0 Manual compaction at level-0 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)
+2026/10/21-11:13:59.577 bcb0 Manual compaction at level-1 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at '!items!meVanguardMastS0' @ 2819 : 1
+2026/10/21-11:13:59.577 bcb0 Compacting 1@1 + 1@2 files
+2026/10/21-11:13:59.584 bcb0 Generated table #252@1: 59 keys, 31922 bytes
+2026/10/21-11:13:59.584 bcb0 Compacted 1@1 + 1@2 files => 31922 bytes
+2026/10/21-11:13:59.587 bcb0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/21-11:13:59.587 bcb0 Delete type=2 #247
+2026/10/21-11:13:59.588 bcb0 Delete type=2 #251
+2026/10/21-11:13:59.588 bcb0 Manual compaction at level-1 from '!items!meVanguardMastS0' @ 2819 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)

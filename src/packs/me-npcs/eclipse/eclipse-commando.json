@@ -1,0 +1,817 @@
+{
+  "_key": "!actors!eclipsecommando0",
+  "_id": "eclipsecommando0",
+  "name": "Eclipse Commando",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/asari-commando.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 110,
+        "temp": 50,
+        "max": 110,
+        "details": ""
+      },
+      "ac": {
+        "value": 25,
+        "details": ""
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 30,
+        "otherSpeeds": [],
+        "details": ""
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [
+          "taldane",
+          "thessian"
+        ],
+        "details": ""
+      },
+      "level": {
+        "value": 7
+      },
+      "blurb": "Asari biotic commando on Eclipse contract: fast, precise, and lethal at close range.",
+      "publicNotes": "<p>Eclipse recruits asari commandos for the jobs that need biotics: breaching, crowd control, and killing whoever the engineers could not.</p><p><strong>Biotic Feedback:</strong> When hit by a melee Strike, attacker takes 1d4 force damage (no save).</p><p><strong>Biotic Throw:</strong> See action entry below.</p><p><strong>Biotic Barrier:</strong> 50 Shield HP. Recharges 10 HP per turn.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Actor and Ancestry Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 2
+      },
+      "dex": {
+        "mod": 3
+      },
+      "con": {
+        "mod": 2
+      },
+      "int": {
+        "mod": 2
+      },
+      "wis": {
+        "mod": 2
+      },
+      "cha": {
+        "mod": 6
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 15,
+      "senses": [],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 15,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 15,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 16,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "acrobatics": {
+        "base": 15
+      },
+      "athletics": {
+        "base": 14
+      },
+      "intimidation": {
+        "base": 18
+      }
+    },
+    "traits": {
+      "value": [
+        "asari",
+        "eclipse",
+        "humanoid"
+      ],
+      "rarity": "uncommon",
+      "size": {
+        "value": "med"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Eclipse Commando",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/asari-commando.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/asari-commando.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "_id": "NPCMelee0000001A",
+      "name": "Biotic Strike",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "damageRolls": {
+          "dmgroll0001": {
+            "damage": "2d6+12",
+            "damageType": "bludgeoning",
+            "category": null
+          },
+          "dmgroll0002": {
+            "damage": "1d6+1",
+            "damageType": "force",
+            "category": null
+          }
+        },
+        "bonus": {
+          "value": 16
+        },
+        "description": {
+          "value": "<p>A mass effect field-augmented unarmed strike.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "agile",
+            "finesse",
+            "force",
+            "unarmed"
+          ],
+          "config": {}
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "attackEffects": {
+          "value": []
+        },
+        "range": null,
+        "subjectToMAP": true
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!eclipsecommando0.NPCMelee0000001A"
+    },
+    {
+      "_id": "NPCRanged000001A",
+      "name": "M-5 Phalanx",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 18
+        },
+        "damageRolls": {
+          "dmgroll0003": {
+            "damage": "2d8+10",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "tech",
+            "range-increment-50"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "attackEffects": {
+          "value": []
+        },
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "831c2c4b1a8c7586"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!eclipsecommando0.NPCRanged000001A"
+    },
+    {
+      "_id": "NPCAction000001A",
+      "name": "Throw (NPC)",
+      "type": "action",
+      "img": "icons/magic/movement/arrow-up-from-portal.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-throw",
+        "description": {
+          "value": "<p>You project a mass effect field that hurls a creature or object with violent force.</p><p>Choose a creature or unattended object within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-throw] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is pushed 5 feet away from you.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[bludgeoning]] damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.</p><p><strong>Critical Failure</strong> As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!eclipsecommando0.NPCAction000001A",
+      "sort": 500000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiothrow00000"
+      }
+    },
+    {
+      "_id": "NPCAction000002A",
+      "name": "Activate Biotic Barrier (NPC)",
+      "type": "action",
+      "img": "icons/magic/lightning/barrier-shield-crackling-orb-pink.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "barrier": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-activate-biotic-barrier-npc",
+        "description": {
+          "gm": "",
+          "value": "<p>You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.</p><p>The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.</p><table><tbody><tr><td><strong>Level</strong></td><td><strong>Barrier HP</strong></td></tr><tr><td>1-3</td><td>5</td></tr><tr><td>4-5</td><td>10</td></tr><tr><td>6-7</td><td>15</td></tr><tr><td>8-9</td><td>20</td></tr><tr><td>10-11</td><td>25</td></tr><tr><td>12-13</td><td>30</td></tr><tr><td>14-15</td><td>35</td></tr><tr><td>16-17</td><td>40</td></tr><tr><td>18-19</td><td>45</td></tr><tr><td>20</td><td>50</td></tr></tbody></table>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [
+            "biotic",
+            "barrier"
+          ],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "interaction",
+        "selfEffect": {
+          "uuid": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meBioticBarrier0",
+          "name": "Biotic Barrier"
+        }
+      },
+      "_key": "!actors.items!eclipsecommando0.NPCAction000002A",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meActivateBbarNp"
+      }
+    },
+    {
+      "_key": "!actors.items!eclipsecommando0.831c2c4b1a8c7586",
+      "_id": "831c2c4b1a8c7586",
+      "name": "M-5 Phalanx",
+      "type": "weapon",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-5 Phalanx is a mid-range combat pistol developed for operatives who must engage threats too distant for a standard sidearm. Its integrated laser targeting system reduces aim drift, allowing accurate fire at distances most pistols cannot reliably reach. A favorite of Spectres and special operations personnel who need a one-handed weapon that punches above its weight class.</p>"
+        },
+        "rules": [],
+        "slug": "m-5-phalanx",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 5
+        },
+        "baseItem": "m-5-phalanx",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 250
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 1,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 50,
+        "expend": 1,
+        "ammo": {
+          "capacity": 12,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "0"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 700000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.418ec60030288202"
+      }
+    },
+    {
+      "_key": "!actors.items!eclipsecommando0.f05389a7b33b053b",
+      "_id": "f05389a7b33b053b",
+      "name": "Predator Armor (M)",
+      "type": "armor",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Medium-human-Predator.png",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Hahne-Kedar's Predator series leverages the manufacturer's proven armalite fabrication to deliver reliable tactical-grade protection. Enhanced barrier efficiency and high-density plating make this suit a preferred choice for experienced soldiers who need performance they can count on.</p>"
+        },
+        "rules": [],
+        "slug": "predator-armor-hk-m",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "predator-armor-hk",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 50
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "medium",
+        "group": "chain",
+        "acBonus": 3,
+        "strength": 2,
+        "dexCap": 2,
+        "checkPenalty": -2,
+        "speedPenalty": -5,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 800000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.e06f342e7b2b8b57"
+      }
+    },
+    {
+      "_id": "NPCShield000001A",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!eclipsecommando0.NPCShield000001A",
+      "sort": 400000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "MENPC00000shld00",
+      "name": "Shield HP Mod - Tier 2",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 20
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t2",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 30 → 50).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 6
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 2500
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!eclipsecommando0.MENPC00000shld00",
+      "sort": 400001,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod002"
+      }
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000006",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

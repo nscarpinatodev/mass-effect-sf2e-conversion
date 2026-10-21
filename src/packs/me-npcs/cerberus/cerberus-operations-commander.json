@@ -97,7 +97,7 @@
     "slug": "cerberus-operations-commander",
     "details": {
       "level": {
-        "value": 6
+        "value": 10
       },
       "publicNotes": "<p>Cerberus Operations Commanders are senior officers who oversee complex multi-team operations. They may run research stations, black sites, or fleet operations, answering directly to Illusive Man intermediaries. Unlike line officers, Operations Commanders have broad operational authority and significant personal discretion. They are capable combatants but are most dangerous as force multipliers who make every Cerberus soldier around them more effective.</p><p><strong>Command Presence (aura, 30 ft):</strong> Cerberus allies within 30 feet gain a +1 circumstance bonus to attack rolls and saving throws.</p><p><strong>Execute Orders (1 action, 1/round):</strong> One ally within 30 feet that the Commander can see may immediately Stride or Strike as a free action.</p><p><strong>Kinetic Barrier:</strong> 50 Shield HP. Recharges 10 HP per turn.</p>",
       "privateNotes": "",
@@ -115,13 +115,13 @@
     },
     "attributes": {
       "hp": {
-        "value": 95,
-        "max": 95,
+        "value": 175,
+        "max": 175,
         "temp": 50,
         "details": ""
       },
       "ac": {
-        "value": 24,
+        "value": 30,
         "details": ""
       },
       "speed": {
@@ -140,47 +140,47 @@
     },
     "abilities": {
       "str": {
-        "mod": 2
+        "mod": 3
       },
       "dex": {
-        "mod": 3
+        "mod": 4
       },
       "con": {
-        "mod": 2
-      },
-      "int": {
-        "mod": 4
-      },
-      "wis": {
         "mod": 3
       },
-      "cha": {
+      "int": {
+        "mod": 5
+      },
+      "wis": {
         "mod": 4
+      },
+      "cha": {
+        "mod": 5
       }
     },
     "saves": {
       "fortitude": {
-        "value": 14,
+        "value": 19,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 15,
+        "value": 20,
         "saveDetail": ""
       },
       "will": {
-        "value": 17,
+        "value": 22,
         "saveDetail": ""
       }
     },
     "skills": {
       "diplomacy": {
-        "base": 17
+        "base": 24
       },
       "intimidation": {
-        "base": 17
+        "base": 24
       },
       "tactics": {
-        "base": 16
+        "base": 23
       }
     },
     "_migration": {
@@ -189,7 +189,7 @@
     },
     "perception": {
       "details": "",
-      "mod": 16,
+      "mod": 21,
       "senses": [],
       "vision": true
     },
@@ -210,11 +210,11 @@
         },
         "slug": "cerberus-commander-rifle",
         "bonus": {
-          "value": 17
+          "value": 23
         },
         "damageRolls": {
           "0": {
-            "damage": "3d10+9",
+            "damage": "3d10+13",
             "damageType": "piercing",
             "category": null
           }

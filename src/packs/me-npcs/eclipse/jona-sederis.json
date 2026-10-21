@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 105,
+        "value": 185,
         "temp": 50,
-        "max": 105,
+        "max": 185,
         "details": ""
       },
       "ac": {
-        "value": 24,
+        "value": 30,
         "details": ""
       },
       "allSaves": {
@@ -37,7 +37,7 @@
         "details": ""
       },
       "level": {
-        "value": 6
+        "value": 10
       },
       "blurb": "Unhinged asari founder and leader of Eclipse.",
       "publicNotes": "<p>Jona Sederis founded Eclipse and rules it through fear, charisma, and outright madness. A powerful and erratic biotic, she is as likely to execute her own lieutenants as her enemies. Underestimating her volatility is usually fatal.</p><p><strong>Biotic Barrier:</strong> 50 Shield HP. Recharges 15 HP per turn.</p><p><strong>Unpredictable:</strong> Jona gains a +2 circumstance bonus to Deception checks to Feint and to her initiative.</p>",
@@ -56,56 +56,56 @@
     },
     "abilities": {
       "str": {
-        "mod": 2
-      },
-      "dex": {
-        "mod": 4
-      },
-      "con": {
-        "mod": 4
-      },
-      "int": {
         "mod": 3
       },
+      "dex": {
+        "mod": 5
+      },
+      "con": {
+        "mod": 5
+      },
+      "int": {
+        "mod": 4
+      },
       "wis": {
-        "mod": 2
+        "mod": 3
       },
       "cha": {
-        "mod": 5
+        "mod": 7
       }
     },
     "perception": {
       "details": "",
-      "mod": 14,
+      "mod": 19,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 13,
+        "value": 18,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 15,
+        "value": 20,
         "saveDetail": ""
       },
       "will": {
-        "value": 14,
+        "value": 19,
         "saveDetail": ""
       }
     },
     "skills": {
       "acrobatics": {
-        "base": 14
+        "base": 21
       },
       "deception": {
-        "base": 15
+        "base": 22
       },
       "intimidation": {
-        "base": 17
+        "base": 24
       },
       "athletics": {
-        "base": 13
+        "base": 19
       }
     },
     "traits": {
@@ -214,11 +214,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 17
+          "value": 23
         },
         "damageRolls": {
           "dmg00RRBz": {
-            "damage": "3d6+9",
+            "damage": "3d6+13",
             "damageType": "piercing",
             "category": null
           }
@@ -277,16 +277,16 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 16
+          "value": 22
         },
         "damageRolls": {
           "dmg00imA9": {
-            "damage": "2d8+8",
+            "damage": "3d8+11",
             "damageType": "bludgeoning",
             "category": null
           },
           "dmg01imA9": {
-            "damage": "1d6",
+            "damage": "1d6+2",
             "damageType": "force",
             "category": null
           }
@@ -342,7 +342,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Biotic Detonation</strong> <span class=\"action-glyph\">2</span> (recharge 5–6)</p><hr /><p><strong>Range</strong> 30 feet; <strong>Area</strong> 15-foot burst.</p><p>Jona collapses a mass effect field into a violent implosion. Each creature in the area takes [[/r 4d6[force]]] damage (basic Fortitude save, DC 24) and is knocked prone on a failure.</p>",
+          "value": "<p><strong>Biotic Detonation</strong> <span class=\"action-glyph\">2</span> (recharge 5–6)</p><hr /><p><strong>Range</strong> 30 feet; <strong>Area</strong> 15-foot burst.</p><p>Jona collapses a mass effect field into a violent implosion. Each creature in the area takes [[/r 6d6-1[force]]] damage (basic Fortitude save, DC 29) and is knocked prone on a failure.</p>",
           "gm": ""
         },
         "rules": [],
@@ -388,7 +388,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Execute</strong> <span class=\"action-glyph\">1</span></p><hr /><p>Jona shoots one of her own faltering mercenaries within reach or line of sight. That ally is reduced to 0 HP, and each enemy within 30 feet that witnesses it must succeed at a Will save (DC 24) or be frightened 2.</p>",
+          "value": "<p><strong>Execute</strong> <span class=\"action-glyph\">1</span></p><hr /><p>Jona shoots one of her own faltering mercenaries within reach or line of sight. That ally is reduced to 0 HP, and each enemy within 30 feet that witnesses it must succeed at a Will save (DC 29) or be frightened 2.</p>",
           "gm": ""
         },
         "rules": [],

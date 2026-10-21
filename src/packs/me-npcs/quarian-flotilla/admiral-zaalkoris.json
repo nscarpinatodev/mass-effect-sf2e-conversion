@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 55,
+        "value": 130,
         "temp": 40,
-        "max": 55,
+        "max": 130,
         "details": ""
       },
       "ac": {
-        "value": 20,
+        "value": 26,
         "details": ""
       },
       "allSaves": {
@@ -37,7 +37,7 @@
         "details": ""
       },
       "level": {
-        "value": 4
+        "value": 8
       },
       "blurb": "Idealist admiral who argues against war with the geth.",
       "publicNotes": "<p>Zaal'Koris captains a ship he named as a deliberate joke and is the conscience of the Admiralty Board, arguing that the geth may be people and that war is folly. Principled to a fault, he will risk his own life before abandoning his ideals — or his crew.</p><p><strong>Kinetic Barrier:</strong> 40 Shield HP. Recharges 10 HP per turn.</p>",
@@ -56,56 +56,56 @@
     },
     "abilities": {
       "str": {
-        "mod": 1
+        "mod": 2
       },
       "dex": {
-        "mod": 2
+        "mod": 3
       },
       "con": {
-        "mod": 2
+        "mod": 3
       },
       "int": {
-        "mod": 4
+        "mod": 5
       },
       "wis": {
-        "mod": 4
+        "mod": 5
       },
       "cha": {
-        "mod": 4
+        "mod": 5
       }
     },
     "perception": {
       "details": "",
-      "mod": 12,
+      "mod": 17,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 9,
+        "value": 14,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 10,
+        "value": 15,
         "saveDetail": ""
       },
       "will": {
-        "value": 13,
+        "value": 18,
         "saveDetail": ""
       }
     },
     "skills": {
       "diplomacy": {
-        "base": 14
+        "base": 20
       },
       "society": {
-        "base": 13
+        "base": 19
       },
       "computers": {
-        "base": 12
+        "base": 18
       },
       "medicine": {
-        "base": 11
+        "base": 17
       }
     },
     "traits": {
@@ -214,11 +214,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 14
+          "value": 20
         },
         "damageRolls": {
           "dmg00ee5i": {
-            "damage": "2d6+7",
+            "damage": "2d6+11",
             "damageType": "piercing",
             "category": null
           }

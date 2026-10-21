@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 105,
+        "value": 165,
         "temp": 50,
-        "max": 105,
+        "max": 165,
         "details": ""
       },
       "ac": {
-        "value": 24,
+        "value": 28,
         "details": ""
       },
       "allSaves": {
@@ -37,10 +37,10 @@
         "details": ""
       },
       "level": {
-        "value": 6
+        "value": 9
       },
       "blurb": "Batarian leader of the Blue Suns on Omega.",
-      "publicNotes": "<p>Tarak commands the Blue Suns' Omega operation, a ruthless batarian warlord who leads from the cockpit of a gunship as often as from the front line. Cruel and calculating, he built his power through slaving, extortion, and the occasional convenient betrayal.</p><p><strong>Kinetic Barrier:</strong> 50 Shield HP. Recharges 15 HP per turn.</p><p><strong>Batarian Resilience:</strong> Tarak treats a critical hit against him as a normal hit on a successful Fortitude save (DC 20) once per round.</p>",
+      "publicNotes": "<p>Tarak commands the Blue Suns' Omega operation, a ruthless batarian warlord who leads from the cockpit of a gunship as often as from the front line. Cruel and calculating, he built his power through slaving, extortion, and the occasional convenient betrayal.</p><p><strong>Kinetic Barrier:</strong> 50 Shield HP. Recharges 15 HP per turn.</p><p><strong>Batarian Resilience:</strong> Tarak treats a critical hit against him as a normal hit on a successful Fortitude save (DC 24) once per round.</p>",
       "privateNotes": "",
       "publication": {
         "title": "Mass Effect Compendium",
@@ -65,7 +65,7 @@
         "mod": 4
       },
       "int": {
-        "mod": 2
+        "mod": 3
       },
       "wis": {
         "mod": 3
@@ -76,36 +76,36 @@
     },
     "perception": {
       "details": "",
-      "mod": 15,
+      "mod": 19,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 15,
+        "value": 19,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 14,
+        "value": 18,
         "saveDetail": ""
       },
       "will": {
-        "value": 13,
+        "value": 17,
         "saveDetail": ""
       }
     },
     "skills": {
       "athletics": {
-        "base": 14
+        "base": 19
       },
       "intimidation": {
-        "base": 16
+        "base": 21
       },
       "warfare": {
-        "base": 14
+        "base": 19
       },
       "piloting": {
-        "base": 13
+        "base": 18
       }
     },
     "traits": {
@@ -214,11 +214,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 17
+          "value": 21
         },
         "damageRolls": {
           "dmg00hcZ2": {
-            "damage": "3d10+9",
+            "damage": "3d10+12",
             "damageType": "piercing",
             "category": null
           }
@@ -278,16 +278,16 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 16
+          "value": 20
         },
         "damageRolls": {
           "dmg00HaA8": {
-            "damage": "2d8+8",
+            "damage": "3d8+9",
             "damageType": "slashing",
             "category": null
           },
           "dmg01HaA8": {
-            "damage": "1d6",
+            "damage": "1d6+1",
             "damageType": "electricity",
             "category": null
           }
@@ -341,7 +341,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Gunship Strafe</strong> <span class=\"action-glyph\">2</span> (recharge 5–6)</p><hr /><p><strong>Area</strong> 60-foot line, 5 feet wide.</p><p>Tarak calls in a strafing run from his gunship (or lays down a withering hail of fire). Each creature in the line takes [[/r 4d6[piercing]]] damage (basic Reflex save, DC 23).</p>",
+          "value": "<p><strong>Gunship Strafe</strong> <span class=\"action-glyph\">2</span> (recharge 5–6)</p><hr /><p><strong>Area</strong> 60-foot line, 5 feet wide.</p><p>Tarak calls in a strafing run from his gunship (or lays down a withering hail of fire). Each creature in the line takes [[/r 5d6+1[piercing]]] damage (basic Reflex save, DC 27).</p>",
           "gm": ""
         },
         "rules": [],
@@ -384,7 +384,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Slaver's Cruelty</strong> <span class=\"action-glyph\">R</span></p><p><strong>Trigger</strong> Tarak reduces a creature to 0 HP.</p><hr /><p>Each enemy within 30 feet that witnesses the kill must succeed at a Will save (DC 23) or become frightened 1 (frightened 2 on a critical failure).</p>",
+          "value": "<p><strong>Slaver's Cruelty</strong> <span class=\"action-glyph\">R</span></p><p><strong>Trigger</strong> Tarak reduces a creature to 0 HP.</p><hr /><p>Each enemy within 30 feet that witnesses the kill must succeed at a Will save (DC 27) or become frightened 1 (frightened 2 on a critical failure).</p>",
           "gm": ""
         },
         "rules": [],

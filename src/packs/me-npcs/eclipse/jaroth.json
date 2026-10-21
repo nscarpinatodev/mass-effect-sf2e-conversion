@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 75,
+        "value": 155,
         "temp": 50,
-        "max": 75,
+        "max": 155,
         "details": ""
       },
       "ac": {
-        "value": 22,
+        "value": 28,
         "details": ""
       },
       "allSaves": {
@@ -37,7 +37,7 @@
         "details": ""
       },
       "level": {
-        "value": 5
+        "value": 9
       },
       "blurb": "Salarian leader of Eclipse on Omega.",
       "publicNotes": "<p>Jaroth runs the Eclipse cell on Omega, a paranoid salarian tactician who prefers to fight from behind a wall of drones, mechs, and expendable troopers. He is brilliant, cowardly, and extremely dangerous when his machines are online.</p><p><strong>Kinetic Barrier:</strong> 50 Shield HP. Recharges 15 HP per turn.</p>",
@@ -56,7 +56,7 @@
     },
     "abilities": {
       "str": {
-        "mod": 1
+        "mod": 2
       },
       "dex": {
         "mod": 4
@@ -65,7 +65,7 @@
         "mod": 3
       },
       "int": {
-        "mod": 5
+        "mod": 6
       },
       "wis": {
         "mod": 3
@@ -76,36 +76,36 @@
     },
     "perception": {
       "details": "",
-      "mod": 14,
+      "mod": 20,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 11,
+        "value": 17,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 14,
+        "value": 20,
         "saveDetail": ""
       },
       "will": {
-        "value": 13,
+        "value": 19,
         "saveDetail": ""
       }
     },
     "skills": {
       "crafting": {
-        "base": 14
+        "base": 21
       },
       "deception": {
-        "base": 13
+        "base": 20
       },
       "stealth": {
-        "base": 13
+        "base": 20
       },
       "computers-lore": {
-        "base": 15
+        "base": 22
       }
     },
     "traits": {
@@ -214,11 +214,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 15
+          "value": 21
         },
         "damageRolls": {
           "dmg00OKlj": {
-            "damage": "3d6+8",
+            "damage": "3d6+12",
             "damageType": "piercing",
             "category": null
           }
@@ -278,7 +278,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Overload Burst</strong> <span class=\"action-glyph\">2</span></p><hr /><p><strong>Range</strong> 60 feet; <strong>Area</strong> 10-foot burst.</p><p>Each creature in the area takes [[/r 3d6[electricity]]] damage (basic Reflex save, DC 22); kinetic barriers take double before it carries to HP.</p>",
+          "value": "<p><strong>Overload Burst</strong> <span class=\"action-glyph\">2</span></p><hr /><p><strong>Range</strong> 60 feet; <strong>Area</strong> 10-foot burst.</p><p>Each creature in the area takes [[/r 4d6+2[electricity]]] damage (basic Reflex save, DC 28); kinetic barriers take double before it carries to HP.</p>",
           "gm": ""
         },
         "rules": [],

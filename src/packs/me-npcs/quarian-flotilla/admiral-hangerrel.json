@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 80,
+        "value": 160,
         "temp": 50,
-        "max": 80,
+        "max": 160,
         "details": ""
       },
       "ac": {
-        "value": 22,
+        "value": 28,
         "details": ""
       },
       "allSaves": {
@@ -37,7 +37,7 @@
         "details": ""
       },
       "level": {
-        "value": 5
+        "value": 9
       },
       "blurb": "Hawkish admiral of the Migrant Fleet's military.",
       "publicNotes": "<p>Han'Gerrel commands the Heavy Fleet and is the loudest voice for reclaiming the quarian homeworld by force. A lifelong soldier and old friend of Rael'Zorah, he is brave, aggressive, and dangerously willing to gamble the fleet on a war with the geth.</p><p><strong>Kinetic Barrier:</strong> 50 Shield HP. Recharges 15 HP per turn.</p>",
@@ -68,7 +68,7 @@
         "mod": 3
       },
       "wis": {
-        "mod": 2
+        "mod": 3
       },
       "cha": {
         "mod": 3
@@ -76,36 +76,36 @@
     },
     "perception": {
       "details": "",
-      "mod": 13,
+      "mod": 19,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 13,
+        "value": 19,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 12,
+        "value": 18,
         "saveDetail": ""
       },
       "will": {
-        "value": 11,
+        "value": 17,
         "saveDetail": ""
       }
     },
     "skills": {
       "athletics": {
-        "base": 12
+        "base": 18
       },
       "intimidation": {
-        "base": 13
+        "base": 20
       },
       "warfare": {
-        "base": 14
+        "base": 21
       },
       "piloting": {
-        "base": 12
+        "base": 18
       }
     },
     "traits": {
@@ -214,11 +214,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 15
+          "value": 21
         },
         "damageRolls": {
           "dmg00hokm": {
-            "damage": "4d8+8",
+            "damage": "4d8+12",
             "damageType": "piercing",
             "category": null
           }
@@ -280,16 +280,16 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 13
+          "value": 19
         },
         "damageRolls": {
           "dmg00CZ4e": {
-            "damage": "1d8+7",
+            "damage": "2d8+8",
             "damageType": "slashing",
             "category": null
           },
           "dmg01CZ4e": {
-            "damage": "1d4",
+            "damage": "2d4-1",
             "damageType": "fire",
             "category": null
           }

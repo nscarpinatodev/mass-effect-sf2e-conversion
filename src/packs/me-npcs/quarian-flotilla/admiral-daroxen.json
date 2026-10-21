@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 60,
+        "value": 105,
         "temp": 40,
-        "max": 60,
+        "max": 105,
         "details": ""
       },
       "ac": {
-        "value": 21,
+        "value": 26,
         "details": ""
       },
       "allSaves": {
@@ -37,7 +37,7 @@
         "details": ""
       },
       "level": {
-        "value": 5
+        "value": 8
       },
       "blurb": "Brilliant, amoral quarian scientist-admiral.",
       "publicNotes": "<p>Daro'Xen is the Migrant Fleet's foremost researcher, fascinated by geth and AI to the point of cold cruelty. She sees the geth as tools to be studied and reactivated, not an enemy to be feared — an attitude that unnerves even her fellow admirals.</p><p><strong>Kinetic Barrier:</strong> 40 Shield HP. Recharges 10 HP per turn.</p>",
@@ -62,50 +62,50 @@
         "mod": 3
       },
       "con": {
-        "mod": 2
+        "mod": 3
       },
       "int": {
-        "mod": 6
+        "mod": 7
       },
       "wis": {
         "mod": 3
       },
       "cha": {
-        "mod": 2
+        "mod": 3
       }
     },
     "perception": {
       "details": "",
-      "mod": 14,
+      "mod": 18,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 10,
+        "value": 14,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 12,
+        "value": 16,
         "saveDetail": ""
       },
       "will": {
-        "value": 13,
+        "value": 17,
         "saveDetail": ""
       }
     },
     "skills": {
       "crafting": {
-        "base": 15
+        "base": 20
       },
       "computers": {
-        "base": 15
+        "base": 20
       },
       "science": {
-        "base": 15
+        "base": 20
       },
       "thievery": {
-        "base": 12
+        "base": 16
       }
     },
     "traits": {
@@ -214,11 +214,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 15
+          "value": 20
         },
         "damageRolls": {
           "dmg00VoQG": {
-            "damage": "3d6+8",
+            "damage": "3d6+11",
             "damageType": "piercing",
             "category": null
           }
@@ -278,7 +278,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Deploy Reprogrammed Drone</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Daro'Xen activates a captured combat drone (AC 18, HP 18, fly 30). It makes a ranged zap Strike (+11, [[/r 1d6+2[electricity]]]) on her turn. She can have one active at a time.</p>",
+          "value": "<p><strong>Deploy Reprogrammed Drone</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Daro'Xen activates a captured combat drone (AC 18, HP 18, fly 30). It makes a ranged zap Strike (+11, [[/r 1d6+4[electricity]]]) on her turn. She can have one active at a time.</p>",
           "gm": ""
         },
         "rules": [],
@@ -324,7 +324,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Overload</strong> <span class=\"action-glyph\">2</span></p><hr /><p><strong>Range</strong> 60 feet, one creature. The target takes [[/r 2d6[electricity]]] damage (basic Reflex save, DC 22); kinetic barriers and synthetic creatures take double.</p>",
+          "value": "<p><strong>Overload</strong> <span class=\"action-glyph\">2</span></p><hr /><p><strong>Range</strong> 60 feet, one creature. The target takes [[/r 3d6-1[electricity]]] damage (basic Reflex save, DC 26); kinetic barriers and synthetic creatures take double.</p>",
           "gm": ""
         },
         "rules": [],

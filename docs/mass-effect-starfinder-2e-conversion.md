@@ -3568,7 +3568,7 @@ A grenade packed with a mass effect field generator that triggers a localized an
 
 # PART II — BESTIARY
 
-*184 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
+*191 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
 
 ---
 
@@ -3937,20 +3937,20 @@ Precinct commander: runs the ward's officers and takes the field when it matters
 
 ---
 
-##### Commander Bailey — Creature 6
+##### Commander Bailey — Creature 7
 
 *Unique · Medium · Human · Humanoid · Unique*
 
 Head of C-Sec on the Citadel wards; pragmatic lawman who deals straight and fights dirty.
 
-**Perception** +16; **Skills** Athletics +13, Diplomacy +14, Intimidation +17, Society +14
+**Perception** +17; **Skills** Athletics +15, Diplomacy +16, Intimidation +19, Society +16
 **Abilities** Str +2, Dex +3, Con +2, Int +3, Wis +3, Cha +3
 **Items** Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1, M-3 Predator
-**AC** 23; **Fort** +14, **Ref** +14, **Will** +16
-**HP** 95; **Shields** 30 (recharge 10/turn)
+**AC** 24; **Fort** +15, **Ref** +15, **Will** +17
+**HP** 115; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-3 Predator +17 (range increment 40 ft, tech), **Damage** 2d6+9 piercing
-**Melee** ◆ Combat Baton +17 (agile), **Damage** 3d6+10 bludgeoning
+**Ranged** ◆ M-3 Predator +18 (range increment 40 ft, tech), **Damage** 2d6+10 piercing
+**Melee** ◆ Combat Baton +18 (agile), **Damage** 3d6+12 bludgeoning
 
 ---
 
@@ -4331,22 +4331,6 @@ Choose a creature within **30 feet**. The target must attempt a DC 21 Reflex sav
 
 ---
 
-##### Cerberus Operations Commander — Creature 6
-
-*Uncommon · Medium · Humanoid*
-
-Senior Cerberus officer overseeing complex operations, granting bonuses to nearby allies.
-
-**Perception** +16; **Skills** Diplomacy +17, Intimidation +17, Tactics +16
-**Abilities** Str +2, Dex +3, Con +2, Int +4, Wis +3, Cha +4
-**Items** M-96 Mattock, Phoenix Armor (M), Kinetic Shield, Shield HP Mod - Tier 2
-**AC** 24; **Fort** +14, **Ref** +15, **Will** +17
-**HP** 95; **Shields** 30 (recharge 10/turn)
-**Speed** 25 feet
-**Ranged** ◆ M-96 Mattock +17 (range increment 80 ft, tech, kickback), **Damage** 3d10+9 piercing
-
----
-
 ##### Cerberus Phantom — Creature 8
 
 *Rare · Medium · Humanoid*
@@ -4382,6 +4366,22 @@ Phantom Aspirant with implanted monofilament blade; neural-integrated cloak prov
 **Phantom Cloak** ◆ Mystaria activates her neural-integrated phase cloak, becoming Invisible and gaining a +1 circumstance bonus to AC until the end of her next turn or until she makes a Strike. 1/encounter.
 **Sneak Attack** Mystaria deals an extra **2d6** precision damage to Off-Guard creatures.
 **Neural Interface** Mystaria's implanted combat-data neural interface grants her a **+2 circumstance bonus to initiative** rolls.
+
+---
+
+##### Cerberus Operations Commander — Creature 10
+
+*Uncommon · Medium · Humanoid*
+
+Senior Cerberus officer overseeing complex operations, granting bonuses to nearby allies.
+
+**Perception** +21; **Skills** Diplomacy +24, Intimidation +24, Tactics +23
+**Abilities** Str +3, Dex +4, Con +3, Int +5, Wis +4, Cha +5
+**Items** M-96 Mattock, Phoenix Armor (M), Kinetic Shield, Shield HP Mod - Tier 2
+**AC** 30; **Fort** +19, **Ref** +20, **Will** +22
+**HP** 175; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-96 Mattock +23 (range increment 80 ft, tech, kickback), **Damage** 3d10+13 piercing
 
 ---
 
@@ -4551,47 +4551,89 @@ The Heavy fires an explosive rocket. Each creature in the area takes 2d8+4 fire 
 
 ---
 
-##### Vido Santiago — Creature 5
+##### Blue Suns Captain — Creature 6
 
-*Rare · Medium · Human · Humanoid*
+*Uncommon · Medium · Humanoid*
 
-Founder and financier of the Blue Suns.
+Blue Suns field officer who commands a squad of legionnaires and troopers.
 
-**Perception** +14; **Skills** Deception +14, Diplomacy +13, Intimidation +14, Society +13, Warfare +14
-**Abilities** Str +2, Dex +4, Con +3, Int +4, Wis +3, Cha +4
-**Items** M-5 Phalanx, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
-**AC** 22; **Fort** +12, **Ref** +14, **Will** +13
-**HP** 85; **Shields** 30 (recharge 10/turn)
+**Perception** +15; **Skills** Athletics +14, Intimidation +15, Warfare +14
+**Abilities** Str +4, Dex +4, Con +4, Int +2, Wis +2, Cha +2
+**Items** M-9 Tempest, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
+**AC** 24; **Fort** +14, **Ref** +15, **Will** +13
+**HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
-**Coordinate Mercenaries** ◆ Vido directs his forces with cold precision. Up to two allied Blue Suns mercenaries within 60 feet that can hear him each gain a +1 status bonus to attack rolls until the start of Vido's next turn.
-**Expendable Assets** ↺ **Trigger** Vido is targeted by a Strike and an allied Blue Suns mercenary is within 10 feet.
+**Ranged** ◆ M-9 Tempest +17 (range increment 25 ft, tech, automatic, agile), **Damage** 4d4+9 piercing
+**Melee** ◆ Combat Knife +16 (agile, finesse), **Damage** 4d6+5 slashing
+**Tactical Order** ◆ The Centurion barks a command. One allied Blue Suns mercenary within 30 feet who can hear them can immediately Step or Stride up to half its Speed as a reaction.
+**Concussive Grenade** ◆◆ **Range** thrown 30 feet; **Area** 10-foot burst.
+Each creature in the area takes 2d6 bludgeoning damage (basic Reflex save, DC 24). On a failure, the target is also knocked back 5 feet.
+**Issue Orders** ◆ One allied soldier within 30 feet who can hear the officer can immediately Stride or Strike as a reaction.
 
 ---
-Vido shoves an underling into the line of fire. The triggering attack is redirected to the ally instead, who becomes the new target of the Strike.
+
+##### Blue Suns Commander — Creature 8
+
+*Rare · Medium · Humanoid*
+
+Senior Blue Suns officer running a company-sized operation.
+
+**Perception** +17; **Skills** Athletics +17, Intimidation +18, Warfare +17
+**Abilities** Str +4, Dex +5, Con +4, Int +3, Wis +3, Cha +3
+**Items** M-9 Tempest, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
+**AC** 27; **Fort** +16, **Ref** +17, **Will** +15
+**HP** 135; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-9 Tempest +20 (range increment 25 ft, tech, automatic, agile), **Damage** 4d4+11 piercing
+**Melee** ◆ Combat Knife +19 (agile, finesse), **Damage** 5d6+5 slashing
+**Tactical Order** ◆ The Centurion barks a command. One allied Blue Suns mercenary within 30 feet who can hear them can immediately Step or Stride up to half its Speed as a reaction.
+**Concussive Grenade** ◆◆ **Range** thrown 30 feet; **Area** 10-foot burst.
+Each creature in the area takes 2d6 bludgeoning damage (basic Reflex save, DC 26). On a failure, the target is also knocked back 5 feet.
+**Issue Orders** ◆ One allied soldier within 30 feet who can hear the officer can immediately Stride or Strike as a reaction.
 
 ---
 
-##### Tarak — Creature 6
+##### Tarak — Creature 9
 
 *Rare · Medium · Batarian · Humanoid*
 
 Batarian leader of the Blue Suns on Omega.
 
-**Perception** +15; **Skills** Athletics +14, Intimidation +16, Piloting +13, Warfare +14
-**Abilities** Str +4, Dex +4, Con +4, Int +2, Wis +3, Cha +3
+**Perception** +19; **Skills** Athletics +19, Intimidation +21, Piloting +18, Warfare +19
+**Abilities** Str +4, Dex +4, Con +4, Int +3, Wis +3, Cha +3
 **Items** M-96 Mattock, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
-**AC** 24; **Fort** +15, **Ref** +14, **Will** +13
-**HP** 105; **Shields** 30 (recharge 10/turn)
+**AC** 28; **Fort** +19, **Ref** +18, **Will** +17
+**HP** 165; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-96 Mattock +17 (range increment 80 ft, tech, kickback), **Damage** 3d10+9 piercing
-**Melee** ◆ Vibro-Blade +16 (agile, finesse), **Damage** 2d8+8 slashing plus 1d6 electricity
+**Ranged** ◆ M-96 Mattock +21 (range increment 80 ft, tech, kickback), **Damage** 3d10+12 piercing
+**Melee** ◆ Vibro-Blade +20 (agile, finesse), **Damage** 3d8+9 slashing plus 1d6+1 electricity
 **Gunship Strafe** ◆◆ **Area** 60-foot line, 5 feet wide.
-Tarak calls in a strafing run from his gunship (or lays down a withering hail of fire). Each creature in the line takes 4d6 piercing damage (basic Reflex save, DC 23).
+Tarak calls in a strafing run from his gunship (or lays down a withering hail of fire). Each creature in the line takes 5d6+1 piercing damage (basic Reflex save, DC 27).
 **Slaver's Cruelty** ↺ **Trigger** Tarak reduces a creature to 0 HP.
 
 ---
-Each enemy within 30 feet that witnesses the kill must succeed at a Will save (DC 23) or become frightened 1 (frightened 2 on a critical failure).
+Each enemy within 30 feet that witnesses the kill must succeed at a Will save (DC 27) or become frightened 1 (frightened 2 on a critical failure).
+
+---
+
+##### Vido Santiago — Creature 11
+
+*Rare · Medium · Human · Humanoid*
+
+Founder and financier of the Blue Suns.
+
+**Perception** +23; **Skills** Deception +24, Diplomacy +23, Intimidation +24, Society +23, Warfare +24
+**Abilities** Str +3, Dex +5, Con +4, Int +5, Wis +4, Cha +5
+**Items** M-5 Phalanx, Mercenary Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**AC** 31; **Fort** +21, **Ref** +23, **Will** +22
+**HP** 235; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-5 Phalanx +24 (range increment 50 ft, tech), **Damage** 3d6+14 piercing
+**Coordinate Mercenaries** ◆ Vido directs his forces with cold precision. Up to two allied Blue Suns mercenaries within 60 feet that can hear him each gain a +1 status bonus to attack rolls until the start of Vido's next turn.
+**Expendable Assets** ↺ **Trigger** Vido is targeted by a Strike and an allied Blue Suns mercenary is within 10 feet.
+
+---
+Vido shoves an underling into the line of fire. The triggering attack is redirected to the ally instead, who becomes the new target of the Strike.
 
 ---
 
@@ -4710,41 +4752,22 @@ The Enforcer sprays burning fuel. Each creature in the cone takes 2d6+3 fire dam
 
 ---
 
-##### Jaroth — Creature 5
+##### Eclipse Commando — Creature 7
 
-*Rare · Medium · Salarian · Humanoid*
+*Uncommon · Medium · Asari · Eclipse · Humanoid*
 
-Salarian leader of Eclipse on Omega.
+Asari biotic commando on Eclipse contract: fast, precise, and lethal at close range.
 
-**Perception** +14; **Skills** Computers Lore +15, Crafting +14, Deception +13, Stealth +13
-**Abilities** Str +1, Dex +4, Con +3, Int +5, Wis +3, Cha +3
-**Items** M-5 Phalanx, Duelist Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
-**AC** 22; **Fort** +11, **Ref** +14, **Will** +13
-**HP** 75; **Shields** 30 (recharge 10/turn)
+**Perception** +15; **Skills** Acrobatics +15, Athletics +14, Intimidation +18
+**Abilities** Str +2, Dex +3, Con +2, Int +2, Wis +2, Cha +6
+**Items** M-5 Phalanx, Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 2
+**AC** 25; **Fort** +15, **Ref** +15, **Will** +16
+**HP** 110; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
-**Overload Burst** ◆◆ **Range** 60 feet; **Area** 10-foot burst.
-Each creature in the area takes 3d6 electricity damage (basic Reflex save, DC 22); kinetic barriers take double before it carries to HP.
-**Deploy Security Mech** ◆◆ Jaroth activates a LOKI mech from a nearby cache (use the LOKI Mech statblock). He can have up to two active at once and directs one to act on his initiative.
-
----
-
-##### Wasea — Creature 5
-
-*Rare · Medium · Asari · Humanoid*
-
-Asari Eclipse lieutenant, strung out on red sand.
-
-**Perception** +13; **Skills** Acrobatics +13, Athletics +12, Intimidation +14
-**Abilities** Str +2, Dex +4, Con +3, Int +2, Wis +2, Cha +4
-**Items** M-5 Phalanx, Duelist Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
-**AC** 22; **Fort** +12, **Ref** +14, **Will** +12
-**HP** 80; **Shields** 30 (recharge 10/turn)
-**Speed** 30 feet
-**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
-**Melee** ◆ Amplified Biotic Strike +14 (agile, finesse, force, unarmed), **Damage** 2d8+6 bludgeoning plus 1d6 force
+**Melee** ◆ Biotic Strike +16 (agile, finesse, force, unarmed), **Damage** 2d6+12 bludgeoning plus 1d6+1 force
+**Ranged** ◆ M-5 Phalanx +18 (range increment 50 ft, tech), **Damage** 2d8+10 piercing
 **Throw (NPC)** ◆◆ You project a mass effect field that hurls a creature or object with violent force.
-Choose a creature or unattended object within **60 feet**. The target must attempt a DC 19 Fortitude save against the creature's power DC.
+Choose a creature or unattended object within **60 feet**. The target must attempt a DC 22 Fortitude save against the creature's power DC.
 **Critical Success** Unaffected.
 **Success** The target is pushed 5 feet away from you.
 **Failure** The target takes 4d8 bludgeoning damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
@@ -4753,26 +4776,105 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 
 ---
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
+| **Level** | **Barrier HP** |
+| 1-3 | 5 |
+| 4-5 | 10 |
+| 6-7 | 15 |
+| 8-9 | 20 |
+| 10-11 | 25 |
+| 12-13 | 30 |
+| 14-15 | 35 |
+| 16-17 | 40 |
+| 18-19 | 45 |
+| 20 | 50 |
 
 ---
 
-##### Jona Sederis — Creature 6
+##### Eclipse Captain — Creature 8
+
+*Rare · Medium · Humanoid*
+
+Eclipse officer commanding a cell of engineers, commandos and heavies.
+
+**Perception** +16; **Skills** Athletics +19, Intimidation +16
+**Abilities** Str +6, Dex +3, Con +4, Int +2, Wis +3, Cha +2
+**Items** M-451 Firestorm, Duelist Armor (H), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**AC** 27; **Fort** +18, **Ref** +15, **Will** +15
+**HP** 165; **Shields** 30 (recharge 10/turn)
+**Speed** 20 feet
+**Melee** ◆ Armored Fist +19, **Damage** 3d10+8 bludgeoning
+**Ranged** ◆ M-451 Firestorm +20 (range increment 20 ft, tech), **Damage** 4d8+11 fire
+**Immolate** ◆◆ **Area** 15-foot cone.
+The Enforcer sprays burning fuel. Each creature in the cone takes 3d6+3 fire damage (basic Reflex save, DC 26) and 1d6 persistent fire damage on a failure.
+**Issue Orders** ◆ One allied soldier within 30 feet who can hear the officer can immediately Stride or Strike as a reaction.
+
+---
+
+##### Jaroth — Creature 9
+
+*Rare · Medium · Salarian · Humanoid*
+
+Salarian leader of Eclipse on Omega.
+
+**Perception** +20; **Skills** Computers Lore +22, Crafting +21, Deception +20, Stealth +20
+**Abilities** Str +2, Dex +4, Con +3, Int +6, Wis +3, Cha +3
+**Items** M-5 Phalanx, Duelist Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**AC** 28; **Fort** +17, **Ref** +20, **Will** +19
+**HP** 155; **Shields** 30 (recharge 10/turn)
+**Speed** 30 feet
+**Ranged** ◆ M-5 Phalanx +21 (range increment 50 ft, tech), **Damage** 3d6+12 piercing
+**Overload Burst** ◆◆ **Range** 60 feet; **Area** 10-foot burst.
+Each creature in the area takes 4d6+2 electricity damage (basic Reflex save, DC 28); kinetic barriers take double before it carries to HP.
+**Deploy Security Mech** ◆◆ Jaroth activates a LOKI mech from a nearby cache (use the LOKI Mech statblock). He can have up to two active at once and directs one to act on his initiative.
+
+---
+
+##### Wasea — Creature 9
+
+*Rare · Medium · Asari · Humanoid*
+
+Asari Eclipse lieutenant, strung out on red sand.
+
+**Perception** +19; **Skills** Acrobatics +20, Athletics +18, Intimidation +21
+**Abilities** Str +3, Dex +4, Con +3, Int +3, Wis +3, Cha +4
+**Items** M-5 Phalanx, Duelist Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**AC** 28; **Fort** +18, **Ref** +20, **Will** +18
+**HP** 160; **Shields** 30 (recharge 10/turn)
+**Speed** 30 feet
+**Ranged** ◆ M-5 Phalanx +21 (range increment 50 ft, tech), **Damage** 3d6+12 piercing
+**Melee** ◆ Amplified Biotic Strike +20 (agile, finesse, force, unarmed), **Damage** 3d8+9 bludgeoning plus 2d6-2 force
+**Throw (NPC)** ◆◆ You project a mass effect field that hurls a creature or object with violent force.
+Choose a creature or unattended object within **60 feet**. The target must attempt a DC 25 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target is pushed 5 feet away from you.
+**Failure** The target takes 6d8 bludgeoning damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
+**Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
+
+##### Jona Sederis — Creature 10
 
 *Rare · Medium · Asari · Humanoid*
 
 Unhinged asari founder and leader of Eclipse.
 
-**Perception** +14; **Skills** Acrobatics +14, Athletics +13, Deception +15, Intimidation +17
-**Abilities** Str +2, Dex +4, Con +4, Int +3, Wis +2, Cha +5
+**Perception** +19; **Skills** Acrobatics +21, Athletics +19, Deception +22, Intimidation +24
+**Abilities** Str +3, Dex +5, Con +5, Int +4, Wis +3, Cha +7
 **Items** M-5 Phalanx, Duelist Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
-**AC** 24; **Fort** +13, **Ref** +15, **Will** +14
-**HP** 105; **Shields** 30 (recharge 10/turn)
+**AC** 30; **Fort** +18, **Ref** +20, **Will** +19
+**HP** 185; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-5 Phalanx +17 (range increment 50 ft, tech), **Damage** 3d6+9 piercing
-**Melee** ◆ Biotic Lash +16 (agile, finesse, force, unarmed), **Damage** 2d8+8 bludgeoning plus 1d6 force
+**Ranged** ◆ M-5 Phalanx +23 (range increment 50 ft, tech), **Damage** 3d6+13 piercing
+**Melee** ◆ Biotic Lash +22 (agile, finesse, force, unarmed), **Damage** 3d8+11 bludgeoning plus 1d6+2 force
 **Biotic Detonation** ◆◆ **Range** 30 feet; **Area** 15-foot burst.
-Jona collapses a mass effect field into a violent implosion. Each creature in the area takes 4d6 force damage (basic Fortitude save, DC 24) and is knocked prone on a failure.
-**Execute** ◆ Jona shoots one of her own faltering mercenaries within reach or line of sight. That ally is reduced to 0 HP, and each enemy within 30 feet that witnesses it must succeed at a Will save (DC 24) or be frightened 2.
+Jona collapses a mass effect field into a violent implosion. Each creature in the area takes 6d6-1 force damage (basic Fortitude save, DC 29) and is knocked prone on a failure.
+**Execute** ◆ Jona shoots one of her own faltering mercenaries within reach or line of sight. That ally is reduced to 0 HP, and each enemy within 30 feet that witnesses it must succeed at a Will save (DC 29) or be frightened 2.
 
 ---
 
@@ -4839,21 +4941,21 @@ The krogan enters a battle fury, gaining a +2 status bonus to melee damage and f
 
 ---
 
-##### Ganar Wrang — Creature 5
+##### Blood Pack Battlemaster — Creature 7
 
-*Rare · Medium · Krogan · Humanoid*
+*Uncommon · Medium · Humanoid · Krogan*
 
-Krogan Blood Pack lieutenant.
+Veteran krogan who leads Blood Pack assault squads into the worst of a fight.
 
-**Perception** +12; **Skills** Athletics +16, Intimidation +14, Survival +11
-**Abilities** Str +6, Dex +2, Con +5, Int +1, Wis +2, Cha +2
-**Items** M-11 Wraith, Gladiator Armor (H)
-**AC** 22; **Fort** +16, **Ref** +10, **Will** +11
-**HP** 84
+**Perception** +15; **Skills** Athletics +19, Intimidation +17, Survival +15
+**Abilities** Str +6, Dex +2, Con +6, Int +0, Wis +2, Cha +1
+**Items** M-23 Eviscerator, Gladiator Armor (H)
+**AC** 24; **Fort** +20, **Ref** +13, **Will** +14
+**HP** 139
 **Speed** 25 feet
-**Ranged** ◆ M-11 Wraith +15 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 4d8+8 piercing
-**Melee** ◆ Krogan Headbutt +16 (unarmed), **Damage** 1d12+6 bludgeoning
-**Krogan Charge** ◆◆ Wrang Strides up to double his Speed in a straight line and makes a melee Strike. If he moved at least 15 feet, the Strike deals an extra 2d6 bludgeoning damage and the target must succeed at a Fortitude save (DC 23) or be knocked prone.
+**Ranged** ◆ M-23 Eviscerator +18 (range increment 15 ft, tech, scatter-5), **Damage** 4d8+10 piercing
+**Melee** ◆ Krogan Headbutt +18 (unarmed), **Damage** 1d10+10 bludgeoning
+**Krogan Charge** ◆◆ The warrior Strides up to double its Speed in a straight line and makes a melee Strike. If it moved at least 15 feet, the Strike deals an extra 3d6 bludgeoning damage and the target must succeed at a Fortitude save (DC 25) or be knocked prone.
 **Redundant Physiology** The krogan's duplicated organs make it brutally hard to kill. It is not knocked out at 0 HP unless the damage is a critical hit or from fire; otherwise it acts on 1 HP until reduced a second time. It also gains a +2 circumstance bonus to saves against being sickened, poisoned, or made to bleed.
 **Blood Rage** ◇ **Trigger** The krogan is reduced to half its Hit Points or fewer.
 
@@ -4862,21 +4964,62 @@ The krogan enters a battle fury, gaining a +2 status bonus to melee damage and f
 
 ---
 
-##### Garm — Creature 6
+##### Blood Pack Warlord — Creature 9
+
+*Rare · Medium · Blood Pack · Humanoid · Krogan*
+
+Krogan warlord who runs a Blood Pack crew and answers only to Garm.
+
+**Perception** +18; **Skills** Athletics +20, Intimidation +19, Survival +16
+**Abilities** Str +7, Dex +2, Con +6, Int +1, Wis +3, Cha +3
+**Items** M-300 Claymore, Colossus Armor (H), Kinetic Shield, Shield HP Mod - Tier 4
+**AC** 27; **Fort** +22, **Ref** +17, **Will** +18
+**HP** 134; **Shields** 30 (recharge 10/turn)
+**Speed** 30 feet
+**Melee** ◆ Headbutt +20 (forceful, unarmed), **Damage** 3d8+6 bludgeoning
+**Ranged** ◆ M-300 Claymore +21 (range increment 10 ft, tech, scatter-5, fatal-d12, kickback), **Damage** 4d8+12 piercing
+**Issue Orders** ◆ One allied soldier within 30 feet who can hear the officer can immediately Stride or Strike as a reaction.
+
+---
+
+##### Ganar Wrang — Creature 10
+
+*Rare · Medium · Krogan · Humanoid*
+
+Krogan Blood Pack lieutenant.
+
+**Perception** +19; **Skills** Athletics +25, Intimidation +23, Survival +18
+**Abilities** Str +8, Dex +3, Con +7, Int +2, Wis +3, Cha +3
+**Items** M-11 Wraith, Gladiator Armor (H)
+**AC** 30; **Fort** +23, **Ref** +17, **Will** +18
+**HP** 184
+**Speed** 25 feet
+**Ranged** ◆ M-11 Wraith +23 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 4d8+13 piercing
+**Melee** ◆ Krogan Headbutt +24 (unarmed), **Damage** 2d12+7 bludgeoning
+**Krogan Charge** ◆◆ Wrang Strides up to double his Speed in a straight line and makes a melee Strike. If he moved at least 15 feet, the Strike deals an extra 3d6+1 bludgeoning damage and the target must succeed at a Fortitude save (DC 30) or be knocked prone.
+**Redundant Physiology** The krogan's duplicated organs make it brutally hard to kill. It is not knocked out at 0 HP unless the damage is a critical hit or from fire; otherwise it acts on 1 HP until reduced a second time. It also gains a +2 circumstance bonus to saves against being sickened, poisoned, or made to bleed.
+**Blood Rage** ◇ **Trigger** The krogan is reduced to half its Hit Points or fewer.
+
+---
+The krogan enters a battle fury, gaining a +2 status bonus to melee damage and fast healing 5 until the end of the encounter. While enraged it takes a –1 penalty to AC.
+
+---
+
+##### Garm — Creature 12
 
 *Rare · Medium · Krogan · Humanoid*
 
 Krogan warlord and leader of the Blood Pack on Omega.
 
-**Perception** +15; **Skills** Athletics +18, Intimidation +16, Survival +13
-**Abilities** Str +6, Dex +3, Con +6, Int +1, Wis +3, Cha +3
+**Perception** +23; **Skills** Athletics +28, Intimidation +26, Survival +22
+**Abilities** Str +7, Dex +4, Con +7, Int +3, Wis +4, Cha +4
 **Items** M-11 Wraith, Gladiator Armor (H), Kinetic Shield, Shield HP Mod - Tier 1, Shield Regen Mod - Tier 1
-**AC** 24; **Fort** +18, **Ref** +12, **Will** +13
-**HP** 98; **Shields** 30 (recharge 10/turn)
+**AC** 33; **Fort** +27, **Ref** +20, **Will** +21
+**HP** 218; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-11 Wraith +17 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 4d8+9 piercing
-**Melee** ◆ Krogan Headbutt +18 (unarmed), **Damage** 2d10+6 bludgeoning
-**Berserker Charge** ◆◆ Garm Strides up to triple his Speed in a straight line, trampling through creatures' spaces, and makes a melee Strike with a +2 circumstance bonus to damage. Each creature whose space he moved through takes 2d8 bludgeoning damage (basic Reflex save, DC 24).
+**Ranged** ◆ M-11 Wraith +26 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 5d8+15 piercing
+**Melee** ◆ Krogan Headbutt +27 (unarmed), **Damage** 3d10+12 bludgeoning
+**Berserker Charge** ◆◆ Garm Strides up to triple his Speed in a straight line, trampling through creatures' spaces, and makes a melee Strike with a +2 circumstance bonus to damage. Each creature whose space he moved through takes 3d8+2 bludgeoning damage (basic Reflex save, DC 32).
 **Regenerative Fury** Garm has fast healing 15 while above 0 HP. If reduced to 0 HP, he does not fall unless the triggering damage was a critical hit or fire damage; otherwise he remains at 1 HP with his fast healing suppressed for 1 round.
 **Redundant Physiology** The krogan's duplicated organs make it brutally hard to kill. It is not knocked out at 0 HP unless the damage is a critical hit or from fire; otherwise it acts on 1 HP until reduced a second time. It also gains a +2 circumstance bonus to saves against being sickened, poisoned, or made to bleed.
 
@@ -4904,40 +5047,6 @@ The mechanic sends a targeted electromagnetic disruption through the target's sy
 
 ---
 
-##### Admiral Shala'Raan vas Tonbay — Creature 4
-
-*Rare · Medium · Quarian · Humanoid*
-
-Level-headed admiral and family friend of the Zorahs.
-
-**Perception** +13; **Skills** Computers +11, Diplomacy +14, Piloting +11, Society +13
-**Abilities** Str +1, Dex +3, Con +2, Int +3, Wis +4, Cha +4
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-3 Predator
-**AC** 20; **Fort** +10, **Ref** +11, **Will** +13
-**HP** 55; **Shields** 30 (recharge 10/turn)
-**Speed** 25 feet
-**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
-**Mediate** ◆ Shala'Raan attempts to calm a tense situation, gaining a +2 circumstance bonus to a Diplomacy check to Request or to shift a creature's attitude one step toward indifferent.
-
----
-
-##### Admiral Zaal'Koris vas Qwib-Qwib — Creature 4
-
-*Rare · Medium · Quarian · Humanoid*
-
-Idealist admiral who argues against war with the geth.
-
-**Perception** +12; **Skills** Computers +12, Diplomacy +14, Medicine +11, Society +13
-**Abilities** Str +1, Dex +2, Con +2, Int +4, Wis +4, Cha +4
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-3 Predator
-**AC** 20; **Fort** +9, **Ref** +10, **Will** +13
-**HP** 55; **Shields** 30 (recharge 10/turn)
-**Speed** 25 feet
-**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
-**Voice of Reason** ◆ Zaal'Koris attempts a Diplomacy check to make a heartfelt appeal, gaining a +2 circumstance bonus to de-escalate hostilities or talk down a single creature able to understand him.
-
----
-
 ##### Quarian Marine — Creature 4
 
 *Medium · Quarian · Humanoid*
@@ -4955,57 +5064,108 @@ Quarian Migrant Fleet combat marine
 
 ---
 
-##### Admiral Daro'Xen vas Moreh — Creature 5
+##### Quarian Commando — Creature 6
+
+*Uncommon · Medium · Humanoid · Quarian*
+
+Flotilla special forces: marines trained to board and clear geth-held ships.
+
+**Perception** +13; **Skills** Acrobatics +13, Athletics +12, Crafting +13, Stealth +13
+**Abilities** Str +2, Dex +4, Con +2, Int +4, Wis +2, Cha +1
+**Items** M-8 Avenger, Liberator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
+**AC** 24; **Fort** +14, **Ref** +14, **Will** +12
+**HP** 78; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Melee** ◆ Omni-Blade +14 (finesse, tech), **Damage** 3d8+3 slashing plus 1d4+1 fire
+**Ranged** ◆ M-8 Avenger +17 (range increment 60 ft, tech, automatic), **Damage** 3d4+9 piercing
+
+---
+
+##### Admiral Daro'Xen vas Moreh — Creature 8
 
 *Rare · Medium · Quarian · Humanoid*
 
 Brilliant, amoral quarian scientist-admiral.
 
-**Perception** +14; **Skills** Computers +15, Crafting +15, Science +15, Thievery +12
-**Abilities** Str +0, Dex +3, Con +2, Int +6, Wis +3, Cha +2
+**Perception** +18; **Skills** Computers +20, Crafting +20, Science +20, Thievery +16
+**Abilities** Str +0, Dex +3, Con +3, Int +7, Wis +3, Cha +3
 **Items** Kinetic Shield, Shield HP Mod - Tier 1, M-5 Phalanx
-**AC** 21; **Fort** +10, **Ref** +12, **Will** +13
-**HP** 60; **Shields** 30 (recharge 10/turn)
+**AC** 26; **Fort** +14, **Ref** +16, **Will** +17
+**HP** 105; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
-**Deploy Reprogrammed Drone** ◆◆ Daro'Xen activates a captured combat drone (AC 18, HP 18, fly 30). It makes a ranged zap Strike (+11, 1d6+2 electricity) on her turn. She can have one active at a time.
-**Overload** ◆◆ **Range** 60 feet, one creature. The target takes 2d6 electricity damage (basic Reflex save, DC 22); kinetic barriers and synthetic creatures take double.
+**Ranged** ◆ M-5 Phalanx +20 (range increment 50 ft, tech), **Damage** 3d6+11 piercing
+**Deploy Reprogrammed Drone** ◆◆ Daro'Xen activates a captured combat drone (AC 18, HP 18, fly 30). It makes a ranged zap Strike (+11, 1d6+4 electricity) on her turn. She can have one active at a time.
+**Overload** ◆◆ **Range** 60 feet, one creature. The target takes 3d6-1 electricity damage (basic Reflex save, DC 26); kinetic barriers and synthetic creatures take double.
 
 ---
 
-##### Admiral Han'Gerrel vas Neema — Creature 5
-
-*Rare · Medium · Quarian · Humanoid*
-
-Hawkish admiral of the Migrant Fleet's military.
-
-**Perception** +13; **Skills** Athletics +12, Intimidation +13, Piloting +12, Warfare +14
-**Abilities** Str +3, Dex +3, Con +3, Int +3, Wis +2, Cha +3
-**Items** M-11 Wraith, Explorer Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
-**AC** 22; **Fort** +13, **Ref** +12, **Will** +11
-**HP** 80; **Shields** 30 (recharge 10/turn)
-**Speed** 25 feet
-**Ranged** ◆ M-11 Wraith +15 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 4d8+8 piercing
-**Melee** ◆ Omni-Blade +13 (agile, finesse), **Damage** 1d8+7 slashing plus 1d4 fire
-**Rally the Fleet** ◆ Han'Gerrel exhorts nearby quarian marines. Each ally within 30 feet who can hear him gains a +1 status bonus to attack rolls and saves against fear until the start of his next turn.
-
----
-
-##### Admiral Rael'Zorah vas Rayya — Creature 5
+##### Admiral Rael'Zorah vas Rayya — Creature 8
 
 *Rare · Medium · Quarian · Humanoid*
 
 Tali's father; driven engineer-admiral obsessed with the homeworld.
 
-**Perception** +13; **Skills** Computers +15, Crafting +14, Science +14, Warfare +12
-**Abilities** Str +2, Dex +3, Con +2, Int +5, Wis +3, Cha +2
+**Perception** +17; **Skills** Computers +20, Crafting +19, Science +19, Warfare +16
+**Abilities** Str +3, Dex +3, Con +3, Int +6, Wis +3, Cha +3
 **Items** M-5 Phalanx, Explorer Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
-**AC** 21; **Fort** +11, **Ref** +12, **Will** +12
-**HP** 65; **Shields** 30 (recharge 10/turn)
+**AC** 26; **Fort** +15, **Ref** +16, **Will** +16
+**HP** 110; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
-**Melee** ◆ Omni-Blade +12 (agile, finesse), **Damage** 2d8+6 slashing plus 1d4 fire
-**Sabotage** ◆◆ **Range** 60 feet. Rael'Zorah hacks a target's tech. A synthetic creature or a target's kinetic barrier takes 2d6 electricity damage; a creature wielding a tech weapon must succeed at a Reflex save (DC 20) or have it misfire, becoming unusable for 1 round.
+**Ranged** ◆ M-5 Phalanx +20 (range increment 50 ft, tech), **Damage** 3d6+11 piercing
+**Melee** ◆ Omni-Blade +17 (agile, finesse), **Damage** 3d8+7 slashing plus 1d4+1 fire
+**Sabotage** ◆◆ **Range** 60 feet. Rael'Zorah hacks a target's tech. A synthetic creature or a target's kinetic barrier takes 3d6-1 electricity damage; a creature wielding a tech weapon must succeed at a Reflex save (DC 24) or have it misfire, becoming unusable for 1 round.
+
+---
+
+##### Admiral Shala'Raan vas Tonbay — Creature 8
+
+*Rare · Medium · Quarian · Humanoid*
+
+Level-headed admiral and family friend of the Zorahs.
+
+**Perception** +18; **Skills** Computers +17, Diplomacy +20, Piloting +17, Society +19
+**Abilities** Str +2, Dex +4, Con +3, Int +4, Wis +5, Cha +5
+**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-3 Predator
+**AC** 26; **Fort** +15, **Ref** +16, **Will** +18
+**HP** 130; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-3 Predator +20 (range increment 40 ft, tech), **Damage** 2d6+11 piercing
+**Mediate** ◆ Shala'Raan attempts to calm a tense situation, gaining a +2 circumstance bonus to a Diplomacy check to Request or to shift a creature's attitude one step toward indifferent.
+
+---
+
+##### Admiral Zaal'Koris vas Qwib-Qwib — Creature 8
+
+*Rare · Medium · Quarian · Humanoid*
+
+Idealist admiral who argues against war with the geth.
+
+**Perception** +17; **Skills** Computers +18, Diplomacy +20, Medicine +17, Society +19
+**Abilities** Str +2, Dex +3, Con +3, Int +5, Wis +5, Cha +5
+**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-3 Predator
+**AC** 26; **Fort** +14, **Ref** +15, **Will** +18
+**HP** 130; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-3 Predator +20 (range increment 40 ft, tech), **Damage** 2d6+11 piercing
+**Voice of Reason** ◆ Zaal'Koris attempts a Diplomacy check to make a heartfelt appeal, gaining a +2 circumstance bonus to de-escalate hostilities or talk down a single creature able to understand him.
+
+---
+
+##### Admiral Han'Gerrel vas Neema — Creature 9
+
+*Rare · Medium · Quarian · Humanoid*
+
+Hawkish admiral of the Migrant Fleet's military.
+
+**Perception** +19; **Skills** Athletics +18, Intimidation +20, Piloting +18, Warfare +21
+**Abilities** Str +3, Dex +3, Con +3, Int +3, Wis +3, Cha +3
+**Items** M-11 Wraith, Explorer Armor (M), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**AC** 28; **Fort** +19, **Ref** +18, **Will** +17
+**HP** 160; **Shields** 30 (recharge 10/turn)
+**Speed** 25 feet
+**Ranged** ◆ M-11 Wraith +21 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 4d8+12 piercing
+**Melee** ◆ Omni-Blade +19 (agile, finesse), **Damage** 2d8+8 slashing plus 2d4-1 fire
+**Rally the Fleet** ◆ Han'Gerrel exhorts nearby quarian marines. Each ally within 30 feet who can hear him gains a +1 status bonus to attack rolls and saves against fear until the start of his next turn.
 
 ---
 

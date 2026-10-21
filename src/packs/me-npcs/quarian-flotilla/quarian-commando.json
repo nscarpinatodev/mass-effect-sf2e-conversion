@@ -1,0 +1,711 @@
+{
+  "_key": "!actors!quariancommando0",
+  "_id": "quariancommando0",
+  "name": "Quarian Commando",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/quarian-marine.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 78,
+        "temp": 40,
+        "max": 78,
+        "details": ""
+      },
+      "ac": {
+        "value": 24,
+        "details": ""
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 25,
+        "otherSpeeds": [],
+        "details": ""
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [
+          "taldane",
+          "khelish"
+        ],
+        "details": ""
+      },
+      "level": {
+        "value": 6
+      },
+      "blurb": "Flotilla special forces: marines trained to board and clear geth-held ships.",
+      "publicNotes": "<p>The Flotilla's commandos train for the missions nobody returns from easily: boarding geth ships, recovering lost vessels, and guarding the Admiralty Board.</p><p><strong>Suit Integrity:</strong> +2 circ. bonus to Fortitude saves vs. disease and poison.</p><p><strong>Emergency Evacuation:</strong> Reaction-when reduced below 1/4 HP, immediately Stride up to full Speed without provoking reactions.</p><p><strong>Kinetic Barrier:</strong> 40 Shield HP. Recharges 10 HP per turn.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Actor and Ancestry Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 2
+      },
+      "dex": {
+        "mod": 4
+      },
+      "con": {
+        "mod": 2
+      },
+      "int": {
+        "mod": 4
+      },
+      "wis": {
+        "mod": 2
+      },
+      "cha": {
+        "mod": 1
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 13,
+      "senses": [],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 14,
+        "saveDetail": "+2 vs. disease and poison"
+      },
+      "reflex": {
+        "value": 14,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 12,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "acrobatics": {
+        "base": 13
+      },
+      "athletics": {
+        "base": 12
+      },
+      "crafting": {
+        "base": 13
+      },
+      "stealth": {
+        "base": 13
+      }
+    },
+    "traits": {
+      "value": [
+        "humanoid",
+        "quarian"
+      ],
+      "rarity": "uncommon",
+      "size": {
+        "value": "med"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Quarian Commando",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/quarian-marine.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/quarian-marine.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "_id": "NPCMelee0000001A",
+      "name": "Omni-Blade",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "damageRolls": {
+          "dmgroll0001": {
+            "damage": "3d8+3",
+            "damageType": "slashing",
+            "category": null
+          },
+          "dmgroll0002": {
+            "damage": "1d4+1",
+            "damageType": "fire",
+            "category": null
+          }
+        },
+        "bonus": {
+          "value": 14
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "finesse",
+            "tech"
+          ],
+          "config": {}
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "attackEffects": {
+          "value": []
+        },
+        "range": null,
+        "subjectToMAP": true
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!quariancommando0.NPCMelee0000001A"
+    },
+    {
+      "_id": "NPCRanged000001A",
+      "name": "M-8 Avenger",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Avenger.png",
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 17
+        },
+        "damageRolls": {
+          "dmgroll0003": {
+            "damage": "3d4+9",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "tech",
+            "automatic",
+            "range-increment-60"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "attackEffects": {
+          "value": []
+        },
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "04ecc0b7ffe8ba9e"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!quariancommando0.NPCRanged000001A"
+    },
+    {
+      "_key": "!actors.items!quariancommando0.04ecc0b7ffe8ba9e",
+      "_id": "04ecc0b7ffe8ba9e",
+      "name": "M-8 Avenger",
+      "type": "weapon",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Avenger.png",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-8 Avenger is the standard-issue assault rifle of the Systems Alliance military. Reliable, accurate, and easy to maintain, it serves as the backbone of Alliance infantry engagements across the galaxy. Its moderate fire rate and solid kinetic impact make it a dependable choice for soldiers of any experience level.</p>"
+        },
+        "rules": [],
+        "slug": "m-8-avenger",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "baseItem": "m-8-avenger",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 30
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 2
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "rifle",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 2,
+          "die": "d4",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 60,
+        "expend": 1,
+        "ammo": {
+          "capacity": 100,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "0"
+        },
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 400000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.945f1a18045005c7"
+      }
+    },
+    {
+      "_key": "!actors.items!quariancommando0.2eade1f4ce531b7b",
+      "_id": "2eade1f4ce531b7b",
+      "name": "Liberator Armor (M)",
+      "type": "armor",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Medium-human-Liberator.png",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Devlon Industries' Liberator series balances mobility with protection for operators who require flexibility in varied environments. Standard kinetic barriers and impact-rated composite construction deliver dependable performance at a commercial price point.</p>"
+        },
+        "rules": [],
+        "slug": "liberator-armor-m",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "liberator-armor",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 50
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "medium",
+        "group": "chain",
+        "acBonus": 3,
+        "strength": 2,
+        "dexCap": 2,
+        "checkPenalty": -2,
+        "speedPenalty": -5,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 500000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.194a27cfdd9dd312"
+      }
+    },
+    {
+      "_id": "NPCShield000001A",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!quariancommando0.NPCShield000001A",
+      "sort": 300000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "MENPC00000shld00",
+      "name": "Shield HP Mod - Tier 1",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t1",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+10 HP</strong> (base 30 → 40).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 600
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!quariancommando0.MENPC00000shld00",
+      "sort": 300001,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod001"
+      }
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000008",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

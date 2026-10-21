@@ -1,0 +1,874 @@
+{
+  "_key": "!actors!eclipsecaptain00",
+  "_id": "eclipsecaptain00",
+  "name": "Eclipse Captain",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/eclipse-enforcer.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 165,
+        "temp": 50,
+        "max": 165,
+        "details": ""
+      },
+      "ac": {
+        "value": 27,
+        "details": ""
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 20,
+        "otherSpeeds": [],
+        "details": ""
+      },
+      "immunities": [],
+      "resistances": [
+        {
+          "type": "physical",
+          "value": 5
+        }
+      ]
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [
+          "taldane"
+        ],
+        "details": ""
+      },
+      "level": {
+        "value": 8
+      },
+      "blurb": "Eclipse officer commanding a cell of engineers, commandos and heavies.",
+      "publicNotes": "<p>Eclipse captains run the company's cells: a mix of salarian engineers, asari commandos and LOKI mechs, all pointed where the contract says.</p><p><strong>Reinforced Kinetic Barrier:</strong> 50 Shield HP. Recharges 15 HP per turn.</p><p><strong>Exoskeleton:</strong> The Enforcer has resistance 5 to physical damage (bludgeoning, piercing, slashing).</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 6
+      },
+      "dex": {
+        "mod": 3
+      },
+      "con": {
+        "mod": 4
+      },
+      "int": {
+        "mod": 2
+      },
+      "wis": {
+        "mod": 3
+      },
+      "cha": {
+        "mod": 2
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 16,
+      "senses": [],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 18,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 15,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 15,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 19
+      },
+      "intimidation": {
+        "base": 16
+      }
+    },
+    "traits": {
+      "value": [
+        "humanoid"
+      ],
+      "rarity": "rare",
+      "size": {
+        "value": "med"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Eclipse Captain",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/eclipse-enforcer.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/eclipse-enforcer.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "_id": "RWaJo5pqPRfWzUEL",
+      "name": "Armored Fist",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 19
+        },
+        "damageRolls": {
+          "dmg00RWaJ": {
+            "damage": "3d10+8",
+            "damageType": "bludgeoning",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "<p>A power-assisted gauntlet strike.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "attackEffects": {
+          "value": []
+        },
+        "range": null,
+        "subjectToMAP": true
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!eclipsecaptain00.RWaJo5pqPRfWzUEL"
+    },
+    {
+      "_id": "VSIgZDyLtf7Rnbdl",
+      "name": "Immolate",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "flags": {},
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Immolate</strong> <span class=\"action-glyph\">2</span></p><hr /><p><strong>Area</strong> 15-foot cone.</p><p>The Enforcer sprays burning fuel. Each creature in the cone takes [[/r 3d6+3[fire]]] damage (basic Reflex save, DC 26) and 1d6 persistent fire damage on a failure.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "fire"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 400000,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!eclipsecaptain00.VSIgZDyLtf7Rnbdl"
+    },
+    {
+      "folder": null,
+      "name": "M-451 Firestorm",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HW_-_Firestorm.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-451 Firestorm projects a sustained stream of superheated incendiary gel across a short range cone. Originally designed for burning through bulkheads in derelict station salvage operations, it was repurposed as a combat weapon when salvagers discovered its effectiveness against Husks and other Reaper-derived infantry. The fuel tank limits engagement duration, but within those constraints it is capable of clearing a room faster than any conventional weapon.</p>"
+        },
+        "rules": [],
+        "slug": "m-451-firestorm",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 5
+        },
+        "baseItem": "m-451-firestorm",
+        "bulk": {
+          "value": 3
+        },
+        "price": {
+          "value": {
+            "gp": 250
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 1
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "bomb",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d8",
+          "damageType": "fire",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 20,
+        "expend": 1,
+        "ammo": {
+          "capacity": 100,
+          "baseType": "battery",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "0"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "_id": "beba49a0c92f6dff",
+      "_key": "!actors.items!eclipsecaptain00.beba49a0c92f6dff",
+      "sort": 500000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.e8e876d419054a4e"
+      }
+    },
+    {
+      "folder": null,
+      "name": "Duelist Armor (H)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Heavy-human-Duelist.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Elanus Risk Control produces the Duelist series using kinetic plastite weave - a cheaper alternative to armalite. Barrier output and damage absorption are both below Hahne-Kedar standards at equivalent levels, making these suits a budget option for less well-funded operators.</p>"
+        },
+        "rules": [],
+        "slug": "duelist-armor-h",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "bulwark",
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "duelist-armor",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 40
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "inSlot": true
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "heavy",
+        "group": "plate",
+        "acBonus": 3,
+        "strength": 3,
+        "dexCap": 1,
+        "checkPenalty": -3,
+        "speedPenalty": -10,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "fbfcd10ec3080cb1",
+      "_key": "!actors.items!eclipsecaptain00.fbfcd10ec3080cb1",
+      "sort": 600000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.bef5e18922c3ba38"
+      }
+    },
+    {
+      "_id": "IFXb7ovdvoJSOKaV",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!eclipsecaptain00.IFXb7ovdvoJSOKaV",
+      "sort": 300000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "uT3coyBs6cshld00",
+      "name": "Shield HP Mod - Tier 2",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 20
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t2",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 30 → 50).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 6
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 2500
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!eclipsecaptain00.uT3coyBs6cshld00",
+      "sort": 300001,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod002"
+      }
+    },
+    {
+      "_id": "uT3coyBs6cshld01",
+      "name": "Shield Regen Mod - Tier 1",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "regenMult": 1.5
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-regen-mod-t1",
+        "description": {
+          "gm": "",
+          "value": "<p>Boosts kinetic shield recharge rate by <strong>+50%</strong> (base 10 → 15 HP/turn).</p><p>Only one Shield Regen Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-regen-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 600
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!eclipsecaptain00.uT3coyBs6cshld01",
+      "sort": 300002,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen001"
+      }
+    },
+    {
+      "_id": "uT3coyBs6cstrk00",
+      "_key": "!actors.items!eclipsecaptain00.uT3coyBs6cstrk00",
+      "name": "M-451 Firestorm",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HW_-_Firestorm.png",
+      "effects": [],
+      "folder": null,
+      "sort": 50000,
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "beba49a0c92f6dff"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 20
+        },
+        "damageRolls": {
+          "dmg0": {
+            "damage": "4d8+11",
+            "damageType": "fire",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "tech",
+            "range-increment-20"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      }
+    },
+    {
+      "_id": "eclipsecaporders",
+      "name": "Issue Orders",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "flags": {},
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Issue Orders</strong> <span class=\"action-glyph\">1</span></p><hr /><p>One allied soldier within 30 feet who can hear the officer can immediately Stride or Strike as a reaction.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "auditory",
+            "concentrate",
+            "emotion",
+            "mental"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "interaction",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 400000,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!eclipsecaptain00.eclipsecaporders"
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000006",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

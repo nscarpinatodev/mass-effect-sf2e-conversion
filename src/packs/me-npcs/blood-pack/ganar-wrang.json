@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 84,
+        "value": 184,
         "temp": 0,
-        "max": 84,
+        "max": 184,
         "details": ""
       },
       "ac": {
-        "value": 22,
+        "value": 30,
         "details": ""
       },
       "allSaves": {
@@ -37,7 +37,7 @@
         "details": ""
       },
       "level": {
-        "value": 5
+        "value": 10
       },
       "blurb": "Krogan Blood Pack lieutenant.",
       "publicNotes": "<p>Ganar Wrang is a veteran krogan enforcer who keeps the Blood Pack's vorcha rabble in line through sheer brutality. He leads assault details personally, relishing any excuse to break something.</p><p><strong>Redundant Physiology & Blood Rage:</strong> See abilities below.</p>",
@@ -56,53 +56,53 @@
     },
     "abilities": {
       "str": {
-        "mod": 6
+        "mod": 8
       },
       "dex": {
-        "mod": 2
+        "mod": 3
       },
       "con": {
-        "mod": 5
+        "mod": 7
       },
       "int": {
-        "mod": 1
+        "mod": 2
       },
       "wis": {
-        "mod": 2
+        "mod": 3
       },
       "cha": {
-        "mod": 2
+        "mod": 3
       }
     },
     "perception": {
       "details": "",
-      "mod": 12,
+      "mod": 19,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 16,
+        "value": 23,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 10,
+        "value": 17,
         "saveDetail": ""
       },
       "will": {
-        "value": 11,
+        "value": 18,
         "saveDetail": ""
       }
     },
     "skills": {
       "athletics": {
-        "base": 16
+        "base": 25
       },
       "intimidation": {
-        "base": 14
+        "base": 23
       },
       "survival": {
-        "base": 11
+        "base": 18
       }
     },
     "traits": {
@@ -211,11 +211,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 15
+          "value": 23
         },
         "damageRolls": {
           "dmg00GvXo": {
-            "damage": "4d8+8",
+            "damage": "4d8+13",
             "damageType": "piercing",
             "category": null
           }
@@ -277,11 +277,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 16
+          "value": 24
         },
         "damageRolls": {
           "dmg00kGPK": {
-            "damage": "1d12+6",
+            "damage": "2d12+7",
             "damageType": "bludgeoning",
             "category": null
           }
@@ -334,7 +334,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Krogan Charge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Wrang Strides up to double his Speed in a straight line and makes a melee Strike. If he moved at least 15 feet, the Strike deals an extra [[/r 2d6[bludgeoning]]] damage and the target must succeed at a Fortitude save (DC 23) or be knocked prone.</p>",
+          "value": "<p><strong>Krogan Charge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Wrang Strides up to double his Speed in a straight line and makes a melee Strike. If he moved at least 15 feet, the Strike deals an extra [[/r 3d6+1[bludgeoning]]] damage and the target must succeed at a Fortitude save (DC 30) or be knocked prone.</p>",
           "gm": ""
         },
         "rules": [],

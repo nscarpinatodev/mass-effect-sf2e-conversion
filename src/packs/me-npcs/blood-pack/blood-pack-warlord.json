@@ -1,0 +1,761 @@
+{
+  "_key": "!actors!bloodpackwarlord",
+  "_id": "bloodpackwarlord",
+  "name": "Blood Pack Warlord",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/krogan-battlemaster.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 134,
+        "temp": 100,
+        "max": 134,
+        "details": "fast healing 3 (below half HP)"
+      },
+      "ac": {
+        "value": 27,
+        "details": "natural armor"
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 30,
+        "otherSpeeds": [],
+        "details": ""
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [
+          "taldane",
+          "krogan"
+        ],
+        "details": ""
+      },
+      "level": {
+        "value": 9
+      },
+      "blurb": "Krogan warlord who runs a Blood Pack crew and answers only to Garm.",
+      "publicNotes": "<p>Blood Pack warlords run the gang's crews across the Terminus, each with a territory, a following of vorcha and krogan, and a standing grudge against whoever holds the next one over. Garm keeps them in line the krogan way.</p><p><strong>Krogan Fortitude:</strong> Fast healing 3 while below half HP.</p><p><strong>Undying Warrior:</strong> Dies at dying 5 (not dying 4). +2 to recovery checks.</p><p><strong>Blood Rage (Reaction):</strong> When reduced below half HP, gains 15 temporary HP and +1d6 to melee damage until end of next turn.</p><p><strong>Headbutt:</strong> On a hit, DC 27 Fortitude or stunned 1; stunned 2 on a critical failure.</p><p><strong>Kinetic Barrier:</strong> 100 Shield HP. Recharges 10 HP per turn.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Actor and Ancestry Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 7
+      },
+      "dex": {
+        "mod": 2
+      },
+      "con": {
+        "mod": 6
+      },
+      "int": {
+        "mod": 1
+      },
+      "wis": {
+        "mod": 3
+      },
+      "cha": {
+        "mod": 3
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 18,
+      "senses": [
+        {
+          "type": "darkvision"
+        }
+      ],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 22,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 17,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 18,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 20
+      },
+      "intimidation": {
+        "base": 19
+      },
+      "survival": {
+        "base": 16
+      }
+    },
+    "traits": {
+      "value": [
+        "blood-pack",
+        "humanoid",
+        "krogan"
+      ],
+      "rarity": "rare",
+      "size": {
+        "value": "med"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Blood Pack Warlord",
+    "displayName": 20,
+    "actorLink": true,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/krogan-battlemaster.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/krogan-battlemaster.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "_id": "NPCMelee0000001A",
+      "name": "Headbutt",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "damageRolls": {
+          "dmgroll0001": {
+            "damage": "3d8+6",
+            "damageType": "bludgeoning",
+            "category": null
+          }
+        },
+        "bonus": {
+          "value": 20
+        },
+        "description": {
+          "value": "<p>On a hit, DC 27 Fortitude or stunned 1; stunned 2 on a critical failure of the save.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "forceful",
+            "unarmed"
+          ],
+          "config": {}
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "attackEffects": {
+          "value": []
+        },
+        "range": null,
+        "subjectToMAP": true
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!bloodpackwarlord.NPCMelee0000001A"
+    },
+    {
+      "_id": "NPCMelee0000002A",
+      "name": "M-300 Claymore",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Claymore.png",
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 21
+        },
+        "damageRolls": {
+          "dmgroll0002": {
+            "damage": "4d8+12",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "tech",
+            "scatter-5",
+            "fatal-d12",
+            "kickback",
+            "range-increment-10"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "<p>A krogan-scale heavy shotgun. The reload time is not a concern for something with this much patience.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "attackEffects": {
+          "value": []
+        },
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "e4e9a6d5fac8423b"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!bloodpackwarlord.NPCMelee0000002A"
+    },
+    {
+      "_key": "!actors.items!bloodpackwarlord.e4e9a6d5fac8423b",
+      "_id": "e4e9a6d5fac8423b",
+      "name": "M-300 Claymore",
+      "type": "weapon",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Claymore.png",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-300 Claymore is the most powerful shotgun available to ground troops in Cerberus's arsenal. A single-shot weapon of staggering lethality, it fires a dense kinetic slug capable of piercing vehicle-grade armor at point-blank range. The recoil is severe enough to require Krogan physiology or specialized shock-absorbing harnesses - for everyone else, it is a weapon of last resort and absolute commitment.</p>"
+        },
+        "rules": [],
+        "slug": "m-300-claymore",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "scatter-5",
+            "fatal-d12",
+            "kickback"
+          ],
+          "rarity": "uncommon"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 9
+        },
+        "baseItem": "m-300-claymore",
+        "bulk": {
+          "value": 3
+        },
+        "price": {
+          "value": {
+            "gp": 2000
+          }
+        },
+        "equipped": {
+          "carryType": "held",
+          "invested": null,
+          "handsHeld": 2
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "shotgun",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 10,
+        "expend": 1,
+        "ammo": {
+          "capacity": 1,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "superior",
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 500000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.bb7d8e7ea2d13572"
+      }
+    },
+    {
+      "_key": "!actors.items!bloodpackwarlord.84ffc3b94e389c39",
+      "_id": "84ffc3b94e389c39",
+      "name": "Colossus Armor (H)",
+      "type": "armor",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Heavy-human-Colossus.png",
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Kassa Fabrication's Colossus hardsuit is built around a triple-layer ceramic ablative shell reinforced with woven durasteel. Onboard micro-generators boost shield efficiency while the suit's distinctive red-and-black plating provides the highest raw damage protection available to a soldier in the field. Standard issue for front-line Alliance marines on the most dangerous postings.</p>"
+        },
+        "rules": [],
+        "slug": "colossus-h",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "bulwark",
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 5
+        },
+        "quantity": 1,
+        "baseItem": "colossus",
+        "bulk": {
+          "value": 3
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 600
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "heavy",
+        "group": "plate",
+        "acBonus": 6,
+        "strength": 4,
+        "dexCap": 1,
+        "checkPenalty": -2,
+        "speedPenalty": -5,
+        "grade": "superior",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 600000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.9f732a2b3202768c"
+      }
+    },
+    {
+      "_id": "NPCShield000001A",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!bloodpackwarlord.NPCShield000001A",
+      "sort": 400000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "MENPC00000shld00",
+      "name": "Shield HP Mod - Tier 4",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 70
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t4",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+70 HP</strong> (base 30 → 100).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 12
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 16000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!bloodpackwarlord.MENPC00000shld00",
+      "sort": 400001,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod004"
+      }
+    },
+    {
+      "_id": "bloodpackworders",
+      "name": "Issue Orders",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "flags": {},
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Issue Orders</strong> <span class=\"action-glyph\">1</span></p><hr /><p>One allied soldier within 30 feet who can hear the officer can immediately Stride or Strike as a reaction.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "auditory",
+            "concentrate",
+            "emotion",
+            "mental"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "interaction",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 400000,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!bloodpackwarlord.bloodpackworders"
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000007",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

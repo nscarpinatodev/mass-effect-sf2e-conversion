@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 65,
+        "value": 110,
         "temp": 40,
-        "max": 65,
+        "max": 110,
         "details": ""
       },
       "ac": {
-        "value": 21,
+        "value": 26,
         "details": ""
       },
       "allSaves": {
@@ -37,7 +37,7 @@
         "details": ""
       },
       "level": {
-        "value": 5
+        "value": 8
       },
       "blurb": "Tali's father; driven engineer-admiral obsessed with the homeworld.",
       "publicNotes": "<p>Rael'Zorah is a gifted engineer and hardliner on the Admiralty Board, consumed by the dream of retaking the quarian homeworld — sometimes at the expense of everything else, including his relationship with his daughter Tali. His secret geth research aboard the Alarei nearly ended in catastrophe.</p><p><strong>Kinetic Barrier:</strong> 40 Shield HP. Recharges 10 HP per turn.</p>",
@@ -56,56 +56,56 @@
     },
     "abilities": {
       "str": {
-        "mod": 2
+        "mod": 3
       },
       "dex": {
         "mod": 3
       },
       "con": {
-        "mod": 2
+        "mod": 3
       },
       "int": {
-        "mod": 5
+        "mod": 6
       },
       "wis": {
         "mod": 3
       },
       "cha": {
-        "mod": 2
+        "mod": 3
       }
     },
     "perception": {
       "details": "",
-      "mod": 13,
+      "mod": 17,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 11,
+        "value": 15,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 12,
+        "value": 16,
         "saveDetail": ""
       },
       "will": {
-        "value": 12,
+        "value": 16,
         "saveDetail": ""
       }
     },
     "skills": {
       "crafting": {
-        "base": 14
+        "base": 19
       },
       "computers": {
-        "base": 15
+        "base": 20
       },
       "science": {
-        "base": 14
+        "base": 19
       },
       "warfare": {
-        "base": 12
+        "base": 16
       }
     },
     "traits": {
@@ -214,11 +214,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 15
+          "value": 20
         },
         "damageRolls": {
           "dmg00N7qU": {
-            "damage": "3d6+8",
+            "damage": "3d6+11",
             "damageType": "piercing",
             "category": null
           }
@@ -277,16 +277,16 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 12
+          "value": 17
         },
         "damageRolls": {
           "dmg008Bav": {
-            "damage": "2d8+6",
+            "damage": "3d8+7",
             "damageType": "slashing",
             "category": null
           },
           "dmg018Bav": {
-            "damage": "1d4",
+            "damage": "1d4+1",
             "damageType": "fire",
             "category": null
           }
@@ -340,7 +340,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Sabotage</strong> <span class=\"action-glyph\">2</span></p><hr /><p><strong>Range</strong> 60 feet. Rael'Zorah hacks a target's tech. A synthetic creature or a target's kinetic barrier takes [[/r 2d6[electricity]]] damage; a creature wielding a tech weapon must succeed at a Reflex save (DC 20) or have it misfire, becoming unusable for 1 round.</p>",
+          "value": "<p><strong>Sabotage</strong> <span class=\"action-glyph\">2</span></p><hr /><p><strong>Range</strong> 60 feet. Rael'Zorah hacks a target's tech. A synthetic creature or a target's kinetic barrier takes [[/r 3d6-1[electricity]]] damage; a creature wielding a tech weapon must succeed at a Reflex save (DC 24) or have it misfire, becoming unusable for 1 round.</p>",
           "gm": ""
         },
         "rules": [],

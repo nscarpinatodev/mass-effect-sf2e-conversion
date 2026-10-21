@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 80,
+        "value": 160,
         "temp": 50,
-        "max": 80,
+        "max": 160,
         "details": ""
       },
       "ac": {
-        "value": 22,
+        "value": 28,
         "details": ""
       },
       "allSaves": {
@@ -43,7 +43,7 @@
         "details": ""
       },
       "level": {
-        "value": 5
+        "value": 9
       },
       "blurb": "Asari Eclipse lieutenant, strung out on red sand.",
       "publicNotes": "<p>Wasea is a high-ranking Eclipse asari who deals in red sand and dips heavily into her own product, amplifying her biotics to reckless, dangerous highs. Cornered, she fights with berserk abandon.</p><p><strong>Biotic Barrier:</strong> 50 Shield HP. Recharges 15 HP per turn.</p><p><strong>Red Sand High:</strong> Wasea is immune to the frightened condition and deals an extra 1d6 force damage with biotic Strikes (already included).</p>",
@@ -62,7 +62,7 @@
     },
     "abilities": {
       "str": {
-        "mod": 2
+        "mod": 3
       },
       "dex": {
         "mod": 4
@@ -71,10 +71,10 @@
         "mod": 3
       },
       "int": {
-        "mod": 2
+        "mod": 3
       },
       "wis": {
-        "mod": 2
+        "mod": 3
       },
       "cha": {
         "mod": 4
@@ -82,33 +82,33 @@
     },
     "perception": {
       "details": "",
-      "mod": 13,
+      "mod": 19,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 12,
+        "value": 18,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 14,
+        "value": 20,
         "saveDetail": ""
       },
       "will": {
-        "value": 12,
+        "value": 18,
         "saveDetail": ""
       }
     },
     "skills": {
       "acrobatics": {
-        "base": 13
+        "base": 20
       },
       "athletics": {
-        "base": 12
+        "base": 18
       },
       "intimidation": {
-        "base": 14
+        "base": 21
       }
     },
     "traits": {
@@ -217,11 +217,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 15
+          "value": 21
         },
         "damageRolls": {
           "dmg00qGaH": {
-            "damage": "3d6+8",
+            "damage": "3d6+12",
             "damageType": "piercing",
             "category": null
           }
@@ -280,16 +280,16 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 14
+          "value": 20
         },
         "damageRolls": {
           "dmg00EE6U": {
-            "damage": "2d8+6",
+            "damage": "3d8+9",
             "damageType": "bludgeoning",
             "category": null
           },
           "dmg01EE6U": {
-            "damage": "1d6",
+            "damage": "2d6-2",
             "damageType": "force",
             "category": null
           }
