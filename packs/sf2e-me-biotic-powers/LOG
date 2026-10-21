@@ -1,15 +1,15 @@
-2026/10/21-11:39:45.074 bdc Recovering log #330
-2026/10/21-11:39:45.081 bdc Delete type=0 #330
-2026/10/21-11:39:45.081 bdc Delete type=3 #328
-2026/10/21-11:39:45.085 9e14 Level-0 table #336: started
-2026/10/21-11:39:45.090 9e14 Level-0 table #336: 33941 bytes OK
-2026/10/21-11:39:45.093 9e14 Delete type=0 #334
-2026/10/21-11:39:45.094 9e14 Manual compaction at level-0 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)
-2026/10/21-11:39:45.094 9e14 Manual compaction at level-1 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at '!items!npcbiowarp000000' @ 1414 : 1
-2026/10/21-11:39:45.094 9e14 Compacting 1@1 + 1@2 files
-2026/10/21-11:39:45.099 9e14 Generated table #337@1: 39 keys, 33941 bytes
-2026/10/21-11:39:45.099 9e14 Compacted 1@1 + 1@2 files => 33941 bytes
-2026/10/21-11:39:45.101 9e14 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/21-11:39:45.101 9e14 Delete type=2 #332
-2026/10/21-11:39:45.101 9e14 Delete type=2 #336
-2026/10/21-11:39:45.101 9e14 Manual compaction at level-1 from '!items!npcbiowarp000000' @ 1414 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)
+2026/10/21-11:41:30.454 10b90 Recovering log #335
+2026/10/21-11:41:30.465 10b90 Delete type=0 #335
+2026/10/21-11:41:30.465 10b90 Delete type=3 #333
+2026/10/21-11:41:30.469 97c4 Level-0 table #341: started
+2026/10/21-11:41:30.474 97c4 Level-0 table #341: 33944 bytes OK
+2026/10/21-11:41:30.478 97c4 Delete type=0 #339
+2026/10/21-11:41:30.478 97c4 Manual compaction at level-0 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)
+2026/10/21-11:41:30.478 97c4 Manual compaction at level-1 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at '!items!npcbiowarp000000' @ 1453 : 1
+2026/10/21-11:41:30.478 97c4 Compacting 1@1 + 1@2 files
+2026/10/21-11:41:30.487 97c4 Generated table #342@1: 39 keys, 33944 bytes
+2026/10/21-11:41:30.487 97c4 Compacted 1@1 + 1@2 files => 33944 bytes
+2026/10/21-11:41:30.491 97c4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/21-11:41:30.491 97c4 Delete type=2 #337
+2026/10/21-11:41:30.492 97c4 Delete type=2 #341
+2026/10/21-11:41:30.492 97c4 Manual compaction at level-1 from '!items!npcbiowarp000000' @ 1453 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)

@@ -1,0 +1,578 @@
+{
+  "name": "Sovereign",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/ships/Sovereign_charshot_LE.png",
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Sovereign",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 8,
+    "height": 8,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/ships/Sovereign_charshot_LE.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    }
+  },
+  "system": {
+    "slug": "destiny-ascension",
+    "details": {
+      "level": {
+        "value": 21
+      },
+      "publicNotes": "<p>Sovereign is a Reaper: a two-kilometre sentient warship of a machine race that wipes out advanced organic life every fifty thousand years. Left behind to open the Citadel relay and bring the rest of its kind out of dark space, it posed as Saren's flagship and used indoctrination to bend him and Matriarch Benezia to its will. At the Battle of the Citadel it outclassed every ship in the Council fleet, until Saren's death broke its barriers and the Alliance fleet broke its hull.</p><p><strong>Kinetic Barrier Array:</strong> 1,000 Shield Points, regenerating 200 per round.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      },
+      "languages": {
+        "value": [],
+        "details": ""
+      },
+      "blurb": "The Reaper that led the geth against the Citadel, disguised as Saren's flagship."
+    },
+    "attributes": {
+      "hp": {
+        "value": 3000,
+        "max": 3000,
+        "temp": 1000,
+        "details": ""
+      },
+      "ac": {
+        "value": 44,
+        "details": ""
+      },
+      "speed": {
+        "value": 0,
+        "otherSpeeds": [
+          {
+            "type": "fly",
+            "value": 100
+          }
+        ],
+        "details": ""
+      },
+      "hardness": {
+        "value": 40
+      }
+    },
+    "traits": {
+      "value": [
+        "vehicle",
+        "ship",
+        "reaper",
+        "dreadnought",
+        "unique"
+      ],
+      "size": {
+        "value": "grg"
+      },
+      "rarity": "unique"
+    },
+    "abilities": {
+      "str": {
+        "mod": 20
+      },
+      "dex": {
+        "mod": 2
+      },
+      "con": {
+        "mod": 16
+      },
+      "int": {
+        "mod": 12
+      },
+      "wis": {
+        "mod": 8
+      },
+      "cha": {
+        "mod": 10
+      }
+    },
+    "saves": {
+      "fortitude": {
+        "value": 42,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 28,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 42,
+        "saveDetail": ""
+      }
+    },
+    "skills": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "perception": {
+      "details": "",
+      "mod": 42,
+      "senses": [],
+      "vision": true
+    },
+    "resources": {},
+    "initiative": {
+      "statistic": "perception"
+    }
+  },
+  "items": [
+    {
+      "name": "Main Gun",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "weaponType": {
+          "value": "ranged"
+        },
+        "slug": "sovereign-main-gun",
+        "bonus": {
+          "value": 44
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "14d12+50",
+            "damageType": "fire"
+          }
+        },
+        "traits": {
+          "value": [
+            "brutal",
+            "line-1000",
+            "range-increment-5000"
+          ]
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "rules": [],
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "sovereignrea0001",
+      "_key": "!actors.items!sovereignreaper0.sovereignrea0001",
+      "sort": 100000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Tendril",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "weaponType": {
+          "value": "melee"
+        },
+        "slug": "sovereign-tendril",
+        "bonus": {
+          "value": 42
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "8d12+40",
+            "damageType": "bludgeoning"
+          }
+        },
+        "traits": {
+          "value": [
+            "reach-60",
+            "sweep"
+          ]
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "rules": [],
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "sovereignrea0002",
+      "_key": "!actors.items!sovereignreaper0.sovereignrea0002",
+      "sort": 200000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "_id": "sovereignrea0003",
+      "name": "Kinetic Barrier Array",
+      "type": "effect",
+      "img": "systems/pf2e/icons/spells/mystic-armor.webp",
+      "system": {
+        "slug": "npc-kinetic-barrier-sovereign",
+        "duration": {
+          "value": -1,
+          "unit": "unlimited",
+          "expiry": null
+        },
+        "badge": {
+          "type": "counter",
+          "value": 1000,
+          "max": 1000,
+          "label": "Shield Points"
+        },
+        "rules": [],
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        }
+      },
+      "effects": [],
+      "sort": 300000,
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 1000,
+          "shieldRegen": 200
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!sovereignreaper0.sovereignrea0003",
+      "folder": null
+    },
+    {
+      "name": "Indoctrination",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Indoctrination</strong></p><hr /><p>1 mile. Sovereign's presence reshapes the minds around it. A creature that spends 8 hours in the aura or aboard Sovereign must succeed at a @Check[will|dc:44] save or gain a point of indoctrination (GM tracked). At 3 points it obeys Sovereign's will while believing it acts freely. A creature with the reaper trait, or one that is already indoctrinated, is unaffected.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "aura",
+            "mental"
+          ]
+        },
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "interaction",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "sovereignrea0004",
+      "_key": "!actors.items!sovereignreaper0.sovereignrea0004",
+      "sort": 400000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "I Am Sovereign",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>I Am Sovereign</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Sovereign speaks, its voice resonating through the hulls and minds of everything nearby. Each creature within 1 mile that can hear it must attempt a @Check[will|dc:44] save. On a failure it is frightened 2; on a critical failure it is frightened 3 and stunned 1. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "auditory",
+            "emotion",
+            "fear",
+            "mental"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "sovereignrea0005",
+      "_key": "!actors.items!sovereignreaper0.sovereignrea0005",
+      "sort": 500000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Avatar",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/ThreeActions.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Avatar</strong> <span class=\"action-glyph\">3</span></p><hr /><p>Sovereign takes direct control of an indoctrinated creature anywhere in the galaxy, as Saren became its avatar on the Citadel. While it controls an avatar, the avatar has resistance 10 to all damage and Sovereign's Kinetic Barrier Array is linked to it. If the avatar is destroyed while Sovereign controls it, the feedback drops Sovereign's barriers to 0 Shield Points and Sovereign is stunned 3.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "mental"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 3
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "sovereignrea0006",
+      "_key": "!actors.items!sovereignreaper0.sovereignrea0006",
+      "sort": 600000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Mass Relay Control",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Mass Relay Control</strong></p><hr /><p>Sovereign was built to open the Citadel relay to dark space. While docked with the Citadel or a mass relay, it can spend 1 minute to seize its controls; until it is dislodged, ships can't use that relay without its leave.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": []
+        },
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "interaction",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "sovereignrea0007",
+      "_key": "!actors.items!sovereignreaper0.sovereignrea0007",
+      "sort": 700000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Reaper Hull",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Reaper Hull</strong></p><hr /><p>Sovereign ignores the effects of critical hits from Strikes made by creatures smaller than gargantuan, and its Kinetic Barrier Array regains 200 Shield Points at the start of each of its turns.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": []
+        },
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "interaction",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "sovereignrea0008",
+      "_key": "!actors.items!sovereignreaper0.sovereignrea0008",
+      "sort": 800000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    }
+  ],
+  "_id": "sovereignreaper0",
+  "_key": "!actors!sovereignreaper0",
+  "effects": []
+}
