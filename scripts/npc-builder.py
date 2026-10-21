@@ -16,6 +16,7 @@ import importlib.util
 import json
 import math
 import os
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _spec = importlib.util.spec_from_file_location('rescale', os.path.join(ROOT, 'scripts', 'rescale-npc.py'))
@@ -188,7 +189,7 @@ class Npc:
 
 
 def write(d, folder):
-    slug = d['name'].lower().replace("'", '').replace(' ', '-')
+    slug = re.sub(r'[^a-z0-9]+', '-', d['name'].lower().replace("'", '')).strip('-')
     path = os.path.join(ROOT, 'src', 'packs', 'me-npcs', folder, f'{slug}.json')
     with open(path, 'w', encoding='utf-8', newline='') as fh:
         fh.write(json.dumps(d, indent=2, ensure_ascii=False).replace('\n', '\r\n'))

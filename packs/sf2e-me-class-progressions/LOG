@@ -1,15 +1,15 @@
-2026/10/21-11:36:49.769 b53c Recovering log #310
-2026/10/21-11:36:49.779 b53c Delete type=0 #310
-2026/10/21-11:36:49.779 b53c Delete type=3 #308
-2026/10/21-11:36:49.783 be90 Level-0 table #316: started
-2026/10/21-11:36:49.788 be90 Level-0 table #316: 43604 bytes OK
-2026/10/21-11:36:49.791 be90 Delete type=0 #314
-2026/10/21-11:36:49.791 be90 Manual compaction at level-0 from '!items!meAdeptAscenForm' @ 72057594037927935 : 1 .. '!items!meVanguardVngStr' @ 0 : 0; will stop at (end)
-2026/10/21-11:36:49.791 be90 Manual compaction at level-1 from '!items!meAdeptAscenForm' @ 72057594037927935 : 1 .. '!items!meVanguardVngStr' @ 0 : 0; will stop at '!items!meVanguardVngStr' @ 3562 : 1
-2026/10/21-11:36:49.791 be90 Compacting 1@1 + 1@2 files
-2026/10/21-11:36:49.799 be90 Generated table #317@1: 88 keys, 43604 bytes
-2026/10/21-11:36:49.799 be90 Compacted 1@1 + 1@2 files => 43604 bytes
-2026/10/21-11:36:49.803 be90 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/21-11:36:49.803 be90 Delete type=2 #312
-2026/10/21-11:36:49.803 be90 Delete type=2 #316
-2026/10/21-11:36:49.803 be90 Manual compaction at level-1 from '!items!meVanguardVngStr' @ 3562 : 1 .. '!items!meVanguardVngStr' @ 0 : 0; will stop at (end)
+2026/10/21-11:39:45.296 2ba4 Recovering log #315
+2026/10/21-11:39:45.305 2ba4 Delete type=0 #315
+2026/10/21-11:39:45.305 2ba4 Delete type=3 #313
+2026/10/21-11:39:45.309 9e14 Level-0 table #321: started
+2026/10/21-11:39:45.313 9e14 Level-0 table #321: 43623 bytes OK
+2026/10/21-11:39:45.316 9e14 Delete type=0 #319
+2026/10/21-11:39:45.316 9e14 Manual compaction at level-0 from '!items!meAdeptAscenForm' @ 72057594037927935 : 1 .. '!items!meVanguardVngStr' @ 0 : 0; will stop at (end)
+2026/10/21-11:39:45.316 9e14 Manual compaction at level-1 from '!items!meAdeptAscenForm' @ 72057594037927935 : 1 .. '!items!meVanguardVngStr' @ 0 : 0; will stop at '!items!meVanguardVngStr' @ 3650 : 1
+2026/10/21-11:39:45.316 9e14 Compacting 1@1 + 1@2 files
+2026/10/21-11:39:45.322 9e14 Generated table #322@1: 88 keys, 43623 bytes
+2026/10/21-11:39:45.322 9e14 Compacted 1@1 + 1@2 files => 43623 bytes
+2026/10/21-11:39:45.325 9e14 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/21-11:39:45.325 9e14 Delete type=2 #317
+2026/10/21-11:39:45.325 9e14 Delete type=2 #321
+2026/10/21-11:39:45.325 9e14 Manual compaction at level-1 from '!items!meVanguardVngStr' @ 3650 : 1 .. '!items!meVanguardVngStr' @ 0 : 0; will stop at (end)
