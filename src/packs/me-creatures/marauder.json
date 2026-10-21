@@ -199,9 +199,9 @@
   "items": [
     {
       "_id": "bd1190f69e748ce0",
-      "name": "Assault Rifle",
+      "name": "M-7 Lancer",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Lancer_AS.png",
       "system": {
         "weaponType": {
           "value": "ranged"
@@ -212,15 +212,19 @@
         },
         "damageRolls": {
           "0": {
-            "damage": "2d8+8",
-            "damageType": "piercing"
+            "damage": "3d8+11",
+            "damageType": "electricity",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "brutal",
-            "range-increment-80"
-          ]
+            "tech",
+            "automatic",
+            "range-increment-70"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -244,7 +248,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "c1d4a27a23wpn000"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -527,6 +535,117 @@
       "sort": 300002,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen002"
+      }
+    },
+    {
+      "name": "M-7 Lancer",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Lancer_AS.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-7 Lancer is a legendary assault rifle from the First Contact War era, restored and reissued during the Reaper War when conventional ammunition supplies became unreliable. Unlike modern mass effect weapons, it draws power directly from the wielder's own bio-electric potential rather than consuming heat sink clips. Each attack expends 1 Temporary Hit Point from the wielder. If the wielder has no Temporary Hit Points, the weapon cannot fire. The Lancer never requires reloading and carries no external ammunition.</p>"
+        },
+        "rules": [],
+        "slug": "m-7-lancer",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 7
+        },
+        "baseItem": "m-7-lancer",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 700
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "rifle",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 2,
+          "die": "d8",
+          "damageType": "electricity",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 70,
+        "expend": 1,
+        "ammo": {
+          "capacity": 200,
+          "baseType": "battery",
+          "builtIn": true
+        },
+        "reload": {
+          "value": "0"
+        },
+        "grade": "advanced",
+        "runes": {
+          "potency": 0,
+          "striking": 1,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "c1d4a27a23wpn000",
+      "_key": "!actors.items!c1d4a27a23459b51.c1d4a27a23wpn000",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.c78b7f93cefa918b"
       }
     }
   ],

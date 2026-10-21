@@ -203,25 +203,27 @@
   "items": [
     {
       "_id": "F3TCCgoyNlizdzV3",
-      "name": "Submachine Gun",
+      "name": "M-9 Tempest",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Tempest.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 13
+          "value": 14
         },
         "damageRolls": {
           "dmg00F3TC": {
-            "damage": "3d6+4",
+            "damage": "4d4+7",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "automatic",
-            "range-increment-40"
+            "agile",
+            "range-increment-25"
           ],
           "otherTags": [],
           "config": {}
@@ -246,7 +248,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -255,7 +256,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "dad52761a0f8e799"
+        }
+      },
       "ownership": {
         "default": 0
       },

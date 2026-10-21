@@ -271,33 +271,31 @@
     },
     {
       "_id": "NPCRanged000001A",
-      "name": "M-97 Viper Sniper Rifle",
+      "name": "M-97 Viper",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SR_-_Viper.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 13
+          "value": 15
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "2d8+9",
+            "damage": "3d8+8",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "reload-1"
+            "tech",
+            "volley-30",
+            "range-increment-120"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 80,
-          "max": 400
-        },
         "description": {
           "value": "",
           "gm": ""
@@ -317,12 +315,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "5a25db399c7f8f38"
+        }
+      },
       "ownership": {
         "default": 0
       },

@@ -205,25 +205,26 @@
   "items": [
     {
       "_id": "R7VUO5PXC6KNFnmD",
-      "name": "Phaeston Rifle",
+      "name": "Phaeston",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phaeston_Assault_Rifle.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 13
+          "value": 14
         },
         "damageRolls": {
           "dmg00R7VU": {
-            "damage": "2d8+4",
+            "damage": "2d8+7",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "automatic",
-            "range-increment-70"
+            "range-increment-65"
           ],
           "otherTags": [],
           "config": {}
@@ -248,7 +249,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -257,7 +257,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "8b6b53205eb93329"
+        }
+      },
       "ownership": {
         "default": 0
       },

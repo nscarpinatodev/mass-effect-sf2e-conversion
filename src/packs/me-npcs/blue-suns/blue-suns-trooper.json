@@ -200,23 +200,24 @@
   "items": [
     {
       "_id": "YSatUxJjklxXadhx",
-      "name": "Assault Rifle",
+      "name": "M-8 Avenger",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Avenger.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 9
+          "value": 11
         },
         "damageRolls": {
           "dmg00YSat": {
-            "damage": "2d6+3",
+            "damage": "1d8+5",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "automatic",
             "range-increment-60"
           ],
@@ -243,7 +244,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -252,7 +252,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "2e37901bfc2381f3"
+        }
+      },
       "ownership": {
         "default": 0
       },

@@ -75,6 +75,22 @@ const ENRICHERS = {
   UUID(inner) { return inner.split('.').pop(); },
 };
 
+/**
+ * Work out level-scaled formulas for one actor, so a printed statblock shows numbers: the NPC Biotics use
+ * `@actor.system.details.level.value` in their save DCs (resolve(...)) and damage dice ((expr)dN).
+ */
+export function bakeLevel(html, level) {
+  if (!html) return html;
+  const evaluate = (expr) => {
+    if (!/^[\d+\-*/(). floor]+$/.test(expr)) return null;
+    try { return Function('floor', `return (${expr});`)(Math.floor); } catch { return null; }
+  };
+  return html
+    .replaceAll('@actor.system.details.level.value', String(level))
+    .replace(/resolve\(([^|\]]+?)\)(?=[|\]])/g, (m, e) => { const v = evaluate(e); return v == null ? m : String(v); })
+    .replace(/\(([\d+\-*/(). floor]+)\)d(\d+)/g, (m, e, die) => { const v = evaluate(e); return v == null ? m : `${v}d${die}`; });
+}
+
 export function flattenEnrichers(html) {
   if (!html) return html;
   let out = '';

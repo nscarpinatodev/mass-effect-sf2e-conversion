@@ -370,6 +370,30 @@ const POWERS = {
   },
 };
 
+// ── NPC VERSIONS ────────────────────────────────────────────────────────────
+// The "(NPC)" biotic actions (me-npc-*) have no class DC to lean on, so they
+// scale from the caster's level instead. Their DC is worked out in the save
+// button itself; here their dice are the PC power's, multiplied by
+// 1 + floor(level / 4): x1 at levels 0-3, x2 at 4-7, x3 at 8-11, and so on.
+const npcDiceMult = (caster) => 1 + Math.floor((caster?.level ?? 0) / 4);
+const scaleDice = (formula, m) => formula.replace(/(\d+)d(\d+)/g, (_, n, d) => `${n * m}d${d}`);
+const scaledByCaster = (value) => (typeof value === 'string' ? ({ caster }) => scaleDice(value, npcDiceMult(caster)) : value);
+
+for (const [key, power] of Object.entries(POWERS)) {
+  if (!key.startsWith('me-biotic-') && !['me-cluster-grenade', 'me-lift-grenade'].includes(key)) continue;
+  const degrees = {};
+  for (const [name, degree] of Object.entries(power.degrees)) {
+    const d = { ...degree };
+    for (const field of ['damage', 'vsSynthetic', 'casterHeal']) if (d[field]) d[field] = scaledByCaster(d[field]);
+    if (d.persistent) d.persistent = { ...d.persistent, formula: scaledByCaster(d.persistent.formula) };
+    degrees[name] = d;
+  }
+  POWERS[`me-npc-${key.slice(3)}`] = { ...power, trait: 'biotic', degrees };
+}
+
+// For macros and debugging: the full registry, PC and NPC entries alike.
+globalThis.MassEffectPowers = { registry: POWERS };
+
 // ── SETTINGS ────────────────────────────────────────────────────────────────
 Hooks.once('init', () => {
   game.settings.register(MODULE_ID, 'autoApplyPowerEffects', {
@@ -468,8 +492,9 @@ Hooks.on('createChatMessage', async (message) => {
   // ── Persistent damage (the system's own persistent-damage condition) ──
   if (degree.persistent) {
     const p = degree.persistent;
-    await addPersistentDamage(actor, p.formula, p.type, p.dc ?? 15);
-    log.push(`${p.formula} persistent ${p.type}`);
+    const pformula = typeof p.formula === 'function' ? p.formula({ actor, caster }) : p.formula;
+    await addPersistentDamage(actor, pformula, p.type, p.dc ?? 15);
+    log.push(`${pformula} persistent ${p.type}`);
   }
 
   // ── Conditions ──
@@ -495,15 +520,16 @@ Hooks.on('createChatMessage', async (message) => {
   if (degree.casterBarrier) log.push(await refillCasterBarrier(caster, degree.casterBarrier));
 
   // ── Healing for the caster ──
-  if (degree.casterHeal) {
+  const heal = typeof degree.casterHeal === 'function' ? degree.casterHeal({ actor, caster }) : degree.casterHeal;
+  if (heal) {
     if (caster) {
-      const roll = await new Roll(degree.casterHeal).evaluate();
+      const roll = await new Roll(heal).evaluate();
       const hp = caster.system.attributes.hp;
       const healed = Math.min(roll.total, hp.max - hp.value);
       if (healed > 0) await caster.update({ 'system.attributes.hp.value': hp.value + healed });
       log.push(`${caster.name} regains ${healed} HP`);
     } else {
-      log.push(`The caster regains ${degree.casterHeal} HP (apply manually)`);
+      log.push(`The caster regains ${heal} HP (apply manually)`);
     }
   }
 
@@ -597,12 +623,12 @@ Hooks.on('preUpdateItem', (item, changes) => {
 Hooks.on('createChatMessage', async (message) => {
   if (message.author?.id !== game.user.id) return;
   const origin = message.flags?.pf2e?.origin;
-  if (origin?.type !== 'feat' || !origin.uuid) return;
+  if (!['feat', 'action'].includes(origin?.type) || !origin.uuid) return;
   const item = await fromUuid(origin.uuid);
   const actor = item?.actor;
   if (!actor) return;
   const flags = actor.flags?.[MODULE_ID] ?? {};
-  const slug = item.slug;
+  const slug = item.slug?.replace(/^me-npc-/, 'me-');      // NPC versions trigger the same effects
 
   const barrier = getBarrier(actor);
 

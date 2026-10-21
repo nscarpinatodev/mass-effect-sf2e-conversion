@@ -200,25 +200,26 @@
   "items": [
     {
       "_id": "Iojtik2kVJHnwcAQ",
-      "name": "Heavy Assault Rifle",
+      "name": "Phaeston",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phaeston_Assault_Rifle.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 11
+          "value": 12
         },
         "damageRolls": {
           "dmg00Iojt": {
-            "damage": "2d8+4",
+            "damage": "1d8+6",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "automatic",
-            "range-increment-60"
+            "range-increment-65"
           ],
           "otherTags": [],
           "config": {}
@@ -243,7 +244,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -252,7 +252,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "7e84221489a1bc19"
+        }
+      },
       "ownership": {
         "default": 0
       },

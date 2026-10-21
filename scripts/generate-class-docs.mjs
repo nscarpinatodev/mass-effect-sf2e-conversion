@@ -10,7 +10,7 @@
 
 import { readFile, writeFile, mkdir, readdir } from 'fs/promises';
 import { join } from 'path';
-import { flattenEnrichers, indexPacks, summarizeClass } from './doc-helpers.mjs';
+import { bakeLevel, flattenEnrichers, indexPacks, summarizeClass } from './doc-helpers.mjs';
 
 const SRC = 'src/packs';
 
@@ -730,7 +730,7 @@ function statblockMd(npc) {
   }
   for (const ab of items.filter(i => i.type === 'action')) {
     const sym = actionSymbol(ab.system?.actionType?.value, ab.system?.actions?.value);
-    let body = ab.system?.description?.value ?? '';
+    let body = bakeLevel(ab.system?.description?.value ?? '', s.details.level.value);
     const m = body.match(/^\s*<p>\s*<strong>([^<]*)<\/strong>[\s\S]*?<\/p>\s*(?:<hr\s*\/?>)?/i);
     if (m && m[1].trim().toLowerCase() === ab.name.trim().toLowerCase()) body = body.slice(m[0].length);
     L.push(`**${ab.name}**${sym} ${htmlToMd(body.replace(/<span class="action-glyph">[^<]*<\/span>/g, ''))}`);

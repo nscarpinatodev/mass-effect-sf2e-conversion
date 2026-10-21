@@ -208,25 +208,25 @@
   "items": [
     {
       "_id": "RRBzIKymxqbGGmPX",
-      "name": "Prototype SMG",
+      "name": "M-5 Phalanx",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 16
+          "value": 17
         },
         "damageRolls": {
           "dmg00RRBz": {
-            "damage": "3d6+8",
+            "damage": "3d6+9",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "automatic",
-            "range-increment-40"
+            "tech",
+            "range-increment-50"
           ],
           "otherTags": [],
           "config": {}
@@ -251,7 +251,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -260,7 +259,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "1896fe444fff83be"
+        }
+      },
       "ownership": {
         "default": 0
       },

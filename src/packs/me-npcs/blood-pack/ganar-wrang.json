@@ -205,9 +205,9 @@
   "items": [
     {
       "_id": "GvXoLWbtU5GSy9LD",
-      "name": "Heavy Shotgun",
+      "name": "M-11 Wraith",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Wraith_Shotgun.png",
       "system": {
         "slug": null,
         "bonus": {
@@ -215,14 +215,18 @@
         },
         "damageRolls": {
           "dmg00GvXo": {
-            "damage": "2d8+6",
+            "damage": "4d8+8",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-20"
+            "tech",
+            "scatter-5",
+            "fatal-d10",
+            "kickback",
+            "range-increment-15"
           ],
           "otherTags": [],
           "config": {}
@@ -247,7 +251,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -256,7 +259,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "c7c26bdf8c4335c3"
+        }
+      },
       "ownership": {
         "default": 0
       },

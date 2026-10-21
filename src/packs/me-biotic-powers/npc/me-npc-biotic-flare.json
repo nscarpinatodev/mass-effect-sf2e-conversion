@@ -1,0 +1,47 @@
+{
+  "_id": "npcbioflare00000",
+  "_key": "!items!npcbioflare00000",
+  "name": "Flare (NPC)",
+  "type": "action",
+  "img": "icons/magic/light/explosion-star-teal.webp",
+  "folder": "mebioticnpcfoldr",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-npc-biotic-flare",
+    "description": {
+      "value": "<p>You gather and compress an enormous sphere of biotic dark energy and hurl it forward in a slow-moving but catastrophically destructive projectile.</p><p>You launch a Flare projectile at a point within <strong>60 feet</strong>. On impact, it detonates in a @Template[burst|distance:15]{15-foot radius burst}. All creatures in the area must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-flare] save against the creature's power DC.</p><p><strong>Critical Success</strong> Half damage.</p><p><strong>Success</strong> Full damage.</p><p><strong>Failure</strong> @Damage[(6*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage. Any Biotic Barriers in the area are immediately depleted.</p><p><strong>Critical Failure</strong> @Damage[(12*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage, all Biotic Barriers depleted, and targets are knocked prone.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+      "gm": ""
+    },
+    "rules": [],
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "biotic",
+        "concentrate",
+        "manipulate"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 3
+    },
+    "category": "offensive",
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  }
+}

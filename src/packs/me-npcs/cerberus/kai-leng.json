@@ -254,29 +254,34 @@
     },
     {
       "_id": "k4il3ngr00000001",
-      "name": "Sniper Rifle",
+      "name": "Black Widow",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Black_Widow_Sniper_Rifle.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "kai-leng-sniper",
         "bonus": {
-          "value": 25
+          "value": 26
         },
         "damageRolls": {
           "0": {
-            "damage": "4d10+13",
-            "damageType": "piercing"
+            "damage": "6d12+7",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "fatal-d12",
-            "volley-50",
+            "kickback",
+            "volley-30",
             "range-increment-200"
-          ]
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -300,7 +305,11 @@
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "a0a3fca43aae55a6"
+        }
+      },
       "ownership": {
         "default": 0
       },

@@ -205,9 +205,9 @@
   "items": [
     {
       "_id": "28BOoNY3whlILWSn",
-      "name": "Viper Sniper Rifle",
+      "name": "M-97 Viper",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SR_-_Viper.png",
       "system": {
         "slug": null,
         "bonus": {
@@ -215,14 +215,16 @@
         },
         "damageRolls": {
           "dmg0028BO": {
-            "damage": "2d8+4",
+            "damage": "3d8+7",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-100"
+            "tech",
+            "volley-30",
+            "range-increment-120"
           ],
           "otherTags": [],
           "config": {}
@@ -247,7 +249,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -256,7 +257,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "4e22071b3ea33c9e"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -264,9 +269,9 @@
     },
     {
       "_id": "KcWkpoOuoaRcwUZe",
-      "name": "Heavy Pistol",
+      "name": "M-3 Predator",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Predator.png",
       "system": {
         "slug": null,
         "bonus": {
@@ -274,14 +279,15 @@
         },
         "damageRolls": {
           "dmg00KcWk": {
-            "damage": "1d8+4",
+            "damage": "2d6+7",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-50"
+            "tech",
+            "range-increment-40"
           ],
           "otherTags": [],
           "config": {}
@@ -306,7 +312,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -315,7 +320,11 @@
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "l5MImjTJBlwpn000"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -655,6 +664,116 @@
       "sort": 300000,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "name": "M-3 Predator",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Predator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-3 Predator is the most common sidearm in Systems Alliance service, carried as a backup weapon by the majority of Alliance personnel. Lightweight, reliable, and requiring minimal maintenance, it offers adequate stopping power for close-range threats. In the hands of an experienced soldier, its fifteen-round heat sink provides plenty of opportunity to resolve a situation that a primary weapon couldn't finish.</p>"
+        },
+        "rules": [],
+        "slug": "m-3-predator",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "baseItem": "m-3-predator",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 20
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 1,
+          "die": "d6",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 40,
+        "expend": 1,
+        "ammo": {
+          "capacity": 15,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "l5MImjTJBlwpn000",
+      "_key": "!actors.items!l5MImjTJBlzHXsJR.l5MImjTJBlwpn000",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.73b9302ac8c5ef66"
       }
     }
   ],

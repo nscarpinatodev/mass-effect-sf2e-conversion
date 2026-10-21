@@ -210,25 +210,26 @@
   "items": [
     {
       "_id": "w5RVdBbemXeVdCTo",
-      "name": "M-8 Avenger",
+      "name": "M-96 Mattock",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Mattock_Assault_Rifle.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 16
+          "value": 17
         },
         "damageRolls": {
           "dmg00w5RV": {
-            "damage": "3d6+10",
+            "damage": "3d10+9",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "automatic",
-            "range-increment-70"
+            "tech",
+            "kickback",
+            "range-increment-80"
           ],
           "otherTags": [],
           "config": {}
@@ -253,7 +254,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -262,7 +262,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "15a0de0a51539d88"
+        }
+      },
       "ownership": {
         "default": 0
       },

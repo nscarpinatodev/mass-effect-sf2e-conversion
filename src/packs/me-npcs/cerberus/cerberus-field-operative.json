@@ -201,29 +201,31 @@
   "items": [
     {
       "_id": "ce3bop3rvw000001",
-      "name": "Holdout Pistol",
+      "name": "M-5 Phalanx",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "cerberus-operative-pistol",
         "bonus": {
-          "value": 14
+          "value": 15
         },
         "damageRolls": {
           "0": {
             "damage": "3d6+8",
-            "damageType": "piercing"
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "agile",
-            "concealable",
-            "range-increment-30"
-          ]
+            "tech",
+            "range-increment-50"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -247,7 +249,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "2f84a2fa207c098d"
+        }
+      },
       "ownership": {
         "default": 0
       },

@@ -267,34 +267,31 @@
     },
     {
       "_id": "NPCRanged000001A",
-      "name": "Scattergun",
+      "name": "M-23 Eviscerator",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Eviscerator.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 10
+          "value": 14
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "3d6+4",
+            "damage": "4d8+4",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "reload-1",
-            "scatter-5"
+            "tech",
+            "scatter-5",
+            "range-increment-15"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 10,
-          "max": 20
-        },
         "description": {
           "value": "",
           "gm": ""
@@ -314,12 +311,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "85baae88a7088edd"
+        }
+      },
       "ownership": {
         "default": 0
       },

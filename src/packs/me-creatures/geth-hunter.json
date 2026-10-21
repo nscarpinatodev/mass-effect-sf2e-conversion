@@ -199,9 +199,9 @@
   "items": [
     {
       "_id": "4e14bdf7a7431583",
-      "name": "Geth Shotgun",
+      "name": "Geth Plasma Shotgun",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Geth_Plasma_Shotgun.png",
       "system": {
         "weaponType": {
           "value": "ranged"
@@ -212,15 +212,19 @@
         },
         "damageRolls": {
           "0": {
-            "damage": "2d8+8",
-            "damageType": "piercing"
+            "damage": "4d6+10",
+            "damageType": "fire",
+            "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "scatter-5",
-            "range-increment-30"
-          ]
+            "range-increment-40"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -244,7 +248,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "031fdf30b5wpn000"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -529,6 +537,117 @@
       "sort": 300002,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen002"
+      }
+    },
+    {
+      "name": "Geth Plasma Shotgun",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Geth_Plasma_Shotgun.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The Geth Plasma Shotgun charges a sphere of superheated plasma before releasing it in a wide burst of scorching fire. Unlike kinetic scatter weapons, its plasma dispersal can penetrate barrier fields before detonating against the target beneath. The charge time between shots is longer than conventional shotguns, but the incendiary devastation it delivers makes the wait worthwhile.</p>"
+        },
+        "rules": [],
+        "slug": "geth-plasma-shotgun",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "scatter-5"
+          ],
+          "rarity": "uncommon"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 5
+        },
+        "baseItem": "geth-plasma-shotgun",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 300
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "shotgun",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d6",
+          "damageType": "fire",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 40,
+        "expend": 1,
+        "ammo": {
+          "capacity": 8,
+          "baseType": "battery",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "031fdf30b5wpn000",
+      "_key": "!actors.items!031fdf30b5260503.031fdf30b5wpn000",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.9752397dee69692f"
       }
     }
   ],

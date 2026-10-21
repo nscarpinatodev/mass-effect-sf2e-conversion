@@ -259,46 +259,53 @@
     },
     {
       "_id": "39f6c05ddb265ad2",
-      "name": "Biotic Shockwave",
+      "name": "Shockwave (NPC)",
       "type": "action",
-      "img": "systems/pf2e/icons/default-icons/action.svg",
+      "img": "icons/magic/lightning/bolt-strike-purple.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
       "system": {
-        "slug": "praetorian-biotic-shockwave",
+        "slug": "me-npc-biotic-shockwave",
+        "description": {
+          "value": "<p>You slam biotic energy into the ground, sending a rolling kinetic shockwave along the surface that topples everything in its path.</p><p>All creatures in a @Template[line|distance:60]{60-foot line} must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-shockwave] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage.</p><p><strong>Failure</strong> The creature takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and is pushed 10 feet away from you.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and also <strong>Knocked Prone</strong>.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
         "actionType": {
           "value": "action"
         },
         "actions": {
           "value": 2
         },
-        "description": {
-          "value": "<p>The Praetorian unleashes a 30-foot cone of biotic force. All creatures in the area must succeed at a DC 34 Reflex save or take 5d6+14 force damage and be knocked prone (half damage on success, prone only on critical failure).</p>",
-          "gm": ""
-        },
-        "traits": {
-          "value": [
-            "force"
-          ]
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
         },
         "_migration": {
-          "version": null,
+          "version": 0.959,
           "previous": null
-        },
-        "rules": [],
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
         }
       },
-      "effects": [],
-      "folder": null,
+      "_key": "!actors.items!73171f71640fa444.39f6c05ddb265ad2",
       "sort": 200000,
-      "flags": {},
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!73171f71640fa444.39f6c05ddb265ad2"
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbioshockwave0"
+      }
     },
     {
       "_id": "4b5068a760a9d822",

@@ -205,24 +205,26 @@
   "items": [
     {
       "_id": "BHfTApgkP7GxXAoF",
-      "name": "Shotgun",
+      "name": "M-23 Eviscerator",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Eviscerator.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 13
+          "value": 14
         },
         "damageRolls": {
           "dmg00BHfT": {
-            "damage": "3d6+4",
+            "damage": "4d8+4",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-20"
+            "tech",
+            "scatter-5",
+            "range-increment-15"
           ],
           "otherTags": [],
           "config": {}
@@ -247,7 +249,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -256,7 +257,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "474b7dbb9b8aa8ed"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -328,14 +333,18 @@
     },
     {
       "_id": "Lbpni5zDyE86pcbF",
-      "name": "Biotic Charge",
+      "name": "Biotic Charge (NPC)",
       "type": "action",
-      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "img": "icons/magic/movement/abstract-ribbons-blue-purple.webp",
+      "effects": [],
       "flags": {},
+      "ownership": {
+        "default": 0
+      },
       "system": {
-        "slug": null,
+        "slug": "me-npc-biotic-charge",
         "description": {
-          "value": "<p><strong>Biotic Charge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>The Vanguard hurls itself in a biotic slipstream up to 40 feet in a straight line to an enemy it can see, ignoring difficult terrain. It then makes a melee Strike that deals an extra [[/r 1d6[force]]] damage. On a hit, the Vanguard's barrier immediately restores 10 Shield HP.</p>",
+          "value": "<p>You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to <strong>60 feet</strong> in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-charge] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(3*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and is knocked <strong>prone</strong>. Your Biotic Barrier recharges half of its maximum barrier HP.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(6*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and pushed <strong>5 feet</strong> away from you. Your Biotic Barrier recharges to full.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -343,8 +352,10 @@
           "otherTags": [],
           "value": [
             "biotic",
-            "force"
-          ]
+            "manipulate",
+            "move"
+          ],
+          "rarity": "common"
         },
         "actionType": {
           "value": "action"
@@ -360,17 +371,16 @@
           "remaster": true
         },
         "_migration": {
-          "version": null,
+          "version": 0.959,
           "previous": null
         }
       },
-      "effects": [],
-      "folder": null,
+      "_key": "!actors.items!VQff4eP6lYprz0Tc.Lbpni5zDyE86pcbF",
       "sort": 400000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!VQff4eP6lYprz0Tc.Lbpni5zDyE86pcbF"
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiobioticchar"
+      }
     },
     {
       "folder": null,
@@ -740,6 +750,65 @@
       "sort": 300001,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod001"
+      }
+    },
+    {
+      "_id": "VQff4eP6lYbbar00",
+      "name": "Activate Biotic Barrier (NPC)",
+      "type": "action",
+      "img": "icons/magic/lightning/barrier-shield-crackling-orb-pink.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "barrier": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-activate-biotic-barrier-npc",
+        "description": {
+          "gm": "",
+          "value": "<p>You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.</p><p>The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.</p><table><tbody><tr><td><strong>Level</strong></td><td><strong>Barrier HP</strong></td></tr><tr><td>1-3</td><td>5</td></tr><tr><td>4-5</td><td>10</td></tr><tr><td>6-7</td><td>15</td></tr><tr><td>8-9</td><td>20</td></tr><tr><td>10-11</td><td>25</td></tr><tr><td>12-13</td><td>30</td></tr><tr><td>14-15</td><td>35</td></tr><tr><td>16-17</td><td>40</td></tr><tr><td>18-19</td><td>45</td></tr><tr><td>20</td><td>50</td></tr></tbody></table>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [
+            "biotic",
+            "barrier"
+          ],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "interaction",
+        "selfEffect": {
+          "uuid": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meBioticBarrier0",
+          "name": "Biotic Barrier"
+        }
+      },
+      "_key": "!actors.items!VQff4eP6lYprz0Tc.VQff4eP6lYbbar00",
+      "sort": 700000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meActivateBbarNp"
       }
     }
   ],

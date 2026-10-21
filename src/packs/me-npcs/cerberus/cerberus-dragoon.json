@@ -248,27 +248,32 @@
     },
     {
       "_id": "ce3bdr490on0r001",
-      "name": "Assault Rifle",
+      "name": "M-96 Mattock",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Mattock_Assault_Rifle.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "cerberus-dragoon-rifle",
         "bonus": {
-          "value": 15
+          "value": 17
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+6",
-            "damageType": "piercing"
+            "damage": "3d10+9",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-60"
-          ]
+            "tech",
+            "kickback",
+            "range-increment-80"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -292,7 +297,11 @@
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "025cd3042266cf41"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -300,47 +309,53 @@
     },
     {
       "_id": "ce3bdr490on0a001",
-      "name": "Biotic Lash (Area)",
+      "name": "Lash (NPC)",
       "type": "action",
-      "img": "systems/pf2e/icons/default-icons/action.svg",
+      "img": "icons/magic/movement/abstract-ribbons-purple.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
       "system": {
-        "slug": "cerberus-dragoon-lash-area",
+        "slug": "me-npc-biotic-lash",
+        "description": {
+          "value": "<p>You extend a whip-like biotic tendril that snares an enemy and violently yanks them toward you, dealing damage on impact.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-lash] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage.</p><p><strong>Failure</strong> The target is pulled up to <strong>30 feet</strong> toward you and takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage. If pulled adjacent to you, it is Off-Guard until the start of your next turn.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and the target is also <strong>Grabbed</strong> until the start of your next turn.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
         "actionType": {
           "value": "action"
         },
         "actions": {
           "value": 2
         },
-        "description": {
-          "value": "<p>The Dragoon sends a lash of dark energy in a 20-foot line. Each creature in the line must succeed on a DC 23 Reflex save or take 3d8 bludgeoning damage and be Grabbed (pulled adjacent to the Dragoon). On a success: half damage, not Grabbed. On a critical failure: also Stunned 1. Recharge 1d3 rounds.</p>",
-          "gm": ""
-        },
-        "traits": {
-          "value": [
-            "biotic",
-            "concentrate"
-          ]
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
         },
         "_migration": {
-          "version": null,
+          "version": 0.959,
           "previous": null
-        },
-        "rules": [],
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
         }
       },
-      "effects": [],
-      "folder": null,
+      "_key": "!actors.items!a1b2c3d4e5f60005.ce3bdr490on0a001",
       "sort": 300000,
-      "flags": {},
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!a1b2c3d4e5f60005.ce3bdr490on0a001"
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiolash000000"
+      }
     },
     {
       "folder": null,

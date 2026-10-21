@@ -273,23 +273,24 @@
     },
     {
       "_id": "j8nmssSOBfilfUcX",
-      "name": "Heavy Pistol",
+      "name": "M-5 Phalanx",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 14
+          "value": 17
         },
         "damageRolls": {
           "dmg00j8nm": {
-            "damage": "1d8+4",
+            "damage": "3d6+9",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "range-increment-50"
           ],
           "otherTags": [],
@@ -315,7 +316,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -324,7 +324,11 @@
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "4817185938d6bac7"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -332,14 +336,18 @@
     },
     {
       "_id": "Lvm0ECmKl3vbsI7z",
-      "name": "Matriarch's Throw",
+      "name": "Throw (NPC)",
       "type": "action",
-      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "img": "icons/magic/movement/arrow-up-from-portal.webp",
+      "effects": [],
       "flags": {},
+      "ownership": {
+        "default": 0
+      },
       "system": {
-        "slug": null,
+        "slug": "me-npc-biotic-throw",
         "description": {
-          "value": "<p><strong>Matriarch's Throw</strong> <span class=\"action-glyph\">2</span></p><hr /><p><strong>Range</strong> 40 feet, one creature. The target must succeed at a Fortitude save (DC 23) or be hurled up to 20 feet and knocked prone, taking [[/r 2d6[bludgeoning]]] plus [[/r 1d6[force]]] damage (half on a success).</p>",
+          "value": "<p>You project a mass effect field that hurls a creature or object with violent force.</p><p>Choose a creature or unattended object within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-throw] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is pushed 5 feet away from you.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[bludgeoning]] damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.</p><p><strong>Critical Failure</strong> As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -347,8 +355,9 @@
           "otherTags": [],
           "value": [
             "biotic",
-            "force"
-          ]
+            "manipulate"
+          ],
+          "rarity": "common"
         },
         "actionType": {
           "value": "action"
@@ -364,17 +373,16 @@
           "remaster": true
         },
         "_migration": {
-          "version": null,
+          "version": 0.959,
           "previous": null
         }
       },
-      "effects": [],
-      "folder": null,
+      "_key": "!actors.items!Q31W9lrKoYFjEeXx.Lvm0ECmKl3vbsI7z",
       "sort": 400000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!Q31W9lrKoYFjEeXx.Lvm0ECmKl3vbsI7z"
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiothrow00000"
+      }
     },
     {
       "folder": null,

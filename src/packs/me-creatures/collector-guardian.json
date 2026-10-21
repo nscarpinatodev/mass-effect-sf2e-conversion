@@ -198,25 +198,30 @@
       "_id": "1e96936e3d897625",
       "name": "Collector Assault Rifle",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Collector_Assault_Rifle.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "collector-guardian-rifle",
         "bonus": {
-          "value": 20
+          "value": 23
         },
         "damageRolls": {
           "0": {
-            "damage": "2d8+8",
-            "damageType": "piercing"
+            "damage": "4d8+13",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-60"
-          ]
+            "tech",
+            "automatic",
+            "range-increment-70"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -240,7 +245,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "3bac2b8336wpn000"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -482,6 +491,117 @@
       "sort": 200002,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen003"
+      }
+    },
+    {
+      "name": "Collector Assault Rifle",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Collector_Assault_Rifle.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The Collector Assault Rifle is a weapon of Reaper-derived design, grown rather than manufactured. Its organic components generate kinetic mass effect fields through biological processes that no conventional engineering can replicate. The weapon's internal structure self-repairs minor damage over time and its ammunition capacity far exceeds any human-built equivalent, making it a prized and deeply unsettling battlefield acquisition.</p>"
+        },
+        "rules": [],
+        "slug": "collector-assault-rifle",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic"
+          ],
+          "rarity": "rare"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 7
+        },
+        "baseItem": "collector-assault-rifle",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 1000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "rifle",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 70,
+        "expend": 1,
+        "ammo": {
+          "capacity": 100,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "advanced",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "3bac2b8336wpn000",
+      "_key": "!actors.items!3bac2b8336caf011.3bac2b8336wpn000",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.27d6cda170557003"
       }
     }
   ],

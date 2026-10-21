@@ -1,0 +1,11 @@
+{
+  "name": "NPC Biotics",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "sort": 1000000,
+  "color": null,
+  "flags": {},
+  "_id": "mebioticnpcfoldr",
+  "_key": "!folders!mebioticnpcfoldr"
+}

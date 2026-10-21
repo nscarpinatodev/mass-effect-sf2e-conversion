@@ -1,0 +1,48 @@
+{
+  "_id": "npcbiodominate00",
+  "_key": "!items!npcbiodominate00",
+  "name": "Dominate (NPC)",
+  "type": "action",
+  "img": "icons/magic/control/silhouette-hold-mind.webp",
+  "folder": "mebioticnpcfoldr",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-npc-biotic-dominate",
+    "description": {
+      "value": "<p>You reach into an organic creature's nervous system with a mass effect field and seize direct control of their actions, turning them against their own allies.</p><p><strong>Requirements</strong> The target must be an organic creature.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[will|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-dominate] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is <strong>Confused</strong> until the end of its next turn.</p><p><strong>Failure</strong> The creature is under your control for 1 round, treating you and your allies as friends and enemies as foes. It uses its actions as you direct. At the end of each of its turns, it can attempt a new Will save to end the effect.</p><p><strong>Critical Failure</strong> As failure, but the effect lasts for 1 minute. The creature is also <strong>Stupefied 2</strong> for the duration.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+      "gm": ""
+    },
+    "rules": [],
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "biotic",
+        "incapacitation",
+        "manipulate",
+        "mental"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 3
+    },
+    "category": "offensive",
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  }
+}

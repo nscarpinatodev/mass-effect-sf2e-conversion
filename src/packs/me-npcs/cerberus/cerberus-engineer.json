@@ -198,27 +198,33 @@
   "items": [
     {
       "_id": "5d180aa5a1981e20",
-      "name": "Submachine Gun",
+      "name": "M-9 Tempest",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Tempest.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "cerberus-engineer-smg",
         "bonus": {
-          "value": 11
+          "value": 14
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+4",
-            "damageType": "piercing"
+            "damage": "4d4+7",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-50"
-          ]
+            "tech",
+            "automatic",
+            "agile",
+            "range-increment-25"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -242,7 +248,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "07e8dca4590215b6"
+        }
+      },
       "ownership": {
         "default": 0
       },

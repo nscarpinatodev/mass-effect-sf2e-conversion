@@ -222,25 +222,25 @@
   "items": [
     {
       "_id": "HoQPq08MKlj0y4Gr",
-      "name": "Custom Assault Rifle",
+      "name": "M-99 Saber",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Saber_Assault_Rifle.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 20
+          "value": 21
         },
         "damageRolls": {
           "dmg00HoQP": {
-            "damage": "3d8+13",
+            "damage": "4d10+12",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "automatic",
-            "range-increment-70"
+            "tech",
+            "range-increment-80"
           ],
           "otherTags": [],
           "config": {}
@@ -265,7 +265,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -274,7 +273,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "a76233058610586e"
+        }
+      },
       "ownership": {
         "default": 0
       },

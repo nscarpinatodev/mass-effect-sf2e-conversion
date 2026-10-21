@@ -196,29 +196,32 @@
   "items": [
     {
       "_id": "40e672cff9c0f54d",
-      "name": "Rocket Launcher",
+      "name": "M-100 Grenade Launcher",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HW_-_Grenade_Launcher.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "geth-rocket-trooper-launcher",
         "bonus": {
-          "value": 16
+          "value": 17
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+8",
-            "damageType": "fire"
+            "damage": "4d8+9",
+            "damageType": "bludgeoning",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "splash-10",
-            "brutal",
-            "range-increment-120"
-          ]
+            "tech",
+            "scatter-5",
+            "range-increment-40"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -242,7 +245,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "1c176f62e9wpn000"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -484,6 +491,117 @@
       "sort": 200002,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen002"
+      }
+    },
+    {
+      "name": "M-100 Grenade Launcher",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HW_-_Grenade_Launcher.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-100 Grenade Launcher fires mass effect-accelerated explosive rounds that detonate on impact, scattering kinetic fragments across a wide area. Its six-round capacity makes it one of the most sustained area-denial weapons available to infantry. Alliance heavy weapons teams use it to flush entrenched enemies from cover positions where direct fire would take too long. The concussive blast is as useful for disruption as it is for casualties.</p>"
+        },
+        "rules": [],
+        "slug": "m-100-grenade-launcher",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "scatter-5"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 5
+        },
+        "baseItem": "m-100-grenade-launcher",
+        "bulk": {
+          "value": 3
+        },
+        "price": {
+          "value": {
+            "gp": 250
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "bomb",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d8",
+          "damageType": "bludgeoning",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 40,
+        "expend": 1,
+        "ammo": {
+          "capacity": 6,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "1c176f62e9wpn000",
+      "_key": "!actors.items!1c176f62e94f984a.1c176f62e9wpn000",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.70f0a67d291e1427"
       }
     }
   ],

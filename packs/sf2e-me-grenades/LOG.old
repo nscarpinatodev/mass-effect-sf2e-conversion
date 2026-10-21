@@ -1,15 +1,15 @@
-2026/10/08-21:23:06.009 3f0c Recovering log #276
-2026/10/08-21:23:06.017 3f0c Delete type=0 #276
-2026/10/08-21:23:06.017 3f0c Delete type=3 #274
-2026/10/08-21:23:06.022 765c Level-0 table #282: started
-2026/10/08-21:23:06.024 765c Level-0 table #282: 6296 bytes OK
-2026/10/08-21:23:06.027 765c Delete type=0 #280
-2026/10/08-21:23:06.028 765c Manual compaction at level-0 from '!items!meGrenadeArc0000' @ 72057594037927935 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at (end)
-2026/10/08-21:23:06.028 765c Manual compaction at level-1 from '!items!meGrenadeArc0000' @ 72057594037927935 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at '!items!meGrenadeProxMin' @ 330 : 1
-2026/10/08-21:23:06.028 765c Compacting 1@1 + 1@2 files
-2026/10/08-21:23:06.032 765c Generated table #283@1: 6 keys, 6296 bytes
-2026/10/08-21:23:06.032 765c Compacted 1@1 + 1@2 files => 6296 bytes
-2026/10/08-21:23:06.036 765c compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/08-21:23:06.036 765c Delete type=2 #278
-2026/10/08-21:23:06.036 765c Delete type=2 #282
-2026/10/08-21:23:06.036 765c Manual compaction at level-1 from '!items!meGrenadeProxMin' @ 330 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at (end)
+2026/10/21-04:30:36.652 752c Recovering log #296
+2026/10/21-04:30:36.662 752c Delete type=0 #296
+2026/10/21-04:30:36.662 752c Delete type=3 #294
+2026/10/21-04:30:36.665 d600 Level-0 table #302: started
+2026/10/21-04:30:36.672 d600 Level-0 table #302: 6296 bytes OK
+2026/10/21-04:30:36.676 d600 Delete type=0 #300
+2026/10/21-04:30:36.676 d600 Manual compaction at level-0 from '!items!meGrenadeArc0000' @ 72057594037927935 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at (end)
+2026/10/21-04:30:36.676 d600 Manual compaction at level-1 from '!items!meGrenadeArc0000' @ 72057594037927935 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at '!items!meGrenadeProxMin' @ 354 : 1
+2026/10/21-04:30:36.676 d600 Compacting 1@1 + 1@2 files
+2026/10/21-04:30:36.681 d600 Generated table #303@1: 6 keys, 6296 bytes
+2026/10/21-04:30:36.681 d600 Compacted 1@1 + 1@2 files => 6296 bytes
+2026/10/21-04:30:36.685 d600 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/21-04:30:36.685 d600 Delete type=2 #298
+2026/10/21-04:30:36.685 d600 Delete type=2 #302
+2026/10/21-04:30:36.685 d600 Manual compaction at level-1 from '!items!meGrenadeProxMin' @ 354 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at (end)

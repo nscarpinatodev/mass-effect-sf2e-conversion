@@ -208,9 +208,9 @@
   "items": [
     {
       "_id": "EWCdi6IbdmSb3T3K",
-      "name": "Machine Pistol",
+      "name": "M-9 Tempest",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Tempest.png",
       "system": {
         "slug": null,
         "bonus": {
@@ -218,15 +218,17 @@
         },
         "damageRolls": {
           "dmg00EWCd": {
-            "damage": "2d6+4",
+            "damage": "4d4+7",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "automatic",
-            "range-increment-40"
+            "agile",
+            "range-increment-25"
           ],
           "otherTags": [],
           "config": {}
@@ -251,7 +253,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -260,7 +261,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "7446f1465fa19410"
+        }
+      },
       "ownership": {
         "default": 0
       },

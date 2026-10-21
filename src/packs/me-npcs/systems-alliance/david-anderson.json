@@ -206,27 +206,31 @@
   "items": [
     {
       "_id": "andsnw0000000001",
-      "name": "M-8 Avenger",
+      "name": "M-99 Saber",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Saber_Assault_Rifle.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "anderson-avenger",
         "bonus": {
-          "value": 22
+          "value": 23
         },
         "damageRolls": {
           "0": {
-            "damage": "5d6+12",
-            "damageType": "piercing"
+            "damage": "4d10+13",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-60"
-          ]
+            "tech",
+            "range-increment-80"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -250,7 +254,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "1358d7b95da6285d"
+        }
+      },
       "ownership": {
         "default": 0
       },

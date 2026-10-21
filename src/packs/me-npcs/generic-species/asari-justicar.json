@@ -279,32 +279,28 @@
       "_id": "NPCRanged000001A",
       "name": "M-5 Phalanx",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 17
+          "value": 21
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "2d10+7",
+            "damage": "3d6+12",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "analog",
-            "reload-1"
+            "tech",
+            "range-increment-50"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 20,
-          "max": 80
-        },
         "description": {
           "value": "",
           "gm": ""
@@ -324,12 +320,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "18d7464c1e710fc8"
+        }
+      },
       "ownership": {
         "default": 0
       },

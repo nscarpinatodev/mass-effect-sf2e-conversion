@@ -211,29 +211,26 @@
   "items": [
     {
       "_id": "w0n8yzrEzVNE6HmB",
-      "name": "Scorpion Pistol",
+      "name": "Scorpion",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Scorpion_Heavy_Pistol.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 17
+          "value": 18
         },
         "damageRolls": {
           "dmg00w0n8": {
-            "damage": "3d8+6",
-            "damageType": "piercing",
-            "category": null
-          },
-          "dmg01w0n8": {
-            "damage": "1d6",
-            "damageType": "fire",
+            "damage": "3d6+10",
+            "damageType": "bludgeoning",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-50"
+            "tech",
+            "scatter-5",
+            "range-increment-25"
           ],
           "otherTags": [],
           "config": {}
@@ -258,7 +255,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -267,7 +263,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "d544a50333ca8257"
+        }
+      },
       "ownership": {
         "default": 0
       },

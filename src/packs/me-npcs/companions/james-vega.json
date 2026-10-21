@@ -200,28 +200,33 @@
   "items": [
     {
       "_id": "vegaw00000000001",
-      "name": "M-96 Mattock",
+      "name": "M-76 Revenant",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Revenant.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "vega-mattock",
         "bonus": {
-          "value": 20
+          "value": 18
         },
         "damageRolls": {
           "0": {
-            "damage": "2d8+9",
-            "damageType": "piercing"
+            "damage": "4d6+10",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "fatal-d10",
-            "range-increment-80"
-          ]
+            "tech",
+            "automatic",
+            "unwieldy",
+            "range-increment-60"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -245,7 +250,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "32fc63b882bfa299"
+        }
+      },
       "ownership": {
         "default": 0
       },

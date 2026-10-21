@@ -206,28 +206,34 @@
   "items": [
     {
       "_id": "talizw0000000001",
-      "name": "M-23 Katana",
+      "name": "M-300 Claymore",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Claymore.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "tali-katana",
         "bonus": {
-          "value": 19
+          "value": 23
         },
         "damageRolls": {
           "0": {
-            "damage": "4d8+12",
-            "damageType": "piercing"
+            "damage": "6d8+13",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "scatter-5",
-            "range-increment-20"
-          ]
+            "fatal-d12",
+            "kickback",
+            "range-increment-10"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -251,7 +257,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "g1h2i3j4k5wpn000"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -680,6 +690,119 @@
       "sort": 400002,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen001"
+      }
+    },
+    {
+      "name": "M-300 Claymore",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Claymore.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-300 Claymore is the most powerful shotgun available to ground troops in Cerberus's arsenal. A single-shot weapon of staggering lethality, it fires a dense kinetic slug capable of piercing vehicle-grade armor at point-blank range. The recoil is severe enough to require Krogan physiology or specialized shock-absorbing harnesses - for everyone else, it is a weapon of last resort and absolute commitment.</p>"
+        },
+        "rules": [],
+        "slug": "m-300-claymore",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "scatter-5",
+            "fatal-d12",
+            "kickback"
+          ],
+          "rarity": "uncommon"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 9
+        },
+        "baseItem": "m-300-claymore",
+        "bulk": {
+          "value": 3
+        },
+        "price": {
+          "value": {
+            "gp": 2000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "shotgun",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 5,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 10,
+        "expend": 1,
+        "ammo": {
+          "capacity": 1,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "2"
+        },
+        "grade": "superior",
+        "runes": {
+          "potency": 0,
+          "striking": 4,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "g1h2i3j4k5wpn000",
+      "_key": "!actors.items!g1h2i3j4k5l60002.g1h2i3j4k5wpn000",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.bb7d8e7ea2d13572"
       }
     }
   ],

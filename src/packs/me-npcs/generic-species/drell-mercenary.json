@@ -265,13 +265,13 @@
     },
     {
       "_id": "NPCRanged000001A",
-      "name": "Pistol",
+      "name": "M-5 Phalanx",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 11
+          "value": 12
         },
         "damageRolls": {
           "dmgroll0002": {
@@ -282,16 +282,13 @@
         },
         "traits": {
           "value": [
-            "analog"
+            "tech",
+            "range-increment-50"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 20,
-          "max": 60
-        },
         "description": {
           "value": "",
           "gm": ""
@@ -311,12 +308,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "9b5bd68b26361829"
+        }
+      },
       "ownership": {
         "default": 0
       },

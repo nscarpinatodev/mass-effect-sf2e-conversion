@@ -617,6 +617,71 @@
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
       }
+    },
+    {
+      "_id": "MENPC00000strk00",
+      "_key": "!actors.items!MENPC00000000007.MENPC00000strk00",
+      "name": "M-9 Tempest",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Tempest.png",
+      "effects": [],
+      "folder": null,
+      "sort": 50000,
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "4422b92789fc0163"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 12
+        },
+        "damageRolls": {
+          "dmg0": {
+            "damage": "3d4+6",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "tech",
+            "automatic",
+            "agile",
+            "range-increment-25"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      }
     }
   ],
   "effects": [],

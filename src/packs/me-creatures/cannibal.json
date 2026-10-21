@@ -196,28 +196,34 @@
   "items": [
     {
       "_id": "5fde5ccab472b46e",
-      "name": "Shotgun Blast",
+      "name": "M-11 Wraith",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Wraith_Shotgun.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "cannibal-shotgun",
         "bonus": {
-          "value": 16
+          "value": 17
         },
         "damageRolls": {
           "0": {
-            "damage": "2d6+6",
-            "damageType": "piercing"
+            "damage": "4d8+9",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "scatter-5",
-            "range-increment-30"
-          ]
+            "fatal-d10",
+            "kickback",
+            "range-increment-15"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -241,7 +247,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "aeede87dbcwpn000"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -389,6 +399,119 @@
       "sort": 400000,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meStdCombatFrame"
+      }
+    },
+    {
+      "name": "M-11 Wraith",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Wraith_Shotgun.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-11 Wraith is a single-shot combat shotgun that sacrifices fire rate for kinetic devastation. Each round must be manually cycled, but the single shell it chambers carries enough mass-accelerated shot to drop a Phantom through their kinetic barrier in one blast. Originally designed for breach-and-clear operations, Cerberus tacticians found its two-shell capacity insufficient for sustained combat - the operatives using it countered that if two shots aren't enough, the problem was aim, not capacity.</p>"
+        },
+        "rules": [],
+        "slug": "m-11-wraith",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "scatter-5",
+            "fatal-d10",
+            "kickback"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 5
+        },
+        "baseItem": "m-11-wraith",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 250
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "shotgun",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 15,
+        "expend": 1,
+        "ammo": {
+          "capacity": 2,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "aeede87dbcwpn000",
+      "_key": "!actors.items!aeede87dbc69cfc1.aeede87dbcwpn000",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.d72ce93b0c70b4f1"
       }
     }
   ],

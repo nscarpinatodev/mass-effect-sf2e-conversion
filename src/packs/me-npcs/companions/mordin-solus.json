@@ -206,29 +206,32 @@
   "items": [
     {
       "_id": "mordiw0000000001",
-      "name": "M-9 Tempest",
+      "name": "Scorpion",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Scorpion_Heavy_Pistol.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "mordin-tempest",
         "bonus": {
-          "value": 17
+          "value": 18
         },
         "damageRolls": {
           "0": {
-            "damage": "4d6+9",
-            "damageType": "piercing"
+            "damage": "3d6+10",
+            "damageType": "bludgeoning",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "agile",
-            "burst-fire",
-            "range-increment-50"
-          ]
+            "tech",
+            "scatter-5",
+            "range-increment-25"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -252,7 +255,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "ba0cc4f8c6cce2e3"
+        }
+      },
       "ownership": {
         "default": 0
       },

@@ -200,24 +200,26 @@
   "items": [
     {
       "_id": "3KdN3S4pok7081A8",
-      "name": "Light Machine Gun",
+      "name": "M-76 Revenant",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Revenant.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 11
+          "value": 14
         },
         "damageRolls": {
           "dmg003KdN": {
-            "damage": "3d6+4",
+            "damage": "4d6+7",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "automatic",
+            "unwieldy",
             "range-increment-60"
           ],
           "otherTags": [],
@@ -243,7 +245,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -252,7 +253,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "bhVInTT750wpn000"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -260,24 +265,27 @@
     },
     {
       "_id": "zLn3Kz8CHxMQNE1Z",
-      "name": "Sidearm",
+      "name": "M-9 Tempest",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Tempest.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 9
+          "value": 14
         },
         "damageRolls": {
           "dmg00zLn3": {
-            "damage": "1d8+4",
+            "damage": "4d4+7",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-40"
+            "tech",
+            "automatic",
+            "agile",
+            "range-increment-25"
           ],
           "otherTags": [],
           "config": {}
@@ -302,7 +310,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -311,7 +318,11 @@
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "bc6f869f3a69ce85"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -730,6 +741,118 @@
       "sort": 300001,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod001"
+      }
+    },
+    {
+      "name": "M-76 Revenant",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Revenant.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-76 Revenant is a heavy machine gun designed to provide overwhelming suppressive fire. Its enormous heat sink capacity enables sustained bursts that shred through enemy cover and armor alike. The weapon's considerable mass and recoil make precise movement difficult while firing, but its sheer volume of fire compensates with devastating effect.</p>"
+        },
+        "rules": [],
+        "slug": "m-76-revenant",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic",
+            "unwieldy"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 7
+        },
+        "baseItem": "m-76-revenant",
+        "bulk": {
+          "value": 3
+        },
+        "price": {
+          "value": {
+            "gp": 700
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "rifle",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d6",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 60,
+        "expend": 1,
+        "ammo": {
+          "capacity": 200,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "advanced",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "bhVInTT750wpn000",
+      "_key": "!actors.items!bhVInTT750Ox51mo.bhVInTT750wpn000",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.7f648c8da806beda"
       }
     }
   ],

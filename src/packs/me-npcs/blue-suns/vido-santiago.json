@@ -210,23 +210,24 @@
   "items": [
     {
       "_id": "Cp28QZUOugjBta0m",
-      "name": "Custom Pistol",
+      "name": "M-5 Phalanx",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 14
+          "value": 15
         },
         "damageRolls": {
           "dmg00Cp28": {
-            "damage": "2d8+9",
+            "damage": "3d6+8",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "range-increment-50"
           ],
           "otherTags": [],
@@ -252,7 +253,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -261,7 +261,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "a568f4ab6a5e3f3f"
+        }
+      },
       "ownership": {
         "default": 0
       },

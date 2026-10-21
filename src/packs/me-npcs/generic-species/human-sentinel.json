@@ -204,25 +204,27 @@
   "items": [
     {
       "_id": "bOK8qsY2IlQUgi5q",
-      "name": "Submachine Gun",
+      "name": "M-9 Tempest",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Tempest.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 12
+          "value": 14
         },
         "damageRolls": {
           "dmg00bOK8": {
-            "damage": "2d6+4",
+            "damage": "4d4+7",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "automatic",
-            "range-increment-40"
+            "agile",
+            "range-increment-25"
           ],
           "otherTags": [],
           "config": {}
@@ -247,7 +249,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -256,7 +257,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "a69b4b1bb1d5f810"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -328,14 +333,18 @@
     },
     {
       "_id": "WmTzK1VPprylNmx3",
-      "name": "Warp",
+      "name": "Warp (NPC)",
       "type": "action",
-      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "img": "icons/magic/unholy/beam-impact-purple.webp",
+      "effects": [],
       "flags": {},
+      "ownership": {
+        "default": 0
+      },
       "system": {
-        "slug": null,
+        "slug": "me-npc-biotic-warp",
         "description": {
-          "value": "<p><strong>Warp</strong> <span class=\"action-glyph\">2</span></p><hr /><p><strong>Range</strong> 40 feet, one creature. Deals [[/r 2d6[force]]] damage (basic Fortitude save, DC 20). On a failure the target also takes 1d6 persistent force damage as the field tears at it.</p>",
+          "value": "<p>You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.</p><p>Choose a creature within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-warp] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage and @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d4[persistent,void]] damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -343,8 +352,9 @@
           "otherTags": [],
           "value": [
             "biotic",
-            "force"
-          ]
+            "manipulate"
+          ],
+          "rarity": "common"
         },
         "actionType": {
           "value": "action"
@@ -360,17 +370,16 @@
           "remaster": true
         },
         "_migration": {
-          "version": null,
+          "version": 0.959,
           "previous": null
         }
       },
-      "effects": [],
-      "folder": null,
+      "_key": "!actors.items!IqXEBpZQAkYeUXpA.WmTzK1VPprylNmx3",
       "sort": 400000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!IqXEBpZQAkYeUXpA.WmTzK1VPprylNmx3"
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiowarp000000"
+      }
     },
     {
       "_id": "STvCxOJEHsrIHO6k",

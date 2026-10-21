@@ -269,27 +269,30 @@
       "_id": "mys2smg000000001",
       "name": "M-25 Hornet",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Hornet_Smg.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "mystaria-m25-hornet",
         "bonus": {
-          "value": 12
+          "value": 15
         },
         "damageRolls": {
           "0": {
-            "damage": "1d6+4",
-            "damageType": "piercing"
+            "damage": "4d4+8",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "agile",
-            "burst-fire",
-            "range-increment-30"
-          ]
+            "tech",
+            "automatic",
+            "range-increment-25"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -313,7 +316,11 @@
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "e1f2a3b4c5wpn000"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -323,27 +330,31 @@
       "_id": "mys2ar0000000001",
       "name": "M-13 Raptor",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Raptor_Sniper_Rifle.webp",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "mystaria-m13-raptor",
         "bonus": {
-          "value": 13
+          "value": 15
         },
         "damageRolls": {
           "0": {
-            "damage": "2d8+5",
-            "damageType": "piercing"
+            "damage": "3d6+8",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "fatal-d12",
+            "tech",
+            "deadly-d10",
             "volley-30",
-            "range-increment-150"
-          ]
+            "range-increment-120"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -367,7 +378,11 @@
       "effects": [],
       "folder": null,
       "sort": 300000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "e1f2a3b4c5raptor"
+        }
+      },
       "ownership": {
         "default": 0
       },
@@ -748,6 +763,117 @@
       "sort": 700000,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.13a9b7e2c4d6f810"
+      }
+    },
+    {
+      "name": "M-25 Hornet",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Hornet_Smg.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-25 Hornet is a compact submachine gun originally developed for Terminus mercenary groups operating in tight urban environments. Its automatic fire delivers a consistent stream of kinetic rounds with enough velocity to defeat light armor, while its single-hand operation leaves the other free for biotics, tech abilities, or cover manipulation. Cerberus assault troopers adopted it during the Reaper War, where its combination of compactness and sustained fire rate proved well-suited to rapid breach operations.</p>"
+        },
+        "rules": [],
+        "slug": "m-25-hornet",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "automatic"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "baseItem": "m-25-hornet",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 100
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d4",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 25,
+        "expend": 1,
+        "ammo": {
+          "capacity": 60,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "e1f2a3b4c5wpn000",
+      "_key": "!actors.items!e1f2a3b4c5d60002.e1f2a3b4c5wpn000",
+      "sort": 900000,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.02607fb6608aa43c"
       }
     }
   ],

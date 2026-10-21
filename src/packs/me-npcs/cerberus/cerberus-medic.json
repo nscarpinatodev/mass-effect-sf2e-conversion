@@ -195,27 +195,32 @@
   "items": [
     {
       "_id": "ce3bmed1cw000001",
-      "name": "Light Pistol",
+      "name": "M-4 Shuriken",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Shuriken.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "cerberus-medic-pistol",
         "bonus": {
-          "value": 8
+          "value": 11
         },
         "damageRolls": {
           "0": {
-            "damage": "2d4+5",
-            "damageType": "piercing"
+            "damage": "3d4+5",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-30"
-          ]
+            "tech",
+            "automatic",
+            "range-increment-20"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -239,7 +244,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "c30733d2db57f342"
+        }
+      },
       "ownership": {
         "default": 0
       },

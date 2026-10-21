@@ -1,15 +1,15 @@
-2026/10/08-21:23:05.213 3f0c Recovering log #347
-2026/10/08-21:23:05.219 3f0c Delete type=0 #347
-2026/10/08-21:23:05.220 3f0c Delete type=3 #345
-2026/10/08-21:23:05.230 765c Level-0 table #353: started
-2026/10/08-21:23:05.240 765c Level-0 table #353: 52799 bytes OK
-2026/10/08-21:23:05.244 765c Delete type=0 #351
-2026/10/08-21:23:05.244 765c Manual compaction at level-0 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)
-2026/10/08-21:23:05.245 765c Manual compaction at level-1 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at '!items!MEFeature0000024' @ 3827 : 1
-2026/10/08-21:23:05.245 765c Compacting 1@1 + 1@2 files
-2026/10/08-21:23:05.254 765c Generated table #354@1: 55 keys, 52799 bytes
-2026/10/08-21:23:05.254 765c Compacted 1@1 + 1@2 files => 52799 bytes
-2026/10/08-21:23:05.256 765c compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/08-21:23:05.256 765c Delete type=2 #349
-2026/10/08-21:23:05.256 765c Delete type=2 #353
-2026/10/08-21:23:05.256 765c Manual compaction at level-1 from '!items!MEFeature0000024' @ 3827 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)
+2026/10/21-04:30:35.864 752c Recovering log #367
+2026/10/21-04:30:35.878 752c Delete type=0 #367
+2026/10/21-04:30:35.878 752c Delete type=3 #365
+2026/10/21-04:30:35.883 d600 Level-0 table #373: started
+2026/10/21-04:30:35.893 d600 Level-0 table #373: 52785 bytes OK
+2026/10/21-04:30:35.897 d600 Delete type=0 #371
+2026/10/21-04:30:35.897 d600 Manual compaction at level-0 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)
+2026/10/21-04:30:35.898 d600 Manual compaction at level-1 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at '!items!MEFeature0000024' @ 4047 : 1
+2026/10/21-04:30:35.898 d600 Compacting 1@1 + 1@2 files
+2026/10/21-04:30:35.909 d600 Generated table #374@1: 55 keys, 52785 bytes
+2026/10/21-04:30:35.909 d600 Compacted 1@1 + 1@2 files => 52785 bytes
+2026/10/21-04:30:35.915 d600 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/21-04:30:35.915 d600 Delete type=2 #369
+2026/10/21-04:30:35.915 d600 Delete type=2 #373
+2026/10/21-04:30:35.915 d600 Manual compaction at level-1 from '!items!MEFeature0000024' @ 4047 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)

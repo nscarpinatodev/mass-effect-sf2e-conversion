@@ -208,34 +208,30 @@
   "items": [
     {
       "_id": "NPCRanged000001A",
-      "name": "Holdout Pistol",
+      "name": "M-3 Predator",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Predator.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 6
+          "value": 11
         },
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "1d4+1",
+            "damage": "1d6+5",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "analog",
-            "concealable"
+            "tech",
+            "range-increment-40"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 10,
-          "max": 30
-        },
         "description": {
           "value": "<p>A compact, easily concealed sidearm.</p>",
           "gm": ""
@@ -255,12 +251,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "fb279fcf8fef041a"
+        }
+      },
       "ownership": {
         "default": 0
       },

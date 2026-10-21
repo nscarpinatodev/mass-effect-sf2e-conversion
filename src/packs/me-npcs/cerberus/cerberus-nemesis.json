@@ -198,29 +198,33 @@
   "items": [
     {
       "_id": "ce3bne0mes1sw001",
-      "name": "Sniper Rifle",
+      "name": "M-90 Indra",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Indra_Sniper_Rifle.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "cerberus-nemesis-sniper",
         "bonus": {
-          "value": 16
+          "value": 15
         },
         "damageRolls": {
           "0": {
-            "damage": "3d8+6",
-            "damageType": "piercing"
+            "damage": "3d6+8",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "fatal-d12",
-            "volley-50",
-            "range-increment-200"
-          ]
+            "tech",
+            "automatic",
+            "volley-30",
+            "range-increment-120"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -244,7 +248,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "b12c5bf11d4a5078"
+        }
+      },
       "ownership": {
         "default": 0
       },

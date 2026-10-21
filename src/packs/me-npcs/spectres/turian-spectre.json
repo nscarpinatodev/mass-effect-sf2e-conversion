@@ -274,34 +274,32 @@
     },
     {
       "_id": "NPCRanged000001A",
-      "name": "Spectre-Issue Assault Rifle",
+      "name": "M-76 Revenant",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Revenant.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 19
+          "value": 20
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "3d8+12",
+            "damage": "4d6+11",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "analog",
-            "reload-2"
+            "tech",
+            "automatic",
+            "unwieldy",
+            "range-increment-60"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 40,
-          "max": 160
-        },
         "description": {
           "value": "<p>Spectre-issue hardware, restricted from civilian channels.</p>",
           "gm": ""
@@ -321,12 +319,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "73600256375783b0"
+        }
+      },
       "ownership": {
         "default": 0
       },

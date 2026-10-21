@@ -200,25 +200,26 @@
   "items": [
     {
       "_id": "RTGcmn8gC03cDy05",
-      "name": "Submachine Gun",
+      "name": "M-4 Shuriken",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Shuriken.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 9
+          "value": 11
         },
         "damageRolls": {
           "dmg00RTGc": {
-            "damage": "2d6+3",
+            "damage": "3d4+5",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
             "automatic",
-            "range-increment-40"
+            "range-increment-20"
           ],
           "otherTags": [],
           "config": {}
@@ -243,7 +244,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -252,7 +252,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "f2f774cb2f7d0e9f"
+        }
+      },
       "ownership": {
         "default": 0
       },

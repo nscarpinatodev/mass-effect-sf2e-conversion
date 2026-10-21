@@ -271,17 +271,42 @@ console.log('Derived data: action costs and Magazine Upgrade I, never compoundin
   assert(weapon.system.ammo.capacity === 18, `capacity 12 -> 18 after two prepares (got ${weapon.system.ammo.capacity})`);
 }
 
+console.log('NPC biotics: dice scale with the caster\'s level');
+{
+  const elite = new Actor('Asari Commando', {}); elite.level = 8;      // x3
+  const grunt = new Actor('Biotic Grunt', {}); grunt.level = 2;        // x1
+  const t1 = new Actor('T1'), t2 = new Actor('T2');
+  await save('me-npc-biotic-warp', 'failure', t1, { caster: elite, origin: 'Item.npc-warp-8' });
+  await save('me-npc-biotic-warp', 'failure', t2, { caster: grunt, origin: 'Item.npc-warp-2' });
+  assert(t1.damage[0] === 36 && t2.damage[0] === 12, `6d6 at level 8, 2d6 at level 2 (got ${t1.damage}, ${t2.damage})`);
+  const pers = t1.created.find((d) => d.system.slug === 'persistent-damage');
+  assert(pers?.system.persistent.formula === '3d4', `persistent 1d4 x3 = ${pers?.system.persistent.formula}`);
+
+  const useHook = hooks.on.createChatMessage[1];
+  const b = barrierItem(12, 20);
+  const npc = new Actor('NPC Vanguard', { items: [b] }); npc.items = [b];
+  uuids['Item.npc-nova'] = { slug: 'me-npc-biotic-nova', actor: npc };
+  await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'action', uuid: 'Item.npc-nova' } } } });
+  assert(npc.flags[MOD].novaCharge === 12 && b.flags[MOD].barrierCurrent === 0,
+    `NPC Nova, posted as an action, records 12 and empties the barrier (got ${npc.flags[MOD].novaCharge}, ${b.flags[MOD].barrierCurrent})`);
+}
+
 console.log('Every save button in the packs has a registry entry');
 {
-  const registered = new Set([...src.matchAll(/^  '([\w-]+)': \{\s*\n\s*name:/gm)].map((m) => m[1]));
+  // the live registry, so the NPC entries me-powers.js generates count too
+  const registered = new Set(Object.keys(ctx.MassEffectPowers.registry));
   const packs = new URL('../src/packs/', import.meta.url);
   const used = new Map();
-  for (const pack of readdirSync(packs)) {
-    for (const file of readdirSync(new URL(`${pack}/`, packs)).filter((f) => f.endsWith('.json'))) {
-      const text = readFileSync(new URL(`${pack}/${file}`, packs), 'utf8');
-      for (const m of text.matchAll(/options:me-power:([\w-]+)/g)) used.set(m[1], `${pack}/${file}`);
+  const walk = (dir, rel) => {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      if (entry.isDirectory()) walk(new URL(`${entry.name}/`, dir), `${rel}/${entry.name}`);
+      else if (entry.name.endsWith('.json')) {
+        const text = readFileSync(new URL(entry.name, dir), 'utf8');
+        for (const m of text.matchAll(/options:me-power:([\w-]+)/g)) used.set(m[1], `${rel}/${entry.name}`);
+      }
     }
-  }
+  };
+  walk(packs, '');
   const missing = [...used].filter(([key]) => !registered.has(key));
   assert(missing.length === 0, `${used.size} keys used, ${registered.size} registered${missing.length ? `; missing: ${missing.map(([k, f]) => `${k} (${f})`).join(', ')}` : ''}`);
 }

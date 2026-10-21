@@ -195,27 +195,32 @@
   "items": [
     {
       "_id": "c12a2ebce914d362",
-      "name": "Assault Rifle",
+      "name": "M-8 Avenger",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Avenger.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "cerberus-trooper-assault-rifle",
         "bonus": {
-          "value": 9
+          "value": 11
         },
         "damageRolls": {
           "0": {
-            "damage": "2d6+3",
-            "damageType": "piercing"
+            "damage": "1d8+5",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
+            "automatic",
             "range-increment-60"
-          ]
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -239,7 +244,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "4e5780d76b6f1d57"
+        }
+      },
       "ownership": {
         "default": 0
       },

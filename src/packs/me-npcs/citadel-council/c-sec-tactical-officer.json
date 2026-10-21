@@ -203,22 +203,24 @@
     {
       "name": "M-27 Scimitar",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Scimitar.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 13
+          "value": 14
         },
         "damageRolls": {
           "0": {
-            "damage": "2d10+7",
+            "damage": "4d6+7",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-20"
+            "tech",
+            "scatter-5",
+            "range-increment-15"
           ],
           "otherTags": [],
           "config": {}
@@ -243,7 +245,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -257,7 +258,11 @@
       "ownership": {
         "default": 0
       },
-      "flags": {}
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "csectactical0008"
+        }
+      }
     },
     {
       "name": "Combat Knife",

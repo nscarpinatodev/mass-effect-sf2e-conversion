@@ -204,25 +204,26 @@
   "items": [
     {
       "_id": "Q1vitC2U3tGpLQTl",
-      "name": "Assault Rifle",
+      "name": "M-96 Mattock",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Mattock_Assault_Rifle.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 14
+          "value": 15
         },
         "damageRolls": {
           "dmg00Q1vi": {
-            "damage": "3d6+8",
+            "damage": "3d10+8",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "automatic",
-            "range-increment-60"
+            "tech",
+            "kickback",
+            "range-increment-80"
           ],
           "otherTags": [],
           "config": {}
@@ -247,7 +248,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -256,7 +256,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "f8b8b35c64afdeed"
+        }
+      },
       "ownership": {
         "default": 0
       },

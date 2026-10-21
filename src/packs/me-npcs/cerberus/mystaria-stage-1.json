@@ -267,29 +267,33 @@
     },
     {
       "_id": "mys1ps0000000001",
-      "name": "Light Pistol",
+      "name": "M-9 Tempest",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Tempest.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "mystaria-pistol",
         "bonus": {
-          "value": 10
+          "value": 12
         },
         "damageRolls": {
           "0": {
-            "damage": "2d4+3",
-            "damageType": "piercing"
+            "damage": "3d4+6",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
+            "tech",
+            "automatic",
             "agile",
-            "concealable",
-            "range-increment-30"
-          ]
+            "range-increment-25"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -313,7 +317,11 @@
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "63bcafd7ce8b9720"
+        }
+      },
       "ownership": {
         "default": 0
       },

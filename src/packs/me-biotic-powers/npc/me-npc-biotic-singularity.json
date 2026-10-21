@@ -1,0 +1,47 @@
+{
+  "_id": "npcbiosingularit",
+  "_key": "!items!npcbiosingularit",
+  "name": "Singularity (NPC)",
+  "type": "action",
+  "img": "icons/magic/control/debuff-gravity-pull-blue-purple.webp",
+  "folder": "mebioticnpcfoldr",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-npc-biotic-singularity",
+    "description": {
+      "value": "<p>You create a localized mass effect gravity well that pulls nearby enemies in and suspends them helplessly.</p><p>You create a Singularity at a point within <strong>60 feet</strong>. All creatures within a @Template[burst|distance:20]{20-foot radius burst} centered on that point must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-singularity] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is pulled 10 feet toward the singularity's center.</p><p><strong>Failure</strong> The creature is pulled to the singularity's center and becomes <strong>Restrained</strong> (Escape DC equals the creature's power DC). The singularity persists until the start of your next turn; you may Sustain it as a free action each round for up to 1 minute.</p><p><strong>Critical Failure</strong> As failure. Additionally, the creature takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage at the start of each of its turns while restrained.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+      "gm": ""
+    },
+    "rules": [],
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "biotic",
+        "concentrate",
+        "manipulate"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 3
+    },
+    "category": "offensive",
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  }
+}

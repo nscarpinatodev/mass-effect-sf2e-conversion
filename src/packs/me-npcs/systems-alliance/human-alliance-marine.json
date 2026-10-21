@@ -266,32 +266,29 @@
       "_id": "NPCRanged000001A",
       "name": "M-8 Avenger",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Avenger.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 15
+          "value": 18
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "4d6+9",
+            "damage": "2d8+10",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "analog",
-            "reload-2"
+            "tech",
+            "automatic",
+            "range-increment-60"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 30,
-          "max": 120
-        },
         "description": {
           "value": "",
           "gm": ""
@@ -311,12 +308,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "76bf73b1d98a007d"
+        }
+      },
       "ownership": {
         "default": 0
       },

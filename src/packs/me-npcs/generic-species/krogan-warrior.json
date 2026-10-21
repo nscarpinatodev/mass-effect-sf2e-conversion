@@ -263,34 +263,33 @@
     },
     {
       "_id": "NPCMelee0000002A",
-      "name": "Claymore Shotgun",
+      "name": "M-300 Claymore",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Claymore.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 13
+          "value": 15
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "2d10+5",
+            "damage": "6d8+0",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "reload-2",
-            "scatter-10"
+            "tech",
+            "scatter-5",
+            "fatal-d12",
+            "kickback",
+            "range-increment-10"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 15,
-          "max": 30
-        },
         "description": {
           "value": "",
           "gm": ""
@@ -310,12 +309,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "48b7794c6b87807c"
+        }
+      },
       "ownership": {
         "default": 0
       },

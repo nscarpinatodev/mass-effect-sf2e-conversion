@@ -200,24 +200,26 @@
   "items": [
     {
       "_id": "XReJmgv3JxdcEJI2",
-      "name": "Shotgun",
+      "name": "M-23 Eviscerator",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SG_-_Eviscerator.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 11
+          "value": 12
         },
         "damageRolls": {
           "dmg00XReJ": {
-            "damage": "2d6+4",
+            "damage": "3d8+4",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-20"
+            "tech",
+            "scatter-5",
+            "range-increment-15"
           ],
           "otherTags": [],
           "config": {}
@@ -242,7 +244,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -251,7 +252,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "5ddcbee35a888052"
+        }
+      },
       "ownership": {
         "default": 0
       },

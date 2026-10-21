@@ -206,23 +206,23 @@
     {
       "name": "M-3 Predator",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Predator.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 5
+          "value": 9
         },
         "damageRolls": {
           "0": {
-            "damage": "1d6+2",
+            "damage": "1d6+3",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "agile",
-            "range-increment-30"
+            "tech",
+            "range-increment-40"
           ],
           "otherTags": [],
           "config": {}
@@ -247,7 +247,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -261,7 +260,11 @@
       "ownership": {
         "default": 0
       },
-      "flags": {}
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "csecforensic0005"
+        }
+      }
     },
     {
       "name": "Forensic Sweep",

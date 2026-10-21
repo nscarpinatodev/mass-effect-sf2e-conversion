@@ -201,24 +201,25 @@
   "items": [
     {
       "_id": "szG7TDKd5uTR9gJv",
-      "name": "Flamethrower",
+      "name": "M-451 Firestorm",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HW_-_Firestorm.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 10
+          "value": 12
         },
         "damageRolls": {
           "dmg00szG7": {
-            "damage": "2d6+3",
+            "damage": "3d8+4",
             "damageType": "fire",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-15"
+            "tech",
+            "range-increment-20"
           ],
           "otherTags": [],
           "config": {}
@@ -243,7 +244,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -252,7 +252,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "1fa99379f92951a1"
+        }
+      },
       "ownership": {
         "default": 0
       },

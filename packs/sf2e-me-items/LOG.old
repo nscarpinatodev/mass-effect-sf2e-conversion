@@ -1,15 +1,15 @@
-2026/10/08-21:23:06.051 434 Recovering log #222
-2026/10/08-21:23:06.057 434 Delete type=0 #222
-2026/10/08-21:23:06.058 434 Delete type=3 #220
-2026/10/08-21:23:06.062 765c Level-0 table #228: started
-2026/10/08-21:23:06.066 765c Level-0 table #228: 5145 bytes OK
-2026/10/08-21:23:06.068 765c Delete type=0 #226
-2026/10/08-21:23:06.068 765c Manual compaction at level-0 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
-2026/10/08-21:23:06.068 765c Manual compaction at level-1 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at '!items!meItemOmniGel001' @ 262 : 1
-2026/10/08-21:23:06.068 765c Compacting 1@1 + 1@2 files
-2026/10/08-21:23:06.074 765c Generated table #229@1: 6 keys, 5145 bytes
-2026/10/08-21:23:06.074 765c Compacted 1@1 + 1@2 files => 5145 bytes
-2026/10/08-21:23:06.078 765c compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/08-21:23:06.078 765c Delete type=2 #224
-2026/10/08-21:23:06.079 765c Delete type=2 #228
-2026/10/08-21:23:06.079 765c Manual compaction at level-1 from '!items!meItemOmniGel001' @ 262 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
+2026/10/21-04:30:36.694 50f0 Recovering log #242
+2026/10/21-04:30:36.708 50f0 Delete type=0 #242
+2026/10/21-04:30:36.708 50f0 Delete type=3 #240
+2026/10/21-04:30:36.712 d600 Level-0 table #248: started
+2026/10/21-04:30:36.718 d600 Level-0 table #248: 5145 bytes OK
+2026/10/21-04:30:36.722 d600 Delete type=0 #246
+2026/10/21-04:30:36.722 d600 Manual compaction at level-0 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
+2026/10/21-04:30:36.722 d600 Manual compaction at level-1 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at '!items!meItemOmniGel001' @ 286 : 1
+2026/10/21-04:30:36.722 d600 Compacting 1@1 + 1@2 files
+2026/10/21-04:30:36.730 d600 Generated table #249@1: 6 keys, 5145 bytes
+2026/10/21-04:30:36.730 d600 Compacted 1@1 + 1@2 files => 5145 bytes
+2026/10/21-04:30:36.734 d600 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/21-04:30:36.734 d600 Delete type=2 #244
+2026/10/21-04:30:36.734 d600 Delete type=2 #248
+2026/10/21-04:30:36.735 d600 Manual compaction at level-1 from '!items!meItemOmniGel001' @ 286 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)

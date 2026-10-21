@@ -3590,7 +3590,7 @@ Alliance tech specialist and drone operator.
 **AC** 19; **Fort** +8, **Ref** +10, **Will** +9
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
+**Ranged** ◆ M-9 Tempest +12 (range increment 25 ft, tech, automatic, agile), **Damage** 3d4+6 piercing
 **Overload** ◆◆ **Range** 60 feet, one creature. Deals 2d6 electricity damage (basic Reflex save, DC 19); kinetic barriers and synthetics take double.
 **Deploy Combat Drone** ◆◆ Deploys a combat drone (AC 17, HP 15, fly 30) that makes a ranged zap Strike (+9, 1d6 electricity) on the engineer's turn. One drone at a time.
 
@@ -3608,7 +3608,7 @@ Alliance field medic with medi-gel.
 **AC** 19; **Fort** +9, **Ref** +9, **Will** +11
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
+**Ranged** ◆ M-9 Tempest +12 (range increment 25 ft, tech, automatic, agile), **Damage** 3d4+6 piercing
 **Apply Medi-Gel** ◆◆ **Range** touch (or thrown 30 feet as a dispenser). The medic restores 2d8+3 Hit Points to a living creature and removes the persistent bleed condition.
 
 ---
@@ -3621,12 +3621,12 @@ Systems Alliance commissioned officer.
 
 **Perception** +12; **Skills** Athletics +10, Diplomacy +12, Intimidation +11, Warfare +12
 **Abilities** Str +2, Dex +3, Con +2, Int +3, Wis +3, Cha +4
-**Items** Phaeston, Onyx Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
+**Items** Phaeston, Onyx Armor (M), Kinetic Shield, Shield HP Mod - Tier 1, M-3 Predator
 **AC** 20; **Fort** +10, **Ref** +11, **Will** +12
 **HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-8 Avenger +12 (range increment 60 ft, automatic), **Damage** 2d8+6 piercing
-**Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 2d8+6 piercing
+**Ranged** ◆ Phaeston +14 (range increment 65 ft, tech, automatic), **Damage** 2d8+7 piercing
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 **Issue Orders** ◆ One allied soldier within 30 feet who can hear the officer can immediately Stride or Strike as a reaction.
 
 ---
@@ -3643,7 +3643,7 @@ Elite N7 special-forces operator.
 **AC** 24; **Fort** +13, **Ref** +15, **Will** +13
 **HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-8 Avenger +16 (range increment 70 ft, automatic), **Damage** 3d6+10 piercing
+**Ranged** ◆ M-96 Mattock +17 (range increment 80 ft, tech, kickback), **Damage** 3d10+9 piercing
 **Melee** ◆ Omni-Blade +15 (agile, finesse), **Damage** 2d8+8 slashing plus 1d6 fire
 **Tactical Cloak** ◆ The operative becomes hidden until the end of its next turn or until it attacks. Its next Strike while cloaked deals an extra 2d6 precision damage.
 **Adrenaline Rush** ◆ The operative gains a third action this turn, usable only to Strike, Stride, or Take Cover.
@@ -3663,7 +3663,7 @@ Systems Alliance professional combat marine
 **HP** 120; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Knife +16 (agile, finesse), **Damage** 3d6+7 slashing
-**Melee** ◆ M-8 Avenger +15 (analog, reload-2), **Damage** 4d6+9 piercing
+**Ranged** ◆ M-8 Avenger +18 (range increment 60 ft, tech, automatic), **Damage** 2d8+10 piercing
 **Suppressing Fire** ◆◆ The marine saturates a 10-foot square within 60 feet with fire. Until the start of the marine's next turn, each creature that enters or begins its turn in the square must succeed at a DC 23 Reflex save or take 2d6+4 piercing damage and become flat-footed until the end of their next turn.
 
 ---
@@ -3680,7 +3680,7 @@ Decorated Alliance N7 veteran and mentor to Shepard; inspiring battlefield leade
 **AC** 28; **Fort** +20, **Ref** +20, **Will** +22
 **HP** 180; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-8 Avenger +22 (range increment 60 ft), **Damage** 5d6+12 piercing
+**Ranged** ◆ M-99 Saber +23 (range increment 80 ft, tech), **Damage** 4d10+13 piercing
 **Melee** ◆ Combat Knife +23 (agile, finesse), **Damage** 4d6+11 piercing
 **Inspiring Presence** Alliance allies within 30 feet gain a **+1 morale bonus** to attack rolls and saving throws.
 
@@ -3694,11 +3694,11 @@ Commander of the Alliance Fifth Fleet; strategic genius whose presence strengthe
 
 **Perception** +27; **Skills** Diplomacy +30, Intimidation +28, Piloting +22, Tactics +28
 **Abilities** Str +2, Dex +3, Con +3, Int +5, Wis +7, Cha +6
-**Items** Kinetic Shield
+**Items** Kinetic Shield, M-3 Predator
 **AC** 31; **Fort** +23, **Ref** +23, **Will** +27
 **HP** 195; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-3 Predator +23 (range increment 30 ft, agile), **Damage** 1d6+5 piercing
+**Ranged** ◆ M-3 Predator +26 (range increment 40 ft, tech), **Damage** 3d6+15 piercing
 **Fleet Command** Alliance allies within 60 feet gain a **+2 morale bonus** to saving throws.
 **Strategic Directive** ◆◆ Up to three allies within 60 feet may each immediately Stride or Strike as a free action. 1/encounter.
 
@@ -3718,7 +3718,7 @@ Precinct dispatch, records, and the first face at the front desk.
 **AC** 15; **Fort** +4, **Ref** +6, **Will** +6
 **HP** 15
 **Speed** 25 feet
-**Ranged** ◆ M-3 Predator +6 (range increment 30 ft, agile), **Damage** 1d6+2 piercing
+**Ranged** ◆ M-3 Predator +8 (range increment 40 ft, tech), **Damage** 1d6+2 piercing
 **Melee** ◆ Fist +4 (agile, nonlethal, unarmed), **Damage** 1d4 bludgeoning
 **Call for Backup** ◆ The desk officer signals the precinct. A pair of C-Sec Patrol Officers arrives at the nearest entrance in 1d4 rounds. Once per encounter.
 **Lockdown** ◆◆ Using a precinct terminal, the desk officer seals the doors and shutters in the surrounding offices. Opening one takes a DC 16 Thievery or Computers check to override it, or a DC 20 Athletics check to force it.
@@ -3737,7 +3737,7 @@ Crime-scene analyst: omni-tool, evidence bags, and a sidearm they would rather n
 **AC** 15; **Fort** +5, **Ref** +7, **Will** +9
 **HP** 18; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-3 Predator +5 (range increment 30 ft, agile), **Damage** 1d6+2 piercing
+**Ranged** ◆ M-3 Predator +9 (range increment 40 ft, tech), **Damage** 1d6+3 piercing
 **Forensic Sweep** ◆ The technician's omni-tool sweeps a 15-foot emanation for residue, prints, and recent signatures. They Seek with a +2 circumstance bonus to find hidden objects, traces, and creatures that passed through the area in the last hour.
 **Dazzler Flash** ◆ The omni-tool emits a calibrated strobe at one creature within 15 feet, which must attempt a DC 17 Fortitude save.
 **Success** Unaffected.
@@ -3758,7 +3758,7 @@ Beat cop on the Citadel wards: sidearm, stun baton, and a voice that carries.
 **AC** 16; **Fort** +7, **Ref** +7, **Will** +4
 **HP** 20; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-3 Predator +7 (range increment 30 ft, agile), **Damage** 1d6+3 piercing
+**Ranged** ◆ M-3 Predator +9 (range increment 40 ft, tech), **Damage** 1d6+3 piercing
 **Melee** ◆ Stun Baton +7 (agile, nonlethal), **Damage** 1d6+3 bludgeoning
 **Halt! C-Sec!** ◆ The officer Demoralizes a creature within 30 feet. The target does not need to understand the officer's language, and on a success it is also off-guard against the officer until the start of the officer's next turn.
 
@@ -3776,7 +3776,7 @@ Armored enforcement: rifle for firefights, baton for arrests.
 **AC** 18; **Fort** +11, **Ref** +8, **Will** +8
 **HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-8 Avenger +10 (range increment 60 ft, automatic), **Damage** 1d10+4 piercing
+**Ranged** ◆ M-8 Avenger +11 (range increment 60 ft, tech, automatic), **Damage** 1d8+5 piercing
 **Melee** ◆ Stun Baton +9 (agile, nonlethal), **Damage** 1d6+4 bludgeoning
 **Takedown** ◆◆ The officer makes a Stun Baton Strike. On a hit, the target must attempt a DC 18 Fortitude save.
 **Success** Unaffected.
@@ -3798,7 +3798,7 @@ Disgraced ex-C-Sec officer drinking away his pension in Chora's Den; sells what 
 **AC** 16; **Fort** +8, **Ref** +8, **Will** +5
 **HP** 30
 **Speed** 25 feet
-**Ranged** ◆ M-3 Predator +9 (range increment 30 ft, agile), **Damage** 1d8+4 piercing
+**Ranged** ◆ M-3 Predator +11 (range increment 40 ft, tech), **Damage** 1d6+5 piercing
 **Melee** ◆ Fist +7 (agile, nonlethal, unarmed), **Damage** 1d4+3 bludgeoning
 **Old Badge** Harkin spent years in C-Sec before they threw him out. He has a +2 circumstance bonus to Society checks to Recall Knowledge about C-Sec, the wards' gangs, and who on the Citadel is paying whom.
 **Liquid Courage** Harkin is rarely sober. He takes a -1 penalty to Perception and attack rolls, and has a +1 status bonus to saves against fear.
@@ -3818,7 +3818,7 @@ Plainclothes investigator who knows the wards, their informants, and their lies.
 **AC** 18; **Fort** +6, **Ref** +9, **Will** +12
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-5 Phalanx +10 (range increment 30 ft), **Damage** 1d10+6 piercing
+**Ranged** ◆ M-5 Phalanx +12 (range increment 50 ft, tech), **Damage** 2d6+6 piercing
 **Melee** ◆ Fist +9 (agile, nonlethal, unarmed), **Damage** 1d6+3 bludgeoning
 **Read the Room** ◇ **Trigger** The detective rolls initiative. **Effect** The detective studies one creature they can see and learns its lowest save and whether it is carrying a concealed weapon.
 **Exploit the Tell** The detective's Strikes deal an extra 1d6 precision damage to off-guard creatures.
@@ -3837,7 +3837,7 @@ Emergency response team: heavy armor, shotgun, and flashbangs for hostage calls.
 **AC** 21; **Fort** +14, **Ref** +11, **Will** +8
 **HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-27 Scimitar +13 (range increment 20 ft), **Damage** 2d10+7 piercing
+**Ranged** ◆ M-27 Scimitar +14 (range increment 15 ft, tech, scatter-5), **Damage** 4d6+7 piercing
 **Melee** ◆ Combat Knife +13 (agile, finesse), **Damage** 2d6+5 slashing
 **Flashbang** ◆◆ The officer throws a flashbang at a point within 30 feet. Each creature in a 10-foot burst must attempt a DC 21 Fortitude save. Recharge 1d4 rounds.
 **Success** Deafened until the end of its next turn.
@@ -3855,11 +3855,11 @@ Turian representative on the Citadel Council.
 
 **Perception** +13; **Skills** Diplomacy +12, Intimidation +13, Society +13, Warfare +12
 **Abilities** Str +2, Dex +2, Con +2, Int +3, Wis +3, Cha +4
-**Items** Kinetic Shield
+**Items** Kinetic Shield, M-3 Predator
 **AC** 20; **Fort** +12, **Ref** +10, **Will** +12
 **HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 1d8+2 piercing
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 **Skeptical Rebuttal** ↺ **Trigger** A creature attempts to Coerce, Lie to, or Make an Impression on Sparatus.
 
 ---
@@ -3892,11 +3892,11 @@ Salarian representative on the Citadel Council.
 
 **Perception** +14; **Skills** Computers Lore +14, Deception +12, Diplomacy +11, Medicine +13, Society +14
 **Abilities** Str +0, Dex +3, Con +1, Int +5, Wis +3, Cha +3
-**Items** Kinetic Shield
+**Items** Kinetic Shield, M-3 Predator
 **AC** 20; **Fort** +9, **Ref** +12, **Will** +12
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 1d8+1 piercing
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 **Rapid Assessment** ◆ Valern Recalls Knowledge with a +2 circumstance bonus. On a success he also identifies the single most tactically relevant fact about a target creature or situation.
 
 ---
@@ -3909,11 +3909,11 @@ Human Ambassador and later Councilor; political operative who advances humanity'
 
 **Perception** +12; **Skills** Deception +18, Diplomacy +18, Intimidation +16, Society +16
 **Abilities** Str +0, Dex +1, Con +1, Int +4, Wis +2, Cha +5
-**Items** Kinetic Shield
+**Items** Kinetic Shield, M-5 Phalanx
 **AC** 19; **Fort** +10, **Ref** +10, **Will** +16
 **HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Light Pistol +10 (range increment 30 ft, agile, concealable), **Damage** 1d4+1 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 **Political Leverage** ◆ Udina imposes a **–2 circumstance penalty** to one creature's saves against Deception and Diplomacy effects for the rest of the encounter. 1/encounter.
 
 ---
@@ -3930,7 +3930,7 @@ Precinct commander: runs the ward's officers and takes the field when it matters
 **AC** 22; **Fort** +12, **Ref** +12, **Will** +15
 **HP** 75; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-5 Phalanx +14 (range increment 30 ft), **Damage** 2d8+7 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 **Melee** ◆ Stun Baton +13 (agile, nonlethal), **Damage** 2d6+7 bludgeoning
 **Coordinate Response** ◆ One allied C-Sec officer within 30 feet who can hear the captain can immediately Stride or Strike as a reaction.
 **C-Sec Authority** In areas under Citadel jurisdiction, the captain has a +2 circumstance bonus to Intimidation checks, and C-Sec officers who can see the captain are not frightened by enemies' Demoralize attempts.
@@ -3945,11 +3945,11 @@ Head of C-Sec on the Citadel wards; pragmatic lawman who deals straight and figh
 
 **Perception** +16; **Skills** Athletics +13, Diplomacy +14, Intimidation +17, Society +14
 **Abilities** Str +2, Dex +3, Con +2, Int +3, Wis +3, Cha +3
-**Items** Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1
+**Items** Predator Armor (M), Kinetic Shield, Shield HP Mod - Tier 1, M-3 Predator
 **AC** 23; **Fort** +14, **Ref** +14, **Will** +16
 **HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-3 Predator +16 (range increment 30 ft, agile), **Damage** 3d6+7 piercing
+**Ranged** ◆ M-3 Predator +17 (range increment 40 ft, tech), **Damage** 2d6+9 piercing
 **Melee** ◆ Combat Baton +17 (agile), **Damage** 3d6+10 bludgeoning
 
 ---
@@ -3968,7 +3968,7 @@ Salarian Spectre and counter-intelligence specialist.
 **AC** 25; **Fort** +13, **Ref** +16, **Will** +16
 **HP** 100; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Scorpion Pistol +17 (range increment 50 ft), **Damage** 3d8+6 piercing plus 1d6 fire
+**Ranged** ◆ Scorpion +18 (range increment 25 ft, tech, scatter-5), **Damage** 3d6+10 bludgeoning
 **Melee** ◆ Omni-Blade +16 (agile, finesse), **Damage** 3d8+5 slashing plus 1d4 fire
 **Neural Shock** ◆◆ **Range** 30 feet, one creature. The target must succeed at a Fortitude save (DC 25) or be stunned 1 (stunned 2 on a critical failure) as its nervous system is overloaded.
 **Tactical Cloak** ◆ Bau vanishes behind a light-bending field, becoming hidden until the end of his next turn or until he makes an attack. His next Strike while cloaked deals an extra 2d6 precision damage.
@@ -3983,12 +3983,12 @@ Veteran turian Spectre and mentor.
 
 **Perception** +17; **Skills** Acrobatics +15, Athletics +14, Intimidation +15, Stealth +16, Warfare +15
 **Abilities** Str +3, Dex +5, Con +3, Int +3, Wis +4, Cha +3
-**Items** M-76 Revenant, Colossus Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**Items** M-76 Revenant, Colossus Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1, M-6 Carnifex
 **AC** 25; **Fort** +14, **Ref** +16, **Will** +15
 **HP** 105; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Phaeston Assault Rifle +17 (range increment 70 ft, automatic), **Damage** 4d6+9 piercing
-**Ranged** ◆ Heavy Pistol +17 (range increment 50 ft), **Damage** 2d8+9 piercing
+**Ranged** ◆ M-76 Revenant +18 (range increment 60 ft, tech, automatic, unwieldy), **Damage** 4d6+10 piercing
+**Ranged** ◆ M-6 Carnifex +18 (range increment 45 ft, tech, kickback), **Damage** 4d6+10 piercing
 **Melee** ◆ Omni-Blade +16 (agile, finesse), **Damage** 3d8+6 slashing plus 1d6 fire
 **Marksman's Focus** ◆ Nihlus steadies his aim. His next ranged Strike this turn ignores the target's cover and gains a +2 circumstance bonus to the attack roll.
 **Combat Roll** ◆ Nihlus rolls up to 15 feet. This movement doesn't trigger reactions, and until the start of his next turn he gains a +1 circumstance bonus to AC against ranged attacks.
@@ -4007,10 +4007,42 @@ Ruthless asari Spectre and biotic powerhouse.
 **AC** 27; **Fort** +16, **Ref** +18, **Will** +17
 **HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Heavy Pistol +18 (range increment 50 ft), **Damage** 3d8+12 piercing
+**Ranged** ◆ Scorpion +20 (range increment 25 ft, tech, scatter-5), **Damage** 3d6+11 bludgeoning
 **Melee** ◆ Biotic Slam +18 (agile, finesse, force, unarmed), **Damage** 2d10+10 bludgeoning plus 1d6 force
-**Biotic Charge** ◆◆ Vasir streaks up to 50 feet in a straight line to a creature she can see and makes a melee Strike dealing an extra 2d6 force damage. On a hit, her barrier restores 15 Shield HP.
-**Biotic Nova** ◆◆ **Area** 15-foot emanation. Vasir detonates her barrier in a shockwave, dealing 4d6 force damage (basic Reflex save, DC 27) to all other creatures in the area. Her barrier is reduced to 0 Shield HP afterward.
+**Biotic Charge (NPC)** ◆◆ You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to **60 feet** in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a DC 23 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target takes 3d6 bludgeoning damage.
+**Failure** The target takes 9d6 bludgeoning damage and is knocked **prone**. Your Biotic Barrier recharges half of its maximum barrier HP.
+**Critical Failure** As failure, but 18d6 bludgeoning damage and pushed **5 feet** away from you. Your Biotic Barrier recharges to full.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Nova (NPC)** ◆ You discharge all of your biotic barrier energy in a devastating point-blank explosion, obliterating everything around you at the cost of your defenses.
+**Requirements** You have an active Biotic Barrier with at least 1 HP remaining.
+You expend your entire Biotic Barrier in a 10-foot emanation. The damage equals the barrier's current HP at the time of detonation. All creatures in the area must attempt a DC 23 basic Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** Half damage.
+**Failure** Full damage and pushed **5 feet** away from you.
+**Critical Failure** Double damage, pushed **10 feet** away, and knocked **prone**.
+Your Biotic Barrier is immediately depleted after using this power. Using Nova records the barrier's HP as this detonation's **force** damage and empties the barrier.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
+| **Level** | **Barrier HP** |
+| 1-3 | 5 |
+| 4-5 | 10 |
+| 6-7 | 15 |
+| 8-9 | 20 |
+| 10-11 | 25 |
+| 12-13 | 30 |
+| 14-15 | 35 |
+| 16-17 | 40 |
+| 18-19 | 45 |
+| 20 | 50 |
 
 ---
 
@@ -4027,7 +4059,7 @@ Elite Council Spectre - autonomous operative, extreme threat
 **HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Combat Knife +19 (agile, finesse), **Damage** 3d6+7 piercing
-**Melee** ◆ Spectre-Issue Assault Rifle +19 (analog, reload-2), **Damage** 3d8+12 piercing
+**Ranged** ◆ M-76 Revenant +20 (range increment 60 ft, tech, automatic, unwieldy), **Damage** 4d6+11 piercing
 
 ---
 
@@ -4045,7 +4077,7 @@ Cerberus field medic who heals and stabilizes allies during combat.
 **AC** 16; **Fort** +9, **Ref** +7, **Will** +9
 **HP** 28; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Light Pistol +8 (range increment 30 ft), **Damage** 2d4+5 piercing
+**Ranged** ◆ M-4 Shuriken +11 (range increment 20 ft, tech, automatic), **Damage** 3d4+5 piercing
 **Field Triage** ◆◆ The Medic applies emergency treatment to an adjacent ally (or themselves). That creature regains 2d6+4 HP.
 **Medi-Gel Injection** ◆ The Medic administers medi-gel to an adjacent dying ally, removing the Dying condition and stabilizing them at 1 HP. 1/encounter.
 
@@ -4063,7 +4095,7 @@ Standard Cerberus paramilitary soldier equipped with an assault rifle and kineti
 **AC** 17; **Fort** +9, **Ref** +9, **Will** +6
 **HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Assault Rifle +9 (range increment 60 ft), **Damage** 2d6+3 piercing
+**Ranged** ◆ M-8 Avenger +11 (range increment 60 ft, tech, automatic), **Damage** 1d8+5 piercing
 
 ---
 
@@ -4079,7 +4111,7 @@ Veteran Cerberus shock trooper specializing in close-quarters combat with shotgu
 **AC** 20; **Fort** +12, **Ref** +10, **Will** +8
 **HP** 48; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Shotgun +12 (range increment 30 ft, scatter-5), **Damage** 2d6+4 piercing
+**Ranged** ◆ M-23 Eviscerator +12 (range increment 15 ft, tech, scatter-5), **Damage** 3d8+4 piercing
 **Melee** ◆ Combat Knife +13 (agile, finesse), **Damage** 1d6+5 slashing
 
 ---
@@ -4097,7 +4129,7 @@ Cerberus shock trooper with a riot shield and stun baton.
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Stun Baton +11, **Damage** 1d8+4 bludgeoning plus 1d6 electricity
-**Ranged** ◆ Sidearm +9 (range increment 40 ft), **Damage** 1d8+2 piercing
+**Ranged** ◆ M-9 Tempest +12 (range increment 25 ft, tech, automatic, agile), **Damage** 3d4+6 piercing
 **Shield Bash** ◆ The trooper slams forward with its riot shield, making an Athletics check to Shove a creature within reach with a +1 circumstance bonus. On a success it may Step into the vacated space.
 
 ---
@@ -4110,11 +4142,11 @@ Cerberus maintenance technician who repairs mechs and interfaces with security s
 
 **Perception** +9; **Skills** Computers +13, Crafting +13
 **Abilities** Str +0, Dex +2, Con +1, Int +4, Wis +1, Cha +0
-**Items** Kinetic Shield
+**Items** Kinetic Shield, M-3 Predator
 **AC** 17; **Fort** +9, **Ref** +9, **Will** +10
 **HP** 38; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Light Pistol +8 (range increment 30 ft), **Damage** 1d4+1 piercing
+**Ranged** ◆ M-3 Predator +12 (range increment 40 ft, tech), **Damage** 1d6+6 piercing
 
 ---
 
@@ -4131,7 +4163,7 @@ Cerberus operative at the start of her augmentation program; agile infiltrator w
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Plasma Sword +10 (critical-plasma, powered, tech), **Damage** 2d8+4 fire
-**Ranged** ◆ Light Pistol +10 (range increment 30 ft, agile, concealable), **Damage** 2d4+3 piercing
+**Ranged** ◆ M-9 Tempest +12 (range increment 25 ft, tech, automatic, agile), **Damage** 3d4+6 piercing
 **Phantom Cloak** ◆ Mystaria activates her prototype phase cloak, becoming Invisible until the end of her next turn or until she makes a Strike. The prototype unit requires full recharge between encounters. 1/encounter.
 **Sneak Attack** Mystaria deals an extra **1d6** precision damage to Off-Guard creatures.
 
@@ -4149,7 +4181,7 @@ Cerberus squad leader armed with a Mattock rifle and smoke grenades, directing a
 **AC** 21; **Fort** +13, **Ref** +12, **Will** +11
 **HP** 62; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-96 Mattock +14 (range increment 80 ft, fatal-d10), **Damage** 2d8+4 piercing
+**Ranged** ◆ Phaeston +14 (range increment 65 ft, tech, automatic), **Damage** 2d8+7 piercing
 **Deploy Smoke Grenade** ◆ The Centurion fires a smoke grenade (range 60 ft) that creates a 10-foot-radius cloud of smoke. Creatures within the cloud are Concealed. The cloud lasts until the start of the Centurion's next turn. Recharge 1d4 rounds.
 
 ---
@@ -4166,7 +4198,7 @@ Cerberus field technician who deploys combat turrets and provides technical supp
 **AC** 21; **Fort** +13, **Ref** +11, **Will** +13
 **HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Submachine Gun +11 (range increment 50 ft), **Damage** 3d6+4 piercing
+**Ranged** ◆ M-9 Tempest +14 (range increment 25 ft, tech, automatic, agile), **Damage** 4d4+7 piercing
 **Deploy Turret** ◆◆ The Engineer deploys a combat turret in an adjacent square. The turret has AC 17, HP 30, and on each of the Engineer's turns makes one ranged attack (+11 to hit, 1d6+3 piercing, 60 ft range). The turret is destroyed if reduced to 0 HP. Only one turret can be active at a time.
 
 ---
@@ -4179,11 +4211,11 @@ Cerberus research staff conducting experiments in genetics, cybernetics, and ali
 
 **Perception** +11; **Skills** Computers +14, Medicine +14, Science +16
 **Abilities** Str -1, Dex +1, Con +1, Int +6, Wis +2, Cha +2
-**Items** Kinetic Shield
+**Items** Kinetic Shield, M-3 Predator
 **AC** 18; **Fort** +10, **Ref** +9, **Will** +12
 **HP** 48; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Light Pistol +8 (range increment 30 ft), **Damage** 1d4+1 piercing
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 
 ---
 
@@ -4199,7 +4231,7 @@ Cerberus intelligence agent operating under civilian cover, skilled in espionage
 **AC** 22; **Fort** +11, **Ref** +14, **Will** +14
 **HP** 65; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Holdout Pistol +14 (range increment 30 ft, agile, concealable), **Damage** 3d6+8 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 
 ---
 
@@ -4215,7 +4247,7 @@ Heavily armored Cerberus trooper with a tower ballistic shield, nearly imperviou
 **AC** 24; **Fort** +15, **Ref** +10, **Will** +12
 **HP** 80
 **Speed** 20 feet
-**Ranged** ◆ Pistol +12 (range increment 40 ft), **Damage** 2d6+6 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 **Melee** ◆ Shield Bash +15 (push), **Damage** 4d4+8 bludgeoning
 
 ---
@@ -4232,7 +4264,7 @@ Lightly armored Cerberus sniper who eliminates targets at extreme range with dea
 **AC** 21; **Fort** +10, **Ref** +15, **Will** +13
 **HP** 62
 **Speed** 30 feet
-**Ranged** ◆ Sniper Rifle +16 (range increment 200 ft, fatal-d12, volley-50), **Damage** 3d8+6 piercing
+**Ranged** ◆ M-90 Indra +15 (range increment 120 ft, tech, automatic, volley-30), **Damage** 3d6+8 piercing
 
 ---
 
@@ -4244,11 +4276,11 @@ Cerberus yeoman and psychological operative; warm exterior conceals intelligence
 
 **Perception** +16; **Skills** Deception +18, Diplomacy +20, Medicine +15, Society +14
 **Abilities** Str +0, Dex +2, Con +1, Int +3, Wis +5, Cha +6
-**Items** Kinetic Shield
+**Items** Kinetic Shield, M-5 Phalanx
 **AC** 20; **Fort** +10, **Ref** +11, **Will** +16
 **HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Light Pistol +11 (range increment 30 ft), **Damage** 1d4+2 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 
 ---
 
@@ -4260,13 +4292,13 @@ Mid-grade Cerberus augmented operative; M-13 Raptor sniper rifle, M-25 Hornet SM
 
 **Perception** +12; **Skills** Acrobatics +12, Athletics +7, Intimidation +8, Piloting +10, Stealth +15
 **Abilities** Str +2, Dex +5, Con +2, Int +2, Wis +1, Cha +0
-**Items** Phoenix Armor (L), Kinetic Shield, M-13 Raptor
+**Items** Phoenix Armor (L), Kinetic Shield, M-13 Raptor, M-25 Hornet
 **AC** 22; **Fort** +11, **Ref** +14, **Will** +10
 **HP** 90; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Plasma Sword +14 (critical-plasma, powered, tech), **Damage** 1d8+5 fire
-**Ranged** ◆ M-25 Hornet +12 (range increment 30 ft, agile, burst-fire), **Damage** 1d6+4 piercing
-**Ranged** ◆ M-13 Raptor +13 (range increment 150 ft, fatal-d12, volley-30), **Damage** 2d8+5 piercing
+**Ranged** ◆ M-25 Hornet +15 (range increment 25 ft, tech, automatic), **Damage** 4d4+8 piercing
+**Ranged** ◆ M-13 Raptor +15 (range increment 120 ft, tech, deadly-d10, volley-30), **Damage** 3d6+8 piercing
 **Phantom Cloak** ◆ Mystaria activates her phase cloak, becoming Invisible until the end of her next turn or until she makes a Strike. The second-generation cloak recharges — she may use it again after 1d4+1 rounds.
 **Sneak Attack** Mystaria deals an extra **1d6** precision damage to Off-Guard creatures.
 
@@ -4285,8 +4317,17 @@ Biotic-augmented Cerberus soldier who uses a mass-effect lash to pull enemies ou
 **HP** 100; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Biotic Lash +17 (reach-20, disarm), **Damage** 3d8+6 bludgeoning
-**Ranged** ◆ Assault Rifle +15 (range increment 60 ft), **Damage** 3d6+6 piercing
-**Biotic Lash (Area)** ◆◆ The Dragoon sends a lash of dark energy in a 20-foot line. Each creature in the line must succeed on a DC 23 Reflex save or take 3d8 bludgeoning damage and be Grabbed (pulled adjacent to the Dragoon). On a success: half damage, not Grabbed. On a critical failure: also Stunned 1. Recharge 1d3 rounds.
+**Ranged** ◆ M-96 Mattock +17 (range increment 80 ft, tech, kickback), **Damage** 3d10+9 piercing
+**Lash (NPC)** ◆◆ You extend a whip-like biotic tendril that snares an enemy and violently yanks them toward you, dealing damage on impact.
+Choose a creature within **30 feet**. The target must attempt a DC 21 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target takes 2d6 bludgeoning damage.
+**Failure** The target is pulled up to **30 feet** toward you and takes 4d6 bludgeoning damage. If pulled adjacent to you, it is Off-Guard until the start of your next turn.
+**Critical Failure** As failure, but 8d6 bludgeoning damage and the target is also **Grabbed** until the start of your next turn.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -4302,7 +4343,7 @@ Senior Cerberus officer overseeing complex operations, granting bonuses to nearb
 **AC** 24; **Fort** +14, **Ref** +15, **Will** +17
 **HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Assault Rifle +16 (range increment 60 ft), **Damage** 3d6+10 piercing
+**Ranged** ◆ M-96 Mattock +17 (range increment 80 ft, tech, kickback), **Damage** 3d10+9 piercing
 
 ---
 
@@ -4319,7 +4360,7 @@ Elite Cerberus assassin with phase cloaking, monomolecular blade, and heavy cybe
 **HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
 **Melee** ◆ Monomolecular Blade +21 (agile, finesse, deadly-d10), **Damage** 3d8+12 slashing
-**Ranged** ◆ Submachine Gun +20 (range increment 50 ft, agile), **Damage** 4d6+6 piercing
+**Ranged** ◆ Scorpion +20 (range increment 25 ft, tech, scatter-5), **Damage** 3d6+11 bludgeoning
 **Phase Cloak** ◆ The Phantom activates her phase cloaking system, becoming Invisible until the end of her next turn or until she makes a Strike (whichever comes first). While cloaked she gains a +2 circumstance bonus to AC. This ability can be used once per round.
 
 ---
@@ -4332,12 +4373,12 @@ Phantom Aspirant with implanted monofilament blade; neural-integrated cloak prov
 
 **Perception** +17; **Skills** Acrobatics +18, Athletics +10, Intimidation +11, Piloting +13, Stealth +21
 **Abilities** Str +2, Dex +6, Con +3, Int +3, Wis +2, Cha +0
-**Items** Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**Items** Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1, M-25 Hornet
 **AC** 26; **Fort** +15, **Ref** +19, **Will** +14
 **HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Monofilament Blade +19 (agile, finesse, deadly-d10, tech), **Damage** 3d8+12 slashing
-**Ranged** ◆ M-25 Hornet +18 (range increment 50 ft, agile, burst-fire), **Damage** 3d6+10 piercing
+**Ranged** ◆ M-25 Hornet +20 (range increment 25 ft, tech, automatic), **Damage** 4d4+11 piercing
 **Phantom Cloak** ◆ Mystaria activates her neural-integrated phase cloak, becoming Invisible and gaining a +1 circumstance bonus to AC until the end of her next turn or until she makes a Strike. 1/encounter.
 **Sneak Attack** Mystaria deals an extra **2d6** precision damage to Off-Guard creatures.
 **Neural Interface** Mystaria's implanted combat-data neural interface grants her a **+2 circumstance bonus to initiative** rolls.
@@ -4356,9 +4397,27 @@ Genetically perfected Cerberus operative and powerful biotic. Liaison for the La
 **AC** 29; **Fort** +19, **Ref** +21, **Will** +23
 **HP** 165; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Submachine Gun +22 (range increment 50 ft, agile), **Damage** 5d6+12 piercing
-**Warp** ◆◆ Miranda targets a creature within 60 feet. The target takes 3d10+6 force damage (DC 28 Will for half). On a critical failure, the target is also Weakened 2 until the end of its next turn.
-**Throw** ◆◆ Miranda launches a biotic throw at a target within 60 feet. The target must succeed on a DC 28 Reflex save or be flung 20 feet in a direction Miranda chooses and take 2d10 bludgeoning damage. On a success: half damage, not flung. On a critical success: no effect.
+**Ranged** ◆ N7 Hurricane +23 (range increment 30 ft, tech, automatic), **Damage** 5d4+13 piercing
+**Warp (NPC)** ◆◆ You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.
+Choose a creature within **60 feet**. The target must attempt a DC 26 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target takes 3d6 void damage.
+**Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
+**Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Throw (NPC)** ◆◆ You project a mass effect field that hurls a creature or object with violent force.
+Choose a creature or unattended object within **60 feet**. The target must attempt a DC 26 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target is pushed 5 feet away from you.
+**Failure** The target takes 6d8 bludgeoning damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
+**Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -4375,7 +4434,7 @@ Cerberus assassin and cybernetically enhanced former N7; deadly with omni-blade 
 **HP** 200; **Shields** 30 (recharge 10/turn)
 **Speed** 40 feet
 **Melee** ◆ Omni-Katana +27 (agile, finesse, deadly-d12, tech), **Damage** 4d8+14 slashing
-**Ranged** ◆ Sniper Rifle +25 (range increment 200 ft, fatal-d12, volley-50), **Damage** 4d10+13 piercing
+**Ranged** ◆ Black Widow +26 (range increment 200 ft, tech, fatal-d12, kickback, volley-30), **Damage** 6d12+7 piercing
 **Phase Cloak** ◆ Kai Leng activates his phase cloak, becoming Invisible until the end of his next turn or until he makes a Strike. While invisible he gains a +2 circumstance bonus to AC. 1/encounter.
 
 ---
@@ -4388,12 +4447,12 @@ Proto-Phantom at the threshold of full conversion; Phantom-grade monofilament bl
 
 **Perception** +23; **Skills** Acrobatics +24, Athletics +18, Intimidation +17, Piloting +18, Stealth +27
 **Abilities** Str +3, Dex +7, Con +4, Int +4, Wis +3, Cha +0
-**Items** Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3
+**Items** Phoenix Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3, M-25 Hornet
 **AC** 31; **Fort** +21, **Ref** +25, **Will** +20
 **HP** 200; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
 **Melee** ◆ Monofilament Blade +25 (agile, finesse, deadly-d12, tech), **Damage** 5d8+12 slashing
-**Ranged** ◆ M-25 Hornet +23 (range increment 50 ft, agile, burst-fire), **Damage** 5d6+12 piercing
+**Ranged** ◆ M-25 Hornet +26 (range increment 25 ft, tech, automatic), **Damage** 5d4+15 piercing
 **Phase Cloak** ◆ Mystaria activates her Phantom-grade phase cloak, becoming Invisible and gaining a +2 circumstance bonus to AC until the end of her next turn or until she makes a Strike. 1/encounter.
 **Sneak Attack** Mystaria deals an extra **3d6** precision damage to Off-Guard creatures.
 **Cybernetic Threading** Synthetic fiber threading throughout Mystaria's musculature grants her a **+5-foot speed bonus** and a **+2 circumstance bonus to initiative** rolls.
@@ -4431,7 +4490,7 @@ Rank-and-file mercenary of the Blue Suns.
 **AC** 18; **Fort** +8, **Ref** +9, **Will** +5
 **HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Assault Rifle +9 (range increment 60 ft, automatic), **Damage** 2d6+3 piercing
+**Ranged** ◆ M-8 Avenger +11 (range increment 60 ft, tech, automatic), **Damage** 1d8+5 piercing
 **Melee** ◆ Combat Knife +9 (agile, finesse), **Damage** 2d6+3 slashing
 
 ---
@@ -4448,7 +4507,7 @@ Veteran heavy trooper of the Blue Suns.
 **AC** 19; **Fort** +11, **Ref** +9, **Will** +7
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Heavy Assault Rifle +11 (range increment 60 ft, automatic), **Damage** 2d8+4 piercing
+**Ranged** ◆ Phaeston +12 (range increment 65 ft, tech, automatic), **Damage** 1d8+6 piercing
 **Melee** ◆ Combat Knife +11 (agile, finesse), **Damage** 2d6+4 slashing
 
 ---
@@ -4465,7 +4524,7 @@ Blue Suns squad leader and tactician.
 **AC** 21; **Fort** +11, **Ref** +12, **Will** +10
 **HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Submachine Gun +13 (range increment 40 ft, automatic), **Damage** 3d6+4 piercing
+**Ranged** ◆ M-9 Tempest +14 (range increment 25 ft, tech, automatic, agile), **Damage** 4d4+7 piercing
 **Melee** ◆ Combat Knife +13 (agile, finesse), **Damage** 3d6+4 slashing
 **Tactical Order** ◆ The Centurion barks a command. One allied Blue Suns mercenary within 30 feet who can hear them can immediately Step or Stride up to half its Speed as a reaction.
 **Concussive Grenade** ◆◆ **Range** thrown 30 feet; **Area** 10-foot burst.
@@ -4481,12 +4540,12 @@ Blue Suns rocket-launcher specialist.
 
 **Perception** +10; **Skills** Athletics +12, Intimidation +9
 **Abilities** Str +4, Dex +2, Con +4, Int +0, Wis +1, Cha +0
-**Items** M-100 Grenade Launcher, Mercenary Armor (H), Kinetic Shield
+**Items** M-100 Grenade Launcher, Mercenary Armor (H), Kinetic Shield, M-3 Predator
 **AC** 19; **Fort** +13, **Ref** +9, **Will** +9
 **HP** 70; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
-**Ranged** ◆ Rocket Launcher +11 (range increment 80 ft), **Damage** 2d8+4 fire
-**Ranged** ◆ Sidearm +9 (range increment 40 ft), **Damage** 1d8+2 piercing
+**Ranged** ◆ M-100 Grenade Launcher +14 (range increment 40 ft, tech, scatter-5), **Damage** 4d8+4 bludgeoning
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 **Missile Barrage** ◆◆ **Range** 80 feet; **Area** 15-foot burst.
 The Heavy fires an explosive rocket. Each creature in the area takes 2d8+4 fire damage plus 1d6 bludgeoning (basic Reflex save, DC 21). The Heavy cannot fire again until the start of its next turn.
 
@@ -4504,7 +4563,7 @@ Founder and financier of the Blue Suns.
 **AC** 22; **Fort** +12, **Ref** +14, **Will** +13
 **HP** 85; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Custom Pistol +14 (range increment 50 ft), **Damage** 2d8+9 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 **Coordinate Mercenaries** ◆ Vido directs his forces with cold precision. Up to two allied Blue Suns mercenaries within 60 feet that can hear him each gain a +1 status bonus to attack rolls until the start of Vido's next turn.
 **Expendable Assets** ↺ **Trigger** Vido is targeted by a Strike and an allied Blue Suns mercenary is within 10 feet.
 
@@ -4525,7 +4584,7 @@ Batarian leader of the Blue Suns on Omega.
 **AC** 24; **Fort** +15, **Ref** +14, **Will** +13
 **HP** 105; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Custom Assault Rifle +16 (range increment 60 ft, automatic), **Damage** 3d6+8 piercing
+**Ranged** ◆ M-96 Mattock +17 (range increment 80 ft, tech, kickback), **Damage** 3d10+9 piercing
 **Melee** ◆ Vibro-Blade +16 (agile, finesse), **Damage** 2d8+8 slashing plus 1d6 electricity
 **Gunship Strafe** ◆◆ **Area** 60-foot line, 5 feet wide.
 Tarak calls in a strafing run from his gunship (or lays down a withering hail of fire). Each creature in the line takes 4d6 piercing damage (basic Reflex save, DC 23).
@@ -4550,7 +4609,7 @@ Hired gun of the Eclipse mercenary company.
 **AC** 18; **Fort** +7, **Ref** +10, **Will** +6
 **HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Submachine Gun +9 (range increment 40 ft, automatic), **Damage** 2d6+3 piercing
+**Ranged** ◆ M-4 Shuriken +11 (range increment 20 ft, tech, automatic), **Damage** 3d4+5 piercing
 **Melee** ◆ Combat Knife +9 (agile, finesse), **Damage** 2d6+1 slashing
 
 ---
@@ -4567,7 +4626,7 @@ Eclipse tech specialist and drone operator.
 **AC** 19; **Fort** +8, **Ref** +10, **Will** +9
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
+**Ranged** ◆ M-9 Tempest +12 (range increment 25 ft, tech, automatic, agile), **Damage** 3d4+6 piercing
 **Overload** ◆◆ **Range** 60 feet, one creature.
 The engineer sends an overcharge pulse. The target takes 2d6 electricity damage (basic Reflex save, DC 19). Kinetic barriers take double this damage before it carries to Hit Points.
 **Deploy Combat Drone** ◆◆ The engineer launches a hovering combat drone into an adjacent space (AC 17, HP 15, Speed fly 30). On the engineer's turn it can direct the drone to make a ranged zap Strike (+9, 1d6 electricity). The engineer can have only one drone active at a time.
@@ -4582,12 +4641,12 @@ Eclipse missile and heavy-weapons specialist.
 
 **Perception** +10; **Skills** Athletics +12, Intimidation +10
 **Abilities** Str +4, Dex +2, Con +4, Int +1, Wis +1, Cha +1
-**Items** M-100 Grenade Launcher, Duelist Armor (H), Kinetic Shield
+**Items** M-100 Grenade Launcher, Duelist Armor (H), Kinetic Shield, M-3 Predator
 **AC** 19; **Fort** +13, **Ref** +9, **Will** +9
 **HP** 70; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
-**Ranged** ◆ Missile Launcher +11 (range increment 80 ft), **Damage** 2d8+4 fire
-**Ranged** ◆ Sidearm +9 (range increment 40 ft), **Damage** 1d8+2 piercing
+**Ranged** ◆ M-100 Grenade Launcher +14 (range increment 40 ft, tech, scatter-5), **Damage** 4d8+4 bludgeoning
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 **Missile Barrage** ◆◆ **Range** 80 feet; **Area** 15-foot burst.
 Each creature in the area takes 2d8+4 fire plus 1d6 bludgeoning damage (basic Reflex save, DC 21). The Heavy cannot fire again until the start of its next turn.
 
@@ -4605,9 +4664,30 @@ Biotic shock trooper of Eclipse.
 **AC** 20; **Fort** +10, **Ref** +13, **Will** +11
 **HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Shotgun +13 (range increment 20 ft), **Damage** 3d6+4 piercing
+**Ranged** ◆ M-23 Eviscerator +14 (range increment 15 ft, tech, scatter-5), **Damage** 4d8+4 piercing
 **Melee** ◆ Biotic Strike +13 (agile, finesse, force, unarmed), **Damage** 2d6+4 bludgeoning plus 1d4 force
-**Biotic Charge** ◆◆ The Vanguard hurls itself in a biotic slipstream up to 40 feet in a straight line to an enemy it can see, ignoring difficult terrain. It then makes a melee Strike that deals an extra 1d6 force damage. On a hit, the Vanguard's barrier immediately restores 10 Shield HP.
+**Biotic Charge (NPC)** ◆◆ You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to **60 feet** in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a DC 18 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target takes 2d6 bludgeoning damage.
+**Failure** The target takes 6d6 bludgeoning damage and is knocked **prone**. Your Biotic Barrier recharges half of its maximum barrier HP.
+**Critical Failure** As failure, but 12d6 bludgeoning damage and pushed **5 feet** away from you. Your Biotic Barrier recharges to full.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
+| **Level** | **Barrier HP** |
+| 1-3 | 5 |
+| 4-5 | 10 |
+| 6-7 | 15 |
+| 8-9 | 20 |
+| 10-11 | 25 |
+| 12-13 | 30 |
+| 14-15 | 35 |
+| 16-17 | 40 |
+| 18-19 | 45 |
+| 20 | 50 |
 
 ---
 
@@ -4623,8 +4703,8 @@ Heavily armored Eclipse enforcer with a flamethrower.
 **AC** 22; **Fort** +14, **Ref** +11, **Will** +11
 **HP** 90; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
-**Ranged** ◆ Incendiary Thrower +14 (range increment 15 ft), **Damage** 3d6+7 fire
 **Melee** ◆ Armored Fist +14, **Damage** 2d10+7 bludgeoning
+**Ranged** ◆ M-451 Firestorm +15 (range increment 20 ft, tech), **Damage** 4d8+8 fire
 **Immolate** ◆◆ **Area** 15-foot cone.
 The Enforcer sprays burning fuel. Each creature in the cone takes 2d6+3 fire damage (basic Reflex save, DC 22) and 1d6 persistent fire damage on a failure.
 
@@ -4642,7 +4722,7 @@ Salarian leader of Eclipse on Omega.
 **AC** 22; **Fort** +11, **Ref** +14, **Will** +13
 **HP** 75; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Custom Pistol +14 (range increment 50 ft), **Damage** 2d8+9 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 **Overload Burst** ◆◆ **Range** 60 feet; **Area** 10-foot burst.
 Each creature in the area takes 3d6 electricity damage (basic Reflex save, DC 22); kinetic barriers take double before it carries to HP.
 **Deploy Security Mech** ◆◆ Jaroth activates a LOKI mech from a nearby cache (use the LOKI Mech statblock). He can have up to two active at once and directs one to act on his initiative.
@@ -4661,10 +4741,18 @@ Asari Eclipse lieutenant, strung out on red sand.
 **AC** 22; **Fort** +12, **Ref** +14, **Will** +12
 **HP** 80; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Machine Pistol +14 (range increment 40 ft, automatic), **Damage** 3d6+6 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 **Melee** ◆ Amplified Biotic Strike +14 (agile, finesse, force, unarmed), **Damage** 2d8+6 bludgeoning plus 1d6 force
-**Biotic Throw** ◆◆ **Range** 30 feet, one creature.
-Wasea hurls a target that fails a Fortitude save (DC 22) up to 15 feet and knocks it prone, dealing 2d6 bludgeoning on a critical failure.
+**Throw (NPC)** ◆◆ You project a mass effect field that hurls a creature or object with violent force.
+Choose a creature or unattended object within **60 feet**. The target must attempt a DC 19 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target is pushed 5 feet away from you.
+**Failure** The target takes 4d8 bludgeoning damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
+**Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -4680,7 +4768,7 @@ Unhinged asari founder and leader of Eclipse.
 **AC** 24; **Fort** +13, **Ref** +15, **Will** +14
 **HP** 105; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Prototype SMG +16 (range increment 40 ft, automatic), **Damage** 3d6+8 piercing
+**Ranged** ◆ M-5 Phalanx +17 (range increment 50 ft, tech), **Damage** 3d6+9 piercing
 **Melee** ◆ Biotic Lash +16 (agile, finesse, force, unarmed), **Damage** 2d8+8 bludgeoning plus 1d6 force
 **Biotic Detonation** ◆◆ **Range** 30 feet; **Area** 15-foot burst.
 Jona collapses a mass effect field into a violent implosion. Each creature in the area takes 4d6 force damage (basic Fortitude save, DC 24) and is knocked prone on a failure.
@@ -4702,7 +4790,7 @@ Vorcha grunt of the Blood Pack.
 **AC** 18; **Fort** +9, **Ref** +8, **Will** +5
 **HP** 40
 **Speed** 30 feet
-**Ranged** ◆ Shotgun +9 (range increment 20 ft), **Damage** 2d6+3 piercing
+**Ranged** ◆ M-27 Scimitar +11 (range increment 15 ft, tech, scatter-5), **Damage** 3d6+2 piercing
 **Melee** ◆ Claws +9 (agile, unarmed), **Damage** 1d8+3 slashing
 **Vorcha Regeneration** At the start of each of its turns, the vorcha regains 10 Hit Points and adapts to recent harm. The first time each round it would be reduced to 0 HP by a damage type it has already taken this encounter, it instead remains at 1 HP. This ability is deactivated for 1 round if the vorcha takes fire or acid damage.
 
@@ -4720,7 +4808,7 @@ Vorcha flamethrower fanatic of the Blood Pack.
 **AC** 18; **Fort** +11, **Ref** +8, **Will** +6
 **HP** 55
 **Speed** 25 feet
-**Ranged** ◆ Flamethrower +10 (range increment 15 ft), **Damage** 2d6+3 fire
+**Ranged** ◆ M-451 Firestorm +12 (range increment 20 ft, tech), **Damage** 3d8+4 fire
 **Melee** ◆ Claws +10 (agile, unarmed), **Damage** 1d8+3 slashing
 **Immolate** ◆◆ **Area** 15-foot cone.
 Each creature in the cone takes 2d6+3 fire damage (basic Reflex save, DC 19) plus 1d6 persistent fire damage on a failure.
@@ -4740,7 +4828,7 @@ Krogan heavy of the Blood Pack.
 **AC** 20; **Fort** +15, **Ref** +9, **Will** +10
 **HP** 70
 **Speed** 25 feet
-**Ranged** ◆ Combat Shotgun +13 (range increment 20 ft), **Damage** 2d8+5 piercing
+**Ranged** ◆ M-23 Eviscerator +14 (range increment 15 ft, tech, scatter-5), **Damage** 4d8+4 piercing
 **Melee** ◆ Krogan Headbutt +14 (unarmed), **Damage** 1d10+5 bludgeoning
 **Krogan Charge** ◆◆ The warrior Strides up to double its Speed in a straight line and makes a melee Strike. If it moved at least 15 feet, the Strike deals an extra 2d6 bludgeoning damage and the target must succeed at a Fortitude save (DC 21) or be knocked prone.
 **Redundant Physiology** The krogan's duplicated organs make it brutally hard to kill. It is not knocked out at 0 HP unless the damage is a critical hit or from fire; otherwise it acts on 1 HP until reduced a second time. It also gains a +2 circumstance bonus to saves against being sickened, poisoned, or made to bleed.
@@ -4763,7 +4851,7 @@ Krogan Blood Pack lieutenant.
 **AC** 22; **Fort** +16, **Ref** +10, **Will** +11
 **HP** 84
 **Speed** 25 feet
-**Ranged** ◆ Heavy Shotgun +15 (range increment 20 ft), **Damage** 2d8+6 piercing
+**Ranged** ◆ M-11 Wraith +15 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 4d8+8 piercing
 **Melee** ◆ Krogan Headbutt +16 (unarmed), **Damage** 1d12+6 bludgeoning
 **Krogan Charge** ◆◆ Wrang Strides up to double his Speed in a straight line and makes a melee Strike. If he moved at least 15 feet, the Strike deals an extra 2d6 bludgeoning damage and the target must succeed at a Fortitude save (DC 23) or be knocked prone.
 **Redundant Physiology** The krogan's duplicated organs make it brutally hard to kill. It is not knocked out at 0 HP unless the damage is a critical hit or from fire; otherwise it acts on 1 HP until reduced a second time. It also gains a +2 circumstance bonus to saves against being sickened, poisoned, or made to bleed.
@@ -4786,7 +4874,7 @@ Krogan warlord and leader of the Blood Pack on Omega.
 **AC** 24; **Fort** +18, **Ref** +12, **Will** +13
 **HP** 98; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Claymore Shotgun +17 (range increment 20 ft), **Damage** 3d8+6 piercing
+**Ranged** ◆ M-11 Wraith +17 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 4d8+9 piercing
 **Melee** ◆ Krogan Headbutt +18 (unarmed), **Damage** 2d10+6 bludgeoning
 **Berserker Charge** ◆◆ Garm Strides up to triple his Speed in a straight line, trampling through creatures' spaces, and makes a melee Strike with a +2 circumstance bonus to damage. Each creature whose space he moved through takes 2d8 bludgeoning damage (basic Reflex save, DC 24).
 **Regenerative Fury** Garm has fast healing 15 while above 0 HP. If reduced to 0 HP, he does not fall unless the triggering damage was a critical hit or fire damage; otherwise he remains at 1 HP with his fast healing suppressed for 1 round.
@@ -4804,12 +4892,13 @@ Quarian technical specialist and battlefield engineer
 
 **Perception** +8; **Skills** Crafting +12, Engineering Lore +12, Society +10, Stealth +9
 **Abilities** Str +1, Dex +3, Con +1, Int +4, Wis +2, Cha +1
-**Items** M-27 Scimitar, Explorer Armor (L), Kinetic Shield
+**Items** M-27 Scimitar, Explorer Armor (L), Kinetic Shield, M-3 Predator
 **AC** 18; **Fort** +9, **Ref** +10, **Will** +9
 **HP** 35; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Omni-Blade +9 (agile, finesse, tech), **Damage** 2d6+4 slashing plus 1d4 fire
-**Melee** ◆ Pistol +9 (analog), **Damage** 2d6+3 piercing
+**Ranged** ◆ M-3 Predator +12 (range increment 40 ft, tech), **Damage** 1d6+6 piercing
+**Ranged** ◆ M-27 Scimitar +12 (range increment 15 ft, tech, scatter-5), **Damage** 3d6+6 piercing
 **Omni-Tool Overload** ◆◆ **Range** 30 feet. One creature with a kinetic barrier or electronic device.
 The mechanic sends a targeted electromagnetic disruption through the target's systems. The target must succeed at a Reflex save (DC 18) or have their kinetic barrier disrupted, losing 2d6 Shield HP (or the effect determined by the GM for other electronics). On a critical failure, the barrier is also briefly offline and does not recharge until the start of the target's next turn.
 
@@ -4823,11 +4912,11 @@ Level-headed admiral and family friend of the Zorahs.
 
 **Perception** +13; **Skills** Computers +11, Diplomacy +14, Piloting +11, Society +13
 **Abilities** Str +1, Dex +3, Con +2, Int +3, Wis +4, Cha +4
-**Items** Kinetic Shield, Shield HP Mod - Tier 1
+**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-3 Predator
 **AC** 20; **Fort** +10, **Ref** +11, **Will** +13
 **HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sidearm +11 (range increment 40 ft), **Damage** 1d8+2 piercing
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 **Mediate** ◆ Shala'Raan attempts to calm a tense situation, gaining a +2 circumstance bonus to a Diplomacy check to Request or to shift a creature's attitude one step toward indifferent.
 
 ---
@@ -4840,11 +4929,11 @@ Idealist admiral who argues against war with the geth.
 
 **Perception** +12; **Skills** Computers +12, Diplomacy +14, Medicine +11, Society +13
 **Abilities** Str +1, Dex +2, Con +2, Int +4, Wis +4, Cha +4
-**Items** Kinetic Shield, Shield HP Mod - Tier 1
+**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-3 Predator
 **AC** 20; **Fort** +9, **Ref** +10, **Will** +13
 **HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sidearm +11 (range increment 40 ft), **Damage** 1d8+1 piercing
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 **Voice of Reason** ◆ Zaal'Koris attempts a Diplomacy check to make a heartfelt appeal, gaining a +2 circumstance bonus to de-escalate hostilities or talk down a single creature able to understand him.
 
 ---
@@ -4862,7 +4951,7 @@ Quarian Migrant Fleet combat marine
 **HP** 52; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Omni-Blade +11 (finesse, tech), **Damage** 2d8+4 slashing plus 1d4 fire
-**Melee** ◆ Assault Rifle +11 (analog, reload-2), **Damage** 2d8+4 piercing
+**Ranged** ◆ M-8 Avenger +14 (range increment 60 ft, tech, automatic), **Damage** 2d8+7 piercing
 
 ---
 
@@ -4874,11 +4963,11 @@ Brilliant, amoral quarian scientist-admiral.
 
 **Perception** +14; **Skills** Computers +15, Crafting +15, Science +15, Thievery +12
 **Abilities** Str +0, Dex +3, Con +2, Int +6, Wis +3, Cha +2
-**Items** Kinetic Shield, Shield HP Mod - Tier 1
+**Items** Kinetic Shield, Shield HP Mod - Tier 1, M-5 Phalanx
 **AC** 21; **Fort** +10, **Ref** +12, **Will** +13
 **HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 1d8+2 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 **Deploy Reprogrammed Drone** ◆◆ Daro'Xen activates a captured combat drone (AC 18, HP 18, fly 30). It makes a ranged zap Strike (+11, 1d6+2 electricity) on her turn. She can have one active at a time.
 **Overload** ◆◆ **Range** 60 feet, one creature. The target takes 2d6 electricity damage (basic Reflex save, DC 22); kinetic barriers and synthetic creatures take double.
 
@@ -4896,7 +4985,7 @@ Hawkish admiral of the Migrant Fleet's military.
 **AC** 22; **Fort** +13, **Ref** +12, **Will** +11
 **HP** 80; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Combat Shotgun +14 (range increment 20 ft), **Damage** 2d8+9 piercing
+**Ranged** ◆ M-11 Wraith +15 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 4d8+8 piercing
 **Melee** ◆ Omni-Blade +13 (agile, finesse), **Damage** 1d8+7 slashing plus 1d4 fire
 **Rally the Fleet** ◆ Han'Gerrel exhorts nearby quarian marines. Each ally within 30 feet who can hear him gains a +1 status bonus to attack rolls and saves against fear until the start of his next turn.
 
@@ -4914,7 +5003,7 @@ Tali's father; driven engineer-admiral obsessed with the homeworld.
 **AC** 21; **Fort** +11, **Ref** +12, **Will** +12
 **HP** 65; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 2d8+4 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 **Melee** ◆ Omni-Blade +12 (agile, finesse), **Damage** 2d8+6 slashing plus 1d4 fire
 **Sabotage** ◆◆ **Range** 60 feet. Rael'Zorah hacks a target's tech. A synthetic creature or a target's kinetic barrier takes 2d6 electricity damage; a creature wielding a tech weapon must succeed at a Reflex save (DC 20) or have it misfire, becoming unusable for 1 round.
 
@@ -4928,11 +5017,11 @@ Quarian engineer and hacker; peerless with technology and synthetic systems, dea
 
 **Perception** +21; **Skills** Computers +26, Engineering +24, Piloting +20, Stealth +19
 **Abilities** Str +1, Dex +5, Con +2, Int +6, Wis +4, Cha +3
-**Items** Explorer Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**Items** Explorer Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1, M-300 Claymore
 **AC** 27; **Fort** +17, **Ref** +21, **Will** +22
 **HP** 155; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-23 Katana +19 (range increment 20 ft, scatter-5), **Damage** 4d8+12 piercing
+**Ranged** ◆ M-300 Claymore +23 (range increment 10 ft, tech, scatter-5, fatal-d12, kickback), **Damage** 6d8+13 piercing
 **Combat Drone** ◆◆ Tali deploys an IED combat drone (AC 16, 25 HP) adjacent to one enemy within 60 feet. While the drone is active, that enemy takes a –2 circumstance penalty to attack rolls. The drone can be targeted and destroyed.
 **AI Hacking** ◆◆◆ One synthetic creature within 60 feet must succeed on a DC 28 Will save or become Confused for 1 round. 1/encounter.
 
@@ -4952,7 +5041,7 @@ Alliance marine aboard the Normandy; exceptional physical specimen and close-qua
 **AC** 24; **Fort** +20, **Ref** +15, **Will** +14
 **HP** 130; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-96 Mattock +20 (range increment 80 ft, fatal-d10), **Damage** 2d8+9 piercing
+**Ranged** ◆ M-76 Revenant +18 (range increment 60 ft, tech, automatic, unwieldy), **Damage** 4d6+10 piercing
 **Melee** ◆ Combat Knife +20 (agile, finesse), **Damage** 1d6+10 piercing
 **Soldier's Endurance** 1/encounter, when Vega would take a critical hit, he may treat it as a normal hit instead.
 
@@ -4970,7 +5059,7 @@ Salarian scientist and former STG operative; the galaxy's foremost geneticist an
 **AC** 22; **Fort** +12, **Ref** +16, **Will** +16
 **HP** 110; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
-**Ranged** ◆ M-9 Tempest +17 (range increment 50 ft, agile, burst-fire), **Damage** 4d6+9 piercing
+**Ranged** ◆ Scorpion +18 (range increment 25 ft, tech, scatter-5), **Damage** 3d6+10 bludgeoning
 **Incinerate** ◆◆ One target within 60 feet takes 3d8+8 fire damage and is Clumsy 1 until the end of its next turn (DC 25 Reflex for half, no Clumsy on success).
 **Neural Shock** ◆◆ One target within 30 feet must succeed on a DC 25 Fortitude save or be Stunned 1 (Stunned 2 on a critical failure). 1/encounter.
 **Salarian Metabolism** Mordin gains a +2 circumstance bonus to initiative rolls and is never caught flat-footed during a surprise round.
@@ -4989,7 +5078,7 @@ Tank-bred krogan warrior; perfected for combat from birth, carrying the genetic 
 **AC** 28; **Fort** +23, **Ref** +18, **Will** +18
 **HP** 140; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-300 Claymore +23 (range increment 20 ft, scatter-5), **Damage** 4d6+9 piercing
+**Ranged** ◆ N7 Crusader +21 (range increment 25 ft, tech, fatal-d12, kickback), **Damage** 5d8+12 piercing
 **Melee** ◆ Headbutt +23 (shove), **Damage** 2d8+11 bludgeoning
 **Krogan Regeneration** Grunt recovers **15 HP** at the start of each of his turns.
 **Berserker Charge** ◆◆ Grunt charges up to 40 feet in a straight line and makes a melee Strike (+26, 2d8+11 bludgeoning) at the end. On a hit the target is knocked Prone and pushed 10 feet. 1/encounter.
@@ -5008,10 +5097,28 @@ Subject Zero; the most powerful human biotic alive, built from Cerberus cruelty 
 **AC** 26; **Fort** +19, **Ref** +20, **Will** +18
 **HP** 165; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-22 Eviscerator +20 (range increment 20 ft, scatter-5), **Damage** 3d10+12 piercing
+**Ranged** ◆ N7 Crusader +21 (range increment 25 ft, tech, fatal-d12, kickback), **Damage** 5d8+12 piercing
 **Biotic Superiority** Jack adds **1d6 force damage** to any melee Strike she makes against a target within her reach.
-**Pull** ◆◆ One target within 60 feet must succeed on a DC 27 Fortitude save or be pulled up to 30 feet toward Jack and become Grabbed until the end of its next turn.
-**Shockwave** ◆◆ A 30-foot line of biotic force. All creatures in the area take 3d8+8 force damage (DC 27 Reflex for half) and are pushed 10 feet away from Jack on a failure.
+**Pull (NPC)** ◆ You project a focused mass effect field that seizes a single target and yanks them toward you.
+Choose a creature within **30 feet**. The target must attempt a DC 25 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The creature is pulled 10 feet toward you.
+**Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
+**Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Shockwave (NPC)** ◆◆ You slam biotic energy into the ground, sending a rolling kinetic shockwave along the surface that topples everything in its path.
+All creatures in a 60-foot line must attempt a DC 25 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The creature takes 3d6 bludgeoning damage.
+**Failure** The creature takes 6d6 bludgeoning damage and is pushed 10 feet away from you.
+**Critical Failure** As failure, but 12d6 bludgeoning damage and also **Knocked Prone**.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Biotic Explosion** ◆◆◆ A 20-foot burst within 60 feet. All creatures in the area take 5d8+10 force damage (DC 27 Reflex for half). On a critical failure, they are also knocked Prone and Stunned 1. 1/encounter.
 
 ---
@@ -5024,12 +5131,12 @@ A unique geth platform of 1,183 programs; hunter-killer turned philosopher, patc
 
 **Perception** +22; **Skills** Athletics +20, Computers +24, Engineering +22, Stealth +22
 **Abilities** Str +4, Dex +5, Con +3, Int +6, Wis +4, Cha +0
-**Items** N7 Valiant, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 2
+**Items** N7 Valiant, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Geth Pulse Rifle
 **AC** 29; **Fort** +20, **Ref** +22, **Will** +20
 **HP** 175; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-98 Widow +22 (range increment 200 ft, fatal-d12, volley-50), **Damage** 3d10+8 piercing
-**Ranged** ◆ Geth Pulse Rifle +20 (range increment 60 ft, burst-fire), **Damage** 2d8+6 electricity
+**Ranged** ◆ N7 Valiant +21 (range increment 180 ft, tech, volley-30), **Damage** 4d10+12 piercing
+**Ranged** ◆ Geth Pulse Rifle +21 (range increment 75 ft, tech, automatic), **Damage** 3d8+12 electricity
 **Geth Network** Legion cannot be Flanked. It is immune to fear effects and the Confused condition.
 **AI Hacking** ◆◆◆ One synthetic creature within 60 feet must succeed on a DC 28 Will save or become Confused for 1 round (2 rounds on a critical failure). 1/encounter.
 **Self-Repair** Legion recovers **10 HP** at the start of each of its turns.
@@ -5044,12 +5151,12 @@ Former C-Sec officer and master sniper; Shepard's most dependable companion. Alw
 
 **Perception** +22; **Skills** Athletics +19, Intimidation +18, Piloting +20, Stealth +22
 **Abilities** Str +3, Dex +6, Con +3, Int +4, Wis +4, Cha +2
-**Items** N7 Valiant, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1
+**Items** N7 Valiant, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 1, M-6 Carnifex
 **AC** 28; **Fort** +19, **Ref** +22, **Will** +20
 **HP** 170; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Black Widow Sniper Rifle +24 (range increment 200 ft, fatal-d12, volley-50), **Damage** 3d10+9 piercing
-**Ranged** ◆ M-6 Carnifex +22 (range increment 40 ft, fatal-d10), **Damage** 2d6+7 piercing
+**Ranged** ◆ N7 Valiant +23 (range increment 180 ft, tech, volley-30), **Damage** 4d10+13 piercing
+**Ranged** ◆ M-6 Carnifex +23 (range increment 45 ft, tech, kickback), **Damage** 4d6+13 piercing
 **Calibrations** 1/encounter, before making an attack roll, Garrus may reroll it and keep the better result.
 
 ---
@@ -5066,10 +5173,37 @@ Asari archaeologist, biotic powerhouse, and galaxy-spanning information broker (
 **AC** 27; **Fort** +18, **Ref** +19, **Will** +24
 **HP** 160; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-5 Phalanx +20 (range increment 40 ft, fatal-d10), **Damage** 5d6+12 piercing
-**Warp** ◆◆ One target within 60 feet takes 3d10+6 force damage (DC 28 Will for half). On a critical failure the target is Weakened 2 until the end of its next turn.
-**Singularity** ◆◆◆ A 15-foot burst within 60 feet. Creatures in the area must succeed on a DC 28 Reflex save or be pulled to the center and Restrained for 1 round. On a success they are pulled but not Restrained. 1/encounter.
-**Stasis** ◆◆ One target within 60 feet must succeed on a DC 28 Will save or be Stunned 2. 1/encounter.
+**Ranged** ◆ N7 Hurricane +23 (range increment 30 ft, tech, automatic), **Damage** 5d4+13 piercing
+**Warp (NPC)** ◆◆ You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.
+Choose a creature within **60 feet**. The target must attempt a DC 26 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target takes 3d6 void damage.
+**Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
+**Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Singularity (NPC)** ◆◆◆ You create a localized mass effect gravity well that pulls nearby enemies in and suspends them helplessly.
+You create a Singularity at a point within **60 feet**. All creatures within a 20-foot radius burst centered on that point must attempt a DC 26 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The creature is pulled 10 feet toward the singularity's center.
+**Failure** The creature is pulled to the singularity's center and becomes **Restrained** (Escape DC equals the creature's power DC). The singularity persists until the start of your next turn; you may Sustain it as a free action each round for up to 1 minute.
+**Critical Failure** As failure. Additionally, the creature takes 6d6 bludgeoning damage at the start of each of its turns while restrained.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Stasis (NPC)** ◆◆ You encase a single target in an impenetrable mass effect stasis field, freezing them completely in place.
+Choose a creature within **30 feet**. The target must attempt a DC 26 Will save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The creature is **Immobilized** until the start of your next turn.
+**Failure** The creature is **Paralyzed** until the start of your next turn. At the end of each of its turns, it can attempt a new Will save to end the effect early.
+**Critical Failure** The creature is **Paralyzed** for 1 minute. At the end of each of its turns, it can attempt a new Will save (same DC) to end the effect early.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -5085,9 +5219,27 @@ Asari justicar of 400 years; absolute biotic power bound by a code that cannot b
 **AC** 28; **Fort** +19, **Ref** +21, **Will** +24
 **HP** 165; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-9 Tempest +20 (range increment 50 ft, agile, burst-fire), **Damage** 5d6+12 piercing
-**Reave** ◆◆ One target within 60 feet takes 3d10+8 negative damage (DC 28 Fortitude for half). On a failure, the target is also Enfeebled 1 until the end of its next turn.
-**Biotic Throw** ◆◆ One target within 60 feet must succeed on a DC 28 Fortitude save or be flung 20 feet in a direction of Samara's choice and knocked Prone (taking 2d6 bludgeoning fall damage).
+**Ranged** ◆ N7 Hurricane +23 (range increment 30 ft, tech, automatic), **Damage** 5d4+13 piercing
+**Reave (NPC)** ◆◆ You drain the vital energy from a foe, siphoning their life force and preventing them from recovering while bolstering your own resilience.
+Choose a creature within **30 feet**. The target must attempt a DC 26 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target takes 3d8 void damage and cannot regain HP until the start of your next turn.
+**Failure** The target takes 6d8 void damage, cannot regain HP for 1 round, and you regain 3d8 HP damage.
+**Critical Failure** As failure, but 12d8 void damage, you regain 6d8 HP damage, and the target cannot regain HP for 1 minute (or until the end of combat).
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Throw (NPC)** ◆◆ You project a mass effect field that hurls a creature or object with violent force.
+Choose a creature or unattended object within **60 feet**. The target must attempt a DC 26 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target is pushed 5 feet away from you.
+**Failure** The target takes 6d8 bludgeoning damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
+**Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Justicar's Resolve** Samara is immune to fear effects and cannot be Demoralized by any means.
 **Biotic Deflection** ↺ **Trigger** Samara would be struck by a ranged attack. She imposes a –2 penalty to that attack roll.
 
@@ -5101,15 +5253,24 @@ Drell assassin without equal; a terminal illness and a spiritual reckoning don't
 
 **Perception** +24; **Skills** Acrobatics +24, Deception +20, Religion +20, Stealth +26
 **Abilities** Str +2, Dex +7, Con +2, Int +3, Wis +6, Cha +3
-**Items** N7 Hurricane, Predator Armor (L)
+**Items** N7 Hurricane, Predator Armor (L), M-92 Mantis
 **AC** 28; **Fort** +16, **Ref** +24, **Will** +22
 **HP** 155
 **Speed** 30 feet
-**Ranged** ◆ M-92 Mantis +24 (range increment 150 ft, fatal-d12, volley-30), **Damage** 4d8+12 piercing
-**Ranged** ◆ M-4 Shuriken +22 (range increment 30 ft, agile, burst-fire), **Damage** 3d6+8 piercing
+**Ranged** ◆ M-92 Mantis +23 (range increment 120 ft, tech, fatal-d10, kickback, volley-30), **Damage** 3d8+13 piercing
+**Ranged** ◆ N7 Hurricane +23 (range increment 30 ft, tech, automatic), **Damage** 5d4+13 piercing
 **Drell Precision** Thane deals an additional **2d6 precision damage** when striking a flat-footed target.
 **Perfect Aim** Thane ignores the volley penalty on his sniper rifle.
-**Biotic Throw** ◆◆ One target within 60 feet must succeed on a DC 28 Fortitude save or be flung 20 feet in a direction of Thane's choice and knocked Prone (taking 2d6 bludgeoning fall damage on a failure, double on a critical failure).
+**Throw (NPC)** ◆◆ You project a mass effect field that hurls a creature or object with violent force.
+Choose a creature or unattended object within **60 feet**. The target must attempt a DC 26 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target is pushed 5 feet away from you.
+**Failure** The target takes 6d8 bludgeoning damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
+**Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Serene Focus** ◇ Thane enters a meditative state. He gains a +2 circumstance bonus to his next attack roll this turn and ignores concealment for that attack. 1/encounter.
 
 ---
@@ -5126,10 +5287,31 @@ Ancient krogan battlemaster and clan chief; centuries of war made flesh, with bi
 **AC** 30; **Fort** +27, **Ref** +20, **Will** +24
 **HP** 182; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-300 Claymore +28 (range increment 20 ft, scatter-5), **Damage** 6d6+14 piercing
+**Ranged** ◆ N7 Crusader +26 (range increment 25 ft, tech, fatal-d12, kickback), **Damage** 6d8+15 piercing
 **Melee** ◆ Headbutt +28 (shove), **Damage** 4d8+13 bludgeoning
 **Krogan Regeneration** Wrex recovers **20 HP** at the start of each of his turns. This regeneration continues even while downed, and only stops when Wrex is dead.
-**Biotic Charge** ◆◆ Wrex charges up to 60 feet in a straight line, moving through occupied spaces. He makes one melee Strike (+28, 3d8+14 bludgeoning) against a target at the end of the charge. On a hit the target is knocked Prone. 1/encounter.
+**Biotic Charge (NPC)** ◆◆ You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to **60 feet** in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a DC 29 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target takes 4d6 bludgeoning damage.
+**Failure** The target takes 12d6 bludgeoning damage and is knocked **prone**. Your Biotic Barrier recharges half of its maximum barrier HP.
+**Critical Failure** As failure, but 24d6 bludgeoning damage and pushed **5 feet** away from you. Your Biotic Barrier recharges to full.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
+| **Level** | **Barrier HP** |
+| 1-3 | 5 |
+| 4-5 | 10 |
+| 6-7 | 15 |
+| 8-9 | 20 |
+| 10-11 | 25 |
+| 12-13 | 30 |
+| 14-15 | 35 |
+| 16-17 | 40 |
+| 18-19 | 45 |
+| 20 | 50 |
 
 ---
 
@@ -5143,10 +5325,11 @@ Overzealous civilian who idolizes Commander Shepard.
 
 **Perception** +4; **Skills** Diplomacy +5, Shepard Lore +9, Society +6
 **Abilities** Str +1, Dex +1, Con +1, Int +2, Wis -1, Cha +2
+**Items** M-3 Predator
 **AC** 15; **Fort** +5, **Ref** +5, **Will** +3
 **HP** 18
 **Speed** 25 feet
-**Ranged** ◆ Borrowed Pistol +5 (range increment 40 ft), **Damage** 1d8 piercing
+**Ranged** ◆ M-3 Predator +9 (range increment 40 ft, tech), **Damage** 1d6+3 piercing
 **Misguided Heroics** ◆ Conrad makes an impassioned, poorly-judged speech invoking Commander Shepard. He attempts a Diplomacy check to Make an Impression; on a success the target is too bewildered or charmed to attack him until the end of its next turn unless he acts hostile first.
 
 ---
@@ -5159,10 +5342,11 @@ Volus financial adviser on the Presidium, and a discreet agent of the Shadow Bro
 
 **Perception** +11; **Skills** Computers +8, Deception +8, Diplomacy +9, Society +10
 **Abilities** Str -1, Dex +0, Con +1, Int +3, Wis +3, Cha +3
+**Items** M-3 Predator
 **AC** 15; **Fort** +8, **Ref** +5, **Will** +11
 **HP** 25
 **Speed** 25 feet
-**Ranged** ◆ Holdout Pistol +6 (range increment 30 ft, agile, concealable), **Damage** 1d6+2 piercing
+**Ranged** ◆ M-3 Predator +11 (range increment 40 ft, tech), **Damage** 1d6+5 piercing
 **Shadow Broker's Ear** Barla Von is an agent of the Shadow Broker. Once per day he can answer a question about a person, organization or event on the Citadel as if he had critically succeeded at a Recall Knowledge check, for a price set by the GM, usually credits, a favor, or information of equal value.
 **Pressure Suit** Barla Von depends on his environment suit. A critical hit that deals slashing or piercing damage breaches it: he is sickened 1 until someone spends 1 minute sealing the breach (DC 15 Crafting or Medicine).
 **Call in a Favor** ↺ **Trigger** A creature Barla Von can see threatens him. **Effect** He reminds it, pointedly, of who his clients are. The creature must attempt a DC 18 Will save; on a failure it can't take hostile actions against him until the end of its next turn. Once per day.
@@ -5198,7 +5382,7 @@ Salarian STG captain; tactician and leader who holds the line when everyone else
 **AC** 22; **Fort** +13, **Ref** +15, **Will** +16
 **HP** 85; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
-**Ranged** ◆ M-9 Tempest +16 (range increment 50 ft, agile, burst-fire), **Damage** 3d6+10 piercing
+**Ranged** ◆ M-5 Phalanx +17 (range increment 50 ft, tech), **Damage** 3d6+9 piercing
 **STG Training** Kirrahe gains a +2 circumstance bonus to initiative rolls and is never caught flat-footed during a surprise round.
 **Hold the Line** ◆ All allied creatures within 60 feet who can hear Kirrahe gain a **+2 morale bonus** to saves until the start of his next turn. 1/encounter.
 
@@ -5217,8 +5401,17 @@ Blunt asari matriarch; Liara's father, working a bar on Illium.
 **HP** 100; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Biotic Warhammer +15 (force, unarmed), **Damage** 2d8+5 bludgeoning plus 1d6 force
-**Ranged** ◆ Heavy Pistol +14 (range increment 50 ft), **Damage** 1d8+4 piercing
-**Matriarch's Throw** ◆◆ **Range** 40 feet, one creature. The target must succeed at a Fortitude save (DC 23) or be hurled up to 20 feet and knocked prone, taking 2d6 bludgeoning plus 1d6 force damage (half on a success).
+**Ranged** ◆ M-5 Phalanx +17 (range increment 50 ft, tech), **Damage** 3d6+9 piercing
+**Throw (NPC)** ◆◆ You project a mass effect field that hurls a creature or object with violent force.
+Choose a creature or unattended object within **60 feet**. The target must attempt a DC 21 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target is pushed 5 feet away from you.
+**Failure** The target takes 4d8 bludgeoning damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
+**Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -5234,7 +5427,7 @@ Rogue turian Spectre, indoctrinated herald of Sovereign.
 **AC** 28; **Fort** +18, **Ref** +18, **Will** +16
 **HP** 170; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Custom Assault Rifle +20 (range increment 70 ft, automatic), **Damage** 3d8+13 piercing
+**Ranged** ◆ M-99 Saber +21 (range increment 80 ft, tech), **Damage** 4d10+12 piercing
 **Melee** ◆ Biotic Slam +20 (agile, finesse, force, unarmed), **Damage** 2d12+12 bludgeoning plus 1d6 force
 **Biotic Overload** ◆◆ **Area** 20-foot burst within 60 feet. Each creature takes 5d6 force damage (basic Reflex save, DC 28) and is knocked prone on a failure.
 **Indoctrinated Zeal** ↺ **Trigger** Saren is critically hit, or an ally within 30 feet is reduced to 0 HP.
@@ -5252,12 +5445,12 @@ Humanity's first Spectre and the galaxy's best hope.
 
 **Perception** +20; **Skills** Athletics +19, Diplomacy +20, Intimidation +20, Society +17, Warfare +19
 **Abilities** Str +4, Dex +5, Con +4, Int +3, Wis +3, Cha +5
-**Items** M-99 Saber, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2
+**Items** M-99 Saber, Predator Armor (L), Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 2, M-3 Predator
 **AC** 30; **Fort** +19, **Ref** +19, **Will** +18
 **HP** 185; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ M-8 Avenger +22 (range increment 70 ft, automatic), **Damage** 4d8+12 piercing
-**Ranged** ◆ M-3 Predator +22 (range increment 50 ft), **Damage** 3d8+8 piercing
+**Ranged** ◆ M-99 Saber +23 (range increment 80 ft, tech), **Damage** 4d10+13 piercing
+**Ranged** ◆ M-3 Predator +23 (range increment 40 ft, tech), **Damage** 2d6+13 piercing
 **Melee** ◆ Omni-Blade +21 (agile, finesse), **Damage** 3d8+9 slashing plus 1d6 fire
 **Adrenaline Rush** ◆ Time seems to slow. Shepard gains a third action this turn, which can only be used to Strike, Stride, or Take Cover.
 **Concussive Shot** ◆◆ **Range** 60 feet, one creature. Shepard fires a kinetic slug dealing 2d10+7 bludgeoning damage (basic Fortitude save, DC 30); on a failure the target is also pushed 10 feet and knocked prone.
@@ -5277,10 +5470,28 @@ Absolute ruler of Omega; centuries-old asari crime lord who enforces her will th
 **AC** 30; **Fort** +21, **Ref** +22, **Will** +26
 **HP** 190; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ M-5 Phalanx +22 (range increment 40 ft, fatal-d10), **Damage** 5d6+14 piercing
+**Ranged** ◆ N7 Eagle +24 (range increment 40 ft, tech, automatic), **Damage** 4d8+14 piercing
 **I Am Omega** All enemies within 30 feet of Aria take a –1 circumstance penalty to saves against her abilities. Additionally, enemies who fail a save against one of her abilities are Frightened 1.
-**Biotic Shockwave** ◆◆ A 30-foot line of biotic force erupts from Aria. All creatures in the area take 4d8+10 force damage (DC 30 Reflex for half).
-**Biotic Pull** ◆◆ Up to three targets within 60 feet must succeed on a DC 30 Fortitude save or be pulled 20 feet toward Aria and become Grabbed until the end of their next turn.
+**Shockwave (NPC)** ◆◆ You slam biotic energy into the ground, sending a rolling kinetic shockwave along the surface that topples everything in its path.
+All creatures in a 60-foot line must attempt a DC 27 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The creature takes 3d6 bludgeoning damage.
+**Failure** The creature takes 6d6 bludgeoning damage and is pushed 10 feet away from you.
+**Critical Failure** As failure, but 12d6 bludgeoning damage and also **Knocked Prone**.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+**Pull (NPC)** ◆ You project a focused mass effect field that seizes a single target and yanks them toward you.
+Choose a creature within **30 feet**. The target must attempt a DC 27 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The creature is pulled 10 feet toward you.
+**Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
+**Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Omega's Resolve** ↺ **Trigger** Aria would be reduced to 0 HP. She is instead reduced to 1 HP and all enemies within 30 feet take 2d10 force damage (no save). 1/encounter.
 
 ---
@@ -5341,12 +5552,13 @@ Asari mercenary combatant
 
 **Perception** +5; **Skills** Acrobatics +7, Intimidation +6
 **Abilities** Str +2, Dex +2, Con +1, Int +1, Wis +1, Cha +3
-**Items** M-3 Predator, Mantis Armor (L), Kinetic Shield
+**Items** M-3 Predator, Mantis Armor (L), Kinetic Shield, M-8 Avenger
 **AC** 15; **Fort** +8, **Ref** +7, **Will** +7
 **HP** 20; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Strike +6 (agile, finesse), **Damage** 2d4+3 bludgeoning
-**Melee** ◆ Autotarget Rifle +6 (analog, automatic, reload-2), **Damage** 1d6+4 piercing
+**Ranged** ◆ M-8 Avenger +9 (range increment 60 ft, tech, automatic), **Damage** 1d8+3 piercing
+**Ranged** ◆ M-3 Predator +9 (range increment 40 ft, tech), **Damage** 1d6+3 piercing
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
@@ -5417,11 +5629,11 @@ Barely-trained conscript with a pistol.
 
 **Perception** +6; **Skills** Athletics +6, Intimidation +4
 **Abilities** Str +2, Dex +2, Con +2, Int +0, Wis +1, Cha +0
-**Items** Kinetic Shield
+**Items** Kinetic Shield, M-3 Predator
 **AC** 16; **Fort** +7, **Ref** +6, **Will** +4
 **HP** 20; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Pistol +7 (range increment 40 ft), **Damage** 1d8+1 piercing
+**Ranged** ◆ M-3 Predator +9 (range increment 40 ft, tech), **Damage** 1d6+3 piercing
 **Melee** ◆ Fist +6 (agile, finesse, nonlethal, unarmed), **Damage** 1d4+2 bludgeoning
 
 ---
@@ -5455,7 +5667,7 @@ Aggressive vorcha melee combatant
 **Speed** 30 feet
 **Melee** ◆ Feral Bite +7 (agile, finesse, unarmed), **Damage** 1d6+3 piercing
 **Melee** ◆ Claw +7 (agile, unarmed), **Damage** 1d4+3 slashing
-**Melee** ◆ Scattergun +5 (reload-1, scatter-5), **Damage** 1d8+2 piercing
+**Ranged** ◆ AT-12 Raider +9 (range increment 15 ft, tech, scatter-5), **Damage** 3d6+0 piercing
 
 ---
 
@@ -5472,7 +5684,7 @@ Batarian Hegemony combat infantry
 **HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Strike +8, **Damage** 2d6+3 bludgeoning
-**Melee** ◆ Assault Rifle +8 (analog, reload-2), **Damage** 1d8+6 piercing
+**Ranged** ◆ M-8 Avenger +11 (range increment 60 ft, tech, automatic), **Damage** 1d8+5 piercing
 
 ---
 
@@ -5504,7 +5716,7 @@ Contracted human combatant
 **HP** 30; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Pistol Whip +8 (agile), **Damage** 2d4+3 bludgeoning
-**Melee** ◆ Autotarget Rifle +9 (analog, automatic, reload-2), **Damage** 2d6+3 piercing
+**Ranged** ◆ M-8 Avenger +11 (range increment 60 ft, tech, automatic), **Damage** 1d8+5 piercing
 
 ---
 
@@ -5520,7 +5732,7 @@ Volus trade operative, non-combat encounter or hostile negotiator
 **AC** 15; **Fort** +6, **Ref** +7, **Will** +9
 **HP** 24
 **Speed** 20 feet
-**Melee** ◆ Holdout Pistol +6 (analog, concealable), **Damage** 1d4+1 piercing
+**Ranged** ◆ M-3 Predator +11 (range increment 40 ft, tech), **Damage** 1d6+5 piercing
 
 ---
 
@@ -5536,7 +5748,7 @@ Field medic supporting a squad with medi-gel.
 **AC** 19; **Fort** +9, **Ref** +9, **Will** +11
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
+**Ranged** ◆ M-9 Tempest +12 (range increment 25 ft, tech, automatic, agile), **Damage** 3d4+6 piercing
 **Apply Medi-Gel** ◆◆ **Range** touch (or thrown 30 feet). Restores 2d8+3 Hit Points to a living creature and removes persistent bleed.
 
 ---
@@ -5554,7 +5766,7 @@ Contracted drell combat specialist
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Combat Blade +11 (agile, finesse), **Damage** 2d6+4 slashing
-**Melee** ◆ Pistol +11 (analog), **Damage** 2d6+6 piercing
+**Ranged** ◆ M-5 Phalanx +12 (range increment 50 ft, tech), **Damage** 2d6+6 piercing
 
 ---
 
@@ -5570,7 +5782,7 @@ Tech specialist with drones and disruptor attacks.
 **AC** 19; **Fort** +8, **Ref** +10, **Will** +9
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sidearm +10 (range increment 40 ft), **Damage** 2d8+4 piercing
+**Ranged** ◆ M-9 Tempest +12 (range increment 25 ft, tech, automatic, agile), **Damage** 3d4+6 piercing
 **Overload** ◆◆ **Range** 60 feet, one creature. Deals 2d6 electricity damage (basic Reflex save, DC 19); kinetic barriers and synthetics take double.
 **Deploy Combat Drone** ◆◆ Deploys a combat drone (AC 17, HP 15, fly 30) that makes a ranged zap Strike (+9, 1d6 electricity) on the engineer's turn. One drone at a time.
 
@@ -5589,7 +5801,7 @@ Fanatical hanar Enkindler devotee
 **HP** 38; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
 **Melee** ◆ Tentacle Lash +9 (agile, finesse, reach-5, unarmed), **Damage** 2d6+1 bludgeoning
-**Melee** ◆ Pistol +9 (analog), **Damage** 2d6+6 piercing
+**Ranged** ◆ M-6 Carnifex +12 (range increment 45 ft, tech, kickback), **Damage** 3d6+6 piercing
 **Bioluminescent Display** ◆◆ 20-foot cone. Each sighted creature must succeed at a Will save (DC 18) or become dazzled for 1 minute (stunned 1 on a critical failure). The hanar becomes concealed until the start of its next turn.
 
 ---
@@ -5606,7 +5818,7 @@ Trained professional soldier with an assault rifle.
 **AC** 19; **Fort** +11, **Ref** +9, **Will** +8
 **HP** 45; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Assault Rifle +11 (range increment 60 ft, automatic), **Damage** 2d8+4 piercing
+**Ranged** ◆ Phaeston +12 (range increment 65 ft, tech, automatic), **Damage** 1d8+6 piercing
 **Melee** ◆ Combat Knife +11 (agile, finesse), **Damage** 2d6+4 slashing
 
 ---
@@ -5640,6 +5852,7 @@ Salarian research operative with field-deployed chemical arsenal
 **Speed** 35 feet
 **Melee** ◆ Omni-Blade +7 (agile, finesse, tech), **Damage** 1d4+0 slashing
 **Melee** ◆ Chemical Dispenser +9 (poison, splash-5), **Damage** 1d8 poison
+**Ranged** ◆ M-9 Tempest +12 (range increment 25 ft, tech, automatic, agile), **Damage** 3d4+6 piercing
 
 ---
 
@@ -5655,7 +5868,7 @@ Aggressive close-assault trooper with a shotgun.
 **AC** 19; **Fort** +11, **Ref** +9, **Will** +7
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Shotgun +11 (range increment 20 ft), **Damage** 2d6+4 piercing
+**Ranged** ◆ M-23 Eviscerator +12 (range increment 15 ft, tech, scatter-5), **Damage** 3d8+4 piercing
 **Melee** ◆ Combat Knife +11 (agile, finesse), **Damage** 1d6+4 slashing
 **Breaching Charge** ◆◆ The trooper Strides up to its Speed and makes a Shotgun Strike. If it moved at least 10 feet toward the target, the Strike deals an extra 1d6 piercing damage.
 
@@ -5674,7 +5887,7 @@ Turian Hierarchy line infantry
 **HP** 40; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Knife +10 (agile, finesse), **Damage** 2d6+4 piercing
-**Melee** ◆ Assault Rifle +10 (analog, reload-2), **Damage** 2d8+4 piercing
+**Ranged** ◆ M-15 Vindicator +12 (range increment 70 ft, tech, burst-fire), **Damage** 2d8+6 piercing
 
 ---
 
@@ -5691,7 +5904,7 @@ Contracted drell elimination specialist
 **HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Venomous Touch +12 (agile, finesse, poison), **Damage** 1d8+5 piercing plus 1d4 poison
-**Melee** ◆ Sniper Rifle +12 (reload-1, aimed), **Damage** 2d8+5 piercing
+**Ranged** ◆ M-92 Mantis +14 (range increment 120 ft, tech, fatal-d10, kickback, volley-30), **Damage** 3d8+7 piercing
 **Vanish** ◆ The drell assassin uses their training and desert-stalker instincts to immediately Hide, even without cover or concealment, taking a -2 penalty to the check if nothing obscures them.
 
 ---
@@ -5704,12 +5917,12 @@ Agile drell marksman with perfect recall.
 
 **Perception** +14; **Skills** Acrobatics +14, Athletics +11, Stealth +13
 **Abilities** Str +2, Dex +5, Con +2, Int +2, Wis +3, Cha +2
-**Items** M-97 Viper, Predator Armor (L), Kinetic Shield
+**Items** M-97 Viper, Predator Armor (L), Kinetic Shield, M-3 Predator
 **AC** 21; **Fort** +9, **Ref** +14, **Will** +11
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Viper Sniper Rifle +14 (range increment 100 ft), **Damage** 2d8+4 piercing
-**Ranged** ◆ Heavy Pistol +14 (range increment 50 ft), **Damage** 1d8+4 piercing
+**Ranged** ◆ M-97 Viper +14 (range increment 120 ft, tech, volley-30), **Damage** 3d8+7 piercing
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 **Marksman's Focus** ◆ The sharpshooter's next ranged Strike this turn ignores cover and gains a +2 circumstance bonus; against a flat-footed target it deals an extra 2d6 precision damage.
 
 ---
@@ -5722,12 +5935,12 @@ Soldier laying down suppressing fire with a machine gun.
 
 **Perception** +10; **Skills** Athletics +12, Intimidation +9
 **Abilities** Str +4, Dex +2, Con +4, Int +0, Wis +1, Cha +0
-**Items** M-9 Tempest, Predator Armor (H), Kinetic Shield, Shield HP Mod - Tier 1
+**Items** M-9 Tempest, Predator Armor (H), Kinetic Shield, Shield HP Mod - Tier 1, M-76 Revenant
 **AC** 19; **Fort** +13, **Ref** +9, **Will** +8
 **HP** 70; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
-**Ranged** ◆ Light Machine Gun +11 (range increment 60 ft, automatic), **Damage** 3d6+4 piercing
-**Ranged** ◆ Sidearm +9 (range increment 40 ft), **Damage** 1d8+4 piercing
+**Ranged** ◆ M-76 Revenant +14 (range increment 60 ft, tech, automatic, unwieldy), **Damage** 4d6+7 piercing
+**Ranged** ◆ M-9 Tempest +14 (range increment 25 ft, tech, automatic, agile), **Damage** 4d4+7 piercing
 **Suppressing Fire** ◆◆ **Area** 30-foot line or a 10-foot burst within 60 feet. Each creature in the area must succeed at a Reflex save (DC 21) or be unable to take reactions and take a –10-foot penalty to Speed until the start of the gunner's next turn (also taking 1d8 piercing on a critical failure).
 
 ---
@@ -5744,9 +5957,18 @@ Tech-and-biotic hybrid specialist with defensive armor.
 **AC** 21; **Fort** +11, **Ref** +10, **Will** +12
 **HP** 65; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Submachine Gun +12 (range increment 40 ft, automatic), **Damage** 2d6+4 piercing
+**Ranged** ◆ M-9 Tempest +14 (range increment 25 ft, tech, automatic, agile), **Damage** 4d4+7 piercing
 **Melee** ◆ Biotic Strike +12 (agile, finesse, force, unarmed), **Damage** 2d6+6 bludgeoning plus 1d4 force
-**Warp** ◆◆ **Range** 40 feet, one creature. Deals 2d6 force damage (basic Fortitude save, DC 20). On a failure the target also takes 1d6 persistent force damage as the field tears at it.
+**Warp (NPC)** ◆◆ You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.
+Choose a creature within **60 feet**. The target must attempt a DC 18 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target takes 2d6 void damage.
+**Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
+**Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Tech Armor Detonation** ◆ The sentinel overloads its tech armor in a burst. Each adjacent creature takes 2d6 electricity damage (basic Reflex save, DC 20) and is pushed 5 feet. The sentinel's Tech Armor resistance is suppressed until the start of its next turn.
 
 ---
@@ -5763,7 +5985,7 @@ Salarian Special Tasks Group operative.
 **AC** 21; **Fort** +9, **Ref** +14, **Will** +11
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Machine Pistol +14 (range increment 40 ft, automatic), **Damage** 2d6+4 piercing
+**Ranged** ◆ M-9 Tempest +14 (range increment 25 ft, tech, automatic, agile), **Damage** 4d4+7 piercing
 **Melee** ◆ Omni-Blade +14 (agile, finesse), **Damage** 2d8+4 slashing plus 1d4 fire
 **Tactical Cloak** ◆ The commando becomes hidden until the end of its next turn or until it attacks. Its next Strike while cloaked deals an extra 2d6 precision damage.
 **Incinerate** ◆◆ **Range** 40 feet, one creature. Deals 2d6 fire damage (basic Reflex save, DC 20) plus 1d6 persistent fire on a failure; ignores armor bonuses from kinetic barriers.
@@ -5778,12 +6000,12 @@ Marksman armed with a high-powered sniper rifle.
 
 **Perception** +14; **Skills** Acrobatics +11, Perception +14, Stealth +13
 **Abilities** Str +1, Dex +5, Con +2, Int +2, Wis +3, Cha +0
-**Items** M-97 Viper, Predator Armor (L), Kinetic Shield
+**Items** M-97 Viper, Predator Armor (L), Kinetic Shield, M-3 Predator
 **AC** 20; **Fort** +9, **Ref** +13, **Will** +11
 **HP** 50; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Sniper Rifle +14 (range increment 120 ft), **Damage** 2d10+4 piercing
-**Ranged** ◆ Sidearm +12 (range increment 40 ft), **Damage** 1d8+2 piercing
+**Ranged** ◆ M-97 Viper +14 (range increment 120 ft, tech, volley-30), **Damage** 3d8+7 piercing
+**Ranged** ◆ M-3 Predator +14 (range increment 40 ft, tech), **Damage** 2d6+7 piercing
 **Take Aim** ◆ The sniper's next ranged Strike this turn ignores the target's cover and lesser cover and gains a +2 circumstance bonus to the attack roll. On a hit against a flat-footed target it deals an extra 2d6 precision damage.
 
 ---
@@ -5800,7 +6022,7 @@ Disciplined turian line soldier and crack shot.
 **AC** 21; **Fort** +11, **Ref** +12, **Will** +11
 **HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Phaeston Rifle +13 (range increment 70 ft, automatic), **Damage** 2d8+4 piercing
+**Ranged** ◆ Phaeston +14 (range increment 65 ft, tech, automatic), **Damage** 2d8+7 piercing
 **Melee** ◆ Omni-Blade +12 (agile, finesse), **Damage** 2d8+4 slashing plus 1d4 fire
 **Disciplined Volley** ◆ The legionnaire's next rifle Strike this turn gains a +1 circumstance bonus to the attack roll and ignores the penalty for the target's lesser cover.
 
@@ -5819,7 +6041,7 @@ Dominant vorcha establishing pack hierarchy through combat
 **HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Feral Bite +12 (agile, finesse, unarmed), **Damage** 1d8+7 piercing
-**Melee** ◆ Scattergun +10 (reload-1, scatter-5), **Damage** 3d6+4 piercing
+**Ranged** ◆ M-23 Eviscerator +14 (range increment 15 ft, tech, scatter-5), **Damage** 4d8+4 piercing
 
 ---
 
@@ -5836,9 +6058,17 @@ Elite asari biotic combat specialist
 **HP** 70; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Biotic Strike +13 (agile, finesse, force, unarmed), **Damage** 2d6+8 bludgeoning plus 1d6 force
-**Melee** ◆ Pistol +13 (analog), **Damage** 2d8+6 piercing
-**Biotic Throw** ◆◆ **Range** 30 feet. One creature.
-The commando seizes a target in a mass effect field and hurls them. The target must succeed at a Fortitude save (DC 22) or be moved up to 15 feet in any direction and knocked prone (also taking 2d6 bludgeoning damage on a critical failure). A successful save means the target is moved 5 feet and not knocked prone.
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
+**Throw (NPC)** ◆◆ You project a mass effect field that hurls a creature or object with violent force.
+Choose a creature or unattended object within **60 feet**. The target must attempt a DC 19 Fortitude save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The target is pushed 5 feet away from you.
+**Failure** The target takes 4d8 bludgeoning damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
+**Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
@@ -5868,7 +6098,7 @@ Batarian criminal operative commanding a slaving crew
 **HP** 72; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Combat Blade +14 (agile), **Damage** 2d8+8 slashing
-**Melee** ◆ Carnifex Pistol +12 (analog, reload-1), **Damage** 3d6+8 piercing
+**Ranged** ◆ M-6 Carnifex +15 (range increment 45 ft, tech, kickback), **Damage** 4d6+8 piercing
 **Tactical Command** ◇ **Frequency** Once per round
 
 ---
@@ -5888,7 +6118,7 @@ Battle-hardened veteran soldier and squad leader.
 **AC** 22; **Fort** +13, **Ref** +13, **Will** +11
 **HP** 75; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Assault Rifle +14 (range increment 60 ft, automatic), **Damage** 3d6+8 piercing
+**Ranged** ◆ M-96 Mattock +15 (range increment 80 ft, tech, kickback), **Damage** 3d10+8 piercing
 **Melee** ◆ Omni-Blade +13 (agile, finesse), **Damage** 2d8+6 slashing plus 1d4 fire
 **Veteran's Instinct** ↺ **Trigger** The veteran is targeted by an attack it can see.
 
@@ -5910,7 +6140,7 @@ Elite krogan combat specialist
 **HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
 **Melee** ◆ Headbutt +14 (forceful, unarmed), **Damage** 2d8+5 bludgeoning
-**Melee** ◆ Claymore Shotgun +13 (reload-2, scatter-10), **Damage** 2d10+5 piercing
+**Ranged** ◆ M-300 Claymore +15 (range increment 10 ft, tech, scatter-5, fatal-d12, kickback), **Damage** 6d8+0 piercing
 
 ---
 
@@ -5927,7 +6157,7 @@ Special Tasks Group infiltration and intelligence operative
 **HP** 65; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
 **Melee** ◆ Combat Strike +12 (agile, finesse), **Damage** 1d6+3 bludgeoning
-**Melee** ◆ M-97 Viper Sniper Rifle +13 (reload-1), **Damage** 2d8+9 piercing
+**Ranged** ◆ M-97 Viper +15 (range increment 120 ft, tech, volley-30), **Damage** 3d8+8 piercing
 
 ---
 
@@ -5944,7 +6174,7 @@ Unlikely but effective volus mercenary operative
 **HP** 60; **Shields** 30 (recharge 10/turn)
 **Speed** 20 feet
 **Melee** ◆ Disruptor Pulse +11 (tech), **Damage** 3d6+5 electricity
-**Melee** ◆ Heavy Pistol +12 (analog, reload-1), **Damage** 2d8+9 piercing
+**Ranged** ◆ M-77 Paladin +15 (range increment 55 ft, tech, kickback), **Damage** 4d8+8 piercing
 **Tech Grenade** ◆◆ The commando hurls an electromagnetic grenade at a point within 30 feet. All creatures in a 10-foot burst must succeed at a DC 21 Reflex save or take 3d6 electricity damage and become flat-footed until the end of their next turn (half damage on a success, no flat-footed).
 
 ---
@@ -5962,7 +6192,7 @@ Ancient asari law enforcer bound by an absolute code
 **HP** 160; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Biotic Strike +19 (agile, unarmed), **Damage** 4d8+10 force
-**Melee** ◆ M-5 Phalanx +17 (analog, reload-1), **Damage** 2d10+7 piercing
+**Ranged** ◆ M-5 Phalanx +21 (range increment 50 ft, tech), **Damage** 3d6+12 piercing
 **Phase Disruptor** ◆◆ The justicar releases a wave of biotic force in a 30-foot cone. Each creature in the area takes 6d6 force damage (DC 26 Fortitude save; half damage on a success, no damage on a critical success).
 **Biotic Sphere** ◆◆◆ **Frequency** Once per encounter
 
@@ -5984,7 +6214,7 @@ Ancient krogan warrior of legendary endurance - boss encounter
 **HP** 154; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
 **Melee** ◆ Headbutt +22 (forceful, unarmed), **Damage** 3d8+8 bludgeoning
-**Melee** ◆ M-300 Claymore +20 (reload-2, scatter-15), **Damage** 3d12+8 piercing
+**Ranged** ◆ M-300 Claymore +23 (range increment 10 ft, tech, scatter-5, fatal-d12, kickback), **Damage** 6d8+13 piercing
 
 ---
 
@@ -6052,11 +6282,11 @@ Collector Drones are the standard foot soldiers of the Collector forces and the 
 
 **Perception** +12; **Skills** Athletics +12
 **Abilities** Str +2, Dex +2, Con +1, Int -2, Wis +0, Cha -2
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, Shield Regen Mod - Tier 1
+**Items** Kinetic Shield, Shield HP Mod - Tier 1, Shield Regen Mod - Tier 1, M-5 Phalanx
 **AC** 20; **Fort** +12, **Ref** +11, **Will** +10
 **HP** 65; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Collector Pistol +13 (range increment 40 ft), **Damage** 1d6+4 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 
 ---
 
@@ -6100,10 +6330,11 @@ Cannibals are synthetic-organic Reaper soldiers created primarily from batarians
 
 **Perception** +14; **Skills** Athletics +16
 **Abilities** Str +4, Dex +1, Con +4, Int -2, Wis +0, Cha -2
+**Items** M-11 Wraith
 **AC** 23; **Fort** +18, **Ref** +12, **Will** +13
 **HP** 85
 **Speed** 25 feet
-**Ranged** ◆ Shotgun Blast +16 (range increment 30 ft, scatter-5), **Damage** 2d6+6 piercing
+**Ranged** ◆ M-11 Wraith +17 (range increment 15 ft, tech, scatter-5, fatal-d10, kickback), **Damage** 4d8+9 piercing
 **Melee** ◆ Bone Fist +18, **Damage** 2d8+6 bludgeoning
 **Cannibalize** ◆ The Cannibal feeds on a fallen creature (dead or unconscious) within reach, restoring 15 Armor Points to its embedded armor effect (up to its maximum). The target's body is consumed and cannot be used again.
 
@@ -6117,11 +6348,11 @@ Collector Soldiers are a combat-specialized class of Collector drone encountered
 
 **Perception** +16; **Skills** Athletics +16
 **Abilities** Str +3, Dex +3, Con +2, Int +0, Wis +1, Cha -1
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 2
+**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 2, Collector Assault Rifle
 **AC** 23; **Fort** +16, **Ref** +14, **Will** +14
 **HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Collector Assault Rifle +17 (range increment 60 ft), **Damage** 2d6+6 piercing
+**Ranged** ◆ Collector Assault Rifle +18 (range increment 70 ft, tech, automatic), **Damage** 4d8+10 piercing
 
 ---
 
@@ -6133,11 +6364,11 @@ Marauders are Reaper-created synthetic-organic soldiers derived from turian vict
 
 **Perception** +18; **Skills** Athletics +18, Tactics +20
 **Abilities** Str +4, Dex +3, Con +3, Int +1, Wis +2, Cha +0
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 2
+**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 2, M-7 Lancer
 **AC** 26; **Fort** +19, **Ref** +17, **Will** +16
 **HP** 110; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Assault Rifle +20 (range increment 80 ft, brutal), **Damage** 2d8+8 piercing
+**Ranged** ◆ M-7 Lancer +20 (range increment 70 ft, tech, automatic), **Damage** 3d8+11 electricity
 **Shield Boost** ◆ The Marauder boosts the kinetic barriers of one ally within 30 feet, restoring 20 Temp HP (shields) to that ally. If the ally has no shields, they instead gain 10 Temp HP. This ability can be used once per round.
 
 ---
@@ -6150,11 +6381,11 @@ Collector Captains are Collector tactician units that serve as squad commanders 
 
 **Perception** +19; **Skills** Athletics +20, Tactics +18
 **Abilities** Str +4, Dex +3, Con +4, Int +2, Wis +2, Cha +1
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3
+**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3, Collector Assault Rifle
 **AC** 26; **Fort** +20, **Ref** +17, **Will** +18
 **HP** 125; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Collector Assault Rifle +19 (range increment 60 ft), **Damage** 2d8+8 piercing
+**Ranged** ◆ Collector Assault Rifle +21 (range increment 70 ft, tech, automatic), **Damage** 4d8+12 piercing
 
 ---
 
@@ -6166,11 +6397,11 @@ Collector Guardians are Collector combat units in Mass Effect 2 equipped with Co
 
 **Perception** +20; **Skills** Athletics +22
 **Abilities** Str +5, Dex +2, Con +4, Int +1, Wis +2, Cha +0
-**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3
+**Items** Kinetic Shield, Shield HP Mod - Tier 3, Shield Regen Mod - Tier 3, Collector Assault Rifle
 **AC** 28; **Fort** +22, **Ref** +17, **Will** +18
 **HP** 145; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Collector Assault Rifle +20 (range increment 60 ft), **Damage** 2d8+8 piercing
+**Ranged** ◆ Collector Assault Rifle +23 (range increment 70 ft, tech, automatic), **Damage** 4d8+13 piercing
 
 ---
 
@@ -6251,7 +6482,16 @@ The Praetorian is a massive, slow-moving aerial Collector construct encountered 
 **HP** 215
 **Speed** 0 feet
 **Ranged** ◆ Eye Beam +28 (range increment 100 ft, line-60), **Damage** 4d8+16 fire
-**Biotic Shockwave** ◆◆ The Praetorian unleashes a 30-foot cone of biotic force. All creatures in the area must succeed at a DC 34 Reflex save or take 5d6+14 force damage and be knocked prone (half damage on success, prone only on critical failure).
+**Shockwave (NPC)** ◆◆ You slam biotic energy into the ground, sending a rolling kinetic shockwave along the surface that topples everything in its path.
+All creatures in a 60-foot line must attempt a DC 31 Reflex save against the creature's power DC.
+**Critical Success** Unaffected.
+**Success** The creature takes 4d6 bludgeoning damage.
+**Failure** The creature takes 8d6 bludgeoning damage and is pushed 10 feet away from you.
+**Critical Failure** As failure, but 16d6 bludgeoning damage and also **Knocked Prone**.
+**Recharge** The creature can't use this power again for 1d4 rounds.
+
+---
+*NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
@@ -6298,11 +6538,11 @@ Geth Troopers are the standard ground infantry of the geth, encountered througho
 
 **Perception** +12; **Skills** Athletics +12
 **Abilities** Str +2, Dex +2, Con +2, Int +1, Wis +1, Cha -3
-**Items** Kinetic Shield, Shield HP Mod - Tier 1, Shield Regen Mod - Tier 1
+**Items** Kinetic Shield, Shield HP Mod - Tier 1, Shield Regen Mod - Tier 1, Geth Pulse Rifle
 **AC** 20; **Fort** +12, **Ref** +11, **Will** +10
 **HP** 55; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Geth Pulse Rifle +13 (range increment 60 ft), **Damage** 2d6+4 electricity
+**Ranged** ◆ Geth Pulse Rifle +14 (range increment 75 ft, tech, automatic), **Damage** 3d8+7 electricity
 
 ---
 
@@ -6347,11 +6587,11 @@ Geth Rocket Troopers are geth support infantry units armed with powerful rocket 
 
 **Perception** +16; **Skills** Athletics +14
 **Abilities** Str +3, Dex +3, Con +3, Int +1, Wis +2, Cha -2
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 2
+**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 2, M-100 Grenade Launcher
 **AC** 22; **Fort** +15, **Ref** +14, **Will** +13
 **HP** 80; **Shields** 30 (recharge 10/turn)
 **Speed** 30 feet
-**Ranged** ◆ Rocket Launcher +16 (range increment 120 ft, splash-10, brutal), **Damage** 3d6+8 fire
+**Ranged** ◆ M-100 Grenade Launcher +17 (range increment 40 ft, tech, scatter-5), **Damage** 4d8+9 bludgeoning
 
 ---
 
@@ -6363,11 +6603,11 @@ Geth Hunters are stealth infantry units armed with shotguns, encountered in Mass
 
 **Perception** +18; **Skills** Acrobatics +18, Stealth +22
 **Abilities** Str +3, Dex +5, Con +3, Int +2, Wis +2, Cha -2
-**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 2
+**Items** Kinetic Shield, Shield HP Mod - Tier 2, Shield Regen Mod - Tier 2, Geth Plasma Shotgun
 **AC** 24; **Fort** +17, **Ref** +18, **Will** +16
 **HP** 95; **Shields** 30 (recharge 10/turn)
 **Speed** 35 feet
-**Ranged** ◆ Geth Shotgun +18 (range increment 30 ft, scatter-5), **Damage** 2d8+8 piercing
+**Ranged** ◆ Geth Plasma Shotgun +18 (range increment 40 ft, tech, scatter-5), **Damage** 4d6+10 fire
 **Cloak** ◆ The Geth Hunter activates its personal cloaking device, becoming Invisible until the end of its next turn or until it attacks. While cloaked its movement does not trigger Reactions. It can use this ability once per round.
 
 ---
@@ -6489,11 +6729,11 @@ Upgraded Cerberus combat robot with kinetic shields and a barrier pulse area att
 
 **Perception** +13
 **Abilities** Str +3, Dex +2, Con +4, Int -3, Wis +0, Cha -5
-**Items** Kinetic Shield, Shield HP Mod - Tier 2
+**Items** Kinetic Shield, Shield HP Mod - Tier 2, M-5 Phalanx
 **AC** 22; **Fort** +15, **Ref** +12, **Will** +10
 **HP** 75; **Shields** 30 (recharge 10/turn)
 **Speed** 25 feet
-**Ranged** ◆ Submachine Gun +14 (range increment 50 ft), **Damage** 2d6+4 piercing
+**Ranged** ◆ M-5 Phalanx +15 (range increment 50 ft, tech), **Damage** 3d6+8 piercing
 **Barrier Pulse** ◆◆ The Rampart Mech discharges its shield energy in a 15-foot burst. Each creature in the area takes 3d6 bludgeoning (DC 22 basic Reflex for half). The Mech's kinetic shield is reduced to 0 HP after use. This ability cannot be used again until the shield recharges to full.
 
 ---

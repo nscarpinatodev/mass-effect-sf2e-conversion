@@ -206,29 +206,31 @@
   "items": [
     {
       "_id": "kirrw00000000001",
-      "name": "M-9 Tempest",
+      "name": "M-5 Phalanx",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "kirrahe-tempest",
         "bonus": {
-          "value": 16
+          "value": 17
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+10",
-            "damageType": "piercing"
+            "damage": "3d6+9",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "agile",
-            "burst-fire",
+            "tech",
             "range-increment-50"
-          ]
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -252,7 +254,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "4e2b6f5ac4610900"
+        }
+      },
       "ownership": {
         "default": 0
       },

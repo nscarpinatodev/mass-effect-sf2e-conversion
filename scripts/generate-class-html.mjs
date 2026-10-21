@@ -3,7 +3,7 @@
 
 import { readFile, writeFile, mkdir, readdir } from 'fs/promises';
 import { join } from 'path';
-import { flattenEnrichers, indexPacks, summarizeClass } from './doc-helpers.mjs';
+import { bakeLevel, flattenEnrichers, indexPacks, summarizeClass } from './doc-helpers.mjs';
 
 const SRC = 'src/packs';
 const ICONS_DIR = join('docs', 'images', 'actions');
@@ -1719,8 +1719,8 @@ function npcStrike(strike) {
 
 // Authored action descriptions repeat "<p><strong>Name</strong> <glyph></p><hr>" —
 // strip that leading header so the name isn't printed twice.
-function npcAbilityBody(item) {
-  let html = item.system?.description?.value ?? '';
+function npcAbilityBody(item, level) {
+  let html = bakeLevel(item.system?.description?.value ?? '', level);
   const m = html.match(/^\s*<p>\s*<strong>([^<]*)<\/strong>[\s\S]*?<\/p>\s*(?:<hr\s*\/?>)?/i);
   if (m && m[1].trim().toLowerCase() === item.name.trim().toLowerCase()) html = html.slice(m[0].length);
   return html.replace(/<span class="action-glyph">[^<]*<\/span>/g, '').trim();
@@ -1750,7 +1750,7 @@ function renderNpcBlock(npc) {
 
   const strikes = items.filter(i => i.type === 'melee').map(npcStrike).join('');
   const abils = items.filter(i => i.type === 'action').map(i => {
-    const body = npcAbilityBody(i);
+    const body = npcAbilityBody(i, s.details.level.value);
     return `<div class="npc-ability"><span class="npc-ab-name">${i.name}</span> ${npcGlyph(i)}${body ? ` ${body}` : ''}</div>`;
   }).join('');
 

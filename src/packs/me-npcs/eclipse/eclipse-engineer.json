@@ -205,24 +205,27 @@
   "items": [
     {
       "_id": "oRKyS0VNu00p5MTH",
-      "name": "Sidearm",
+      "name": "M-9 Tempest",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_SMG_-_Tempest.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 10
+          "value": 12
         },
         "damageRolls": {
           "dmg00oRKy": {
-            "damage": "2d8+4",
+            "damage": "3d4+6",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "range-increment-40"
+            "tech",
+            "automatic",
+            "agile",
+            "range-increment-25"
           ],
           "otherTags": [],
           "config": {}
@@ -247,7 +250,6 @@
         "attackEffects": {
           "value": []
         },
-        "range": null,
         "subjectToMAP": true,
         "weaponType": {
           "value": "ranged"
@@ -256,7 +258,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "ecb905b51627ef02"
+        }
+      },
       "ownership": {
         "default": 0
       },

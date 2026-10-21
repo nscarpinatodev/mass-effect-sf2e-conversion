@@ -198,9 +198,9 @@
   "items": [
     {
       "_id": "ce3bcent0r10w001",
-      "name": "M-96 Mattock",
+      "name": "Phaeston",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phaeston_Assault_Rifle.png",
       "system": {
         "weaponType": {
           "value": "ranged"
@@ -211,15 +211,19 @@
         },
         "damageRolls": {
           "0": {
-            "damage": "2d8+4",
-            "damageType": "piercing"
+            "damage": "2d8+7",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "fatal-d10",
-            "range-increment-80"
-          ]
+            "tech",
+            "automatic",
+            "range-increment-65"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -243,7 +247,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "3ac5c1e504aa298f"
+        }
+      },
       "ownership": {
         "default": 0
       },

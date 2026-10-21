@@ -259,34 +259,31 @@
     },
     {
       "_id": "NPCRanged000001A",
-      "name": "Assault Rifle",
+      "name": "M-8 Avenger",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Avenger.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 8
+          "value": 11
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "1d8+6",
+            "damage": "1d8+5",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "analog",
-            "reload-2"
+            "tech",
+            "automatic",
+            "range-increment-60"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 30,
-          "max": 120
-        },
         "description": {
           "value": "",
           "gm": ""
@@ -306,12 +303,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 200000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "3dab1df4f2cb51d0"
+        }
+      },
       "ownership": {
         "default": 0
       },

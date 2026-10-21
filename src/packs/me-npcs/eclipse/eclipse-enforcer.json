@@ -206,65 +206,6 @@
   },
   "items": [
     {
-      "_id": "OETZRdE9f9STXguX",
-      "name": "Incendiary Thrower",
-      "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
-      "system": {
-        "slug": null,
-        "bonus": {
-          "value": 14
-        },
-        "damageRolls": {
-          "dmg00OETZ": {
-            "damage": "3d6+7",
-            "damageType": "fire",
-            "category": null
-          }
-        },
-        "traits": {
-          "value": [
-            "range-increment-15"
-          ],
-          "otherTags": [],
-          "config": {}
-        },
-        "rules": [],
-        "description": {
-          "value": "<p>A short-range flamethrower. See Immolate.</p>",
-          "gm": ""
-        },
-        "publication": {
-          "title": "",
-          "authors": "",
-          "license": "OGL",
-          "remaster": false
-        },
-        "_migration": {
-          "version": null,
-          "previous": null
-        },
-        "action": "strike",
-        "area": null,
-        "attackEffects": {
-          "value": []
-        },
-        "range": null,
-        "subjectToMAP": true,
-        "weaponType": {
-          "value": "ranged"
-        }
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 100000,
-      "flags": {},
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!uT3coyBs6c1VwPX0.OETZRdE9f9STXguX"
-    },
-    {
       "_id": "RWaJo5pqPRfWzUEL",
       "name": "Armored Fist",
       "type": "melee",
@@ -810,6 +751,69 @@
       "sort": 300002,
       "_stats": {
         "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen001"
+      }
+    },
+    {
+      "_id": "uT3coyBs6cstrk00",
+      "_key": "!actors.items!uT3coyBs6c1VwPX0.uT3coyBs6cstrk00",
+      "name": "M-451 Firestorm",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HW_-_Firestorm.png",
+      "effects": [],
+      "folder": null,
+      "sort": 50000,
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "beba49a0c92f6dff"
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 15
+        },
+        "damageRolls": {
+          "dmg0": {
+            "damage": "4d8+8",
+            "damageType": "fire",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "tech",
+            "range-increment-20"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       }
     }
   ],

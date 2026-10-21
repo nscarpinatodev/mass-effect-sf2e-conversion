@@ -321,34 +321,31 @@
     },
     {
       "_id": "NPCRanged000001A",
-      "name": "Scattergun",
+      "name": "AT-12 Raider",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Raider_Shotgun.png",
       "system": {
         "slug": null,
         "bonus": {
-          "value": 5
+          "value": 9
         },
         "damageRolls": {
           "dmgroll0003": {
-            "damage": "1d8+2",
+            "damage": "3d6+0",
             "damageType": "piercing",
             "category": null
           }
         },
         "traits": {
           "value": [
-            "reload-1",
-            "scatter-5"
+            "tech",
+            "scatter-5",
+            "range-increment-15"
           ],
           "otherTags": [],
           "config": {}
         },
         "rules": [],
-        "range": {
-          "increment": 10,
-          "max": 20
-        },
         "description": {
           "value": "",
           "gm": ""
@@ -368,12 +365,19 @@
         "attackEffects": {
           "value": []
         },
-        "subjectToMAP": true
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
       },
       "effects": [],
       "folder": null,
       "sort": 300000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "dcf6c4842ed1e229"
+        }
+      },
       "ownership": {
         "default": 0
       },

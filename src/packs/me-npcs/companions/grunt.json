@@ -203,28 +203,33 @@
   "items": [
     {
       "_id": "gruntw0000000001",
-      "name": "M-300 Claymore",
+      "name": "N7 Crusader",
       "type": "melee",
-      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_N7_Crusader_Shotgun.png",
       "system": {
         "weaponType": {
           "value": "ranged"
         },
         "slug": "grunt-claymore",
         "bonus": {
-          "value": 23
+          "value": 21
         },
         "damageRolls": {
           "0": {
-            "damage": "4d6+9",
-            "damageType": "piercing"
+            "damage": "5d8+12",
+            "damageType": "piercing",
+            "category": null
           }
         },
         "traits": {
           "value": [
-            "scatter-5",
-            "range-increment-20"
-          ]
+            "tech",
+            "fatal-d12",
+            "kickback",
+            "range-increment-25"
+          ],
+          "otherTags": [],
+          "config": {}
         },
         "attackEffects": {
           "value": []
@@ -248,7 +253,11 @@
       "effects": [],
       "folder": null,
       "sort": 100000,
-      "flags": {},
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "e3973506e016a710"
+        }
+      },
       "ownership": {
         "default": 0
       },
