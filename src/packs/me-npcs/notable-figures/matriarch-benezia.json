@@ -1,0 +1,749 @@
+{
+  "_key": "!actors!matriarchbenezia",
+  "_id": "matriarchbenezia",
+  "name": "Matriarch Benezia",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/matriarch-benezia.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 195,
+        "temp": 0,
+        "max": 195,
+        "details": ""
+      },
+      "ac": {
+        "value": 30,
+        "details": ""
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 25,
+        "otherSpeeds": [],
+        "details": ""
+      },
+      "immunities": [],
+      "resistances": []
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [],
+        "details": "Galactic Common (translator)"
+      },
+      "level": {
+        "value": 11
+      },
+      "blurb": "Asari matriarch, Liara's mother, and Saren's indoctrinated lieutenant.",
+      "publicNotes": "<p>Matriarch Benezia was a respected asari teacher and biotic whose followers would follow her anywhere. She joined Saren meaning to temper him, and Sovereign indoctrinated her instead. Shepard faces her on Noveria at Peak 15, surrounded by asari commandos and geth, searching for the Rachni Queen's memory of the Mu Relay.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 3
+      },
+      "dex": {
+        "mod": 5
+      },
+      "con": {
+        "mod": 5
+      },
+      "int": {
+        "mod": 7
+      },
+      "wis": {
+        "mod": 8
+      },
+      "cha": {
+        "mod": 8
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 24,
+      "senses": [],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 21,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 21,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 26,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "arcana": {
+        "base": 26
+      },
+      "diplomacy": {
+        "base": 26
+      },
+      "society": {
+        "base": 23
+      },
+      "intimidation": {
+        "base": 23
+      },
+      "occultism": {
+        "base": 23
+      }
+    },
+    "traits": {
+      "value": [
+        "asari",
+        "humanoid",
+        "unique",
+        "biotic"
+      ],
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Matriarch Benezia",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/matriarch-benezia.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/matriarch-benezia.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "name": "M-3 Predator",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Predator.png",
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "matriarchben0001"
+        }
+      },
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 24
+        },
+        "damageRolls": {
+          "dmg0": {
+            "damage": "2d6+14",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "rules": [],
+        "traits": {
+          "value": [
+            "tech",
+            "range-increment-40"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "range": null,
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "_id": "matriarchben0002",
+      "_key": "!actors.items!matriarchbenezia.matriarchben0002",
+      "sort": 200000,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "M-3 Predator",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Predator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-3 Predator is the most common sidearm in Systems Alliance service, carried as a backup weapon by the majority of Alliance personnel. Lightweight, reliable, and requiring minimal maintenance, it offers adequate stopping power for close-range threats. In the hands of an experienced soldier, its fifteen-round heat sink provides plenty of opportunity to resolve a situation that a primary weapon couldn't finish.</p>"
+        },
+        "rules": [],
+        "slug": "m-3-predator",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "baseItem": "m-3-predator",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 20
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 1,
+          "die": "d6",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 40,
+        "expend": 1,
+        "ammo": {
+          "capacity": 15,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "striking": 0,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "matriarchben0001",
+      "_key": "!actors.items!matriarchbenezia.matriarchben0001",
+      "sort": 100000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.73b9302ac8c5ef66"
+      }
+    },
+    {
+      "_id": "matriarchben0003",
+      "name": "Activate Biotic Barrier (NPC)",
+      "type": "action",
+      "img": "icons/magic/lightning/barrier-shield-crackling-orb-pink.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "barrier": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-activate-biotic-barrier-npc",
+        "description": {
+          "gm": "",
+          "value": "<p>You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.</p><p>The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.</p><table><tbody><tr><td><strong>Level</strong></td><td><strong>Barrier HP</strong></td></tr><tr><td>1-3</td><td>5</td></tr><tr><td>4-5</td><td>10</td></tr><tr><td>6-7</td><td>15</td></tr><tr><td>8-9</td><td>20</td></tr><tr><td>10-11</td><td>25</td></tr><tr><td>12-13</td><td>30</td></tr><tr><td>14-15</td><td>35</td></tr><tr><td>16-17</td><td>40</td></tr><tr><td>18-19</td><td>45</td></tr><tr><td>20</td><td>50</td></tr></tbody></table>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [
+            "biotic",
+            "barrier"
+          ],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "interaction",
+        "selfEffect": {
+          "uuid": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meBioticBarrier0",
+          "name": "Biotic Barrier"
+        }
+      },
+      "_key": "!actors.items!matriarchbenezia.matriarchben0003",
+      "sort": 300000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meActivateBbarNp"
+      }
+    },
+    {
+      "_id": "matriarchben0004",
+      "name": "Warp (NPC)",
+      "type": "action",
+      "img": "icons/magic/unholy/beam-impact-purple.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-warp",
+        "description": {
+          "value": "<p>You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.</p><p>Choose a creature within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-warp] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage and @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d4[persistent,void]] damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!matriarchbenezia.matriarchben0004",
+      "sort": 400000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiowarp000000"
+      }
+    },
+    {
+      "_id": "matriarchben0005",
+      "name": "Singularity (NPC)",
+      "type": "action",
+      "img": "icons/magic/control/debuff-gravity-pull-blue-purple.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-singularity",
+        "description": {
+          "value": "<p>You create a localized mass effect gravity well that pulls nearby enemies in and suspends them helplessly.</p><p>You create a Singularity at a point within <strong>60 feet</strong>. All creatures within a @Template[burst|distance:20]{20-foot radius burst} centered on that point must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-singularity] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is pulled 10 feet toward the singularity's center.</p><p><strong>Failure</strong> The creature is pulled to the singularity's center and becomes <strong>Restrained</strong> (Escape DC equals the creature's power DC). The singularity persists until the start of your next turn; you may Sustain it as a free action each round for up to 1 minute.</p><p><strong>Critical Failure</strong> As failure. Additionally, the creature takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage at the start of each of its turns while restrained.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 3
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!matriarchbenezia.matriarchben0005",
+      "sort": 500000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiosingularit"
+      }
+    },
+    {
+      "_id": "matriarchben0006",
+      "name": "Stasis (NPC)",
+      "type": "action",
+      "img": "icons/magic/time/clock-analog-gray.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-stasis",
+        "description": {
+          "value": "<p>You encase a single target in an impenetrable mass effect stasis field, freezing them completely in place.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[will|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-stasis] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is <strong>Immobilized</strong> until the start of your next turn.</p><p><strong>Failure</strong> The creature is <strong>Paralyzed</strong> until the start of your next turn. At the end of each of its turns, it can attempt a new Will save to end the effect early.</p><p><strong>Critical Failure</strong> The creature is <strong>Paralyzed</strong> for 1 minute. At the end of each of its turns, it can attempt a new Will save (same DC) to end the effect early.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "incapacitation",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!matriarchbenezia.matriarchben0006",
+      "sort": 600000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiostasis0000"
+      }
+    },
+    {
+      "_id": "matriarchben0007",
+      "name": "Lift (NPC)",
+      "type": "action",
+      "img": "icons/magic/movement/pinwheel-blue-purple.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-lift",
+        "description": {
+          "value": "<p>You unleash an anti-gravity sphere that violently hurls nearby creatures into the air, leaving them floating helplessly.</p><p>All creatures in a @Template[burst|distance:10]{10-foot radius burst} within <strong>30 feet</strong> must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-lift] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is lifted 5 feet off the ground and becomes <strong>Off-Guard</strong> until the start of your next turn.</p><p><strong>Failure</strong> The creature is lifted 10 feet into the air and becomes <strong>Grabbed</strong> and <strong>Off-Guard</strong> until the start of your next turn. When the effect ends, the creature falls and takes appropriate fall damage.</p><p><strong>Critical Failure</strong> As failure, but the creature is lifted 20 feet and remains suspended until the end of your next turn.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!matriarchbenezia.matriarchben0007",
+      "sort": 700000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiolift000000"
+      }
+    },
+    {
+      "name": "Matriarch's Command",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Matriarch's Command</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Benezia speaks with the authority of a thousand years. Each enemy within 30 feet that can hear her must attempt a @Check[will|dc:30] save. On a failure it is stupefied 1 for 1 round; on a critical failure it is also slowed 1 for 1 round, as the indoctrinated weight of her voice presses on its mind. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "auditory",
+            "concentrate",
+            "mental"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "matriarchben0008",
+      "_key": "!actors.items!matriarchbenezia.matriarchben0008",
+      "sort": 800000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Issue Orders",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Issue Orders</strong> <span class=\"action-glyph\">1</span></p><hr /><p>Benezia barks an order to one ally within 60 feet who can hear. That ally can immediately Stride or Step, or gains a +2 circumstance bonus to its next attack roll before the end of its next turn.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "auditory",
+            "concentrate"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "matriarchben0009",
+      "_key": "!actors.items!matriarchbenezia.matriarchben0009",
+      "sort": 900000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000010",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -675,7 +675,13 @@
 					"vehicle": "Vehicle",
 					"ship": "Ship",
 					"alliance": "Alliance",
-					"aircraft": "Aircraft"
+					"aircraft": "Aircraft",
+					"biotic": "Biotic",
+					"blood-pack": "Blood Pack",
+					"c-sec": "C-Sec",
+					"eclipse": "Eclipse",
+					"prothean": "Prothean",
+					"yahg": "Yahg"
 				},
 				"featTraits": {
 					"asari": "Asari",

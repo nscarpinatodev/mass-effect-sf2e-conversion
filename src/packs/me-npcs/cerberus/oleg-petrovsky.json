@@ -1,0 +1,1101 @@
+{
+  "_key": "!actors!olegpetrovsky000",
+  "_id": "olegpetrovsky000",
+  "name": "Oleg Petrovsky",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/oleg-petrovsky.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 215,
+        "temp": 100,
+        "max": 215,
+        "details": ""
+      },
+      "ac": {
+        "value": 33,
+        "details": ""
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 25,
+        "otherSpeeds": [],
+        "details": ""
+      },
+      "immunities": [],
+      "resistances": []
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [],
+        "details": "Galactic Common (translator)"
+      },
+      "level": {
+        "value": 12
+      },
+      "blurb": "Cerberus general who took Omega from Aria T'Loak.",
+      "publicNotes": "<p>General Oleg Petrovsky is the Illusive Man's finest strategist, a former Alliance officer who seized Omega for Cerberus during the Reaper War and drove Aria into exile. He is ruthless in the field but keeps his word, and he finds the Illusive Man's Adjutant experiments distasteful.</p><p><strong>Kinetic Barrier:</strong> 100 Shield HP.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 5
+      },
+      "dex": {
+        "mod": 7
+      },
+      "con": {
+        "mod": 5
+      },
+      "int": {
+        "mod": 8
+      },
+      "wis": {
+        "mod": 8
+      },
+      "cha": {
+        "mod": 7
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 27,
+      "senses": [],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 22,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 22,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 27,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "society": {
+        "base": 28
+      },
+      "intimidation": {
+        "base": 25
+      },
+      "deception": {
+        "base": 25
+      },
+      "computers": {
+        "base": 25
+      },
+      "diplomacy": {
+        "base": 22
+      }
+    },
+    "traits": {
+      "value": [
+        "human",
+        "humanoid",
+        "unique"
+      ],
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Oleg Petrovsky",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/oleg-petrovsky.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/oleg-petrovsky.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "name": "M-15 Vindicator",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Vindicator.png",
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "olegpetrovsk0001"
+        }
+      },
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 26
+        },
+        "damageRolls": {
+          "dmg0": {
+            "damage": "4d8+15",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "rules": [],
+        "traits": {
+          "value": [
+            "tech",
+            "burst-fire",
+            "range-increment-70"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "range": null,
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "_id": "olegpetrovsk0002",
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0002",
+      "sort": 200000,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "M-6 Carnifex",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Carnifex.png",
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "olegpetrovsk0003"
+        }
+      },
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 26
+        },
+        "damageRolls": {
+          "dmg0": {
+            "damage": "5d6+15",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "rules": [],
+        "traits": {
+          "value": [
+            "tech",
+            "kickback",
+            "range-increment-45"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "range": null,
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "_id": "olegpetrovsk0004",
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0004",
+      "sort": 400000,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "M-15 Vindicator",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Vindicator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-15 Vindicator is a high-end battle rifle favored by mercenaries and private military contractors throughout the Terminus Systems. Its precision burst-fire mechanism channels kinetic rounds with exceptional accuracy at medium range, striking a balance between stopping power and controlled fire discipline that the Avenger sacrifices for capacity.</p>"
+        },
+        "rules": [],
+        "slug": "m-15-vindicator",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "burst-fire"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "baseItem": "m-15-vindicator",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 100
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "rifle",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 2,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 70,
+        "expend": 3,
+        "ammo": {
+          "capacity": 60,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 1,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "olegpetrovsk0001",
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0001",
+      "sort": 100000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.5b5a838cf0f2266c"
+      }
+    },
+    {
+      "name": "M-6 Carnifex",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Carnifex.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-6 Carnifex is a heavy combat pistol that delivers assault-rifle stopping power in a one-handed platform. Its oversized kinetic coils accelerate dense tungsten rounds with considerable force, and the recoil requires a firm grip to manage. Favored by soldiers who trust a single devastating shot over a hail of lighter rounds, the Carnifex earns its name at close range.</p>"
+        },
+        "rules": [],
+        "slug": "m-6-carnifex",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "kickback"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 7
+        },
+        "baseItem": "m-6-carnifex",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 700
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d6",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 45,
+        "expend": 1,
+        "ammo": {
+          "capacity": 8,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "advanced",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "olegpetrovsk0003",
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0003",
+      "sort": 300000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.ec61a533e863ebeb"
+      }
+    },
+    {
+      "name": "Guardian Armor (H)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Heavy-human-Guardian.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Elanus Risk Control designed the Guardian series as a protective option for security personnel and corporate bodyguards. Reinforced plating and standard barrier generators provide solid protection at a price point accessible to private security operations.</p>"
+        },
+        "rules": [],
+        "slug": "guardian-armor-h",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "bulwark",
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "guardian-armor",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 48
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "heavy",
+        "group": "plate",
+        "acBonus": 3,
+        "strength": 3,
+        "dexCap": 1,
+        "checkPenalty": -3,
+        "speedPenalty": -5,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "olegpetrovsk0005",
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0005",
+      "sort": 500000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.8b8e6c891ebf9270"
+      }
+    },
+    {
+      "_id": "olegpetrovsk0006",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0006",
+      "sort": 600000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "olegpetrovsk0007",
+      "name": "Shield HP Mod - Tier 4",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 70
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t4",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+70 HP</strong> (base 30 → 100).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 12
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 16000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0007",
+      "sort": 700000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod004"
+      }
+    },
+    {
+      "_id": "olegpetrovsk0008",
+      "name": "Shield Regen Mod - Tier 2",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "regenMult": 2
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-regen-mod-t2",
+        "description": {
+          "gm": "",
+          "value": "<p>Boosts kinetic shield recharge rate by <strong>+100%</strong> (base 10 → 20 HP/turn).</p><p>Only one Shield Regen Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 6
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-regen-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 2500
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0008",
+      "sort": 800000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen002"
+      }
+    },
+    {
+      "_id": "olegpetrovsk0009",
+      "name": "Combat Drone (NPC)",
+      "type": "action",
+      "img": "icons/commodities/tech/cog-brass.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-tech-combat-drone",
+        "description": {
+          "value": "<p>You deploy a hovering AI combat drone that harasses enemies and draws their fire away from your allies.</p><p>You deploy a Combat Drone at a point within <strong>30 feet</strong>. The drone occupies a 5-foot space, has <strong>20 HP</strong>, AC 15, and cannot be healed. It acts on your initiative and persists for up to <strong>1 minute</strong> or until destroyed.</p><p>On each of your turns, you can direct the drone as a free action. The drone's presence applies <strong>Off-Guard</strong> to one adjacent enemy of your choice (your choice, once per your turn). As an action, you can order it to make a ranged Strike (+4 attack, 1d6 electricity, 20-foot range) against a target within 30 feet.</p><p>If the drone is destroyed, it explodes in a @Template[burst|distance:5]{5-foot burst} dealing 1d6 electricity damage (@Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|basic|options:me-power:me-npc-tech-combat-drone-explosion] save against the creature's power DC).</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "concentrate",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 3
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0009",
+      "sort": 900000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.npctechcombatdro"
+      }
+    },
+    {
+      "name": "Tactical Genius",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Tactical Genius</strong> <span class=\"action-glyph\">1</span></p><hr /><p>Petrovsky reads the battlefield. Until the start of his next turn, he and each Cerberus ally within 60 feet gain a +1 circumstance bonus to AC and attack rolls, and can't be flanked.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "olegpetrovsk0010",
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0010",
+      "sort": 1000000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Adjutant Release",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Adjutant Release</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Petrovsky unseals a containment pod. An Adjutant or Cerberus Phantom of level 10 or lower arrives at the start of the next round. Once per encounter.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "manipulate"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "olegpetrovsk0011",
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0011",
+      "sort": 1100000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Issue Orders",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Issue Orders</strong> <span class=\"action-glyph\">1</span></p><hr /><p>Petrovsky barks an order to one ally within 60 feet who can hear. That ally can immediately Stride or Step, or gains a +2 circumstance bonus to its next attack roll before the end of its next turn.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "auditory",
+            "concentrate"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "olegpetrovsk0012",
+      "_key": "!actors.items!olegpetrovsky000.olegpetrovsk0012",
+      "sort": 1200000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000004",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

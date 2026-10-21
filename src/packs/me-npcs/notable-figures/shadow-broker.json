@@ -1,0 +1,751 @@
+{
+  "_key": "!actors!shadowbroker0000",
+  "_id": "shadowbroker0000",
+  "name": "Shadow Broker",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/shadow-broker.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 319,
+        "temp": 100,
+        "max": 319,
+        "details": ""
+      },
+      "ac": {
+        "value": 36,
+        "details": ""
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 30,
+        "otherSpeeds": [],
+        "details": ""
+      },
+      "immunities": [],
+      "resistances": []
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [],
+        "details": "Galactic Common (translator)"
+      },
+      "level": {
+        "value": 14
+      },
+      "blurb": "The yahg who runs the galaxy's largest information network from a ship hidden in a storm.",
+      "publicNotes": "<p>Nobody knows who the Shadow Broker is, which is the point. The current Broker is a yahg who took the role by killing his predecessor, and he trades secrets to every government and criminal in the galaxy from a ship hidden in Hagalaz's permanent storm. Agents like Tela Vasir do his violence for him; when someone gets past them, he does it himself.</p><p><strong>Kinetic Barrier:</strong> 100 Shield HP.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 9
+      },
+      "dex": {
+        "mod": 5
+      },
+      "con": {
+        "mod": 8
+      },
+      "int": {
+        "mod": 9
+      },
+      "wis": {
+        "mod": 8
+      },
+      "cha": {
+        "mod": 5
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 30,
+      "senses": [],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 30,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 25,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 28,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 31
+      },
+      "society": {
+        "base": 31
+      },
+      "computers": {
+        "base": 28
+      },
+      "intimidation": {
+        "base": 28
+      },
+      "deception": {
+        "base": 28
+      }
+    },
+    "traits": {
+      "value": [
+        "yahg",
+        "humanoid",
+        "unique"
+      ],
+      "rarity": "unique",
+      "size": {
+        "value": "lg"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Shadow Broker",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/shadow-broker.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/shadow-broker.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "_id": "shadowbroker0001",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!shadowbroker0000.shadowbroker0001",
+      "sort": 100000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "shadowbroker0002",
+      "name": "Shield HP Mod - Tier 4",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 70
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t4",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+70 HP</strong> (base 30 → 100).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 12
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 16000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!shadowbroker0000.shadowbroker0002",
+      "sort": 200000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod004"
+      }
+    },
+    {
+      "_id": "shadowbroker0003",
+      "name": "Shield Regen Mod - Tier 4",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "regenMult": 3
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-regen-mod-t4",
+        "description": {
+          "gm": "",
+          "value": "<p>Boosts kinetic shield recharge rate by <strong>+200%</strong> (base 10 → 30 HP/turn).</p><p>Only one Shield Regen Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 12
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-regen-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 16000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!shadowbroker0000.shadowbroker0003",
+      "sort": 300000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen004"
+      }
+    },
+    {
+      "name": "Fist",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 31
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "6d10+20",
+            "damageType": "bludgeoning",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "reach-10"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "range": null,
+        "subjectToMAP": true
+      },
+      "_id": "shadowbroker0004",
+      "_key": "!actors.items!shadowbroker0000.shadowbroker0004",
+      "sort": 400000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Electrical Bolt",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 29
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "6d8+15",
+            "damageType": "electricity",
+            "category": null
+          }
+        },
+        "traits": {
+          "value": [
+            "range-increment-60"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "rules": [],
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "range": null,
+        "subjectToMAP": true
+      },
+      "_id": "shadowbroker0005",
+      "_key": "!actors.items!shadowbroker0000.shadowbroker0005",
+      "sort": 500000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Shield Projector",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Shield Projector</strong> <span class=\"action-glyph\">1</span></p><hr /><p>The Broker raises the barrier projector on his forearm. Until the start of his next turn he has a +2 circumstance bonus to AC and Reflex saves against effects originating in front of him, and his Kinetic Shield regains 20 HP.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "manipulate"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "shadowbroker0006",
+      "_key": "!actors.items!shadowbroker0000.shadowbroker0006",
+      "sort": 600000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Lightning Surge",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Lightning Surge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Arcs leap from the Broker's armor. Each creature in a @Template[emanation|distance:15]{15-foot emanation} takes @Damage[6d8+15[electricity]] damage with a @Check[reflex|dc:34|basic] save; a creature that critically fails is also stunned 1. Kinetic shields take double damage from this effect. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "electricity",
+            "manipulate"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "shadowbroker0007",
+      "_key": "!actors.items!shadowbroker0000.shadowbroker0007",
+      "sort": 700000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Overpowering Charge",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Overpowering Charge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>The Broker Strides twice in a straight line and makes a Fist Strike at the end. If it hits, the target must succeed at a @Check[fortitude|dc:34] save or be pushed 10 feet and knocked prone.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "move"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "shadowbroker0008",
+      "_key": "!actors.items!shadowbroker0000.shadowbroker0008",
+      "sort": 800000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "A Thousand Eyes",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>A Thousand Eyes</strong></p><hr /><p>The Broker knows his enemies before they arrive. He can't be surprised or flat-footed by hidden creatures he has dossiers on, and has a +4 circumstance bonus to Recall Knowledge and Sense Motive checks about them.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": []
+        },
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "interaction",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "shadowbroker0009",
+      "_key": "!actors.items!shadowbroker0000.shadowbroker0009",
+      "sort": 900000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000010",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -7,13 +7,13 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 170,
+        "value": 250,
         "temp": 70,
-        "max": 170,
+        "max": 250,
         "details": ""
       },
       "ac": {
-        "value": 28,
+        "value": 34,
         "details": ""
       },
       "allSaves": {
@@ -48,7 +48,7 @@
         "details": ""
       },
       "level": {
-        "value": 9
+        "value": 13
       },
       "blurb": "Rogue turian Spectre, indoctrinated herald of Sovereign.",
       "publicNotes": "<p>Once the most respected Spectre in the galaxy, Saren Arterius fell under the Reaper Sovereign's indoctrination and became its herald, augmenting his body with synthetic implants in pursuit of a doomed vision of survival through submission. He is a master gunman, a capable biotic, and utterly fanatical.</p><p><strong>Reinforced Barrier:</strong> 70 Shield HP. Recharges 20 HP per turn.</p><p><strong>Cybernetic Implants:</strong> Saren has resistance 5 to physical damage and is immune to the frightened condition.</p>",
@@ -67,59 +67,59 @@
     },
     "abilities": {
       "str": {
-        "mod": 4
+        "mod": 5
       },
       "dex": {
-        "mod": 5
+        "mod": 7
       },
       "con": {
-        "mod": 5
+        "mod": 7
       },
       "int": {
-        "mod": 4
+        "mod": 5
       },
       "wis": {
-        "mod": 3
+        "mod": 4
       },
       "cha": {
-        "mod": 4
+        "mod": 5
       }
     },
     "perception": {
       "details": "",
-      "mod": 19,
+      "mod": 24,
       "senses": [],
       "vision": true
     },
     "saves": {
       "fortitude": {
-        "value": 18,
+        "value": 23,
         "saveDetail": ""
       },
       "reflex": {
-        "value": 18,
+        "value": 23,
         "saveDetail": ""
       },
       "will": {
-        "value": 16,
+        "value": 21,
         "saveDetail": ""
       }
     },
     "skills": {
       "acrobatics": {
-        "base": 17
+        "base": 23
       },
       "athletics": {
-        "base": 17
+        "base": 23
       },
       "intimidation": {
-        "base": 20
+        "base": 27
       },
       "warfare": {
-        "base": 18
+        "base": 24
       },
       "computers": {
-        "base": 17
+        "base": 23
       }
     },
     "traits": {
@@ -228,11 +228,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 21
+          "value": 27
         },
         "damageRolls": {
           "dmg00HoQP": {
-            "damage": "4d10+12",
+            "damage": "5d10+16",
             "damageType": "piercing",
             "category": null
           }
@@ -291,16 +291,16 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 20
+          "value": 26
         },
         "damageRolls": {
           "dmg00mXUY": {
-            "damage": "2d12+12",
+            "damage": "3d12+14",
             "damageType": "bludgeoning",
             "category": null
           },
           "dmg01mXUY": {
-            "damage": "1d6",
+            "damage": "1d6+1",
             "damageType": "force",
             "category": null
           }
@@ -356,7 +356,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Biotic Overload</strong> <span class=\"action-glyph\">2</span> (recharge 5–6)</p><hr /><p><strong>Area</strong> 20-foot burst within 60 feet. Each creature takes [[/r 5d6[force]]] damage (basic Reflex save, DC 28) and is knocked prone on a failure.</p>",
+          "value": "<p><strong>Biotic Overload</strong> <span class=\"action-glyph\">2</span> (recharge 5–6)</p><hr /><p><strong>Area</strong> 20-foot burst within 60 feet. Each creature takes [[/r 7d6-1[force]]] damage (basic Reflex save, DC 33) and is knocked prone on a failure.</p>",
           "gm": ""
         },
         "rules": [],

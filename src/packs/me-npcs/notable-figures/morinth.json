@@ -1,0 +1,701 @@
+{
+  "_key": "!actors!morinth000000000",
+  "_id": "morinth000000000",
+  "name": "Morinth",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/morinth.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 195,
+        "temp": 0,
+        "max": 195,
+        "details": ""
+      },
+      "ac": {
+        "value": 31,
+        "details": ""
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 30,
+        "otherSpeeds": [],
+        "details": ""
+      },
+      "immunities": [],
+      "resistances": []
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [],
+        "details": "Galactic Common (translator)"
+      },
+      "level": {
+        "value": 11
+      },
+      "blurb": "Ardat-Yakshi and Samara's daughter, whose embrace kills.",
+      "publicNotes": "<p>Morinth is an Ardat-Yakshi: an asari whose genetic condition kills anyone she melds with, and who grows stronger each time. Rather than live out her life in a monastery she ran, and her mother Samara has hunted her across the galaxy for four hundred years. She favours artists and the young, and she hunts on Omega.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 5
+      },
+      "dex": {
+        "mod": 7
+      },
+      "con": {
+        "mod": 5
+      },
+      "int": {
+        "mod": 5
+      },
+      "wis": {
+        "mod": 5
+      },
+      "cha": {
+        "mod": 8
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 24,
+      "senses": [],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 21,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 24,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 24,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "deception": {
+        "base": 26
+      },
+      "diplomacy": {
+        "base": 23
+      },
+      "arcana": {
+        "base": 23
+      },
+      "stealth": {
+        "base": 23
+      },
+      "performance": {
+        "base": 23
+      }
+    },
+    "traits": {
+      "value": [
+        "asari",
+        "humanoid",
+        "unique",
+        "biotic"
+      ],
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Morinth",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/morinth.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/morinth.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "name": "M-6 Carnifex",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Carnifex.png",
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "morinth000000001"
+        }
+      },
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 24
+        },
+        "damageRolls": {
+          "dmg0": {
+            "damage": "4d6+14",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "rules": [],
+        "traits": {
+          "value": [
+            "tech",
+            "kickback",
+            "range-increment-45"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "range": null,
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "_id": "morinth000000002",
+      "_key": "!actors.items!morinth000000000.morinth000000002",
+      "sort": 200000,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "M-6 Carnifex",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_HP_-_Carnifex.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-6 Carnifex is a heavy combat pistol that delivers assault-rifle stopping power in a one-handed platform. Its oversized kinetic coils accelerate dense tungsten rounds with considerable force, and the recoil requires a firm grip to manage. Favored by soldiers who trust a single devastating shot over a hail of lighter rounds, the Carnifex earns its name at close range.</p>"
+        },
+        "rules": [],
+        "slug": "m-6-carnifex",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "kickback"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 7
+        },
+        "baseItem": "m-6-carnifex",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 700
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 3,
+          "die": "d6",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 45,
+        "expend": 1,
+        "ammo": {
+          "capacity": 8,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "advanced",
+        "runes": {
+          "potency": 0,
+          "striking": 2,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "morinth000000001",
+      "_key": "!actors.items!morinth000000000.morinth000000001",
+      "sort": 100000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.ec61a533e863ebeb"
+      }
+    },
+    {
+      "_id": "morinth000000003",
+      "name": "Activate Biotic Barrier (NPC)",
+      "type": "action",
+      "img": "icons/magic/lightning/barrier-shield-crackling-orb-pink.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "barrier": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-activate-biotic-barrier-npc",
+        "description": {
+          "gm": "",
+          "value": "<p>You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.</p><p>The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.</p><table><tbody><tr><td><strong>Level</strong></td><td><strong>Barrier HP</strong></td></tr><tr><td>1-3</td><td>5</td></tr><tr><td>4-5</td><td>10</td></tr><tr><td>6-7</td><td>15</td></tr><tr><td>8-9</td><td>20</td></tr><tr><td>10-11</td><td>25</td></tr><tr><td>12-13</td><td>30</td></tr><tr><td>14-15</td><td>35</td></tr><tr><td>16-17</td><td>40</td></tr><tr><td>18-19</td><td>45</td></tr><tr><td>20</td><td>50</td></tr></tbody></table>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [
+            "biotic",
+            "barrier"
+          ],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "interaction",
+        "selfEffect": {
+          "uuid": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meBioticBarrier0",
+          "name": "Biotic Barrier"
+        }
+      },
+      "_key": "!actors.items!morinth000000000.morinth000000003",
+      "sort": 300000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meActivateBbarNp"
+      }
+    },
+    {
+      "_id": "morinth000000004",
+      "name": "Dominate (NPC)",
+      "type": "action",
+      "img": "icons/magic/control/silhouette-hold-mind.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-dominate",
+        "description": {
+          "value": "<p>You reach into an organic creature's nervous system with a mass effect field and seize direct control of their actions, turning them against their own allies.</p><p><strong>Requirements</strong> The target must be an organic creature.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[will|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-dominate] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is <strong>Confused</strong> until the end of its next turn.</p><p><strong>Failure</strong> The creature is under your control for 1 round, treating you and your allies as friends and enemies as foes. It uses its actions as you direct. At the end of each of its turns, it can attempt a new Will save to end the effect.</p><p><strong>Critical Failure</strong> As failure, but the effect lasts for 1 minute. The creature is also <strong>Stupefied 2</strong> for the duration.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "incapacitation",
+            "manipulate",
+            "mental"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 3
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!morinth000000000.morinth000000004",
+      "sort": 400000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiodominate00"
+      }
+    },
+    {
+      "_id": "morinth000000005",
+      "name": "Reave (NPC)",
+      "type": "action",
+      "img": "icons/magic/life/ankh-gold-green.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-reave",
+        "description": {
+          "value": "<p>You drain the vital energy from a foe, siphoning their life force and preventing them from recovering while bolstering your own resilience.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-reave] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d8[void]] damage and cannot regain HP until the start of your next turn.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[void]] damage, cannot regain HP for 1 round, and you regain @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d8[HP]] damage.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d8[void]] damage, you regain @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[HP]] damage, and the target cannot regain HP for 1 minute (or until the end of combat).</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "manipulate",
+            "healing"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!morinth000000000.morinth000000005",
+      "sort": 500000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbioreave00000"
+      }
+    },
+    {
+      "_id": "morinth000000006",
+      "name": "Throw (NPC)",
+      "type": "action",
+      "img": "icons/magic/movement/arrow-up-from-portal.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-throw",
+        "description": {
+          "value": "<p>You project a mass effect field that hurls a creature or object with violent force.</p><p>Choose a creature or unattended object within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-throw] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is pushed 5 feet away from you.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[bludgeoning]] damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.</p><p><strong>Critical Failure</strong> As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!morinth000000000.morinth000000006",
+      "sort": 600000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiothrow00000"
+      }
+    },
+    {
+      "name": "Embrace Eternity",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/ThreeActions.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Embrace Eternity</strong> <span class=\"action-glyph\">3</span></p><hr /><p>Morinth melds her nervous system with a creature within 5 feet that is grabbed, paralyzed or controlled. The target takes @Damage[5d10+16[mental]] damage with a @Check[will|dc:34|basic] save, and Morinth regains HP equal to half the damage dealt. On a critical failure, the target is also drained 2.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "concentrate",
+            "mental",
+            "incapacitation"
+          ]
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 3
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "morinth000000007",
+      "_key": "!actors.items!morinth000000000.morinth000000007",
+      "sort": 700000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "Ardat-Yakshi",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>Ardat-Yakshi</strong></p><hr /><p>Morinth's presence is intoxicating. Creatures within 30 feet that are fascinated or controlled by her take a -2 status penalty to saves against her powers.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "mental"
+          ]
+        },
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "interaction",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "morinth000000008",
+      "_key": "!actors.items!morinth000000000.morinth000000008",
+      "sort": 800000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000010",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

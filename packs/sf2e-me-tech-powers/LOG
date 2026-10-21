@@ -1,15 +1,15 @@
-2026/10/21-11:32:17.518 117f0 Recovering log #318
-2026/10/21-11:32:17.529 117f0 Delete type=0 #318
-2026/10/21-11:32:17.529 117f0 Delete type=3 #316
-2026/10/21-11:32:17.535 eff8 Level-0 table #324: started
-2026/10/21-11:32:17.541 eff8 Level-0 table #324: 31631 bytes OK
-2026/10/21-11:32:17.545 eff8 Delete type=0 #322
-2026/10/21-11:32:17.545 eff8 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
-2026/10/21-11:32:17.545 eff8 Manual compaction at level-1 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at '!items!npctechtecharmor' @ 1316 : 1
-2026/10/21-11:32:17.545 eff8 Compacting 1@1 + 1@2 files
-2026/10/21-11:32:17.552 eff8 Generated table #325@1: 37 keys, 31631 bytes
-2026/10/21-11:32:17.552 eff8 Compacted 1@1 + 1@2 files => 31631 bytes
-2026/10/21-11:32:17.555 eff8 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/21-11:32:17.555 eff8 Delete type=2 #320
-2026/10/21-11:32:17.556 eff8 Delete type=2 #324
-2026/10/21-11:32:17.556 eff8 Manual compaction at level-1 from '!items!npctechtecharmor' @ 1316 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
+2026/10/21-11:36:49.565 8d30 Recovering log #323
+2026/10/21-11:36:49.574 8d30 Delete type=0 #323
+2026/10/21-11:36:49.574 8d30 Delete type=3 #321
+2026/10/21-11:36:49.577 be90 Level-0 table #329: started
+2026/10/21-11:36:49.583 be90 Level-0 table #329: 31631 bytes OK
+2026/10/21-11:36:49.585 be90 Delete type=0 #327
+2026/10/21-11:36:49.587 be90 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
+2026/10/21-11:36:49.587 be90 Manual compaction at level-1 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at '!items!npctechtecharmor' @ 1353 : 1
+2026/10/21-11:36:49.587 be90 Compacting 1@1 + 1@2 files
+2026/10/21-11:36:49.591 be90 Generated table #330@1: 37 keys, 31631 bytes
+2026/10/21-11:36:49.591 be90 Compacted 1@1 + 1@2 files => 31631 bytes
+2026/10/21-11:36:49.593 be90 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/10/21-11:36:49.593 be90 Delete type=2 #325
+2026/10/21-11:36:49.593 be90 Delete type=2 #329
+2026/10/21-11:36:49.593 be90 Manual compaction at level-1 from '!items!npctechtecharmor' @ 1353 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
