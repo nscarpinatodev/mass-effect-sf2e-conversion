@@ -291,6 +291,14 @@ console.log('NPC biotics: dice scale with the caster\'s level');
     `NPC Nova, posted as an action, records 12 and empties the barrier (got ${npc.flags[MOD].novaCharge}, ${b.flags[MOD].barrierCurrent})`);
 }
 
+console.log('NPC tech: dice scale too, synthetic bonus included');
+{
+  const engineer = new Actor('Eclipse Engineer', {}); engineer.level = 8;   // x3
+  const geth = new Actor('Geth', { traits: ['geth', 'construct'] });
+  await save('me-npc-tech-overload', 'failure', geth, { caster: engineer, origin: 'Item.npc-ovl' });
+  assert(geth.damage[0] === 72, `3d8 synthetic x3 = 9d8 (got ${geth.damage})`);
+}
+
 console.log('Every save button in the packs has a registry entry');
 {
   // the live registry, so the NPC entries me-powers.js generates count too

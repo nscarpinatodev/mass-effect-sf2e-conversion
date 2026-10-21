@@ -1,0 +1,1155 @@
+{
+  "_key": "!actors!kaidanalenko0000",
+  "_id": "kaidanalenko0000",
+  "name": "Kaidan Alenko",
+  "type": "npc",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/kaidan-alenko.png",
+  "system": {
+    "attributes": {
+      "hp": {
+        "value": 175,
+        "temp": 70,
+        "max": 175,
+        "details": ""
+      },
+      "ac": {
+        "value": 30,
+        "details": ""
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "speed": {
+        "value": 30,
+        "otherSpeeds": [],
+        "details": ""
+      },
+      "immunities": [],
+      "resistances": []
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "details": {
+      "languages": {
+        "value": [],
+        "details": "Galactic Common (translator)"
+      },
+      "level": {
+        "value": 10
+      },
+      "blurb": "Alliance Sentinel and one of humanity's first biotics; later a Spectre.",
+      "publicNotes": "<p>Staff Lieutenant Kaidan Alenko was one of the first humans to survive the L2 biotic implant, and trained at the program known as Brain Camp. He fights as a Sentinel, mixing biotics and tech, and becomes the second human Spectre during the Reaper War.</p><p><strong>Kinetic Barrier:</strong> 70 Shield HP.</p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      }
+    },
+    "resources": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "abilities": {
+      "str": {
+        "mod": 5
+      },
+      "dex": {
+        "mod": 7
+      },
+      "con": {
+        "mod": 5
+      },
+      "int": {
+        "mod": 7
+      },
+      "wis": {
+        "mod": 5
+      },
+      "cha": {
+        "mod": 7
+      }
+    },
+    "perception": {
+      "details": "",
+      "mod": 19,
+      "senses": [],
+      "vision": true
+    },
+    "saves": {
+      "fortitude": {
+        "value": 19,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 19,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 22,
+        "saveDetail": ""
+      }
+    },
+    "skills": {
+      "arcana": {
+        "base": 22
+      },
+      "crafting": {
+        "base": 19
+      },
+      "diplomacy": {
+        "base": 19
+      },
+      "occultism": {
+        "base": 22
+      }
+    },
+    "traits": {
+      "value": [
+        "human",
+        "humanoid",
+        "unique",
+        "biotic"
+      ],
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Kaidan Alenko",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "modules/mass-effect-sf2e-conversion/assets/img/tokens/kaidan-alenko.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 0,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "modules/mass-effect-sf2e-conversion/assets/img/tokens/kaidan-alenko.webp"
+      }
+    }
+  },
+  "items": [
+    {
+      "name": "M-15 Vindicator",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Vindicator.png",
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "kaidanalenko0001"
+        }
+      },
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 23
+        },
+        "damageRolls": {
+          "dmg0": {
+            "damage": "3d8+13",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "rules": [],
+        "traits": {
+          "value": [
+            "tech",
+            "burst-fire",
+            "range-increment-70"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "range": null,
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "_id": "kaidanalenko0002",
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0002",
+      "sort": 200000,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "M-5 Phalanx",
+      "type": "melee",
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "kaidanalenko0003"
+        }
+      },
+      "system": {
+        "slug": null,
+        "bonus": {
+          "value": 23
+        },
+        "damageRolls": {
+          "dmg0": {
+            "damage": "3d6+13",
+            "damageType": "piercing",
+            "category": null
+          }
+        },
+        "rules": [],
+        "traits": {
+          "value": [
+            "tech",
+            "range-increment-50"
+          ],
+          "otherTags": [],
+          "config": {}
+        },
+        "description": {
+          "value": "",
+          "gm": ""
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "action": "strike",
+        "area": null,
+        "range": null,
+        "subjectToMAP": true,
+        "weaponType": {
+          "value": "ranged"
+        }
+      },
+      "_id": "kaidanalenko0004",
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0004",
+      "sort": 400000,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    },
+    {
+      "name": "M-15 Vindicator",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME2_AR_-_Vindicator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-15 Vindicator is a high-end battle rifle favored by mercenaries and private military contractors throughout the Terminus Systems. Its precision burst-fire mechanism channels kinetic rounds with exceptional accuracy at medium range, striking a balance between stopping power and controlled fire discipline that the Avenger sacrifices for capacity.</p>"
+        },
+        "rules": [],
+        "slug": "m-15-vindicator",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "burst-fire"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "baseItem": "m-15-vindicator",
+        "bulk": {
+          "value": 2
+        },
+        "price": {
+          "value": {
+            "gp": 100
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "category": "martial",
+        "group": "rifle",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 2,
+          "die": "d8",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 70,
+        "expend": 3,
+        "ammo": {
+          "capacity": 60,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 1,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "kaidanalenko0001",
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0001",
+      "sort": 100000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.5b5a838cf0f2266c"
+      }
+    },
+    {
+      "name": "M-5 Phalanx",
+      "type": "weapon",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/weapons/ME3_Phalanx_Heavy_Pistol.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>The M-5 Phalanx is a mid-range combat pistol developed for operatives who must engage threats too distant for a standard sidearm. Its integrated laser targeting system reduces aim drift, allowing accurate fire at distances most pistols cannot reliably reach. A favorite of Spectres and special operations personnel who need a one-handed weapon that punches above its weight class.</p>"
+        },
+        "rules": [],
+        "slug": "m-5-phalanx",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 5
+        },
+        "baseItem": "m-5-phalanx",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "gp": 250
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null,
+          "handsHeld": 0
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "category": "martial",
+        "group": "pistol",
+        "bonus": {
+          "value": 0
+        },
+        "damage": {
+          "dice": 2,
+          "die": "d6",
+          "damageType": "piercing",
+          "persistent": null
+        },
+        "splashDamage": {
+          "value": 0
+        },
+        "range": 50,
+        "expend": 1,
+        "ammo": {
+          "capacity": 12,
+          "baseType": "projectile-ammo",
+          "builtIn": false
+        },
+        "reload": {
+          "value": "1"
+        },
+        "grade": "tactical",
+        "runes": {
+          "potency": 0,
+          "striking": 1,
+          "property": []
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "property1": {
+          "value": "",
+          "dice": 0,
+          "die": "",
+          "damageType": "",
+          "critDice": 0,
+          "critDie": "",
+          "critDamage": "",
+          "critDamageType": "",
+          "strikeConditionType": "",
+          "strikeConditionValue": null,
+          "criticalConditionType": "",
+          "criticalConditionValue": null
+        },
+        "subitems": []
+      },
+      "_id": "kaidanalenko0003",
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0003",
+      "sort": 300000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-weapons.Item.418ec60030288202"
+      }
+    },
+    {
+      "name": "Predator Armor (M)",
+      "type": "armor",
+      "effects": [],
+      "img": "modules/mass-effect-sf2e-conversion/assets/img/armors/Medium-human-Predator.png",
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "description": {
+          "gm": "",
+          "value": "<p>Hahne-Kedar's Predator series leverages the manufacturer's proven armalite fabrication to deliver reliable tactical-grade protection. Enhanced barrier efficiency and high-density plating make this suit a preferred choice for experienced soldiers who need performance they can count on.</p>"
+        },
+        "rules": [],
+        "slug": "predator-armor-hk-m",
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech"
+          ],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Homebrew",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        },
+        "level": {
+          "value": 0
+        },
+        "quantity": 1,
+        "baseItem": "predator-armor-hk",
+        "bulk": {
+          "value": 2
+        },
+        "hp": {
+          "value": 0,
+          "max": 0
+        },
+        "hardness": 0,
+        "price": {
+          "value": {
+            "gp": 280
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": null
+        },
+        "containerId": null,
+        "size": "med",
+        "material": {
+          "type": null,
+          "grade": null
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unusual Armor",
+            "img": "systems/pf2e/icons/unidentified_item_icons/armor.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "category": "medium",
+        "group": "chain",
+        "acBonus": 3,
+        "strength": 2,
+        "dexCap": 3,
+        "checkPenalty": -2,
+        "speedPenalty": -5,
+        "grade": "commercial",
+        "runes": {
+          "potency": 0,
+          "resilient": 0,
+          "property": []
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_id": "kaidanalenko0005",
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0005",
+      "sort": 500000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-armors.Item.e06f342e7b2b8b57"
+      }
+    },
+    {
+      "_id": "kaidanalenko0006",
+      "name": "Kinetic Shield",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldMax": 30,
+          "shieldRegen": 10
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-kinetic-shield",
+        "description": {
+          "gm": "",
+          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "quantity": 1,
+        "baseItem": "me-kinetic-shield",
+        "bulk": {
+          "value": 1
+        },
+        "price": {
+          "value": {
+            "sp": 150
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0006",
+      "sort": 600000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meKineticShield0"
+      }
+    },
+    {
+      "_id": "kaidanalenko0007",
+      "name": "Shield HP Mod - Tier 3",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "shieldHpBonus": 40
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-hp-mod-t3",
+        "description": {
+          "gm": "",
+          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 9
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-hp-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 7000
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0007",
+      "sort": 700000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldHpMod003"
+      }
+    },
+    {
+      "_id": "kaidanalenko0008",
+      "name": "Shield Regen Mod - Tier 1",
+      "type": "equipment",
+      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
+      "effects": [],
+      "flags": {
+        "mass-effect-sf2e-conversion": {
+          "regenMult": 1.5
+        }
+      },
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-shield-regen-mod-t1",
+        "description": {
+          "gm": "",
+          "value": "<p>Boosts kinetic shield recharge rate by <strong>+50%</strong> (base 10 → 15 HP/turn).</p><p>Only one Shield Regen Mod can be installed at a time.</p>"
+        },
+        "rules": [],
+        "_migration": {
+          "version": 0.955,
+          "lastMigration": null,
+          "previous": null
+        },
+        "traits": {
+          "otherTags": [],
+          "value": [],
+          "rarity": "common"
+        },
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "level": {
+          "value": 3
+        },
+        "quantity": 1,
+        "baseItem": "me-shield-regen-mod",
+        "bulk": {
+          "value": 0
+        },
+        "price": {
+          "value": {
+            "sp": 600
+          }
+        },
+        "equipped": {
+          "carryType": "worn",
+          "inSlot": true
+        },
+        "usage": {
+          "value": "other"
+        },
+        "identification": {
+          "status": "identified",
+          "unidentified": {
+            "name": "Unknown Mod",
+            "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+            "data": {
+              "description": {
+                "value": ""
+              }
+            }
+          },
+          "misidentified": {}
+        },
+        "subitems": [],
+        "specific": null
+      },
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0008",
+      "sort": 800000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meShieldRegen001"
+      }
+    },
+    {
+      "_id": "kaidanalenko0009",
+      "name": "Overload (NPC)",
+      "type": "action",
+      "img": "icons/magic/lightning/bolt-strike-blue.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-tech-overload",
+        "description": {
+          "value": "<p>You fire a concentrated electromagnetic pulse that shreds kinetic shields and fries synthetic circuitry.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-tech-overload] save against the creature's power DC. Electricity damage dealt to kinetic shields is doubled by the shield system.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d8[electricity]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[electricity]] damage. Synthetic or mech creatures take an additional @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d8[electricity]] damage.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d8[electricity]] damage (plus the synthetic bonus). The target is also <strong>Stunned 1</strong>.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "electricity",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0009",
+      "sort": 900000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.npctechoverload0"
+      }
+    },
+    {
+      "_id": "kaidanalenko0010",
+      "name": "Throw (NPC)",
+      "type": "action",
+      "img": "icons/magic/movement/arrow-up-from-portal.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-throw",
+        "description": {
+          "value": "<p>You project a mass effect field that hurls a creature or object with violent force.</p><p>Choose a creature or unattended object within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-throw] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is pushed 5 feet away from you.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[bludgeoning]] damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.</p><p><strong>Critical Failure</strong> As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0010",
+      "sort": 1000000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbiothrow00000"
+      }
+    },
+    {
+      "_id": "kaidanalenko0011",
+      "name": "Cryo Blast (NPC)",
+      "type": "action",
+      "img": "icons/magic/water/snowflake-ice-blue-white.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-tech-cryo-blast",
+        "description": {
+          "value": "<p>You fire a cryogenic burst from your omni-tool that flash-freezes targets in a wide area, slowing their movements.</p><p>All creatures in a @Template[burst|distance:10]{10-foot radius burst} within <strong>30 feet</strong> must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-tech-cryo-blast] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[cold]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[cold]] damage and is <strong>Slowed 1</strong> until the end of its next turn.</p><p><strong>Critical Failure</strong> The target takes @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d6[cold]] damage and is <strong>Immobilized</strong> until the end of its next turn. If the target is already Slowed, it is Immobilized instead.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "tech",
+            "cold",
+            "manipulate"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0011",
+      "sort": 1100000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.npctechcryoblast"
+      }
+    },
+    {
+      "_id": "kaidanalenko0012",
+      "name": "Reave (NPC)",
+      "type": "action",
+      "img": "icons/magic/life/ankh-gold-green.webp",
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "system": {
+        "slug": "me-npc-biotic-reave",
+        "description": {
+          "value": "<p>You drain the vital energy from a foe, siphoning their life force and preventing them from recovering while bolstering your own resilience.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-reave] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d8[void]] damage and cannot regain HP until the start of your next turn.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[void]] damage, cannot regain HP for 1 round, and you regain @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d8[HP]] damage.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d8[void]] damage, you regain @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[HP]] damage, and the target cannot regain HP for 1 minute (or until the end of combat).</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": [
+            "biotic",
+            "manipulate",
+            "healing"
+          ],
+          "rarity": "common"
+        },
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": 0.959,
+          "previous": null
+        }
+      },
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0012",
+      "sort": 1200000,
+      "folder": null,
+      "_stats": {
+        "compendiumSource": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.npcbioreave00000"
+      }
+    },
+    {
+      "name": "L2 Implant Strain",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "system": {
+        "slug": null,
+        "description": {
+          "value": "<p><strong>L2 Implant Strain</strong></p><hr /><p>Kaidan's older L2 implant gives him migraines. After he uses two biotic powers in the same turn, he is stupefied 1 until the start of his next turn.</p>",
+          "gm": ""
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": []
+        },
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "interaction",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "_id": "kaidanalenko0013",
+      "_key": "!actors.items!kaidanalenko0000.kaidanalenko0013",
+      "sort": 1300000,
+      "effects": [],
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "folder": null
+    }
+  ],
+  "effects": [],
+  "folder": "menpcfoldr000009",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

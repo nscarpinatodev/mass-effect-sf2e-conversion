@@ -371,7 +371,7 @@ const POWERS = {
 };
 
 // ── NPC VERSIONS ────────────────────────────────────────────────────────────
-// The "(NPC)" biotic actions (me-npc-*) have no class DC to lean on, so they
+// The "(NPC)" biotic and tech actions (me-npc-*) have no class DC to lean on, so they
 // scale from the caster's level instead. Their DC is worked out in the save
 // button itself; here their dice are the PC power's, multiplied by
 // 1 + floor(level / 4): x1 at levels 0-3, x2 at 4-7, x3 at 8-11, and so on.
@@ -380,7 +380,9 @@ const scaleDice = (formula, m) => formula.replace(/(\d+)d(\d+)/g, (_, n, d) => `
 const scaledByCaster = (value) => (typeof value === 'string' ? ({ caster }) => scaleDice(value, npcDiceMult(caster)) : value);
 
 for (const [key, power] of Object.entries(POWERS)) {
-  if (!key.startsWith('me-biotic-') && !['me-cluster-grenade', 'me-lift-grenade'].includes(key)) continue;
+  const biotic = key.startsWith('me-biotic-') || ['me-cluster-grenade', 'me-lift-grenade'].includes(key);
+  const tech = key.startsWith('me-tech-') || key === 'me-sticky-grenade';
+  if (!biotic && !tech) continue;
   const degrees = {};
   for (const [name, degree] of Object.entries(power.degrees)) {
     const d = { ...degree };
@@ -388,7 +390,7 @@ for (const [key, power] of Object.entries(POWERS)) {
     if (d.persistent) d.persistent = { ...d.persistent, formula: scaledByCaster(d.persistent.formula) };
     degrees[name] = d;
   }
-  POWERS[`me-npc-${key.slice(3)}`] = { ...power, trait: 'biotic', degrees };
+  POWERS[`me-npc-${key.slice(3)}`] = { ...power, trait: biotic ? 'biotic' : 'tech', degrees };
 }
 
 // For macros and debugging: the full registry, PC and NPC entries alike.

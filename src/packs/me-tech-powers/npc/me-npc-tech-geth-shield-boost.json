@@ -1,0 +1,50 @@
+{
+  "_id": "npctechgethshiel",
+  "_key": "!items!npctechgethshiel",
+  "name": "Geth Shield Boost (NPC)",
+  "type": "action",
+  "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+  "folder": "metechnpcfolder0",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-npc-tech-geth-shield-boost",
+    "description": {
+      "value": "<p>You activate a geth-derived shield optimization algorithm from your omni-tool, temporarily supercharging your kinetic barrier.</p><p>Your kinetic shield maximum is doubled until the start of your next turn. Immediately set your current temp HP to the doubled maximum. Remove the Geth Shield Boost effect at the start of your next turn and reset temp HP to your normal shield maximum.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Use it from the chat card to apply its effect.</em></p>",
+      "gm": ""
+    },
+    "rules": [],
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "tech",
+        "manipulate"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 1
+    },
+    "category": "offensive",
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    },
+    "selfEffect": {
+      "uuid": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meEffGethShldBst",
+      "name": "Geth Shield Boost"
+    }
+  }
+}

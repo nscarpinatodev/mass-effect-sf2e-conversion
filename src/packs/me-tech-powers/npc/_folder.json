@@ -1,0 +1,11 @@
+{
+  "name": "NPC Tech",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "sort": 1000000,
+  "color": null,
+  "flags": {},
+  "_id": "metechnpcfolder0",
+  "_key": "!folders!metechnpcfolder0"
+}

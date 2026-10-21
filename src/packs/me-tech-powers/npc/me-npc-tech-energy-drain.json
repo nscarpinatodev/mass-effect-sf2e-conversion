@@ -1,0 +1,47 @@
+{
+  "_id": "npctechenergydra",
+  "_key": "!items!npctechenergydra",
+  "name": "Energy Drain (NPC)",
+  "type": "action",
+  "img": "icons/magic/lightning/bolt-strike-forked-blue.webp",
+  "folder": "metechnpcfolder0",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-npc-tech-energy-drain",
+    "description": {
+      "value": "<p>You fire an omni-tool beam that siphons kinetic barrier energy directly from a target and transfers it to your own shields.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-tech-energy-drain] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d8[electricity]] damage, or loses 10 shield HP if it has an active kinetic shield.</p><p><strong>Failure</strong> Against a shielded target: drain up to <strong>20 HP of shields</strong>; you gain that amount as temp HP (stacking with existing shields, up to your maximum). Against an unshielded target: @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[electricity]] damage and you regain 10 temp HP.</p><p><strong>Critical Failure</strong> As failure, but drain <strong>40 shield HP</strong> (or 4d8 electricity) and you gain 20 temp HP from the drain.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+      "gm": ""
+    },
+    "rules": [],
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "tech",
+        "electricity",
+        "manipulate"
+      ],
+      "rarity": "common"
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 2
+    },
+    "category": "offensive",
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "_migration": {
+      "version": 0.959,
+      "previous": null
+    }
+  }
+}
