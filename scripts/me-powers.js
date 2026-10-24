@@ -1,4 +1,7 @@
 'use strict';
+// Each module script runs in its own scope: Foundry loads "scripts" as classic scripts that share one
+// global scope, so top-level names like MODULE_ID would collide between files.
+(() => {
 // ============================================================
 // MASS EFFECT POWERS AUTOMATION — Foundry VTT v13
 // ------------------------------------------------------------
@@ -795,3 +798,4 @@ function postResult(actor, powerName, outcome, lines) {
 }
 
 console.log('ME Powers | automation loaded.');
+})(); // end IIFE

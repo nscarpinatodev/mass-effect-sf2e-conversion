@@ -1,4 +1,7 @@
 'use strict';
+// Each module script runs in its own scope: Foundry loads "scripts" as classic scripts that share one
+// global scope, so top-level names like MODULE_ID would collide between files.
+(() => {
 // ============================================================
 // MASS EFFECT CLASSES — trait registration
 // ------------------------------------------------------------
@@ -38,3 +41,4 @@ Hooks.once('init', () => {
     config.actionTraits[slug] ??= label;
   }
 });
+})(); // end IIFE

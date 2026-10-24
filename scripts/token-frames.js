@@ -1,4 +1,7 @@
 'use strict';
+// Each module script runs in its own scope: Foundry loads "scripts" as classic scripts that share one
+// global scope, so top-level names like MODULE_ID would collide between files.
+(() => {
 
 // ============================================================
 // TOKEN FRAMES — bake a Tokenizer 2 frame onto this module's
@@ -229,3 +232,4 @@ Hooks.once('ready', () => {
     console.log(`${MODULE_ID} | token framing armed (Tokenizer 2 ${version})`);
   }
 });
+})(); // end IIFE

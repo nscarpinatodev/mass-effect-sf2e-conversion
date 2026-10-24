@@ -319,5 +319,23 @@ console.log('Every save button in the packs has a registry entry');
   assert(missing.length === 0, `${used.size} keys used, ${registered.size} registered${missing.length ? `; missing: ${missing.map(([k, f]) => `${k} (${f})`).join(', ')}` : ''}`);
 }
 
+console.log('The module scripts load side by side');
+{
+  // Foundry runs module.json "scripts" as classic scripts sharing one global scope, so a top-level name
+  // declared in two files throws a redeclaration SyntaxError and that whole file never runs. Load them the same
+  // way; other errors only mean the mocks below are thinner than Foundry.
+  const manifest = JSON.parse(readFileSync(new URL('../module.json', import.meta.url), 'utf8'));
+  const shared = vm.createContext({ console: { log() {}, warn() {}, error() {}, debug() {} } });
+  const clashes = [];
+  for (const path of manifest.scripts) {
+    try {
+      vm.runInContext(readFileSync(new URL(`../${path}`, import.meta.url), 'utf8'), shared, { filename: path });
+    } catch (err) {
+      if (err instanceof SyntaxError || err?.name === 'SyntaxError') clashes.push(`${path}: ${err.message}`);
+    }
+  }
+  assert(clashes.length === 0, `${manifest.scripts.length} scripts${clashes.length ? `; ${clashes.join('; ')}` : ''}`);
+}
+
 console.log(failures ? `\n${failures} FAILED` : '\nall passed');
 process.exitCode = failures ? 1 : 0;
