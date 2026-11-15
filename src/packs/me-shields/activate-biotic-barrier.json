@@ -44,11 +44,7 @@
       "value": 1
     },
     "prerequisites": {
-      "value": [
-        {
-          "value": "Biotic Dedication or Biotic Barrier class feature"
-        }
-      ]
+      "value": []
     },
     "actionType": {
       "value": "action"
@@ -56,7 +52,7 @@
     "actions": {
       "value": 2
     },
-    "category": "class",
+    "category": "classfeature",
     "selfEffect": {
       "uuid": "Compendium.mass-effect-sf2e-conversion.me-shields.Item.meBioticBarrier0",
       "name": "Biotic Barrier"

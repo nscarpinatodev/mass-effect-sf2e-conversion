@@ -1,15 +1,15 @@
-2026/10/21-11:41:30.504 2648 Recovering log #333
-2026/10/21-11:41:30.514 2648 Delete type=0 #333
-2026/10/21-11:41:30.514 2648 Delete type=3 #331
-2026/10/21-11:41:30.519 97c4 Level-0 table #339: started
-2026/10/21-11:41:30.526 97c4 Level-0 table #339: 31631 bytes OK
-2026/10/21-11:41:30.530 97c4 Delete type=0 #337
-2026/10/21-11:41:30.530 97c4 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
-2026/10/21-11:41:30.530 97c4 Manual compaction at level-1 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at '!items!npctechtecharmor' @ 1427 : 1
-2026/10/21-11:41:30.530 97c4 Compacting 1@1 + 1@2 files
-2026/10/21-11:41:30.538 97c4 Generated table #340@1: 37 keys, 31631 bytes
-2026/10/21-11:41:30.538 97c4 Compacted 1@1 + 1@2 files => 31631 bytes
-2026/10/21-11:41:30.543 97c4 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/10/21-11:41:30.543 97c4 Delete type=2 #335
-2026/10/21-11:41:30.543 97c4 Delete type=2 #339
-2026/10/21-11:41:30.543 97c4 Manual compaction at level-1 from '!items!npctechtecharmor' @ 1427 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
+2026/11/15-14:42:39.045 8de8 Recovering log #338
+2026/11/15-14:42:39.058 8de8 Delete type=0 #338
+2026/11/15-14:42:39.058 8de8 Delete type=3 #336
+2026/11/15-14:42:39.064 be04 Level-0 table #344: started
+2026/11/15-14:42:39.072 be04 Level-0 table #344: 31631 bytes OK
+2026/11/15-14:42:39.078 be04 Delete type=0 #342
+2026/11/15-14:42:39.078 be04 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
+2026/11/15-14:42:39.078 be04 Manual compaction at level-1 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at '!items!npctechtecharmor' @ 1464 : 1
+2026/11/15-14:42:39.079 be04 Compacting 1@1 + 1@2 files
+2026/11/15-14:42:39.086 be04 Generated table #345@1: 37 keys, 31631 bytes
+2026/11/15-14:42:39.086 be04 Compacted 1@1 + 1@2 files => 31631 bytes
+2026/11/15-14:42:39.090 be04 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/15-14:42:39.090 be04 Delete type=2 #340
+2026/11/15-14:42:39.090 be04 Delete type=2 #344
+2026/11/15-14:42:39.090 be04 Manual compaction at level-1 from '!items!npctechtecharmor' @ 1464 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)

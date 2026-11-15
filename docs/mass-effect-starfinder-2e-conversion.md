@@ -1365,7 +1365,7 @@ The most powerful biotic class in the galaxy, Adepts use mass effect fields to d
 
 | Level | Class Features |
 |---|---|
-| 1 | Adept Mastery, Biotic Conditioning, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 1 | Activate Biotic Barrier, Adept Mastery, Biotic Conditioning, Class Feat, Initial Proficiencies, Ancestry Feat |
 | 2 | Class Feat, Skill Feat |
 | 3 | Fortitude Expertise, General Feat, Skill Increase |
 | 4 | Class Feat, Skill Feat |
@@ -1476,7 +1476,7 @@ The most aggressive class in the galaxy, Vanguards combine biotic power with clo
 
 | Level | Class Features |
 |---|---|
-| 1 | Vanguard Mastery, Vanguard Momentum, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 1 | Activate Biotic Barrier, Vanguard Mastery, Vanguard Momentum, Class Feat, Initial Proficiencies, Ancestry Feat |
 | 2 | Class Feat, Skill Feat |
 | 3 | Reflex Expertise, General Feat, Skill Increase |
 | 4 | Class Feat, Skill Feat |

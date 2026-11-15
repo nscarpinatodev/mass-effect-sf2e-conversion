@@ -187,10 +187,10 @@ await writeFile(join(SHIELDS_DIR, 'activate-biotic-barrier.json'), JSON.stringif
     traits: { otherTags: ['biotic', 'barrier'], value: [], rarity: 'common' },
     publication: PUB,
     level: { value: 1 },
-    prerequisites: { value: [{ value: 'Biotic Dedication or Biotic Barrier class feature' }] },
+    prerequisites: { value: [] },
     actionType: { value: 'action' },
     actions: { value: 2 },
-    category: 'class',
+    category: 'classfeature',   // granted at level 1 by Adept and Vanguard
     selfEffect: BARRIER_SELF_EFFECT,
   },
   { [MODULE_ID]: { barrier: true } },

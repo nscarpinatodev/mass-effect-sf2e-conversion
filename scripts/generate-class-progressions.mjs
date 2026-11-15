@@ -13,7 +13,9 @@ const PUB = {
 
 const MIG = { version: 0.955, lastMigration: null, previous: null };
 
-function makePassiveFeat({ id, name, slug, img, level, prereqs = [], traits = [], rules = [], description }) {
+// category: 'classfeature' for features a class item grants, 'class' for passive
+// class feats the player picks in a class feat slot.
+function makePassiveFeat({ id, name, slug, img, level, prereqs = [], traits = [], rules = [], description, category = 'classfeature' }) {
   return {
     _key:   `!items!${id}`,
     _id:    id,
@@ -35,7 +37,7 @@ function makePassiveFeat({ id, name, slug, img, level, prereqs = [], traits = []
       prerequisites: { value: prereqs.map(p => ({ value: p })) },
       actionType: { value: 'passive' },
       actions:    { value: null },
-      category:   'classfeature',
+      category,
     },
   };
 }
@@ -75,6 +77,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meUpgradeAmmoMst',  // 16 ✓
   name:    'Ammo Master',
   slug:    'me-upgrade-ammo-master',
+  category: 'class',
   img:     'icons/weapons/ammunition/bullets-cartridge-shell-gray.webp',
   level:   6,
   prereqs: ['Incendiary Rounds', 'Disruptor Rounds'],
@@ -87,6 +90,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meUpgradeOverld0',  // 16 ✓
   name:    'Overload Upgrade',
   slug:    'me-upgrade-overload',
+  category: 'class',
   img:     'icons/magic/lightning/bolt-strike-blue.webp',
   level:   8,
   prereqs: ['Overload'],
@@ -100,6 +104,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meUpgradeIncinr0',  // 16 ✓
   name:    'Incinerate Upgrade',
   slug:    'me-upgrade-incinerate',
+  category: 'class',
   img:     'icons/magic/fire/flame-burning-orange.webp',
   level:   8,
   prereqs: ['Incinerate'],
@@ -113,6 +118,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meUpgradeCharge0',  // 16 ✓
   name:    'Charge Upgrade',
   slug:    'me-upgrade-charge',
+  category: 'class',
   img:     'icons/magic/movement/abstract-ribbons-blue-purple.webp',
   level:   8,
   prereqs: ['Charge'],
@@ -126,6 +132,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meUpgradeTacClk0',  // 16 ✓
   name:    'Tactical Cloak Upgrade',
   slug:    'me-upgrade-tactical-cloak',
+  category: 'class',
   img:     'icons/magic/perception/eye-ringed-glow-angry-teal.webp',
   level:   8,
   prereqs: ['Tactical Cloak'],
@@ -139,6 +146,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meUpgradeDrone000',  // 16 ✓
   name:    'Combat Drone Upgrade',
   slug:    'me-upgrade-combat-drone',
+  category: 'class',
   img:     'icons/magic/lightning/orb-lightning-bolt-blue.webp',
   level:   10,
   prereqs: ['Combat Drone'],
@@ -152,6 +160,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meUpgradeWarp000',  // 16 ✓
   name:    'Warp Upgrade',
   slug:    'me-upgrade-warp',
+  category: 'class',
   img:     'icons/magic/unholy/orb-glowing-purple.webp',
   level:   10,
   prereqs: ['Warp'],
@@ -165,6 +174,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meUpgradeSingulr0',  // 16 ✓
   name:    'Singularity Upgrade',
   slug:    'me-upgrade-singularity',
+  category: 'class',
   img:     'icons/magic/control/debuff-chains-blue.webp',
   level:   10,
   prereqs: ['Singularity'],
@@ -178,6 +188,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meUpgradeNova0000',  // 16 ✓
   name:    'Nova Upgrade',
   slug:    'me-upgrade-nova',
+  category: 'class',
   img:     'icons/magic/light/explosion-star-glow-silhouette.webp',
   level:   10,
   prereqs: ['Nova'],
@@ -193,6 +204,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSoldierHvyWep0',  // 16 ✓
   name:    'Heavy Weapon Training',
   slug:    'me-soldier-heavy-weapon-training',
+  category: 'class',
   img:     'icons/weapons/artillery/cannon-barrel-black.webp',
   level:   12,
   prereqs: ['Weapon Mastery (Assault Rifles)', 'Weapon Mastery (Shotguns)'],
@@ -210,6 +222,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSoldierTacRlod',  // 16 ✓
   name:    'Tactical Reload',
   slug:    'me-soldier-tactical-reload',
+  category: 'class',
   img:     'icons/weapons/ammunition/bullets-cartridge-shell-gray.webp',
   level:   12,
   prereqs: ['Improved Combat Training'],
@@ -223,6 +236,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSoldierDevRnds',  // 16 ✓
   name:    'Devastating Rounds',
   slug:    'me-soldier-devastating-rounds',
+  category: 'class',
   img:     'icons/weapons/ammunition/bullets-cartridge-brass.webp',
   level:   14,
   prereqs: ['Ammo Master'],
@@ -236,6 +250,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSoldierSuppFir',  // 16 ✓
   name:    'Suppressing Fire',
   slug:    'me-soldier-suppressing-fire',
+  category: 'class',
   img:     'icons/skills/ranged/arrow-flying-gray.webp',
   level:   14,
   prereqs: ['Master Combat Training'],
@@ -263,6 +278,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSoldierLgndCbt',  // 16 ✓
   name:    'Legendary Combat',
   slug:    'me-soldier-legendary-combat',
+  category: 'class',
   img:     'icons/skills/melee/sword-shield-stylized-blue.webp',
   level:   18,
   prereqs: ['Master Combat Training'],
@@ -279,6 +295,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSoldierWarMach',  // 16 ✓
   name:    'War Machine',
   slug:    'me-soldier-war-machine',
+  category: 'class',
   img:     'icons/equipment/chest/breastplate-banded-steel-grey.webp',
   level:   20,
   prereqs: ['Devastating Rounds'],
@@ -329,6 +346,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meEngineerOvldNt',  // 16 ✓
   name:    'Overload Network',
   slug:    'me-engineer-overload-network',
+  category: 'class',
   img:     'icons/magic/lightning/bolt-strike-blue.webp',
   level:   14,
   prereqs: ['Overload Upgrade'],
@@ -343,6 +361,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meEngineerDrnCmd',  // 16 ✓
   name:    'Drone Commander',
   slug:    'me-engineer-drone-commander',
+  category: 'class',
   img:     'icons/magic/lightning/orb-lightning-bolt-blue.webp',
   level:   14,
   prereqs: ['Combat Drone Upgrade'],
@@ -394,6 +413,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meEngineerApxEng',  // 16 ✓
   name:    'Apex Engineer',
   slug:    'me-engineer-apex-engineer',
+  category: 'class',
   img:     'icons/equipment/wrist/bracer-runed-steel-orange.webp',
   level:   20,
   prereqs: ['Master Tech Mastery'],
@@ -413,6 +433,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meAdeptBioticRes',  // 16 ✓
   name:    'Biotic Resonance',
   slug:    'me-adept-biotic-resonance',
+  category: 'class',
   img:     'icons/magic/light/orb-shining-teal.webp',
   level:   12,
   prereqs: ['Improved Biotic Mastery'],
@@ -442,6 +463,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meAdeptGravWell0',  // 16 ✓
   name:    'Gravity Well',
   slug:    'me-adept-gravity-well',
+  category: 'class',
   img:     'icons/magic/control/debuff-chains-blue.webp',
   level:   14,
   prereqs: ['Singularity Upgrade'],
@@ -456,6 +478,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meAdeptBioCascd0',  // 16 ✓
   name:    'Biotic Cascade',
   slug:    'me-adept-biotic-cascade',
+  category: 'class',
   img:     'icons/magic/light/explosion-star-glow-silhouette.webp',
   level:   16,
   prereqs: ['Biotic Resonance'],
@@ -470,6 +493,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meAdeptDarkMattr',  // 16 ✓
   name:    'Dark Matter',
   slug:    'me-adept-dark-matter',
+  category: 'class',
   img:     'icons/magic/unholy/orb-glowing-purple.webp',
   level:   18,
   prereqs: ['Master Biotic Mastery'],
@@ -502,6 +526,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meVanguardUnstCg',  // 16 ✓
   name:    'Unstoppable Charge',
   slug:    'me-vanguard-unstoppable-charge',
+  category: 'class',
   img:     'icons/magic/movement/abstract-ribbons-blue-purple.webp',
   level:   12,
   prereqs: ['Charge Upgrade'],
@@ -516,6 +541,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meVanguardBioWar',  // 16 ✓
   name:    'Biotic Warrior',
   slug:    'me-vanguard-biotic-warrior',
+  category: 'class',
   img:     'icons/magic/movement/abstract-ribbons-blue-purple.webp',
   level:   12,
   prereqs: ['Charge'],
@@ -545,6 +571,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meVanguardRmpge0',  // 16 ✓
   name:    'Rampage',
   slug:    'me-vanguard-rampage',
+  category: 'class',
   img:     'icons/magic/movement/abstract-ribbons-blue-purple.webp',
   level:   16,
   prereqs: ['Unstoppable Charge'],
@@ -575,6 +602,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meVanguardApexVg',  // 16 ✓
   name:    'Apex Vanguard',
   slug:    'me-vanguard-apex-vanguard',
+  category: 'class',
   img:     'icons/magic/movement/abstract-ribbons-blue-purple.webp',
   level:   20,
   prereqs: ["Death's Embrace"],
@@ -591,6 +619,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meInfiltratGhost',  // 16 ✓
   name:    'Ghost Protocol',
   slug:    'me-infiltrator-ghost-protocol',
+  category: 'class',
   img:     'icons/magic/perception/eye-ringed-glow-angry-teal.webp',
   level:   12,
   prereqs: ['Tactical Cloak Upgrade'],
@@ -605,6 +634,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meInfiltratAssas',  // 16 ✓
   name:    'Assassination Protocol',
   slug:    'me-infiltrator-assassination-protocol',
+  category: 'class',
   img:     'icons/magic/perception/eye-ringed-glow-angry-teal.webp',
   level:   12,
   prereqs: ['Ghost Protocol'],
@@ -634,6 +664,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meInfiltratPhnm0',  // 16 ✓
   name:    'Phantom Protocol',
   slug:    'me-infiltrator-phantom-protocol',
+  category: 'class',
   img:     'icons/magic/perception/eye-ringed-glow-angry-teal.webp',
   level:   16,
   prereqs: ['Ghost Protocol'],
@@ -648,6 +679,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meInfiltratDthAb',  // 16 ✓
   name:    'Death From Above',
   slug:    'me-infiltrator-death-from-above',
+  category: 'class',
   img:     'icons/magic/perception/eye-ringed-glow-angry-teal.webp',
   level:   18,
   prereqs: ['Assassination Protocol'],
@@ -662,6 +694,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meInfiltratApxIn',  // 16 ✓
   name:    'Apex Infiltrator',
   slug:    'me-infiltrator-apex-infiltrator',
+  category: 'class',
   img:     'icons/magic/perception/eye-ringed-glow-angry-teal.webp',
   level:   20,
   prereqs: ['Death From Above'],
@@ -678,6 +711,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSentinelHybrid',  // 16 ✓
   name:    'Hybrid Core',
   slug:    'me-sentinel-hybrid-core',
+  category: 'class',
   img:     'icons/magic/defensive/shield-barrier-deflect.webp',
   level:   12,
   prereqs: ['Biotic Mastery', 'Tech Mastery'],
@@ -692,6 +726,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSentinelAdapDf',  // 16 ✓
   name:    'Adaptive Defense',
   slug:    'me-sentinel-adaptive-defense',
+  category: 'class',
   img:     'icons/magic/defensive/shield-barrier-deflect.webp',
   level:   12,
   prereqs: ['Tech Armor', 'Fortification'],
@@ -721,6 +756,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSentinelBatHrd',  // 16 ✓
   name:    'Battle Hardened',
   slug:    'me-sentinel-battle-hardened',
+  category: 'class',
   img:     'icons/magic/defensive/shield-barrier-deflect.webp',
   level:   16,
   prereqs: ['Adaptive Defense'],
@@ -754,6 +790,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meSentinelApexSt',  // 16 ✓
   name:    'Apex Sentinel',
   slug:    'me-sentinel-apex-sentinel',
+  category: 'class',
   img:     'icons/magic/defensive/shield-barrier-deflect.webp',
   level:   20,
   prereqs: ["Sentinel's Resolve"],
