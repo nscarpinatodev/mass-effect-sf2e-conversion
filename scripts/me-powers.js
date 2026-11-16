@@ -197,6 +197,8 @@ const POWERS = {
   },
   'me-biotic-nova': {
     name: 'Nova', save: 'fortitude', trait: 'biotic', area: true,
+    // each detonation rolls its own damage, however soon the next one comes
+    useKey: ({ caster }) => caster?.getFlag(MODULE_ID, 'novaAt') ?? '',
     // 2d6, +1d6 per 5 HP the barrier held when Nova was used (recorded by the Nova hook below)
     damage: ({ caster }) => {
       const hp = caster?.getFlag(MODULE_ID, 'novaCharge');
@@ -533,7 +535,8 @@ Hooks.on('createChatMessage', async (message) => {
   if (formula) {
     try {
       const origin = sysFlags(message)?.origin?.uuid ?? ctx.origin?.uuid ?? '';
-      const roll = await rollPowerDamage(power.area ? `${slug}|${origin}` : null, { ...degree, damage: formula });
+      const use = power.useKey?.({ actor, caster }) ?? '';
+      const roll = await rollPowerDamage(power.area ? `${slug}|${origin}|${use}` : null, { ...degree, damage: formula });
       if (roll) {
         await actor.applyDamage({ damage: roll, token: tokenDoc?.object ?? tokenDoc });
         log.push(`${roll.total} ${describeFormula(formula)} damage`);
@@ -1168,7 +1171,7 @@ async function novaBurst(actor, source) {
   const ally = (t) => (typeof actor.isAllyOf === 'function' ? actor.isAllyOf(t.actor) : t.disposition === source.disposition);
   const foes = inside.filter((t) => !ally(t));
   const friends = inside.filter((t) => ally(t));
-  const lines = [`${radius}-foot emanation: ${foes.length ? foes.map((t) => t.name).join(', ') : 'no one'} ${foes.length === 1 ? 'rolls' : 'roll'} Fortitude`];
+  const lines = [`${radius}-foot emanation: ${foes.length ? foes.map((t) => t.name).join(', ') : 'no one'} ${foes.length <= 1 ? 'rolls' : 'roll'} Fortitude`];
   if (friends.length) lines.push(`On ${actor.name}'s side, so roll by hand from the Nova card: ${friends.map((t) => t.name).join(', ')}`);
   if (!dc) lines.push('No DC found: roll the saves from the Nova card');
   postResult(actor, 'Nova', 'Detonated', lines, { owners: true });

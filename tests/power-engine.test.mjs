@@ -135,6 +135,15 @@ console.log('Nova: 2d6 + 1d6 per 5 barrier HP recorded on use');
   assert(t3.damage[0] === 30 && t3.conditions.includes('stunned:1'), `5 HP = 3d6 + 2d6 = 30, Stunned 1: ${t3.damage} ${t3.conditions}`);
   assert(t4.damage[0] === 60 && t4.conditions.includes('stunned:3') && t4.conditions.includes('prone'), `doubled 60, Stunned 3, prone: ${t4.damage} ${t4.conditions}`);
   assert(t2.conditions.includes('prone'), 'crit failure knocks prone');
+  // one detonation shares one roll; the next detonation, even seconds later, rolls anew
+  const again = new Actor('Again', { flags: { novaCharge: 10, novaAt: 1 } });
+  rollCount = 0;
+  await save('me-biotic-nova', 'failure', new Actor('A1'), { caster: again, origin: 'Item.nova-again' });
+  await save('me-biotic-nova', 'failure', new Actor('A2'), { caster: again, origin: 'Item.nova-again' });
+  assert(rollCount === 1, `one detonation, one roll (got ${rollCount})`);
+  again.flags[MOD].novaAt = 2;
+  await save('me-biotic-nova', 'failure', new Actor('A3'), { caster: again, origin: 'Item.nova-again' });
+  assert(rollCount === 2, `the next detonation rolls its own damage (got ${rollCount})`);
   const empty = new Actor('Empty'); const t5 = new Actor('T5');
   const msg = await save('me-biotic-nova', 'failure', t5, { caster: empty, origin: 'Item.nova2' });
   assert(t5.damage.length === 0 && msg.includes('roll it by hand'), 'no recorded charge: no damage, says so');
