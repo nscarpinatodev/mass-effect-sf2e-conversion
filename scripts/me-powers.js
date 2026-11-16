@@ -442,6 +442,11 @@ Hooks.once('init', () => {
     hint: 'Biotic Charge, Vanguard Rush and Vanguard Strike posted with one creature targeted move the Vanguard next to it and roll its Reflex save; Nova (alone or after Rush or Strike) rolls the Fortitude save of each creature in its area that is not on the Vanguard\'s side. Cooldowns are tracked. Needs a GM connected.',
     scope: 'world', config: true, type: Boolean, default: true,
   });
+  game.settings.register(MODULE_ID, 'chargeAnimation', {
+    name: 'Biotic Charge Animation',
+    hint: 'When a Charge moves the Vanguard, play a biotic beam from start to landing (needs Sequencer, and JB2A installed; JB2A does not have to be enabled). The token crosses in a fraction of a second either way.',
+    scope: 'world', config: true, type: Boolean, default: true,
+  });
 });
 
 // ── SAVE-RESULT HOOK ────────────────────────────────────────────────────────
@@ -926,7 +931,22 @@ async function runCharge(message, item, targetUuids, chain) {
     lines.push('Biotic Barrier recharged to full');
   }
   if (landing.distance > 0) {
-    await source.update({ x: landing.x, y: landing.y });
+    // a blur of biotic light rather than a walk: the beam plays as the token streaks across
+    const grid = scene.grid;
+    const center = (x, y) => ({ x: x + (source.width * grid.size) / 2, y: y + (source.height * grid.size) / 2 });
+    const from = center(placed(source).x, placed(source).y);
+    const to = center(landing.x, landing.y);
+    // the token sets off as the beam fires and lands as it reaches the end (without an
+    // animation it crosses at once, at CHARGE_SPEED)
+    const fx = await playChargeBeam(from, to, source.width * grid.size);
+    const spaces = Math.hypot(to.x - from.x, to.y - from.y) / grid.size;
+    const movementSpeed = fx ? spaces / (fx.travelMs / 1000) : CHARGE_SPEED;
+    await source.update({ x: landing.x, y: landing.y }, { animation: { movementSpeed } });
+    if (fx) {
+      // the impact plays as the token touches down
+      await Promise.race([source.object?.movementAnimationPromise ?? Promise.resolve(), new Promise((r) => setTimeout(r, 1500))]);
+      fx.impact();
+    }
     lines.push(`${actor.name} charges ${landing.distance} feet to ${target.name}`);
   }
   const plural = (n) => `${n} round${n === 1 ? '' : 's'}`;
@@ -959,6 +979,89 @@ async function runCharge(message, item, targetUuids, chain) {
     dc: { value: dc },
     extraRollOptions: [`${OPT_PREFIX}${baseSlug(charge) === 'me-biotic-charge' ? charge.slug : 'me-biotic-charge'}`, ...(combo ? [`${CHAIN_OPT}${chain}`] : [])],
     origin: actor, item: charge, token: target, skipDialog: true,
+  });
+}
+
+// ── THE CHARGE, SEEN ────────────────────────────────────────────────────────
+// The token crosses in a fraction of a second (grid spaces per second; a walk is 6), and
+// with Sequencer and JB2A installed a blue beam streaks from start to landing, with a flash
+// where the Vanguard leaves and a ground-cracking impact where it lands. JB2A only has to be
+// installed, not enabled: its files are played by path. The patreon pack has blue versions;
+// the free pack's orange ones are shifted to blue.
+const CHARGE_SPEED = 60;
+// JB2A Beam001 (every length): a wind-up glow at the caster, then the beam fires at 1.17 s
+// and its tip reaches the far end at 1.30 s (measured frame by frame). It plays at 2x.
+const BEAM_RATE = 2;
+const BEAM_FIRES_MS = (1.17 / BEAM_RATE) * 1000;
+const BEAM_REACHES_MS = (1.30 / BEAM_RATE) * 1000;
+// a token move waits on the server before it starts (measured ~50 ms), so it is sent this early
+const MOVE_LEAD_MS = 50;
+const JB2A_PACKS = [
+  { id: 'jb2a_patreon', color: 'Blue', hue: 0 },
+  { id: 'JB2A_DnD5e', color: 'Orange', hue: 190 },
+];
+
+/** The installed JB2A pack the Charge animation can use, with its file paths, or null. */
+function chargeArt() {
+  if (!game.settings.get(MODULE_ID, 'chargeAnimation')) return null;
+  if (!game.modules.get('sequencer')?.active || typeof Sequence !== 'function') return null;
+  const pack = JB2A_PACKS.find((p) => game.modules.get(p.id));
+  if (!pack) return null;
+  const lib = `modules/${pack.id}/Library`;
+  const beam = (reach) => `${lib}/Generic/RangedSpell/Beam/Beam001_01_Regular_${pack.color}_${reach}.webm`;
+  return {
+    pack,
+    // the teleport flash is blue in both packs
+    flash: `${lib}/Generic/Energy/Teleport/Teleport01_01_Regular_Blue_500x300.webm`,
+    beam: (feet) => beam(feet <= 15 ? '15ft_1000x400' : feet <= 30 ? '30ft_1600x400' : feet <= 60 ? '60ft_2800x400' : '90ft_4000x400'),
+    beams: ['15ft_1000x400', '30ft_1600x400', '60ft_2800x400', '90ft_4000x400'].map(beam),
+    impact: `${lib}/Generic/Impact/GroundCrackImpact_01_Regular_${pack.color}_600x600.webm`,
+  };
+}
+
+// Load the Charge's videos on every client up front, so the beam starts the moment it is used
+Hooks.once('ready', () => {
+  try {
+    const art = chargeArt();
+    if (art) Sequencer.Preloader?.preload?.([art.flash, ...art.beams, art.impact], false);
+  } catch (err) {
+    console.warn('ME Powers | could not preload the Charge animation', err);
+  }
+});
+
+/**
+ * Play the Charge's flash and beam. Resolves at the moment the token should set off (as the
+ * beam fires, less the server's lag) with { travelMs, impact }: how long the crossing should
+ * take so the token lands as the beam's tip reaches the end, and a function that plays the
+ * impact, to be called when the token lands. Resolves at once (null) when there is no
+ * animation, and never later than 2 seconds.
+ */
+function playChargeBeam(from, to, size) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const go = (value) => { if (!settled) { settled = true; resolve(value); } };
+    try {
+      const art = chargeArt();
+      if (!art) return go(null);
+      setTimeout(() => go(null), 2000);
+      const travelMs = Math.round(BEAM_REACHES_MS - BEAM_FIRES_MS);
+      const feet = Math.round(Math.hypot(to.x - from.x, to.y - from.y) / canvas.grid.size * canvas.grid.distance);
+      const shift = (effect) => (art.pack.hue ? effect.filter('ColorMatrix', { hue: art.pack.hue }) : effect);
+      const impact = () => {
+        const hit = new Sequence({ moduleName: MODULE_ID, softFail: true });
+        shift(hit.effect().file(art.impact).atLocation(to).size(size * 2).fadeOut(300));
+        hit.play().catch((err) => console.warn('ME Powers | Charge impact failed', err));
+      };
+      const seq = new Sequence({ moduleName: MODULE_ID, softFail: true });
+      seq.effect().file(art.flash).atLocation(from).size(size * 1.6).fadeOut(200);
+      shift(seq.effect().file(art.beam(feet)).atLocation(from).stretchTo(to).playbackRate(BEAM_RATE).fadeOut(250));
+      seq.wait(Math.max(0, Math.round(BEAM_FIRES_MS - MOVE_LEAD_MS)));   // the wind-up glow
+      seq.thenDo(() => go({ travelMs, impact }));               // the beam fires: the token streaks along it
+      seq.play().catch((err) => { console.warn('ME Powers | Charge animation failed', err); go(null); });
+    } catch (err) {
+      console.warn('ME Powers | Charge animation failed', err);
+      go(null);
+    }
   });
 }
 
