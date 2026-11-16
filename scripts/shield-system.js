@@ -332,7 +332,7 @@ Hooks.on('createItem', async (item, _options, _userId) => {
     }
     const existingMax = item.getFlag(MODULE_ID, 'barrierMax');
     const level = actor.level ?? 1;
-    const max = existingMax ?? Math.max(5, 5 * Math.floor(level / 2));
+    const max = existingMax ?? barrierMaxFor(level);
     await item.update({
       [`flags.${MODULE_ID}.barrierMax`]:     max,
       [`flags.${MODULE_ID}.barrierCurrent`]: max,
@@ -848,6 +848,11 @@ function getShieldEffect(actor) {
     ?? null;
 }
 
+/** A fresh Biotic Barrier's HP: 5 × half the level, rounded up (5 at 1st, 50 at 19th–20th). */
+function barrierMaxFor(level) {
+  return 5 * Math.max(1, Math.ceil((level ?? 1) / 2));
+}
+
 function isBioticBarrier(item) {
   return item.type === 'effect'
     && (item.flags?.[MODULE_ID]?.barrier === true
@@ -1245,7 +1250,7 @@ async function migrateActorItems() {
         const updates = {};
         if (flags.barrierMax == null) {
           const level = actor.system?.details?.level?.value ?? 1;
-          const max = Math.max(5, 5 * Math.floor(level / 2));
+          const max = barrierMaxFor(level);
           updates[`flags.${MODULE_ID}.barrierMax`]     = max;
           updates[`flags.${MODULE_ID}.barrierCurrent`] = max;
           updates['system.badge'] = { type: 'counter', value: max, min: 0, max };

@@ -18,7 +18,7 @@
     "slug": "me-biotic-barrier",
     "description": {
       "gm": "",
-      "value": "<p>A biotic barrier. HP = 5 × ⌊level ÷ 2⌋, calculated at activation.</p><p>Absorbs damage before shields and actual HP. Does not recharge per turn - spend 2 actions to reactivate at full strength. The barrier persists at 0 HP as an empty field; it is not removed when depleted. Certain abilities (such as Charge) can restore HP without a full reactivation.</p>"
+      "value": "<p>A biotic barrier. HP = 5 × ⌈level ÷ 2⌉, calculated at activation.</p><p>Absorbs damage before shields and actual HP. Does not recharge per turn - spend 2 actions to reactivate at full strength. The barrier persists at 0 HP as an empty field; it is not removed when depleted. Certain abilities (such as Charge) can restore HP without a full reactivation.</p>"
     },
     "rules": [],
     "_migration": {
