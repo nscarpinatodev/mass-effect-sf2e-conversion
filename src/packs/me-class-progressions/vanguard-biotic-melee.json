@@ -1,0 +1,72 @@
+{
+  "_key": "!items!meVanguardBioMel",
+  "_id": "meVanguardBioMel",
+  "folder": null,
+  "name": "Biotic Melee",
+  "type": "feat",
+  "img": "icons/magic/lightning/fist-unarmed-strike-blue.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-vanguard-biotic-melee",
+    "description": {
+      "gm": "",
+      "value": "<p>Your biotic field rides every blow you land up close. Your <strong>melee Strikes</strong>, with a melee weapon or your Biotic Attack, deal an extra <strong>1d6 force</strong> damage.</p><p><strong>Heightened (+4)</strong> The extra damage increases by 1d6: <strong>2d6</strong> at 5th level, <strong>3d6</strong> at 9th, <strong>4d6</strong> at 13th, and <strong>5d6</strong> at 17th.</p><p><em>A Vanguard who fights with a shotgun keeps pace through better shotguns instead.</em></p><p><em>Classes: Vanguard.</em></p>"
+    },
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "predicate": [
+          "item:melee"
+        ],
+        "label": "Biotic Melee",
+        "diceNumber": {
+          "field": "actor|level",
+          "brackets": [
+            { "end": 4, "value": 1 },
+            { "start": 5, "end": 8, "value": 2 },
+            { "start": 9, "end": 12, "value": 3 },
+            { "start": 13, "end": 16, "value": 4 },
+            { "start": 17, "value": 5 }
+          ]
+        },
+        "dieSize": "d6",
+        "damageType": "force"
+      }
+    ],
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "vanguard",
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

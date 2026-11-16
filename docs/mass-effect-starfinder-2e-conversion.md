@@ -1476,7 +1476,7 @@ The most aggressive class in the galaxy, Vanguards combine biotic power with clo
 
 | Level | Class Features |
 |---|---|
-| 1 | Activate Biotic Barrier, Biotic Attack, Vanguard Mastery, Vanguard Momentum, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 1 | Activate Biotic Barrier, Biotic Attack, Biotic Melee, Vanguard Mastery, Vanguard Momentum, Class Feat, Initial Proficiencies, Ancestry Feat |
 | 2 | Class Feat, Skill Feat |
 | 3 | Reflex Expertise, General Feat, Skill Increase |
 | 4 | Class Feat, Skill Feat |
