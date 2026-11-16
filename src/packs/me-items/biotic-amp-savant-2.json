@@ -1,0 +1,100 @@
+{
+  "_id": "meAmpsavant20000",
+  "_key": "!items!meAmpsavant20000",
+  "folder": null,
+  "name": "Savant Bio-Amp II",
+  "type": "equipment",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/armor-mods/ME3_Barrier.png",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": {
+      "gm": "",
+      "value": "<p>The Serrice Council's Savant is the finest amp available to anyone outside an asari matriarch's inner circle: fast recharge and fields of startling strength. Few humans ever handle one.</p><p><em>Serrice Council · II</em></p><ul><li><strong>Recharge −3:</strong> your biotic powers' cooldowns are <strong>1 round</strong> (4 − 3, minimum 1). Powers with a fixed cooldown of their own, such as Biotic Charge, keep it.</li><li><strong>Power 3:</strong> +3 item bonus to the damage your biotic powers deal, +2 item bonus to your class DC, and +15 Hit Points to your Biotic Barrier when you raise it.</li></ul><p>A bio-amp plugs into a biotic implant (or rests against the nervous system of a naturally biotic species, like the asari). Amps don't stack: if you wear more than one, you get only the highest of each bonus.</p><hr/><p><em>Wear it to gain its bonuses. Item bonuses from amps don't stack with other item bonuses to the same thing, such as a Power Amplifier's damage or a Biotic Feedback Generator's class DC. The Vanguard automation applies the Recharge and barrier bonus itself; other biotics count their cooldowns by hand.</em></p>"
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.bioticRecharge",
+        "value": 3
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.ampDamageBonus",
+        "value": 3
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "item",
+        "value": 2,
+        "label": "Savant Bio-Amp II"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.barrierBonus",
+        "value": 15
+      }
+    ],
+    "slug": "biotic-amp-savant-2",
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "biotic"
+      ],
+      "rarity": "rare"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 19
+    },
+    "quantity": 1,
+    "baseItem": "biotic-amp",
+    "bulk": {
+      "value": 0
+    },
+    "price": {
+      "value": {
+        "gp": 40000
+      }
+    },
+    "equipped": {
+      "carryType": "worn",
+      "invested": null
+    },
+    "usage": {
+      "value": "worn"
+    },
+    "identification": {
+      "status": "identified",
+      "unidentified": {
+        "name": "Unknown Bio-Amp",
+        "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+        "data": {
+          "description": {
+            "value": ""
+          }
+        }
+      },
+      "misidentified": {}
+    },
+    "subitems": [],
+    "specific": null
+  }
+}

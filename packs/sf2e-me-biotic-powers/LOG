@@ -1,5 +1,5 @@
-2026/11/16-02:04:52.362 b004 Delete type=3 #1
-2026/11/16-02:04:52.366 93c0 Level-0 table #5: started
-2026/11/16-02:04:52.370 93c0 Level-0 table #5: 35985 bytes OK
-2026/11/16-02:04:52.374 93c0 Delete type=0 #3
-2026/11/16-02:04:52.374 93c0 Manual compaction at level-0 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)
+2026/11/16-03:43:35.220 b52c Delete type=3 #1
+2026/11/16-03:43:35.225 a4dc Level-0 table #5: started
+2026/11/16-03:43:35.234 a4dc Level-0 table #5: 35936 bytes OK
+2026/11/16-03:43:35.238 a4dc Delete type=0 #3
+2026/11/16-03:43:35.238 a4dc Manual compaction at level-0 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)

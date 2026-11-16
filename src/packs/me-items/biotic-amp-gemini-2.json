@@ -1,0 +1,81 @@
+{
+  "_id": "meAmpgemini20000",
+  "_key": "!items!meAmpgemini20000",
+  "folder": null,
+  "name": "Gemini Bio-Amp II",
+  "type": "equipment",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/armor-mods/ME3_Barrier.png",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": {
+      "gm": "",
+      "value": "<p>Armax Arsenal builds the Gemini for one thing: cycling the user's element zero nodes back to readiness as fast as the nervous system will tolerate. It adds no strength to a biotic's fields, only tempo.</p><p><em>Armax Arsenal · II</em></p><ul><li><strong>Recharge −2:</strong> your biotic powers' cooldowns are <strong>2 rounds</strong> (4 − 2, minimum 1). Powers with a fixed cooldown of their own, such as Biotic Charge, keep it.</li></ul><p>A bio-amp plugs into a biotic implant (or rests against the nervous system of a naturally biotic species, like the asari). Amps don't stack: if you wear more than one, you get only the highest of each bonus.</p><hr/><p><em>Wear it to gain its bonuses. Item bonuses from amps don't stack with other item bonuses to the same thing, such as a Power Amplifier's damage or a Biotic Feedback Generator's class DC. The Vanguard automation applies the Recharge and barrier bonus itself; other biotics count their cooldowns by hand.</em></p>"
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.bioticRecharge",
+        "value": 2
+      }
+    ],
+    "slug": "biotic-amp-gemini-2",
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 9
+    },
+    "quantity": 1,
+    "baseItem": "biotic-amp",
+    "bulk": {
+      "value": 0
+    },
+    "price": {
+      "value": {
+        "gp": 700
+      }
+    },
+    "equipped": {
+      "carryType": "worn",
+      "invested": null
+    },
+    "usage": {
+      "value": "worn"
+    },
+    "identification": {
+      "status": "identified",
+      "unidentified": {
+        "name": "Unknown Bio-Amp",
+        "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+        "data": {
+          "description": {
+            "value": ""
+          }
+        }
+      },
+      "misidentified": {}
+    },
+    "subitems": [],
+    "specific": null
+  }
+}

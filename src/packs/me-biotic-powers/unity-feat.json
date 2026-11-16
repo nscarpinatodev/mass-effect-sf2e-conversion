@@ -13,7 +13,7 @@
     "category": "class",
     "description": {
       "gm": "",
-      "value": "<p>You project a pulse of restorative biotic energy that knits the wounds of all nearby allies simultaneously. Unlike targeted healing, Unity reaches everyone at once — a single expenditure of focus that can turn the tide of a firefight in an instant.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>10 Hit Points</strong>. This healing cannot exceed each creature's maximum HP, and any excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 7 − your Charisma modifier rounds (minimum 1).</p>"
+      "value": "<p>You project a pulse of restorative biotic energy that knits the wounds of all nearby allies simultaneously. Unlike targeted healing, Unity reaches everyone at once — a single expenditure of focus that can turn the tide of a firefight in an instant.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>10 Hit Points</strong>. This healing cannot exceed each creature's maximum HP, and any excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 4 rounds, less your bio-amp's Recharge (minimum 1).</p>"
     },
     "level": { "value": 1 },
     "prerequisites": { "value": [] },

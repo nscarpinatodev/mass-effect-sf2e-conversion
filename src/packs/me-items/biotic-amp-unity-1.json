@@ -1,0 +1,93 @@
+{
+  "_id": "meAmpunity100000",
+  "_key": "!items!meAmpunity100000",
+  "folder": null,
+  "name": "Unity Bio-Amp I",
+  "type": "equipment",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/armor-mods/ME3_Barrier.png",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": {
+      "gm": "",
+      "value": "<p>The Sirta Foundation's Unity amp balances recharge against output, a field medic's choice that does nothing brilliantly and nothing badly.</p><p><em>Sirta Foundation · I</em></p><ul><li><strong>Recharge −1:</strong> your biotic powers' cooldowns are <strong>3 rounds</strong> (4 − 1, minimum 1). Powers with a fixed cooldown of their own, such as Biotic Charge, keep it.</li><li><strong>Power 1:</strong> +1 item bonus to the damage your biotic powers deal, and +5 Hit Points to your Biotic Barrier when you raise it.</li></ul><p>A bio-amp plugs into a biotic implant (or rests against the nervous system of a naturally biotic species, like the asari). Amps don't stack: if you wear more than one, you get only the highest of each bonus.</p><hr/><p><em>Wear it to gain its bonuses. Item bonuses from amps don't stack with other item bonuses to the same thing, such as a Power Amplifier's damage or a Biotic Feedback Generator's class DC. The Vanguard automation applies the Recharge and barrier bonus itself; other biotics count their cooldowns by hand.</em></p>"
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.bioticRecharge",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.ampDamageBonus",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.barrierBonus",
+        "value": 5
+      }
+    ],
+    "slug": "biotic-amp-unity-1",
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 5
+    },
+    "quantity": 1,
+    "baseItem": "biotic-amp",
+    "bulk": {
+      "value": 0
+    },
+    "price": {
+      "value": {
+        "gp": 160
+      }
+    },
+    "equipped": {
+      "carryType": "worn",
+      "invested": null
+    },
+    "usage": {
+      "value": "worn"
+    },
+    "identification": {
+      "status": "identified",
+      "unidentified": {
+        "name": "Unknown Bio-Amp",
+        "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+        "data": {
+          "description": {
+            "value": ""
+          }
+        }
+      },
+      "misidentified": {}
+    },
+    "subitems": [],
+    "specific": null
+  }
+}

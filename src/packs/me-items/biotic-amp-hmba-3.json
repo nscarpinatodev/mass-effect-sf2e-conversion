@@ -1,0 +1,100 @@
+{
+  "_id": "meAmphmba3000000",
+  "_key": "!items!meAmphmba3000000",
+  "folder": null,
+  "name": "HMBA Master Bio-Amp",
+  "type": "equipment",
+  "img": "modules/mass-effect-sf2e-conversion/assets/img/armor-mods/ME3_Barrier.png",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": {
+      "gm": "",
+      "value": "<p>The HMBA is Spectre-issue gear, available only through Spectre requisitions: a balanced, battlefield-proven amp whose later revisions recover faster than the first.</p><p><em>Spectre requisitions · Master</em></p><ul><li><strong>Recharge −3:</strong> your biotic powers' cooldowns are <strong>1 round</strong> (4 − 3, minimum 1). Powers with a fixed cooldown of their own, such as Biotic Charge, keep it.</li><li><strong>Power 2:</strong> +2 item bonus to the damage your biotic powers deal, +1 item bonus to your class DC, and +10 Hit Points to your Biotic Barrier when you raise it.</li></ul><p>A bio-amp plugs into a biotic implant (or rests against the nervous system of a naturally biotic species, like the asari). Amps don't stack: if you wear more than one, you get only the highest of each bonus.</p><hr/><p><em>Wear it to gain its bonuses. Item bonuses from amps don't stack with other item bonuses to the same thing, such as a Power Amplifier's damage or a Biotic Feedback Generator's class DC. The Vanguard automation applies the Recharge and barrier bonus itself; other biotics count their cooldowns by hand.</em></p>"
+    },
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.bioticRecharge",
+        "value": 3
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.ampDamageBonus",
+        "value": 2
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "item",
+        "value": 1,
+        "label": "HMBA Master Bio-Amp"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.barrierBonus",
+        "value": 10
+      }
+    ],
+    "slug": "biotic-amp-hmba-3",
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "biotic"
+      ],
+      "rarity": "uncommon"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 18
+    },
+    "quantity": 1,
+    "baseItem": "biotic-amp",
+    "bulk": {
+      "value": 0
+    },
+    "price": {
+      "value": {
+        "gp": 24000
+      }
+    },
+    "equipped": {
+      "carryType": "worn",
+      "invested": null
+    },
+    "usage": {
+      "value": "worn"
+    },
+    "identification": {
+      "status": "identified",
+      "unidentified": {
+        "name": "Unknown Bio-Amp",
+        "img": "systems/pf2e/icons/unidentified_item_icons/worn-item.webp",
+        "data": {
+          "description": {
+            "value": ""
+          }
+        }
+      },
+      "misidentified": {}
+    },
+    "subitems": [],
+    "specific": null
+  }
+}

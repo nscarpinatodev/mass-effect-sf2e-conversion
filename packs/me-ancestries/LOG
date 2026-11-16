@@ -1,5 +1,5 @@
-2026/11/16-02:04:50.223 3ea8 Delete type=3 #1
-2026/11/16-02:04:50.229 93c0 Level-0 table #5: started
-2026/11/16-02:04:50.238 93c0 Level-0 table #5: 46132 bytes OK
-2026/11/16-02:04:50.243 93c0 Delete type=0 #3
-2026/11/16-02:04:50.244 93c0 Manual compaction at level-0 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)
+2026/11/16-03:43:33.402 b908 Delete type=3 #1
+2026/11/16-03:43:33.408 a4dc Level-0 table #5: started
+2026/11/16-03:43:33.417 a4dc Level-0 table #5: 46132 bytes OK
+2026/11/16-03:43:33.421 a4dc Delete type=0 #3
+2026/11/16-03:43:33.421 a4dc Manual compaction at level-0 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)

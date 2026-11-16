@@ -561,7 +561,19 @@ const SHIELD_EFFECTS = {
 };
 const FRAME_AP = { 'Light Combat Frame': 20, 'Standard Combat Frame': 50, 'Heavy Combat Frame': 100, 'Titan Combat Frame': 200 };
 
-function renderEquipment(weapons, armors, weaponMods, armorMods, grenades, shields) {
+/** A bio-amp's ratings, read from its rule elements. */
+function ampStats(item) {
+  const rules = item.system.rules ?? [];
+  const flag = (name) => rules.find((r) => r.key === 'ActiveEffectLike' && r.path?.endsWith(`.${name}`))?.value ?? 0;
+  return {
+    recharge: flag('bioticRecharge'),
+    damage: flag('ampDamageBonus'),
+    dc: rules.find((r) => r.key === 'FlatModifier' && r.selector === 'class')?.value ?? 0,
+    barrier: flag('barrierBonus'),
+  };
+}
+
+function renderEquipment(weapons, armors, weaponMods, armorMods, grenades, shields, amps = []) {
   const byGroup = { pistol: [], rifle: [], shotgun: [], sniper: [], bomb: [] };
   for (const w of weapons) (byGroup[w.system.group] ?? byGroup.pistol).push(w);
 
@@ -600,7 +612,17 @@ function renderEquipment(weapons, armors, weaponMods, armorMods, grenades, shiel
   for (const s of shields.filter(x => FRAME_AP[x.name])) L.push(`| ${s.name} | ${FRAME_AP[s.name]} |`);
   L.push('');
   L.push('#### Biotic Barrier', '');
-  L.push('Biotics can activate a personal mass effect barrier. **HP = 5 × ⌊level ÷ 2⌋**, calculated at activation. Absorbs damage before shields and HP. Does not recharge passively — must be reactivated.', '');
+  L.push('Biotics can activate a personal mass effect barrier. **HP = 5 × ⌈level ÷ 2⌉**, calculated at activation, plus a worn bio-amp\'s barrier bonus. Absorbs damage before shields and HP. Does not recharge passively — must be reactivated.', '');
+
+  L.push('### Bio-Amps', '');
+  L.push('A bio-amp plugs into a biotic\'s implant. Biotic powers cool down for **4 rounds, less the Recharge of the amp you wear** (minimum 1); powers with a fixed cooldown of their own, such as Biotic Charge, keep it. Power adds an item bonus to biotic power damage and class DC, and Hit Points to the Biotic Barrier. Amps don\'t stack: wearing more than one gives only the highest of each bonus.', '');
+  L.push('| Amp | Level | Credits | Recharge | Cooldown | Power |', '|---|---|---|---|---|---|');
+  for (const a of amps) {
+    const s = ampStats(a);
+    const power = [s.damage && `+${s.damage} damage`, s.dc && `+${s.dc} class DC`, s.barrier && `+${s.barrier} barrier HP`].filter(Boolean).join(', ') || '—';
+    L.push(`| ${a.name} | ${a.system.level?.value ?? '?'} | ${credits(a.system)} | −${s.recharge} | ${Math.max(1, 4 - s.recharge)} rounds | ${power} |`);
+  }
+  L.push('');
 
   L.push(...modMd(weaponMods, 'Weapon Modifications', 'Weapon mods install into a single weapon and provide passive or triggered bonuses. Most weapons accept one mod.'));
   L.push(...modMd(armorMods, 'Armor Modifications', 'Armor mods install into a single suit of armor. Most armors accept one mod.'));
@@ -812,7 +834,7 @@ function renderShieldMechanics() {
   L.push('---', '');
 
   L.push('## BIOTIC BARRIER', '');
-  L.push('A biotic can raise a personal mass effect field as an action. Barrier HP is calculated at activation as **5 × ⌊level ÷ 2⌋** (minimum 5), and it absorbs damage *before* both shields and Hit Points.', '');
+  L.push('A biotic can raise a personal mass effect field as an action. Barrier HP is calculated at activation as **5 × ⌈level ÷ 2⌉** plus any bio-amp barrier bonus, and it absorbs damage *before* both shields and Hit Points.', '');
   L.push('A barrier does **not** recharge passively. Once depleted it must be reactivated, or refilled by spending actions or using Charge.', '');
   L.push('---', '');
 
@@ -846,6 +868,8 @@ async function main() {
     loadDir('me-shields'), loadDir('me-creatures'), loadDir('me-vehicles'), loadDir('me-ships'),
   ]);
   const npcFactions = await loadNpcsByFaction();
+  const amps = (await loadDir('me-items')).filter((i) => i.system?.baseItem === 'biotic-amp')
+    .sort((a, b) => (a.system.level?.value ?? 0) - (b.system.level?.value ?? 0) || a.name.localeCompare(b.name));
 
 
   lines.push('# Mass Effect Starfinder 2e Conversion');
@@ -1002,7 +1026,7 @@ async function main() {
 
   lines.push(...renderBackgrounds(backgrounds));
   lines.push(...renderFeats(classFeatSets, ancestryFeats, ancestries, generalFeats));
-  lines.push(...renderEquipment(weapons, armors, weaponMods, armorMods, grenades, shields));
+  lines.push(...renderEquipment(weapons, armors, weaponMods, armorMods, grenades, shields, amps));
   lines.push(...renderBestiary(npcFactions, creatures, vehicles, ships));
   lines.push(...renderShieldMechanics());
 

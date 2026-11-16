@@ -13,7 +13,7 @@
     "category": "class",
     "description": {
       "gm": "",
-      "value": "<p>Your biotic healing pulse has grown powerful enough to not only close wounds but clear the chemical and neural disruption that combat inflicts on a body.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>20 Hit Points</strong>. In addition, you may remove one of the following conditions from each affected ally: <strong>Frightened</strong>, <strong>Sickened</strong>, or <strong>Stunned 1</strong>. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 7 − your Charisma modifier rounds (minimum 1).</p><p><em>Prerequisite: Unity.</em></p>"
+      "value": "<p>Your biotic healing pulse has grown powerful enough to not only close wounds but clear the chemical and neural disruption that combat inflicts on a body.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>20 Hit Points</strong>. In addition, you may remove one of the following conditions from each affected ally: <strong>Frightened</strong>, <strong>Sickened</strong>, or <strong>Stunned 1</strong>. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 4 rounds, less your bio-amp's Recharge (minimum 1).</p><p><em>Prerequisite: Unity.</em></p>"
     },
     "level": { "value": 5 },
     "prerequisites": {

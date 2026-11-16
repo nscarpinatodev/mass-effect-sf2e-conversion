@@ -13,7 +13,7 @@
     "category": "class",
     "description": {
       "gm": "",
-      "value": "<p>At this level of biotic mastery, your Unity pulse carries enough raw regenerative force to drag allies back from the threshold of death itself.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>40 Hit Points</strong>. You may remove one negative condition of your choice from each affected ally. In addition, any ally who is <strong>dying</strong> is immediately <strong>stabilized</strong> and regains <strong>20 HP</strong> instead of 40. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 7 − your Charisma modifier rounds (minimum 1).</p><p><em>Prerequisite: Improved Unity.</em></p>"
+      "value": "<p>At this level of biotic mastery, your Unity pulse carries enough raw regenerative force to drag allies back from the threshold of death itself.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>40 Hit Points</strong>. You may remove one negative condition of your choice from each affected ally. In addition, any ally who is <strong>dying</strong> is immediately <strong>stabilized</strong> and regains <strong>20 HP</strong> instead of 40. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 4 rounds, less your bio-amp's Recharge (minimum 1).</p><p><em>Prerequisite: Improved Unity.</em></p>"
     },
     "level": { "value": 9 },
     "prerequisites": {

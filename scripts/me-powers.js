@@ -430,6 +430,7 @@ globalThis.MassEffectPowers = {
   pushAway: (...a) => pushAway(...a),
   feetBetween: (...a) => feetBetween(...a),
   novaFollows: (...a) => novaFollows(...a),
+  cooldownRounds: (actor, power) => cooldownRounds(actor, power === 'charge' ? CHARGE_COOLDOWN : NOVA_COOLDOWN),
 };
 
 // ── SETTINGS ────────────────────────────────────────────────────────────────
@@ -525,7 +526,9 @@ Hooks.on('createChatMessage', async (message) => {
   const cflags = caster?.flags?.[MODULE_ID] ?? {};
   const extra = [];
   if (POWER_TRAITS.includes(power.trait)) {
-    if (Number(cflags.powerDamageBonus) > 0) extra.push(String(cflags.powerDamageBonus)); // Power Amplifier
+    // item bonuses: a Power Amplifier (tech and biotic) or a bio-amp (biotic), the higher one
+    const itemBonus = Math.max(Number(cflags.powerDamageBonus) || 0, power.trait === 'biotic' ? Number(cflags.ampDamageBonus) || 0 : 0);
+    if (itemBonus > 0) extra.push(String(itemBonus));                                     // Power Amplifier / bio-amp
     if (cflags.powerBonusDice) extra.push(cflags.powerBonusDice);                         // Superior Sentinel Mastery
   }
   if (slug === 'me-biotic-charge' && cflags.chargeUpgrade === 'damage') extra.push('2d6'); // Charge Upgrade
@@ -841,20 +844,26 @@ function cooldownLeft(actor, slug) {
   return Math.max(1, Math.ceil((effect.remainingDuration?.remaining ?? 0) / (CONFIG.time?.roundTime || 6)));
 }
 
+// Biotic powers cool down for 4 rounds, less the Recharge of the bio-amp the biotic wears
+const BIOTIC_COOLDOWN = 4;
+const ampRecharge = (actor) => Math.max(0, Number(actor.flags?.[MODULE_ID]?.bioticRecharge) || 0);
+
 /**
  * How long each Vanguard cooldown lasts: Biotic Charge 2 rounds (1 with Improved Charge),
- * Nova and Vanguard Rush 5 - Charisma modifier rounds (minimum 1).
+ * Nova and Vanguard Rush 4 rounds less the amp's Recharge (minimum 1).
  */
 function cooldownRounds(actor, slug) {
   if (slug === CHARGE_COOLDOWN) return actor.items.some((i) => i.slug === 'me-vanguard-improved-charge') ? 1 : 2;
-  return Math.max(1, 5 - (actor.system.abilities?.cha?.mod ?? 0));
+  return Math.max(1, BIOTIC_COOLDOWN - ampRecharge(actor));
 }
 
 /** Start one of the Vanguard cooldowns. Returns its rounds. */
 async function startCooldown(actor, slug, img) {
   const rounds = cooldownRounds(actor, slug);
   const name = COOLDOWN_NAMES[slug];
-  const rule = slug === CHARGE_COOLDOWN ? '2 rounds, 1 with Improved Charge' : '5 − Charisma modifier, minimum 1';
+  const recharge = ampRecharge(actor);
+  const rule = slug === CHARGE_COOLDOWN ? '2 rounds, 1 with Improved Charge'
+    : recharge ? `4 − ${recharge} from the bio-amp, minimum 1` : '4 rounds without a bio-amp';
   await actor.createEmbeddedDocuments('Item', [{
     name: `${name} Cooldown`,
     type: 'effect',

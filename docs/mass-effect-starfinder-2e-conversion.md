@@ -2051,7 +2051,7 @@ You deploy a hovering AI combat drone that harasses enemies and draws their fire
 You deploy a Combat Drone at a point within **30 feet**. The drone occupies a 5-foot space, has **20 HP**, AC 15, and cannot be healed. It acts on your initiative and persists for up to **1 minute** or until destroyed.
 On each of your turns, you can direct the drone as a free action. The drone's presence applies **Off-Guard** to one adjacent enemy of your choice (your choice, once per your turn). As an action, you can order it to make a ranged Strike (+4 attack, 1d6 electricity, 20-foot range) against a target within 30 feet.
 If the drone is destroyed, it explodes in a 5-foot burst dealing 1d6 electricity damage (basic Reflex save against your class DC).
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2066,7 +2066,7 @@ All creatures in a 10-foot radius burst within **30 feet** must attempt a Fortit
 **Success** The target takes **1d6 cold** damage.
 **Failure** The target takes **2d6 cold** damage and is **Slowed 1** until the end of its next turn.
 **Critical Failure** The target takes **4d6 cold** damage and is **Immobilized** until the end of its next turn. If the target is already Slowed, it is Immobilized instead.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2096,7 +2096,7 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The target takes **1d8 electricity** damage.
 **Failure** The target takes **2d8 electricity** damage. Synthetic or mech creatures take an additional **1d8 electricity** damage.
 **Critical Failure** As failure, but **4d8 electricity** damage (plus the synthetic bonus). The target is also **Stunned 1**.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2112,7 +2112,7 @@ Choose a qualifying target within **30 feet**. The target must attempt a Will sa
 **Success** The target is **Confused** until the end of your next turn.
 **Failure** The target treats all creatures as enemies and attacks the nearest target each round for 1 round. At the end of each of its turns, it can attempt a new Will save to end the effect.
 **Critical Failure** As failure, but the effect lasts for 1 minute. The target also attacks with its maximum damage each round.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2125,7 +2125,7 @@ You fabricate and deploy a stationary automated turret from your omni-tool that 
 You deploy a Sentry Turret at a point within **30 feet**. The turret occupies a 5-foot space, has **30 HP**, AC 14, and cannot move or be healed. It acts on your initiative and persists for up to **1 minute** or until destroyed.
 On each of your turns, the turret automatically fires at the nearest enemy within 60 feet as a free action: ranged Strike (**+6 attack**, **1d8+2 piercing**, 60-foot range). You can direct it to target a specific creature as a free action on your turn.
 If a creature ends its turn within 10 feet of the turret, the turret fires a bonus opportunistic shot (same stats, does not count against its action economy).
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 
@@ -2250,7 +2250,7 @@ Choose a point within **60 feet**. All creatures in a 10-foot burst centered on 
 **Success** The target takes **1d6 force** damage.
 **Failure** The target takes **2d6 force** damage and is pushed **5 feet** outward from the burst center.
 **Critical Failure** The target takes **4d6 force** damage, is pushed **10 feet** outward from the burst center, and is knocked **prone**.
-**Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2265,7 +2265,7 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
 **Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2280,7 +2280,7 @@ All creatures in a 60-foot line must attempt a Reflex save against your class DC
 **Success** The creature takes **1d6 bludgeoning** damage.
 **Failure** The creature takes **2d6 bludgeoning** damage and is pushed 10 feet away from you.
 **Critical Failure** As failure, but **4d6 bludgeoning** and also **Knocked Prone**.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2295,7 +2295,7 @@ You create a Singularity at a point within **60 feet**. All creatures within a 2
 **Success** The creature is pulled 10 feet toward the singularity's center.
 **Failure** The creature is pulled to the singularity's center and becomes **Restrained** (Escape DC equals your class DC). The singularity persists until the start of your next turn; you may Sustain it as a free action each round for up to 1 minute.
 **Critical Failure** As failure. Additionally, the creature takes **2d6 bludgeoning** damage at the start of each of its turns while restrained.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2310,7 +2310,7 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 **Success** The target is pushed 5 feet away from you.
 **Failure** The target takes **2d8 bludgeoning** damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
 **Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2325,7 +2325,7 @@ Choose a creature within **60 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d6 void** damage.
 **Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
-**Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2470,7 +2470,7 @@ You expend your entire Biotic Barrier in a 10-foot emanation. Nova deals **2d6 f
 **Failure** Full damage and pushed **5 feet** away from you.
 **Critical Failure** Double damage, pushed **10 feet** away, and knocked **prone**.
 Your Biotic Barrier is immediately depleted after using this power. Using Nova records the barrier's HP to set this detonation's dice, then empties the barrier.
-**Cooldown:** 5 - your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2486,7 +2486,7 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
 **Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2501,7 +2501,7 @@ All creatures in a 60-foot line must attempt a Reflex save against your class DC
 **Success** The creature takes **1d6 bludgeoning** damage.
 **Failure** The creature takes **2d6 bludgeoning** damage and is pushed 10 feet away from you.
 **Critical Failure** As failure, but **4d6 bludgeoning** and also **Knocked Prone**.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2524,7 +2524,7 @@ You combine your Biotic Charge and Nova into a single explosive sequence, crashi
 **Requirements** You have an active Biotic Barrier with at least 1 HP remaining.
 Use **Biotic Charge**. If the target fails their save (Failure or Critical Failure result), immediately use **Nova** as a free action upon landing. The Nova uses your Biotic Barrier's current HP at the moment of detonation, including any HP recharged by the Biotic Charge. If the target critically succeeds on their save against Biotic Charge, Nova is not triggered.
 Using Vanguard Rush places both Biotic Charge and Nova on their individual cooldowns.
-**Cooldown:** 5 - your Charisma modifier rounds (minimum 1). Biotic Charge's own cooldown is 2 rounds (1 with Improved Charge).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Biotic Charge's own cooldown is 2 rounds (1 with Improved Charge).
 *Target one creature before you use Vanguard Rush and it runs itself (Automate Vanguard Powers setting): you charge to the target, it rolls its Reflex save, and on a failure Nova detonates around you, rolling each nearby foe's Fortitude save. Biotic Charge, Nova and Vanguard Rush all start their cooldowns. A GM must be connected.*
 
 ---
@@ -2595,7 +2595,7 @@ You have mastered the art of the biotic blitz. Biotic Charge and Nova fuse into 
 **Requirements** None - your Biotic Barrier automatically recharges to full before the sequence begins.
 Use **Biotic Charge**. Immediately upon landing, use **Nova** as a free action. Nova fires regardless of whether the Biotic Charge target succeeded their save - even a Critical Success does not prevent the detonation. Nova uses the upgraded statistics from **Nova Upgrade** (20-foot emanation, +2d6 damage, Stunned 1 on Failure, Stunned 3 on Critical Failure). Because the barrier was just recharged to full, Nova detonates at **full strength**.
 Vanguard Strike places Biotic Charge, Nova, and Vanguard Rush on their individual cooldowns simultaneously.
-**Cooldown:** Biotic Charge's own (2 rounds, 1 with Improved Charge), and 5 - your Charisma modifier rounds (minimum 1) for Nova and Vanguard Rush.
+**Cooldown:** Biotic Charge's own (2 rounds, 1 with Improved Charge), and 4 rounds, less your bio-amp's Recharge (minimum 1) for Nova and Vanguard Rush.
 *Prerequisites: Vanguard Rush, Nova Upgrade. Classes: Vanguard.*
 *Target one creature before you use Vanguard Strike and it runs itself (Automate Vanguard Powers setting): your barrier fills, you charge to the target, it rolls its Reflex save, and Nova detonates around you whatever it rolled, rolling each nearby foe's Fortitude save. Biotic Charge, Nova and Vanguard Rush all start their cooldowns. A GM must be connected.*
 
@@ -2685,7 +2685,7 @@ Choose a qualifying target within **30 feet**. The target must attempt a Will sa
 **Success** The target is **Confused** until the end of your next turn.
 **Failure** The target treats all creatures as enemies and attacks the nearest target each round for 1 round. At the end of each of its turns, it can attempt a new Will save to end the effect.
 **Critical Failure** As failure, but the effect lasts for 1 minute. The target also attacks with its maximum damage each round.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2711,7 +2711,7 @@ Choose a point within **30 feet**. All creatures in a 5-foot burst centered on t
 
 You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.
 You become **Undetected** by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect, which adds **+2d6 precision damage** to your first Strike made while Undetected. Remove the effect after making that Strike.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 
@@ -2800,7 +2800,7 @@ All creatures in a 10-foot radius burst within **30 feet** must attempt a Fortit
 **Success** The target takes **1d6 cold** damage.
 **Failure** The target takes **2d6 cold** damage and is **Slowed 1** until the end of its next turn.
 **Critical Failure** The target takes **4d6 cold** damage and is **Immobilized** until the end of its next turn. If the target is already Slowed, it is Immobilized instead.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2830,7 +2830,7 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The target takes **1d8 electricity** damage.
 **Failure** The target takes **2d8 electricity** damage. Synthetic or mech creatures take an additional **1d8 electricity** damage.
 **Critical Failure** As failure, but **4d8 electricity** damage (plus the synthetic bonus). The target is also **Stunned 1**.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2841,7 +2841,7 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 
 You activate a hardlight exoskeleton projected from your omni-tool, reinforcing your body with a crackling energy shell that detonates if overwhelmed.
 You gain the Tech Armor effect: **+2 circumstance bonus to AC**. If you take 20 or more damage from a single hit while this effect is active, it detonates — all creatures in a 10-foot emanation take **2d6 electricity** damage (basic Reflex save against your class DC) and the effect ends. You may also voluntarily detonate it as a free action on your turn.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2856,7 +2856,7 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 **Success** The target is pushed 5 feet away from you.
 **Failure** The target takes **2d8 bludgeoning** damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
 **Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2871,7 +2871,7 @@ Choose a creature within **60 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d6 void** damage.
 **Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
-**Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2985,7 +2985,7 @@ Choose a qualifying target within **30 feet**. The target must attempt a Will sa
 **Success** The target is **Stunned 1**.
 **Failure** The target becomes your ally for up to **1 minute**, fighting as directed. This effect ends immediately if the target takes damage from one of your allies exceeding 10 HP in a single hit. At the end of each minute, it can attempt a new Will save to end the effect.
 **Critical Failure** As failure, but the target also has a +2 circumstance bonus to attack rolls and saving throws while under your control (its combat programming has been maximized).
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3009,7 +3009,7 @@ You place a Damping Mine at a point within **30 feet**. All creatures in a 10-fo
 **Success** The creature is **Stupefied 1** until the start of your next turn (it can use Tech and Biotic powers, but at a –1 penalty to DCs and attack rolls with them).
 **Failure** The creature cannot use Tech or Biotic powers until the start of your next turn and is **Stupefied 2**.
 **Critical Failure** As failure, but the effect lasts until the end of the affected creature's next turn.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -3024,7 +3024,7 @@ Choose a creature within **30 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d6 void** damage.
 **Failure** The target takes **1d6 void** damage and gains **1d6 persistent void** damage (DC 15 flat check to end). When a creature affected by Dark Channel is reduced to 0 HP, the persistent void damage automatically transfers to the nearest enemy within **30 feet**.
 **Critical Failure** As failure, but **2d6 persistent void** damage (DC 18 flat check to end).
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3037,7 +3037,7 @@ You project a photorealistic holographic duplicate of yourself that draws enemy 
 You create a holographic Decoy at a point within **30 feet**. The Decoy mimics your appearance and makes minor movements to appear alive. It has **1 HP** and is destroyed by any damage.
 When an enemy targets you while the Decoy is active, it must succeed on a **DC 17 Perception** check (Seek action) to distinguish you from the Decoy; on a failure it must target the Decoy instead. Enemies that critically succeed become immune to your Decoy for 24 hours.
 The Decoy lasts for **1 minute**, until destroyed, or until you use Decoy again (only one Decoy can be active at a time).
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 
@@ -3047,7 +3047,7 @@ You deploy a hovering electrocution drone that follows you and automatically zap
 You deploy a Defense Drone that orbits you. The drone has **10 HP**, is immune to electricity, and cannot move independently (it follows you). It persists for up to **1 minute** or until destroyed.
 At the start of each of your turns, the drone automatically zaps all enemies within **10 feet** of you: each must attempt a basic Reflex save against your class DC or take **1d6 electricity** damage (half on a success).
 Additionally, any enemy that hits you with a melee attack while the drone is active takes **1d4 electricity** damage (no save) as the drone retaliates.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -3058,7 +3058,7 @@ Additionally, any enemy that hits you with a melee attack while the drone is act
 
 You activate a sophisticated energy matrix from your omni-tool that absorbs incoming damage and can be purged to restore your kinetic shields.
 You gain the Defense Matrix effect: **resistance 3 to all damage**. You can Purge Defense Matrix as a **free action** on your turn to end the effect and immediately restore **15 HP** to your kinetic shields.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 
@@ -3071,7 +3071,7 @@ Choose a creature within **30 feet**. The target must attempt a Will save agains
 **Success** The creature is **Confused** until the end of its next turn.
 **Failure** The creature is under your control for 1 round, treating you and your allies as friends and enemies as foes. It uses its actions as you direct. At the end of each of its turns, it can attempt a new Will save to end the effect.
 **Critical Failure** As failure, but the effect lasts for 1 minute. The creature is also **Stupefied 2** for the duration.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3086,7 +3086,7 @@ Choose a creature within **30 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d8 electricity** damage, or loses 10 shield HP if it has an active kinetic shield.
 **Failure** Against a shielded target: drain up to **20 HP of shields**; you gain that amount as temp HP (stacking with existing shields, up to your maximum). Against an unshielded target: **2d8 electricity** damage and you regain 10 temp HP.
 **Critical Failure** As failure, but drain **40 shield HP** (or 4d8 electricity) and you gain 20 temp HP from the drain.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3101,7 +3101,7 @@ You launch a Flare projectile at a point within **60 feet**. On impact, it deton
 **Success** Full damage.
 **Failure** **6d6 void** damage. Any Biotic Barriers in the area are immediately depleted.
 **Critical Failure** **12d6 void** damage, all Biotic Barriers depleted, and targets are knocked prone.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -3112,7 +3112,7 @@ You launch a Flare projectile at a point within **60 feet**. On impact, it deton
 
 You activate a geth-derived shield optimization algorithm from your omni-tool, temporarily supercharging your kinetic barrier.
 Your kinetic shield maximum is doubled until the start of your next turn. Immediately set your current temp HP to the doubled maximum. Remove the Geth Shield Boost effect at the start of your next turn and reset temp HP to your normal shield maximum.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 
@@ -3124,7 +3124,7 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The target takes **1d6 bludgeoning** damage.
 **Failure** The target is pulled up to **30 feet** toward you and takes **2d6 bludgeoning** damage. If pulled adjacent to you, it is Off-Guard until the start of your next turn.
 **Critical Failure** As failure, but **4d6 bludgeoning** and the target is also **Grabbed** until the start of your next turn.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3139,7 +3139,7 @@ All creatures in a 10-foot radius burst within **30 feet** must attempt a Reflex
 **Success** The creature is lifted 5 feet off the ground and becomes **Off-Guard** until the start of your next turn.
 **Failure** The creature is lifted 10 feet into the air and becomes **Grabbed** and **Off-Guard** until the start of your next turn. When the effect ends, the creature falls and takes appropriate fall damage.
 **Critical Failure** As failure, but the creature is lifted 20 feet and remains suspended until the end of your next turn.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -3155,7 +3155,7 @@ Choose a qualifying creature within **30 feet**. The target must attempt a Forti
 **Success** The target takes **1d6 electricity** damage.
 **Failure** The target takes **2d6 electricity** damage and is **Stunned 1**.
 **Critical Failure** The target takes **4d6 electricity** damage and is **Stunned 3**. Additionally, the target is **Off-Guard** until the end of its next turn even after the Stunned condition expires.
-**Cooldown:** 7 âˆ’ your Intelligence modifier rounds (minimum 1).
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3178,7 +3178,7 @@ Choose a creature within **30 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d8 void** damage and cannot regain HP until the start of your next turn.
 **Failure** The target takes **2d8 void** damage, cannot regain HP for 1 round, and you regain **1d8 HP**.
 **Critical Failure** As failure, but **4d8 void** damage, you regain **2d8 HP**, and the target cannot regain HP for 1 minute (or until the end of combat).
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3202,7 +3202,7 @@ Choose a creature within **30 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d6 bludgeoning** damage and is moved 5 feet in any direction.
 **Failure** The target is lifted 10 feet into the air and then slammed down, taking **3d6 bludgeoning** damage and becoming **Stunned 1** and **Prone**.
 **Critical Failure** As failure, but **6d6 bludgeoning**, **Stunned 2**, and the target's movement speed is halved until the end of its next turn.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3217,7 +3217,7 @@ Choose a creature within **30 feet**. The target must attempt a Will save agains
 **Success** The creature is **Immobilized** until the start of your next turn.
 **Failure** The creature is **Paralyzed** until the start of your next turn. At the end of each of its turns, it can attempt a new Will save to end the effect early.
 **Critical Failure** The creature is **Paralyzed** for 1 minute. At the end of each of its turns, it can attempt a new Will save (same DC) to end the effect early.
-**Cooldown:** 7 âˆ’ your Charisma modifier rounds (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3459,7 +3459,30 @@ Kinetic shields are worn equipment that provide Shield HP — temporary protecti
 
 #### Biotic Barrier
 
-Biotics can activate a personal mass effect barrier. **HP = 5 × ⌊level ÷ 2⌋**, calculated at activation. Absorbs damage before shields and HP. Does not recharge passively — must be reactivated.
+Biotics can activate a personal mass effect barrier. **HP = 5 × ⌈level ÷ 2⌉**, calculated at activation, plus a worn bio-amp's barrier bonus. Absorbs damage before shields and HP. Does not recharge passively — must be reactivated.
+
+### Bio-Amps
+
+A bio-amp plugs into a biotic's implant. Biotic powers cool down for **4 rounds, less the Recharge of the amp you wear** (minimum 1); powers with a fixed cooldown of their own, such as Biotic Charge, keep it. Power adds an item bonus to biotic power damage and class DC, and Hit Points to the Biotic Barrier. Amps don't stack: wearing more than one gives only the highest of each bonus.
+
+| Amp | Level | Credits | Recharge | Cooldown | Power |
+|---|---|---|---|---|---|
+| Solaris Bio-Amp I | 1 | 200 cr | −1 | 3 rounds | — |
+| Gemini Bio-Amp I | 3 | 600 cr | −1 | 3 rounds | — |
+| Solaris Bio-Amp II | 5 | 1,600 cr | −1 | 3 rounds | +1 damage, +5 barrier HP |
+| Unity Bio-Amp I | 5 | 1,600 cr | −1 | 3 rounds | +1 damage, +5 barrier HP |
+| Polaris Bio-Amp I | 6 | 2,500 cr | −1 | 3 rounds | +10 barrier HP |
+| Prodigy Bio-Amp I | 8 | 5,000 cr | −2 | 2 rounds | — |
+| Gemini Bio-Amp II | 9 | 7,000 cr | −2 | 2 rounds | — |
+| HMBA Basic Bio-Amp | 10 | 9,000 cr | −2 | 2 rounds | +2 damage, +1 class DC, +10 barrier HP |
+| Unity Bio-Amp II | 11 | 14,000 cr | −2 | 2 rounds | +2 damage, +1 class DC, +10 barrier HP |
+| Polaris Bio-Amp II | 12 | 20,000 cr | −2 | 2 rounds | +20 barrier HP |
+| Savant Bio-Amp I | 13 | 30,000 cr | −2 | 2 rounds | +3 damage, +2 class DC, +15 barrier HP |
+| HMBA Advanced Bio-Amp | 14 | 45,000 cr | −2 | 2 rounds | +2 damage, +1 class DC, +10 barrier HP |
+| Gemini Bio-Amp III | 15 | 65,000 cr | −3 | 1 rounds | — |
+| Prodigy Bio-Amp II | 16 | 100,000 cr | −3 | 1 rounds | — |
+| HMBA Master Bio-Amp | 18 | 240,000 cr | −3 | 1 rounds | +2 damage, +1 class DC, +10 barrier HP |
+| Savant Bio-Amp II | 19 | 400,000 cr | −3 | 1 rounds | +3 damage, +2 class DC, +15 barrier HP |
 
 ### Weapon Modifications
 
@@ -4040,19 +4063,19 @@ Captain of the Destiny Ascension, the Citadel Fleet's asari flagship.
 **HP** 95
 **Speed** 25 feet
 **Ranged** ◆ M-3 Predator +17 (range increment 40 ft, tech), **Damage** 2d6+9 piercing
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 **Warp (NPC)** ◆◆ You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.
 Choose a creature within **60 feet**. The target must attempt a DC 21 Fortitude save against the creature's power DC.
 **Critical Success** Unaffected.
@@ -4179,19 +4202,19 @@ Your Biotic Barrier is immediately depleted after using this power. Using Nova r
 
 ---
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 
 ---
 
@@ -4948,19 +4971,19 @@ Biotic shock trooper of Eclipse.
 
 ---
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 
 ---
 
@@ -5007,19 +5030,19 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 
 ---
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 
 ---
 
@@ -5548,19 +5571,19 @@ Former Alliance marine turned Cerberus operative; a steady biotic with a shotgun
 **Speed** 30 feet
 **Ranged** ◆ M-23 Eviscerator +21 (range increment 15 ft, tech, scatter-5), **Damage** 4d8+12 piercing
 **Ranged** ◆ M-5 Phalanx +21 (range increment 50 ft, tech), **Damage** 3d6+12 piercing
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 **Pull (NPC)** ◆ You project a focused mass effect field that seizes a single target and yanks them toward you.
 Choose a creature within **30 feet**. The target must attempt a DC 25 Reflex save against the creature's power DC.
 **Critical Success** Unaffected.
@@ -5981,19 +6004,19 @@ Ancient krogan battlemaster and clan chief; centuries of war made flesh, with bi
 
 ---
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 
 ---
 
@@ -6463,19 +6486,19 @@ Asari matriarch, Liara's mother, and Saren's indoctrinated lieutenant.
 **HP** 195
 **Speed** 25 feet
 **Ranged** ◆ M-3 Predator +24 (range increment 40 ft, tech), **Damage** 2d6+14 piercing
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 **Warp (NPC)** ◆◆ You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.
 Choose a creature within **60 feet**. The target must attempt a DC 27 Fortitude save against the creature's power DC.
 **Critical Success** Unaffected.
@@ -6534,19 +6557,19 @@ Ardat-Yakshi and Samara's daughter, whose embrace kills.
 **HP** 195
 **Speed** 30 feet
 **Ranged** ◆ M-6 Carnifex +24 (range increment 45 ft, tech, kickback), **Damage** 4d6+14 piercing
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 **Dominate (NPC)** ◆◆◆ You reach into an organic creature's nervous system with a mass effect field and seize direct control of their actions, turning them against their own allies.
 **Requirements** The target must be an organic creature.
 Choose a creature within **30 feet**. The target must attempt a DC 27 Will save against the creature's power DC.
@@ -6597,19 +6620,19 @@ Ancient krogan warlord and geneticist, building the perfect krogan in a tank.
 **Speed** 25 feet
 **Ranged** ◆ M-300 Claymore +24 (range increment 10 ft, tech, scatter-5, fatal-d12, kickback), **Damage** 6d8+14 piercing
 **Melee** ◆ Headbutt +24, **Damage** 4d10+13 bludgeoning
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 **Shockwave (NPC)** ◆◆ You slam biotic energy into the ground, sending a rolling kinetic shockwave along the surface that topples everything in its path.
 All creatures in a 60-foot line must attempt a DC 27 Reflex save against the creature's power DC.
 **Critical Success** Unaffected.
@@ -6772,19 +6795,19 @@ Asari mercenary combatant
 **Melee** ◆ Combat Strike +6 (agile, finesse), **Damage** 2d4+3 bludgeoning
 **Ranged** ◆ M-8 Avenger +9 (range increment 60 ft, tech, automatic), **Damage** 1d8+3 piercing
 **Ranged** ◆ M-3 Predator +9 (range increment 40 ft, tech), **Damage** 1d6+3 piercing
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 
 ---
 
@@ -7282,19 +7305,19 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 
 ---
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
-**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded down, minimum 5). The barrier absorbs damage before your shields and actual HP.
+**Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
 | **Level** | **Barrier HP** |
-| 1-3 | 5 |
-| 4-5 | 10 |
-| 6-7 | 15 |
-| 8-9 | 20 |
-| 10-11 | 25 |
-| 12-13 | 30 |
-| 14-15 | 35 |
-| 16-17 | 40 |
-| 18-19 | 45 |
-| 20 | 50 |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
 
 ---
 
@@ -8440,7 +8463,7 @@ Combat frames sit between shields and Hit Points and provide **Armor Points**. A
 
 ## BIOTIC BARRIER
 
-A biotic can raise a personal mass effect field as an action. Barrier HP is calculated at activation as **5 × ⌊level ÷ 2⌋** (minimum 5), and it absorbs damage *before* both shields and Hit Points.
+A biotic can raise a personal mass effect field as an action. Barrier HP is calculated at activation as **5 × ⌈level ÷ 2⌉** plus any bio-amp barrier bonus, and it absorbs damage *before* both shields and Hit Points.
 
 A barrier does **not** recharge passively. Once depleted it must be reactivated, or refilled by spending actions or using Charge.
 

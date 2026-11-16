@@ -436,6 +436,29 @@ console.log('Biotic Charge: lands in the nearest open space beside the target; p
   void wall;
 }
 
+console.log('Bio-amps: cooldowns are 4 rounds less the amp\'s Recharge; amp damage is biotic only');
+{
+  const { cooldownRounds } = ctx.MassEffectPowers;
+  const biotic = (recharge, extra = {}) => {
+    const a = new Actor('Biotic', { flags: recharge == null ? {} : { bioticRecharge: recharge }, ...extra });
+    a.system.abilities = { cha: { mod: 5 } };              // Charisma no longer matters
+    return a;
+  };
+  assert(cooldownRounds(biotic(null), 'nova') === 4, `no amp: 4 rounds, whatever the Charisma (got ${cooldownRounds(biotic(null), 'nova')})`);
+  assert(cooldownRounds(biotic(1), 'nova') === 3 && cooldownRounds(biotic(2), 'nova') === 2 && cooldownRounds(biotic(3), 'nova') === 1,
+    'Recharge 1/2/3: 3/2/1 rounds');
+  assert(cooldownRounds(biotic(9), 'nova') === 1, 'never below 1 round');
+  assert(cooldownRounds(biotic(3), 'charge') === 2, 'Biotic Charge keeps its own 2 rounds');
+
+  const amped = new Actor('Amped', { flags: { novaCharge: 14, ampDamageBonus: 3, powerDamageBonus: 1 } });
+  const n1 = new Actor('N1');
+  await save('me-biotic-nova', 'failure', n1, { caster: amped, origin: 'Item.nova-amp' });
+  assert(n1.damage[0] === 27, `Nova 4d6 (24) + 3 from the amp, not + the Power Amplifier's 1 too (got ${n1.damage[0]})`);
+  const human = new Actor('Human', { traits: ['humanoid'] });
+  await save('me-tech-overload', 'failure', human, { caster: amped, origin: 'Item.overload-amp' });
+  assert(human.damage[0] === 17, `a tech power takes the Power Amplifier's +1 but not the amp's +3 (got ${human.damage[0]})`);
+}
+
 console.log('Vanguard Rush and Strike: when Nova follows; Nova\'s emanation and pushes');
 {
   const { novaFollows, feetBetween } = ctx.MassEffectPowers;

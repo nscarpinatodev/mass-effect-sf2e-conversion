@@ -1883,7 +1883,7 @@ function renderShieldMechanicsSection() {
   <h3 class="section-bar" style="background:#7c3aed" id="biotic-barrier">Biotic Barrier</h3>
   <div class="mech-block">
     <h4>Activation &amp; Capacity</h4>
-    <p>A biotic can raise a personal mass effect field as an action. Barrier HP is calculated at activation as <strong>5 × ⌊level ÷ 2⌋</strong> (minimum 5), and it absorbs damage <em>before</em> both shields and Hit Points.</p>
+    <p>A biotic can raise a personal mass effect field as an action. Barrier HP is calculated at activation as <strong>5 × ⌈level ÷ 2⌉</strong> plus any bio-amp barrier bonus, and it absorbs damage <em>before</em> both shields and Hit Points.</p>
     <p>A barrier does <strong>not</strong> recharge passively. Once depleted it must be reactivated, or refilled by spending actions or using Charge.</p>
   </div>
 
@@ -1974,7 +1974,18 @@ function modTable(mods, heading) {
   </div></div>`;
 }
 
-function renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades, shields) {
+function renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades, shields, amps = []) {
+  // Bio-amps: ratings read from their rule elements
+  const ampRows = amps.map((a) => {
+    const rules = a.system.rules ?? [];
+    const flag = (name) => rules.find((r) => r.key === 'ActiveEffectLike' && r.path?.endsWith(`.${name}`))?.value ?? 0;
+    const recharge = flag('bioticRecharge'), damage = flag('ampDamageBonus'), barrier = flag('barrierBonus');
+    const dc = rules.find((r) => r.key === 'FlatModifier' && r.selector === 'class')?.value ?? 0;
+    const power = [damage && `+${damage} damage`, dc && `+${dc} class DC`, barrier && `+${barrier} barrier HP`].filter(Boolean).join(', ') || '—';
+    return `<tr><td><strong>${a.name}</strong></td><td>${a.system.level?.value ?? '?'}</td><td>${creditPrice(a.system)}</td>`
+      + `<td>−${recharge}</td><td>${Math.max(1, 4 - recharge)} rounds</td><td>${power}</td></tr>`;
+  }).join('\n');
+
   const byGroup = { pistol:[], rifle:[], shotgun:[], sniper:[], bomb:[] };
   for (const w of weapons) { const g = w.system.group ?? 'pistol'; (byGroup[g] ?? byGroup.pistol).push(w); }
 
@@ -2038,6 +2049,11 @@ function renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades
   <h3 class="section-bar" style="background:#0f2034" id="equip-armor-mods">Armor Mods</h3>
   <p class="section-intro">Armor mods install into a single suit of armor. Most armors accept one mod.</p>
   ${modTable(armorMods,'Armor Mods')}
+  <h3 class="section-bar" style="background:#0f2034" id="equip-bio-amps">Bio-Amps</h3>
+  <p class="section-intro">A bio-amp plugs into a biotic's implant. Biotic powers cool down for <strong>4 rounds, less the Recharge of the amp you wear</strong> (minimum 1); powers with a fixed cooldown of their own, such as Biotic Charge, keep it. Power adds an item bonus to biotic power damage and class DC, and Hit Points to the Biotic Barrier. Amps don't stack: wearing more than one gives only the highest of each bonus.</p>
+  <div class="equipment-subsection"><div class="equipment-table-wrap">
+    <table class="data-table"><thead><tr><th>Amp</th><th>Lvl</th><th>Credits</th><th>Recharge</th><th>Cooldown</th><th>Power</th></tr></thead><tbody>${ampRows}</tbody></table>
+  </div></div>
   <h3 class="section-bar" style="background:#0f2034" id="equip-shields">Kinetic Shields &amp; Upgrades</h3>
   <p class="section-intro">Shield hardware and its upgrade mods. See <strong>Shield Mechanics</strong> for how these layers behave in play.</p>
   <div class="equipment-subsection"><div class="equipment-table-wrap">
@@ -2137,10 +2153,12 @@ async function main() {
   ]);
 
   const npcFactions = await loadNpcsByFaction();
+  const amps = (await loadDir('me-items')).filter((i) => i.system?.baseItem === 'biotic-amp')
+    .sort((a, b) => (a.system.level?.value ?? 0) - (b.system.level?.value ?? 0) || a.name.localeCompare(b.name));
 
   const ancestriesSection  = renderAncestriesSection(ancestries, heritages, ancestryFeats);
   const backgroundsSection = renderBackgroundsSection(backgrounds);
-  const equipmentSection   = renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades, shields);
+  const equipmentSection   = renderEquipmentSection(weapons, armors, weaponMods, armorMods, grenades, shields, amps);
   const featsSection       = renderFeatsSection(classFeatSets, ancestryFeats, ancestries, sortedGeneralPacks);
   const bestiarySection    = renderBestiarySection(npcFactions, creatures, { vehicles, ships });
   const shieldSection      = renderShieldMechanicsSection();
@@ -2166,6 +2184,7 @@ async function main() {
     sub('equip-weapon-mods', 'Weapon Mods', '2.6rem'),
     sub('equip-armor', 'Armor', '2.6rem'),
     sub('equip-armor-mods', 'Armor Mods', '2.6rem'),
+    sub('equip-bio-amps', 'Bio-Amps', '2.6rem'),
     sub('equip-grenades', 'Grenades', '2.6rem'),
     `<div class="toc-part">Part II · Bestiary</div>`,
     sub('npcs', 'NPCs'),
