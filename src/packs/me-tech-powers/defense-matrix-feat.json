@@ -14,7 +14,7 @@
     "slug": "me-tech-defense-matrix",
     "description": {
       "gm": "",
-      "value": "<p>You activate a sophisticated energy matrix from your omni-tool that absorbs incoming damage and can be purged to restore your kinetic shields.</p><p>You gain the Defense Matrix effect: <strong>resistance 3 to all damage</strong>. You can Purge Defense Matrix as a <strong>free action</strong> on your turn to end the effect and immediately restore <strong>15 HP</strong> to your kinetic shields.</p><p><strong>Cooldown:</strong> 7 âˆ’ your Intelligence modifier rounds (minimum 1).</p>"
+      "value": "<p>You activate a sophisticated energy matrix from your omni-tool that absorbs incoming damage and can be purged to restore your kinetic shields.</p><p>You gain the Defense Matrix effect: <strong>resistance 3 to all damage</strong>. You can Purge Defense Matrix as a <strong>free action</strong> on your turn to end the effect and immediately restore <strong>15 HP</strong> to your kinetic shields.</p><p><strong>Cooldown:</strong> 7 − your Intelligence modifier rounds (minimum 1).</p>"
     },
     "rules": [],
     "_migration": {

@@ -14,7 +14,7 @@
     "slug": "me-tech-tactical-cloak",
     "description": {
       "gm": "",
-      "value": "<p>You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.</p><p>You become <strong>Undetected</strong> by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect, which adds <strong>+2d6 precision damage</strong> to your first Strike made while Undetected. Remove the effect after making that Strike.</p><p><strong>Cooldown:</strong> 7 âˆ’ your Intelligence modifier rounds (minimum 1).</p>"
+      "value": "<p>You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.</p><p>You become <strong>Undetected</strong> by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect, which adds <strong>+2d6 precision damage</strong> to your first Strike made while Undetected. Remove the effect after making that Strike.</p><p><strong>Cooldown:</strong> 7 − your Intelligence modifier rounds (minimum 1).</p>"
     },
     "rules": [],
     "_migration": {

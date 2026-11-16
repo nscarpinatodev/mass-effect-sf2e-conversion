@@ -14,7 +14,7 @@
     "slug": "me-tech-geth-shield-boost",
     "description": {
       "gm": "",
-      "value": "<p>You activate a geth-derived shield optimization algorithm from your omni-tool, temporarily supercharging your kinetic barrier.</p><p>Your kinetic shield maximum is doubled until the start of your next turn. Immediately set your current temp HP to the doubled maximum. Remove the Geth Shield Boost effect at the start of your next turn and reset temp HP to your normal shield maximum.</p><p><strong>Cooldown:</strong> 7 âˆ’ your Intelligence modifier rounds (minimum 1).</p>"
+      "value": "<p>You activate a geth-derived shield optimization algorithm from your omni-tool, temporarily supercharging your kinetic barrier.</p><p>Your kinetic shield maximum is doubled until the start of your next turn. Immediately set your current temp HP to the doubled maximum. Remove the Geth Shield Boost effect at the start of your next turn and reset temp HP to your normal shield maximum.</p><p><strong>Cooldown:</strong> 7 − your Intelligence modifier rounds (minimum 1).</p>"
     },
     "rules": [],
     "_migration": {
