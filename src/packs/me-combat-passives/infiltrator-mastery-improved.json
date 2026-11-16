@@ -24,7 +24,7 @@
         "dieSize": "d6",
         "damageType": "precision",
         "predicate": [
-          "self:effect:me-effect-tactical-cloak"
+          "self:effect:tactical-cloak"
         ],
         "label": "Improved Infiltrator Mastery"
       }

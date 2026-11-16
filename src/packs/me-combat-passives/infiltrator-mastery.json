@@ -29,7 +29,7 @@
         "type": "circumstance",
         "value": 2,
         "predicate": [
-          "self:effect:me-effect-tactical-cloak"
+          "self:effect:tactical-cloak"
         ],
         "label": "Infiltrator Mastery"
       }

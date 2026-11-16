@@ -30,7 +30,7 @@
         "dieSize": "d6",
         "damageType": "void",
         "predicate": [
-          "self:effect:me-effect-vanguard-momentum"
+          "self:effect:vanguard-momentum"
         ],
         "label": "Improved Vanguard Mastery"
       }

@@ -45,6 +45,7 @@
     "badge": {
       "type": "counter",
       "value": 5,
+      "min": 0,
       "max": 5,
       "label": "Barrier HP"
     }

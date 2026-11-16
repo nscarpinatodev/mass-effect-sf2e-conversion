@@ -1,15 +1,5 @@
-2026/11/15-14:42:36.289 b764 Recovering log #419
-2026/11/15-14:42:36.304 b764 Delete type=0 #419
-2026/11/15-14:42:36.304 b764 Delete type=3 #417
-2026/11/15-14:42:36.315 be04 Level-0 table #425: started
-2026/11/15-14:42:36.322 be04 Level-0 table #425: 46144 bytes OK
-2026/11/15-14:42:36.324 be04 Delete type=0 #423
-2026/11/15-14:42:36.324 be04 Manual compaction at level-0 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)
-2026/11/15-14:42:36.324 be04 Manual compaction at level-1 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at '!items!VorchaAncestry01' @ 1008 : 1
-2026/11/15-14:42:36.324 be04 Compacting 1@1 + 1@2 files
-2026/11/15-14:42:36.334 be04 Generated table #426@1: 12 keys, 46144 bytes
-2026/11/15-14:42:36.334 be04 Compacted 1@1 + 1@2 files => 46144 bytes
-2026/11/15-14:42:36.337 be04 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/11/15-14:42:36.338 be04 Delete type=2 #421
-2026/11/15-14:42:36.338 be04 Delete type=2 #425
-2026/11/15-14:42:36.338 be04 Manual compaction at level-1 from '!items!VorchaAncestry01' @ 1008 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)
+2026/11/15-19:58:08.642 a7ac Delete type=3 #1
+2026/11/15-19:58:08.649 80b8 Level-0 table #5: started
+2026/11/15-19:58:08.658 80b8 Level-0 table #5: 46132 bytes OK
+2026/11/15-19:58:08.662 80b8 Delete type=0 #3
+2026/11/15-19:58:08.663 80b8 Manual compaction at level-0 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)

@@ -1,15 +1,5 @@
-2026/11/15-14:42:39.278 8de8 Recovering log #330
-2026/11/15-14:42:39.287 8de8 Delete type=0 #330
-2026/11/15-14:42:39.287 8de8 Delete type=3 #328
-2026/11/15-14:42:39.292 be04 Level-0 table #336: started
-2026/11/15-14:42:39.298 be04 Level-0 table #336: 31920 bytes OK
-2026/11/15-14:42:39.301 be04 Delete type=0 #334
-2026/11/15-14:42:39.301 be04 Manual compaction at level-0 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)
-2026/11/15-14:42:39.301 be04 Manual compaction at level-1 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at '!items!meVanguardMastS0' @ 3804 : 1
-2026/11/15-14:42:39.302 be04 Compacting 1@1 + 1@2 files
-2026/11/15-14:42:39.307 be04 Generated table #337@1: 59 keys, 31920 bytes
-2026/11/15-14:42:39.307 be04 Compacted 1@1 + 1@2 files => 31920 bytes
-2026/11/15-14:42:39.311 be04 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/11/15-14:42:39.312 be04 Delete type=2 #332
-2026/11/15-14:42:39.313 be04 Delete type=2 #336
-2026/11/15-14:42:39.313 be04 Manual compaction at level-1 from '!items!meVanguardMastS0' @ 3804 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)
+2026/11/15-19:58:11.207 a7ac Delete type=3 #1
+2026/11/15-19:58:11.211 80b8 Level-0 table #5: started
+2026/11/15-19:58:11.216 80b8 Level-0 table #5: 31918 bytes OK
+2026/11/15-19:58:11.220 80b8 Delete type=0 #3
+2026/11/15-19:58:11.220 80b8 Manual compaction at level-0 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)

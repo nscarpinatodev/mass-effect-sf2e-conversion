@@ -1,15 +1,5 @@
-2026/11/15-14:42:38.086 8de8 Recovering log #402
-2026/11/15-14:42:38.095 8de8 Delete type=0 #402
-2026/11/15-14:42:38.095 8de8 Delete type=3 #400
-2026/11/15-14:42:38.106 be04 Level-0 table #408: started
-2026/11/15-14:42:38.116 be04 Level-0 table #408: 52769 bytes OK
-2026/11/15-14:42:38.121 be04 Delete type=0 #406
-2026/11/15-14:42:38.121 be04 Manual compaction at level-0 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)
-2026/11/15-14:42:38.121 be04 Manual compaction at level-1 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at '!items!MEFeature0000024' @ 4432 : 1
-2026/11/15-14:42:38.121 be04 Compacting 1@1 + 1@2 files
-2026/11/15-14:42:38.133 be04 Generated table #409@1: 55 keys, 52769 bytes
-2026/11/15-14:42:38.133 be04 Compacted 1@1 + 1@2 files => 52769 bytes
-2026/11/15-14:42:38.137 be04 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/11/15-14:42:38.137 be04 Delete type=2 #404
-2026/11/15-14:42:38.137 be04 Delete type=2 #408
-2026/11/15-14:42:38.137 be04 Manual compaction at level-1 from '!items!MEFeature0000024' @ 4432 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)
+2026/11/15-19:58:10.033 a480 Delete type=3 #1
+2026/11/15-19:58:10.039 80b8 Level-0 table #5: started
+2026/11/15-19:58:10.052 80b8 Level-0 table #5: 52796 bytes OK
+2026/11/15-19:58:10.056 80b8 Delete type=0 #3
+2026/11/15-19:58:10.057 80b8 Manual compaction at level-0 from '!items!MEAncFeat0000001' @ 72057594037927935 : 1 .. '!items!MEFeature0000024' @ 0 : 0; will stop at (end)

@@ -14,7 +14,7 @@
     "slug": "me-vanguard-deaths-embrace",
     "description": {
       "gm": "",
-      "value": "<p><strong>Trigger:</strong> You would be reduced to 0 HP.</p><p>You refuse to fall. Instead of going down, you immediately Charge the nearest enemy within 60 feet as a reaction. You arrive at the target's location with <strong>1 HP</strong> and your Biotic Barrier restored to <strong>full</strong>. If no valid target exists within 60 feet, this ability does not trigger.</p><p><em>Prerequisite: Charge Upgrade. Classes: Vanguard.</em></p>"
+      "value": "<p><strong>Frequency</strong> once per day</p><p><strong>Trigger:</strong> You would be reduced to 0 HP.</p><p>You refuse to fall. Instead of going down, you immediately Charge the nearest enemy within 60 feet as a reaction. You arrive at the target's location with <strong>1 HP</strong> and your Biotic Barrier restored to <strong>full</strong>. If no valid target exists within 60 feet, this ability does not trigger.</p><p><em>Prerequisite: Charge Upgrade. Classes: Vanguard.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -60,6 +60,10 @@
     },
     "onlyLevel1": false,
     "maxTakable": 1,
-    "location": null
+    "location": null,
+    "frequency": {
+      "max": 1,
+      "per": "day"
+    }
   }
 }

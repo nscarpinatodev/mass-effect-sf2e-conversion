@@ -1,15 +1,5 @@
-2026/11/15-14:42:37.210 9318 Recovering log #342
-2026/11/15-14:42:37.221 9318 Delete type=0 #342
-2026/11/15-14:42:37.221 9318 Delete type=3 #340
-2026/11/15-14:42:37.227 be04 Level-0 table #348: started
-2026/11/15-14:42:37.231 be04 Level-0 table #348: 7922 bytes OK
-2026/11/15-14:42:37.237 be04 Delete type=0 #346
-2026/11/15-14:42:37.237 be04 Manual compaction at level-0 from '!items!meActivateBbarFt' @ 72057594037927935 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at (end)
-2026/11/15-14:42:37.237 be04 Manual compaction at level-1 from '!items!meActivateBbarFt' @ 72057594037927935 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at '!items!meTitanCombatFrm' @ 1094 : 1
-2026/11/15-14:42:37.237 be04 Compacting 1@1 + 1@2 files
-2026/11/15-14:42:37.242 be04 Generated table #349@1: 16 keys, 7922 bytes
-2026/11/15-14:42:37.242 be04 Compacted 1@1 + 1@2 files => 7922 bytes
-2026/11/15-14:42:37.246 be04 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/11/15-14:42:37.246 be04 Delete type=2 #344
-2026/11/15-14:42:37.246 be04 Delete type=2 #348
-2026/11/15-14:42:37.246 be04 Manual compaction at level-1 from '!items!meTitanCombatFrm' @ 1094 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at (end)
+2026/11/15-19:58:09.432 a7ac Delete type=3 #1
+2026/11/15-19:58:09.436 80b8 Level-0 table #5: started
+2026/11/15-19:58:09.442 80b8 Level-0 table #5: 7929 bytes OK
+2026/11/15-19:58:09.448 80b8 Delete type=0 #3
+2026/11/15-19:58:09.449 80b8 Manual compaction at level-0 from '!items!meActivateBbarFt' @ 72057594037927935 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at (end)

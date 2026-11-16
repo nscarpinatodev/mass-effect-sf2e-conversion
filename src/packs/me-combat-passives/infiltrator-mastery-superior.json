@@ -22,7 +22,7 @@
         "type": "all-damage",
         "value": 5,
         "predicate": [
-          "self:effect:me-effect-tactical-cloak"
+          "self:effect:tactical-cloak"
         ]
       }
     ],

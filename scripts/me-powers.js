@@ -20,6 +20,12 @@
 const MODULE_ID = 'mass-effect-sf2e-conversion';
 const OPT_PREFIX = 'me-power:';
 
+// The system's own flags on a chat message: flags.pf2e under PF2e, flags.sf2e under SF2e.
+const sysFlags = (doc) => doc?.flags?.[game.system.id] ?? doc?.flags?.pf2e;
+
+// The system's DamageRoll class. PF2e exposes it on game.pf2e; SF2e only registers it in CONFIG.Dice.rolls.
+const DamageRoll = () => game.pf2e?.DamageRoll ?? CONFIG.Dice.rolls.find((r) => r.name === 'DamageRoll');
+
 // ── POWER REGISTRY ──────────────────────────────────────────────────────────
 // Keyed by the key in the save button's options (me-power:<key>), which is the
 // feat's system.slug for powers. A power may set:
@@ -30,7 +36,9 @@ const OPT_PREFIX = 'me-power:';
 //   scale       — multiplies the rolled damage (0.5 = half, 2 = double, for basic saves)
 //   persistent  — { formula, type, dc }  (creates a persistent-damage effect)
 //   conditions  — [ "off-guard", "stunned:1", "slowed:1", ... ]  (":" = value)
+//   push        — feet the target is moved straight away from the caster's token
 //   note        — reminder text shown in the result card (manual rulings)
+const novaDice = (barrierHP) => 2 + Math.floor(barrierHP / 5);
 const basic = (damage, extra = {}) => ({
   success:         { damage, scale: 0.5, ...extra.success },
   failure:         { damage, ...extra.failure },
@@ -125,10 +133,22 @@ const POWERS = {
   // ── Biotic powers ──
   'me-biotic-charge': {
     name: 'Biotic Charge', save: 'reflex', trait: 'biotic',
+    // Basic Reflex save: 2d6 at 1st level, +1d6 at 3rd and every 2 levels after.
+    // The 50% barrier refill happens on use (see the Charge hook below).
+    damage: ({ caster }) => `${1 + Math.ceil((caster?.level ?? 1) / 2)}d6[bludgeoning]`,
     degrees: {
-      success:         { damage: '1d6[bludgeoning]' },
-      failure:         { damage: '3d6[bludgeoning]', conditions: ['prone'], casterBarrier: 0.5 },
-      criticalFailure: { damage: '6d6[bludgeoning]', conditions: ['prone'], casterBarrier: 1, note: 'Pushed 5 feet away from the Vanguard.' },
+      success:         { scale: 0.5 },
+      failure:         { conditions: ['prone'] },
+      criticalFailure: { scale: 2, conditions: ['prone'], casterBarrier: 1, push: 5 },
+    },
+    // The NPC Charge keeps its own dice, multiplied by level like the other NPC powers
+    npc: {
+      damage: null,
+      degrees: {
+        success:         { damage: '1d6[bludgeoning]' },
+        failure:         { damage: '3d6[bludgeoning]', conditions: ['prone'] },
+        criticalFailure: { damage: '6d6[bludgeoning]', conditions: ['prone'], casterBarrier: 1, push: 5 },
+      },
     },
   },
   'me-biotic-dark-channel': {
@@ -174,10 +194,10 @@ const POWERS = {
   },
   'me-biotic-nova': {
     name: 'Nova', save: 'fortitude', trait: 'biotic', area: true,
-    // The barrier HP recorded when Nova was used (see the Nova hook below)
+    // 2d6, +1d6 per 5 HP the barrier held when Nova was used (recorded by the Nova hook below)
     damage: ({ caster }) => {
       const hp = caster?.getFlag(MODULE_ID, 'novaCharge');
-      return hp > 0 ? `${hp}[force]` : null;
+      return hp > 0 ? `${novaDice(hp)}d6[force]` : null;
     },
     degrees: {
       success:         { scale: 0.5 },
@@ -386,24 +406,31 @@ for (const [key, power] of Object.entries(POWERS)) {
   const biotic = key.startsWith('me-biotic-') || ['me-cluster-grenade', 'me-lift-grenade'].includes(key);
   const tech = key.startsWith('me-tech-') || key === 'me-sticky-grenade';
   if (!biotic && !tech) continue;
+  const src = { ...power, ...power.npc };       // a power may give its NPC version its own numbers
+  delete src.npc;
   const degrees = {};
-  for (const [name, degree] of Object.entries(power.degrees)) {
+  for (const [name, degree] of Object.entries(src.degrees)) {
     const d = { ...degree };
     for (const field of ['damage', 'vsSynthetic', 'casterHeal']) if (d[field]) d[field] = scaledByCaster(d[field]);
     if (d.persistent) d.persistent = { ...d.persistent, formula: scaledByCaster(d.persistent.formula) };
     degrees[name] = d;
   }
-  POWERS[`me-npc-${key.slice(3)}`] = { ...power, trait: biotic ? 'biotic' : 'tech', degrees };
+  POWERS[`me-npc-${key.slice(3)}`] = { ...src, trait: biotic ? 'biotic' : 'tech', degrees };
 }
 
 // For macros and debugging: the full registry, PC and NPC entries alike.
-globalThis.MassEffectPowers = { registry: POWERS };
+globalThis.MassEffectPowers = { registry: POWERS, chargeLanding: (...a) => chargeLanding(...a), pushAway: (...a) => pushAway(...a) };
 
 // ── SETTINGS ────────────────────────────────────────────────────────────────
 Hooks.once('init', () => {
   game.settings.register(MODULE_ID, 'autoApplyPowerEffects', {
     name: 'Auto-Apply Power Effects',
     hint: 'When a target resolves a save against a Mass Effect power, automatically apply its damage and conditions based on the outcome.',
+    scope: 'world', config: true, type: Boolean, default: true,
+  });
+  game.settings.register(MODULE_ID, 'automateCharge', {
+    name: 'Automate Biotic Charge',
+    hint: 'When Biotic Charge is posted with one creature targeted, move the Vanguard next to it, roll its Reflex save, and start the cooldown. Needs a GM connected.',
     scope: 'world', config: true, type: Boolean, default: true,
   });
 });
@@ -413,7 +440,7 @@ Hooks.on('createChatMessage', async (message) => {
   if (!game.user.isGM) return;
   if (!game.settings.get(MODULE_ID, 'autoApplyPowerEffects')) return;
 
-  const ctx = message.flags?.pf2e?.context;
+  const ctx = sysFlags(message)?.context;
   if (!ctx || ctx.type !== 'saving-throw' || !ctx.outcome) return;
 
   const opt = (ctx.options ?? []).find(o => o.startsWith(OPT_PREFIX));
@@ -436,6 +463,16 @@ Hooks.on('createChatMessage', async (message) => {
   if (ctx.outcome === 'criticalFailure' && power.trait === 'biotic' && frighten) {
     degree.conditions = [...(degree.conditions ?? []), `frightened:${frighten}`];
   }
+  // Vanguard feats that change what a degree does
+  const casterHas = (s) => !!caster?.items?.some((i) => i.slug === s);
+  const addCondition = (c) => { degree.conditions = [...(degree.conditions ?? []), c]; };
+  if (slug === 'me-biotic-nova' && casterHas('me-upgrade-nova')) {           // Nova Upgrade
+    if (ctx.outcome === 'failure') addCondition('stunned:1');
+    if (ctx.outcome === 'criticalFailure') addCondition('stunned:3');
+  }
+  if (slug === 'me-biotic-charge' && ctx.outcome === 'success' && casterHas('me-vanguard-unstoppable-charge')) {
+    addCondition('prone');                                                  // Unstoppable Charge
+  }
 
   if (!Object.keys(degree).length) {
     postResult(actor, power.name, ctx.outcome, ['No effect.']);
@@ -455,11 +492,12 @@ Hooks.on('createChatMessage', async (message) => {
     if (cflags.powerBonusDice) extra.push(cflags.powerBonusDice);                         // Superior Sentinel Mastery
   }
   if (slug === 'me-biotic-charge' && cflags.chargeUpgrade === 'damage') extra.push('2d6'); // Charge Upgrade
+  if (slug === 'me-biotic-nova' && casterHas('me-upgrade-nova')) extra.push('2d6');         // Nova Upgrade
   const formula = base && extra.length ? addTerms(base, extra) : base;
   if (spec && !formula) log.push('No damage recorded for this use; roll it by hand.');
   if (formula) {
     try {
-      const origin = message.flags?.pf2e?.origin?.uuid ?? ctx.origin?.uuid ?? '';
+      const origin = sysFlags(message)?.origin?.uuid ?? ctx.origin?.uuid ?? '';
       const roll = await rollPowerDamage(power.area ? `${slug}|${origin}` : null, { ...degree, damage: formula });
       if (roll) {
         await actor.applyDamage({ damage: roll, token: tokenDoc?.object ?? tokenDoc });
@@ -486,7 +524,7 @@ Hooks.on('createChatMessage', async (message) => {
       log.push(`${drained} shield HP drained`);
       gain = d.gainShielded === 'drained' ? drained : d.gainShielded;
     } else {
-      const roll = await new game.pf2e.DamageRoll(d.damage).evaluate();
+      const roll = await new (DamageRoll())(d.damage).evaluate();
       await actor.applyDamage({ damage: roll, token: tokenDoc?.object ?? tokenDoc });
       log.push(`${roll.total} ${describeFormula(d.damage)} damage`);
       gain = d.gainUnshielded;
@@ -523,6 +561,14 @@ Hooks.on('createChatMessage', async (message) => {
     }
   }
   if (degree.casterBarrier) log.push(await refillCasterBarrier(caster, degree.casterBarrier));
+
+  // ── Forced movement ──
+  if (degree.push) {
+    const from = caster?.getActiveTokens(true, true).find((t) => t.parent === tokenDoc?.parent);
+    log.push(await pushAway(tokenDoc, from, degree.push)
+      ? `Pushed ${degree.push} feet`
+      : `Pushed ${degree.push} feet away from ${caster?.name ?? 'the caster'} (move by hand)`);
+  }
 
   // ── Healing for the caster ──
   const heal = typeof degree.casterHeal === 'function' ? degree.casterHeal({ actor, caster }) : degree.casterHeal;
@@ -627,25 +673,31 @@ Hooks.on('preUpdateItem', (item, changes) => {
 // Charge and Nova: run on the client that posted the card, which owns the actor.
 Hooks.on('createChatMessage', async (message) => {
   if (message.author?.id !== game.user.id) return;
-  const origin = message.flags?.pf2e?.origin;
+  // A target's save against the power also names the power as its origin; only the
+  // power's own card (no roll context) counts as using it.
+  if (sysFlags(message)?.context) return;
+  const origin = sysFlags(message)?.origin;
   if (!['feat', 'action'].includes(origin?.type) || !origin.uuid) return;
   const item = await fromUuid(origin.uuid);
   const actor = item?.actor;
   if (!actor) return;
   const flags = actor.flags?.[MODULE_ID] ?? {};
   const slug = item.slug?.replace(/^me-npc-/, 'me-');      // NPC versions trigger the same effects
+  // A Charge posted during its cooldown does nothing (the Charge automation says so)
+  if (slug === 'me-biotic-charge' && actor.itemTypes.effect.some((e) => e.slug === CHARGE_COOLDOWN)) return;
 
   const barrier = getBarrier(actor);
 
-  // Charge refills the barrier on use, whatever the target rolls: the most
-  // generous of Vanguard Mastery (flat), Unstoppable Charge (25%) and Apex Vanguard (full).
+  // Charge refills the barrier on use, whatever the target rolls: half its maximum,
+  // or more from Vanguard Mastery (flat) or Apex Vanguard / the barrier Charge
+  // Upgrade (full). A critical failure on the save fills it (see POWERS).
   if (slug === 'me-biotic-charge' && barrier) {
     const max = barrier.flags[MODULE_ID].barrierMax;
     const now = barrier.flags[MODULE_ID].barrierCurrent ?? 0;
     const has = (s) => actor.items.some((i) => i.slug === s);
     const refill = Math.max(
+      Math.ceil(max / 2),
       Number(flags.chargeBarrier) || 0,
-      has('me-vanguard-unstoppable-charge') ? Math.ceil(max / 4) : 0,
       has('me-vanguard-apex-vanguard') || flags.chargeUpgrade === 'barrier' ? max : 0,
     );
     const next = Math.min(max, now + refill);
@@ -655,13 +707,13 @@ Hooks.on('createChatMessage', async (message) => {
     }
   }
 
-  // Nova spends the whole barrier; its HP becomes the damage every target saves against.
+  // Nova spends the whole barrier; its HP sets the dice every target saves against.
   if (slug === 'me-biotic-nova') {
     const now = barrier?.flags[MODULE_ID].barrierCurrent ?? 0;
     await actor.setFlag(MODULE_ID, 'novaCharge', now);
     if (now > 0) await setBarrier(barrier, 0);
     postResult(actor, 'Nova', 'success', [now > 0
-      ? `Detonates ${now} barrier HP as force damage`
+      ? `Detonates ${now} barrier HP: ${novaDice(now)}d6 force${actor.items.some((i) => i.slug === 'me-upgrade-nova') ? ' + 2d6 (Nova Upgrade)' : ''}`
       : 'No barrier HP to detonate (Nova needs an active Biotic Barrier)']);
   }
 
@@ -681,6 +733,158 @@ Hooks.on('createChatMessage', async (message) => {
   }
 });
 
+// ── ONE-CLICK BIOTIC CHARGE ─────────────────────────────────────────────────
+// Posting Biotic Charge with one creature targeted: the poster's client notes the
+// target on the card, then the active GM's client (which can move any token and
+// roll any save) checks the cooldown and range, moves the Vanguard next to the
+// target, starts the cooldown, and rolls the target's Reflex save. That save then
+// goes through the save-result hook above like any other.
+const CHARGE_COOLDOWN = 'me-effect-charge-cooldown';
+const isCharge = (item) => item?.slug?.replace(/^me-npc-/, 'me-') === 'me-biotic-charge';
+
+Hooks.on('preCreateChatMessage', (message) => {
+  if (!game.settings.get(MODULE_ID, 'automateCharge')) return;
+  const sys = sysFlags(message);
+  if (sys?.context || !['feat', 'action'].includes(sys?.origin?.type) || !sys.origin.uuid) return;
+  if (!isCharge(fromUuidSync(sys.origin.uuid))) return;
+  const targets = [...game.user.targets].map((t) => t.document.uuid);
+  message.updateSource({ [`flags.${MODULE_ID}.charge`]: { targets } });
+});
+
+Hooks.on('createChatMessage', async (message) => {
+  const charge = message.flags?.[MODULE_ID]?.charge;
+  if (!charge || !game.users.activeGM?.isSelf) return;
+  const item = await fromUuid(sysFlags(message)?.origin?.uuid).catch(() => null);
+  if (!item?.actor) return;
+  try {
+    await runCharge(message, item, charge.targets ?? []);
+  } catch (err) {
+    console.warn('ME Powers | Biotic Charge automation failed', err);
+    postResult(item.actor, 'Biotic Charge', 'Not automated', ['Something went wrong; resolve this Charge by hand.'], { owners: true });
+  }
+});
+
+async function runCharge(message, item, targetUuids) {
+  const actor = item.actor;
+  const tell = (lines) => postResult(actor, 'Biotic Charge', 'Not automated', lines, { owners: true });
+
+  const cooldown = actor.itemTypes.effect.find((e) => e.slug === CHARGE_COOLDOWN);
+  if (cooldown) {
+    const left = Math.max(1, Math.ceil((cooldown.remainingDuration?.remaining ?? 0) / CONFIG.time.roundTime));
+    return tell([`Biotic Charge is on cooldown (${left} round${left === 1 ? '' : 's'} left). Nothing moved and no save was rolled.`]);
+  }
+  if (targetUuids.length !== 1) {
+    return tell([targetUuids.length ? 'Target only one creature to automate Charge.' : 'Target a creature before using Charge to automate it.']);
+  }
+  const target = await fromUuid(targetUuids[0]).catch(() => null);
+  if (!target?.actor) return tell(['The targeted token is gone.']);
+
+  const scene = target.parent;
+  const speakerToken = scene.tokens.get(message.speaker?.token);
+  const source = speakerToken?.actor === actor ? speakerToken : actor.getActiveTokens(true, true).find((t) => t.parent === scene);
+  if (!source) return tell([`${actor.name} has no token on ${scene.name}.`]);
+
+  const range = 60 + (actor.flags?.[MODULE_ID]?.chargeUpgrade === 'damage' ? 30 : 0);
+  const landing = chargeLanding(source, target);
+  if (!landing) return tell([`No open space next to ${target.name}.`]);
+  if (landing.distance > range) return tell([`${target.name} is out of reach: the nearest space beside it is ${landing.distance} feet away, and Charge covers ${range} feet.`]);
+
+  const lines = [];
+  if (landing.distance > 0) {
+    await source.update({ x: landing.x, y: landing.y });
+    lines.push(`${actor.name} charges ${landing.distance} feet to ${target.name}`);
+  }
+
+  // Cooldown: 7 - Charisma modifier rounds (minimum 1); biotics stay on Charisma.
+  const rounds = Math.max(1, 7 - (actor.system.abilities?.cha?.mod ?? 0));
+  await actor.createEmbeddedDocuments('Item', [{
+    name: 'Biotic Charge Cooldown',
+    type: 'effect',
+    img: item.img,
+    system: {
+      slug: CHARGE_COOLDOWN,
+      description: { value: `<p>Biotic Charge can be used again when this ends: ${rounds} round${rounds === 1 ? '' : 's'} (7 − Charisma modifier, minimum 1).</p>` },
+      duration: { value: rounds, unit: 'rounds', expiry: 'turn-start', sustained: false },
+      rules: [],
+    },
+  }]);
+  lines.push(`Cooldown: ${rounds} round${rounds === 1 ? '' : 's'}`);
+
+  const dc = powerDC(item);
+  if (!dc) {
+    lines.push(`Roll ${target.name}'s Reflex save from the Charge card`);
+    return postResult(actor, 'Biotic Charge', 'Charged', lines, { owners: true });
+  }
+  postResult(actor, 'Biotic Charge', 'Charged', lines, { owners: true });
+  await target.actor.saves.reflex.roll({
+    dc: { value: dc },
+    extraRollOptions: [`${OPT_PREFIX}${item.slug}`],
+    origin: actor, item, token: target, skipDialog: true,
+  });
+}
+
+/** The DC in the power's own save button (@Check[...|dc:N] or dc:resolve(formula)). */
+function powerDC(item) {
+  const m = item.system.description?.value?.match(/@Check\[[^\]]*?dc:(?:resolve\(([^|\]]+)\)|(\d+))/);
+  if (!m) return item.actor?.system.attributes?.classDC?.value ?? null;
+  if (m[2]) return Number(m[2]);
+  const value = Roll.safeEval(Roll.replaceFormulaData(m[1], item.getRollData()));
+  return Number.isFinite(value) ? value : null;
+}
+
+/**
+ * The open grid space touching the target that is the shortest move for the
+ * charger, as { x, y, distance } (distance in feet), or null when every space
+ * beside the target is occupied. Charge phases through obstacles, so walls are
+ * ignored.
+ */
+// A token's committed position. While a move animates, Foundry v14 keeps the old
+// position in token.x / token.y; the stored source already holds the new one.
+const placed = (d) => d._source ?? d;
+
+function chargeLanding(source, target) {
+  const scene = target.parent;
+  const grid = scene.grid;
+  const size = grid.size;
+  const box = (d, x = placed(d).x, y = placed(d).y) => ({ x, y, w: d.width * size, h: d.height * size });
+  const t = box(target);
+  const occupied = scene.tokens.filter((d) => d !== source && d !== target && !d.hidden).map((d) => box(d));
+  const overlaps = (a, b) => a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h;
+  const center = (b) => ({ x: b.x + b.w / 2, y: b.y + b.h / 2 });
+  const from = center(box(source));
+
+  let best = null;
+  const sw = source.width * size, sh = source.height * size;
+  for (let x = t.x - sw; x <= t.x + t.w; x += size) {
+    for (let y = t.y - sh; y <= t.y + t.h; y += size) {
+      const spot = box(source, x, y);
+      if (overlaps(spot, t) || occupied.some((o) => overlaps(spot, o))) continue;
+      const to = center(spot);
+      const distance = Math.round(grid.measurePath([from, to]).distance);
+      const straight = Math.hypot(to.x - from.x, to.y - from.y);
+      if (!best || distance < best.distance || (distance === best.distance && straight < best.straight)) {
+        best = { x, y, distance, straight };
+      }
+    }
+  }
+  return best && { x: best.x, y: best.y, distance: best.distance };
+}
+
+/** Move a token straight away from another, in whole grid spaces. True if it moved. */
+async function pushAway(tokenDoc, fromDoc, feet) {
+  if (!tokenDoc || !fromDoc || tokenDoc.parent !== fromDoc.parent) return false;
+  const grid = tokenDoc.parent.grid;
+  const center = (d) => ({ x: placed(d).x + (d.width * grid.size) / 2, y: placed(d).y + (d.height * grid.size) / 2 });
+  const a = center(fromDoc), b = center(tokenDoc);
+  const len = Math.hypot(b.x - a.x, b.y - a.y);
+  if (!len) return false;
+  const sx = Math.round((b.x - a.x) / len), sy = Math.round((b.y - a.y) / len);
+  const spaces = Math.max(1, Math.round(feet / grid.distance));
+  const at = placed(tokenDoc);
+  await tokenDoc.update({ x: at.x + sx * grid.size * spaces, y: at.y + sy * grid.size * spaces });
+  return true;
+}
+
 // ── TARGETS AND CASTERS ─────────────────────────────────────────────────────
 const SYNTHETIC_TRAITS = ['construct', 'geth', 'mech', 'robot'];
 const isSynthetic = (actor) => actor.type === 'vehicle'
@@ -688,7 +892,7 @@ const isSynthetic = (actor) => actor.type === 'vehicle'
 
 /** The actor who used the power: the save message's origin item, else its origin actor. */
 async function resolveCaster(message, ctx) {
-  for (const uuid of [message.flags?.pf2e?.origin?.uuid, ctx.origin?.item, ctx.origin?.actor]) {
+  for (const uuid of [sysFlags(message)?.origin?.uuid, ctx.origin?.item, ctx.origin?.actor]) {
     if (typeof uuid !== 'string') continue;
     const doc = await fromUuid(uuid).catch(() => null);
     const actor = doc instanceof Actor ? doc : doc?.actor;
@@ -704,7 +908,7 @@ async function setBarrier(barrier, value) {
   const max = barrier.flags[MODULE_ID].barrierMax;
   await barrier.update({
     [`flags.${MODULE_ID}.barrierCurrent`]: value,
-    'system.badge': { type: 'counter', value, max },
+    'system.badge': { type: 'counter', value, min: 0, max },   // min 0: an empty barrier stays on the actor
   });
 }
 
@@ -749,7 +953,7 @@ async function rollPowerDamage(areaKey, degree) {
   const key = areaKey ? `${areaKey}|${degree.damage}` : null;
   let base = key && areaRolls.get(key);
   if (!base || Date.now() - base.at > AREA_WINDOW_MS) {
-    base = { at: Date.now(), roll: await new game.pf2e.DamageRoll(degree.damage).evaluate() };
+    base = { at: Date.now(), roll: await new (DamageRoll())(degree.damage).evaluate() };
     if (key) areaRolls.set(key, base);
   }
   const scale = degree.scale ?? 1;
@@ -761,7 +965,7 @@ async function rollPowerDamage(areaKey, degree) {
     .filter(([n]) => n > 0)
     .map(([n, type]) => `${n}[${type}]`);
   if (!parts.length) return null;
-  return new game.pf2e.DamageRoll(parts.length > 1 ? `{${parts.join(',')}}` : parts[0]).evaluate();
+  return new (DamageRoll())(parts.length > 1 ? `{${parts.join(',')}}` : parts[0]).evaluate();
 }
 
 // ── HELPERS ─────────────────────────────────────────────────────────────────
@@ -783,7 +987,8 @@ const OUTCOME_LABEL = {
   criticalFailure: 'Critical Failure',
 };
 
-function postResult(actor, powerName, outcome, lines) {
+/** Whispered to the GMs; with owners: true, also to the players who own the actor. */
+function postResult(actor, powerName, outcome, lines, { owners = false } = {}) {
   const color = outcome.includes('Failure') || outcome === 'failure' ? '#ff6f00' : '#4fc3f7';
   const body = `<div style="border-left:3px solid ${color};padding:5px 10px;background:${color}18;border-radius:2px;font-size:0.95em;">`
     + `<strong>🔥 ${powerName} — ${OUTCOME_LABEL[outcome] ?? outcome}</strong>`
@@ -793,7 +998,7 @@ function postResult(actor, powerName, outcome, lines) {
   ChatMessage.create({
     speaker: { alias: '⚙ ME Powers' },
     content: body,
-    whisper: game.users.filter(u => u.isGM).map(u => u.id),
+    whisper: game.users.filter(u => u.isGM || (owners && actor.testUserPermission?.(u, 'OWNER'))).map(u => u.id),
   });
 }
 

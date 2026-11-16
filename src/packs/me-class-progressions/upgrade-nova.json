@@ -14,7 +14,7 @@
     "slug": "me-upgrade-nova",
     "description": {
       "gm": "",
-      "value": "<p>You channel every ounce of your biotic reserves into a catastrophic release of mass effect energy.</p><p>Nova's burst radius increases to <strong>20 feet</strong> (up from 10 feet). The damage increases to <strong>twice the barrier's current HP</strong> at the moment of detonation (up from the barrier's current HP). On a <strong>Failure</strong>, targets are also <strong>Stunned 1</strong>. On a <strong>Critical Failure</strong>, targets are <strong>Stunned 3</strong> instead.</p><p><em>Prerequisite: Nova. Classes: Vanguard.</em></p>"
+      "value": "<p>You channel every ounce of your biotic reserves into a catastrophic release of mass effect energy.</p><p>Nova's burst radius increases to <strong>20 feet</strong> (up from 10 feet). Nova's damage increases by <strong>2d6</strong>. On a <strong>Failure</strong>, targets are also <strong>Stunned 1</strong>. On a <strong>Critical Failure</strong>, targets are <strong>Stunned 3</strong> instead.</p><p><em>Prerequisite: Nova. Classes: Vanguard.</em></p>"
     },
     "rules": [],
     "_migration": {

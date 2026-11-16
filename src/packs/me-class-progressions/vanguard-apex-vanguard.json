@@ -14,7 +14,7 @@
     "slug": "me-vanguard-apex-vanguard",
     "description": {
       "gm": "",
-      "value": "<p>You are a living weapon, an unstoppable force of biotic aggression at the absolute peak of Vanguard capability.</p><p>Charge always restores your <strong>Biotic Barrier to full</strong>, regardless of the save result (up from 25% with Unstoppable Charge). Nova can be used <strong>twice per turn</strong>; the second use deals damage equal to your <strong>maximum Biotic Barrier HP</strong> even if the barrier is currently empty, and does not deplete it. When you use Rampage while adjacent to your target, your Strike deals an additional <strong>1d6 void</strong> damage.</p><p><em>Prerequisite: Death's Embrace. Classes: Vanguard.</em></p>"
+      "value": "<p>You are a living weapon, an unstoppable force of biotic aggression at the absolute peak of Vanguard capability.</p><p>Charge always restores your <strong>Biotic Barrier to full</strong>, regardless of the save result (up from half). Nova can be used <strong>twice per turn</strong>; the second use detonates as if your barrier were <strong>full</strong>, even if it is currently empty, and does not deplete it. When you use Rampage while adjacent to your target, your Strike deals an additional <strong>1d6 void</strong> damage.</p><p><em>Prerequisite: Death's Embrace. Classes: Vanguard.</em></p>"
     },
     "rules": [],
     "_migration": {

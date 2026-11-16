@@ -26,6 +26,9 @@
 
 const MODULE_ID = 'mass-effect-sf2e-conversion';
 
+// The system's own flags on a chat message: flags.pf2e under PF2e, flags.sf2e under SF2e.
+const sysFlags = (doc) => doc?.flags?.[game.system.id] ?? doc?.flags?.pf2e;
+
 console.log(
   '%cMASS EFFECT%c Compendium  |  Initializing module...',
   [
@@ -328,7 +331,7 @@ Hooks.on('createItem', async (item, _options, _userId) => {
     await item.update({
       [`flags.${MODULE_ID}.barrierMax`]:     max,
       [`flags.${MODULE_ID}.barrierCurrent`]: max,
-      'system.badge': { type: 'counter', value: max, max },
+      'system.badge': { type: 'counter', value: max, min: 0, max },
     });
     return;
   }
@@ -469,7 +472,7 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
     if (newBarrierHP > 0) {
       barrier.update({
         [`flags.${MODULE_ID}.barrierCurrent`]: newBarrierHP,
-        'system.badge': { type: 'counter', value: newBarrierHP, max: barrierMax },
+        'system.badge': { type: 'counter', value: newBarrierHP, min: 0, max: barrierMax },
       });
     } else {
       barrierDepleted = true;
@@ -479,7 +482,7 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
       } else {
         barrier.update({
           [`flags.${MODULE_ID}.barrierCurrent`]: 0,
-          'system.badge': { type: 'counter', value: 0, max: barrierMax },
+          'system.badge': { type: 'counter', value: 0, min: 0, max: barrierMax },
         });
       }
     }
@@ -859,7 +862,7 @@ function getShieldHpMod(actor) {
 function detectCriticalHit() {
   const recent = [...game.messages.contents].slice(-10).reverse();
   for (const msg of recent) {
-    const pf2e = msg.flags?.pf2e;
+    const pf2e = sysFlags(msg);
     if (!pf2e) continue;
     if (pf2e.context?.type !== 'damage-roll') continue;
     return pf2e.context?.degreeOfSuccess === 3;
@@ -871,7 +874,7 @@ function detectCriticalHit() {
 function detectDamageTypes() {
   const recent = [...game.messages.contents].slice(-10).reverse();
   for (const msg of recent) {
-    const pf2e = msg.flags?.pf2e;
+    const pf2e = sysFlags(msg);
     if (!pf2e) continue;
     if (pf2e.context?.type !== 'damage-roll') continue;
     const options = pf2e.context?.options ?? [];
@@ -890,7 +893,7 @@ function detectDamageTypes() {
 function getAttackerAmmoType() {
   const recent = [...game.messages.contents].slice(-10).reverse();
   for (const msg of recent) {
-    const pf2e = msg.flags?.pf2e;
+    const pf2e = sysFlags(msg);
     if (!pf2e) continue;
     if (pf2e.context?.type !== 'damage-roll') continue;
     const tokenId = msg.speaker?.token;
@@ -1181,12 +1184,12 @@ async function migrateActorItems() {
           const max = Math.max(5, 5 * Math.floor(level / 2));
           updates[`flags.${MODULE_ID}.barrierMax`]     = max;
           updates[`flags.${MODULE_ID}.barrierCurrent`] = max;
-          updates['system.badge'] = { type: 'counter', value: max, max };
+          updates['system.badge'] = { type: 'counter', value: max, min: 0, max };
           note(actor, `${item.name}: initialized barrier (${max} HP)`);
         } else if (flags.barrierCurrent == null) {
           const max = flags.barrierMax;
           updates[`flags.${MODULE_ID}.barrierCurrent`] = max;
-          updates['system.badge'] = { type: 'counter', value: max, max };
+          updates['system.badge'] = { type: 'counter', value: max, min: 0, max };
           note(actor, `${item.name}: restored barrierCurrent to ${max}`);
         }
         if (Object.keys(updates).length > 0) await item.update(updates);

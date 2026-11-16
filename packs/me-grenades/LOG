@@ -1,15 +1,5 @@
-2026/11/15-14:42:37.462 9318 Recovering log #331
-2026/11/15-14:42:37.479 9318 Delete type=0 #331
-2026/11/15-14:42:37.479 9318 Delete type=3 #329
-2026/11/15-14:42:37.485 be04 Level-0 table #337: started
-2026/11/15-14:42:37.492 be04 Level-0 table #337: 6293 bytes OK
-2026/11/15-14:42:37.500 be04 Delete type=0 #335
-2026/11/15-14:42:37.500 be04 Manual compaction at level-0 from '!items!meGrenadeArc0000' @ 72057594037927935 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at (end)
-2026/11/15-14:42:37.500 be04 Manual compaction at level-1 from '!items!meGrenadeArc0000' @ 72057594037927935 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at '!items!meGrenadeProxMin' @ 396 : 1
-2026/11/15-14:42:37.500 be04 Compacting 1@1 + 1@2 files
-2026/11/15-14:42:37.508 be04 Generated table #338@1: 6 keys, 6293 bytes
-2026/11/15-14:42:37.508 be04 Compacted 1@1 + 1@2 files => 6293 bytes
-2026/11/15-14:42:37.521 be04 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/11/15-14:42:37.521 be04 Delete type=2 #333
-2026/11/15-14:42:37.521 be04 Delete type=2 #337
-2026/11/15-14:42:37.522 be04 Manual compaction at level-1 from '!items!meGrenadeProxMin' @ 396 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at (end)
+2026/11/15-19:58:09.649 a7ac Delete type=3 #1
+2026/11/15-19:58:09.653 80b8 Level-0 table #5: started
+2026/11/15-19:58:09.658 80b8 Level-0 table #5: 6301 bytes OK
+2026/11/15-19:58:09.664 80b8 Delete type=0 #3
+2026/11/15-19:58:09.664 80b8 Manual compaction at level-0 from '!items!meGrenadeArc0000' @ 72057594037927935 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at (end)

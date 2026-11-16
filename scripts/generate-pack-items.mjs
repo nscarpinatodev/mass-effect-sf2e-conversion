@@ -160,7 +160,7 @@ await writeFile(join(SHIELDS_DIR, 'biotic-barrier.json'), JSON.stringify(item(
     traits: { otherTags: [], value: [], rarity: 'common' },
     publication: PUB,
     duration: { value: -1, unit: 'unlimited', expiry: null },
-    badge: { type: 'counter', value: 5, max: 5, label: 'Barrier HP' },
+    badge: { type: 'counter', value: 5, min: 0, max: 5, label: 'Barrier HP' },   // min 0: the system deletes a counter effect that drops below min
   },
   { [MODULE_ID]: { barrier: true } },
 ), null, 2));

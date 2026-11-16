@@ -1449,7 +1449,7 @@ You have mastered the art of mass effect manipulation. All biotic powers have th
 
 The most aggressive class in the galaxy, Vanguards combine biotic power with close-range weapon mastery. Their signature abilities - Charge and Nova - define a high-risk, high-reward playstyle built around closing distance, overwhelming enemies, and recharging defenses through momentum.
 
-**Key Attribute:** Charisma
+**Key Attribute:** Strength or Dexterity
 
 **Hit Points:** 10 plus your Constitution modifier per level
 
@@ -2416,15 +2416,17 @@ While in Ascendant Form: all biotic powers you use are **free actions**; all bio
 
 #### Biotic Charge ◆◆ — Level 1
 
-You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to **60 feet** in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a Reflex save against your class DC.
+You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to **60 feet** in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a basic Reflex save against your class DC. The target takes (1+ceil(@actor.system.details.level.value/2))d6 bludgeoning damage: **2d6** at 1st level, +1d6 at 3rd level and every 2 levels after.
+Whatever the target rolls, your Biotic Barrier recharges **half** its maximum HP.
 **Critical Success** Unaffected.
-**Success** The target takes **1d6 bludgeoning** damage.
-**Failure** The target takes **3d6 bludgeoning** damage and is knocked **prone**. Your Biotic Barrier recharges half of its maximum barrier HP.
-**Critical Failure** As failure, but **6d6 bludgeoning** and pushed **5 feet** away from you. Your Biotic Barrier recharges to full.
+**Success** Half damage.
+**Failure** Full damage, and the target is knocked **prone**.
+**Critical Failure** Double damage, knocked **prone**, and pushed **5 feet** away from you. Your Biotic Barrier recharges to full.
 **Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+*Target one creature before you use Charge and it runs itself: you move to the open space beside the target, the target rolls its Reflex save, a critical failure pushes it 5 feet, and the cooldown starts (see the Automate Biotic Charge setting; a GM must be connected).*
 
 ---
 
@@ -2460,12 +2462,12 @@ Remove this effect to return to standard ammunition.
 
 You discharge all of your biotic barrier energy in a devastating point-blank explosion, obliterating everything around you at the cost of your defenses.
 **Requirements** You have an active Biotic Barrier with at least 1 HP remaining.
-You expend your entire Biotic Barrier in a 10-foot emanation. The damage equals the barrier's current HP at the time of detonation. All creatures in the area must attempt a basic Fortitude save against your class DC.
+You expend your entire Biotic Barrier in a 10-foot emanation. Nova deals **2d6 force** damage, plus **1d6** for every 5 HP your barrier holds when it detonates. All creatures in the area must attempt a basic Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** Half damage.
 **Failure** Full damage and pushed **5 feet** away from you.
 **Critical Failure** Double damage, pushed **10 feet** away, and knocked **prone**.
-Your Biotic Barrier is immediately depleted after using this power. Using Nova records the barrier's HP as this detonation's **force** damage and empties the barrier.
+Your Biotic Barrier is immediately depleted after using this power. Using Nova records the barrier's HP to set this detonation's dice, then empties the barrier.
 **Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
 
 ---
@@ -2531,7 +2533,7 @@ Your biotic charge technique has evolved. You may choose one of the following op
 *Prerequisite: Nova*
 
 You channel every ounce of your biotic reserves into a catastrophic release of mass effect energy.
-Nova's burst radius increases to **20 feet** (up from 10 feet). The damage increases to **twice the barrier's current HP** at the moment of detonation (up from the barrier's current HP). On a **Failure**, targets are also **Stunned 1**. On a **Critical Failure**, targets are **Stunned 3** instead.
+Nova's burst radius increases to **20 feet** (up from 10 feet). Nova's damage increases by **2d6**. On a **Failure**, targets are also **Stunned 1**. On a **Critical Failure**, targets are **Stunned 3** instead.
 *Prerequisite: Nova. Classes: Vanguard.*
 
 ---
@@ -2539,6 +2541,7 @@ Nova's burst radius increases to **20 feet** (up from 10 feet). The damage incre
 #### Death's Embrace ↺ — Level 10
 *Prerequisite: Charge Upgrade*
 
+**Frequency** once per day
 **Trigger:** You would be reduced to 0 HP.
 You refuse to fall. Instead of going down, you immediately Charge the nearest enemy within 60 feet as a reaction. You arrive at the target's location with **1 HP** and your Biotic Barrier restored to **full**. If no valid target exists within 60 feet, this ability does not trigger.
 *Prerequisite: Charge Upgrade. Classes: Vanguard.*
@@ -2549,7 +2552,7 @@ You refuse to fall. Instead of going down, you immediately Charge the nearest en
 *Prerequisite: Charge Upgrade*
 
 Your Biotic Charge has become an unstoppable force of nature. Nothing stands between you and your target.
-When you use Biotic Charge, you may now move through **total cover** as though it were open terrain - walls, barriers, and obstacles are no obstacle to your biotic field. In addition, regardless of the save result, Biotic Charge always restores **25% of your maximum Biotic Barrier HP**.
+When you use Biotic Charge, you may now move through **total cover** as though it were open terrain - walls, barriers, and obstacles are no obstacle to your biotic field. In addition, a target that **succeeds** at its Reflex save against your Biotic Charge is still knocked **prone**.
 On a Critical Failure, the target is not merely knocked prone - they are **thrown half the distance** of your Biotic Charge, landing prone and taking falling damage as normal for the distance thrown.
 *Prerequisite: Charge Upgrade. Classes: Vanguard.*
 
@@ -2560,7 +2563,7 @@ On a Critical Failure, the target is not merely knocked prone - they are **throw
 
 You have mastered the art of the biotic blitz. Biotic Charge and Nova fuse into a single overwhelming sequence that devastates everything caught in your path.
 **Requirements** None - your Biotic Barrier automatically recharges to full before the sequence begins.
-Use **Biotic Charge**. Immediately upon landing, use **Nova** as a free action. Nova fires regardless of whether the Biotic Charge target succeeded their save - even a Critical Success does not prevent the detonation. Nova uses the upgraded statistics from **Nova Upgrade** (20-foot emanation, damage equal to **2× the Biotic Barrier HP** at detonation, Stunned 1 on Failure, Stunned 3 on Critical Failure). Because the barrier was just recharged to full, Nova's damage equals **2× your maximum Biotic Barrier HP**.
+Use **Biotic Charge**. Immediately upon landing, use **Nova** as a free action. Nova fires regardless of whether the Biotic Charge target succeeded their save - even a Critical Success does not prevent the detonation. Nova uses the upgraded statistics from **Nova Upgrade** (20-foot emanation, +2d6 damage, Stunned 1 on Failure, Stunned 3 on Critical Failure). Because the barrier was just recharged to full, Nova detonates at **full strength**.
 Vanguard Strike places Biotic Charge, Nova, and Vanguard Rush on their individual cooldowns simultaneously.
 **Cooldown:** 7 - your Charisma modifier rounds (minimum 1), shared across Biotic Charge, Nova, and Vanguard Rush.
 *Prerequisites: Vanguard Rush, Nova Upgrade. Classes: Vanguard.*
@@ -2580,7 +2583,7 @@ Immediately after a successful Charge, you may make **one free shotgun Strike** 
 *Prerequisite: Death's Embrace*
 
 You are a living weapon, an unstoppable force of biotic aggression at the absolute peak of Vanguard capability.
-Charge always restores your **Biotic Barrier to full**, regardless of the save result (up from 25% with Unstoppable Charge). Nova can be used **twice per turn**; the second use deals damage equal to your **maximum Biotic Barrier HP** even if the barrier is currently empty, and does not deplete it. When you use Rampage while adjacent to your target, your Strike deals an additional **1d6 void** damage.
+Charge always restores your **Biotic Barrier to full**, regardless of the save result (up from half). Nova can be used **twice per turn**; the second use detonates as if your barrier were **full**, even if it is currently empty, and does not deplete it. When you use Rampage while adjacent to your target, your Strike deals an additional **1d6 void** damage.
 *Prerequisite: Death's Embrace. Classes: Vanguard.*
 
 ---

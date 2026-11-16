@@ -57,6 +57,7 @@ const ctx = vm.createContext({
   console, Math, Date, Number, String, Object, Array, Set, Map, Promise, JSON, Infinity,
   Hooks: { on: (n, f) => (hooks.on[n] ??= []).push(f), once: (n, f) => (hooks.once[n] ??= []).push(f) },
   game: {
+    system: { id: 'pf2e' },
     user: { isGM: true, id: 'gm' }, users: [],
     settings: { get: () => true, register() {} },
     pf2e: {
@@ -72,14 +73,23 @@ const ctx = vm.createContext({
 vm.runInContext(src, ctx);
 const saveHook = hooks.on.createChatMessage[0];
 
-async function save(power, outcome, target, { caster = null, origin = 'Item.power' } = {}) {
+async function save(power, outcome, target, { caster = null, origin = 'Item.power', system = 'pf2e' } = {}) {
   if (caster) uuids[origin] = { actor: caster };
   posted.length = 0;
   await saveHook({
     speaker: { actor: target }, token: null,
-    flags: { pf2e: { origin: { uuid: origin }, context: { type: 'saving-throw', outcome, options: [`me-power:${power}`] } } },
+    flags: { [system]: { origin: { uuid: origin }, context: { type: 'saving-throw', outcome, options: [`me-power:${power}`] } } },
   });
   return posted.at(-1)?.content ?? '';
+}
+
+console.log('SF2e: save cards keep their data in flags.sf2e');
+{
+  ctx.game.system.id = 'sf2e';
+  const t = new Actor('T');
+  await save('me-grenade-arc', 'failure', t, { origin: 'Item.sf2e-arc', system: 'sf2e' });
+  ctx.game.system.id = 'pf2e';
+  assert(t.damage.length === 1 && t.conditions.length === 0, `SF2e save applied: ${t.damage}`);
 }
 
 // ── cases ──
@@ -109,27 +119,57 @@ console.log('Overload: extra damage only against synthetics');
   assert(human.damage[0] === 16 && geth.damage[0] === 24, `2d8 vs 3d8: ${human.damage} / ${geth.damage}`);
 }
 
-console.log('Nova: damage is the barrier HP recorded on use');
+console.log('Nova: 2d6 + 1d6 per 5 barrier HP recorded on use');
 {
   const vanguard = new Actor('Vanguard', { flags: { novaCharge: 14 } });
   const t1 = new Actor('T1'), t2 = new Actor('T2');
   await save('me-biotic-nova', 'failure', t1, { caster: vanguard, origin: 'Item.nova' });
   await save('me-biotic-nova', 'criticalFailure', t2, { caster: vanguard, origin: 'Item.nova' });
-  assert(t1.damage[0] === 14 && t2.damage[0] === 28, `14 / doubled 28: ${t1.damage} / ${t2.damage}`);
+  assert(t1.damage[0] === 24 && t2.damage[0] === 48, `14 HP = 4d6: 24 / doubled 48: ${t1.damage} / ${t2.damage}`);
+  // Nova Upgrade: +2d6, Stunned 1 on a failure, Stunned 3 on a critical failure
+  const upgraded = new Actor('Upgraded', { flags: { novaCharge: 5 } });
+  upgraded.items = [{ slug: 'me-upgrade-nova' }];
+  const t3 = new Actor('T3'), t4 = new Actor('T4');
+  await save('me-biotic-nova', 'failure', t3, { caster: upgraded, origin: 'Item.nova-up' });
+  await save('me-biotic-nova', 'criticalFailure', t4, { caster: upgraded, origin: 'Item.nova-up2' });
+  assert(t3.damage[0] === 30 && t3.conditions.includes('stunned:1'), `5 HP = 3d6 + 2d6 = 30, Stunned 1: ${t3.damage} ${t3.conditions}`);
+  assert(t4.damage[0] === 60 && t4.conditions.includes('stunned:3') && t4.conditions.includes('prone'), `doubled 60, Stunned 3, prone: ${t4.damage} ${t4.conditions}`);
   assert(t2.conditions.includes('prone'), 'crit failure knocks prone');
-  const empty = new Actor('Empty'); const t3 = new Actor('T3');
-  const msg = await save('me-biotic-nova', 'failure', t3, { caster: empty, origin: 'Item.nova2' });
-  assert(t3.damage.length === 0 && msg.includes('roll it by hand'), 'no recorded charge: no damage, says so');
+  const empty = new Actor('Empty'); const t5 = new Actor('T5');
+  const msg = await save('me-biotic-nova', 'failure', t5, { caster: empty, origin: 'Item.nova2' });
+  assert(t5.damage.length === 0 && msg.includes('roll it by hand'), 'no recorded charge: no damage, says so');
 }
 
-console.log('Charge: failure refills half the caster\'s barrier');
+console.log('Charge: a failed save adds nothing to the barrier (half came on use); a critical failure fills it');
 {
   const barrier = barrierItem(2, 20);
   const vanguard = new Actor('Vanguard', { items: [barrier] });
+  vanguard.level = 5;
   const t = new Actor('T');
   await save('me-biotic-charge', 'failure', t, { caster: vanguard, origin: 'Item.charge' });
-  assert(barrier.flags[MOD].barrierCurrent === 12, `2 + 10 = ${barrier.flags[MOD].barrierCurrent}`);
-  assert(t.damage[0] === 18 && t.conditions.includes('prone'), 'target takes 3d6 and falls prone');
+  assert(barrier.flags[MOD].barrierCurrent === 2, `failure leaves the barrier at 2 (got ${barrier.flags[MOD].barrierCurrent})`);
+  const t2 = new Actor('T2');
+  await save('me-biotic-charge', 'criticalFailure', t2, { caster: vanguard, origin: 'Item.charge2' });
+  assert(barrier.flags[MOD].barrierCurrent === 20, `critical failure fills it (got ${barrier.flags[MOD].barrierCurrent})`);
+  assert(t.damage[0] === 24 && t.conditions.includes('prone'), `level 5: target takes 4d6 (24) and falls prone: ${t.damage}`);
+  assert(t2.damage[0] === 48, `critical failure doubles it: ${t2.damage}`);
+  // Basic save: half on a success; Unstoppable Charge knocks the target prone on a success too
+  const t3 = new Actor('T3');
+  await save('me-biotic-charge', 'success', t3, { caster: vanguard, origin: 'Item.charge3' });
+  assert(t3.damage[0] === 12 && !t3.conditions.includes('prone'), `success: half (12), stays standing: ${t3.damage} ${t3.conditions}`);
+  vanguard.items = [barrier, { slug: 'me-vanguard-unstoppable-charge' }];
+  const t4 = new Actor('T4');
+  await save('me-biotic-charge', 'success', t4, { caster: vanguard, origin: 'Item.charge4' });
+  assert(t4.conditions.includes('prone'), `Unstoppable Charge: a success still knocks prone: ${t4.conditions}`);
+  const t5 = new Actor('T5');
+  await save('me-biotic-charge', 'criticalSuccess', t5, { caster: vanguard, origin: 'Item.charge5' });
+  assert(t5.damage.length === 0 && t5.conditions.length === 0, 'critical success: unaffected');
+  // The NPC Charge keeps its own dice (x1 at level 0-3)
+  const npc = new Actor('Merc');
+  npc.level = 2;
+  const t6 = new Actor('T6');
+  await save('me-npc-biotic-charge', 'failure', t6, { caster: npc, origin: 'Item.npc-charge' });
+  assert(t6.damage[0] === 18 && t6.conditions.includes('prone'), `NPC Charge unchanged: 3d6 (18) on a failure: ${t6.damage}`);
 }
 
 console.log('Reave: caster heals, capped at max HP');
@@ -201,12 +241,22 @@ console.log('On use: Charge refills by the best Vanguard feature; Nova records a
   const plain = new Actor('Plain', { items: [b1], flags: { chargeBarrier: 5 } });
   plain.items = [b1];
   await use('me-biotic-charge', plain);
-  assert(b1.flags[MOD].barrierCurrent === 5, `Vanguard Mastery: +5 (got ${b1.flags[MOD].barrierCurrent})`);
+  assert(b1.flags[MOD].barrierCurrent === 10, `half of 20 beats Mastery's 5 (got ${b1.flags[MOD].barrierCurrent})`);
+  const b0 = barrierItem(0, 5);
+  const low = new Actor('Level 1', { items: [b0], flags: { chargeBarrier: 5 } });
+  low.items = [b0];
+  await use('me-biotic-charge', low);
+  assert(b0.flags[MOD].barrierCurrent === 5, `level 1: Mastery's 5 beats half of 5 (got ${b0.flags[MOD].barrierCurrent})`);
+  const bh = barrierItem(1, 15);
+  const bare = new Actor('No Mastery', { items: [bh] });
+  bare.items = [bh];
+  await use('me-biotic-charge', bare);
+  assert(bh.flags[MOD].barrierCurrent === 9, `no Mastery: 1 + ceil(15 / 2) = 9 (got ${bh.flags[MOD].barrierCurrent})`);
   const b2 = barrierItem(0, 20);
   const unstop = new Actor('Unstoppable', { items: [b2], flags: { chargeBarrier: 5 } });
   unstop.items = [b2, { slug: 'me-vanguard-unstoppable-charge' }];
   await use('me-biotic-charge', unstop);
-  assert(b2.flags[MOD].barrierCurrent === 5, `Unstoppable 25% of 20 = 5, ties mastery (got ${b2.flags[MOD].barrierCurrent})`);
+  assert(b2.flags[MOD].barrierCurrent === 10, `Unstoppable's 25% never beats the base half (got ${b2.flags[MOD].barrierCurrent})`);
   const b3 = barrierItem(3, 40);
   const apex = new Actor('Apex', { items: [b3], flags: { chargeBarrier: 5 } });
   apex.items = [b3, { slug: 'me-vanguard-apex-vanguard' }];
@@ -217,6 +267,9 @@ console.log('On use: Charge refills by the best Vanguard feature; Nova records a
   nova.items = [b4];
   await use('me-biotic-nova', nova);
   assert(nova.flags[MOD].novaCharge === 17 && b4.flags[MOD].barrierCurrent === 0, `records 17, barrier 0 (got ${nova.flags[MOD].novaCharge}, ${b4.flags[MOD].barrierCurrent})`);
+  // A target's save names Nova as its origin too; it must not count as a second use
+  await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.use' }, context: { type: 'saving-throw' } } } });
+  assert(nova.flags[MOD].novaCharge === 17, `a save against Nova keeps the recorded 17 (got ${nova.flags[MOD].novaCharge})`);
 }
 
 console.log('Power Amplifier: item bonus to biotic and tech power damage only');
@@ -236,7 +289,7 @@ console.log('Charge Upgrade and Superior Sentinel Mastery add to power damage');
   const t1 = new Actor('T1'), t2 = new Actor('T2');
   await save('me-biotic-charge', 'failure', t1, { caster: vanguard, origin: 'Item.charge-up' });
   await save('me-biotic-warp', 'failure', t2, { caster: sentinel, origin: 'Item.warp-sent' });
-  assert(t1.damage[0] === 30, `3d6 + 2d6 = ${t1.damage}`);
+  assert(t1.damage[0] === 24, `level 1 Charge 2d6 + Charge Upgrade 2d6 = ${t1.damage}`);
   assert(t2.damage[0] === 17, `2d6 + 1 + 1d4 = ${t2.damage}`);
 
   const useHook = hooks.on.createChatMessage[1];
@@ -317,6 +370,45 @@ console.log('Every save button in the packs has a registry entry');
   walk(packs, '');
   const missing = [...used].filter(([key]) => !registered.has(key));
   assert(missing.length === 0, `${used.size} keys used, ${registered.size} registered${missing.length ? `; missing: ${missing.map(([k, f]) => `${k} (${f})`).join(', ')}` : ''}`);
+}
+
+console.log('Biotic Charge: lands in the nearest open space beside the target; pushes straight back');
+{
+  const { chargeLanding, pushAway } = ctx.MassEffectPowers;
+  // 100 px squares of 5 ft; PF2e-style diagonals don't matter here, so count the longer axis
+  const grid = { size: 100, distance: 5, measurePath: ([a, b]) => ({ distance: 5 * Math.max(Math.abs(a.x - b.x), Math.abs(a.y - b.y)) / 100 }) };
+  const tokens = [];
+  const scene = { grid, tokens };
+  tokens.filter = Array.prototype.filter.bind(tokens);
+  const tok = (x, y, w = 1) => {
+    const d = { x, y, width: w, height: w, hidden: false, parent: scene,
+      async update(c) { Object.assign(d, c); } };
+    tokens.push(d);
+    return d;
+  };
+  const vanguard = tok(0, 0), enemy = tok(1000, 0);           // 50 ft apart on one row
+  let land = chargeLanding(vanguard, enemy);
+  assert(land.x === 900 && land.y === 0 && land.distance === 45, `straight run to the near side: ${JSON.stringify(land)}`);
+  tok(900, 0);                                                // an ally already stands there
+  land = chargeLanding(vanguard, enemy);
+  assert(land.x === 900 && land.y !== 0 && land.distance === 45, `takes the next-nearest open space: ${JSON.stringify(land)}`);
+  const big = tok(2000, 2000, 2);                             // a Large target
+  land = chargeLanding(vanguard, big);
+  assert(land.x === 1900 && land.y === 1900, `corner of a Large target: ${JSON.stringify(land)}`);
+  const adjacent = tok(1100, 0);
+  assert(chargeLanding(adjacent, enemy).distance === 0, 'already adjacent: no move');
+
+  const pushed = tok(1000, 1000), pusher = tok(900, 900);
+  assert(await pushAway(pushed, pusher, 5) && pushed.x === 1100 && pushed.y === 1100, `diagonal push one space: ${pushed.x},${pushed.y}`);
+  const p2 = tok(500, 3000), from2 = tok(500, 2900);
+  await pushAway(p2, from2, 10);
+  assert(p2.x === 500 && p2.y === 3200, `10 ft push is two spaces straight back: ${p2.x},${p2.y}`);
+  // Mid-animation, Foundry v14 still reports the old x/y; the stored source has the new spot
+  const charger = tok(500, 5100);
+  charger._source = { x: 300, y: 5000 };                      // really standing just left of the victim
+  const victim = tok(400, 5000);
+  await pushAway(victim, charger, 5);
+  assert(victim.x === 500 && victim.y === 5000, `push uses where the charger landed, not where it is animating: ${victim.x},${victim.y}`);
 }
 
 console.log('The module scripts load side by side');
