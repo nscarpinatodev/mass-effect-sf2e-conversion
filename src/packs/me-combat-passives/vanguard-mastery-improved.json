@@ -14,7 +14,7 @@
     "slug": "me-vanguard-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>Your combat biotic synergy reaches its peak efficiency. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and Biotic Charge restores <strong>5 HP</strong> to your Biotic Barrier. After using Biotic Charge or Nova, your next Strike this turn deals <strong>+1d6 void</strong> damage.</p><p><em>Prerequisite: Vanguard Mastery.</em></p><hr/><p><em>Automation: Using Charge or Nova gives you a Vanguard Momentum effect until the end of your turn; your Strikes deal the extra 1d6 void while it lasts. Remove it after the Strike.</em></p>"
+      "value": "<p>Your combat biotic synergy reaches its peak efficiency. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and Biotic Charge restores <strong>5 HP</strong> to your Biotic Barrier. Vanguard Rush and Vanguard Strike, which combine Biotic Charge and Nova, cost <strong>2 actions</strong> instead: one less than the two powers' 3. After using Biotic Charge or Nova, your next Strike this turn deals <strong>+1d6 void</strong> damage.</p><p><em>Prerequisite: Vanguard Mastery.</em></p><hr/><p><em>Automation: Using Charge or Nova gives you a Vanguard Momentum effect until the end of your turn; your Strikes deal the extra 1d6 void while it lasts. Remove it after the Strike.</em></p>"
     },
     "rules": [
       {

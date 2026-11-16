@@ -1,0 +1,64 @@
+{
+  "_key": "!items!meVanguardChnChg",
+  "_id": "meVanguardChnChg",
+  "folder": null,
+  "name": "Chain Charge",
+  "type": "feat",
+  "img": "icons/magic/movement/chevrons-down-yellow.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-vanguard-chain-charge",
+    "description": {
+      "gm": "",
+      "value": "<p><strong>Frequency</strong> once per round</p><p><strong>Trigger</strong> The target of your Biotic Charge critically fails its save or is reduced to 0 HP.</p><hr/><p>You ride the momentum into the next foe. You <strong>Biotic Charge</strong> another enemy within <strong>30 feet</strong> without spending actions. This Charge doesn't start Biotic Charge's cooldown and can be used while it is cooling down.</p><p><em>Automation: when the trigger happens, you are told Chain Charge is ready. Target the next enemy and use Chain Charge: you charge to it and it rolls its Reflex save, with no cooldown.</em></p><p><em>Prerequisite: Biotic Charge. Classes: Vanguard.</em></p>"
+    },
+    "rules": [],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "vanguard",
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 18
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Biotic Charge"
+        }
+      ]
+    },
+    "actionType": {
+      "value": "free"
+    },
+    "actions": {
+      "value": null
+    },
+    "frequency": {
+      "max": 1,
+      "per": "round"
+    },
+    "category": "class",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

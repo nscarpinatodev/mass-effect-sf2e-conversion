@@ -14,9 +14,18 @@
     "slug": "me-vanguard-biotic-warrior",
     "description": {
       "gm": "",
-      "value": "<p>You have learned to channel your biotic field directly through your fists, making you deadly even when unarmed.</p><p>Your unarmed Strikes deal <strong>1d8 bludgeoning + 1d6 void</strong> damage and gain the <em>agile</em> and <em>finesse</em> traits. On a critical hit with an unarmed Strike, the target is pushed 5 feet and knocked Prone.</p><p><em>Prerequisite: Biotic Charge. Classes: Vanguard.</em></p>"
+      "value": "<p>You have learned to channel your biotic field straight through your fists.</p><p>Your <strong>Biotic Attack</strong>'s damage die is a <strong>d8</strong> instead of a d6. On a <strong>critical hit</strong> with it, the target is knocked <strong>prone</strong> and pushed <strong>5 feet</strong> away from you.</p><p><em>Automation: the d8 is part of the Strike; a critical hit knocks the target prone and pushes it (with a GM connected).</em></p><p><em>Classes: Vanguard.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "biotic-attack-damage",
+        "override": {
+          "dieSize": "d8"
+        },
+        "label": "Biotic Warrior"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,
@@ -40,11 +49,7 @@
       "value": 1
     },
     "prerequisites": {
-      "value": [
-        {
-          "value": "Biotic Charge"
-        }
-      ]
+      "value": []
     },
     "actionType": {
       "value": "passive"

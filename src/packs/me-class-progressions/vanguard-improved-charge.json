@@ -1,0 +1,60 @@
+{
+  "_key": "!items!meVanguardImpChg",
+  "_id": "meVanguardImpChg",
+  "folder": null,
+  "name": "Improved Charge",
+  "type": "feat",
+  "img": "icons/magic/movement/trail-streak-zigzag-yellow.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-vanguard-improved-charge",
+    "description": {
+      "gm": "",
+      "value": "<p>You recover from a Biotic Charge almost before you land. Biotic Charge's cooldown is <strong>1 round</strong> instead of 2, so you can charge on every turn.</p><p><em>Automation: the Biotic Charge cooldown that Automate Vanguard Powers starts lasts 1 round.</em></p><p><em>Prerequisite: Biotic Charge. Classes: Vanguard.</em></p>"
+    },
+    "rules": [],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "vanguard",
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 4
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Biotic Charge"
+        }
+      ]
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "class",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

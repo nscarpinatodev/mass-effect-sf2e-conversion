@@ -318,9 +318,17 @@ console.log('Derived data: action costs and Magazine Upgrade I, never compoundin
     flags: { [MOD]: { powerEfficiency: { biotic: 1 } } }, rollOptions: { all: {} },
     itemTypes: { feat: [feat], weapon: [weapon], effect: [] },
   };
+  // Vanguard Rush and Strike already combine Charge (2) and Nova (1) for 2: no further cut
+  const combo = (slug) => ({
+    type: 'feat', slug, _source: { system: { actions: { value: 2 } } },
+    system: { actionType: { value: 'action' }, actions: { value: 2 }, traits: { value: ['biotic'] } },
+  });
+  const rush = combo('me-vanguard-rush'), strike = combo('me-vanguard-vanguard-strike');
+  actor.itemTypes.feat.push(rush, strike);
   Character.prototype.prepareDerivedData.call(actor);
   Character.prototype.prepareDerivedData.call(actor);
   assert(feat.system.actions.value === 1, `2-action biotic power costs 1 (got ${feat.system.actions.value})`);
+  assert(rush.system.actions.value === 2 && strike.system.actions.value === 2, `Rush and Strike stay at 2 actions (got ${rush.system.actions.value}, ${strike.system.actions.value})`);
   assert(weapon.system.ammo.capacity === 18, `capacity 12 -> 18 after two prepares (got ${weapon.system.ammo.capacity})`);
 }
 
@@ -409,6 +417,69 @@ console.log('Biotic Charge: lands in the nearest open space beside the target; p
   const victim = tok(400, 5000);
   await pushAway(victim, charger, 5);
   assert(victim.x === 500 && victim.y === 5000, `push uses where the charger landed, not where it is animating: ${victim.x},${victim.y}`);
+  // Forced movement stops short of another creature's space
+  const shover = tok(0, 7000), shoved = tok(100, 7000);
+  tok(300, 7000);                                             // a creature two spaces behind
+  const went = await pushAway(shoved, shover, 10);
+  assert(went === 5 && shoved.x === 200, `10 ft push stops after 5 ft at a creature: moved ${went}, now at ${shoved.x}`);
+  const wedged = tok(1000, 7000), wall = tok(1100, 7000), pushing = tok(900, 7000);
+  assert(await pushAway(wedged, pushing, 5) === 0 && wedged.x === 1000, `blocked at once: not pushed (${wedged.x})`);
+  void wall;
+}
+
+console.log('Vanguard Rush and Strike: when Nova follows; Nova\'s emanation and pushes');
+{
+  const { novaFollows, feetBetween } = ctx.MassEffectPowers;
+  assert(novaFollows('rush', 'failure') && novaFollows('rush', 'criticalFailure'), 'Rush: Nova on a failed save');
+  assert(!novaFollows('rush', 'success') && !novaFollows('rush', 'criticalSuccess'), 'Rush: no Nova when the target succeeds');
+  assert(novaFollows('strike', 'criticalSuccess') && novaFollows('strike', 'failure'), 'Strike: Nova whatever the save');
+  assert(!novaFollows(null, 'failure') && !novaFollows(undefined, 'criticalFailure'), 'a plain Charge sets off nothing');
+
+  const grid = { size: 100, distance: 5, measurePath: ([a, b]) => ({ distance: 5 * Math.max(Math.abs(a.x - b.x), Math.abs(a.y - b.y)) / 100 }) };
+  const scene = { grid };
+  const at = (x, y, w = 1) => ({ x, y, width: w, height: w, parent: scene });
+  const me = at(1000, 1000);
+  assert(feetBetween(me, at(1100, 1000)) === 5, 'adjacent: 5 feet');
+  assert(feetBetween(me, at(1100, 1100)) === 5, 'diagonally adjacent: 5 feet');
+  assert(feetBetween(me, at(1200, 1000)) === 10 && feetBetween(me, at(1300, 1000)) === 15, 'two and three spaces: 10 and 15 feet');
+  assert(feetBetween(me, at(1100, 1000, 2)) === 5, 'a Large creature beside it: 5 feet');
+  const stale = at(0, 0);
+  stale._source = { x: 1100, y: 1000 };
+  assert(feetBetween(me, stale) === 5, 'measured from where a token landed, not where it is animating');
+
+  const caster = new Actor('Vanguard', { flags: { novaCharge: 10 } });
+  const t1 = new Actor('T1'), t2 = new Actor('T2');
+  const m1 = await save('me-biotic-nova', 'failure', t1, { caster, origin: 'Item.nova-push1' });
+  const m2 = await save('me-biotic-nova', 'criticalFailure', t2, { caster, origin: 'Item.nova-push2' });
+  assert(m1.includes('Pushed 5 feet') && m2.includes('Pushed 10 feet'), 'Nova pushes 5 feet on a failure, 10 on a critical failure');
+}
+
+console.log('Heavy Impact and Nova Cascade');
+{
+  const heavy = new Actor('Heavy', {});
+  heavy.level = 5;
+  heavy.items = [{ slug: 'me-vanguard-heavy-impact' }];
+  const t1 = new Actor('T1');
+  const msg = await save('me-biotic-charge', 'failure', t1, { caster: heavy, origin: 'Item.heavy' });
+  assert(t1.damage[0] === 32, `level 5 Charge in d8s: 4d8 = 32 (got ${t1.damage[0]})`);
+  assert(t1.conditions.includes('prone') && t1.conditions.includes('off-guard') && msg.includes('Heavy Impact'), `a failed save also leaves it off-guard: ${t1.conditions}`);
+  const t2 = new Actor('T2');
+  await save('me-biotic-charge', 'success', t2, { caster: heavy, origin: 'Item.heavy2' });
+  assert(!t2.conditions.includes('off-guard'), 'a success is not off-guard');
+
+  const b = barrierItem(0, 40);
+  const cascader = new Actor('Cascade', { items: [b], flags: { novaCharge: 10, novaAt: 111 } });
+  cascader.items = [b, { slug: 'me-vanguard-nova-cascade' }];
+  const c1 = new Actor('C1'), c2 = new Actor('C2'), c3 = new Actor('C3');
+  await save('me-biotic-nova', 'criticalFailure', c1, { caster: cascader, origin: 'Item.casc' });
+  assert(b.flags[MOD].barrierCurrent === 20, `a critical failure refills half: 0 -> 20 (got ${b.flags[MOD].barrierCurrent})`);
+  await save('me-biotic-nova', 'criticalFailure', c2, { caster: cascader, origin: 'Item.casc' });
+  assert(b.flags[MOD].barrierCurrent === 20, `a second critical failure from the same Nova adds nothing (got ${b.flags[MOD].barrierCurrent})`);
+  await save('me-biotic-nova', 'failure', c3, { caster: cascader, origin: 'Item.casc' });
+  assert(b.flags[MOD].barrierCurrent === 20, 'a plain failure adds nothing');
+  cascader.flags[MOD].novaAt = 222;                           // the next detonation
+  await save('me-biotic-nova', 'criticalFailure', new Actor('C4'), { caster: cascader, origin: 'Item.casc2' });
+  assert(b.flags[MOD].barrierCurrent === 40, `the next Nova can cascade again (got ${b.flags[MOD].barrierCurrent})`);
 }
 
 console.log('The module scripts load side by side');

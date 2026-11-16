@@ -1,5 +1,5 @@
-2026/11/15-19:58:09.594 a480 Delete type=3 #1
-2026/11/15-19:58:09.599 80b8 Level-0 table #5: started
-2026/11/15-19:58:09.605 80b8 Level-0 table #5: 31608 bytes OK
-2026/11/15-19:58:09.612 80b8 Delete type=0 #3
-2026/11/15-19:58:09.612 80b8 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
+2026/11/15-23:26:33.875 e98 Delete type=3 #1
+2026/11/15-23:26:33.879 5d0 Level-0 table #5: started
+2026/11/15-23:26:33.885 5d0 Level-0 table #5: 31608 bytes OK
+2026/11/15-23:26:33.890 5d0 Delete type=0 #3
+2026/11/15-23:26:33.890 5d0 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)

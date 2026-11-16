@@ -1,0 +1,56 @@
+{
+  "_key": "!items!meVanguardBarSph",
+  "_id": "meVanguardBarSph",
+  "folder": null,
+  "name": "Barrier Siphon",
+  "type": "feat",
+  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-vanguard-barrier-siphon",
+    "description": {
+      "gm": "",
+      "value": "<p>Your biotic field drinks from every blow you land. When your <strong>Biotic Attack</strong> hits, your Biotic Barrier regains <strong>5 HP</strong>, or <strong>10 HP</strong> from 12th level. This happens at most once per round.</p><p><em>Automation: a Biotic Attack hit refills the barrier, once per round of an encounter (outside an encounter, every hit).</em></p><p><em>Classes: Vanguard.</em></p>"
+    },
+    "rules": [],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "vanguard",
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 6
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "class",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

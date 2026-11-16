@@ -1,0 +1,60 @@
+{
+  "_key": "!items!meVanguardHvyImp",
+  "_id": "meVanguardHvyImp",
+  "folder": null,
+  "name": "Heavy Impact",
+  "type": "feat",
+  "img": "icons/magic/earth/strike-fist-stone-light.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-vanguard-heavy-impact",
+    "description": {
+      "gm": "",
+      "value": "<p>You hit like a falling freighter. Biotic Charge's damage dice are <strong>d8s</strong> instead of d6s, and a target that fails its save against your Biotic Charge is also <strong>off-guard</strong> until the end of your next turn.</p><p><em>Automation: the d8s and the off-guard condition are applied with the save; remove off-guard when it ends.</em></p><p><em>Prerequisite: Biotic Charge. Classes: Vanguard.</em></p>"
+    },
+    "rules": [],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "vanguard",
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 6
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Biotic Charge"
+        }
+      ]
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "class",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

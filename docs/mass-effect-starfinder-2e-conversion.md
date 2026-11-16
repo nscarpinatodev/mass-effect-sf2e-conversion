@@ -1365,7 +1365,7 @@ The most powerful biotic class in the galaxy, Adepts use mass effect fields to d
 
 | Level | Class Features |
 |---|---|
-| 1 | Activate Biotic Barrier, Adept Mastery, Biotic Conditioning, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 1 | Activate Biotic Barrier, Adept Mastery, Biotic Attack, Biotic Conditioning, Class Feat, Initial Proficiencies, Ancestry Feat |
 | 2 | Class Feat, Skill Feat |
 | 3 | Fortitude Expertise, General Feat, Skill Increase |
 | 4 | Class Feat, Skill Feat |
@@ -1457,7 +1457,7 @@ The most aggressive class in the galaxy, Vanguards combine biotic power with clo
 
 **Power Access:** Charge, Nova, Biotic Barrier, and the close-range biotic suite from the *ME Biotic Powers* compendium. Vanguards have limited access to long-range biotic control powers (no Singularity, limited Warp). No native tech power access.
 
-**Weapons:** Shotguns (primary), pistols (secondary). Vanguards close the distance with Charge and finish with a shotgun burst.
+**Weapons:** Shotguns (primary), pistols (secondary). Vanguards close the distance with Charge and finish with a shotgun burst. A Strength Vanguard finishes up close instead, with a martial melee weapon or their Biotic Attack.
 
 **Armor:** Heavy armor preferred. Vanguards tank through aggression - Charge restores shield HP, Nova is a last resort. They need the HP to survive the approach.
 
@@ -1468,7 +1468,7 @@ The most aggressive class in the galaxy, Vanguards combine biotic power with clo
 - **Perception:** Trained in Perception
 - **Saving Throws:** Expert in Fortitude; Trained in Reflex; Expert in Will
 - **Skills:** Trained in Athletics; Trained in a number of additional skills equal to 3 plus your Intelligence modifier
-- **Attacks:** Trained in simple weapons; Trained in martial shotguns and pistols; Trained in unarmed attacks
+- **Attacks:** Trained in simple weapons; Trained in martial shotguns, pistols and melee weapons; Trained in unarmed attacks
 - **Defenses:** Trained in light armor, medium armor, heavy armor, and unarmored defense
 - **Class DC:** Trained in Vanguard class DC
 
@@ -1476,7 +1476,7 @@ The most aggressive class in the galaxy, Vanguards combine biotic power with clo
 
 | Level | Class Features |
 |---|---|
-| 1 | Activate Biotic Barrier, Vanguard Mastery, Vanguard Momentum, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 1 | Activate Biotic Barrier, Biotic Attack, Vanguard Mastery, Vanguard Momentum, Class Feat, Initial Proficiencies, Ancestry Feat |
 | 2 | Class Feat, Skill Feat |
 | 3 | Reflex Expertise, General Feat, Skill Increase |
 | 4 | Class Feat, Skill Feat |
@@ -1509,7 +1509,7 @@ The most aggressive class in the galaxy, Vanguards combine biotic power with clo
 
 #### Vanguard Mastery — Level 1
 
-Combat biotic training sharpens your body and barrier into a unified weapon. All biotic powers you use have their action cost **reduced by 1** (minimum 1 action). After using Biotic Charge, your Biotic Barrier regains **5 HP**.
+Combat biotic training sharpens your body and barrier into a unified weapon. All biotic powers you use have their action cost **reduced by 1** (minimum 1 action). Vanguard Rush and Vanguard Strike, which combine Biotic Charge and Nova, cost **2 actions** instead: one less than the two powers' 3. After using Biotic Charge, your Biotic Barrier regains **5 HP**.
 *Classes: Vanguard.*
 
 ---
@@ -1520,7 +1520,7 @@ Combat biotic training sharpens your body and barrier into a unified weapon. All
 #### Improved Vanguard Mastery — Level 7
 *Prerequisite: Vanguard Mastery*
 
-Your combat biotic synergy reaches its peak efficiency. All biotic powers have their action cost **reduced by 1** (minimum 1 action) and Biotic Charge restores **5 HP** to your Biotic Barrier. After using Biotic Charge or Nova, your next Strike this turn deals **+1d6 void** damage.
+Your combat biotic synergy reaches its peak efficiency. All biotic powers have their action cost **reduced by 1** (minimum 1 action) and Biotic Charge restores **5 HP** to your Biotic Barrier. Vanguard Rush and Vanguard Strike, which combine Biotic Charge and Nova, cost **2 actions** instead: one less than the two powers' 3. After using Biotic Charge or Nova, your next Strike this turn deals **+1d6 void** damage.
 *Prerequisite: Vanguard Mastery.*
 
 ---
@@ -1531,7 +1531,7 @@ Your combat biotic synergy reaches its peak efficiency. All biotic powers have t
 #### Superior Vanguard Mastery — Level 13
 *Prerequisite: Improved Vanguard Mastery*
 
-Your barrier and body move as one unstoppable force. All biotic powers have their action cost **reduced by 1** (minimum 1 action), Biotic Charge restores **5 HP** to your Biotic Barrier, and after using Biotic Charge or Nova your next Strike deals **+1d6 void** damage. While your Biotic Barrier is at full HP, you gain a **+1 status bonus** to attack rolls and damage.
+Your barrier and body move as one unstoppable force. All biotic powers have their action cost **reduced by 1** (minimum 1 action), Biotic Charge restores **5 HP** to your Biotic Barrier, and after using Biotic Charge or Nova your next Strike deals **+1d6 void** damage. Vanguard Rush and Vanguard Strike, which combine Biotic Charge and Nova, cost **2 actions** instead: one less than the two powers' 3. While your Biotic Barrier is at full HP, you gain a **+1 status bonus** to attack rolls and damage.
 *Prerequisite: Improved Vanguard Mastery.*
 
 ---
@@ -1546,12 +1546,14 @@ Your barrier and body move as one unstoppable force. All biotic powers have thei
 | Level | Feats |
 |---|---|
 | 1 | Biotic Charge, Biotic Warrior, Cryo Rounds, Incendiary Rounds, Nova, Pull, Shockwave |
-| 4 | Vanguard Rush |
+| 4 | Improved Charge, Vanguard Rush |
+| 6 | Barrier Siphon, Heavy Impact |
 | 8 | Charge Upgrade, Nova Upgrade |
 | 10 | Death's Embrace |
 | 12 | Unstoppable Charge |
 | 14 | Vanguard Strike |
 | 16 | Rampage |
+| 18 | Chain Charge, Nova Cascade |
 | 20 | Apex Vanguard |
 
 ---
@@ -2422,20 +2424,20 @@ Whatever the target rolls, your Biotic Barrier recharges **half** its maximum HP
 **Success** Half damage.
 **Failure** Full damage, and the target is knocked **prone**.
 **Critical Failure** Double damage, knocked **prone**, and pushed **5 feet** away from you. Your Biotic Barrier recharges to full.
-**Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+**Cooldown:** 2 rounds (1 round with Improved Charge).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
-*Target one creature before you use Charge and it runs itself: you move to the open space beside the target, the target rolls its Reflex save, a critical failure pushes it 5 feet, and the cooldown starts (see the Automate Biotic Charge setting; a GM must be connected).*
+*Target one creature before you use Charge and it runs itself: you move to the open space beside the target, the target rolls its Reflex save, a critical failure pushes it 5 feet, and the cooldown starts (see the Automate Vanguard Powers setting; a GM must be connected).*
 
 ---
 
 #### Biotic Warrior — Level 1
-*Prerequisite: Biotic Charge*
 
-You have learned to channel your biotic field directly through your fists, making you deadly even when unarmed.
-Your unarmed Strikes deal **1d8 bludgeoning + 1d6 void** damage and gain the *agile* and *finesse* traits. On a critical hit with an unarmed Strike, the target is pushed 5 feet and knocked Prone.
-*Prerequisite: Biotic Charge. Classes: Vanguard.*
+You have learned to channel your biotic field straight through your fists.
+Your **Biotic Attack**'s damage die is a **d8** instead of a d6. On a **critical hit** with it, the target is knocked **prone** and pushed **5 feet** away from you.
+*Automation: the d8 is part of the Strike; a critical hit knocks the target prone and pushes it (with a GM connected).*
+*Classes: Vanguard.*
 
 ---
 
@@ -2468,10 +2470,11 @@ You expend your entire Biotic Barrier in a 10-foot emanation. Nova deals **2d6 f
 **Failure** Full damage and pushed **5 feet** away from you.
 **Critical Failure** Double damage, pushed **10 feet** away, and knocked **prone**.
 Your Biotic Barrier is immediately depleted after using this power. Using Nova records the barrier's HP to set this detonation's dice, then empties the barrier.
-**Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+**Cooldown:** 5 - your Charisma modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+*With the Automate Vanguard Powers setting, using Nova runs itself: the barrier is spent, each creature in the area that is not on your side rolls its Fortitude save, pushes and Nova Upgrade's effects apply, and the cooldown starts. A GM must be connected.*
 
 ---
 
@@ -2505,6 +2508,15 @@ All creatures in a 60-foot line must attempt a Reflex save against your class DC
 
 ---
 
+#### Improved Charge — Level 4
+*Prerequisite: Biotic Charge*
+
+You recover from a Biotic Charge almost before you land. Biotic Charge's cooldown is **1 round** instead of 2, so you can charge on every turn.
+*Automation: the Biotic Charge cooldown that Automate Vanguard Powers starts lasts 1 round.*
+*Prerequisite: Biotic Charge. Classes: Vanguard.*
+
+---
+
 #### Vanguard Rush ◆◆ — Level 4
 *Prerequisite: Biotic Charge, Nova*
 
@@ -2512,7 +2524,25 @@ You combine your Biotic Charge and Nova into a single explosive sequence, crashi
 **Requirements** You have an active Biotic Barrier with at least 1 HP remaining.
 Use **Biotic Charge**. If the target fails their save (Failure or Critical Failure result), immediately use **Nova** as a free action upon landing. The Nova uses your Biotic Barrier's current HP at the moment of detonation, including any HP recharged by the Biotic Charge. If the target critically succeeds on their save against Biotic Charge, Nova is not triggered.
 Using Vanguard Rush places both Biotic Charge and Nova on their individual cooldowns.
-**Cooldown:** 7 - your Charisma modifier rounds (minimum 1).
+**Cooldown:** 5 - your Charisma modifier rounds (minimum 1). Biotic Charge's own cooldown is 2 rounds (1 with Improved Charge).
+*Target one creature before you use Vanguard Rush and it runs itself (Automate Vanguard Powers setting): you charge to the target, it rolls its Reflex save, and on a failure Nova detonates around you, rolling each nearby foe's Fortitude save. Biotic Charge, Nova and Vanguard Rush all start their cooldowns. A GM must be connected.*
+
+---
+
+#### Barrier Siphon — Level 6
+
+Your biotic field drinks from every blow you land. When your **Biotic Attack** hits, your Biotic Barrier regains **5 HP**, or **10 HP** from 12th level. This happens at most once per round.
+*Automation: a Biotic Attack hit refills the barrier, once per round of an encounter (outside an encounter, every hit).*
+*Classes: Vanguard.*
+
+---
+
+#### Heavy Impact — Level 6
+*Prerequisite: Biotic Charge*
+
+You hit like a falling freighter. Biotic Charge's damage dice are **d8s** instead of d6s, and a target that fails its save against your Biotic Charge is also **off-guard** until the end of your next turn.
+*Automation: the d8s and the off-guard condition are applied with the save; remove off-guard when it ends.*
+*Prerequisite: Biotic Charge. Classes: Vanguard.*
 
 ---
 
@@ -2565,8 +2595,9 @@ You have mastered the art of the biotic blitz. Biotic Charge and Nova fuse into 
 **Requirements** None - your Biotic Barrier automatically recharges to full before the sequence begins.
 Use **Biotic Charge**. Immediately upon landing, use **Nova** as a free action. Nova fires regardless of whether the Biotic Charge target succeeded their save - even a Critical Success does not prevent the detonation. Nova uses the upgraded statistics from **Nova Upgrade** (20-foot emanation, +2d6 damage, Stunned 1 on Failure, Stunned 3 on Critical Failure). Because the barrier was just recharged to full, Nova detonates at **full strength**.
 Vanguard Strike places Biotic Charge, Nova, and Vanguard Rush on their individual cooldowns simultaneously.
-**Cooldown:** 7 - your Charisma modifier rounds (minimum 1), shared across Biotic Charge, Nova, and Vanguard Rush.
+**Cooldown:** Biotic Charge's own (2 rounds, 1 with Improved Charge), and 5 - your Charisma modifier rounds (minimum 1) for Nova and Vanguard Rush.
 *Prerequisites: Vanguard Rush, Nova Upgrade. Classes: Vanguard.*
+*Target one creature before you use Vanguard Strike and it runs itself (Automate Vanguard Powers setting): your barrier fills, you charge to the target, it rolls its Reflex save, and Nova detonates around you whatever it rolled, rolling each nearby foe's Fortitude save. Biotic Charge, Nova and Vanguard Rush all start their cooldowns. A GM must be connected.*
 
 ---
 
@@ -2576,6 +2607,28 @@ Vanguard Strike places Biotic Charge, Nova, and Vanguard Rush on their individua
 Your Charge carries such momentum that you naturally transition into a devastating follow-up strike.
 Immediately after a successful Charge, you may make **one free shotgun Strike** against the same target as a free action. This Strike doesn't count toward your multiple attack penalty for the round.
 *Prerequisite: Unstoppable Charge. Classes: Vanguard.*
+
+---
+
+#### Chain Charge ◇ — Level 18
+*Prerequisite: Biotic Charge*
+
+**Frequency** once per round
+**Trigger** The target of your Biotic Charge critically fails its save or is reduced to 0 HP.
+
+---
+You ride the momentum into the next foe. You **Biotic Charge** another enemy within **30 feet** without spending actions. This Charge doesn't start Biotic Charge's cooldown and can be used while it is cooling down.
+*Automation: when the trigger happens, you are told Chain Charge is ready. Target the next enemy and use Chain Charge: you charge to it and it rolls its Reflex save, with no cooldown.*
+*Prerequisite: Biotic Charge. Classes: Vanguard.*
+
+---
+
+#### Nova Cascade — Level 18
+*Prerequisite: Nova*
+
+The detonation feeds back into you. When at least one creature **critically fails** its save against your Nova, your Biotic Barrier regains **half its maximum HP** right after the detonation. This happens once per Nova, however many creatures critically fail.
+*Automation: applied with the first critical failure against each Nova.*
+*Prerequisite: Nova. Classes: Vanguard.*
 
 ---
 

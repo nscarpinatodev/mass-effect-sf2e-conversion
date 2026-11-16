@@ -1,0 +1,90 @@
+{
+  "_key": "!items!meBioticAttack00",
+  "_id": "meBioticAttack00",
+  "folder": null,
+  "name": "Biotic Attack",
+  "type": "feat",
+  "img": "icons/magic/lightning/fist-unarmed-strike-blue.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-biotic-attack",
+    "description": {
+      "gm": "",
+      "value": "<p>You wrap your fist in a mass effect field and drive it into the target: the biotic punch every Vanguard and Adept learns before anything else.</p><p>You gain a <strong>Biotic Attack</strong> unarmed Strike in the brawling group. It deals <strong>1d6 bludgeoning</strong> damage and has the finesse, shove and unarmed traits.</p><p>Nothing you carry can improve it, so it grows as a striking upgrade would: <strong>2d6</strong> at 4th level, <strong>3d6</strong> at 12th, and <strong>4d6</strong> at 19th. It can't benefit from striking from gear, such as handwraps.</p><p><em>Classes: Adept, Vanguard.</em></p>"
+    },
+    "rules": [
+      {
+        "key": "Strike",
+        "category": "unarmed",
+        "slug": "biotic-attack",
+        "label": "Biotic Attack",
+        "img": "icons/magic/lightning/fist-unarmed-strike-blue.webp",
+        "group": "brawling",
+        "traits": [
+          "unarmed",
+          "finesse",
+          "shove"
+        ],
+        "damage": {
+          "base": {
+            "damageType": "bludgeoning",
+            "dice": {
+              "field": "actor|level",
+              "brackets": [
+                { "end": 3, "value": 1 },
+                { "start": 4, "end": 11, "value": 2 },
+                { "start": 12, "end": 18, "value": 3 },
+                { "start": 19, "value": 4 }
+              ]
+            },
+            "die": "d6"
+          }
+        }
+      }
+    ],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "adept",
+        "vanguard"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

@@ -254,6 +254,11 @@ const CLASSES = [
       ['me-class-progressions', 'vanguard-rampage.json'],
       ['me-class-progressions', 'vanguard-deaths-embrace.json'],
       ['me-class-progressions', 'vanguard-apex-vanguard.json'],
+      ['me-class-progressions', 'vanguard-improved-charge.json'],
+      ['me-class-progressions', 'vanguard-barrier-siphon.json'],
+      ['me-class-progressions', 'vanguard-heavy-impact.json'],
+      ['me-class-progressions', 'vanguard-chain-charge.json'],
+      ['me-class-progressions', 'vanguard-nova-cascade.json'],
     ],
   },
   {

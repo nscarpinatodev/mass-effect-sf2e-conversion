@@ -133,9 +133,12 @@ const POWERS = {
   // ── Biotic powers ──
   'me-biotic-charge': {
     name: 'Biotic Charge', save: 'reflex', trait: 'biotic',
-    // Basic Reflex save: 2d6 at 1st level, +1d6 at 3rd and every 2 levels after.
-    // The 50% barrier refill happens on use (see the Charge hook below).
-    damage: ({ caster }) => `${1 + Math.ceil((caster?.level ?? 1) / 2)}d6[bludgeoning]`,
+    // Basic Reflex save: 2d6 at 1st level, +1d6 at 3rd and every 2 levels after; d8s with
+    // Heavy Impact. The 50% barrier refill happens on use (see chargeUsed).
+    damage: ({ caster }) => {
+      const die = caster?.items?.some((i) => i.slug === 'me-vanguard-heavy-impact') ? 'd8' : 'd6';
+      return `${1 + Math.ceil((caster?.level ?? 1) / 2)}${die}[bludgeoning]`;
+    },
     degrees: {
       success:         { scale: 0.5 },
       failure:         { conditions: ['prone'] },
@@ -201,8 +204,8 @@ const POWERS = {
     },
     degrees: {
       success:         { scale: 0.5 },
-      failure:         { note: 'Pushed 5 feet away from the Vanguard.' },
-      criticalFailure: { scale: 2, conditions: ['prone'], note: 'Pushed 10 feet away from the Vanguard.' },
+      failure:         { push: 5 },
+      criticalFailure: { scale: 2, conditions: ['prone'], push: 10 },
     },
   },
   'me-biotic-pull': {
@@ -419,7 +422,13 @@ for (const [key, power] of Object.entries(POWERS)) {
 }
 
 // For macros and debugging: the full registry, PC and NPC entries alike.
-globalThis.MassEffectPowers = { registry: POWERS, chargeLanding: (...a) => chargeLanding(...a), pushAway: (...a) => pushAway(...a) };
+globalThis.MassEffectPowers = {
+  registry: POWERS,
+  chargeLanding: (...a) => chargeLanding(...a),
+  pushAway: (...a) => pushAway(...a),
+  feetBetween: (...a) => feetBetween(...a),
+  novaFollows: (...a) => novaFollows(...a),
+};
 
 // ── SETTINGS ────────────────────────────────────────────────────────────────
 Hooks.once('init', () => {
@@ -429,8 +438,8 @@ Hooks.once('init', () => {
     scope: 'world', config: true, type: Boolean, default: true,
   });
   game.settings.register(MODULE_ID, 'automateCharge', {
-    name: 'Automate Biotic Charge',
-    hint: 'When Biotic Charge is posted with one creature targeted, move the Vanguard next to it, roll its Reflex save, and start the cooldown. Needs a GM connected.',
+    name: 'Automate Vanguard Powers',
+    hint: 'Biotic Charge, Vanguard Rush and Vanguard Strike posted with one creature targeted move the Vanguard next to it and roll its Reflex save; Nova (alone or after Rush or Strike) rolls the Fortitude save of each creature in its area that is not on the Vanguard\'s side. Cooldowns are tracked. Needs a GM connected.',
     scope: 'world', config: true, type: Boolean, default: true,
   });
 });
@@ -473,10 +482,25 @@ Hooks.on('createChatMessage', async (message) => {
   if (slug === 'me-biotic-charge' && ctx.outcome === 'success' && casterHas('me-vanguard-unstoppable-charge')) {
     addCondition('prone');                                                  // Unstoppable Charge
   }
+  const failed = ctx.outcome === 'failure' || ctx.outcome === 'criticalFailure';
+  if (slug === 'me-biotic-charge' && failed && casterHas('me-vanguard-heavy-impact')) {
+    addCondition('off-guard');                                              // Heavy Impact
+    degree.note = [degree.note, 'Off-guard until the end of the Vanguard\'s next turn (Heavy Impact).'].filter(Boolean).join(' ');
+  }
+
+  // Vanguard Rush (on a failed save) and Vanguard Strike (whatever the save) end in Nova,
+  // once this save's own effects, such as a critical failure's full barrier, are in place
+  const chain = (ctx.options ?? []).find((o) => o.startsWith(CHAIN_OPT))?.slice(CHAIN_OPT.length);
+  const followUp = async () => {
+    if (!chain || !caster || !novaFollows(chain, ctx.outcome)) return;
+    const from = caster.getActiveTokens(true, true).find((t) => t.parent === tokenDoc?.parent);
+    if (from) await novaBurst(caster, from);
+    else postResult(caster, 'Nova', 'Not automated', [`${caster.name} has no token here: use Nova from the sheet.`], { owners: true });
+  };
 
   if (!Object.keys(degree).length) {
     postResult(actor, power.name, ctx.outcome, ['No effect.']);
-    return;
+    return followUp();
   }
 
   const log = [];
@@ -565,9 +589,11 @@ Hooks.on('createChatMessage', async (message) => {
   // ── Forced movement ──
   if (degree.push) {
     const from = caster?.getActiveTokens(true, true).find((t) => t.parent === tokenDoc?.parent);
-    log.push(await pushAway(tokenDoc, from, degree.push)
-      ? `Pushed ${degree.push} feet`
-      : `Pushed ${degree.push} feet away from ${caster?.name ?? 'the caster'} (move by hand)`);
+    const moved = await pushAway(tokenDoc, from, degree.push);
+    if (moved === null) log.push(`Pushed ${degree.push} feet away from ${caster?.name ?? 'the caster'} (move by hand)`);
+    else if (moved === degree.push) log.push(`Pushed ${moved} feet`);
+    else if (moved > 0) log.push(`Pushed ${moved} feet (of ${degree.push}): another creature is in the way`);
+    else log.push(`Not pushed: another creature holds the space behind it`);
   }
 
   // ── Healing for the caster ──
@@ -584,9 +610,32 @@ Hooks.on('createChatMessage', async (message) => {
     }
   }
 
+  // ── Vanguard follow-ups ──
+  // Nova Cascade: a critical failure against Nova refills half the barrier, once per detonation
+  if (slug === 'me-biotic-nova' && ctx.outcome === 'criticalFailure' && casterHas('me-vanguard-nova-cascade')) {
+    const detonation = caster.getFlag(MODULE_ID, 'novaAt');
+    if (detonation && caster.getFlag(MODULE_ID, 'cascadeFor') !== detonation) {
+      await caster.setFlag(MODULE_ID, 'cascadeFor', detonation);
+      log.push(`Nova Cascade: ${await refillCasterBarrier(caster, 0.5)}`);
+    }
+  }
   if (degree.note) log.push(`<em>${degree.note}</em>`);
   postResult(actor, power.name, ctx.outcome, log);
+
+  // Chain Charge: a critical failure, or the target dropping, lets the Vanguard charge on
+  if (slug === 'me-biotic-charge' && casterHas('me-vanguard-chain-charge')
+      && (ctx.outcome === 'criticalFailure' || (actor.system.attributes?.hp?.value ?? 1) <= 0)) {
+    postResult(caster, 'Chain Charge', 'Ready', [`${actor.name} ${ctx.outcome === 'criticalFailure' ? 'critically failed' : 'is down'}: target another enemy within 30 feet and use Chain Charge (free action, once per round).`], { owners: true });
+  }
+  await followUp();
 });
+
+/** Whether a Charge save sets off Nova: Rush on a failure, Strike whatever the result. */
+function novaFollows(chain, outcome) {
+  if (chain === 'strike') return true;
+  if (chain === 'rush') return outcome === 'failure' || outcome === 'criticalFailure';
+  return false;
+}
 
 // ── CLASS MASTERIES ─────────────────────────────────────────────────────────
 // The masteries' rules write their effects as actor flags (ActiveEffectLike,
@@ -599,6 +648,7 @@ Hooks.on('createChatMessage', async (message) => {
 // step is wrapped instead.
 const POWER_TRAITS = ['biotic', 'tech'];
 const MOMENTUM_SLUG = 'me-effect-vanguard-momentum';
+const COMBO_SLUGS = ['me-vanguard-rush', 'me-vanguard-vanguard-strike'];
 
 Hooks.once('init', () => {
   const Character = CONFIG.PF2E?.Actor?.documentClasses?.character;
@@ -618,6 +668,9 @@ Hooks.once('init', () => {
 function actionCut(actor, item) {
   const efficiency = actor.flags?.[MODULE_ID]?.powerEfficiency;
   if (!efficiency || item.type !== 'feat' || item.system.actionType?.value !== 'action') return 0;
+  // Vanguard Rush and Vanguard Strike already combine Charge and Nova for one action less
+  // than the two (2 instead of 3); the masteries' cut is that combination, not another
+  if (COMBO_SLUGS.includes(item.slug)) return 0;
   const traits = item.system.traits?.value ?? [];
   return Math.max(0, ...POWER_TRAITS.filter((t) => traits.includes(t)).map((t) => Number(efficiency[t]) || 0));
 }
@@ -681,17 +734,26 @@ Hooks.on('createChatMessage', async (message) => {
   const item = await fromUuid(origin.uuid);
   const actor = item?.actor;
   if (!actor) return;
+  const slug = baseSlug(item);                              // NPC versions trigger the same effects
+
+  if (slug === 'me-biotic-charge') {
+    // A Charge posted during its cooldown does nothing (the Charge automation says so)
+    if (cooldownLeft(actor, CHARGE_COOLDOWN)) return;
+    await chargeUsed(actor);
+  }
+  // With the automation on, the GM's client runs Nova from start to finish (see runNova)
+  if (slug === 'me-biotic-nova' && !vanguardAutomation() && !cooldownLeft(actor, NOVA_COOLDOWN)) await novaUsed(actor);
+});
+
+/**
+ * Charge's refill on use, whatever the target rolls: half the barrier's maximum, or more
+ * from Vanguard Mastery (flat) or Apex Vanguard / the barrier Charge Upgrade (full). A
+ * critical failure on the save fills it (see POWERS). Also gives Vanguard Momentum.
+ */
+async function chargeUsed(actor) {
   const flags = actor.flags?.[MODULE_ID] ?? {};
-  const slug = item.slug?.replace(/^me-npc-/, 'me-');      // NPC versions trigger the same effects
-  // A Charge posted during its cooldown does nothing (the Charge automation says so)
-  if (slug === 'me-biotic-charge' && actor.itemTypes.effect.some((e) => e.slug === CHARGE_COOLDOWN)) return;
-
   const barrier = getBarrier(actor);
-
-  // Charge refills the barrier on use, whatever the target rolls: half its maximum,
-  // or more from Vanguard Mastery (flat) or Apex Vanguard / the barrier Charge
-  // Upgrade (full). A critical failure on the save fills it (see POWERS).
-  if (slug === 'me-biotic-charge' && barrier) {
+  if (barrier) {
     const max = barrier.flags[MODULE_ID].barrierMax;
     const now = barrier.flags[MODULE_ID].barrierCurrent ?? 0;
     const has = (s) => actor.items.some((i) => i.slug === s);
@@ -706,121 +768,310 @@ Hooks.on('createChatMessage', async (message) => {
       postResult(actor, 'Biotic Charge', 'success', [`Biotic Barrier ${now} → ${next}`]);
     }
   }
+  await grantMomentum(actor);
+}
 
-  // Nova spends the whole barrier; its HP sets the dice every target saves against.
-  if (slug === 'me-biotic-nova') {
-    const now = barrier?.flags[MODULE_ID].barrierCurrent ?? 0;
-    await actor.setFlag(MODULE_ID, 'novaCharge', now);
-    if (now > 0) await setBarrier(barrier, 0);
-    postResult(actor, 'Nova', 'success', [now > 0
-      ? `Detonates ${now} barrier HP: ${novaDice(now)}d6 force${actor.items.some((i) => i.slug === 'me-upgrade-nova') ? ' + 2d6 (Nova Upgrade)' : ''}`
-      : 'No barrier HP to detonate (Nova needs an active Biotic Barrier)']);
-  }
+/** Nova spends the whole barrier; its HP sets the dice every target saves against. Returns that HP. */
+async function novaUsed(actor) {
+  const barrier = getBarrier(actor);
+  const now = barrier?.flags[MODULE_ID].barrierCurrent ?? 0;
+  // novaAt names this detonation, so Nova Cascade refills once however many creatures crit-fail
+  await actor.update({ [`flags.${MODULE_ID}.novaCharge`]: now, [`flags.${MODULE_ID}.novaAt`]: Date.now() });
+  if (now > 0) await setBarrier(barrier, 0);
+  postResult(actor, 'Nova', 'success', [now > 0
+    ? `Detonates ${now} barrier HP: ${novaDice(now)}d6 force${actor.items.some((i) => i.slug === 'me-upgrade-nova') ? ' + 2d6 (Nova Upgrade)' : ''}`
+    : 'No barrier HP to detonate (Nova needs an active Biotic Barrier)']);
+  await grantMomentum(actor);
+  return now;
+}
 
-  if ((slug === 'me-biotic-charge' || slug === 'me-biotic-nova') && flags.momentumStrike
-      && !actor.itemTypes.effect.some((e) => e.slug === MOMENTUM_SLUG)) {
-    await actor.createEmbeddedDocuments('Item', [{
-      name: 'Vanguard Momentum',
-      type: 'effect',
-      img: 'icons/magic/movement/trail-streak-impact-blue.webp',
-      system: {
-        slug: MOMENTUM_SLUG,
-        description: { value: '<p>Your next Strike this turn deals an extra <strong>1d6 void</strong> damage (Improved Vanguard Mastery). Remove this effect after that Strike.</p>' },
-        duration: { value: 0, unit: 'rounds', expiry: 'turn-end', sustained: false },
-        rules: [],
-      },
-    }]);
-  }
-});
+/** Improved Vanguard Mastery: after Charge or Nova, the next Strike this turn deals +1d6 void. */
+async function grantMomentum(actor) {
+  if (!actor.flags?.[MODULE_ID]?.momentumStrike || actor.itemTypes.effect.some((e) => e.slug === MOMENTUM_SLUG)) return;
+  await actor.createEmbeddedDocuments('Item', [{
+    name: 'Vanguard Momentum',
+    type: 'effect',
+    img: 'icons/magic/movement/trail-streak-impact-blue.webp',
+    system: {
+      slug: MOMENTUM_SLUG,
+      description: { value: '<p>Your next Strike this turn deals an extra <strong>1d6 void</strong> damage (Improved Vanguard Mastery). Remove this effect after that Strike.</p>' },
+      duration: { value: 0, unit: 'rounds', expiry: 'turn-end', sustained: false },
+      rules: [],
+    },
+  }]);
+}
 
-// ── ONE-CLICK BIOTIC CHARGE ─────────────────────────────────────────────────
-// Posting Biotic Charge with one creature targeted: the poster's client notes the
-// target on the card, then the active GM's client (which can move any token and
-// roll any save) checks the cooldown and range, moves the Vanguard next to the
-// target, starts the cooldown, and rolls the target's Reflex save. That save then
-// goes through the save-result hook above like any other.
+// ── ONE-CLICK VANGUARD POWERS ───────────────────────────────────────────────
+// Posting Biotic Charge, Vanguard Rush or Vanguard Strike with one creature targeted:
+// the poster's client notes the target on the card, then the active GM's client
+// (which can move any token and roll any save) checks the cooldowns and range,
+// moves the Vanguard next to the target, starts the cooldowns, and rolls the
+// target's Reflex save. That save goes through the save-result hook above like any
+// other, which then sets off Nova for Rush (on a failure) and Strike (always).
+// Nova on its own needs no target: it detonates around the Vanguard. Every Nova
+// rolls the Fortitude save of each creature in its area not on the Vanguard's side.
 const CHARGE_COOLDOWN = 'me-effect-charge-cooldown';
-const isCharge = (item) => item?.slug?.replace(/^me-npc-/, 'me-') === 'me-biotic-charge';
+const NOVA_COOLDOWN = 'me-effect-nova-cooldown';
+const RUSH_COOLDOWN = 'me-effect-rush-cooldown';
+const COOLDOWN_NAMES = { [CHARGE_COOLDOWN]: 'Biotic Charge', [NOVA_COOLDOWN]: 'Nova', [RUSH_COOLDOWN]: 'Vanguard Rush' };
+// what a Vanguard card sets off: Rush and Strike end in Nova; Chain Charge is a free Charge
+const CHAINS = { 'me-vanguard-rush': 'rush', 'me-vanguard-vanguard-strike': 'strike', 'me-vanguard-chain-charge': 'free' };
+const CHAIN_OPT = 'me-chain:';
+const baseSlug = (item) => item?.slug?.replace(/^me-npc-/, 'me-');
+const vanguardAutomation = () => !!game.settings.get(MODULE_ID, 'automateCharge') && !!game.users?.activeGM;
+
+/** Whole rounds left on a cooldown effect, or 0 when there is none. */
+function cooldownLeft(actor, slug) {
+  const effect = actor.itemTypes?.effect?.find((e) => e.slug === slug);
+  if (!effect) return 0;
+  return Math.max(1, Math.ceil((effect.remainingDuration?.remaining ?? 0) / (CONFIG.time?.roundTime || 6)));
+}
+
+/**
+ * How long each Vanguard cooldown lasts: Biotic Charge 2 rounds (1 with Improved Charge),
+ * Nova and Vanguard Rush 5 - Charisma modifier rounds (minimum 1).
+ */
+function cooldownRounds(actor, slug) {
+  if (slug === CHARGE_COOLDOWN) return actor.items.some((i) => i.slug === 'me-vanguard-improved-charge') ? 1 : 2;
+  return Math.max(1, 5 - (actor.system.abilities?.cha?.mod ?? 0));
+}
+
+/** Start one of the Vanguard cooldowns. Returns its rounds. */
+async function startCooldown(actor, slug, img) {
+  const rounds = cooldownRounds(actor, slug);
+  const name = COOLDOWN_NAMES[slug];
+  const rule = slug === CHARGE_COOLDOWN ? '2 rounds, 1 with Improved Charge' : '5 − Charisma modifier, minimum 1';
+  await actor.createEmbeddedDocuments('Item', [{
+    name: `${name} Cooldown`,
+    type: 'effect',
+    img,
+    system: {
+      slug,
+      description: { value: `<p>${name} can be used again when this ends: ${rounds} round${rounds === 1 ? '' : 's'} (${rule}).</p>` },
+      duration: { value: rounds, unit: 'rounds', expiry: 'turn-start', sustained: false },
+      rules: [],
+    },
+  }]);
+  return rounds;
+}
 
 Hooks.on('preCreateChatMessage', (message) => {
   if (!game.settings.get(MODULE_ID, 'automateCharge')) return;
   const sys = sysFlags(message);
   if (sys?.context || !['feat', 'action'].includes(sys?.origin?.type) || !sys.origin.uuid) return;
-  if (!isCharge(fromUuidSync(sys.origin.uuid))) return;
-  const targets = [...game.user.targets].map((t) => t.document.uuid);
-  message.updateSource({ [`flags.${MODULE_ID}.charge`]: { targets } });
+  const slug = baseSlug(fromUuidSync(sys.origin.uuid));
+  if (slug === 'me-biotic-charge' || CHAINS[slug]) {
+    const targets = [...game.user.targets].map((t) => t.document.uuid);
+    message.updateSource({ [`flags.${MODULE_ID}.charge`]: { targets, chain: CHAINS[slug] ?? null } });
+  } else if (slug === 'me-biotic-nova') {
+    message.updateSource({ [`flags.${MODULE_ID}.nova`]: true });
+  }
 });
 
 Hooks.on('createChatMessage', async (message) => {
-  const charge = message.flags?.[MODULE_ID]?.charge;
-  if (!charge || !game.users.activeGM?.isSelf) return;
+  const own = message.flags?.[MODULE_ID];
+  if (!(own?.charge || own?.nova) || !game.users.activeGM?.isSelf) return;
   const item = await fromUuid(sysFlags(message)?.origin?.uuid).catch(() => null);
   if (!item?.actor) return;
   try {
-    await runCharge(message, item, charge.targets ?? []);
+    if (own.nova) await runNova(message, item);
+    else await runCharge(message, item, own.charge.targets ?? [], own.charge.chain ?? null);
   } catch (err) {
-    console.warn('ME Powers | Biotic Charge automation failed', err);
-    postResult(item.actor, 'Biotic Charge', 'Not automated', ['Something went wrong; resolve this Charge by hand.'], { owners: true });
+    console.warn(`ME Powers | ${item.name} automation failed`, err);
+    postResult(item.actor, item.name, 'Not automated', [`Something went wrong; resolve this ${item.name} by hand.`], { owners: true });
   }
 });
 
-async function runCharge(message, item, targetUuids) {
-  const actor = item.actor;
-  const tell = (lines) => postResult(actor, 'Biotic Charge', 'Not automated', lines, { owners: true });
+/** The token that posted the card, or the actor's token on the given scene (or the current one). */
+function speakerToken(message, actor, scene) {
+  const scn = scene ?? game.scenes.get(message.speaker?.scene) ?? canvas?.scene;
+  const posted = scn?.tokens.get(message.speaker?.token);
+  return posted?.actor === actor ? posted : actor.getActiveTokens(true, true).find((t) => !scn || t.parent === scn) ?? null;
+}
 
-  const cooldown = actor.itemTypes.effect.find((e) => e.slug === CHARGE_COOLDOWN);
-  if (cooldown) {
-    const left = Math.max(1, Math.ceil((cooldown.remainingDuration?.remaining ?? 0) / CONFIG.time.roundTime));
-    return tell([`Biotic Charge is on cooldown (${left} round${left === 1 ? '' : 's'} left). Nothing moved and no save was rolled.`]);
+async function runCharge(message, item, targetUuids, chain) {
+  const actor = item.actor;
+  const name = chain ? item.name : 'Biotic Charge';
+  const tell = (lines) => postResult(actor, name, 'Not automated', lines, { owners: true });
+
+  // Rush and Strike use Charge and Nova, so all three cooldowns stand in their way;
+  // Chain Charge is a Charge outside the cooldowns
+  const combo = chain === 'rush' || chain === 'strike';
+  const blocking = chain === 'free' ? [] : combo ? [CHARGE_COOLDOWN, NOVA_COOLDOWN, RUSH_COOLDOWN] : [CHARGE_COOLDOWN];
+  for (const slug of blocking) {
+    const left = cooldownLeft(actor, slug);
+    if (left) return tell([`${COOLDOWN_NAMES[slug]} is on cooldown (${left} round${left === 1 ? '' : 's'} left). Nothing moved and no save was rolled.`]);
   }
+  const barrier = getBarrier(actor);
+  if (chain === 'rush' && !((barrier?.flags[MODULE_ID].barrierCurrent ?? 0) >= 1)) return tell(['Vanguard Rush needs a Biotic Barrier with at least 1 HP.']);
+  if (chain === 'strike' && !barrier) return tell(['Vanguard Strike needs an active Biotic Barrier to recharge.']);
   if (targetUuids.length !== 1) {
-    return tell([targetUuids.length ? 'Target only one creature to automate Charge.' : 'Target a creature before using Charge to automate it.']);
+    return tell([targetUuids.length ? `Target only one creature to automate ${name}.` : `Target a creature before using ${name} to automate it.`]);
   }
   const target = await fromUuid(targetUuids[0]).catch(() => null);
   if (!target?.actor) return tell(['The targeted token is gone.']);
 
   const scene = target.parent;
-  const speakerToken = scene.tokens.get(message.speaker?.token);
-  const source = speakerToken?.actor === actor ? speakerToken : actor.getActiveTokens(true, true).find((t) => t.parent === scene);
+  const source = speakerToken(message, actor, scene);
   if (!source) return tell([`${actor.name} has no token on ${scene.name}.`]);
 
-  const range = 60 + (actor.flags?.[MODULE_ID]?.chargeUpgrade === 'damage' ? 30 : 0);
+  const range = chain === 'free' ? 30 : 60 + (actor.flags?.[MODULE_ID]?.chargeUpgrade === 'damage' ? 30 : 0);
   const landing = chargeLanding(source, target);
   if (!landing) return tell([`No open space next to ${target.name}.`]);
   if (landing.distance > range) return tell([`${target.name} is out of reach: the nearest space beside it is ${landing.distance} feet away, and Charge covers ${range} feet.`]);
 
   const lines = [];
+  if (chain === 'strike') {
+    await setBarrier(barrier, barrier.flags[MODULE_ID].barrierMax);
+    lines.push('Biotic Barrier recharged to full');
+  }
   if (landing.distance > 0) {
     await source.update({ x: landing.x, y: landing.y });
     lines.push(`${actor.name} charges ${landing.distance} feet to ${target.name}`);
   }
+  const plural = (n) => `${n} round${n === 1 ? '' : 's'}`;
+  if (chain === 'free') {
+    lines.push('No cooldown: a Chain Charge rides the one before it');
+  } else {
+    const rounds = await startCooldown(actor, CHARGE_COOLDOWN, item.img);
+    if (combo) {
+      const nova = await startCooldown(actor, NOVA_COOLDOWN, item.img);
+      const rush = await startCooldown(actor, RUSH_COOLDOWN, item.img);
+      lines.push(`Cooldowns: Biotic Charge ${plural(rounds)}, Nova ${plural(nova)}, Vanguard Rush ${plural(rush)}`);
+    } else {
+      lines.push(`Cooldown: ${plural(rounds)}`);
+    }
+  }
+  // a plain Charge card refills on use (see chargeUsed); these cards are not one
+  if (chain) await chargeUsed(actor);
 
-  // Cooldown: 7 - Charisma modifier rounds (minimum 1); biotics stay on Charisma.
-  const rounds = Math.max(1, 7 - (actor.system.abilities?.cha?.mod ?? 0));
-  await actor.createEmbeddedDocuments('Item', [{
-    name: 'Biotic Charge Cooldown',
-    type: 'effect',
-    img: item.img,
-    system: {
-      slug: CHARGE_COOLDOWN,
-      description: { value: `<p>Biotic Charge can be used again when this ends: ${rounds} round${rounds === 1 ? '' : 's'} (7 − Charisma modifier, minimum 1).</p>` },
-      duration: { value: rounds, unit: 'rounds', expiry: 'turn-start', sustained: false },
-      rules: [],
-    },
-  }]);
-  lines.push(`Cooldown: ${rounds} round${rounds === 1 ? '' : 's'}`);
-
-  const dc = powerDC(item);
+  // Rush and Strike use the actor's own Charge for its DC and its save
+  const charge = chain ? actor.items.find((i) => baseSlug(i) === 'me-biotic-charge') ?? item : item;
+  const dc = powerDC(charge);
   if (!dc) {
     lines.push(`Roll ${target.name}'s Reflex save from the Charge card`);
-    return postResult(actor, 'Biotic Charge', 'Charged', lines, { owners: true });
+    return postResult(actor, name, 'Charged', lines, { owners: true });
   }
-  postResult(actor, 'Biotic Charge', 'Charged', lines, { owners: true });
+  if (chain === 'rush') lines.push('Nova follows if the target fails its save');
+  if (chain === 'strike') lines.push('Nova follows whatever the target rolls');
+  postResult(actor, name, 'Charged', lines, { owners: true });
   await target.actor.saves.reflex.roll({
     dc: { value: dc },
-    extraRollOptions: [`${OPT_PREFIX}${item.slug}`],
-    origin: actor, item, token: target, skipDialog: true,
+    extraRollOptions: [`${OPT_PREFIX}${baseSlug(charge) === 'me-biotic-charge' ? charge.slug : 'me-biotic-charge'}`, ...(combo ? [`${CHAIN_OPT}${chain}`] : [])],
+    origin: actor, item: charge, token: target, skipDialog: true,
   });
+}
+
+/** Nova on its own: the cooldown, then the detonation around the Vanguard. */
+async function runNova(message, item) {
+  const actor = item.actor;
+  const tell = (lines) => postResult(actor, 'Nova', 'Not automated', lines, { owners: true });
+  const left = cooldownLeft(actor, NOVA_COOLDOWN);
+  if (left) return tell([`Nova is on cooldown (${left} round${left === 1 ? '' : 's'} left). The barrier was not spent.`]);
+  if (!((getBarrier(actor)?.flags[MODULE_ID].barrierCurrent ?? 0) >= 1)) return tell(['Nova needs an active Biotic Barrier with at least 1 HP.']);
+  const rounds = await startCooldown(actor, NOVA_COOLDOWN, item.img);
+  const source = speakerToken(message, actor);
+  postResult(actor, 'Nova', 'Detonated', [`Cooldown: ${rounds} round${rounds === 1 ? '' : 's'}`], { owners: true });
+  if (!source) {
+    await novaUsed(actor);
+    return tell([`${actor.name} has no token on the scene: roll each creature's Fortitude save from the Nova card.`]);
+  }
+  await novaBurst(actor, source);
+}
+
+/**
+ * Spend the barrier as Nova and roll the Fortitude save of each creature in its emanation
+ * (10 feet, 20 with Nova Upgrade) that is not on the Vanguard's side. Creatures on its side
+ * are named so their players can roll; the save-result hook does the rest.
+ */
+async function novaBurst(actor, source) {
+  const hp = await novaUsed(actor);
+  if (!(hp > 0)) return;
+  const nova = actor.items.find((i) => baseSlug(i) === 'me-biotic-nova');
+  const radius = actor.items.some((i) => i.slug === 'me-upgrade-nova') ? 20 : 10;
+  const dc = nova ? powerDC(nova) : actor.system.attributes?.classDC?.value;
+  const standing = (t) => !((t.actor.system.attributes?.hp?.max ?? 0) > 0 && (t.actor.system.attributes.hp.value ?? 0) <= 0);
+  const inside = source.parent.tokens.filter((t) => t !== source && t.actor && !t.hidden && standing(t) && feetBetween(source, t) <= radius);
+  // the system's own sides (party and opposition), or the tokens' dispositions without them
+  const ally = (t) => (typeof actor.isAllyOf === 'function' ? actor.isAllyOf(t.actor) : t.disposition === source.disposition);
+  const foes = inside.filter((t) => !ally(t));
+  const friends = inside.filter((t) => ally(t));
+  const lines = [`${radius}-foot emanation: ${foes.length ? foes.map((t) => t.name).join(', ') : 'no one'} ${foes.length === 1 ? 'rolls' : 'roll'} Fortitude`];
+  if (friends.length) lines.push(`On ${actor.name}'s side, so roll by hand from the Nova card: ${friends.map((t) => t.name).join(', ')}`);
+  if (!dc) lines.push('No DC found: roll the saves from the Nova card');
+  postResult(actor, 'Nova', 'Detonated', lines, { owners: true });
+  if (!dc) return;
+  for (const t of foes) {
+    await t.actor.saves.fortitude.roll({
+      dc: { value: dc },
+      extraRollOptions: [`${OPT_PREFIX}${nova?.slug ?? 'me-biotic-nova'}`],
+      origin: actor, item: nova ?? undefined, token: t, skipDialog: true,
+    });
+  }
+}
+
+// ── BIOTIC ATTACK HITS ──────────────────────────────────────────────────────
+// Barrier Siphon: a Biotic Attack hit refills 5 barrier HP (10 from 12th level), once a
+// round in an encounter. Biotic Warrior: a critical hit knocks the target prone and pushes
+// it 5 feet. Run on the active GM's client, which can move the target.
+Hooks.on('createChatMessage', async (message) => {
+  if (!game.users.activeGM?.isSelf) return;
+  const ctx = sysFlags(message)?.context;
+  if (ctx?.type !== 'attack-roll' || !(ctx.options ?? []).includes('item:slug:biotic-attack')) return;
+  if (ctx.outcome !== 'success' && ctx.outcome !== 'criticalSuccess') return;
+  const actor = ChatMessage.getSpeakerActor(message.speaker);
+  if (!actor) return;
+  const has = (s) => actor.items.some((i) => i.slug === s);
+  const lines = [];
+
+  if (has('me-vanguard-barrier-siphon')) {
+    const combat = game.combat?.started ? game.combat : null;
+    const round = combat ? `${combat.id}.${combat.round}` : null;
+    if (!round || actor.getFlag(MODULE_ID, 'siphonRound') !== round) {
+      if (round) await actor.setFlag(MODULE_ID, 'siphonRound', round);
+      const barrier = getBarrier(actor);
+      if (barrier) {
+        const max = barrier.flags[MODULE_ID].barrierMax;
+        const now = barrier.flags[MODULE_ID].barrierCurrent ?? 0;
+        const next = Math.min(max, now + (actor.level >= 12 ? 10 : 5));
+        if (next > now) await setBarrier(barrier, next);
+        lines.push(`Barrier Siphon: Biotic Barrier ${now} → ${next}`);
+      } else {
+        lines.push(`Barrier Siphon: ${actor.name} has no Biotic Barrier to refill`);
+      }
+    }
+  }
+
+  if (ctx.outcome === 'criticalSuccess' && has('me-vanguard-biotic-warrior')) {
+    const target = await fromUuid(ctx.target?.token ?? '').catch(() => null);
+    if (target?.actor) {
+      try {
+        await target.actor.increaseCondition('prone');
+        lines.push(`Biotic Warrior: ${target.name} is knocked prone`);
+      } catch (err) {
+        lines.push(`Biotic Warrior: knock ${target.name} prone by hand`);
+      }
+      const from = actor.getActiveTokens(true, true).find((t) => t.parent === target.parent);
+      const moved = await pushAway(target, from, 5);
+      lines.push(moved === 5 ? 'and pushed 5 feet' : moved === 0 ? 'but not pushed: another creature holds the space behind it' : 'push it 5 feet by hand');
+    } else {
+      lines.push('Biotic Warrior: the target is knocked prone and pushed 5 feet (apply by hand: no target was set)');
+    }
+  }
+
+  if (lines.length) postResult(actor, 'Biotic Attack', ctx.outcome, lines, { owners: true });
+});
+
+/**
+ * Feet between two tokens' nearest spaces, by their committed positions (see placed):
+ * adjacent tokens are 5 feet apart, as an emanation counts them.
+ */
+function feetBetween(a, b) {
+  const grid = a.parent.grid;
+  const size = grid.size;
+  const center = (d) => ({ x: placed(d).x + (d.width * size) / 2, y: placed(d).y + (d.height * size) / 2 });
+  const between = grid.measurePath([center(a), center(b)]).distance;
+  return Math.max(0, Math.round(between - (((a.width + b.width) / 2) - 1) * grid.distance));
 }
 
 /** The DC in the power's own save button (@Check[...|dc:N] or dc:resolve(formula)). */
@@ -870,19 +1121,33 @@ function chargeLanding(source, target) {
   return best && { x: best.x, y: best.y, distance: best.distance };
 }
 
-/** Move a token straight away from another, in whole grid spaces. True if it moved. */
+/**
+ * Move a token straight away from another, in whole grid spaces. Like any forced movement it
+ * stops short of a space another creature holds. Returns the feet it moved (0 when the first
+ * space is taken), or null when there are no tokens to move.
+ */
 async function pushAway(tokenDoc, fromDoc, feet) {
-  if (!tokenDoc || !fromDoc || tokenDoc.parent !== fromDoc.parent) return false;
+  if (!tokenDoc || !fromDoc || tokenDoc.parent !== fromDoc.parent) return null;
   const grid = tokenDoc.parent.grid;
-  const center = (d) => ({ x: placed(d).x + (d.width * grid.size) / 2, y: placed(d).y + (d.height * grid.size) / 2 });
+  const size = grid.size;
+  const center = (d) => ({ x: placed(d).x + (d.width * size) / 2, y: placed(d).y + (d.height * size) / 2 });
   const a = center(fromDoc), b = center(tokenDoc);
   const len = Math.hypot(b.x - a.x, b.y - a.y);
-  if (!len) return false;
+  if (!len) return null;
   const sx = Math.round((b.x - a.x) / len), sy = Math.round((b.y - a.y) / len);
   const spaces = Math.max(1, Math.round(feet / grid.distance));
   const at = placed(tokenDoc);
-  await tokenDoc.update({ x: at.x + sx * grid.size * spaces, y: at.y + sy * grid.size * spaces });
-  return true;
+  const box = (d, x = placed(d).x, y = placed(d).y) => ({ x, y, w: d.width * size, h: d.height * size });
+  const others = tokenDoc.parent.tokens.filter((d) => d !== tokenDoc && !d.hidden).map((d) => box(d));
+  const overlaps = (p, q) => p.x < q.x + q.w && q.x < p.x + p.w && p.y < q.y + q.h && q.y < p.y + p.h;
+  let moved = 0;
+  for (let step = 1; step <= spaces; step++) {
+    const spot = box(tokenDoc, at.x + sx * size * step, at.y + sy * size * step);
+    if (others.some((o) => overlaps(spot, o))) break;
+    moved = step;
+  }
+  if (moved) await tokenDoc.update({ x: at.x + sx * size * moved, y: at.y + sy * size * moved });
+  return moved * grid.distance;
 }
 
 // ── TARGETS AND CASTERS ─────────────────────────────────────────────────────

@@ -1,0 +1,60 @@
+{
+  "_key": "!items!meVanguardNovCas",
+  "_id": "meVanguardNovCas",
+  "folder": null,
+  "name": "Nova Cascade",
+  "type": "feat",
+  "img": "icons/magic/sonic/explosion-shock-wave-teal.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-vanguard-nova-cascade",
+    "description": {
+      "gm": "",
+      "value": "<p>The detonation feeds back into you. When at least one creature <strong>critically fails</strong> its save against your Nova, your Biotic Barrier regains <strong>half its maximum HP</strong> right after the detonation. This happens once per Nova, however many creatures critically fail.</p><p><em>Automation: applied with the first critical failure against each Nova.</em></p><p><em>Prerequisite: Nova. Classes: Vanguard.</em></p>"
+    },
+    "rules": [],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "vanguard",
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 18
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Nova"
+        }
+      ]
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "class",
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}
