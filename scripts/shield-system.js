@@ -206,6 +206,11 @@ Hooks.once('init', () => {
     hint: 'Post a chat message at turn start when shields are depleted and the actor has not taken cover.',
     scope: 'world', config: true, type: Boolean, default: true,
   });
+  game.settings.register(MODULE_ID, 'autoApplyBarrier', {
+    name: 'Auto-Apply Biotic Barrier',
+    hint: 'Using Activate Biotic Barrier raises the barrier at once, at full HP, instead of waiting for its Apply Effect button. A barrier already up is replaced with a fresh one.',
+    scope: 'world', config: true, type: Boolean, default: true,
+  });
   game.settings.register(MODULE_ID, 'autoDeleteBarrier', {
     name: 'Auto-Delete Depleted Barriers',
     hint: 'Automatically remove the Biotic Barrier effect when its HP reaches zero. When disabled, the barrier persists as an empty field and can be refilled by spending actions or by using Charge.',
@@ -770,6 +775,65 @@ Hooks.on('deleteItem', (item) => {
   if (!item.parent || (!isBioticBarrier(item) && !isArmorFrame(item))) return;
   for (const t of _tokensForActor(item.parent)) refreshMETokenBars(t);
 });
+
+// ── ACTIVATE BIOTIC BARRIER, APPLIED AT ONCE ─────────────────────────────────
+// Using the action posts the system's self-effect card with an Apply Effect button.
+// The client that posted it (which owns the actor) does what that button does: puts
+// the Biotic Barrier effect on the actor, with the action as its origin, and swaps
+// the button for the system's "applied" line. The createItem hook above then sets
+// the barrier's HP and replaces any barrier that was already up.
+const BARRIER_ACTIONS = ['me-activate-biotic-barrier', 'me-activate-biotic-barrier-npc'];
+
+Hooks.on('createChatMessage', async (message) => {
+  if (message.author?.id !== game.user.id) return;
+  if (!game.settings.get(MODULE_ID, 'autoApplyBarrier')) return;
+  const ctx = message.flags?.[game.system.id]?.context ?? message.flags?.pf2e?.context;
+  if (ctx?.type !== 'self-effect') return;
+  const actor = message.actor;
+  const item = message.item ?? actor?.items.get(ctx.item);
+  if (!actor || !item || !BARRIER_ACTIONS.includes(item.slug) || !item.system.selfEffect?.uuid) return;
+  if (!message.content.includes('data-action="applyEffect"')) return;
+  try {
+    await applyBarrierFromMessage(message, actor, item);
+  } catch (err) {
+    console.warn('ME Shields | could not raise the Biotic Barrier; use the card\'s Apply Effect button', err);
+  }
+});
+
+async function applyBarrierFromMessage(message, actor, item) {
+  const effect = await fromUuid(item.system.selfEffect.uuid);
+  if (!effect) return;
+  const source = foundry.utils.mergeObject(effect.toObject(), {
+    _id: null,
+    system: {
+      context: {
+        origin: {
+          actor: actor.uuid,
+          token: message.token?.uuid ?? null,
+          item: item.uuid,
+          spellcasting: null,
+          rollOptions: item.getOriginData?.().rollOptions ?? [],
+        },
+        target: { actor: actor.uuid, token: actor.getActiveTokens(true, true).at(0)?.uuid ?? null },
+        roll: null,
+      },
+    },
+  });
+  await actor.createEmbeddedDocuments('Item', [source]);
+
+  // the card now says it was applied, as the button would leave it
+  const html = document.createElement('div');
+  html.innerHTML = message.content;
+  const button = html.querySelector('.message-buttons button[data-action="applyEffect"]');
+  if (button) {
+    const applied = document.createElement('span');
+    applied.classList.add('effect-applied');
+    const link = effect.toAnchor({ attrs: { draggable: 'true' } });
+    applied.innerHTML = game.i18n.format('PF2E.Item.Ability.SelfAppliedEffect.Applied', { effect: link.outerHTML });
+    button.replaceWith(applied);
+    await message.update({ content: html.innerHTML });
+  }
+}
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 

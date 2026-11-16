@@ -1,5 +1,5 @@
-2026/11/16-00:19:00.941 8480 Delete type=3 #1
-2026/11/16-00:19:00.945 a870 Level-0 table #5: started
-2026/11/16-00:19:00.951 a870 Level-0 table #5: 7929 bytes OK
-2026/11/16-00:19:00.956 a870 Delete type=0 #3
-2026/11/16-00:19:00.956 a870 Manual compaction at level-0 from '!items!meActivateBbarFt' @ 72057594037927935 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at (end)
+2026/11/16-00:27:07.177 a5e4 Delete type=3 #1
+2026/11/16-00:27:07.181 3af8 Level-0 table #5: started
+2026/11/16-00:27:07.185 3af8 Level-0 table #5: 7392 bytes OK
+2026/11/16-00:27:07.189 3af8 Delete type=0 #3
+2026/11/16-00:27:07.189 3af8 Manual compaction at level-0 from '!items!meActivateBbarFt' @ 72057594037927935 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at (end)

@@ -1,5 +1,5 @@
-2026/11/16-00:19:02.369 174c Delete type=3 #1
-2026/11/16-00:19:02.373 a870 Level-0 table #5: started
-2026/11/16-00:19:02.376 a870 Level-0 table #5: 5148 bytes OK
-2026/11/16-00:19:02.381 a870 Delete type=0 #3
-2026/11/16-00:19:02.381 a870 Manual compaction at level-0 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
+2026/11/16-00:27:08.514 7504 Delete type=3 #1
+2026/11/16-00:27:08.517 3af8 Level-0 table #5: started
+2026/11/16-00:27:08.521 3af8 Level-0 table #5: 5148 bytes OK
+2026/11/16-00:27:08.523 3af8 Delete type=0 #3
+2026/11/16-00:27:08.524 3af8 Manual compaction at level-0 from '!items!meItemMediGel001' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)

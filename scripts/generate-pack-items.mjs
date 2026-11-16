@@ -173,7 +173,8 @@ const BARRIER_DESC = '<p>You project a protective mass effect field. You gain a 
   + '<tr><td>1–3</td><td>5</td></tr><tr><td>4–5</td><td>10</td></tr><tr><td>6–7</td><td>15</td></tr>'
   + '<tr><td>8–9</td><td>20</td></tr><tr><td>10–11</td><td>25</td></tr><tr><td>12–13</td><td>30</td></tr>'
   + '<tr><td>14–15</td><td>35</td></tr><tr><td>16–17</td><td>40</td></tr><tr><td>18–19</td><td>45</td></tr>'
-  + '<tr><td>20</td><td>50</td></tr></tbody></table>';
+  + '<tr><td>20</td><td>50</td></tr></tbody></table>'
+  + '<p><em>With the Auto-Apply Biotic Barrier setting, using this action raises the barrier at once, at full HP; the card\'s Apply Effect button is not needed.</em></p>';
 
 await writeFile(join(SHIELDS_DIR, 'activate-biotic-barrier.json'), JSON.stringify(item(
   'meActivateBbarFt',
