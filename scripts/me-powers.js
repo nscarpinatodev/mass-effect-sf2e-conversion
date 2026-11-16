@@ -447,6 +447,12 @@ Hooks.once('init', () => {
     hint: 'When a Charge moves the Vanguard, play a biotic beam from start to landing (needs Sequencer, and JB2A installed; JB2A does not have to be enabled). The token crosses in a fraction of a second either way.',
     scope: 'world', config: true, type: Boolean, default: true,
   });
+  game.settings.register(MODULE_ID, 'novaAnimation', {
+    name: 'Nova Animation',
+    hint: 'When Nova detonates, play a purple biotic blast and a pulse wave that fills its area (needs Sequencer, and JB2A installed; JB2A does not have to be enabled).',
+    scope: 'world', config: true, type: String, default: 'pulse',
+    choices: { pulse: 'Blast and pulse wave', shockwave: 'Shockwave', off: 'None' },
+  });
 });
 
 // ── SAVE-RESULT HOOK ────────────────────────────────────────────────────────
@@ -1019,13 +1025,75 @@ function chargeArt() {
   };
 }
 
-// Load the Charge's videos on every client up front, so the beam starts the moment it is used
+// Nova's detonation. "pulse" (the default): JB2A's Explosion 04 blast under its OutPulse 02
+// wave, the wave played at 1.5x so it rolls out in about 1.6 s. "shockwave": Thunderwave.
+// Purple in the patreon pack; the free pack only has these in blue, shifted to purple.
+const NOVA_PACKS = [
+  {
+    id: 'jb2a_patreon', hue: 0,
+    blast: 'Generic/Explosion/Explosion_04_Dark_Purple_400x400',
+    wave: 'Generic/Template/Circle/OutPulse/OutPulse_02_Regular_PurplePink_Burst_600x600',
+    shockwave: '1st_Level/Thunderwave/Thunderwave_01_Dark_Purple_Center_600x600',
+  },
+  {
+    id: 'JB2A_DnD5e', hue: 45,
+    blast: 'Generic/Explosion/Explosion_04_Regular_Blue_400x400',
+    wave: 'Generic/Template/Circle/OutPulse/OutPulse_02_Regular_BlueWhite_Burst_600x600',
+    shockwave: '1st_Level/Thunderwave/Thunderwave_01_Bright_Blue_Center_600x600',
+  },
+];
+const NOVA_WAVE_RATE = 1.5;
+// rolling the saves stalls the canvas for a moment, so they wait until the wave is under way
+const NOVA_SAVES_DELAY_MS = 500;
+
+/** The Nova animation the setting asks for, from the installed JB2A pack ({ hue, layers }), or null. */
+function novaArt() {
+  const style = game.settings.get(MODULE_ID, 'novaAnimation');
+  if (!style || style === 'off') return null;
+  if (!game.modules.get('sequencer')?.active || typeof Sequence !== 'function') return null;
+  const pack = NOVA_PACKS.find((p) => game.modules.get(p.id));
+  if (!pack) return null;
+  const file = (path) => `modules/${pack.id}/Library/${path}.webm`;
+  const layers = style === 'shockwave'
+    ? [{ file: file(pack.shockwave), rate: 1 }]
+    : [{ file: file(pack.wave), rate: NOVA_WAVE_RATE }, { file: file(pack.blast), rate: 1 }];
+  return { hue: pack.hue, layers };
+}
+
+/**
+ * Play Nova's pulse around the Vanguard's token, filling an emanation of `radius` feet.
+ * Returns whether an animation was started.
+ */
+function playNovaPulse(source, radius) {
+  try {
+    const art = novaArt();
+    if (!art) return false;
+    const grid = canvas.grid;
+    // the emanation's width: the token plus the radius on each side
+    const size = (source.width + (2 * radius) / grid.distance) * grid.size;
+    const seq = new Sequence({ moduleName: MODULE_ID, softFail: true });
+    for (const { file, rate } of art.layers) {
+      const effect = seq.effect().file(file).atLocation(source).size(size).playbackRate(rate).fadeOut(250);
+      if (art.hue) effect.filter('ColorMatrix', { hue: art.hue });
+    }
+    seq.play().catch((err) => console.warn('ME Powers | Nova animation failed', err));
+    return true;
+  } catch (err) {
+    console.warn('ME Powers | Nova animation failed', err);
+    return false;
+  }
+}
+
+// Load the Charge's and Nova's videos on every client up front, so they start the moment
+// they are used
 Hooks.once('ready', () => {
   try {
     const art = chargeArt();
     if (art) Sequencer.Preloader?.preload?.([art.flash, ...art.beams, art.impact], false);
+    const nova = novaArt();
+    if (nova) Sequencer.Preloader?.preload?.(nova.layers.map((l) => l.file), false);
   } catch (err) {
-    console.warn('ME Powers | could not preload the Charge animation', err);
+    console.warn('ME Powers | could not preload the power animations', err);
   }
 });
 
@@ -1092,6 +1160,7 @@ async function novaBurst(actor, source) {
   if (!(hp > 0)) return;
   const nova = actor.items.find((i) => baseSlug(i) === 'me-biotic-nova');
   const radius = actor.items.some((i) => i.slug === 'me-upgrade-nova') ? 20 : 10;
+  const animated = playNovaPulse(source, radius);
   const dc = nova ? powerDC(nova) : actor.system.attributes?.classDC?.value;
   const standing = (t) => !((t.actor.system.attributes?.hp?.max ?? 0) > 0 && (t.actor.system.attributes.hp.value ?? 0) <= 0);
   const inside = source.parent.tokens.filter((t) => t !== source && t.actor && !t.hidden && standing(t) && feetBetween(source, t) <= radius);
@@ -1104,6 +1173,7 @@ async function novaBurst(actor, source) {
   if (!dc) lines.push('No DC found: roll the saves from the Nova card');
   postResult(actor, 'Nova', 'Detonated', lines, { owners: true });
   if (!dc) return;
+  if (animated && foes.length) await new Promise((r) => setTimeout(r, NOVA_SAVES_DELAY_MS));
   for (const t of foes) {
     await t.actor.saves.fortitude.roll({
       dc: { value: dc },
