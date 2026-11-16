@@ -2605,7 +2605,7 @@ Vanguard Strike places Biotic Charge, Nova, and Vanguard Rush on their individua
 *Prerequisite: Unstoppable Charge*
 
 Your Charge carries such momentum that you naturally transition into a devastating follow-up strike.
-Immediately after a successful Charge, you may make **one free shotgun Strike** against the same target as a free action. This Strike doesn't count toward your multiple attack penalty for the round.
+Immediately after a successful Charge, you may make **one free Strike** against the same target as a free action, with a melee weapon, your Biotic Attack, or a shotgun. This Strike doesn't count toward your multiple attack penalty for the round.
 *Prerequisite: Unstoppable Charge. Classes: Vanguard.*
 
 ---

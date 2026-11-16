@@ -14,7 +14,7 @@
     "slug": "me-biotic-attack",
     "description": {
       "gm": "",
-      "value": "<p>You wrap your fist in a mass effect field and drive it into the target: the biotic punch every Vanguard and Adept learns before anything else.</p><p>You gain a <strong>Biotic Attack</strong> unarmed Strike in the brawling group. It deals <strong>1d6 bludgeoning</strong> damage and has the finesse, shove and unarmed traits.</p><p>Nothing you carry can improve it, so it grows as a striking upgrade would: <strong>2d6</strong> at 4th level, <strong>3d6</strong> at 12th, and <strong>4d6</strong> at 19th. It can't benefit from striking from gear, such as handwraps.</p><p><em>Classes: Adept, Vanguard.</em></p>"
+      "value": "<p>You wrap your fist in a mass effect field and drive it into the target: the biotic punch every Vanguard and Adept learns before anything else.</p><p>You gain a <strong>Biotic Attack</strong> unarmed Strike in the brawling group. It deals <strong>1d6 bludgeoning</strong> damage and has the finesse, shove and unarmed traits.</p><p>Nothing you carry can improve it, so it grows as a graded weapon would. Its damage dice rise to <strong>2d6</strong> at 4th level, <strong>3d6</strong> at 12th, and <strong>4d6</strong> at 19th, and it gains an <strong>item bonus</strong> to attack rolls of <strong>+1</strong> at 2nd level, <strong>+2</strong> at 10th, and <strong>+3</strong> at 16th. It can't benefit from striking or potency from gear, such as handwraps.</p><p><em>Classes: Adept, Vanguard.</em></p>"
     },
     "rules": [
       {
@@ -35,22 +35,60 @@
             "dice": {
               "field": "actor|level",
               "brackets": [
-                { "end": 3, "value": 1 },
-                { "start": 4, "end": 11, "value": 2 },
-                { "start": 12, "end": 18, "value": 3 },
-                { "start": 19, "value": 4 }
+                {
+                  "end": 3,
+                  "value": 1
+                },
+                {
+                  "start": 4,
+                  "end": 11,
+                  "value": 2
+                },
+                {
+                  "start": 12,
+                  "end": 18,
+                  "value": 3
+                },
+                {
+                  "start": 19,
+                  "value": 4
+                }
               ]
             },
             "die": "d6"
           }
         }
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "biotic-attack-attack",
+        "type": "item",
+        "label": "Biotic Attack",
+        "value": {
+          "field": "actor|level",
+          "brackets": [
+            {
+              "end": 1,
+              "value": 0
+            },
+            {
+              "start": 2,
+              "end": 9,
+              "value": 1
+            },
+            {
+              "start": 10,
+              "end": 15,
+              "value": 2
+            },
+            {
+              "start": 16,
+              "value": 3
+            }
+          ]
+        }
       }
     ],
-    "_migration": {
-      "version": 0.955,
-      "lastMigration": null,
-      "previous": null
-    },
     "traits": {
       "otherTags": [],
       "value": [

@@ -1,5 +1,5 @@
-2026/11/15-23:26:33.661 a020 Delete type=3 #1
-2026/11/15-23:26:33.666 5d0 Level-0 table #5: started
-2026/11/15-23:26:33.673 5d0 Level-0 table #5: 30078 bytes OK
-2026/11/15-23:26:33.678 5d0 Delete type=0 #3
-2026/11/15-23:26:33.678 5d0 Manual compaction at level-0 from '!actors!018df662e4af7e0e' @ 72057594037927935 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at (end)
+2026/11/16-00:19:00.850 174c Delete type=3 #1
+2026/11/16-00:19:00.854 a870 Level-0 table #5: started
+2026/11/16-00:19:00.860 a870 Level-0 table #5: 30078 bytes OK
+2026/11/16-00:19:00.864 a870 Delete type=0 #3
+2026/11/16-00:19:00.864 a870 Manual compaction at level-0 from '!actors!018df662e4af7e0e' @ 72057594037927935 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at (end)

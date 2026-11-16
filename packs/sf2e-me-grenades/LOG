@@ -1,5 +1,5 @@
-2026/11/15-23:26:35.250 3fd0 Delete type=3 #1
-2026/11/15-23:26:35.255 5d0 Level-0 table #5: started
-2026/11/15-23:26:35.264 5d0 Level-0 table #5: 6302 bytes OK
-2026/11/15-23:26:35.269 5d0 Delete type=0 #3
-2026/11/15-23:26:35.269 5d0 Manual compaction at level-0 from '!items!meGrenadeArc0000' @ 72057594037927935 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at (end)
+2026/11/16-00:19:02.331 8090 Delete type=3 #1
+2026/11/16-00:19:02.334 a870 Level-0 table #5: started
+2026/11/16-00:19:02.339 a870 Level-0 table #5: 6302 bytes OK
+2026/11/16-00:19:02.342 a870 Delete type=0 #3
+2026/11/16-00:19:02.342 a870 Manual compaction at level-0 from '!items!meGrenadeArc0000' @ 72057594037927935 : 1 .. '!items!meGrenadeProxMin' @ 0 : 0; will stop at (end)

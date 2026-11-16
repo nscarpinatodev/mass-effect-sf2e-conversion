@@ -482,6 +482,27 @@ console.log('Heavy Impact and Nova Cascade');
   assert(b.flags[MOD].barrierCurrent === 40, `the next Nova can cascade again (got ${b.flags[MOD].barrierCurrent})`);
 }
 
+console.log('Level brackets in rules leave the migration to the system');
+{
+  // A rule value written as level brackets must reach the system unstamped: the system's own
+  // migrations turn brackets into the formula syntax it reads now (SF2e 1.7 no longer reads
+  // brackets in a Strike's dice). An item stamped with an older schema skips that migration.
+  const { readdirSync, statSync } = await import('fs');
+  const root = new URL('../src/packs/', import.meta.url);
+  const stamped = [];
+  const walk = (dir) => {
+    for (const name of readdirSync(dir)) {
+      const url = new URL(name, dir);
+      if (statSync(url).isDirectory()) { walk(new URL(`${name}/`, dir)); continue; }
+      if (!name.endsWith('.json')) continue;
+      const text = readFileSync(url, 'utf8');
+      if (text.includes('"brackets"') && JSON.parse(text).system?._migration) stamped.push(name);
+    }
+  };
+  walk(root);
+  assert(stamped.length === 0, `no bracketed item carries a _migration stamp${stamped.length ? `: ${stamped.join(', ')}` : ''}`);
+}
+
 console.log('The module scripts load side by side');
 {
   // Foundry runs module.json "scripts" as classic scripts sharing one global scope, so a top-level name
