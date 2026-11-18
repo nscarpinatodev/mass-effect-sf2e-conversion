@@ -279,6 +279,71 @@ console.log('On use: Charge refills by the best Vanguard feature; Nova records a
   // A target's save names Nova as its origin too; it must not count as a second use
   await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.use' }, context: { type: 'saving-throw' } } } });
   assert(nova.flags[MOD].novaCharge === 17, `a save against Nova keeps the recorded 17 (got ${nova.flags[MOD].novaCharge})`);
+  // without Apex Vanguard, a second Nova has only the empty barrier to detonate
+  await use('me-biotic-nova', nova);
+  assert(nova.flags[MOD].novaCharge === 0, `no Apex: the second Nova detonates 0 (got ${nova.flags[MOD].novaCharge})`);
+}
+
+console.log('Apex Vanguard: a second Nova each turn detonates as if the barrier were full');
+{
+  const useHook = hooks.on.createChatMessage[1];
+  const use = async (slug, actor) => {
+    uuids['Item.use'] = { slug, actor };
+    await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.use' } } } });
+  };
+  const b = barrierItem(12, 60);
+  const apex = new Actor('Apex', { items: [b] });
+  apex.items = [b, { slug: 'me-vanguard-apex-vanguard' }];
+  await use('me-biotic-nova', apex);
+  assert(apex.flags[MOD].novaCharge === 12 && b.flags[MOD].barrierCurrent === 0, `first Nova spends the 12 HP it has (got ${apex.flags[MOD].novaCharge}, barrier ${b.flags[MOD].barrierCurrent})`);
+  const first = apex.flags[MOD].novaAt;
+  await new Promise((r) => setTimeout(r, 2));
+  await use('me-biotic-nova', apex);
+  assert(apex.flags[MOD].novaCharge === 60, `second Nova detonates the full 60 though the barrier is empty (got ${apex.flags[MOD].novaCharge})`);
+  assert(b.flags[MOD].barrierCurrent === 0, `and spends nothing (barrier ${b.flags[MOD].barrierCurrent})`);
+  assert(apex.flags[MOD].novaAt !== first, 'the second Nova is its own detonation (rolls its own damage)');
+  b.flags[MOD].barrierCurrent = 30;
+  await use('me-biotic-nova', apex);
+  assert(apex.flags[MOD].novaCharge === 30 && b.flags[MOD].barrierCurrent === 0, `a third Nova is a first again: spends the barrier's 30 (got ${apex.flags[MOD].novaCharge}, barrier ${b.flags[MOD].barrierCurrent})`);
+  const b2 = barrierItem(30, 60);
+  const kept = new Actor('Apex, barrier up', { items: [b2] });
+  kept.items = [b2, { slug: 'me-vanguard-apex-vanguard' }];
+  await use('me-biotic-nova', kept);
+  b2.flags[MOD].barrierCurrent = 25;                        // refilled between the two
+  await use('me-biotic-nova', kept);
+  assert(kept.flags[MOD].novaCharge === 60 && b2.flags[MOD].barrierCurrent === 25, `the second Nova leaves a refilled barrier alone (got ${kept.flags[MOD].novaCharge}, barrier ${b2.flags[MOD].barrierCurrent})`);
+}
+
+console.log('Vanguard Strike: Charge gives Weapon Synergy (3d6 force, 4d6 from 18th) until the end of the next turn');
+{
+  const useHook = hooks.on.createChatMessage[1];
+  const use = async (slug, actor) => {
+    uuids['Item.use'] = { slug, actor };
+    await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.use' } } } });
+  };
+  const synergy = (a) => a.created.filter((d) => d.system?.slug === 'me-effect-weapon-synergy');
+  const vanguard = (name, level, feat = true) => {
+    const b = barrierItem(0, 40);
+    const a = new Actor(name, { items: [b] });
+    a.level = level;
+    a.items = feat ? [b, { slug: 'me-vanguard-vanguard-strike' }] : [b];
+    a.deleteEmbeddedDocuments = async () => {};
+    return a;
+  };
+  const vg = vanguard('Vanguard 14', 14);
+  await use('me-biotic-charge', vg);
+  const [eff] = synergy(vg);
+  assert(eff && eff.system.duration.value === 1 && eff.system.duration.expiry === 'turn-end', 'Charge gives Weapon Synergy until the end of the next turn');
+  assert(eff?.system.description.value.includes('3d6 force'), 'at 14th: 3d6 force');
+  const vg18 = vanguard('Vanguard 18', 18);
+  await use('me-biotic-charge', vg18);
+  assert(synergy(vg18)[0]?.system.description.value.includes('4d6 force'), 'at 18th: 4d6 force');
+  const plain = vanguard('No Vanguard Strike', 14, false);
+  await use('me-biotic-charge', plain);
+  assert(synergy(plain).length === 0, 'no Weapon Synergy without the feat');
+  const strikeFeat = JSON.parse(readFileSync(new URL('../src/packs/me-class-progressions/vanguard-vanguard-strike.json', import.meta.url), 'utf8'));
+  const rule = strikeFeat.system.rules.find((r) => r.key === 'DamageDice');
+  assert(strikeFeat.system.actionType.value === 'passive' && rule?.selector === 'strike-damage' && rule.damageType === 'force', 'the feat is passive, with a force DamageDice on Strikes');
 }
 
 console.log('Power Amplifier: item bonus to biotic and tech power damage only');
@@ -327,17 +392,17 @@ console.log('Derived data: action costs and Magazine Upgrade I, never compoundin
     flags: { [MOD]: { powerEfficiency: { biotic: 1 } } }, rollOptions: { all: {} },
     itemTypes: { feat: [feat], weapon: [weapon], effect: [] },
   };
-  // Vanguard Rush and Strike already combine Charge (2) and Nova (1) for 2: no further cut
+  // Vanguard Rush already combines Charge and Nova into one card: no mastery cut on it
   const combo = (slug) => ({
     type: 'feat', slug, _source: { system: { actions: { value: 2 } } },
     system: { actionType: { value: 'action' }, actions: { value: 2 }, traits: { value: ['biotic'] } },
   });
-  const rush = combo('me-vanguard-rush'), strike = combo('me-vanguard-vanguard-strike');
-  actor.itemTypes.feat.push(rush, strike);
+  const rush = combo('me-vanguard-rush');
+  actor.itemTypes.feat.push(rush);
   Character.prototype.prepareDerivedData.call(actor);
   Character.prototype.prepareDerivedData.call(actor);
   assert(feat.system.actions.value === 1, `2-action biotic power costs 1 (got ${feat.system.actions.value})`);
-  assert(rush.system.actions.value === 2 && strike.system.actions.value === 2, `Rush and Strike stay at 2 actions (got ${rush.system.actions.value}, ${strike.system.actions.value})`);
+  assert(rush.system.actions.value === 2, `Rush isn't cut again (got ${rush.system.actions.value})`);
   assert(weapon.system.ammo.capacity === 18, `capacity 12 -> 18 after two prepares (got ${weapon.system.ammo.capacity})`);
 }
 
@@ -459,12 +524,12 @@ console.log('Bio-amps: cooldowns are 4 rounds less the amp\'s Recharge; amp dama
   assert(human.damage[0] === 17, `a tech power takes the Power Amplifier's +1 but not the amp's +3 (got ${human.damage[0]})`);
 }
 
-console.log('Vanguard Rush and Strike: when Nova follows; Nova\'s emanation and pushes');
+console.log('Vanguard Rush: when Nova follows; Nova\'s emanation and pushes');
 {
   const { novaFollows, feetBetween } = ctx.MassEffectPowers;
   assert(novaFollows('rush', 'failure') && novaFollows('rush', 'criticalFailure'), 'Rush: Nova on a failed save');
-  assert(!novaFollows('rush', 'success') && !novaFollows('rush', 'criticalSuccess'), 'Rush: no Nova when the target succeeds');
-  assert(novaFollows('strike', 'criticalSuccess') && novaFollows('strike', 'failure'), 'Strike: Nova whatever the save');
+  assert(novaFollows('rush', 'success') && novaFollows('rush', 'criticalSuccess'), 'Rush: Nova whatever the target rolls');
+  assert(!novaFollows('strike', 'failure') && !novaFollows('free', 'criticalFailure'), 'Vanguard Strike is no longer a combo; Chain Charge sets off no Nova');
   assert(!novaFollows(null, 'failure') && !novaFollows(undefined, 'criticalFailure'), 'a plain Charge sets off nothing');
 
   const grid = { size: 100, distance: 5, measurePath: ([a, b]) => ({ distance: 5 * Math.max(Math.abs(a.x - b.x), Math.abs(a.y - b.y)) / 100 }) };

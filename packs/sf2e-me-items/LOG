@@ -1,5 +1,5 @@
-2026/11/16-03:43:35.367 8da8 Delete type=3 #1
-2026/11/16-03:43:35.371 a4dc Level-0 table #5: started
-2026/11/16-03:43:35.377 a4dc Level-0 table #5: 20695 bytes OK
-2026/11/16-03:43:35.382 a4dc Delete type=0 #3
-2026/11/16-03:43:35.382 a4dc Manual compaction at level-0 from '!items!meAmpgemini10000' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
+2026/11/18-08:50:39.714 9970 Delete type=3 #1
+2026/11/18-08:50:39.718 7d98 Level-0 table #5: started
+2026/11/18-08:50:39.723 7d98 Level-0 table #5: 20695 bytes OK
+2026/11/18-08:50:39.727 7d98 Delete type=0 #3
+2026/11/18-08:50:39.727 7d98 Manual compaction at level-0 from '!items!meAmpgemini10000' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)

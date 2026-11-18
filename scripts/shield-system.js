@@ -211,11 +211,6 @@ Hooks.once('init', () => {
     hint: 'Using Activate Biotic Barrier raises the barrier at once, at full HP, instead of waiting for its Apply Effect button. A barrier already up is replaced with a fresh one.',
     scope: 'world', config: true, type: Boolean, default: true,
   });
-  game.settings.register(MODULE_ID, 'autoDeleteBarrier', {
-    name: 'Auto-Delete Depleted Barriers',
-    hint: 'Automatically remove the Biotic Barrier effect when its HP reaches zero. When disabled, the barrier persists as an empty field and can be refilled by spending actions or by using Charge.',
-    scope: 'world', config: true, type: Boolean, default: false,
-  });
   game.settings.register(MODULE_ID, 'shieldRechargeDelay', {
     name: 'Shield Recharge Delay (rounds)',
     hint: 'Rounds a kinetic barrier must go without taking damage before it resumes recharging. Recharge Accelerator mods reduce this.',
@@ -327,16 +322,28 @@ Hooks.on('createItem', async (item, _options, _userId) => {
   }
 
   if (isBioticBarrier(item)) {
-    for (const e of actor.itemTypes.effect.filter(e => isBioticBarrier(e) && e.id !== item.id)) {
-      await e.delete();
+    // A biotic keeps one barrier for good. A second one (the card's Apply Effect button, a
+    // drag from the compendium) refreshes the barrier already there, and the copy goes.
+    const level = actor.level ?? 1;
+    const kept = actor.itemTypes.effect.find(e => isBioticBarrier(e) && e.id !== item.id);
+    if (kept) {
+      await item.delete();
+      const max = barrierMaxFor(level, actor);
+      await kept.update({
+        [`flags.${MODULE_ID}.barrierMax`]:     max,
+        [`flags.${MODULE_ID}.barrierCurrent`]: max,
+        'system.badge': { type: 'counter', value: max, min: 0, max },
+      });
+      return;
     }
     const existingMax = item.getFlag(MODULE_ID, 'barrierMax');
-    const level = actor.level ?? 1;
     const max = existingMax ?? barrierMaxFor(level, actor);
+    // a barrier raised empty (Charge on a biotic who had none) keeps its 0 HP
+    const current = item.getFlag(MODULE_ID, 'barrierCurrent') ?? max;
     await item.update({
       [`flags.${MODULE_ID}.barrierMax`]:     max,
-      [`flags.${MODULE_ID}.barrierCurrent`]: max,
-      'system.badge': { type: 'counter', value: max, min: 0, max },
+      [`flags.${MODULE_ID}.barrierCurrent`]: current,
+      'system.badge': { type: 'counter', value: current, min: 0, max },
     });
     return;
   }
@@ -482,14 +489,11 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
     } else {
       barrierDepleted = true;
       warpDetonated   = isWarp;
-      if (game.settings.get(MODULE_ID, 'autoDeleteBarrier')) {
-        barrier.delete();
-      } else {
-        barrier.update({
-          [`flags.${MODULE_ID}.barrierCurrent`]: 0,
-          'system.badge': { type: 'counter', value: 0, min: 0, max: barrierMax },
-        });
-      }
+      // a biotic's barrier is never removed: an empty one stays at 0 HP, ready to be refilled
+      barrier.update({
+        [`flags.${MODULE_ID}.barrierCurrent`]: 0,
+        'system.badge': { type: 'counter', value: 0, min: 0, max: barrierMax },
+      });
     }
   }
 
@@ -660,11 +664,7 @@ Hooks.on('pf2e.startTurn', async (first, second) => {
     const barrierMax     = barrier.getFlag(MODULE_ID, 'barrierMax')     ?? 0;
     const barrierCurrent = barrier.getFlag(MODULE_ID, 'barrierCurrent') ?? 0;
     if (barrierCurrent <= 0) {
-      if (game.settings.get(MODULE_ID, 'autoDeleteBarrier')) {
-        await barrier.delete();
-      } else {
-        parts.push(barrierDepletedHtml());
-      }
+      parts.push(barrierDepletedHtml());
     } else {
       parts.push(barrierStatusHtml(barrierCurrent, barrierMax));
     }
@@ -803,6 +803,23 @@ Hooks.on('createChatMessage', async (message) => {
 async function applyBarrierFromMessage(message, actor, item) {
   const effect = await fromUuid(item.system.selfEffect.uuid);
   if (!effect) return;
+  const kept = getBioticBarrier(actor);
+  if (kept) {
+    // the barrier the biotic already has is refreshed to full, never replaced
+    const max = barrierMaxFor(actor.level ?? 1, actor);
+    await kept.update({
+      [`flags.${MODULE_ID}.barrierMax`]:     max,
+      [`flags.${MODULE_ID}.barrierCurrent`]: max,
+      'system.badge': { type: 'counter', value: max, min: 0, max },
+    });
+  } else {
+    await createBarrier(actor, effect, message, item);
+  }
+  await markEffectApplied(message, effect);
+}
+
+/** Put the Biotic Barrier effect on a biotic who has none, with the action as its origin. */
+async function createBarrier(actor, effect, message, item) {
   const source = foundry.utils.mergeObject(effect.toObject(), {
     _id: null,
     system: {
@@ -820,8 +837,10 @@ async function applyBarrierFromMessage(message, actor, item) {
     },
   });
   await actor.createEmbeddedDocuments('Item', [source]);
+}
 
-  // the card now says it was applied, as the button would leave it
+/** The card now says the effect was applied, as the system's button would leave it. */
+async function markEffectApplied(message, effect) {
   const html = document.createElement('div');
   html.innerHTML = message.content;
   const button = html.querySelector('.message-buttons button[data-action="applyEffect"]');

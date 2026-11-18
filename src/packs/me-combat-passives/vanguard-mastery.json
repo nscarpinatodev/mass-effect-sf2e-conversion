@@ -14,7 +14,7 @@
     "slug": "me-vanguard-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Combat biotic training sharpens your body and barrier into a unified weapon. All biotic powers you use have their action cost <strong>reduced by 1</strong> (minimum 1 action). Vanguard Rush and Vanguard Strike, which combine Biotic Charge and Nova, cost <strong>2 actions</strong> instead: one less than the two powers' 3. After using Biotic Charge, your Biotic Barrier regains <strong>5 HP</strong>.</p><p><em>Classes: Vanguard.</em></p><hr/><p><em>Automation: Biotic powers show their reduced action cost. Using Charge refills 5 HP of your Biotic Barrier. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
+      "value": "<p>Combat biotic training sharpens your body and barrier into a unified weapon. All biotic powers you use have their action cost <strong>reduced by 1</strong> (minimum 1 action). Vanguard Rush, which combines Biotic Charge and Nova, is a 1-action flourish and isn't reduced further. After using Biotic Charge, your Biotic Barrier regains <strong>5 HP</strong>.</p><p><em>Classes: Vanguard.</em></p><hr/><p><em>Automation: Biotic powers show their reduced action cost. Using Charge refills 5 HP of your Biotic Barrier. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
     },
     "rules": [
       {

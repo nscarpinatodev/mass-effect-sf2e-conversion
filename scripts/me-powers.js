@@ -442,7 +442,7 @@ Hooks.once('init', () => {
   });
   game.settings.register(MODULE_ID, 'automateCharge', {
     name: 'Automate Vanguard Powers',
-    hint: 'Biotic Charge, Vanguard Rush and Vanguard Strike posted with one creature targeted move the Vanguard next to it and roll its Reflex save; Nova (alone or after Rush or Strike) rolls the Fortitude save of each creature in its area that is not on the Vanguard\'s side. Cooldowns are tracked. Needs a GM connected.',
+    hint: 'Biotic Charge and Vanguard Rush posted with one creature targeted move the Vanguard next to it and roll its Reflex save; Nova (alone or after Rush) rolls the Fortitude save of each creature in its area that is not on the Vanguard\'s side. Cooldowns are tracked. Needs a GM connected.',
     scope: 'world', config: true, type: Boolean, default: true,
   });
   game.settings.register(MODULE_ID, 'chargeAnimation', {
@@ -502,7 +502,7 @@ Hooks.on('createChatMessage', async (message) => {
     degree.note = [degree.note, 'Off-guard until the end of the Vanguard\'s next turn (Heavy Impact).'].filter(Boolean).join(' ');
   }
 
-  // Vanguard Rush (on a failed save) and Vanguard Strike (whatever the save) end in Nova,
+  // Vanguard Rush ends in Nova whatever the save,
   // once this save's own effects, such as a critical failure's full barrier, are in place
   const chain = (ctx.options ?? []).find((o) => o.startsWith(CHAIN_OPT))?.slice(CHAIN_OPT.length);
   const followUp = async () => {
@@ -510,6 +510,8 @@ Hooks.on('createChatMessage', async (message) => {
     const from = caster.getActiveTokens(true, true).find((t) => t.parent === tokenDoc?.parent);
     if (from) await novaBurst(caster, from);
     else postResult(caster, 'Nova', 'Not automated', [`${caster.name} has no token here: use Nova from the sheet.`], { owners: true });
+    // a failed save resets Charge and Nova (and a critical failure refills half the barrier)
+    await rushReset(caster, ctx.outcome, 'Vanguard Rush');
   };
 
   if (!Object.keys(degree).length) {
@@ -647,11 +649,10 @@ Hooks.on('createChatMessage', async (message) => {
   await followUp();
 });
 
-/** Whether a Charge save sets off Nova: Rush on a failure, Strike whatever the result. */
+/** Rush fires Nova whatever the Charge target rolls; a plain Charge sets off nothing. */
 function novaFollows(chain, outcome) {
-  if (chain === 'strike') return true;
-  if (chain === 'rush') return outcome === 'failure' || outcome === 'criticalFailure';
-  return false;
+  void outcome;
+  return chain === 'rush';
 }
 
 // ── CLASS MASTERIES ─────────────────────────────────────────────────────────
@@ -665,7 +666,7 @@ function novaFollows(chain, outcome) {
 // step is wrapped instead.
 const POWER_TRAITS = ['biotic', 'tech'];
 const MOMENTUM_SLUG = 'me-effect-vanguard-momentum';
-const COMBO_SLUGS = ['me-vanguard-rush', 'me-vanguard-vanguard-strike'];
+const COMBO_SLUGS = ['me-vanguard-rush'];
 
 Hooks.once('init', () => {
   const Character = CONFIG.PF2E?.Actor?.documentClasses?.character;
@@ -685,8 +686,8 @@ Hooks.once('init', () => {
 function actionCut(actor, item) {
   const efficiency = actor.flags?.[MODULE_ID]?.powerEfficiency;
   if (!efficiency || item.type !== 'feat' || item.system.actionType?.value !== 'action') return 0;
-  // Vanguard Rush and Vanguard Strike already combine Charge and Nova for one action less
-  // than the two (2 instead of 3); the masteries' cut is that combination, not another
+  // Vanguard Rush already combines Charge and Nova into one action; the masteries' cut
+  // doesn't apply to it again
   if (COMBO_SLUGS.includes(item.slug)) return 0;
   const traits = item.system.traits?.value ?? [];
   return Math.max(0, ...POWER_TRAITS.filter((t) => traits.includes(t)).map((t) => Number(efficiency[t]) || 0));
@@ -759,7 +760,7 @@ Hooks.on('createChatMessage', async (message) => {
     await chargeUsed(actor);
   }
   // With the automation on, the GM's client runs Nova from start to finish (see runNova)
-  if (slug === 'me-biotic-nova' && !vanguardAutomation() && !cooldownLeft(actor, NOVA_COOLDOWN)) await novaUsed(actor);
+  if (slug === 'me-biotic-nova' && !vanguardAutomation() && (!cooldownLeft(actor, NOVA_COOLDOWN) || apexSecondNova(actor))) await novaUsed(actor);
 });
 
 /**
@@ -767,9 +768,30 @@ Hooks.on('createChatMessage', async (message) => {
  * from Vanguard Mastery (flat) or Apex Vanguard / the barrier Charge Upgrade (full). A
  * critical failure on the save fills it (see POWERS). Also gives Vanguard Momentum.
  */
+/**
+ * A biotic keeps one Biotic Barrier for good; one who has never raised it gets it here,
+ * empty, so a Charge has something to refill. Returns the barrier (null if it can't be made).
+ */
+async function ensureBarrier(actor) {
+  const have = getBarrier(actor);
+  if (have) return have;
+  const pack = game.system.id === 'sf2e' ? 'sf2e-me-shields' : 'me-shields';
+  const effect = await fromUuid(`Compendium.${MODULE_ID}.${pack}.Item.meBioticBarrier0`).catch(() => null);
+  if (!effect) return null;
+  // the same size the shield system gives a raised barrier: 5 × half the level, rounded up, + the amp's bonus
+  const max = 5 * Math.max(1, Math.ceil((actor.level ?? 1) / 2)) + Math.max(0, Number(actor.flags?.[MODULE_ID]?.barrierBonus) || 0);
+  const source = foundry.utils.mergeObject(effect.toObject(), {
+    _id: null,
+    flags: { [MODULE_ID]: { barrier: true, barrierMax: max, barrierCurrent: 0 } },
+    system: { badge: { type: 'counter', value: 0, min: 0, max } },
+  });
+  await actor.createEmbeddedDocuments('Item', [source]);
+  return getBarrier(actor);
+}
+
 async function chargeUsed(actor) {
   const flags = actor.flags?.[MODULE_ID] ?? {};
-  const barrier = getBarrier(actor);
+  const barrier = await ensureBarrier(actor);
   if (barrier) {
     const max = barrier.flags[MODULE_ID].barrierMax;
     const now = barrier.flags[MODULE_ID].barrierCurrent ?? 0;
@@ -786,17 +808,69 @@ async function chargeUsed(actor) {
     }
   }
   await grantMomentum(actor);
+  await grantWeaponSynergy(actor);
 }
 
-/** Nova spends the whole barrier; its HP sets the dice every target saves against. Returns that HP. */
+/**
+ * Vanguard Strike (Weapon Synergy): every Charge gives Strikes +3d6 force (4d6 from 18th)
+ * until the end of the Vanguard's next turn. The feat's DamageDice rule reads the effect;
+ * a new Charge replaces the effect, so its duration starts over instead of stacking.
+ */
+const SYNERGY_SLUG = 'me-effect-weapon-synergy';
+async function grantWeaponSynergy(actor) {
+  if (!actor.items.some((i) => i.slug === 'me-vanguard-vanguard-strike')) return;
+  const old = actor.itemTypes.effect.filter((e) => e.slug === SYNERGY_SLUG).map((e) => e.id);
+  if (old.length) await actor.deleteEmbeddedDocuments('Item', old);
+  const dice = (actor.level ?? 1) >= 18 ? 4 : 3;
+  await actor.createEmbeddedDocuments('Item', [{
+    name: 'Weapon Synergy',
+    type: 'effect',
+    img: 'icons/magic/lightning/bolt-strike-purple-pink.webp',
+    system: {
+      slug: SYNERGY_SLUG,
+      description: { value: `<p>Your Strikes deal an extra <strong>${dice}d6 force</strong> damage until the end of your next turn (Vanguard Strike).</p>` },
+      duration: { value: 1, unit: 'rounds', expiry: 'turn-end', sustained: false },
+      rules: [],
+    },
+  }]);
+}
+
+// ── APEX VANGUARD: A SECOND NOVA ────────────────────────────────────────────
+// Apex Vanguard can use Nova twice per turn. The second ignores Nova's cooldown, detonates
+// as if the barrier were full (even when it is empty), and leaves the barrier as it is.
+// Novas are counted per turn (combat, round, turn); outside an encounter the Nova right
+// after another is the second.
+
+/** How many Novas the actor has used this turn. */
+function novasThisTurn(actor) {
+  const seen = actor.getFlag(MODULE_ID, 'novaTurn');
+  if (!seen || seen.key !== (turnKey() ?? 'any')) return 0;
+  // outside an encounter, a pair of Novas starts the count again
+  return seen.key === 'any' && seen.n >= 2 ? 0 : seen.n;
+}
+
+/** Whether the actor's next Nova is Apex Vanguard's free second one. */
+const apexSecondNova = (actor) => actor.items.some((i) => i.slug === 'me-vanguard-apex-vanguard') && novasThisTurn(actor) === 1;
+
+/**
+ * Nova spends the whole barrier; its HP sets the dice every target saves against. Returns that
+ * HP. Apex Vanguard's second Nova in a turn uses the barrier's maximum and spends nothing.
+ */
 async function novaUsed(actor) {
   const barrier = getBarrier(actor);
-  const now = barrier?.flags[MODULE_ID].barrierCurrent ?? 0;
+  const apex = !!barrier && apexSecondNova(actor);
+  const now = apex ? barrier.flags[MODULE_ID].barrierMax : barrier?.flags[MODULE_ID].barrierCurrent ?? 0;
   // novaAt names this detonation, so Nova Cascade refills once however many creatures crit-fail
-  await actor.update({ [`flags.${MODULE_ID}.novaCharge`]: now, [`flags.${MODULE_ID}.novaAt`]: Date.now() });
-  if (now > 0) await setBarrier(barrier, 0);
-  postResult(actor, 'Nova', 'success', [now > 0
-    ? `Detonates ${now} barrier HP: ${novaDice(now)}d6 force${actor.items.some((i) => i.slug === 'me-upgrade-nova') ? ' + 2d6 (Nova Upgrade)' : ''}`
+  await actor.update({
+    [`flags.${MODULE_ID}.novaCharge`]: now,
+    [`flags.${MODULE_ID}.novaAt`]: Date.now(),
+    [`flags.${MODULE_ID}.novaTurn`]: { key: turnKey() ?? 'any', n: novasThisTurn(actor) + 1 },
+  });
+  if (now > 0 && !apex) await setBarrier(barrier, 0);
+  const dice = `${novaDice(now)}d6 force${actor.items.some((i) => i.slug === 'me-upgrade-nova') ? ' + 2d6 (Nova Upgrade)' : ''}`;
+  postResult(actor, 'Nova', 'success', [apex
+    ? `Apex Vanguard, second Nova: detonates as if the barrier were full (${now} HP): ${dice}. The barrier stays at ${barrier.flags[MODULE_ID].barrierCurrent ?? 0}.`
+    : now > 0 ? `Detonates ${now} barrier HP: ${dice}`
     : 'No barrier HP to detonate (Nova needs an active Biotic Barrier)']);
   await grantMomentum(actor);
   return now;
@@ -819,20 +893,20 @@ async function grantMomentum(actor) {
 }
 
 // ── ONE-CLICK VANGUARD POWERS ───────────────────────────────────────────────
-// Posting Biotic Charge, Vanguard Rush or Vanguard Strike with one creature targeted:
+// Posting Biotic Charge or Vanguard Rush with one creature targeted:
 // the poster's client notes the target on the card, then the active GM's client
 // (which can move any token and roll any save) checks the cooldowns and range,
 // moves the Vanguard next to the target, starts the cooldowns, and rolls the
 // target's Reflex save. That save goes through the save-result hook above like any
-// other, which then sets off Nova for Rush (on a failure) and Strike (always).
+// other, which then sets off Nova for Rush (whatever the save).
 // Nova on its own needs no target: it detonates around the Vanguard. Every Nova
 // rolls the Fortitude save of each creature in its area not on the Vanguard's side.
 const CHARGE_COOLDOWN = 'me-effect-charge-cooldown';
 const NOVA_COOLDOWN = 'me-effect-nova-cooldown';
 const RUSH_COOLDOWN = 'me-effect-rush-cooldown';
 const COOLDOWN_NAMES = { [CHARGE_COOLDOWN]: 'Biotic Charge', [NOVA_COOLDOWN]: 'Nova', [RUSH_COOLDOWN]: 'Vanguard Rush' };
-// what a Vanguard card sets off: Rush and Strike end in Nova; Chain Charge is a free Charge
-const CHAINS = { 'me-vanguard-rush': 'rush', 'me-vanguard-vanguard-strike': 'strike', 'me-vanguard-chain-charge': 'free' };
+// what a Vanguard card sets off: Rush ends in Nova; Chain Charge is a free Charge
+const CHAINS = { 'me-vanguard-rush': 'rush', 'me-vanguard-chain-charge': 'free' };
 const CHAIN_OPT = 'me-chain:';
 const baseSlug = (item) => item?.slug?.replace(/^me-npc-/, 'me-');
 const vanguardAutomation = () => !!game.settings.get(MODULE_ID, 'automateCharge') && !!game.users?.activeGM;
@@ -857,12 +931,16 @@ function cooldownRounds(actor, slug) {
   return Math.max(1, BIOTIC_COOLDOWN - ampRecharge(actor));
 }
 
-/** Start one of the Vanguard cooldowns. Returns its rounds. */
-async function startCooldown(actor, slug, img) {
-  const rounds = cooldownRounds(actor, slug);
+/**
+ * Start one of the Vanguard cooldowns. Returns its rounds. `lockout` instead holds the power
+ * back only until the start of the actor's next turn (after a Rush reset, see below).
+ */
+async function startCooldown(actor, slug, img, { lockout = false } = {}) {
+  const rounds = lockout ? 1 : cooldownRounds(actor, slug);
   const name = COOLDOWN_NAMES[slug];
   const recharge = ampRecharge(actor);
-  const rule = slug === CHARGE_COOLDOWN ? '2 rounds, 1 with Improved Charge'
+  const rule = lockout ? 'after a Vanguard Rush reset, only one of Charge and Nova this turn'
+    : slug === CHARGE_COOLDOWN ? '2 rounds, 1 with Improved Charge'
     : recharge ? `4 − ${recharge} from the bio-amp, minimum 1` : '4 rounds without a bio-amp';
   await actor.createEmbeddedDocuments('Item', [{
     name: `${name} Cooldown`,
@@ -877,6 +955,58 @@ async function startCooldown(actor, slug, img) {
   }]);
   return rounds;
 }
+
+// ── VANGUARD RUSH RESET ─────────────────────────────────────────────────────
+// Vanguard Rush: when the Charge target fails its save, Charge's and
+// Nova's cooldowns reset at once, and the Vanguard may use ONE of them again this turn, not
+// both. The barrier also refills to half after the Nova: enough for a half-strength second
+// Nova now, and the next Rush's Charge tops it back to full. Rush is a flourish: once per turn.
+
+/** The current turn as a key (combat, round, turn), or null outside an encounter. */
+function turnKey() {
+  const c = game.combat;
+  return c?.started ? `${c.id}.${c.round}.${c.turn}` : null;
+}
+
+/** After the Nova of a Rush: reset the cooldowns if the Charge target failed. */
+async function rushReset(actor, outcome, name) {
+  if (outcome !== 'failure' && outcome !== 'criticalFailure') return;
+  const ids = actor.itemTypes.effect.filter((e) => e.slug === CHARGE_COOLDOWN || e.slug === NOVA_COOLDOWN).map((e) => e.id);
+  if (ids.length) await actor.deleteEmbeddedDocuments('Item', ids);
+  await actor.setFlag(MODULE_ID, 'rushFollowUp', turnKey() ?? 'any');
+  const lines = [`The target failed: Biotic Charge and Nova are ready again. Use one of them once more this turn, not both.`];
+  // the barrier refills to half after the Nova, so the next Rush's Charge tops it back to full
+  const barrier = getBarrier(actor);
+  if (barrier) {
+    const max = barrier.flags[MODULE_ID].barrierMax;
+    const now = barrier.flags[MODULE_ID].barrierCurrent ?? 0;
+    const half = Math.ceil(max / 2);
+    if (now < half) await setBarrier(barrier, half);
+    lines.push(`Biotic Barrier refilled to ${Math.max(now, half)} of ${max}`);
+  }
+  postResult(actor, name, 'Cooldowns reset', lines, { owners: true });
+}
+
+/**
+ * A Charge or Nova used after a reset: the other is held back until the Vanguard's next turn.
+ * Returns a line for the card, or null when there was no reset this turn.
+ */
+async function spendRushFollowUp(actor, used, img) {
+  const key = actor.getFlag(MODULE_ID, 'rushFollowUp');
+  if (!key) return null;
+  await actor.unsetFlag(MODULE_ID, 'rushFollowUp');
+  if (key !== (turnKey() ?? 'any')) return null;          // an earlier turn's reset, unused
+  const other = used === CHARGE_COOLDOWN ? NOVA_COOLDOWN : CHARGE_COOLDOWN;
+  if (cooldownLeft(actor, other)) return null;
+  await startCooldown(actor, other, img, { lockout: true });
+  return `${COOLDOWN_NAMES[other]} waits for your next turn: after a Rush reset, Charge or Nova, not both`;
+}
+
+/** Whether this turn already had a reset whose follow-up is still open. */
+const rushFollowUpOpen = (actor) => {
+  const key = actor.getFlag(MODULE_ID, 'rushFollowUp');
+  return !!key && key === (turnKey() ?? 'any');
+};
 
 Hooks.on('preCreateChatMessage', (message) => {
   if (!game.settings.get(MODULE_ID, 'automateCharge')) return;
@@ -917,17 +1047,23 @@ async function runCharge(message, item, targetUuids, chain) {
   const name = chain ? item.name : 'Biotic Charge';
   const tell = (lines) => postResult(actor, name, 'Not automated', lines, { owners: true });
 
-  // Rush and Strike use Charge and Nova, so all three cooldowns stand in their way;
-  // Chain Charge is a Charge outside the cooldowns
-  const combo = chain === 'rush' || chain === 'strike';
-  const blocking = chain === 'free' ? [] : combo ? [CHARGE_COOLDOWN, NOVA_COOLDOWN, RUSH_COOLDOWN] : [CHARGE_COOLDOWN];
+  // Rush uses Charge and Nova, so both cooldowns stand in its way (it has none of its
+  // own); Chain Charge is a Charge outside the cooldowns
+  const combo = chain === 'rush';
+  const blocking = chain === 'free' ? [] : combo ? [CHARGE_COOLDOWN, NOVA_COOLDOWN] : [CHARGE_COOLDOWN];
   for (const slug of blocking) {
     const left = cooldownLeft(actor, slug);
     if (left) return tell([`${COOLDOWN_NAMES[slug]} is on cooldown (${left} round${left === 1 ? '' : 's'} left). Nothing moved and no save was rolled.`]);
   }
-  const barrier = getBarrier(actor);
-  if (chain === 'rush' && !((barrier?.flags[MODULE_ID].barrierCurrent ?? 0) >= 1)) return tell(['Vanguard Rush needs a Biotic Barrier with at least 1 HP.']);
-  if (chain === 'strike' && !barrier) return tell(['Vanguard Strike needs an active Biotic Barrier to recharge.']);
+  // after a reset the Vanguard gets one more Charge or Nova, not a combo that is both
+  if (combo && rushFollowUpOpen(actor)) return tell([`After a Vanguard Rush reset, use Biotic Charge or Nova once more this turn, not ${name}.`]);
+  // Rush is a flourish: once per turn
+  if (chain === 'rush' && turnKey() && actor.getFlag(MODULE_ID, 'rushTurn') === turnKey()) {
+    return tell(['Vanguard Rush is a flourish: you have already used it this turn.']);
+  }
+  // Rush needs no barrier HP: the Charge refills it before the Nova (an empty one is raised if need be)
+  const barrier = combo ? await ensureBarrier(actor) : getBarrier(actor);
+  if (combo && !barrier) return tell([`${name} could not find the Biotic Barrier effect in the compendium.`]);
   if (targetUuids.length !== 1) {
     return tell([targetUuids.length ? `Target only one creature to automate ${name}.` : `Target a creature before using ${name} to automate it.`]);
   }
@@ -944,10 +1080,7 @@ async function runCharge(message, item, targetUuids, chain) {
   if (landing.distance > range) return tell([`${target.name} is out of reach: the nearest space beside it is ${landing.distance} feet away, and Charge covers ${range} feet.`]);
 
   const lines = [];
-  if (chain === 'strike') {
-    await setBarrier(barrier, barrier.flags[MODULE_ID].barrierMax);
-    lines.push('Biotic Barrier recharged to full');
-  }
+  if (chain === 'rush' && turnKey()) await actor.setFlag(MODULE_ID, 'rushTurn', turnKey());
   if (landing.distance > 0) {
     // a blur of biotic light rather than a walk: the beam plays as the token streaks across
     const grid = scene.grid;
@@ -974,24 +1107,24 @@ async function runCharge(message, item, targetUuids, chain) {
     const rounds = await startCooldown(actor, CHARGE_COOLDOWN, item.img);
     if (combo) {
       const nova = await startCooldown(actor, NOVA_COOLDOWN, item.img);
-      const rush = await startCooldown(actor, RUSH_COOLDOWN, item.img);
-      lines.push(`Cooldowns: Biotic Charge ${plural(rounds)}, Nova ${plural(nova)}, Vanguard Rush ${plural(rush)}`);
+      lines.push(`Cooldowns: Biotic Charge ${plural(rounds)}, Nova ${plural(nova)} (both reset if the target fails its save)`);
     } else {
       lines.push(`Cooldown: ${plural(rounds)}`);
+      const held = await spendRushFollowUp(actor, CHARGE_COOLDOWN, item.img);
+      if (held) lines.push(held);
     }
   }
   // a plain Charge card refills on use (see chargeUsed); these cards are not one
   if (chain) await chargeUsed(actor);
 
-  // Rush and Strike use the actor's own Charge for its DC and its save
+  // Rush and Chain Charge use the actor's own Charge for its DC and its save
   const charge = chain ? actor.items.find((i) => baseSlug(i) === 'me-biotic-charge') ?? item : item;
   const dc = powerDC(charge);
   if (!dc) {
     lines.push(`Roll ${target.name}'s Reflex save from the Charge card`);
     return postResult(actor, name, 'Charged', lines, { owners: true });
   }
-  if (chain === 'rush') lines.push('Nova follows if the target fails its save');
-  if (chain === 'strike') lines.push('Nova follows whatever the target rolls');
+  if (combo) lines.push('Nova follows whatever the target rolls; a failed save resets Charge and Nova');
   postResult(actor, name, 'Charged', lines, { owners: true });
   await target.actor.saves.reflex.roll({
     dc: { value: dc },
@@ -1149,12 +1282,20 @@ function playChargeBeam(from, to, size) {
 async function runNova(message, item) {
   const actor = item.actor;
   const tell = (lines) => postResult(actor, 'Nova', 'Not automated', lines, { owners: true });
+  // Apex Vanguard's second Nova this turn: no cooldown to wait for or start, no barrier needed
+  const apex = !!getBarrier(actor) && apexSecondNova(actor);
   const left = cooldownLeft(actor, NOVA_COOLDOWN);
-  if (left) return tell([`Nova is on cooldown (${left} round${left === 1 ? '' : 's'} left). The barrier was not spent.`]);
-  if (!((getBarrier(actor)?.flags[MODULE_ID].barrierCurrent ?? 0) >= 1)) return tell(['Nova needs an active Biotic Barrier with at least 1 HP.']);
-  const rounds = await startCooldown(actor, NOVA_COOLDOWN, item.img);
+  if (left && !apex) {
+    const twice = actor.items.some((i) => i.slug === 'me-vanguard-apex-vanguard') && novasThisTurn(actor) >= 2;
+    return tell([twice ? 'Apex Vanguard: Nova twice per turn, and you have used both. The barrier was not spent.'
+      : `Nova is on cooldown (${left} round${left === 1 ? '' : 's'} left). The barrier was not spent.`]);
+  }
+  if (!apex && !((getBarrier(actor)?.flags[MODULE_ID].barrierCurrent ?? 0) >= 1)) return tell(['Nova needs an active Biotic Barrier with at least 1 HP.']);
+  const rounds = apex ? 0 : await startCooldown(actor, NOVA_COOLDOWN, item.img);
+  // after a Rush reset, the second Nova is the follow-up: Charge waits for the next turn
+  const held = await spendRushFollowUp(actor, NOVA_COOLDOWN, item.img);
   const source = speakerToken(message, actor);
-  postResult(actor, 'Nova', 'Detonated', [`Cooldown: ${rounds} round${rounds === 1 ? '' : 's'}`], { owners: true });
+  postResult(actor, 'Nova', 'Detonated', [apex ? 'Apex Vanguard: second Nova this turn, no cooldown' : `Cooldown: ${rounds} round${rounds === 1 ? '' : 's'}`, ...(held ? [held] : [])], { owners: true });
   if (!source) {
     await novaUsed(actor);
     return tell([`${actor.name} has no token on the scene: roll each creature's Fortitude save from the Nova card.`]);

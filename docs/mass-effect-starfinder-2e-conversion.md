@@ -1509,7 +1509,7 @@ The most aggressive class in the galaxy, Vanguards combine biotic power with clo
 
 #### Vanguard Mastery — Level 1
 
-Combat biotic training sharpens your body and barrier into a unified weapon. All biotic powers you use have their action cost **reduced by 1** (minimum 1 action). Vanguard Rush and Vanguard Strike, which combine Biotic Charge and Nova, cost **2 actions** instead: one less than the two powers' 3. After using Biotic Charge, your Biotic Barrier regains **5 HP**.
+Combat biotic training sharpens your body and barrier into a unified weapon. All biotic powers you use have their action cost **reduced by 1** (minimum 1 action). Vanguard Rush, which combines Biotic Charge and Nova, is a 1-action flourish and isn't reduced further. After using Biotic Charge, your Biotic Barrier regains **5 HP**.
 *Classes: Vanguard.*
 
 ---
@@ -1520,7 +1520,7 @@ Combat biotic training sharpens your body and barrier into a unified weapon. All
 #### Improved Vanguard Mastery — Level 7
 *Prerequisite: Vanguard Mastery*
 
-Your combat biotic synergy reaches its peak efficiency. All biotic powers have their action cost **reduced by 1** (minimum 1 action) and Biotic Charge restores **5 HP** to your Biotic Barrier. Vanguard Rush and Vanguard Strike, which combine Biotic Charge and Nova, cost **2 actions** instead: one less than the two powers' 3. After using Biotic Charge or Nova, your next Strike this turn deals **+1d6 void** damage.
+Your combat biotic synergy reaches its peak efficiency. All biotic powers have their action cost **reduced by 1** (minimum 1 action) and Biotic Charge restores **5 HP** to your Biotic Barrier. Vanguard Rush, which combines Biotic Charge and Nova, is a 1-action flourish and isn't reduced further. After using Biotic Charge or Nova, your next Strike this turn deals **+1d6 void** damage.
 *Prerequisite: Vanguard Mastery.*
 
 ---
@@ -1531,7 +1531,7 @@ Your combat biotic synergy reaches its peak efficiency. All biotic powers have t
 #### Superior Vanguard Mastery — Level 13
 *Prerequisite: Improved Vanguard Mastery*
 
-Your barrier and body move as one unstoppable force. All biotic powers have their action cost **reduced by 1** (minimum 1 action), Biotic Charge restores **5 HP** to your Biotic Barrier, and after using Biotic Charge or Nova your next Strike deals **+1d6 void** damage. Vanguard Rush and Vanguard Strike, which combine Biotic Charge and Nova, cost **2 actions** instead: one less than the two powers' 3. While your Biotic Barrier is at full HP, you gain a **+1 status bonus** to attack rolls and damage.
+Your barrier and body move as one unstoppable force. All biotic powers have their action cost **reduced by 1** (minimum 1 action), Biotic Charge restores **5 HP** to your Biotic Barrier, and after using Biotic Charge or Nova your next Strike deals **+1d6 void** damage. Vanguard Rush, which combines Biotic Charge and Nova, is a 1-action flourish and isn't reduced further. While your Biotic Barrier is at full HP, you gain a **+1 status bonus** to attack rolls and damage.
 *Prerequisite: Improved Vanguard Mastery.*
 
 ---
@@ -2517,15 +2517,15 @@ You recover from a Biotic Charge almost before you land. Biotic Charge's cooldow
 
 ---
 
-#### Vanguard Rush ◆◆ — Level 4
+#### Vanguard Rush ◆ — Level 4
 *Prerequisite: Biotic Charge, Nova*
 
-You combine your Biotic Charge and Nova into a single explosive sequence, crashing into your target and immediately detonating your barrier energy on impact.
-**Requirements** You have an active Biotic Barrier with at least 1 HP remaining.
-Use **Biotic Charge**. If the target fails their save (Failure or Critical Failure result), immediately use **Nova** as a free action upon landing. The Nova uses your Biotic Barrier's current HP at the moment of detonation, including any HP recharged by the Biotic Charge. If the target critically succeeds on their save against Biotic Charge, Nova is not triggered.
-Using Vanguard Rush places both Biotic Charge and Nova on their individual cooldowns.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Biotic Charge's own cooldown is 2 rounds (1 with Improved Charge).
-*Target one creature before you use Vanguard Rush and it runs itself (Automate Vanguard Powers setting): you charge to the target, it rolls its Reflex save, and on a failure Nova detonates around you, rolling each nearby foe's Fortitude save. Biotic Charge, Nova and Vanguard Rush all start their cooldowns. A GM must be connected.*
+You fold Biotic Charge and Nova into a single motion, crashing into your target and detonating your barrier the instant you land.
+You can't use Vanguard Rush while Biotic Charge or Nova is on cooldown.
+Use **Biotic Charge**, then **Nova** as soon as you land, whatever the target rolls. The Charge refills your Biotic Barrier before the Nova spends it, so the Nova detonates with at least half your barrier even if it was empty when you started.
+**Failure or Critical Failure** If the target of the Charge fails its save, the cooldowns of Biotic Charge and Nova reset at once. You can use **one** of them again this turn, but not both. After the Nova, your Biotic Barrier also refills to half its maximum HP: enough for a second, half-strength Nova this turn, and the next Vanguard Rush's Charge tops it back to full.
+**Cooldown:** none of its own. Vanguard Rush starts Biotic Charge's cooldown (2 rounds, 1 with Improved Charge) and Nova's (4 rounds, less your bio-amp's Recharge, minimum 1), unless the target's failed save resets them.
+*Target one creature before you use Vanguard Rush and it runs itself (Automate Vanguard Powers setting): you charge to the target, it rolls its Reflex save, Nova detonates around you and rolls each nearby foe's Fortitude save, and on a failed save the cooldowns reset and the barrier refills to half. The automation holds back the other of Charge and Nova once you use one after a reset, and refuses a second Rush in the same turn. A GM must be connected.*
 
 ---
 
@@ -2588,16 +2588,14 @@ On a Critical Failure, the target is not merely knocked prone - they are **throw
 
 ---
 
-#### Vanguard Strike ◆◆ — Level 14
-*Prerequisite: Vanguard Rush, Nova Upgrade*
+#### Vanguard Strike — Level 14
+*Prerequisite: Biotic Charge*
 
-You have mastered the art of the biotic blitz. Biotic Charge and Nova fuse into a single overwhelming sequence that devastates everything caught in your path.
-**Requirements** None - your Biotic Barrier automatically recharges to full before the sequence begins.
-Use **Biotic Charge**. Immediately upon landing, use **Nova** as a free action. Nova fires regardless of whether the Biotic Charge target succeeded their save - even a Critical Success does not prevent the detonation. Nova uses the upgraded statistics from **Nova Upgrade** (20-foot emanation, +2d6 damage, Stunned 1 on Failure, Stunned 3 on Critical Failure). Because the barrier was just recharged to full, Nova detonates at **full strength**.
-Vanguard Strike places Biotic Charge, Nova, and Vanguard Rush on their individual cooldowns simultaneously.
-**Cooldown:** Biotic Charge's own (2 rounds, 1 with Improved Charge), and 4 rounds, less your bio-amp's Recharge (minimum 1) for Nova and Vanguard Rush.
-*Prerequisites: Vanguard Rush, Nova Upgrade. Classes: Vanguard.*
-*Target one creature before you use Vanguard Strike and it runs itself (Automate Vanguard Powers setting): your barrier fills, you charge to the target, it rolls its Reflex save, and Nova detonates around you whatever it rolled, rolling each nearby foe's Fortitude save. Biotic Charge, Nova and Vanguard Rush all start their cooldowns. A GM must be connected.*
+Your biotic charge leaves your body thrumming with dark energy, and every shot or blow that follows carries it into the target. (In the games, Biotic Charge's Weapon Synergy evolution.)
+After you use **Biotic Charge**, including the Charge in Vanguard Rush, Chain Charge or Death's Embrace, you gain **Weapon Synergy** until the end of your next turn. While you have it, your Strikes deal an extra **3d6 force** damage. At 18th level, the extra damage increases to **4d6 force**.
+This applies to every Strike, melee or ranged, so it works with shotguns, Biotic Attack and melee weapons alike. Using Charge again while you have Weapon Synergy refreshes its duration; it doesn't stack.
+*Prerequisite: Biotic Charge. Classes: Vanguard.*
+*Automation: using Biotic Charge (alone, in Vanguard Rush or as Chain Charge) gives you a Weapon Synergy effect until the end of your next turn, and your Strikes add the force damage while it lasts.*
 
 ---
 

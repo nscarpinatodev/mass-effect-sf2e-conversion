@@ -14,7 +14,7 @@
     "slug": "me-vanguard-rush",
     "description": {
       "gm": "",
-      "value": "<p>You combine your Biotic Charge and Nova into a single explosive sequence, crashing into your target and immediately detonating your barrier energy on impact.</p><p><strong>Requirements</strong> You have an active Biotic Barrier with at least 1 HP remaining.</p><p>Use <strong>Biotic Charge</strong>. If the target fails their save (Failure or Critical Failure result), immediately use <strong>Nova</strong> as a free action upon landing. The Nova uses your Biotic Barrier's current HP at the moment of detonation, including any HP recharged by the Biotic Charge. If the target critically succeeds on their save against Biotic Charge, Nova is not triggered.</p><p>Using Vanguard Rush places both Biotic Charge and Nova on their individual cooldowns.</p><p><strong>Cooldown:</strong> 4 rounds, less your bio-amp's Recharge (minimum 1). Biotic Charge's own cooldown is 2 rounds (1 with Improved Charge).</p><p><em>Target one creature before you use Vanguard Rush and it runs itself (Automate Vanguard Powers setting): you charge to the target, it rolls its Reflex save, and on a failure Nova detonates around you, rolling each nearby foe's Fortitude save. Biotic Charge, Nova and Vanguard Rush all start their cooldowns. A GM must be connected.</em></p>"
+      "value": "<p>You fold Biotic Charge and Nova into a single motion, crashing into your target and detonating your barrier the instant you land.</p><p>You can't use Vanguard Rush while Biotic Charge or Nova is on cooldown.</p><p>Use <strong>Biotic Charge</strong>, then <strong>Nova</strong> as soon as you land, whatever the target rolls. The Charge refills your Biotic Barrier before the Nova spends it, so the Nova detonates with at least half your barrier even if it was empty when you started.</p><p><strong>Failure or Critical Failure</strong> If the target of the Charge fails its save, the cooldowns of Biotic Charge and Nova reset at once. You can use <strong>one</strong> of them again this turn, but not both. After the Nova, your Biotic Barrier also refills to half its maximum HP: enough for a second, half-strength Nova this turn, and the next Vanguard Rush's Charge tops it back to full.</p><p><strong>Cooldown:</strong> none of its own. Vanguard Rush starts Biotic Charge's cooldown (2 rounds, 1 with Improved Charge) and Nova's (4 rounds, less your bio-amp's Recharge, minimum 1), unless the target's failed save resets them.</p><p><em>Target one creature before you use Vanguard Rush and it runs itself (Automate Vanguard Powers setting): you charge to the target, it rolls its Reflex save, Nova detonates around you and rolls each nearby foe's Fortitude save, and on a failed save the cooldowns reset and the barrier refills to half. The automation holds back the other of Charge and Nova once you use one after a reset, and refuses a second Rush in the same turn. A GM must be connected.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -27,6 +27,7 @@
       "value": [
         "vanguard",
         "biotic",
+        "flourish",
         "manipulate",
         "move"
       ],
@@ -55,7 +56,7 @@
       "value": "action"
     },
     "actions": {
-      "value": 2
+      "value": 1
     },
     "category": "class",
     "subfeatures": {

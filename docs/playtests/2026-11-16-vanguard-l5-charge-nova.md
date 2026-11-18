@@ -5,7 +5,7 @@
 ## Setup
 
 - **Vanguard L5:** Str key (+4), Cha +0, class DC 21, 82 HP. Feats: Biotic Charge, Nova, Improved Charge. Biotic Barrier 15 HP (5 × half level, rounded up), so Nova is 5d6.
-- **Charge** (2 actions): 4d6 bludgeoning, basic Reflex. **Nova** (1 action): 5d6 force, basic Fortitude, 10-foot emanation.
+- **Charge** (1 action for a Vanguard: 2 base, less 1 from Vanguard Mastery): 4d6 bludgeoning, basic Reflex. **Nova** (1 action): 5d6 force, basic Fortitude, 10-foot emanation. The whole combo takes 2 actions.
 - **Squad (reset before every run):**
 
 | Creature | Level | HP | Shields | Fort | Position |
