@@ -289,9 +289,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-300 Claymore is the most powerful shotgun available to ground troops in Cerberus's arsenal. A single-shot weapon of staggering lethality, it fires a dense kinetic slug capable of piercing vehicle-grade armor at point-blank range. The recoil is severe enough to require Krogan physiology or specialized shock-absorbing harnesses - for everyone else, it is a weapon of last resort and absolute commitment.</p>"
+          "value": "<p>The M-300 Claymore is the most powerful shotgun available to ground troops in Cerberus's arsenal. A single-shot weapon of staggering lethality, it fires a dense kinetic slug capable of piercing vehicle-grade armor at point-blank range. The recoil is severe enough to require Krogan physiology or specialized shock-absorbing harnesses - for everyone else, it is a weapon of last resort and absolute commitment.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-300-claymore",
         "_migration": {
           "version": 0.955,

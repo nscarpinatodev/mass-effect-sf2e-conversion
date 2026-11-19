@@ -1,3 +1,5 @@
+// STALE: the files this script writes have since been edited by hand (class traits, class-feat category,
+// automation text, prerequisites). Running it again overwrites those edits. Edit src/packs/me-combat-passives directly.
 // Generates passive combat feat items (with 3-tier upgrade chains) and associated effects.
 // Usage: node scripts/generate-combat-passives.mjs
 

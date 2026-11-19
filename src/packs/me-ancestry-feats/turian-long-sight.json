@@ -1,0 +1,73 @@
+{
+  "_key": "!items!MEAncFeat0000043",
+  "_id": "MEAncFeat0000043",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Long Sight",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>Turian eyes evolved to pick out movement across Palaven's glaring silver plains, and turian marksmanship training does the rest.</p><p>The range increment of ranged weapons you wield increases by 10 feet. This doesn't apply to thrown weapons.</p><hr/><p><em>Automation: The range increment is raised on your ranged weapons.</em></p>"
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "AdjustStrike",
+        "mode": "add",
+        "property": "range-increment",
+        "value": 10,
+        "definition": [
+          "item:ranged",
+          {
+            "not": "item:thrown"
+          }
+        ]
+      }
+    ],
+    "slug": "long-sight",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "turian"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

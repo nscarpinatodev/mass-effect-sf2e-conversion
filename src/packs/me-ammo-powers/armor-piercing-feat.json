@@ -18,7 +18,7 @@
     "slug": "me-feat-armor-piercing",
     "description": {
       "gm": "",
-      "value": "<p>You have been trained in the use of armor-piercing rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Hard alloy sabot rounds designed to penetrate ablative armor plating. These rounds add no bonus damage type.</p><p>When striking a target with an active Combat Armor Frame, 50% of the incoming HP damage bypasses the armor entirely and is dealt directly to shields and HP.</p><p>Remove this effect to return to standard ammunition.</p>"
+      "value": "<p>You have been trained in the use of armor-piercing rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Hard alloy sabot rounds designed to penetrate ablative armor plating. These rounds add no bonus damage type.</p><p>When striking a target with an active Combat Armor Frame, 50% of the incoming HP damage bypasses the armor entirely and is dealt directly to shields and HP.</p><p>Ammo powers change what a gun fires: they do nothing for a melee Strike.</p><p>Remove this effect to return to standard ammunition.</p>"
     },
     "rules": [],
     "_migration": {
@@ -30,7 +30,11 @@
       "otherTags": [
         "ammo-power"
       ],
-      "value": [],
+      "value": [
+        "infiltrator",
+        "soldier",
+        "vanguard"
+      ],
       "rarity": "common"
     },
     "publication": {

@@ -1,0 +1,66 @@
+{
+  "_key": "!items!MEAncFeat0000038",
+  "_id": "MEAncFeat0000038",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Biotic Ward",
+  "system": {
+    "actionType": {
+      "value": "reaction"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p><strong>Frequency</strong> once per 10 minutes</p><p><strong>Trigger</strong> You are the target of an attack you can see.</p><p>You throw a mass effect field between yourself and the attack by reflex.</p><p>You gain a +2 circumstance bonus to AC against the triggering attack. If it misses, the attacker can't be pushed or pulled toward you by your own biotics until the start of your next turn, as the field lingers.</p><hr/><p><em>Automation: Apply the +2 to AC by hand.</em></p>"
+    },
+    "level": {
+      "value": 9
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "biotic-ward",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "asari",
+        "biotic",
+        "force"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null,
+    "frequency": {
+      "max": 1,
+      "per": "PT10M"
+    }
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

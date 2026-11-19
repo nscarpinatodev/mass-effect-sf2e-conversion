@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-15 Vindicator is a high-end battle rifle favored by mercenaries and private military contractors throughout the Terminus Systems. Its precision burst-fire mechanism channels kinetic rounds with exceptional accuracy at medium range, striking a balance between stopping power and controlled fire discipline that the Avenger sacrifices for capacity.</p>"
+      "value": "<p>The M-15 Vindicator is a high-end battle rifle favored by mercenaries and private military contractors throughout the Terminus Systems. Its precision burst-fire mechanism channels kinetic rounds with exceptional accuracy at medium range, striking a balance between stopping power and controlled fire discipline that the Avenger sacrifices for capacity.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-15-vindicator",
     "_migration": {
       "version": 0.955,

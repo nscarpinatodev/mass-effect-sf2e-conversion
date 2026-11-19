@@ -1,0 +1,139 @@
+{
+  "folder": null,
+  "name": "Reegar Carbine",
+  "type": "weapon",
+  "effects": [],
+  "img": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": {
+      "gm": "",
+      "value": "<p>Named for the quarian Reegar family, who have served as marines for generations, this carbine is less a shotgun than a short-range lightning projector. It discharges a continuous electrical arc that overloads shields and cooks anything standing behind them. Its reach is very short, and inside that reach little survives it.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
+    },
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
+    "slug": "reegar-carbine",
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "tech",
+        "scatter-5"
+      ],
+      "rarity": "uncommon"
+    },
+    "publication": {
+      "title": "Mass Effect Homebrew",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 11
+    },
+    "baseItem": "reegar-carbine",
+    "bulk": {
+      "value": 2
+    },
+    "price": {
+      "value": {
+        "gp": 5000
+      }
+    },
+    "equipped": {
+      "carryType": "worn",
+      "invested": null,
+      "handsHeld": 0
+    },
+    "usage": {
+      "value": "held-in-two-hands"
+    },
+    "category": "martial",
+    "group": "shotgun",
+    "bonus": {
+      "value": 0
+    },
+    "damage": {
+      "dice": 5,
+      "die": "d8",
+      "damageType": "electricity",
+      "persistent": null
+    },
+    "splashDamage": {
+      "value": 0
+    },
+    "range": 10,
+    "expend": 1,
+    "ammo": {
+      "capacity": 20,
+      "baseType": "battery",
+      "builtIn": false
+    },
+    "reload": {
+      "value": "1"
+    },
+    "grade": "superior",
+    "runes": {
+      "potency": 0,
+      "striking": 4,
+      "property": []
+    },
+    "bonusDamage": {
+      "value": 0
+    },
+    "property1": {
+      "value": "",
+      "dice": 0,
+      "die": "",
+      "damageType": "",
+      "critDice": 0,
+      "critDie": "",
+      "critDamage": "",
+      "critDamageType": "",
+      "strikeConditionType": "",
+      "strikeConditionValue": null,
+      "criticalConditionType": "",
+      "criticalConditionValue": null
+    },
+    "subitems": []
+  },
+  "_id": "0a207a0df2a6d115",
+  "_key": "!items!0a207a0df2a6d115"
+}

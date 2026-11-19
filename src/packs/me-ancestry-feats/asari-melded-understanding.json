@@ -13,10 +13,10 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>The asari neural meld is one of the most intimate forms of communication in the galaxy-a temporary merging of nervous systems that allows two beings to share thoughts, memories, and emotional states with a directness that language cannot approach. You have developed the ability to use a controlled, surface-level version of this connection.</p><p>You attempt a Diplomacy check against a willing or helpless creature within reach. The DC is 15 for a willing creature or the creature's Will DC for a helpless one.</p><p><strong>Critical Success</strong> You gain a clear, accurate sense of the creature's current emotional state, one significant memory or piece of information from the last 24 hours, and whether it is concealing something. The creature is temporarily immune to Melded Understanding for 24 hours.</p><p><strong>Success</strong> You gain a general sense of the creature's emotional state and one surface-level impression or memory it is currently focused on.</p><p><strong>Failure</strong> You gain no information. If the target was unwilling, you are stupefied 1 for 1 round from the failed connection.</p>"
+      "value": "<p>The asari neural meld is one of the most intimate forms of communication in the galaxy-a temporary merging of nervous systems that allows two beings to share thoughts, memories, and emotional states with a directness that language cannot approach. You have developed the ability to use a controlled, surface-level version of this connection.</p><p>You attempt a Diplomacy check against a willing or helpless creature within reach. The DC is 15 for a willing creature or the creature's Will DC for a helpless one.</p><p><strong>Critical Success</strong> You gain a clear, accurate sense of the creature's current emotional state, one significant memory or piece of information from the last 24 hours, and whether it is concealing something. The creature is temporarily immune to Melded Understanding for 24 hours.</p><p><strong>Success</strong> You gain a general sense of the creature's emotional state and one surface-level impression or memory it is currently focused on.</p><p><strong>Failure</strong> You gain no information. If the target was unwilling, you are stupefied 1 for 1 round from the failed connection.</p><p><strong>Special</strong> An Ardat-Yakshi can't take this feat.</p>"
     },
     "level": {
-      "value": 9
+      "value": 5
     },
     "prerequisites": {
       "value": []

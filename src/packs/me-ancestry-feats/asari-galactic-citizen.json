@@ -1,0 +1,64 @@
+{
+  "_key": "!items!MEAncFeat0000035",
+  "_id": "MEAncFeat0000035",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Galactic Citizen",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>You grew up with turian neighbors, salarian teachers and krogan bouncers, and you read other species as easily as your own.</p><p>You can use Society to Recall Knowledge about any species, its culture and its customs as though you were trained in the relevant skill, and you never take a penalty for unfamiliarity with another species' customs. When you Aid an ally whose ancestry is different from yours, you gain a +1 circumstance bonus to the check.</p><hr/><p><em>Automation: Both benefits are applied by hand.</em></p>"
+    },
+    "level": {
+      "value": 5
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Colonist Asari heritage"
+        }
+      ]
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "galactic-citizen",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "asari"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

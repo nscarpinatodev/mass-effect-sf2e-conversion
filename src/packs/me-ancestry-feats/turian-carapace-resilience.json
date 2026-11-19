@@ -13,7 +13,7 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>The turian exoskeleton is not decorative. It is a structural feature that distributes impact loads across a rigid lattice integrated into the musculature, and in individuals whose biology has been pushed through sustained military conditioning, that lattice thickens and hardens beyond the species baseline. Veteran turian soldiers take hits that would permanently injure younger members of their species, and they know it-not with arrogance, but with the calm of something that has been tested repeatedly and not found wanting.</p><p>Your natural armor improves. You gain a +1 status bonus to AC when you are unarmored. Additionally, you gain resistance to bludgeoning and slashing damage equal to half your level (minimum 1). When you critically fail a Fortitude save against a physical effect (such as being knocked prone, moved, or stunned by a physical blow), you treat the result as a regular failure instead.</p>"
+      "value": "<p>The turian exoskeleton is not decorative. It is a structural feature that distributes impact loads across a rigid lattice integrated into the musculature, and in individuals whose biology has been pushed through sustained military conditioning, that lattice thickens and hardens beyond the species baseline. Veteran turian soldiers take hits that would permanently injure younger members of their species, and they know it-not with arrogance, but with the calm of something that has been tested repeatedly and not found wanting.</p><p>You gain resistance to bludgeoning and slashing damage equal to half your level (minimum 1). When you critically fail a Fortitude save against a physical effect (such as being knocked prone, moved, or stunned by a physical blow), you get a failure instead.</p><hr/><p><em>Automation: The resistances are applied. The Fortitude save clause is applied by hand.</em></p>"
     },
     "level": {
       "value": 9
@@ -28,16 +28,6 @@
       "remaster": true
     },
     "rules": [
-      {
-        "key": "FlatModifier",
-        "selector": "ac",
-        "type": "status",
-        "value": 1,
-        "predicate": [
-          "armor:none"
-        ],
-        "label": "Carapace Resilience"
-      },
       {
         "key": "Resistance",
         "type": "bludgeoning",

@@ -14,7 +14,7 @@
     "slug": "me-infiltrator-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>Your tactical precision reaches a lethal edge. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and you retain the <strong>+2 bonus</strong> to Stealth while Tactical Cloak is active. Your first attack after emerging from Tactical Cloak deals <strong>+2d6 precision</strong> damage.</p><p><em>Prerequisite: Infiltrator Mastery.</em></p><hr/><p><em>Automation: The extra 2d6 precision is added to Strikes while the Tactical Cloak effect is on you, on top of the cloak's own 2d6.</em></p>"
+      "value": "<p>Your tactical precision reaches a lethal edge. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and you retain Infiltrator Mastery's other benefits. Strikes you make while cloaked deal a further <strong>+2d6 precision</strong> damage. These dice are not multiplied by level.</p><p><em>Prerequisite: Infiltrator Mastery.</em></p><hr/><p><em>Automation: The extra 2d6 precision is added to Strikes while the Tactical Cloak effect is on you, on top of the cloak's own dice.</em></p>"
     },
     "rules": [
       {
@@ -22,11 +22,11 @@
         "selector": "strike-damage",
         "diceNumber": 2,
         "dieSize": "d6",
-        "damageType": "precision",
         "predicate": [
-          "self:effect:tactical-cloak"
+          "me-tactical-cloak"
         ],
-        "label": "Improved Infiltrator Mastery"
+        "label": "Improved Infiltrator Mastery",
+        "category": "precision"
       }
     ],
     "_migration": {

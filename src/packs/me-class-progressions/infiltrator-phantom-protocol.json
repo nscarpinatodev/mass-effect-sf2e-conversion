@@ -14,7 +14,7 @@
     "slug": "me-infiltrator-phantom-protocol",
     "description": {
       "gm": "",
-      "value": "<p>Your cloaking device can reinitiate automatically when a kill provides the brief opening needed to recalibrate.</p><p>Once per encounter, when you reduce an enemy to 0 HP, <strong>Tactical Cloak automatically reactivates</strong> as a free action. This can occur even if Tactical Cloak is currently on cooldown.</p><p><em>Prerequisite: Ghost Protocol. Classes: Infiltrator.</em></p>"
+      "value": "<p>Your cloaking device can reinitiate automatically when a kill provides the brief opening needed to recalibrate.</p><p>Once per encounter, when you reduce an enemy to 0 HP, <strong>Tactical Cloak automatically reactivates</strong> as a free action. This can occur even if Tactical Cloak is currently on cooldown.</p><p><em>Prerequisite: Ghost Protocol. Classes: Infiltrator.</em></p><hr/><p><em>Automation: to bring the cloak back after a kill, send this feat to chat: the Tactical Cloak effect goes back on, whatever its cooldown. The once-an-encounter limit is yours to track.</em></p>"
     },
     "rules": [],
     "_migration": {

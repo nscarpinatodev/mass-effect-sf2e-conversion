@@ -1,0 +1,73 @@
+{
+  "_key": "!items!meSoldierMarksmn",
+  "_id": "meSoldierMarksmn",
+  "folder": null,
+  "name": "Marksman",
+  "type": "feat",
+  "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-soldier-marksman",
+    "description": {
+      "gm": "",
+      "value": "<p>Adrenaline narrows the world to your sights.</p><p>On a turn when you have extra actions from Adrenaline Rush or its reaction, your multiple attack penalty is <strong>−4</strong> (−8 on your third and later attacks) instead of −5 (−10).</p><p><em>Prerequisite: Adrenaline Rush. Classes: Soldier.</em></p><hr/><p><em>Automation: the lower penalty applies while an Adrenaline Rush effect is on you.</em></p>"
+    },
+    "rules": [
+      {
+        "key": "MultipleAttackPenalty",
+        "selector": "attack",
+        "value": -4,
+        "predicate": [
+          "me-adrenaline"
+        ]
+      }
+    ],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "soldier"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 16
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Adrenaline Rush"
+        }
+      ]
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "class",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

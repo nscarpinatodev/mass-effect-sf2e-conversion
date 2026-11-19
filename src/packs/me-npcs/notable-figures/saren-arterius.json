@@ -453,9 +453,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-99 Saber is a semi-automatic assault rifle built for N7 operatives who prioritize controlled precision over suppressive volume. Its reinforced kinetic coil assembly fires larger rounds than standard battle rifles with enough velocity to defeat medium armor at full combat range. Where the Mattock trades capacity for power, the Saber achieves both - at a price that reflects the engineering investment.</p>"
+          "value": "<p>The M-99 Saber is a semi-automatic assault rifle built for N7 operatives who prioritize controlled precision over suppressive volume. Its reinforced kinetic coil assembly fires larger rounds than standard battle rifles with enough velocity to defeat medium armor at full combat range. Where the Mattock trades capacity for power, the Saber achieves both - at a price that reflects the engineering investment.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-99-saber",
         "_migration": {
           "version": 0.955,

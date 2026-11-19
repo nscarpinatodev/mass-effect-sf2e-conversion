@@ -14,7 +14,7 @@
     "slug": "me-engineer-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Optimized omni-tool firmware and systematic power deployment reduces the overhead of all tech abilities. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and their save DCs gain <strong>+1</strong>.</p><p><em>Classes: Engineer.</em></p><hr/><p><em>Automation: Tech powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
+      "value": "<p>Optimized omni-tool firmware and systematic power deployment reduces the overhead of all tech abilities. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and their save DCs gain <strong>+1</strong>. Your tech powers' cooldowns are <strong>1 round shorter</strong>, to a minimum of 2 rounds: only Intelligence brings a cooldown down to 1 round.</p><p><em>Classes: Engineer.</em></p><hr/><p><em>Automation: Tech powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted.</em></p>"
     },
     "rules": [
       {
@@ -29,6 +29,12 @@
         "type": "untyped",
         "value": 1,
         "label": "Engineer Mastery"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.techCooldownCut",
+        "value": 1
       }
     ],
     "_migration": {

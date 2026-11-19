@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Disciple is a lightweight Quarian-designed shotgun built for use in confined ship corridors where a full-sized combat shotgun would be unwieldy. It fires a wide scatter pattern at low weight cost, making it popular among crew members who need close-range stopping power without sacrificing mobility. Its modest round-per-round damage is compensated by its rapid cycling and the simply overwhelming number of pellets it puts into a small area.</p>"
+      "value": "<p>The Disciple is a lightweight Quarian-designed shotgun built for use in confined ship corridors where a full-sized combat shotgun would be unwieldy. It fires a wide scatter pattern at low weight cost, making it popular among crew members who need close-range stopping power without sacrificing mobility. Its modest round-per-round damage is compensated by its rapid cycling and the simply overwhelming number of pellets it puts into a small area.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "disciple",
     "_migration": {
       "version": 0.955,

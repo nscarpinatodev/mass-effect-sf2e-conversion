@@ -11,7 +11,7 @@
     },
     "description": {
       "gm": "",
-      "value": "<p>Not all turians serve the Hierarchy their entire lives. Some complete their mandatory service and seek work elsewhere-operating in the mercenary market where their military training is worth exactly what it cost to produce them, plus whatever premium the client is willing to pay for reliability. Turian mercenaries bring discipline and tactical competence to operations that would otherwise rely on considerably less organized personnel.</p><p>You become trained in Intimidation and gain the Mercenary Lore skill. You gain access to a wider range of weapons than standard class proficiency: you are trained with all martial weapons (regardless of class). You gain a +1 circumstance bonus to Deception checks to negotiate contract terms when the other party knows or suspects your military background.</p>"
+      "value": "<p>Not all turians serve the Hierarchy their entire lives. Some complete their mandatory service and seek work elsewhere-operating in the mercenary market where their military training is worth exactly what it cost to produce them, plus whatever premium the client is willing to pay for reliability. Turian mercenaries bring discipline and tactical competence to operations that would otherwise rely on considerably less organized personnel.</p><p>You become trained in Intimidation and in Mercenary Lore, and you are trained with all martial weapons whatever your class. You gain a +1 circumstance bonus to Deception checks to negotiate contract terms when the other party knows or suspects your military background.</p><hr/><p><em>Automation: Intimidation and the martial weapon training are granted. Add Mercenary Lore by hand.</em></p>"
     },
     "publication": {
       "title": "Mass Effect Actor and Ancestry Compendium",
@@ -23,7 +23,13 @@
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
-        "path": "system.skills.itm.rank",
+        "path": "system.skills.intimidation.rank",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.attacks.martial.rank",
         "value": 1
       }
     ],

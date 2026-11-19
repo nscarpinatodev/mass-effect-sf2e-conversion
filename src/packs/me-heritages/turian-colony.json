@@ -11,7 +11,7 @@
     },
     "description": {
       "gm": "",
-      "value": "<p>You grew up on one of the turian colonial worlds rather than Palaven itself-worlds that sit at varying distances from the Hierarchy's institutional center, where the mandatory military service still applies but the rigid cultural uniformity of the homeworld is softer at the edges. Colony turians often develop a more adaptive relationship with non-turian species than their Palaven-raised counterparts, and a broader view of what the Hierarchy is actually for.</p><p>You become trained in Diplomacy and gain one additional language of your choice from among those spoken by species common in your colonial region. You gain a +1 circumstance bonus to Diplomacy checks when interacting with non-turian species who might view standard turian demeanor as intimidating, as you have learned to modulate this effectively. You are also trained in Survival.</p>"
+      "value": "<p>You grew up on one of the turian colonial worlds rather than Palaven itself-worlds that sit at varying distances from the Hierarchy's institutional center, where the mandatory military service still applies but the rigid cultural uniformity of the homeworld is softer at the edges. Colony turians often develop a more adaptive relationship with non-turian species than their Palaven-raised counterparts, and a broader view of what the Hierarchy is actually for.</p><p>You become trained in Diplomacy and gain one additional language of your choice from among those spoken by species common in your colonial region. You gain a +1 circumstance bonus to Diplomacy checks when interacting with non-turian species who might view standard turian demeanor as intimidating, as you have learned to modulate this effectively. You are also trained in Survival.</p><hr/><p><em>Automation: Diplomacy, Survival and the language slot are granted.</em></p>"
     },
     "publication": {
       "title": "Mass Effect Actor and Ancestry Compendium",
@@ -23,13 +23,19 @@
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
-        "path": "system.skills.dip.rank",
+        "path": "system.skills.diplomacy.rank",
         "value": 1
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
-        "path": "system.skills.sur.rank",
+        "path": "system.skills.survival.rank",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "system.build.languages.max",
         "value": 1
       }
     ],

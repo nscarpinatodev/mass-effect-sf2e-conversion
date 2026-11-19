@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-29 Incisor fires three-round bursts synchronized to fire simultaneously, sending a tight cluster of kinetic rounds down range with each trigger pull. The result is devastating at any range the scope can reach: all three rounds arrive before a target's kinetic barrier can begin cycling against the first hit. Alliance Special Forces units favor it precisely for this reason - a single squeeze can strip a shield and land all follow-through damage in one instant.</p>"
+      "value": "<p>The M-29 Incisor fires three-round bursts synchronized to fire simultaneously, sending a tight cluster of kinetic rounds down range with each trigger pull. The result is devastating at any range the scope can reach: all three rounds arrive before a target's kinetic barrier can begin cycling against the first hit. Alliance Special Forces units favor it precisely for this reason - a single squeeze can strip a shield and land all follow-through damage in one instant.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-29-incisor",
     "_migration": {
       "version": 0.955,

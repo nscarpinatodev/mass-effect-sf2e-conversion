@@ -14,7 +14,7 @@
     "slug": "me-infiltrator-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Tactical training integrates tech powers seamlessly into your combat routine. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action). While Tactical Cloak is active, you gain a <strong>+2 bonus</strong> to Stealth checks.</p><p><em>Classes: Infiltrator.</em></p><hr/><p><em>Automation: Tech powers show their reduced action cost; the Stealth bonus applies while the Tactical Cloak effect is on you. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
+      "value": "<p>Tactical training integrates tech powers seamlessly into your combat routine. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action). Your tech powers' cooldowns are <strong>1 round shorter</strong>, to a minimum of 2 rounds: only Intelligence brings a cooldown down to 1 round. While Tactical Cloak is active, your bonus to Stealth checks from Infiltrator Training is <strong>+4</strong> instead of +2.</p><p><em>Classes: Infiltrator.</em></p><hr/><p><em>Automation: Tech powers show their reduced action cost; the Stealth bonus applies while the Tactical Cloak effect is on you. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted. The action cost reduction from each mastery tier is the same reduction; they don't stack.</em></p>"
     },
     "rules": [
       {
@@ -27,11 +27,17 @@
         "key": "FlatModifier",
         "selector": "stealth",
         "type": "circumstance",
-        "value": 2,
+        "value": 4,
         "predicate": [
-          "self:effect:tactical-cloak"
+          "me-tactical-cloak"
         ],
         "label": "Infiltrator Mastery"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.techCooldownCut",
+        "value": 1
       }
     ],
     "_migration": {

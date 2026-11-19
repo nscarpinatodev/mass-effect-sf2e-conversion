@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-11 Suppressor is a lightweight combat pistol designed for operatives who need a reliable sidearm without the bulk and noise signature of heavier options. Its kinetic dampeners reduce acoustic discharge to levels below ambient station noise, making it genuinely difficult to locate by sound alone. Cerberus intelligence operatives and Shadow Broker agents carry it for exactly that reason - in environments where gunfire draws attention, the Suppressor keeps options available. The M-11 comes with a commercial silencer installed; the weapon does not make a loud noise when fired.</p>"
+      "value": "<p>The M-11 Suppressor is a lightweight combat pistol designed for operatives who need a reliable sidearm without the bulk and noise signature of heavier options. Its kinetic dampeners reduce acoustic discharge to levels below ambient station noise, making it genuinely difficult to locate by sound alone. Cerberus intelligence operatives and Shadow Broker agents carry it for exactly that reason - in environments where gunfire draws attention, the Suppressor keeps options available. The M-11 comes with a commercial silencer installed; the weapon does not make a loud noise when fired.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-11-suppressor",
     "_migration": {
       "version": 0.955,

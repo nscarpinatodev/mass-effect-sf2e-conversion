@@ -1,0 +1,70 @@
+{
+  "_key": "!items!MEAncFeat0000037",
+  "_id": "MEAncFeat0000037",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Dominating Meld",
+  "system": {
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 2
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p><strong>Frequency</strong> once per 10 minutes</p><p>You force a meld on a creature within reach, and your nervous system does what it was born to do: it overwhelms theirs and feeds on what it burns.</p><p>The target takes @Damage[(ceil(@actor.level/2))d6[mental]] damage (1d6 per two levels, rounded up) with a basic @Check[will|against:class-dc|basic] save against your class DC. If it fails, you gain temporary Hit Points equal to your level for 1 minute. On a critical failure it is also @UUID[Compendium.pf2e.conditionitems.Item.Stunned]{Stunned 1}.</p><p>A willing or helpless creature automatically fails the save.</p>"
+    },
+    "level": {
+      "value": 9
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Ardat-Yakshi Asari heritage"
+        }
+      ]
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "dominating-meld",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "asari",
+        "biotic",
+        "mental"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null,
+    "frequency": {
+      "max": 1,
+      "per": "PT10M"
+    }
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

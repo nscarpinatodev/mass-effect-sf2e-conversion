@@ -1,0 +1,64 @@
+{
+  "_key": "!items!meInfiltratOvrwt",
+  "_id": "meInfiltratOvrwt",
+  "folder": null,
+  "name": "Overwatch",
+  "type": "feat",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-infiltrator-overwatch",
+    "description": {
+      "gm": "",
+      "value": "<p>You settle your sights on your mark and wait for it to commit.</p><p>Until the start of your next turn, you gain the following reaction.</p><p><strong>Trigger</strong> Your Marked target uses a move action, makes an attack or uses a power, and you can see it.</p><p><strong>Effect</strong> You make a ranged Strike against it. This Strike does not count toward your multiple attack penalty, and your multiple attack penalty does not apply to it. If you are still cloaked when you take the reaction, it is a cloaked Strike.</p><p><em>Prerequisite: Hunter's Mark. Classes: Infiltrator.</em></p>"
+    },
+    "rules": [],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "infiltrator"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 14
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Hunter's Mark"
+        }
+      ]
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 1
+    },
+    "category": "class",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

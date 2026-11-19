@@ -313,7 +313,7 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The Phaeston is a Turian assault rifle designed around their military doctrine of precision automatic fire. Its recoil dampeners and balanced weight distribution allow full-auto fire without significant barrel climb, making it more accurate in sustained bursts than most human-designed equivalents. Alliance soldiers who get their hands on one rarely give it back willingly.</p>"
+          "value": "<p>The Phaeston is a Turian assault rifle designed around their military doctrine of precision automatic fire. Its recoil dampeners and balanced weight distribution allow full-auto fire without significant barrel climb, making it more accurate in sustained bursts than most human-designed equivalents. Alliance soldiers who get their hands on one rarely give it back willingly.</p><p><strong>Grades:</strong> This weapon gains damage dice with its grade in the standard way: two dice at advanced grade, three at elite and four at paragon.</p>"
         },
         "rules": [],
         "slug": "phaeston",

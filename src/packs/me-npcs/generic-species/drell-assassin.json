@@ -392,7 +392,7 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-92 Mantis is a bolt-action sniper rifle chambered for the heaviest kinetic rounds that a single operator can carry. Each shot must be manually cycled, limiting rate of fire while ensuring maximum acceleration of the projectile down the barrel. At extreme range, the Mantis punches through cover and armor with equal contempt. A standard-issue precision weapon for Alliance snipers who prefer certainty over speed.</p>"
+          "value": "<p>The M-92 Mantis is a bolt-action sniper rifle chambered for the heaviest kinetic rounds that a single operator can carry. Each shot must be manually cycled, limiting rate of fire while ensuring maximum acceleration of the projectile down the barrel. At extreme range, the Mantis punches through cover and armor with equal contempt. A standard-issue precision weapon for Alliance snipers who prefer certainty over speed.</p><p><strong>Grades:</strong> This weapon gains damage dice with its grade in the standard way: two dice at advanced grade, three at elite and four at paragon.</p>"
         },
         "rules": [],
         "slug": "m-92-mantis",

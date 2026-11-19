@@ -384,9 +384,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-96 Mattock is a hybrid weapon bridging the gap between assault rifle and sniper rifle. Its semi-automatic fire mechanism delivers high-impact rounds with precision that fully automatic platforms cannot match. Demanding of the user's discipline, the Mattock rewards careful aim with exceptional damage output and minimal recoil per shot.</p>"
+          "value": "<p>The M-96 Mattock is a hybrid weapon bridging the gap between assault rifle and sniper rifle. Its semi-automatic fire mechanism delivers high-impact rounds with precision that fully automatic platforms cannot match. Demanding of the user's discipline, the Mattock rewards careful aim with exceptional damage output and minimal recoil per shot.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-96-mattock",
         "_migration": {
           "version": 0.955,

@@ -38,9 +38,17 @@
             "die": "d6"
           }
         },
-        "range": { "increment": 30, "max": 60 },
+        "range": {
+          "increment": 30,
+          "max": 60
+        },
         "category": "unarmed",
-        "traits": ["biotic", "occult", "nonlethal"]
+        "traits": [
+          "occult",
+          "nonlethal"
+        ],
+        "ability": "cha",
+        "slug": "telekinetic-projectile"
       }
     ],
     "slug": "biotic-affinity",

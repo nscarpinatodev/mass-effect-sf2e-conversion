@@ -18,7 +18,7 @@
     "slug": "me-feat-disruptor",
     "description": {
       "gm": "",
-      "value": "<p>You have been trained in the use of disruptor rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Rounds that generate a disruptive electrical pulse on impact. Your weapon attacks deal <strong>electricity damage</strong> instead of their normal damage type.</p><p>Disruptor rounds deal double damage to kinetic shields: all electricity damage against shielded targets is automatically doubled.</p><p>Remove this effect to return to standard ammunition.</p>"
+      "value": "<p>You have been trained in the use of disruptor rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Rounds that generate a disruptive electrical pulse on impact. Your ranged Strikes deal <strong>electricity damage</strong> instead of their normal damage type.</p><p>Disruptor rounds deal double damage to kinetic shields: all electricity damage against shielded targets is automatically doubled.</p><p>Ammo powers change what a gun fires: they do nothing for a melee Strike.</p><p>Remove this effect to return to standard ammunition.</p>"
     },
     "rules": [],
     "_migration": {

@@ -14,7 +14,7 @@
     "slug": "me-cp-weapon-mastery-pistol-master",
     "description": {
       "gm": "",
-      "value": "<p>Master-level pistols & smgs proficiency. You deal <strong>+6 damage</strong> and gain a <strong>+2 circumstance bonus to attack rolls</strong> with pistols & smgs (replaces previous bonuses). Your MAP penalty for subsequent pistol/SMG attacks is -3 instead of -5.</p><p><em>Prerequisite: Improved Weapon Mastery (Pistols & SMGs).</em></p>"
+      "value": "<p>Master-level pistols & smgs proficiency. You deal <strong>+6 damage</strong> and gain a <strong>+2 circumstance bonus to attack rolls</strong> with pistols & smgs (replaces previous bonuses). Your MAP penalty for subsequent pistol/SMG attacks is -3 instead of -5.</p><p><em>Prerequisite: Improved Weapon Mastery (Pistols & SMGs). Classes: Adept, Engineer, Infiltrator.</em></p>"
     },
     "rules": [
       {
@@ -45,7 +45,11 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "adept",
+        "engineer",
+        "infiltrator"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -70,7 +74,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

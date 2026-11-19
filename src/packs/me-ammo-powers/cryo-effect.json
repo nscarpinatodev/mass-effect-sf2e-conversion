@@ -18,16 +18,24 @@
     "slug": "me-ammo-cryo",
     "description": {
       "gm": "",
-      "value": "<p>Cryogenically-charged rounds that flash-freeze on impact. Your weapon attacks deal an additional <strong>1d4 cold damage</strong>.</p><p>When Cryo Rounds deal direct HP damage, the target becomes <strong>Chilled</strong> (off-guard until the end of their next turn).</p><p>Remove this effect to return to standard ammunition.</p>"
+      "value": "<p>Cryogenically-charged rounds that flash-freeze on impact. Your ranged Strikes deal an additional <strong>1d4 cold damage</strong>.</p><p>When Cryo Rounds deal direct HP damage, the target becomes <strong>Chilled</strong> (off-guard until the start of your next turn).</p><p>Remove this effect to return to standard ammunition.</p>"
     },
     "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-ammo:cryo"
+      },
       {
         "key": "DamageDice",
         "selector": "strike-damage",
         "diceNumber": 1,
         "dieSize": "d4",
         "damageType": "cold",
-        "label": "Cryo Rounds"
+        "label": "Cryo Rounds",
+        "predicate": [
+          "item:ranged"
+        ]
       }
     ],
     "_migration": {

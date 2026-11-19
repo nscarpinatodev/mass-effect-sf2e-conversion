@@ -18,16 +18,24 @@
     "slug": "me-ammo-warp",
     "description": {
       "gm": "",
-      "value": "<p>Rounds infused with destabilizing dark energy. Your weapon attacks deal an additional <strong>1d4 void damage</strong>.</p><p>Warp rounds are devastating against biotic barriers: damage to a Biotic Barrier is multiplied by 1.5×. Depleting a barrier with Warp rounds triggers a dark energy detonation.</p><p>Remove this effect to return to standard ammunition.</p>"
+      "value": "<p>Rounds infused with destabilizing dark energy. Your ranged Strikes deal an additional <strong>1d4 void damage</strong>.</p><p>Warp rounds are devastating against biotic barriers: damage to a Biotic Barrier is multiplied by 1.5×. Depleting a barrier with Warp rounds triggers a dark energy detonation.</p><p>Remove this effect to return to standard ammunition.</p>"
     },
     "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-ammo:warp"
+      },
       {
         "key": "DamageDice",
         "selector": "strike-damage",
         "diceNumber": 1,
         "dieSize": "d4",
         "damageType": "void",
-        "label": "Warp Rounds"
+        "label": "Warp Rounds",
+        "predicate": [
+          "item:ranged"
+        ]
       }
     ],
     "_migration": {

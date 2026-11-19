@@ -14,7 +14,7 @@
     "slug": "me-infiltrator-ghost-protocol",
     "description": {
       "gm": "",
-      "value": "<p>Advanced field harmonics keep your cloaking device stable through multiple weapon discharges.</p><p>Tactical Cloak does not end when you Strike. The cloak remains active until you make your <strong>second Strike</strong> or the start of your next turn (whichever comes first). You may Strike twice from concealment, both attacks gaining the precision damage bonus. The cloak ends automatically after the second Strike.</p><p><em>Prerequisite: Tactical Cloak Upgrade. Classes: Infiltrator.</em></p>"
+      "value": "<p>Advanced field harmonics let you move as the cloak forms and linger as it fades.</p><p>When you use Tactical Cloak, you can <strong>Stride</strong> up to your Speed as part of the same action. When a Strike ends your cloak, you are <strong>Concealed</strong> until the start of your next turn.</p><p><em>Prerequisite: Tactical Cloak Upgrade. Classes: Infiltrator.</em></p><hr/><p><em>Automation: when a Strike ends the cloak, a Cloak Wake effect makes you Concealed until the start of your next turn. The Stride is yours to take.</em></p>"
     },
     "rules": [],
     "_migration": {

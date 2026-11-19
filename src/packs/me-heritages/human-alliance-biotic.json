@@ -11,7 +11,7 @@
     },
     "description": {
       "gm": "",
-      "value": "<p>You were exposed to element zero in utero and survived the process with functional biotic nodules rather than neurological damage-a rare outcome that the Alliance immediately identified, tracked, and eventually recruited. Human biotics are a relatively new phenomenon and the technology for harnessing them has been rushed, meaning your implants have been upgraded and adjusted multiple times. The process has left you with real power and a complicated relationship with the program that shaped you.</p><p>You can cast <em>telekinetic projectile</em> as an occult innate cantrip, using Charisma as your spellcasting ability. Additionally, you gain access to the Biotic Adept ancestry feat (see ancestry feats) without meeting its normal prerequisites.</p>"
+      "value": "<p>You were exposed to element zero in utero and survived the process with functional biotic nodules rather than neurological damage-a rare outcome that the Alliance immediately identified, tracked, and eventually recruited. Human biotics are a relatively new phenomenon and the technology for harnessing them has been rushed, meaning your implants have been upgraded and adjusted multiple times. The process has left you with real power and a complicated relationship with the program that shaped you.</p><p>You gain a <strong>Telekinetic Projectile</strong> biotic Strike with a range increment of 30 feet (maximum 60 feet) that deals 1d6 force damage, as the asari Biotic Affinity feature. You can take the Biotic Adept ancestry feat as though you were an asari.</p>"
     },
     "publication": {
       "title": "Mass Effect Actor and Ancestry Compendium",
@@ -19,7 +19,30 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "Strike",
+        "label": "Telekinetic Projectile",
+        "damage": {
+          "base": {
+            "damageType": "force",
+            "dice": 1,
+            "die": "d6"
+          }
+        },
+        "range": {
+          "increment": 30,
+          "max": 60
+        },
+        "category": "unarmed",
+        "traits": [
+          "occult",
+          "nonlethal"
+        ],
+        "ability": "cha",
+        "slug": "telekinetic-projectile"
+      }
+    ],
     "traits": {
       "rarity": "uncommon",
       "value": [],

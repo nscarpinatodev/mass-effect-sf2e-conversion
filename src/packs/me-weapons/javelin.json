@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Javelin is a Cerberus electromagnetic sniper rifle that charges and fires a bolt of arc energy capable of penetrating solid cover before detonating against the target on the other side. Enemies hidden behind walls, crates, or wreckage offer no protection against it - the bolt passes through non-conductive barriers entirely. Against shielded and synthetic targets the electrical devastation is unparalleled, and at maximum range its arc expands to catch clustered enemies in the discharge.</p>"
+      "value": "<p>The Javelin is a Cerberus electromagnetic sniper rifle that charges and fires a bolt of arc energy capable of penetrating solid cover before detonating against the target on the other side. Enemies hidden behind walls, crates, or wreckage offer no protection against it - the bolt passes through non-conductive barriers entirely. Against shielded and synthetic targets the electrical devastation is unparalleled, and at maximum range its arc expands to catch clustered enemies in the discharge.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "javelin",
     "_migration": {
       "version": 0.955,

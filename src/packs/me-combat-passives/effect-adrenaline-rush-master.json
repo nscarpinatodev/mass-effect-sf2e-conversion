@@ -6,7 +6,11 @@
   "type": "effect",
   "img": "icons/magic/movement/trail-streak-impact-blue.webp",
   "effects": [],
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "endsWithTurn": true
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -14,9 +18,19 @@
     "slug": "me-effect-adrenaline-rush-master",
     "description": {
       "gm": "",
-      "value": "<p>Hyper-accelerated combat awareness. You are <strong>Quickened 2</strong> this round (Stride, Strike, or Draw). Your movement speed increases by <strong>30 feet</strong> and you gain a <strong>+2 status bonus to attack rolls</strong>.</p>"
+      "value": "<p>Hyper-accelerated combat awareness. On your next turn you gain <strong>two extra actions</strong> to Strike, Stride or reload (Quickened, and one more), your Speed increases by <strong>30 feet</strong> and you gain a <strong>+2 status bonus to attack rolls</strong>. Ends when that turn does.</p>"
     },
     "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-adrenaline"
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl",
+        "inMemoryOnly": true
+      },
       {
         "key": "FlatModifier",
         "selector": "speed",

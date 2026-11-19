@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-55 Argus is a battle rifle that fires three-round bursts with enough force to stagger heavily armored targets. Alliance R&amp;D designed it to bridge the gap between the Avenger's volume of fire and the Mattock's raw stopping power. Its burst pattern keeps shots tightly grouped at medium range, and the combination of mass and velocity makes each cluster capable of punching through armor that individual rounds would merely dent.</p>"
+      "value": "<p>The M-55 Argus is a battle rifle that fires three-round bursts with enough force to stagger heavily armored targets. Alliance R&amp;D designed it to bridge the gap between the Avenger's volume of fire and the Mattock's raw stopping power. Its burst pattern keeps shots tightly grouped at medium range, and the combination of mass and velocity makes each cluster capable of punching through armor that individual rounds would merely dent.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-55-argus",
     "_migration": {
       "version": 0.955,

@@ -14,7 +14,7 @@
     "slug": "me-soldier-suppressing-fire",
     "description": {
       "gm": "",
-      "value": "<p>A sustained barrage of fire forces enemies to keep their heads down even when you miss.</p><p>Whenever you make <strong>3 or more Strikes</strong> in a single turn, all enemies you missed with any of those Strikes are <strong>Flat-Footed</strong> until the start of your next turn.</p><p><em>Prerequisite: Master Combat Training. Classes: Soldier.</em></p>"
+      "value": "<p>A sustained barrage of fire forces enemies to keep their heads down even when you miss.</p><p>Whenever you make <strong>3 or more Strikes</strong> in a single turn, all enemies you missed with any of those Strikes are <strong>off-guard</strong> until the start of your next turn.</p><p><em>Prerequisite: Improved Combat Training. Classes: Soldier.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -41,7 +41,7 @@
     "prerequisites": {
       "value": [
         {
-          "value": "Master Combat Training"
+          "value": "Improved Combat Training"
         }
       ]
     },

@@ -14,9 +14,16 @@
     "slug": "me-cp-tech-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Optimized omni-tool firmware and muscle memory for tech power deployment. All tech powers you use have their action cost <strong>reduced by 1</strong> (minimum 1 action).</p><p><em>Classes: Engineer, Infiltrator, Sentinel.</em></p>"
+      "value": "<p>Optimized omni-tool firmware squeezes more out of every discharge. Your tech powers deal <strong>+2 damage</strong> to each creature they damage.</p><p><em>Classes: Engineer, Infiltrator, Sentinel.</em></p><hr/><p><em>Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.masteryDamage.tech",
+        "value": 2
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,
@@ -25,6 +32,9 @@
     "traits": {
       "otherTags": [],
       "value": [
+        "engineer",
+        "infiltrator",
+        "sentinel",
         "tech"
       ],
       "rarity": "common"
@@ -47,7 +57,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

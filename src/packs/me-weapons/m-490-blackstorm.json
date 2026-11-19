@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-490 Blackstorm - colloquially called the Singularity Launcher - generates a localized mass effect field that compresses into a sphere of extreme gravitational distortion. Enemies caught within its radius are crushed by the collapsing field, then flung outward when it releases. The weapon requires several seconds to charge between shots and the force damage it deals ignores conventional kinetic barriers, punishing targets that rely on them entirely.</p>"
+      "value": "<p>The M-490 Blackstorm - colloquially called the Singularity Launcher - generates a localized mass effect field that compresses into a sphere of extreme gravitational distortion. Enemies caught within its radius are crushed by the collapsing field, then flung outward when it releases. The weapon requires several seconds to charge between shots and the force damage it deals ignores conventional kinetic barriers, punishing targets that rely on them entirely.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-490-blackstorm",
     "_migration": {
       "version": 0.955,

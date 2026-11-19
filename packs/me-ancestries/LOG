@@ -1,5 +1,0 @@
-2026/11/18-08:50:37.854 9ce8 Delete type=3 #1
-2026/11/18-08:50:37.859 7d98 Level-0 table #5: started
-2026/11/18-08:50:37.869 7d98 Level-0 table #5: 46132 bytes OK
-2026/11/18-08:50:37.871 7d98 Delete type=0 #3
-2026/11/18-08:50:37.871 7d98 Manual compaction at level-0 from '!items!AsariAncestry001' @ 72057594037927935 : 1 .. '!items!VorchaAncestry01' @ 0 : 0; will stop at (end)

@@ -1,5 +1,0 @@
-2026/11/18-08:50:38.557 7dd8 Delete type=3 #1
-2026/11/18-08:50:38.562 7d98 Level-0 table #5: started
-2026/11/18-08:50:38.566 7d98 Level-0 table #5: 31579 bytes OK
-2026/11/18-08:50:38.570 7d98 Delete type=0 #3
-2026/11/18-08:50:38.570 7d98 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)

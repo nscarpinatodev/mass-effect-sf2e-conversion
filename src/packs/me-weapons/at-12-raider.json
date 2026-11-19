@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The AT-12 Raider is a compact shotgun favored by Cerberus assault troopers for its reliability and ease of use in close-quarters combat. Its dual-fire mechanism releases two shells per trigger pull in rapid succession, trading ammunition efficiency for a burst of kinetic scatter that overwhelms point-defense systems before they can cycle. Fast, aggressive, and designed for attackers who intend to win the first second of an engagement.</p>"
+      "value": "<p>The AT-12 Raider is a compact shotgun favored by Cerberus assault troopers for its reliability and ease of use in close-quarters combat. Its dual-fire mechanism releases two shells per trigger pull in rapid succession, trading ammunition efficiency for a burst of kinetic scatter that overwhelms point-defense systems before they can cycle. Fast, aggressive, and designed for attackers who intend to win the first second of an engagement.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "at-12-raider",
     "_migration": {
       "version": 0.955,

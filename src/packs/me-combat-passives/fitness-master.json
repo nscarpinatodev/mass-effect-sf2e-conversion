@@ -14,7 +14,7 @@
     "slug": "me-cp-fitness-master",
     "description": {
       "gm": "",
-      "value": "<p>Peak physical conditioning. You gain an additional <strong>+4 maximum HP</strong> (total +12 with the chain), your Fortitude circumstance bonus increases to <strong>+2</strong>, and your movement speed increases by <strong>5 feet</strong>.</p><p><em>Prerequisite: Improved Fitness.</em></p>"
+      "value": "<p>Peak physical conditioning. You gain an additional <strong>+4 maximum HP</strong> (total +12 with the chain), your Fortitude circumstance bonus increases to <strong>+2</strong>, and your movement speed increases by <strong>5 feet</strong>.</p><p><em>Prerequisite: Improved Fitness. Classes: All.</em></p>"
     },
     "rules": [
       {
@@ -44,7 +44,14 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "adept",
+        "engineer",
+        "infiltrator",
+        "sentinel",
+        "soldier",
+        "vanguard"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -69,7 +76,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

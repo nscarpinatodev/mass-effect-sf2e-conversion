@@ -423,9 +423,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-27 Scimitar is an entry-level combat shotgun designed for rapid room-clearing engagements. Its lightweight construction and generous heat sink capacity allow it to cycle faster than most competitors in its class, trading raw stopping power per shot for a higher volume of scatter fire. A common choice for soldiers who prefer to keep enemies off balance rather than down in a single blast.</p>"
+          "value": "<p>The M-27 Scimitar is an entry-level combat shotgun designed for rapid room-clearing engagements. Its lightweight construction and generous heat sink capacity allow it to cycle faster than most competitors in its class, trading raw stopping power per shot for a higher volume of scatter fire. A common choice for soldiers who prefer to keep enemies off balance rather than down in a single blast.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-27-scimitar",
         "_migration": {
           "version": 0.955,

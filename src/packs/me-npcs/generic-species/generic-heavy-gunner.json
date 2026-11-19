@@ -384,9 +384,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-9 Tempest is an Alliance-issue submachine gun optimized for the highest sustained fire rate of any one-handed weapon in service. Its enormous heat sink holds one hundred rounds that it can expend in seconds, filling a volume with kinetic fire that makes individual accuracy less critical than statistical certainty. The Tempest is light enough that experienced users can sprint and fire simultaneously without significant penalty.</p>"
+          "value": "<p>The M-9 Tempest is an Alliance-issue submachine gun optimized for the highest sustained fire rate of any one-handed weapon in service. Its enormous heat sink holds one hundred rounds that it can expend in seconds, filling a volume with kinetic fire that makes individual accuracy less critical than statistical certainty. The Tempest is light enough that experienced users can sprint and fire simultaneously without significant penalty.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-9-tempest",
         "_migration": {
           "version": 0.955,
@@ -755,9 +786,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-76 Revenant is a heavy machine gun designed to provide overwhelming suppressive fire. Its enormous heat sink capacity enables sustained bursts that shred through enemy cover and armor alike. The weapon's considerable mass and recoil make precise movement difficult while firing, but its sheer volume of fire compensates with devastating effect.</p>"
+          "value": "<p>The M-76 Revenant is a heavy machine gun designed to provide overwhelming suppressive fire. Its enormous heat sink capacity enables sustained bursts that shred through enemy cover and armor alike. The weapon's considerable mass and recoil make precise movement difficult while firing, but its sheer volume of fire compensates with devastating effect.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-76-revenant",
         "_migration": {
           "version": 0.955,

@@ -805,9 +805,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-25 Hornet is a compact submachine gun originally developed for Terminus mercenary groups operating in tight urban environments. Its automatic fire delivers a consistent stream of kinetic rounds with enough velocity to defeat light armor, while its single-hand operation leaves the other free for biotics, tech abilities, or cover manipulation. Cerberus assault troopers adopted it during the Reaper War, where its combination of compactness and sustained fire rate proved well-suited to rapid breach operations.</p>"
+          "value": "<p>The M-25 Hornet is a compact submachine gun originally developed for Terminus mercenary groups operating in tight urban environments. Its automatic fire delivers a consistent stream of kinetic rounds with enough velocity to defeat light armor, while its single-hand operation leaves the other free for biotics, tech abilities, or cover manipulation. Cerberus assault troopers adopted it during the Reaper War, where its combination of compactness and sustained fire rate proved well-suited to rapid breach operations.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-25-hornet",
         "_migration": {
           "version": 0.955,

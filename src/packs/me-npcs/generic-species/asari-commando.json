@@ -447,7 +447,7 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-5 Phalanx is a mid-range combat pistol developed for operatives who must engage threats too distant for a standard sidearm. Its integrated laser targeting system reduces aim drift, allowing accurate fire at distances most pistols cannot reliably reach. A favorite of Spectres and special operations personnel who need a one-handed weapon that punches above its weight class.</p>"
+          "value": "<p>The M-5 Phalanx is a mid-range combat pistol developed for operatives who must engage threats too distant for a standard sidearm. Its integrated laser targeting system reduces aim drift, allowing accurate fire at distances most pistols cannot reliably reach. A favorite of Spectres and special operations personnel who need a one-handed weapon that punches above its weight class.</p><p><strong>Grades:</strong> This weapon gains damage dice with its grade in the standard way: two dice at advanced grade, three at elite and four at paragon.</p>"
         },
         "rules": [],
         "slug": "m-5-phalanx",

@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-23 Eviscerator fires razor-edged ceramic frags that shred organic matter with brutal efficiency. Produced by Hahne-Kedar for police and security markets, its jagged scatter pattern is specifically designed to maximize tissue damage in close-quarters engagements. Alliance command has expressed concerns about the weapon's use against prisoners of war - a complaint largely ignored by those carrying it.</p>"
+      "value": "<p>The M-23 Eviscerator fires razor-edged ceramic frags that shred organic matter with brutal efficiency. Produced by Hahne-Kedar for police and security markets, its jagged scatter pattern is specifically designed to maximize tissue damage in close-quarters engagements. Alliance command has expressed concerns about the weapon's use against prisoners of war - a complaint largely ignored by those carrying it.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-23-eviscerator",
     "_migration": {
       "version": 0.955,

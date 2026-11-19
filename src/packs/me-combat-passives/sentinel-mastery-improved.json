@@ -14,7 +14,7 @@
     "slug": "me-sentinel-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>You have refined your dual-discipline approach into a seamless defense. Biotic and tech powers each have their action cost <strong>reduced by 1</strong> (minimum 1 action). Once per round, when you use both a biotic power and a tech power in the same turn, you gain a <strong>+2 circumstance bonus to AC</strong> until the start of your next turn.</p><p><em>Prerequisite: Sentinel Mastery.</em></p><hr/><p><em>Automation: Turn on the toggle on your sheet after using both kinds of power in one turn, and off again at the start of your next turn. Like Tech Armor, this is a circumstance bonus, so the two don't stack.</em></p>"
+      "value": "<p>You have refined your dual-discipline approach into a seamless defense. Biotic and tech powers each have their action cost <strong>reduced by 1</strong> (minimum 1 action). While Tech Armor is active you have <strong>resistance 3 to all damage</strong>. When you use both a biotic power and a tech power in the same turn, that resistance is <strong>doubled</strong> until the start of your next turn.</p><p><em>Prerequisite: Sentinel Mastery.</em></p><hr/><p><em>Automation: the resistance applies while the Tech Armor effect is on you. Turn on the toggle on your sheet after using both kinds of power in one turn to double it, and off again at the start of your next turn.</em></p>"
     },
     "rules": [
       {
@@ -25,14 +25,32 @@
         "label": "Used a biotic and a tech power this turn"
       },
       {
-        "key": "FlatModifier",
-        "selector": "ac",
-        "type": "circumstance",
-        "value": 2,
+        "key": "Resistance",
+        "type": "all-damage",
+        "value": 3,
         "predicate": [
-          "me-sentinel-dual-discipline"
+          "me-tech-armor",
+          {
+            "not": "me-sentinel-dual-discipline"
+          },
+          {
+            "not": "me-sentinel-superior"
+          }
         ],
-        "label": "Improved Sentinel Mastery"
+        "label": "Tech Armor"
+      },
+      {
+        "key": "Resistance",
+        "type": "all-damage",
+        "value": 6,
+        "predicate": [
+          "me-tech-armor",
+          "me-sentinel-dual-discipline",
+          {
+            "not": "me-sentinel-superior"
+          }
+        ],
+        "label": "Tech Armor"
       }
     ],
     "_migration": {

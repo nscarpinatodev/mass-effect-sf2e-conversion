@@ -14,7 +14,7 @@
     "slug": "me-infiltrator-mastery-superior",
     "description": {
       "gm": "",
-      "value": "<p>You are the perfect predator — invisible, precise, and lethal. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and you retain all prior mastery bonuses. While Tactical Cloak is active, you gain <strong>Resistance 5</strong> to all damage. Tech powers used against <strong>Flat-Footed</strong> targets have their DC increased by <strong>2</strong>.</p><p><em>Prerequisite: Improved Infiltrator Mastery.</em></p><hr/><p><em>Automation: Resistance 5 to all damage applies while the Tactical Cloak effect is on you. The +2 DC against off-guard targets is tracked by hand.</em></p>"
+      "value": "<p>You are the perfect predator — invisible, precise, and lethal. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and you retain all prior mastery bonuses. On a turn you use Tactical Cloak, you have <strong>resistance 5</strong> to all damage until the start of your next turn, whether or not a Strike has ended the cloak. Tech powers you use while cloaked have their DC increased by <strong>2</strong>.</p><p><em>Prerequisite: Improved Infiltrator Mastery.</em></p><hr/><p><em>Automation: The resistance applies while the Tactical Cloak effect is on you and, after a Strike ends the cloak, while the Cloak Wake effect that replaces it lasts. The +2 is added to your class DC while the Tactical Cloak effect is on you.</em></p>"
     },
     "rules": [
       {
@@ -22,8 +22,23 @@
         "type": "all-damage",
         "value": 5,
         "predicate": [
-          "self:effect:tactical-cloak"
+          {
+            "or": [
+              "me-tactical-cloak",
+              "me-cloak-wake"
+            ]
+          }
         ]
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "class",
+        "type": "untyped",
+        "value": 2,
+        "predicate": [
+          "me-tactical-cloak"
+        ],
+        "label": "Superior Infiltrator Mastery"
       }
     ],
     "_migration": {

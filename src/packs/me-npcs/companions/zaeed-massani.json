@@ -349,9 +349,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-76 Revenant is a heavy machine gun designed to provide overwhelming suppressive fire. Its enormous heat sink capacity enables sustained bursts that shred through enemy cover and armor alike. The weapon's considerable mass and recoil make precise movement difficult while firing, but its sheer volume of fire compensates with devastating effect.</p>"
+          "value": "<p>The M-76 Revenant is a heavy machine gun designed to provide overwhelming suppressive fire. Its enormous heat sink capacity enables sustained bursts that shred through enemy cover and armor alike. The weapon's considerable mass and recoil make precise movement difficult while firing, but its sheer volume of fire compensates with devastating effect.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-76-revenant",
         "_migration": {
           "version": 0.955,
@@ -462,9 +493,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-97 Viper is a semi-automatic sniper rifle built for sustained precision fire. Where bolt-action rifles demand patience between shots, the Viper allows follow-up strikes without breaking scope alignment. Its heat sink holds twelve rounds before requiring a swap, enabling snipers to handle multiple targets at range without repositioning. The trade-off is a somewhat lighter kinetic impact per shot compared to the Mantis.</p>"
+          "value": "<p>The M-97 Viper is a semi-automatic sniper rifle built for sustained precision fire. Where bolt-action rifles demand patience between shots, the Viper allows follow-up strikes without breaking scope alignment. Its heat sink holds twelve rounds before requiring a swap, enabling snipers to handle multiple targets at range without repositioning. The trade-off is a somewhat lighter kinetic impact per shot compared to the Mantis.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-97-viper",
         "_migration": {
           "version": 0.955,

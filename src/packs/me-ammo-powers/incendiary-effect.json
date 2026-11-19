@@ -18,15 +18,23 @@
     "slug": "me-ammo-incendiary",
     "description": {
       "gm": "",
-      "value": "<p>Thermite-tipped rounds that ignite on impact. Your weapon attacks deal <strong>fire damage</strong> instead of their normal damage type.</p><p>Incendiary rounds burn through armor faster: each point of incoming damage depletes 1.5× points of armor.</p><p>On a <strong>critical hit</strong>, the target ignites and suffers <strong>persistent fire damage</strong> (DC 15 flat check to extinguish).</p><p>Remove this effect to return to standard ammunition.</p>"
+      "value": "<p>Thermite-tipped rounds that ignite on impact. Your ranged Strikes deal <strong>fire damage</strong> instead of their normal damage type.</p><p>Incendiary rounds burn through armor faster: each point of incoming damage depletes 1.5× points of armor.</p><p>On a <strong>critical hit</strong>, the target ignites and suffers <strong>persistent fire damage</strong> (DC 15 flat check to extinguish).</p><p>Remove this effect to return to standard ammunition.</p>"
     },
     "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-ammo:incendiary"
+      },
       {
         "key": "DamageDice",
         "selector": "strike-damage",
         "override": {
           "damageType": "fire"
-        }
+        },
+        "predicate": [
+          "item:ranged"
+        ]
       }
     ],
     "_migration": {

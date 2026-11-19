@@ -1,0 +1,83 @@
+{
+  "_key": "!items!MEAncFeat0000046",
+  "_id": "MEAncFeat0000046",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Hired Gun",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>Clients pay for a turian mercenary because the job is usually over before the other side knows it has started.</p><p>Your first Strike in an encounter against a creature that hasn't acted yet deals an extra 1d6 precision damage. This increases to 2d6 at 13th level.</p><hr/><p><em>Automation: Turn on the toggle for that Strike.</em></p>"
+    },
+    "level": {
+      "value": 5
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Turian Mercenary heritage"
+        }
+      ]
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "hired-gun",
+        "toggleable": true,
+        "label": "First Strike against a creature that hasn't acted"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "diceNumber": "ternary(gte(@actor.level, 13), 2, 1)",
+        "dieSize": "d6",
+        "category": "precision",
+        "predicate": [
+          "hired-gun"
+        ],
+        "label": "Hired Gun"
+      }
+    ],
+    "slug": "hired-gun",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "turian"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

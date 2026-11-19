@@ -36,8 +36,11 @@
         "predicate": [
           {
             "or": [
-              "armor:trait:unarmored",
-              "armor:category:light"
+              {
+                "not": "self:armored"
+              },
+              "armor:category:light",
+              "armor:category:unarmored"
             ]
           }
         ],

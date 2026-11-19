@@ -286,9 +286,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>Developed by Kassa Fabrication for Shadow Broker operatives, the M-12 Locust bridges the gap between submachine gun and assault rifle. Heavier than standard SMGs but still manageable one-handed, it fires a larger round than its competitors with enough precision to engage targets at significantly greater range. Intelligence operatives who expect contact in confined environments but cannot afford to be caught with a full-sized rifle favor the Locust as their primary weapon.</p>"
+          "value": "<p>Developed by Kassa Fabrication for Shadow Broker operatives, the M-12 Locust bridges the gap between submachine gun and assault rifle. Heavier than standard SMGs but still manageable one-handed, it fires a larger round than its competitors with enough precision to engage targets at significantly greater range. Intelligence operatives who expect contact in confined environments but cannot afford to be caught with a full-sized rifle favor the Locust as their primary weapon.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-12-locust",
         "_migration": {
           "version": 0.955,
@@ -796,7 +827,7 @@
       "system": {
         "slug": "me-npc-tech-tactical-cloak",
         "description": {
-          "value": "<p>You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.</p><p>You become <strong>Undetected</strong> by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect, which adds <strong>+2d6 precision damage</strong> to your first Strike made while Undetected. Remove the effect after making that Strike.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Use it from the chat card to apply its effect.</em></p>",
+          "value": "<p>You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.</p><p>You become <strong>Undetected</strong> by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect, which adds <strong>+2d6 precision damage</strong> to your first Strike made while Undetected and makes its target off-guard to it. The dice are multiplied as the creature's other powers are: doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th. The effect comes off by itself after that Strike.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Use it from the chat card to apply its effect.</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -824,10 +855,6 @@
         "_migration": {
           "version": 0.959,
           "previous": null
-        },
-        "selfEffect": {
-          "uuid": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meEffTactCloak00",
-          "name": "Tactical Cloak"
         }
       },
       "_key": "!actors.items!kasumigoto000000.kasumigoto000008",

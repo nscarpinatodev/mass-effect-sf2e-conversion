@@ -1,5 +1,0 @@
-2026/11/18-08:50:38.440 9ce8 Delete type=3 #1
-2026/11/18-08:50:38.443 7d98 Level-0 table #5: started
-2026/11/18-08:50:38.449 7d98 Level-0 table #5: 7381 bytes OK
-2026/11/18-08:50:38.452 7d98 Delete type=0 #3
-2026/11/18-08:50:38.453 7d98 Manual compaction at level-0 from '!items!meActivateBbarFt' @ 72057594037927935 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at (end)

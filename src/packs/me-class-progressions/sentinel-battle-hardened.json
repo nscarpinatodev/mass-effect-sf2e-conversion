@@ -14,7 +14,7 @@
     "slug": "me-sentinel-battle-hardened",
     "description": {
       "gm": "",
-      "value": "<p>Decades of surviving the worst the galaxy has to offer have made you immune to conditions that would break lesser warriors.</p><p>You are <strong>immune to the Stunned, Dazed, and Confused conditions</strong>. You gain a <strong>+2 bonus to all saving throws</strong> (untyped, stacks with other bonuses).</p><p><em>Prerequisite: Adaptive Defense. Classes: Sentinel.</em></p>"
+      "value": "<p>Decades of surviving the worst the galaxy has to offer have made you immune to conditions that would break lesser warriors.</p><p>You are <strong>immune to the Stunned, Dazed, and Confused conditions</strong>. You gain a <strong>+2 bonus to all saving throws</strong> (untyped, stacks with other bonuses).</p><p><em>Prerequisite: Adaptive Defense or Hybrid Core. Classes: Sentinel.</em></p>"
     },
     "rules": [
       {
@@ -48,7 +48,7 @@
     "prerequisites": {
       "value": [
         {
-          "value": "Adaptive Defense"
+          "value": "Adaptive Defense or Hybrid Core"
         }
       ]
     },

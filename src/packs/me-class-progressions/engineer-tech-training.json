@@ -1,0 +1,200 @@
+{
+  "_key": "!items!meEngTechTrain00",
+  "_id": "meEngTechTrain00",
+  "folder": null,
+  "name": "Tech Training",
+  "type": "feat",
+  "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-engineer-tech-training",
+    "description": {
+      "gm": "",
+      "value": "<p>Your omni-tool came loaded with more than one program.</p><p>Choose <strong>two 1st-level tech powers</strong> that an Engineer can take, from the <em>ME Tech Powers</em> compendium. You gain them as bonus feats, on top of your 1st-level class feat. Choose two different powers.</p><p><em>Classes: Engineer.</em></p><hr/><p><em>Automation: adding this feature asks for each power in turn and adds both to your sheet.</em></p>"
+    },
+    "rules": [
+      {
+        "key": "ChoiceSet",
+        "flag": "techTrainingFirst",
+        "prompt": "Tech Training: choose your first extra tech power",
+        "choices": [
+          {
+            "label": "AI Hacking",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechAiHacking0"
+          },
+          {
+            "label": "Combat Drone",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechCombatDrn0"
+          },
+          {
+            "label": "Cryo Blast",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechCryoBlast0"
+          },
+          {
+            "label": "Damping",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechDamping000"
+          },
+          {
+            "label": "Decoy",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechDecoy00000"
+          },
+          {
+            "label": "Defense Drone",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechDefDrone00"
+          },
+          {
+            "label": "Defense Matrix",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechDefMatrix0"
+          },
+          {
+            "label": "Energy Drain",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechEnergyDrn0"
+          },
+          {
+            "label": "Geth Shield Boost",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechGethShldBs"
+          },
+          {
+            "label": "Incinerate",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechIncinerat0"
+          },
+          {
+            "label": "Neural Shock",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechNeuralShck"
+          },
+          {
+            "label": "Overload",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechOverload00"
+          },
+          {
+            "label": "Sabotage",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechSabotage00"
+          },
+          {
+            "label": "Sentry Turret",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechSentryTrrt"
+          }
+        ],
+        "adjustName": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "{item|flags.pf2e.rulesSelections.techTrainingFirst}",
+        "flag": "techTrainingFirstPower"
+      },
+      {
+        "key": "ChoiceSet",
+        "flag": "techTrainingSecond",
+        "prompt": "Tech Training: choose your second extra tech power",
+        "choices": [
+          {
+            "label": "AI Hacking",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechAiHacking0"
+          },
+          {
+            "label": "Combat Drone",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechCombatDrn0"
+          },
+          {
+            "label": "Cryo Blast",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechCryoBlast0"
+          },
+          {
+            "label": "Damping",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechDamping000"
+          },
+          {
+            "label": "Decoy",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechDecoy00000"
+          },
+          {
+            "label": "Defense Drone",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechDefDrone00"
+          },
+          {
+            "label": "Defense Matrix",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechDefMatrix0"
+          },
+          {
+            "label": "Energy Drain",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechEnergyDrn0"
+          },
+          {
+            "label": "Geth Shield Boost",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechGethShldBs"
+          },
+          {
+            "label": "Incinerate",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechIncinerat0"
+          },
+          {
+            "label": "Neural Shock",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechNeuralShck"
+          },
+          {
+            "label": "Overload",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechOverload00"
+          },
+          {
+            "label": "Sabotage",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechSabotage00"
+          },
+          {
+            "label": "Sentry Turret",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechSentryTrrt"
+          }
+        ],
+        "adjustName": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "{item|flags.pf2e.rulesSelections.techTrainingSecond}",
+        "flag": "techTrainingSecondPower"
+      }
+    ],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "engineer",
+        "tech"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

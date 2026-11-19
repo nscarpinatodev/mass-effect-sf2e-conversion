@@ -14,7 +14,7 @@
     "slug": "me-engineer-drone-commander",
     "description": {
       "gm": "",
-      "value": "<p>Your command protocols can run two drone instances simultaneously without interference.</p><p>You may have <strong>two Combat Drones active at the same time</strong>. Deploying a second drone doesn't end the first. Each drone acts independently on your turn.</p><p><em>Prerequisite: Combat Drone Upgrade. Classes: Engineer.</em></p>"
+      "value": "<p>Your command protocols can run two drone instances simultaneously without interference.</p><p>You may have <strong>two Combat Drones active at the same time</strong>. Deploying a second drone doesn't end the first. Each drone makes its own Strikes on your turn. Deploying a third drone replaces the one that has been out longest.</p><p><em>Prerequisite: Combat Drone Upgrade. Classes: Engineer.</em></p><hr/><p><em>Automation: using Combat Drone again adds a second drone token instead of replacing the first.</em></p>"
     },
     "rules": [],
     "_migration": {

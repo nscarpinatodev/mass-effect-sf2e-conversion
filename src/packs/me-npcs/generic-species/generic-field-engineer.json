@@ -371,9 +371,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-9 Tempest is an Alliance-issue submachine gun optimized for the highest sustained fire rate of any one-handed weapon in service. Its enormous heat sink holds one hundred rounds that it can expend in seconds, filling a volume with kinetic fire that makes individual accuracy less critical than statistical certainty. The Tempest is light enough that experienced users can sprint and fire simultaneously without significant penalty.</p>"
+          "value": "<p>The M-9 Tempest is an Alliance-issue submachine gun optimized for the highest sustained fire rate of any one-handed weapon in service. Its enormous heat sink holds one hundred rounds that it can expend in seconds, filling a volume with kinetic fire that makes individual accuracy less critical than statistical certainty. The Tempest is light enough that experienced users can sprint and fire simultaneously without significant penalty.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-9-tempest",
         "_migration": {
           "version": 0.955,

@@ -14,7 +14,7 @@
     "slug": "me-tech-tactical-cloak",
     "description": {
       "gm": "",
-      "value": "<p>You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.</p><p>You become <strong>Undetected</strong> by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect, which adds <strong>+2d6 precision damage</strong> to your first Strike made while Undetected. Remove the effect after making that Strike.</p><p><strong>Cooldown:</strong> 7 − your Intelligence modifier rounds (minimum 1).</p>"
+      "value": "<p>You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.</p><p>You become <strong>Undetected</strong> by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the @UUID[Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meEffTactCloak00]{Tactical Cloak} effect: your first Strike while cloaked deals <strong>+2d6 precision damage</strong>, and its target is <strong>off-guard</strong> to it.</p><p><strong>Level scaling:</strong> The cloak's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.</p><p><strong>Cooldown:</strong> 7 − your Intelligence modifier rounds (minimum 1).</p><hr/><p><em>Automation: using Tactical Cloak puts its effect on you and starts its cooldown. The effect adds the precision damage and makes your target off-guard, and it comes off by itself once the cloaked Strike is resolved: when a miss is rolled, or when a hit's damage is rolled. Being Undetected is for you and the GM to play.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -49,11 +49,7 @@
     "actions": {
       "value": 2
     },
-    "category": "class",
-    "selfEffect": {
-      "uuid": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meEffTactCloak00",
-      "name": "Tactical Cloak"
-    },
+    "category": "classfeature",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

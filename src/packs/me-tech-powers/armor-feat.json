@@ -14,7 +14,7 @@
     "slug": "me-tech-armor",
     "description": {
       "gm": "",
-      "value": "<p>You activate a hardlight exoskeleton projected from your omni-tool, reinforcing your body with a crackling energy shell that detonates if overwhelmed.</p><p>You gain the Tech Armor effect: <strong>+2 circumstance bonus to AC</strong>. If you take 20 or more damage from a single hit while this effect is active, it detonates — all creatures in a @Template[emanation|distance:10]{10-foot emanation} take <strong>2d6 electricity</strong> damage (@Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic|options:me-power:me-tech-armor-detonation] save against your class DC) and the effect ends. You may also voluntarily detonate it as a free action on your turn.</p><p><strong>Cooldown:</strong> 7 − your Intelligence modifier rounds (minimum 1).</p><hr/><p><em>When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.</em></p>"
+      "value": "<p>You activate a hardlight exoskeleton projected from your omni-tool, reinforcing your body with a crackling energy shell that detonates if overwhelmed.</p><p>You gain the Tech Armor effect: <strong>+2 circumstance bonus to AC</strong>. If you take <strong>17 + 3 × your level</strong> or more damage from a single hit while this effect is active (20 at 1st level, 47 at 10th, 77 at 20th), it detonates — all creatures in a @Template[emanation|distance:10]{10-foot emanation} take <strong>2d6 electricity</strong> damage (@Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic|options:me-power:me-tech-armor-detonation] save against your class DC) and the effect ends. You may also voluntarily detonate it as a free action on your turn.</p><p><strong>Level scaling:</strong> The detonation's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.</p><p><strong>Cooldown:</strong> 7 − your Intelligence modifier rounds (minimum 1).</p><hr/><p><em>Automation: using Tech Armor puts its effect on you; remove the effect when it detonates. The masteries' resistance applies while the effect is on you.</em></p><p><em>When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -49,7 +49,7 @@
     "actions": {
       "value": 2
     },
-    "category": "class",
+    "category": "classfeature",
     "selfEffect": {
       "uuid": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meEffTechArmor00",
       "name": "Tech Armor"

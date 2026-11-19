@@ -1,0 +1,82 @@
+{
+  "_key": "!items!MEAncFeat0000032",
+  "_id": "MEAncFeat0000032",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Biotic Adept",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>Where most biotics settle for the reflexive push they were born with, you have trained it into a weapon that grows with you.</p><p>Your <strong>Telekinetic Projectile</strong> Strike deals an extra 1d6 force damage at 5th level, and another 1d6 at 9th, 13th and 17th level (5d6 in all at 17th).</p><hr/><p><em>Automation: The extra dice are added to the Telekinetic Projectile Strike.</em></p>"
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Biotic Affinity, or the Alliance Biotic Human heritage"
+        }
+      ]
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "telekinetic-projectile-damage",
+        "diceNumber": "floor((@actor.level - 1) / 4)",
+        "dieSize": "d6",
+        "damageType": "force",
+        "predicate": [
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ],
+        "label": "Biotic Adept"
+      }
+    ],
+    "slug": "biotic-adept",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "asari",
+        "human"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

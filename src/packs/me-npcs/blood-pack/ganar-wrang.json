@@ -475,9 +475,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-11 Wraith is a single-shot combat shotgun that sacrifices fire rate for kinetic devastation. Each round must be manually cycled, but the single shell it chambers carries enough mass-accelerated shot to drop a Phantom through their kinetic barrier in one blast. Originally designed for breach-and-clear operations, Cerberus tacticians found its two-shell capacity insufficient for sustained combat - the operatives using it countered that if two shots aren't enough, the problem was aim, not capacity.</p>"
+          "value": "<p>The M-11 Wraith is a single-shot combat shotgun that sacrifices fire rate for kinetic devastation. Each round must be manually cycled, but the single shell it chambers carries enough mass-accelerated shot to drop a Phantom through their kinetic barrier in one blast. Originally designed for breach-and-clear operations, Cerberus tacticians found its two-shell capacity insufficient for sustained combat - the operatives using it countered that if two shots aren't enough, the problem was aim, not capacity.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-11-wraith",
         "_migration": {
           "version": 0.955,

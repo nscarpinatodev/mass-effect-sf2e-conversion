@@ -14,7 +14,7 @@
     "slug": "me-soldier-tactical-reload",
     "description": {
       "gm": "",
-      "value": "<p>Combat reflexes honed through thousands of engagements let you reload without breaking your rhythm.</p><p>Once per round, you may <strong>reload a weapon as a free action</strong>. This can be used to reload during a multi-attack sequence.</p><p><em>Prerequisite: Improved Combat Training. Classes: Soldier.</em></p>"
+      "value": "<p>Combat reflexes honed through thousands of engagements let you reload without breaking your rhythm.</p><p>Once per round, you may <strong>reload a weapon as a free action</strong>. This can be used to reload during a multi-attack sequence.</p><p><em>Prerequisite: Combat Training. Classes: Soldier.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -41,7 +41,7 @@
     "prerequisites": {
       "value": [
         {
-          "value": "Improved Combat Training"
+          "value": "Combat Training"
         }
       ]
     },

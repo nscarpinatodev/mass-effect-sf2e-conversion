@@ -18,7 +18,7 @@
     "slug": "me-feat-warp",
     "description": {
       "gm": "",
-      "value": "<p>You have been trained in the use of warp rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Rounds infused with destabilizing dark energy. Your weapon attacks deal an additional <strong>1d4 void damage</strong>.</p><p>Warp rounds are devastating against biotic barriers: damage to a Biotic Barrier is multiplied by 1.5×. Depleting a barrier with Warp rounds triggers a dark energy detonation.</p><p>Remove this effect to return to standard ammunition.</p>"
+      "value": "<p>You have been trained in the use of warp rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Rounds infused with destabilizing dark energy. Your ranged Strikes deal an additional <strong>1d4 void damage</strong>.</p><p>Warp rounds are devastating against biotic barriers: damage to a Biotic Barrier is multiplied by 1.5×. Depleting a barrier with Warp rounds triggers a dark energy detonation.</p><p>Ammo powers change what a gun fires: they do nothing for a melee Strike.</p><p>Remove this effect to return to standard ammunition.</p>"
     },
     "rules": [],
     "_migration": {
@@ -30,7 +30,11 @@
       "otherTags": [
         "ammo-power"
       ],
-      "value": [],
+      "value": [
+        "infiltrator",
+        "soldier",
+        "vanguard"
+      ],
       "rarity": "common"
     },
     "publication": {

@@ -1,0 +1,81 @@
+{
+  "_key": "!items!MEAncFeat0000047",
+  "_id": "MEAncFeat0000047",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Turian Resolve",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>A turian who breaks and runs shames their unit, their clan and the Spirits of both. You were raised not to.</p><p>You gain a +1 circumstance bonus to saving throws against fear effects. When you roll a success on a saving throw against a fear effect, you get a critical success instead.</p><hr/><p><em>Automation: Applied to saves against effects with the fear trait.</em></p>"
+    },
+    "level": {
+      "value": 5
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "saving-throw",
+        "type": "circumstance",
+        "value": 1,
+        "label": "Turian Resolve",
+        "predicate": [
+          "item:trait:fear"
+        ]
+      },
+      {
+        "key": "AdjustDegreeOfSuccess",
+        "selector": "saving-throw",
+        "adjustment": {
+          "success": "one-degree-better"
+        },
+        "predicate": [
+          "item:trait:fear"
+        ]
+      }
+    ],
+    "slug": "resolve",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "turian"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -360,8 +360,10 @@ Hooks.on('createItem', async (item, _options, _userId) => {
   }
 
   if (isAmmoEffect(item)) {
-    // Only one ammo effect at a time
-    for (const e of (actor.itemTypes?.effect ?? []).filter(e => isAmmoEffect(e) && e.id !== item.id)) {
+    // Only one ammo effect at a time: two with War Machine, the oldest going first
+    const keep = actor.items.some(i => i.slug === 'me-soldier-war-machine') ? 1 : 0;
+    const others = (actor.itemTypes?.effect ?? []).filter(e => isAmmoEffect(e) && e.id !== item.id);
+    for (const e of others.slice(0, Math.max(0, others.length - keep))) {
       await e.delete();
     }
   }
@@ -423,7 +425,12 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
   const barrier    = getBioticBarrier(actor);
   const shield     = getShieldEffect(actor);
   const armorFrame = getArmorFrame(actor);
-  if (!barrier && !shield && !armorFrame) return;
+  if (!barrier && !shield && !armorFrame) {
+    // No defensive layers: every point reaches HP, so only the ammo's riders are left to apply.
+    const lost = actor.system.attributes.hp.value - (foundry.utils.getProperty(changes, 'system.attributes.hp.value') ?? actor.system.attributes.hp.value);
+    if (lost > 0) applyAmmoRiders(actor, getAttackerAmmoTypes(), lost);
+    return;
+  }
 
   const currentHP   = actor.system.attributes.hp.value;
   const currentTemp = actor.system.attributes.hp.temp ?? 0;
@@ -438,16 +445,17 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
 
   // Ammo detection: check attacker's active effects for all routing-relevant types.
   // Electricity also falls back to chat message scan so natural-electric weapons work.
-  const attackerAmmoType = getAttackerAmmoType();
+  const attackerAmmo = getAttackerAmmoTypes();
+  const attackerAmmoType = [...attackerAmmo].join('+') || null;
   const detectedTypes    = detectDamageTypes();
   // Double-check via attacker ammo type flag in case the rule element's override
   // doesn't propagate item:damage:type:electricity into the roll options.
-  const isElectricity    = detectedTypes.has('electricity') || attackerAmmoType === 'disruptor';
-  const isWarp           = attackerAmmoType === 'warp';
-  const isIncendiary     = attackerAmmoType === 'incendiary';
-  const isPhasic         = attackerAmmoType === 'phasic';
-  const isAP             = attackerAmmoType === 'armor-piercing';
-  const isCryo           = attackerAmmoType === 'cryo';
+  const isElectricity    = detectedTypes.has('electricity') || attackerAmmo.has('disruptor');
+  const isWarp           = attackerAmmo.has('warp');
+  const isIncendiary     = attackerAmmo.has('incendiary');
+  const isPhasic         = attackerAmmo.has('phasic');
+  const isAP             = attackerAmmo.has('armor-piercing');
+  const isCryo           = attackerAmmo.has('cryo');
   const isCrit           = detectCriticalHit();
 
   // Phasic rounds bypass armor entirely but deal reduced total damage
@@ -581,17 +589,21 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
     postChat(actor, armorStatusHtml(newArmorHP, armorMax, isIncendiary, isAP));
   }
 
-  if (isCryo && finalHpDamage > 0 && game.settings.get(MODULE_ID, 'cryoChilled')) {
+  applyAmmoRiders(actor, attackerAmmo, finalHpDamage, isCrit);
+});
+
+/** What the attacker's ammo does on top of its damage, once some of that damage has reached HP. */
+function applyAmmoRiders(actor, ammo, hpDamage, isCrit = detectCriticalHit()) {
+  if (!(hpDamage > 0)) return;
+  if (ammo.has('cryo') && game.settings.get(MODULE_ID, 'cryoChilled')) {
     createChilledEffect(actor);
   }
-
-  if (isIncendiary && isCrit && finalHpDamage > 0
-      && game.settings.get(MODULE_ID, 'incendiaryPersistentFire')) {
+  if (ammo.has('incendiary') && isCrit && game.settings.get(MODULE_ID, 'incendiaryPersistentFire')) {
     const dice = game.settings.get(MODULE_ID, 'incendiaryPersistentDice');
     createPersistentFireEffect(actor);
     postChat(actor, persistentFireHtml(dice));
   }
-});
+}
 
 // ── TURN-START REGEN ──────────────────────────────────────────────────────────
 
@@ -980,14 +992,16 @@ function detectDamageTypes() {
   return new Set();
 }
 
-// Finds the attacker's active ammo effect by scanning the most recent
-// damage-roll message for the speaker token, then checking that actor's effects.
-function getAttackerAmmoType() {
+// Finds the attacker's active ammo effects (one, or two with War Machine) by scanning the most
+// recent damage-roll message for the speaker token, then checking that actor's effects.
+// Ammo is in the gun: damage from a melee Strike carries none of it.
+function getAttackerAmmoTypes() {
   const recent = [...game.messages.contents].slice(-10).reverse();
   for (const msg of recent) {
     const pf2e = sysFlags(msg);
     if (!pf2e) continue;
     if (pf2e.context?.type !== 'damage-roll') continue;
+    if (!(pf2e.context?.options ?? []).includes('item:ranged')) break;
     const tokenId = msg.speaker?.token;
     const sceneId = msg.speaker?.scene;
     if (!tokenId) break;
@@ -995,10 +1009,9 @@ function getAttackerAmmoType() {
     const token = scene?.tokens?.get(tokenId);
     const attackerActor = token?.actor;
     if (!attackerActor) break;
-    const ammoEffect = attackerActor.itemTypes?.effect?.find(isAmmoEffect);
-    return ammoEffect?.getFlag(MODULE_ID, 'ammoType') ?? null;
+    return new Set((attackerActor.itemTypes?.effect ?? []).filter(isAmmoEffect).map(e => e.getFlag(MODULE_ID, 'ammoType')));
   }
-  return null;
+  return new Set();
 }
 
 function hasTakeCover(actor) {
@@ -1033,6 +1046,9 @@ async function createPersistentFireEffect(actor) {
 }
 
 async function createChilledEffect(actor) {
+  if (actor.itemTypes?.effect?.some(e => e.slug === 'me-chilled')) return;
+  const offGuard = game.pf2e.ConditionManager.getCondition('off-guard');
+  const uuid = offGuard?.sourceId ?? offGuard?._stats?.compendiumSource ?? null;
   await actor.createEmbeddedDocuments('Item', [{
     name: 'Chilled',
     type: 'effect',
@@ -1041,10 +1057,10 @@ async function createChilledEffect(actor) {
     system: {
       slug: 'me-chilled',
       description: {
-        value: '<p>Off-guard until the end of your next turn. Applied by Cryo Rounds.</p>',
+        value: '<p>Off-guard until the start of the shooter\'s next turn, which covers your own next turn. Applied by Cryo Rounds.</p>',
       },
-      duration: { value: 1, unit: 'turns', expiry: 'turn-end' },
-      rules: [],
+      duration: { value: 1, unit: 'rounds', expiry: 'turn-start' },
+      rules: uuid ? [{ key: 'GrantItem', uuid, inMemoryOnly: true }] : [],
     },
   }]);
 }

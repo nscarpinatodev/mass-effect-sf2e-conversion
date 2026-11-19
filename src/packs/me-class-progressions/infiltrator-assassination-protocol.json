@@ -14,9 +14,21 @@
     "slug": "me-infiltrator-assassination-protocol",
     "description": {
       "gm": "",
-      "value": "<p>You have optimized your ambush technique to the point of lethal perfection.</p><p>The precision damage bonus from Tactical Cloak increases to <strong>+3d6</strong> per Strike made while cloaked (replaces the base +2d6). Additionally, if your cloaked Strike reduces a target to 0 HP, your Tactical Cloak immediately reactivates at no action cost (once per minute).</p><p><em>Prerequisite: Ghost Protocol. Classes: Infiltrator.</em></p>"
+      "value": "<p>You have optimized your ambush technique to the point of lethal perfection.</p><p>Tactical Cloak's precision damage starts from <strong>3d6</strong> instead of 2d6, before level multiplies it: 12d6 at 12th level, 15d6 at 16th and 18d6 at 20th. Additionally, if your cloaked Strike reduces a target to 0 HP, your Tactical Cloak immediately reactivates at no action cost, whatever its cooldown (once per minute).</p><p><em>Prerequisite: Ghost Protocol. Classes: Infiltrator.</em></p><hr/><p><em>Automation: the extra dice are added to Strikes while the Tactical Cloak effect is on you. To bring the cloak back after a kill, send this feat to chat: the effect goes back on. The once-a-minute limit is yours to track.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "label": "Assassination Protocol",
+        "diceNumber": "1+floor(@actor.level/4)",
+        "dieSize": "d6",
+        "predicate": [
+          "me-tactical-cloak"
+        ],
+        "category": "precision"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

@@ -14,7 +14,7 @@
     "slug": "me-effect-tech-armor",
     "description": {
       "gm": "",
-      "value": "<p>An energy-reinforced exoskeleton surrounds you, boosting your defenses. You gain a <strong>+2 circumstance bonus to AC</strong>.</p><p>If you take 20 or more damage from a single hit while this effect is active, it detonates: all creatures in a <strong>@Template[emanation|distance:10]{10-foot emanation}</strong> take <strong>2d6 electricity</strong> damage (@Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic|options:me-power:me-tech-armor-detonation] save against your class DC) and this effect ends. This detonation can be triggered intentionally as a free action on your turn.</p>"
+      "value": "<p>An energy-reinforced exoskeleton surrounds you, boosting your defenses. You gain a <strong>+2 circumstance bonus to AC</strong>, and the resistance to all damage that Improved and Superior Sentinel Mastery give.</p><p>If you take <strong>17 + 3 × your level</strong> or more damage from a single hit while this effect is active, it detonates: all creatures in a <strong>@Template[emanation|distance:10]{10-foot emanation}</strong> take <strong>2d6 electricity</strong> damage (@Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic|options:me-power:me-tech-armor-detonation] save against your class DC) and this effect ends. This detonation can be triggered intentionally as a free action on your turn.</p><p><strong>Level scaling:</strong> The detonation's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.</p>"
     },
     "rules": [
       {
@@ -23,6 +23,11 @@
         "label": "Tech Armor",
         "type": "circumstance",
         "value": 2
+      },
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-tech-armor"
       }
     ],
     "_migration": {

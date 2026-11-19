@@ -348,9 +348,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-96 Mattock is a hybrid weapon bridging the gap between assault rifle and sniper rifle. Its semi-automatic fire mechanism delivers high-impact rounds with precision that fully automatic platforms cannot match. Demanding of the user's discipline, the Mattock rewards careful aim with exceptional damage output and minimal recoil per shot.</p>"
+          "value": "<p>The M-96 Mattock is a hybrid weapon bridging the gap between assault rifle and sniper rifle. Its semi-automatic fire mechanism delivers high-impact rounds with precision that fully automatic platforms cannot match. Demanding of the user's discipline, the Mattock rewards careful aim with exceptional damage output and minimal recoil per shot.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-96-mattock",
         "_migration": {
           "version": 0.955,
@@ -460,9 +491,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-97 Viper is a semi-automatic sniper rifle built for sustained precision fire. Where bolt-action rifles demand patience between shots, the Viper allows follow-up strikes without breaking scope alignment. Its heat sink holds twelve rounds before requiring a swap, enabling snipers to handle multiple targets at range without repositioning. The trade-off is a somewhat lighter kinetic impact per shot compared to the Mantis.</p>"
+          "value": "<p>The M-97 Viper is a semi-automatic sniper rifle built for sustained precision fire. Where bolt-action rifles demand patience between shots, the Viper allows follow-up strikes without breaking scope alignment. Its heat sink holds twelve rounds before requiring a swap, enabling snipers to handle multiple targets at range without repositioning. The trade-off is a somewhat lighter kinetic impact per shot compared to the Mantis.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-97-viper",
         "_migration": {
           "version": 0.955,

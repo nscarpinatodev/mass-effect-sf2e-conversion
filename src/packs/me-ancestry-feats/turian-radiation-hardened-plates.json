@@ -1,0 +1,76 @@
+{
+  "_key": "!items!MEAncFeat0000044",
+  "_id": "MEAncFeat0000044",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Radiation-Hardened Plates",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>Palaven's weak magnetic field lets in solar radiation that would sicken most species. Your metallic carapace reflects it, and yours is denser than most.</p><p>You gain fire resistance equal to half your level (minimum 1), and a +1 circumstance bonus to saving throws against radiation.</p><hr/><p><em>Automation: The resistance is applied, and the bonus applies to saves against effects with the radiation trait.</em></p>"
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "Resistance",
+        "type": "fire",
+        "value": "max(1,floor(@actor.level/2))"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "saving-throw",
+        "type": "circumstance",
+        "value": 1,
+        "label": "Radiation-Hardened Plates",
+        "predicate": [
+          "item:trait:radiation"
+        ]
+      }
+    ],
+    "slug": "radiation-hardened-plates",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "turian"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

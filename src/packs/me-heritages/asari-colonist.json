@@ -11,7 +11,7 @@
     },
     "description": {
       "gm": "",
-      "value": "<p>You grew up not on Thessia but among the diverse populations of colony worlds, stations, or ships-immersed in other cultures from birth. Where Thessia-born asari sometimes view other species through the lens of a well-established civilization, you have always known them as neighbors, coworkers, and sometimes family. This cross-cultural upbringing has given you an ease in mixed-species environments that even other asari don't always possess.</p><p>You gain a +1 circumstance bonus to Society checks, and you can speak one additional language of your choice from the languages available to any of the ancestries in this compendium. You also gain the Additional Lore feat for a culture or region you grew up near, chosen at character creation.</p>"
+      "value": "<p>You grew up not on Thessia but among the diverse populations of colony worlds, stations, or ships-immersed in other cultures from birth. Where Thessia-born asari sometimes view other species through the lens of a well-established civilization, you have always known them as neighbors, coworkers, and sometimes family. This cross-cultural upbringing has given you an ease in mixed-species environments that even other asari don't always possess.</p><p>You gain a +1 circumstance bonus to Society checks, you learn one additional language, and you become trained in one Lore skill for a culture or region you grew up near.</p><hr/><p><em>Automation: The Society bonus and the language slot are granted. Add the Lore skill by hand.</em></p>"
     },
     "publication": {
       "title": "Mass Effect Actor and Ancestry Compendium",
@@ -26,6 +26,12 @@
         "type": "circumstance",
         "value": 1,
         "label": "Colonist Asari"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "system.build.languages.max",
+        "value": 1
       }
     ],
     "traits": {

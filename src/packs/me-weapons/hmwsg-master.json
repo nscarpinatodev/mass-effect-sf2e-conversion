@@ -1,0 +1,140 @@
+{
+  "folder": null,
+  "name": "HMWSG Master",
+  "type": "weapon",
+  "effects": [],
+  "img": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "description": {
+      "gm": "",
+      "value": "<p>The HMWSG is the shotgun of the Spectre Master Gear line, made to Council specification and released only through Spectre requisitions. It does everything a combat shotgun should do slightly better than anything on the open market: tighter pattern, longer reach, six shells and no recoil to speak of. Owning one without Spectre authority invites questions.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
+    },
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
+    "slug": "hmwsg-master",
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "tech",
+        "scatter-5",
+        "fatal-d12"
+      ],
+      "rarity": "rare"
+    },
+    "publication": {
+      "title": "Mass Effect Homebrew",
+      "authors": "",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 11
+    },
+    "baseItem": "hmwsg-master",
+    "bulk": {
+      "value": 2
+    },
+    "price": {
+      "value": {
+        "gp": 5000
+      }
+    },
+    "equipped": {
+      "carryType": "worn",
+      "invested": null,
+      "handsHeld": 0
+    },
+    "usage": {
+      "value": "held-in-two-hands"
+    },
+    "category": "martial",
+    "group": "shotgun",
+    "bonus": {
+      "value": 0
+    },
+    "damage": {
+      "dice": 4,
+      "die": "d10",
+      "damageType": "piercing",
+      "persistent": null
+    },
+    "splashDamage": {
+      "value": 0
+    },
+    "range": 20,
+    "expend": 1,
+    "ammo": {
+      "capacity": 6,
+      "baseType": "projectile-ammo",
+      "builtIn": false
+    },
+    "reload": {
+      "value": "1"
+    },
+    "grade": "superior",
+    "runes": {
+      "potency": 0,
+      "striking": 3,
+      "property": []
+    },
+    "bonusDamage": {
+      "value": 0
+    },
+    "property1": {
+      "value": "",
+      "dice": 0,
+      "die": "",
+      "damageType": "",
+      "critDice": 0,
+      "critDie": "",
+      "critDamage": "",
+      "critDamageType": "",
+      "strikeConditionType": "",
+      "strikeConditionValue": null,
+      "criticalConditionType": "",
+      "criticalConditionValue": null
+    },
+    "subitems": []
+  },
+  "_id": "ae7c7d9ce9bc1a18",
+  "_key": "!items!ae7c7d9ce9bc1a18"
+}

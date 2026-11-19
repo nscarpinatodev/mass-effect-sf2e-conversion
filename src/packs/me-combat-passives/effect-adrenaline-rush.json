@@ -6,7 +6,11 @@
   "type": "effect",
   "img": "icons/magic/movement/trail-streak-impact-blue.webp",
   "effects": [],
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "endsWithTurn": true
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -14,9 +18,19 @@
     "slug": "me-effect-adrenaline-rush",
     "description": {
       "gm": "",
-      "value": "<p>Combat stimulants flood your system. You are <strong>Quickened 1</strong> this round (use the extra action only to Stride or Strike). Your movement speed increases by <strong>15 feet</strong>.</p>"
+      "value": "<p>Combat stimulants flood your system. You are <strong>Quickened</strong> until the end of your turn: one extra action to Strike, Stride or reload. Your Speed increases by <strong>15 feet</strong>.</p>"
     },
     "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-adrenaline"
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl",
+        "inMemoryOnly": true
+      },
       {
         "key": "FlatModifier",
         "selector": "speed",
@@ -42,7 +56,7 @@
       "remaster": true
     },
     "duration": {
-      "value": 1,
+      "value": 0,
       "unit": "rounds",
       "expiry": "turn-end"
     },

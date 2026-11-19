@@ -332,9 +332,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-4 Shuriken is a compact submachine gun that fires three-round bursts in rapid succession. Its lightweight frame makes it easy to carry and deploy in confined spaces, though its individual round impact is modest. Mercenaries and gangsters throughout the Terminus Systems favor it for intimidation as much as combat - the distinctive chattering burst is unmistakable and tends to make opponents reconsider their position.</p>"
+          "value": "<p>The M-4 Shuriken is a compact submachine gun that fires three-round bursts in rapid succession. Its lightweight frame makes it easy to carry and deploy in confined spaces, though its individual round impact is modest. Mercenaries and gangsters throughout the Terminus Systems favor it for intimidation as much as combat - the distinctive chattering burst is unmistakable and tends to make opponents reconsider their position.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-4-shuriken",
         "_migration": {
           "version": 0.955,

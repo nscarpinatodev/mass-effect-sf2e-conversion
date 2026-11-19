@@ -1,0 +1,77 @@
+{
+  "_key": "!items!MEAncFeat0000053",
+  "_id": "MEAncFeat0000053",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Unbroken Line",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>There is no getting behind a turian formation. There is only the front of it, wherever you happen to be standing.</p><p>While you are adjacent to at least one ally, you and each ally adjacent to you can't be flanked.</p><hr/><p><em>Automation: Turn on the toggle while adjacent to an ally; it applies to you. Adjacent allies are handled by hand.</em></p>"
+    },
+    "level": {
+      "value": 17
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "unbroken-line",
+        "toggleable": true,
+        "label": "Adjacent to an ally"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "override",
+        "path": "system.attributes.flanking.flankable",
+        "value": false,
+        "predicate": [
+          "unbroken-line"
+        ]
+      }
+    ],
+    "slug": "unbroken-line",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "turian"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

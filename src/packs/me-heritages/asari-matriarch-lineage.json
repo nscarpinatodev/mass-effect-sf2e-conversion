@@ -11,7 +11,7 @@
     },
     "description": {
       "gm": "",
-      "value": "<p>You are descended from one of the great Matriarch lineages-asari who lived long enough and deeply enough to become living repositories of galactic wisdom. The weight of that heritage has shaped how you carry yourself and how others respond to your presence. Even young asari of Matriarch lineage carry a gravity beyond their years.</p><p>You gain a +1 circumstance bonus to Diplomacy and Intimidation checks. Additionally, once per day you may use the Aid action as a free action (once per encounter) to assist an ally, representing your instinct for elevating those around you.</p>"
+      "value": "<p>You are descended from one of the great Matriarch lineages-asari who lived long enough and deeply enough to become living repositories of galactic wisdom. The weight of that heritage has shaped how you carry yourself and how others respond to your presence. Even young asari of Matriarch lineage carry a gravity beyond their years.</p><p>You gain a +1 circumstance bonus to Diplomacy and Intimidation checks. Once per day, you can Aid an ally as a free action instead of a reaction, without having prepared to help on your previous turn.</p>"
     },
     "publication": {
       "title": "Mass Effect Actor and Ancestry Compendium",

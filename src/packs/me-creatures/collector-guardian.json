@@ -505,9 +505,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The Collector Assault Rifle is a weapon of Reaper-derived design, grown rather than manufactured. Its organic components generate kinetic mass effect fields through biological processes that no conventional engineering can replicate. The weapon's internal structure self-repairs minor damage over time and its ammunition capacity far exceeds any human-built equivalent, making it a prized and deeply unsettling battlefield acquisition.</p>"
+          "value": "<p>The Collector Assault Rifle is a weapon of Reaper-derived design, grown rather than manufactured. Its organic components generate kinetic mass effect fields through biological processes that no conventional engineering can replicate. The weapon's internal structure self-repairs minor damage over time and its ammunition capacity far exceeds any human-built equivalent, making it a prized and deeply unsettling battlefield acquisition.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "collector-assault-rifle",
         "_migration": {
           "version": 0.955,

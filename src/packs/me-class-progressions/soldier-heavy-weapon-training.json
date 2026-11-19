@@ -14,7 +14,7 @@
     "slug": "me-soldier-heavy-weapon-training",
     "description": {
       "gm": "",
-      "value": "<p>You've mastered the art of carrying and operating the heaviest weapons in the Alliance's arsenal.</p><p>You gain proficiency with <strong>heavy weapons</strong> (bomb group). You deal <strong>+2 damage</strong> with heavy weapon attacks. Heavy weapons consume Power Cells (tracked as a separate consumable).</p><p><em>Prerequisite: Weapon Mastery (Assault Rifles) or Weapon Mastery (Shotguns). Classes: Soldier.</em></p>"
+      "value": "<p>You've mastered the art of carrying and operating the heaviest weapons in the Alliance's arsenal.</p><p>You are proficient with <strong>advanced heavy weapons</strong>, such as the M-920 Cain, as you are with martial weapons. (Every Soldier is already proficient with martial heavy weapons.) You deal <strong>+2 damage</strong> with heavy weapon attacks.</p><p><em>Prerequisite: Weapon Mastery (Assault Rifles) or Weapon Mastery (Shotguns). Classes: Soldier.</em></p>"
     },
     "rules": [
       {
@@ -26,6 +26,16 @@
           "item:group:bomb"
         ],
         "label": "Heavy Weapon Training"
+      },
+      {
+        "key": "MartialProficiency",
+        "label": "Advanced Heavy Weapons",
+        "slug": "me-advanced-heavy-weapons",
+        "definition": [
+          "item:category:advanced",
+          "item:group:bomb"
+        ],
+        "sameAs": "martial"
       }
     ],
     "_migration": {
@@ -52,10 +62,7 @@
     "prerequisites": {
       "value": [
         {
-          "value": "Weapon Mastery (Assault Rifles)"
-        },
-        {
-          "value": "Weapon Mastery (Shotguns)"
+          "value": "Weapon Mastery (Assault Rifles) or Weapon Mastery (Shotguns)"
         }
       ]
     },

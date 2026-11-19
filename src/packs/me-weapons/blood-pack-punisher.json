@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Blood Pack Punisher is a dual-barrel submachine gun engineered by Vorcha gunsmiths for the Blood Pack mercenary company. Its secondary barrel fires a stream of pellets simultaneously with the primary, effectively doubling the volume of fire at the cost of ammunition consumption. The design prioritizes offensive aggression over defensive discipline, which suits Blood Pack doctrine perfectly - they rarely needed a weapon that rewards patience.</p>"
+      "value": "<p>The Blood Pack Punisher is a dual-barrel submachine gun engineered by Vorcha gunsmiths for the Blood Pack mercenary company. Its secondary barrel fires a stream of pellets simultaneously with the primary, effectively doubling the volume of fire at the cost of ammunition consumption. The design prioritizes offensive aggression over defensive discipline, which suits Blood Pack doctrine perfectly - they rarely needed a weapon that rewards patience.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "blood-pack-punisher",
     "_migration": {
       "version": 0.955,

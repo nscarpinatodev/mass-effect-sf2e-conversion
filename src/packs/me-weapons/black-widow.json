@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Black Widow is a semi-automatic refinement of the M-98 Widow, trading a fraction of its predecessor's per-shot devastation for a three-round heat sink that allows follow-up shots without a full heat sink swap. It retains the Widow's anti-materiel velocity and its ability to end most living things with a single correctly placed round - the added capacity simply means a miss need not be fatal to the shooter.</p>"
+      "value": "<p>The Black Widow is a semi-automatic refinement of the M-98 Widow, trading a fraction of its predecessor's per-shot devastation for a three-round heat sink that allows follow-up shots without a full heat sink swap. It retains the Widow's anti-materiel velocity and its ability to end most living things with a single correctly placed round - the added capacity simply means a miss need not be fatal to the shooter.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "black-widow",
     "_migration": {
       "version": 0.955,

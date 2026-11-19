@@ -14,13 +14,13 @@
     "slug": "me-effect-fortification-master",
     "description": {
       "gm": "",
-      "value": "<p>Near-impenetrable combat shell. You have <strong>Resistance 12 to all damage</strong>, a <strong>+2 circumstance bonus to AC</strong>, and a <strong>+2 circumstance bonus to all saves</strong>. Dismiss as a free action to deactivate.</p>"
+      "value": "<p>Near-impenetrable combat shell. You have <strong>Resistance 12 to all damage</strong>, or resistance equal to your level if that is higher, a <strong>+2 circumstance bonus to AC</strong>, and a <strong>+2 circumstance bonus to all saves</strong>. Dismiss as a free action to deactivate.</p>"
     },
     "rules": [
       {
         "key": "Resistance",
         "type": "all-damage",
-        "value": 12,
+        "value": "max(12,@actor.level)",
         "label": "Master Fortification"
       },
       {

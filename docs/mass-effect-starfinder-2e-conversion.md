@@ -12,7 +12,7 @@
 
 ## ANCESTRIES
 
-*Your ancestry sets your starting Hit Points, size, Speed, attribute boosts and flaw, languages, and any special senses or biology. Choose one heritage at 1st level, then an ancestry feat at 1st level and every even level thereafter. Each species has its own section below, carrying its heritages and its full ancestry feat list.*
+*Your ancestry sets your starting Hit Points, size, Speed, attribute boosts and flaw, languages, and any special senses or biology. Choose one heritage at 1st level, then an ancestry feat at 1st level and every four levels thereafter (5th, 9th, 13th and 17th). Each species has its own section below, carrying its heritages and its full ancestry feat list.*
 
 | Ancestry | HP | Size | Speed | Boosts | Flaw | Vision | Heritages |
 |---|---|---|---|---|---|---|---|
@@ -89,20 +89,56 @@ You gain a +1 circumstance bonus to Recall Knowledge checks about historical eve
 #### Asari Heritages
 
 **Ardat-Yakshi Asari** *(rare)* You carry a rare neurological condition called Ardat-Yakshi-a mutation that causes your biotic nervous system to dominate and overwhelm the neural patterns of any partner during neural melding, causing rapid neurological damage and death. This makes you extraordinarily powerful as a biotic warrior; the same mechanism that kills during melding amplifies your mass effect field output to levels other asari cannot reach. Most Ardat-Yakshi are offered a choice by the Asari Republics: voluntary seclusion or service as a sanctioned operative. Some refuse both.
-Your biotic attacks and innate biotic spells deal additional damage equal to half your level (minimum 1). However, you cannot safely neural meld with others-any attempt to do so forces the target to attempt a DC 20 Fortitude save or become stunned for 1 round and take 2d6 mental damage; on a critical failure, they become unconscious for 1 minute. This applies whether or not you intended harm.
+Your biotic powers and your Telekinetic Projectile deal 1 extra damage. This rises to 2 at 9th level and 3 at 17th level.
+Your meld is never safe. You can't take the Melded Understanding feat, and you are the only asari who can take Dominating Meld.
+
+---
+*Automation: The extra damage is added to biotic power damage and to Telekinetic Projectile.*
 
 **Colonist Asari** You grew up not on Thessia but among the diverse populations of colony worlds, stations, or ships-immersed in other cultures from birth. Where Thessia-born asari sometimes view other species through the lens of a well-established civilization, you have always known them as neighbors, coworkers, and sometimes family. This cross-cultural upbringing has given you an ease in mixed-species environments that even other asari don't always possess.
-You gain a +1 circumstance bonus to Society checks, and you can speak one additional language of your choice from the languages available to any of the ancestries in this compendium. You also gain the Additional Lore feat for a culture or region you grew up near, chosen at character creation.
+You gain a +1 circumstance bonus to Society checks, you learn one additional language, and you become trained in one Lore skill for a culture or region you grew up near.
+
+---
+*Automation: The Society bonus and the language slot are granted. Add the Lore skill by hand.*
 
 **Commando Asari** You were trained from a young age in the Asari Commandos-the elite warrior caste whose members combine biotic power with combat precision into a fighting style other species spend lifetimes failing to replicate. Asari commandos move through battle with a fluid efficiency that makes them among the most feared individual combatants in the galaxy.
-You are trained in light and medium armor and gain access to the Quick Draw feat (or become trained in Acrobatics if you already have Quick Draw). Additionally, your biotic abilities (including those from ancestry features and feats) deal an additional 1 damage when used as attacks.
+You are trained in light and medium armor, and you gain the Quick Draw feat (or become trained in Acrobatics if you already have it). Your biotic powers and your Telekinetic Projectile deal 1 extra damage.
+
+---
+*Automation: The armor training and the extra damage are applied. Add Quick Draw by hand.*
 
 **Matriarch's Lineage Asari** You are descended from one of the great Matriarch lineages-asari who lived long enough and deeply enough to become living repositories of galactic wisdom. The weight of that heritage has shaped how you carry yourself and how others respond to your presence. Even young asari of Matriarch lineage carry a gravity beyond their years.
-You gain a +1 circumstance bonus to Diplomacy and Intimidation checks. Additionally, once per day you may use the Aid action as a free action (once per encounter) to assist an ally, representing your instinct for elevating those around you.
+You gain a +1 circumstance bonus to Diplomacy and Intimidation checks. Once per day, you can Aid an ally as a free action instead of a reaction, without having prepared to help on your previous turn.
 
 #### Asari Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
+
+##### Biotic Adept — Level 1
+*Prerequisite: Biotic Affinity, or the Alliance Biotic Human heritage*
+
+Where most biotics settle for the reflexive push they were born with, you have trained it into a weapon that grows with you.
+Your **Telekinetic Projectile** Strike deals an extra 1d6 force damage at 5th level, and another 1d6 at 9th, 13th and 17th level (5d6 in all at 17th).
+
+---
+*Automation: The extra dice are added to the Telekinetic Projectile Strike.*
+
+##### Huntress Drills — Level 1
+*Prerequisite: Commando Asari heritage*
+
+Asari huntresses train for close, fast, decisive fights, and they drill with the weapons that suit them until drawing and firing is one motion.
+You are trained in all pistols and shotguns. If your class would make you better than trained with them, use that proficiency instead. At 5th level, you gain the critical specialization effects of pistols and shotguns.
+
+---
+*Automation: The training and, from 5th level, the critical specialization are applied.*
+
+##### Maiden's Wanderlust — Level 1
+
+An asari's maiden years are spent wandering: crewing freighters, dancing on Omega, digging up Prothean ruins, serving a tour with a mercenary company. You came out of yours with skills no single career would have taught you.
+You become trained in one skill of your choice and in one Lore skill of your choice, and you learn one additional language.
+
+---
+*Automation: The skill and the extra language slot are granted. Add the Lore skill by hand.*
 
 ##### Millennia of Memory — Level 1
 
@@ -113,15 +149,85 @@ You gain the Multilingual skill feat as a bonus feat. Additionally, once per day
 
 **Trigger** A creature hits you with a melee Strike.
 Your nervous system responds to physical impact with an involuntary biotic discharge-an uncontrolled surge of mass effect field energy that radiates outward from the point of contact. You didn't choose to do this. It happens faster than conscious thought.
-The creature that hit you takes 1d4 force damage (no save). At 9th level this increases to 2d4 force damage. At 17th level this increases to 3d4 force damage.
+The creature that hit you takes (1 + floor((@actor.level - 5) / 4))d6 force damage (no save): 1d6 force, rising to 2d6 at 9th level, 3d6 at 13th and 4d6 at 17th.
 
-##### Melded Understanding ◆◆ — Level 9
+##### Galactic Citizen — Level 5
+*Prerequisite: Colonist Asari heritage*
+
+You grew up with turian neighbors, salarian teachers and krogan bouncers, and you read other species as easily as your own.
+You can use Society to Recall Knowledge about any species, its culture and its customs as though you were trained in the relevant skill, and you never take a penalty for unfamiliarity with another species' customs. When you Aid an ally whose ancestry is different from yours, you gain a +1 circumstance bonus to the check.
+
+---
+*Automation: Both benefits are applied by hand.*
+
+##### Melded Understanding ◆◆ — Level 5
 
 The asari neural meld is one of the most intimate forms of communication in the galaxy-a temporary merging of nervous systems that allows two beings to share thoughts, memories, and emotional states with a directness that language cannot approach. You have developed the ability to use a controlled, surface-level version of this connection.
 You attempt a Diplomacy check against a willing or helpless creature within reach. The DC is 15 for a willing creature or the creature's Will DC for a helpless one.
 **Critical Success** You gain a clear, accurate sense of the creature's current emotional state, one significant memory or piece of information from the last 24 hours, and whether it is concealing something. The creature is temporarily immune to Melded Understanding for 24 hours.
 **Success** You gain a general sense of the creature's emotional state and one surface-level impression or memory it is currently focused on.
 **Failure** You gain no information. If the target was unwilling, you are stupefied 1 for 1 round from the failed connection.
+**Special** An Ardat-Yakshi can't take this feat.
+
+##### Biotic Ward ↺ — Level 9
+
+**Frequency** once per 10 minutes
+**Trigger** You are the target of an attack you can see.
+You throw a mass effect field between yourself and the attack by reflex.
+You gain a +2 circumstance bonus to AC against the triggering attack. If it misses, the attacker can't be pushed or pulled toward you by your own biotics until the start of your next turn, as the field lingers.
+
+---
+*Automation: Apply the +2 to AC by hand.*
+
+##### Dominating Meld ◆◆ — Level 9
+*Prerequisite: Ardat-Yakshi Asari heritage*
+
+**Frequency** once per 10 minutes
+You force a meld on a creature within reach, and your nervous system does what it was born to do: it overwhelms theirs and feeds on what it burns.
+The target takes (ceil(@actor.level/2))d6 mental damage (1d6 per two levels, rounded up) with a basic basic Will save against your class DC. If it fails, you gain temporary Hit Points equal to your level for 1 minute. On a critical failure it is also Stunned 1.
+A willing or helpless creature automatically fails the save.
+
+##### Matron's Poise — Level 9
+
+The Matron stage is when an asari stops being moved by every passing storm. Yours came early, or you simply learned it the hard way.
+When you roll a success on a Will save against an emotion effect, you get a critical success instead.
+
+---
+*Automation: Applied to Will saves against effects with the emotion trait.*
+
+##### Biotic Prodigy — Level 13
+
+Your biotics no longer just hit. They move things.
+A creature damaged by your Telekinetic Projectile or your Biotic Feedback is pushed 5 feet away from you (10 feet if the Strike was a critical hit). This is forced movement. A creature more than one size larger than you isn't moved.
+
+---
+*Automation: Move the token by hand.*
+
+##### Matriarch's Voice — Level 13
+*Prerequisite: Matriarch's Lineage Asari heritage*
+
+When you tell someone how to do a thing, centuries of your line speak with you, and people listen.
+When you Aid as a free action with your Matriarch's Lineage heritage, a success on the check is a critical success instead. You can use that free Aid once per hour instead of once per day.
+
+---
+*Automation: Applied by hand.*
+
+##### Justicar's Resolve ↺ — Level 17
+
+**Frequency** once per day
+**Trigger** You would be reduced to 0 Hit Points but not immediately killed.
+Justicars do not stop until the Code is satisfied. Neither do you.
+You remain at 1 Hit Point instead, and you gain temporary Hit Points equal to your level for 1 minute. If you have a Biotic Barrier, it is also refilled to half its maximum.
+
+---
+*Automation: Set your Hit Points, temporary Hit Points and barrier by hand.*
+
+##### Matriarch's Wisdom ◇ — Level 17
+
+**Frequency** once per day
+**Trigger** You fail a skill check or a Will save.
+You have made this mistake before, or watched someone else make it four hundred years ago, and you remember how it ended.
+Reroll the check and use the second result.
 
 ---
 
@@ -196,7 +302,7 @@ You become trained in Thievery and gain a +1 circumstance bonus to Deception che
 
 #### Batarian Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Four-Eyed Vigilance — Level 1
 
@@ -279,7 +385,7 @@ You become an expert in Stealth. You gain a +1 circumstance bonus to Athletics c
 
 #### Drell Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Perfect Recall — Level 1
 
@@ -375,7 +481,7 @@ You gain a natural unarmed attack that deals 1d8 bludgeoning damage and has the 
 
 #### Elcor Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Crushing Blow — Level 1
 
@@ -458,7 +564,7 @@ You become trained in Religion and Prothean Lore. You can identify Prothean tech
 
 #### Hanar Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Enkindler's Grace ◆ — Level 1
 
@@ -528,7 +634,7 @@ Once per day, when you would critically fail a saving throw, you can reduce the 
 #### Human Heritages
 
 **Alliance Biotic Human** *(uncommon)* You were exposed to element zero in utero and survived the process with functional biotic nodules rather than neurological damage-a rare outcome that the Alliance immediately identified, tracked, and eventually recruited. Human biotics are a relatively new phenomenon and the technology for harnessing them has been rushed, meaning your implants have been upgraded and adjusted multiple times. The process has left you with real power and a complicated relationship with the program that shaped you.
-You can cast *telekinetic projectile* as an occult innate cantrip, using Charisma as your spellcasting ability. Additionally, you gain access to the Biotic Adept ancestry feat (see ancestry feats) without meeting its normal prerequisites.
+You gain a **Telekinetic Projectile** biotic Strike with a range increment of 30 feet (maximum 60 feet) that deals 1d6 force damage, as the asari Biotic Affinity feature. You can take the Biotic Adept ancestry feat as though you were an asari.
 
 **Colonist Human** You grew up on one of humanity's colony worlds-distant from Earth and the Core, built on grit and determination, often under skies that weren't the right color and gravity that never felt quite right. Colony life teaches adaptability, self-reliance, and a particular hostility toward the idea that anyone from the Core gets to tell you what your life is worth. You know how to live off limited resources, fix what you have, and trust your neighbors when there's nothing else.
 You become trained in Survival and Nature. You gain a +1 circumstance bonus to Fortitude saves against environmental hazards and diseases. You are trained in one Lore skill related to your colony world's terrain type (Desert Lore, Arctic Lore, Jungle Lore, etc.), chosen at character creation.
@@ -541,7 +647,7 @@ You become trained in Thievery and Deception. You gain a +1 circumstance bonus t
 
 #### Human Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Adaptive Learner — Level 1
 
@@ -634,7 +740,7 @@ You gain a +1 circumstance bonus to attack rolls while you are below half your m
 
 #### Krogan Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Headbutt — Level 1
 
@@ -723,7 +829,7 @@ Your environmental suit has been adapted for extended planetary use, reducing ma
 
 #### Quarian Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Omni-Tool Mastery — Level 1
 
@@ -815,7 +921,7 @@ You become trained in Medicine and two additional Lore skills related to biology
 
 #### Salarian Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Accelerated Mind — Level 1
 
@@ -890,43 +996,145 @@ Garrus, Saren, Nihlus, Chellick, Vakarian, Nyreen, Corinthus, Adrien, Tarquin, V
 While you are unarmored or wearing light armor, your carapace provides a +1 circumstance bonus to AC.
 
 **Military Discipline** Every turian who reaches adulthood has served in the military. This is not mere cultural tradition-it is the core institution through which turian society transmits its values, builds its identity, and produces the competence it expects from all citizens. Fifteen years of mandatory military service instills combat training, unit cohesion, and an unfailing confidence in one's physical capabilities that most other species simply cannot replicate through any other means.
-You gain the Assurance feat for your choice of Athletics or Acrobatics. Additionally, choose one martial weapon group; you become trained in all weapons of that group.
+You gain the Assurance feat for your choice of Athletics or Acrobatics. Additionally, choose one weapon group (pistols, rifles, shotguns or sniper rifles); you become trained in all weapons of that group.
 
 #### Turian Heritages
 
 **Colony Turian** You grew up on one of the turian colonial worlds rather than Palaven itself-worlds that sit at varying distances from the Hierarchy's institutional center, where the mandatory military service still applies but the rigid cultural uniformity of the homeworld is softer at the edges. Colony turians often develop a more adaptive relationship with non-turian species than their Palaven-raised counterparts, and a broader view of what the Hierarchy is actually for.
 You become trained in Diplomacy and gain one additional language of your choice from among those spoken by species common in your colonial region. You gain a +1 circumstance bonus to Diplomacy checks when interacting with non-turian species who might view standard turian demeanor as intimidating, as you have learned to modulate this effectively. You are also trained in Survival.
 
+---
+*Automation: Diplomacy, Survival and the language slot are granted.*
+
 **Palaven Soldier Turian** You trained through the full Turian Hierarchy military program on or near Palaven, the turian homeworld, and graduated into frontline service with the fleet or ground forces. Palaven produces soldiers of a quality that other species generally acknowledge, even grudgingly. The training is long, demanding, and designed to produce warriors who function as a unit first and as individuals second.
-You become an expert in Athletics. When you Aid an ally in combat, your Aid bonus is increased by 1 (from +1 to +2, or from +2 to +3 on a critical success). Your Military Discipline ancestry feature applies to two martial weapon groups instead of one.
+You become trained in Athletics (or another skill of your choice if you are already trained in it). When you Aid an ally in combat, the circumstance bonus you grant is 1 higher. Your Military Discipline ancestry feature applies to a second weapon group of your choice.
+
+---
+*Automation: Athletics and the second weapon group are granted.*
 
 **Spectre-Trained Turian** *(rare)* You underwent the covert operations training that the Hierarchy uses to prepare candidates for Spectre consideration-or you are a Spectre, or a former one. Hierarchy intelligence operations require a specific kind of turian: someone who can operate without the institutional support of their unit, make autonomous decisions in ambiguous situations, and return results without requiring their superiors to know exactly how. This training leaves distinctive marks on a person.
 You become trained in Deception and Stealth. You gain a +1 circumstance bonus to Perception checks to Sense Motive. When you are gathering information using Diplomacy, Society, or Deception, you can choose to be remembered as a different species (with a successful DC 15 Deception check) due to specialized camouflage training.
 
 **Turian Mercenary** Not all turians serve the Hierarchy their entire lives. Some complete their mandatory service and seek work elsewhere-operating in the mercenary market where their military training is worth exactly what it cost to produce them, plus whatever premium the client is willing to pay for reliability. Turian mercenaries bring discipline and tactical competence to operations that would otherwise rely on considerably less organized personnel.
-You become trained in Intimidation and gain the Mercenary Lore skill. You gain access to a wider range of weapons than standard class proficiency: you are trained with all martial weapons (regardless of class). You gain a +1 circumstance bonus to Deception checks to negotiate contract terms when the other party knows or suspects your military background.
+You become trained in Intimidation and in Mercenary Lore, and you are trained with all martial weapons whatever your class. You gain a +1 circumstance bonus to Deception checks to negotiate contract terms when the other party knows or suspects your military background.
+
+---
+*Automation: Intimidation and the martial weapon training are granted. Add Mercenary Lore by hand.*
 
 #### Turian Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
+
+##### Drilled Response — Level 1
+*Prerequisite: Palaven Soldier Turian heritage*
+
+Palaven drills contact response until it stops being a decision. Before you have finished registering the threat, your weapon is already up.
+You gain a +1 circumstance bonus to initiative rolls. When you roll initiative, you can Interact to draw one weapon as a free action.
+
+---
+*Automation: The initiative bonus is applied.*
 
 ##### Formation Fighter — Level 1
 
 Turian military doctrine is built around unit cohesion-the idea that a soldier's effectiveness is a function of where they are relative to their unit, not just their individual capability. You internalized this during your service, and it shows in how you position yourself in combat. You don't just fight. You fight in relation to the people fighting next to you, and that relationship multiplies what both of you can do.
-When you are adjacent to at least one ally, you gain a +1 circumstance bonus to attack rolls and a +1 circumstance bonus to AC. When you and an ally are flanking a creature, your flanking bonus to attack rolls increases to +3 (rather than the standard +2). You can use the Aid reaction even if you do not have the Aid skill feat, though you must still meet the check requirements normally.
+While you are adjacent to at least one ally, you gain a +1 circumstance bonus to attack rolls and a +1 circumstance bonus to AC. The bonus to AC is the same type as the one from your Carapace, so the two don't stack: a turian who is unarmored or in light armor gains only the bonus to attack rolls.
+While you and an ally are flanking a creature, you gain the +1 circumstance bonus to attack rolls against that creature even if no ally is adjacent to you. This is the same bonus, not an extra one.
 
 ---
-*Automation: Turn on the toggle while adjacent to an ally; the +1 applies to attack rolls and AC. The larger flanking bonus is applied by hand.*
+*Automation: Turn on &quot;Adjacent to an ally&quot; for the bonus to attack rolls and AC, or &quot;Flanking with an ally&quot; for the bonus to attack rolls alone.*
+
+##### Long Sight — Level 1
+
+Turian eyes evolved to pick out movement across Palaven's glaring silver plains, and turian marksmanship training does the rest.
+The range increment of ranged weapons you wield increases by 10 feet. This doesn't apply to thrown weapons.
+
+---
+*Automation: The range increment is raised on your ranged weapons.*
+
+##### Radiation-Hardened Plates — Level 1
+
+Palaven's weak magnetic field lets in solar radiation that would sicken most species. Your metallic carapace reflects it, and yours is denser than most.
+You gain fire resistance equal to half your level (minimum 1), and a +1 circumstance bonus to saving throws against radiation.
+
+---
+*Automation: The resistance is applied, and the bonus applies to saves against effects with the radiation trait.*
 
 ##### Hierarchy Command ◆ — Level 5
 
+**Frequency** once per 10 minutes
 Turian command presence is not about volume or threat. It is about absolute clarity of expectation delivered at exactly the right moment-a tone and manner that cuts through confusion and fear and tells the people around you what to do next with enough authority that they do it without stopping to debate. You have this. It is not something you put on. It is something you are.
-Choose up to two allies within 30 feet who can hear you. Each chosen ally gains a +1 circumstance bonus to their next attack roll or skill check made before the end of their next turn. Additionally, if any chosen ally is currently frightened, they reduce their frightened condition by 1. You can use this ability a number of times per day equal to your Charisma modifier (minimum 1).
+Choose up to two allies within 30 feet who can hear you. Each chosen ally gains a +1 circumstance bonus to their next attack roll or skill check made before the end of their next turn. If a chosen ally is frightened, they reduce their frightened condition by 1.
+
+##### Hired Gun — Level 5
+*Prerequisite: Turian Mercenary heritage*
+
+Clients pay for a turian mercenary because the job is usually over before the other side knows it has started.
+Your first Strike in an encounter against a creature that hasn't acted yet deals an extra 1d6 precision damage. This increases to 2d6 at 13th level.
+
+---
+*Automation: Turn on the toggle for that Strike.*
+
+##### Turian Resolve — Level 5
+
+A turian who breaks and runs shames their unit, their clan and the Spirits of both. You were raised not to.
+You gain a +1 circumstance bonus to saving throws against fear effects. When you roll a success on a saving throw against a fear effect, you get a critical success instead.
+
+---
+*Automation: Applied to saves against effects with the fear trait.*
 
 ##### Carapace Resilience — Level 9
 
 The turian exoskeleton is not decorative. It is a structural feature that distributes impact loads across a rigid lattice integrated into the musculature, and in individuals whose biology has been pushed through sustained military conditioning, that lattice thickens and hardens beyond the species baseline. Veteran turian soldiers take hits that would permanently injure younger members of their species, and they know it-not with arrogance, but with the calm of something that has been tested repeatedly and not found wanting.
-Your natural armor improves. You gain a +1 status bonus to AC when you are unarmored. Additionally, you gain resistance to bludgeoning and slashing damage equal to half your level (minimum 1). When you critically fail a Fortitude save against a physical effect (such as being knocked prone, moved, or stunned by a physical blow), you treat the result as a regular failure instead.
+You gain resistance to bludgeoning and slashing damage equal to half your level (minimum 1). When you critically fail a Fortitude save against a physical effect (such as being knocked prone, moved, or stunned by a physical blow), you get a failure instead.
+
+---
+*Automation: The resistances are applied. The Fortitude save clause is applied by hand.*
+
+##### Hold the Line — Level 9
+
+A turian line does not bend. Shoulder to shoulder, plates locked, you and the soldiers beside you are simply harder to move than you should be.
+You and each ally adjacent to you gain a +2 circumstance bonus to your Fortitude and Reflex DCs against Shove, Trip and Reposition, and to saving throws against effects that would move you or knock you prone.
+
+---
+*Automation: Applied by hand.*
+
+##### Lone Operative — Level 9
+*Prerequisite: Spectre-Trained Turian heritage*
+
+Most turians are at their best in a unit. You were trained for the jobs where there is no unit, no backup and no record that you were ever there.
+While no ally is within 30 feet of you, you gain a +1 circumstance bonus to Stealth checks, Deception checks and Perception checks.
+
+---
+*Automation: Turn on the toggle while no ally is within 30 feet.*
+
+##### Frontier Pragmatist ◇ — Level 13
+*Prerequisite: Colony Turian heritage*
+
+**Frequency** once per day
+**Trigger** You fail a check with a skill you are trained in.
+On the colonies the manual runs out early, and you learned to get the job done with whatever was left.
+Reroll the check and use the second result.
+
+##### Plated Bulwark ↺ — Level 13
+
+**Frequency** once per day
+**Trigger** A Strike critically hits you.
+You turn so the blow lands on the thickest plates of your carapace instead of the gap it was aimed at.
+The critical hit becomes a normal hit.
+
+##### Primarch's Authority — Level 17
+*Prerequisite: Hierarchy Command*
+
+You carry yourself like someone the Hierarchy would put in charge of a world, and in a firefight everyone within earshot treats you that way.
+Your Hierarchy Command affects every ally within 30 feet who can hear you, and its circumstance bonus increases to +2.
+
+##### Unbroken Line — Level 17
+
+There is no getting behind a turian formation. There is only the front of it, wherever you happen to be standing.
+While you are adjacent to at least one ally, you and each ally adjacent to you can't be flanked.
+
+---
+*Automation: Turn on the toggle while adjacent to an ally; it applies to you. Adjacent allies are handled by hand.*
 
 ---
 
@@ -1000,7 +1208,7 @@ You become trained in Stealth and Thievery and gain the Underworld Lore skill. Y
 
 #### Volus Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Market Instinct — Level 1
 
@@ -1091,7 +1299,7 @@ You become trained in Acrobatics and gain the Starship Systems Lore and Vacuum E
 
 #### Vorcha Feats
 
-*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*
+*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*
 
 ##### Feral Bite — Level 1
 
@@ -1186,11 +1394,11 @@ Intensive combat training sharpens your instincts and weapon handling. Your weap
 #### Improved Soldier Mastery — Level 7
 *Prerequisite: Soldier Mastery*
 
-Years of combat experience make you a force multiplier on the battlefield. Your weapon Strikes deal **+2 additional damage** (total +4 with Soldier Mastery) and you retain the **+1 bonus** to attack rolls against Flat-Footed enemies. Once per round when you use Adrenaline Rush, you may immediately make a Strike as a **free action**.
+Years of combat experience make you a force multiplier on the battlefield. Your weapon Strikes deal **+2 additional damage** (total +4 with Soldier Mastery) and you retain the **+1 bonus** to attack rolls against off-guard enemies. The cooldowns of Adrenaline Rush, its reaction, Concussive Shot, Fortification, the Frag Grenade and Carnage are **1 round shorter**, to a minimum of 2 rounds.
 *Prerequisite: Soldier Mastery.*
 
 ---
-*Automation: The extra Strike damage is applied automatically. The free Strike after Adrenaline Rush is yours to take.*
+*Automation: The extra Strike damage is applied automatically, and the shorter cooldown is counted when one of those powers starts its cooldown.*
 
 ---
 
@@ -1207,17 +1415,19 @@ You are a living weapon, honed to perfection through countless battles. Your wea
 
 #### Class Feats
 
-*SOLDIER feats are listed in full under **Feats -> Class Feats -> SOLDIER**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20.*
+*SOLDIER feats are listed in full under **Feats -> Class Feats -> SOLDIER**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20. Powers shared with other classes are listed in full under **General & Skill Feats**.*
 
 | Level | Feats |
 |---|---|
-| 1 | Concussive Shot, Cryo Rounds, Disruptor Rounds, Frag Grenade, Incendiary Rounds |
-| 2 | Adrenaline Rush, Tactical Reload |
-| 4 | Heavy Weapon Training, Improved Concussive Shot |
-| 6 | Ammo Master, Concussive Volley, Improved Adrenaline Rush |
-| 8 | Master Concussive Shot, Suppressing Fire |
-| 10 | Master Adrenaline Rush |
+| 1 | Armor-Piercing Rounds, Combat Training, Concussive Shot, Cryo Rounds, Disruptor Rounds, Fitness, Frag Grenade, Incendiary Rounds, Phasic Rounds, Shredder Rounds, Warp Rounds, Weapon Mastery (Assault Rifles), Weapon Mastery (Shotguns) |
+| 2 | Adrenaline Rush, Fortification, Tactical Reload |
+| 4 | Heavy Weapon Training, Improved Combat Training, Improved Concussive Shot, Improved Fitness, Improved Weapon Mastery (Assault Rifles), Improved Weapon Mastery (Shotguns) |
+| 6 | Ammo Master, Concussive Volley, Improved Adrenaline Rush, Improved Fortification |
+| 8 | Master Combat Training, Master Concussive Shot, Master Fitness, Master Weapon Mastery (Assault Rifles), Master Weapon Mastery (Shotguns), Suppressing Fire |
+| 10 | Master Adrenaline Rush, Master Fortification |
+| 12 | Carnage |
 | 14 | Battlefield Commander, Devastating Rounds |
+| 16 | Marksman |
 | 18 | Legendary Combat |
 | 20 | War Machine |
 
@@ -1233,7 +1443,7 @@ Specialists in technical warfare, Engineers control the battlefield through dron
 
 **Signature Abilities:** Combat Drone, Sentry Turret, Incinerate, Overload, AI Hacking, Cryo Blast
 
-**Power Access:** All tech powers (*ME Tech Powers* compendium). Engineers do not natively access biotic power feats.
+**Power Access:** All tech powers (*ME Tech Powers* compendium). Tech Training gives you two extra 1st-level powers at 1st level. Engineers do not natively access biotic power feats.
 
 **Weapons:** Pistols, submachine guns. Light weapons preferred; heavy weapons and sniper rifles are not standard.
 
@@ -1254,7 +1464,7 @@ Specialists in technical warfare, Engineers control the battlefield through dron
 
 | Level | Class Features |
 |---|---|
-| 1 | Engineer Mastery, Engineer Systems Knowledge, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 1 | Engineer Mastery, Engineer Systems Knowledge, Tech Training, Class Feat, Initial Proficiencies, Ancestry Feat |
 | 2 | Class Feat, Skill Feat |
 | 3 | Fortitude Expertise, General Feat, Skill Increase |
 | 4 | Class Feat, Skill Feat |
@@ -1287,22 +1497,33 @@ Specialists in technical warfare, Engineers control the battlefield through dron
 
 #### Engineer Mastery — Level 1
 
-Optimized omni-tool firmware and systematic power deployment reduces the overhead of all tech abilities. All tech powers have their action cost **reduced by 1** (minimum 1 action) and their save DCs gain **+1**.
+Optimized omni-tool firmware and systematic power deployment reduces the overhead of all tech abilities. All tech powers have their action cost **reduced by 1** (minimum 1 action) and their save DCs gain **+1**. Your tech powers' cooldowns are **1 round shorter**, to a minimum of 2 rounds: only Intelligence brings a cooldown down to 1 round.
 *Classes: Engineer.*
 
 ---
-*Automation: Tech powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+*Automation: Tech powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted.*
+
+---
+
+#### Tech Training — Level 1
+
+Your omni-tool came loaded with more than one program.
+Choose **two 1st-level tech powers** that an Engineer can take, from the *ME Tech Powers* compendium. You gain them as bonus feats, on top of your 1st-level class feat. Choose two different powers.
+*Classes: Engineer.*
+
+---
+*Automation: adding this feature asks for each power in turn and adds both to your sheet.*
 
 ---
 
 #### Improved Engineer Mastery — Level 7
 *Prerequisite: Engineer Mastery*
 
-Your system-level tech optimization reaches an advanced state. All tech powers have their action cost **reduced by 1** (minimum 1 action) and their DCs keep the **+1**. Once per round when a tech power you used deals damage, you may reduce one active power cooldown by **1 round**. Your Combat Drone gains **+2 HP per your level**.
+Your system-level tech optimization reaches an advanced state. All tech powers have their action cost **reduced by 1** (minimum 1 action) and their DCs keep the **+1**. Once per round when a tech power you used deals damage, the tech cooldown you have longest left to run is **1 round shorter**. Your Combat Drone gains **+2 HP per your level**.
 *Prerequisite: Engineer Mastery.*
 
 ---
-*Automation: Cooldown reduction and the Combat Drone's extra HP are tracked by hand.*
+*Automation: the cooldown cut is applied when a creature rolls its save and your power damages it, once a round. The Combat Drone's extra HP is counted when you deploy it.*
 
 ---
 
@@ -1313,19 +1534,22 @@ Your mastery of omni-tool systems reaches the pinnacle of technical achievement.
 *Prerequisite: Improved Engineer Mastery.*
 
 ---
-*Automation: Your class DC bonus rises to +2 total. The +1d6 against off-guard targets and the drone HP are tracked by hand.*
+*Automation: Your class DC bonus rises to +2 total. The +1d6 against off-guard targets is tracked by hand. The drone HP is the same bonus Improved Engineer Mastery gives and is counted when you deploy the drone.*
 
 ---
 
 #### Class Feats
 
-*ENGINEER feats are listed in full under **Feats -> Class Feats -> ENGINEER**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20.*
+*ENGINEER feats are listed in full under **Feats -> Class Feats -> ENGINEER**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20. Powers shared with other classes are listed in full under **General & Skill Feats**.*
 
 | Level | Feats |
 |---|---|
-| 1 | Combat Drone, Cryo Blast, Incinerate, Overload, Sabotage, Sentry Turret |
-| 8 | Incinerate Upgrade, Overload Upgrade |
-| 10 | Combat Drone Upgrade |
+| 1 | AI Hacking, Combat Drone, Cryo Blast, Damping, Decoy, Defense Drone, Defense Matrix, Energy Drain, Fitness, Geth Shield Boost, Incinerate, Neural Shock, Overload, Sabotage, Sentry Turret, Weapon Mastery (Pistols & SMGs) |
+| 2 | Tech Mastery |
+| 4 | Improved Fitness, Improved Weapon Mastery (Pistols & SMGs) |
+| 6 | Improved Tech Mastery |
+| 8 | Incinerate Upgrade, Master Fitness, Master Weapon Mastery (Pistols & SMGs), Overload Upgrade |
+| 10 | Combat Drone Upgrade, Master Tech Mastery |
 | 12 | System Override, Tech Field |
 | 14 | Drone Commander, Overload Network |
 | 16 | Omni-Grenade |
@@ -1344,13 +1568,13 @@ The most powerful biotic class in the galaxy, Adepts use mass effect fields to d
 
 **Signature Abilities:** Singularity, Warp, Throw, Stasis, Pull, Dark Channel, Dominate
 
-**Power Access:** All biotic powers (*ME Biotic Powers* compendium). Adepts do not natively access tech power feats.
+**Power Access:** All biotic powers (*ME Biotic Powers* compendium). Biotic Training gives you two extra 1st-level powers at 1st level. Adepts do not natively access tech power feats.
 
 **Weapons:** Pistols and submachine guns only. Adepts depend on powers, not guns.
 
 **Armor:** Light armor only. Biotic Barrier compensates for the lack of physical protection.
 
-**Playstyle:** Crowd control and combo detonation. An Adept's power is in setup - priming multiple enemies simultaneously with Singularity, then detonating with Throw or Warp for cascading Biotic Explosions. Fragile without their barrier up; devastating when they control positioning.
+**Playstyle:** Crowd control and combo detonation. An Adept's power is in setup - priming enemies with Singularity, Warp or Pull, then detonating them with Throw, Shockwave or Slam for a Biotic Explosion (see the Biotic Explosion feature). Fragile without their barrier up; devastating when they control positioning.
 
 #### Initial Proficiencies
 
@@ -1365,7 +1589,7 @@ The most powerful biotic class in the galaxy, Adepts use mass effect fields to d
 
 | Level | Class Features |
 |---|---|
-| 1 | Activate Biotic Barrier, Adept Mastery, Biotic Attack, Biotic Conditioning, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 1 | Activate Biotic Barrier, Adept Mastery, Biotic Attack, Biotic Conditioning, Biotic Explosion, Biotic Training, Class Feat, Initial Proficiencies, Ancestry Feat |
 | 2 | Class Feat, Skill Feat |
 | 3 | Fortitude Expertise, General Feat, Skill Increase |
 | 4 | Class Feat, Skill Feat |
@@ -1398,11 +1622,36 @@ The most powerful biotic class in the galaxy, Adepts use mass effect fields to d
 
 #### Adept Mastery — Level 1
 
-Refined biotic focus reduces the effort required to shape mass effect fields. All biotic powers you use have their action cost **reduced by 1** (minimum 1 action). Your biotic power save DCs increase by **+1**.
+Refined biotic focus reduces the effort required to shape mass effect fields. All biotic powers you use have their action cost **reduced by 1** (minimum 1 action). Your biotic power save DCs increase by **+1**. Your biotic powers' cooldowns are **1 round shorter**, to a minimum of 2 rounds: only a bio-amp brings a cooldown down to 1 round.
 *Classes: Adept.*
 
 ---
-*Automation: Biotic powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+*Automation: Biotic powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack. Using a biotic power puts its cooldown on your sheet as an effect, with the shorter cooldown counted.*
+
+---
+
+#### Biotic Explosion — Level 1
+
+A mass effect field left on a creature is unstable. Hit it hard enough with a second field and it tears itself apart.
+**Priming.** A creature that fails its save against a priming power is **Primed** until the end of the caster's next turn. The priming powers are Warp, Reave, Dark Channel, Singularity, Pull, Lift, Stasis, Lash and the Lift Grenade. Anyone's biotic powers can prime, not only yours.
+**Detonating.** When you damage a Primed creature with a detonating power, the priming is spent and the creature explodes. The detonating powers are Throw, Shockwave, Slam, Warp, Reave, Flare and Cluster Grenade. One use of a power either primes or detonates, never both: Warp or Reave on a creature that is already Primed detonates it and does not prime it again.
+**The explosion.** A 10-foot burst centered on the creature. It takes **2d6 force** damage with no save, and each of your other enemies in the burst takes the same damage with a basic Reflex save against your class DC. The damage rises to **3d6 at 4th level, 4d6 at 8th, 5d6 at 12th, 6d6 at 16th and 7d6 at 20th**.
+The explosion is not a power. Its dice are not multiplied by your level, and nothing that adds to your power damage adds to it. If one use of a power sets off more than one explosion, a creature takes explosion damage only once.
+*Classes: Adept.*
+
+---
+*Automation: with Auto-Apply Power Effects on, a failed save against a priming power puts the Primed effect on the creature. Your detonating power removes it, rolls the explosion, applies it, and rolls the Reflex saves of your other enemies within 10 feet. A creature with no token on the scene explodes without a burst; resolve that by hand.*
+
+---
+
+#### Biotic Training — Level 1
+
+Your training covered more than one way to bend a mass effect field.
+Choose **two 1st-level biotic powers** that an Adept can take, from the *ME Biotic Powers* compendium. You gain them as bonus feats, on top of your 1st-level class feat. Choose two different powers.
+*Classes: Adept.*
+
+---
+*Automation: adding this feature asks for each power in turn and adds both to your sheet.*
 
 ---
 
@@ -1413,7 +1662,7 @@ Your biotic efficiency reaches exceptional levels. All biotic powers have their 
 *Prerequisite: Adept Mastery.*
 
 ---
-*Automation: The free biotic power after a Biotic Explosion is yours to take.*
+*Automation: the Biotic Explosion card reminds you of the free power; using it is up to you.*
 
 ---
 
@@ -1430,13 +1679,18 @@ You have mastered the art of mass effect manipulation. All biotic powers have th
 
 #### Class Feats
 
-*ADEPT feats are listed in full under **Feats -> Class Feats -> ADEPT**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20.*
+*ADEPT feats are listed in full under **Feats -> Class Feats -> ADEPT**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20. Powers shared with other classes are listed in full under **General & Skill Feats**.*
 
 | Level | Feats |
 |---|---|
-| 1 | Cluster Grenade, Pull, Shockwave, Singularity, Throw, Warp |
-| 8 | Singularity Upgrade |
-| 10 | Biotic Resonance, Warp Upgrade |
+| 1 | Cluster Grenade, Dark Channel, Dominate, Fitness, Flare, Lash, Lift, Pull, Reave, Shockwave, Singularity, Slam, Stasis, Throw, Unity, Warp, Weapon Mastery (Pistols & SMGs) |
+| 2 | Biotic Mastery |
+| 4 | Improved Fitness, Improved Weapon Mastery (Pistols & SMGs) |
+| 5 | Improved Unity |
+| 6 | Improved Biotic Mastery |
+| 8 | Master Fitness, Master Weapon Mastery (Pistols & SMGs), Singularity Upgrade |
+| 9 | Superior Unity |
+| 10 | Biotic Resonance, Master Biotic Mastery, Warp Upgrade |
 | 12 | Warp Field |
 | 14 | Gravity Well |
 | 16 | Biotic Cascade |
@@ -1541,15 +1795,18 @@ Your barrier and body move as one unstoppable force. All biotic powers have thei
 
 #### Class Feats
 
-*VANGUARD feats are listed in full under **Feats -> Class Feats -> VANGUARD**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20.*
+*VANGUARD feats are listed in full under **Feats -> Class Feats -> VANGUARD**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20. Powers shared with other classes are listed in full under **General & Skill Feats**.*
 
 | Level | Feats |
 |---|---|
-| 1 | Biotic Charge, Biotic Warrior, Cryo Rounds, Incendiary Rounds, Nova, Pull, Shockwave |
-| 4 | Improved Charge, Vanguard Rush |
-| 6 | Barrier Siphon, Heavy Impact |
-| 8 | Charge Upgrade, Nova Upgrade |
-| 10 | Death's Embrace |
+| 1 | Armor-Piercing Rounds, Biotic Charge, Biotic Warrior, Combat Training, Cryo Rounds, Dark Channel, Dominate, Fitness, Flare, Incendiary Rounds, Lash, Lift, Nova, Phasic Rounds, Pull, Reave, Shockwave, Shredder Rounds, Slam, Stasis, Unity, Warp Rounds, Weapon Mastery (Shotguns) |
+| 2 | Biotic Mastery |
+| 4 | Improved Charge, Improved Combat Training, Improved Fitness, Improved Weapon Mastery (Shotguns), Vanguard Rush |
+| 5 | Improved Unity |
+| 6 | Barrier Siphon, Heavy Impact, Improved Biotic Mastery |
+| 8 | Charge Upgrade, Master Combat Training, Master Fitness, Master Weapon Mastery (Shotguns), Nova Upgrade |
+| 9 | Superior Unity |
+| 10 | Death's Embrace, Master Biotic Mastery |
 | 12 | Unstoppable Charge |
 | 14 | Vanguard Strike |
 | 16 | Rampage |
@@ -1568,13 +1825,13 @@ Elite marksmen who combine precision weapon skills with just enough tech to gain
 
 **Signature Abilities:** Tactical Cloak, Incinerate, AI Hacking (or Sabotage), Energy Drain
 
-**Power Access:** Tactical Cloak (core, always available), plus a limited selection of tech powers from the *ME Tech Powers* compendium - typically one offensive power (Incinerate or Cryo Blast) and one utility/crowd control power (AI Hacking, Sabotage, or Energy Drain). No biotic power access.
+**Power Access:** Tactical Cloak (a class feature from 1st level), plus tech powers taken as class feats from the *ME Tech Powers* compendium - typically one offensive power (Incinerate or Neural Shock) and one utility/crowd control power (AI Hacking, Sabotage, or Energy Drain). No biotic power access.
 
 **Weapons:** Sniper rifles (primary), pistols and submachine guns (secondary). The Tactical Cloak precision bonus is designed for sniper follow-through.
 
 **Armor:** Light and medium armor. Infiltrators rely on positioning and cloak rather than taking hits.
 
-**Playstyle:** Precision control from range. Cloak to reposition, uncloak for a precision sniper shot (+2d6 from Tactical Cloak), strip one enemy's defenses with Incinerate or Energy Drain, and use AI Hacking to remove a synthetic threat from the fight entirely. High single-target damage; low survivability in open combat.
+**Playstyle:** Precision control from range. Cloak to reposition, uncloak for a precision sniper shot (2d6 precision damage from Tactical Cloak at 1st level, growing with level as powers do), strip one enemy's defenses with Incinerate or Energy Drain, and use AI Hacking to remove a synthetic threat from the fight entirely. High single-target damage; low survivability in open combat.
 
 #### Initial Proficiencies
 
@@ -1589,7 +1846,7 @@ Elite marksmen who combine precision weapon skills with just enough tech to gain
 
 | Level | Class Features |
 |---|---|
-| 1 | Infiltrator Mastery, Infiltrator Training, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 1 | Infiltrator Mastery, Infiltrator Training, Tactical Cloak, Class Feat, Initial Proficiencies, Ancestry Feat |
 | 2 | Class Feat, Skill Feat |
 | 3 | Fortitude Expertise, General Feat, Skill Increase |
 | 4 | Class Feat, Skill Feat |
@@ -1622,47 +1879,62 @@ Elite marksmen who combine precision weapon skills with just enough tech to gain
 
 #### Infiltrator Mastery — Level 1
 
-Tactical training integrates tech powers seamlessly into your combat routine. All tech powers have their action cost **reduced by 1** (minimum 1 action). While Tactical Cloak is active, you gain a **+2 bonus** to Stealth checks.
+Tactical training integrates tech powers seamlessly into your combat routine. All tech powers have their action cost **reduced by 1** (minimum 1 action). Your tech powers' cooldowns are **1 round shorter**, to a minimum of 2 rounds: only Intelligence brings a cooldown down to 1 round. While Tactical Cloak is active, your bonus to Stealth checks from Infiltrator Training is **+4** instead of +2.
 *Classes: Infiltrator.*
 
 ---
-*Automation: Tech powers show their reduced action cost; the Stealth bonus applies while the Tactical Cloak effect is on you. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+*Automation: Tech powers show their reduced action cost; the Stealth bonus applies while the Tactical Cloak effect is on you. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+
+---
+
+#### Tactical Cloak ◆◆ — Level 1
+
+You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.
+You become **Undetected** by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect: your first Strike while cloaked deals **+2d6 precision damage**, and its target is **off-guard** to it.
+**Level scaling:** The cloak's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
+
+---
+*Automation: using Tactical Cloak puts its effect on you and starts its cooldown. The effect adds the precision damage and makes your target off-guard, and it comes off by itself once the cloaked Strike is resolved: when a miss is rolled, or when a hit's damage is rolled. Being Undetected is for you and the GM to play.*
 
 ---
 
 #### Improved Infiltrator Mastery — Level 7
 *Prerequisite: Infiltrator Mastery*
 
-Your tactical precision reaches a lethal edge. All tech powers have their action cost **reduced by 1** (minimum 1 action) and you retain the **+2 bonus** to Stealth while Tactical Cloak is active. Your first attack after emerging from Tactical Cloak deals **+2d6 precision** damage.
+Your tactical precision reaches a lethal edge. All tech powers have their action cost **reduced by 1** (minimum 1 action) and you retain Infiltrator Mastery's other benefits. Strikes you make while cloaked deal a further **+2d6 precision** damage. These dice are not multiplied by level.
 *Prerequisite: Infiltrator Mastery.*
 
 ---
-*Automation: The extra 2d6 precision is added to Strikes while the Tactical Cloak effect is on you, on top of the cloak's own 2d6.*
+*Automation: The extra 2d6 precision is added to Strikes while the Tactical Cloak effect is on you, on top of the cloak's own dice.*
 
 ---
 
 #### Superior Infiltrator Mastery — Level 13
 *Prerequisite: Improved Infiltrator Mastery*
 
-You are the perfect predator — invisible, precise, and lethal. All tech powers have their action cost **reduced by 1** (minimum 1 action) and you retain all prior mastery bonuses. While Tactical Cloak is active, you gain **Resistance 5** to all damage. Tech powers used against **Flat-Footed** targets have their DC increased by **2**.
+You are the perfect predator — invisible, precise, and lethal. All tech powers have their action cost **reduced by 1** (minimum 1 action) and you retain all prior mastery bonuses. On a turn you use Tactical Cloak, you have **resistance 5** to all damage until the start of your next turn, whether or not a Strike has ended the cloak. Tech powers you use while cloaked have their DC increased by **2**.
 *Prerequisite: Improved Infiltrator Mastery.*
 
 ---
-*Automation: Resistance 5 to all damage applies while the Tactical Cloak effect is on you. The +2 DC against off-guard targets is tracked by hand.*
+*Automation: The resistance applies while the Tactical Cloak effect is on you and, after a Strike ends the cloak, while the Cloak Wake effect that replaces it lasts. The +2 is added to your class DC while the Tactical Cloak effect is on you.*
 
 ---
 
 #### Class Feats
 
-*INFILTRATOR feats are listed in full under **Feats -> Class Feats -> INFILTRATOR**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20.*
+*INFILTRATOR feats are listed in full under **Feats -> Class Feats -> INFILTRATOR**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20. Powers shared with other classes are listed in full under **General & Skill Feats**.*
 
 | Level | Feats |
 |---|---|
-| 1 | Cryo Rounds, Disruptor Rounds, Incinerate, Sabotage, Sticky Grenade, Tactical Cloak |
-| 2 | Hunter's Mark |
-| 8 | Incinerate Upgrade, Tactical Cloak Upgrade |
-| 10 | Ghost Protocol |
+| 1 | AI Hacking, Armor-Piercing Rounds, Combat Training, Cryo Rounds, Damping, Decoy, Defense Drone, Defense Matrix, Disruptor Rounds, Energy Drain, Fitness, Geth Shield Boost, Incinerate, Neural Shock, Phasic Rounds, Sabotage, Shredder Rounds, Sticky Grenade, Warp Rounds, Weapon Mastery (Pistols & SMGs), Weapon Mastery (Sniper Rifles) |
+| 2 | Hunter's Mark, Tech Mastery |
+| 4 | Improved Combat Training, Improved Fitness, Improved Weapon Mastery (Pistols & SMGs), Improved Weapon Mastery (Sniper Rifles) |
+| 6 | Improved Tech Mastery |
+| 8 | Incinerate Upgrade, Master Combat Training, Master Fitness, Master Weapon Mastery (Pistols & SMGs), Master Weapon Mastery (Sniper Rifles), Tactical Cloak Upgrade |
+| 10 | Ghost Protocol, Master Tech Mastery |
 | 12 | Assassination Protocol |
+| 14 | Overwatch |
 | 16 | Phantom Protocol |
 | 18 | Death From Above |
 | 20 | Apex Infiltrator |
@@ -1700,7 +1972,7 @@ The most defensively robust class in the game, Sentinels combine Tech Armor with
 
 | Level | Class Features |
 |---|---|
-| 1 | Sentinel Conditioning, Sentinel Mastery, Class Feat, Initial Proficiencies, Ancestry Feat |
+| 1 | Sentinel Conditioning, Sentinel Mastery, Tech Armor, Class Feat, Initial Proficiencies, Ancestry Feat |
 | 2 | Class Feat, Skill Feat |
 | 3 | Reflex Expertise, General Feat, Skill Increase |
 | 4 | Class Feat, Skill Feat |
@@ -1733,45 +2005,63 @@ The most defensively robust class in the game, Sentinels combine Tech Armor with
 
 #### Sentinel Mastery — Level 1
 
-Dual biotic and tech training allows you to deploy both disciplines with exceptional efficiency. Biotic and tech powers you use each have their action cost **reduced by 1** (minimum 1 action).
+Dual biotic and tech training allows you to deploy both disciplines with exceptional efficiency. Biotic and tech powers you use each have their action cost **reduced by 1** (minimum 1 action). Your tech powers' cooldowns use your **Intelligence or Charisma** modifier, whichever is higher.
 *Classes: Sentinel.*
 
 ---
-*Automation: Biotic and tech powers show their reduced action cost. The action cost reduction from each mastery tier is the same reduction; they don't stack.*
+*Automation: Biotic and tech powers show their reduced action cost. The action cost reduction from each mastery tier is the same reduction; they don't stack. Using a tech power puts its cooldown on your sheet as an effect, counted on the better attribute.*
+
+---
+
+#### Tech Armor ◆◆ — Level 1
+
+You activate a hardlight exoskeleton projected from your omni-tool, reinforcing your body with a crackling energy shell that detonates if overwhelmed.
+You gain the Tech Armor effect: **+2 circumstance bonus to AC**. If you take **17 + 3 × your level** or more damage from a single hit while this effect is active (20 at 1st level, 47 at 10th, 77 at 20th), it detonates — all creatures in a 10-foot emanation take **2d6 electricity** damage (basic Reflex save against your class DC) and the effect ends. You may also voluntarily detonate it as a free action on your turn.
+**Level scaling:** The detonation's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
+
+---
+*Automation: using Tech Armor puts its effect on you; remove the effect when it detonates. The masteries' resistance applies while the effect is on you.*
+*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
 #### Improved Sentinel Mastery — Level 7
 *Prerequisite: Sentinel Mastery*
 
-You have refined your dual-discipline approach into a seamless defense. Biotic and tech powers each have their action cost **reduced by 1** (minimum 1 action). Once per round, when you use both a biotic power and a tech power in the same turn, you gain a **+2 circumstance bonus to AC** until the start of your next turn.
+You have refined your dual-discipline approach into a seamless defense. Biotic and tech powers each have their action cost **reduced by 1** (minimum 1 action). While Tech Armor is active you have **resistance 3 to all damage**. When you use both a biotic power and a tech power in the same turn, that resistance is **doubled** until the start of your next turn.
 *Prerequisite: Sentinel Mastery.*
 
 ---
-*Automation: Turn on the toggle on your sheet after using both kinds of power in one turn, and off again at the start of your next turn. Like Tech Armor, this is a circumstance bonus, so the two don't stack.*
+*Automation: the resistance applies while the Tech Armor effect is on you. Turn on the toggle on your sheet after using both kinds of power in one turn to double it, and off again at the start of your next turn.*
 
 ---
 
 #### Superior Sentinel Mastery — Level 13
 *Prerequisite: Improved Sentinel Mastery*
 
-Your hybrid discipline reaches its apex, blending biotic and tech into a seamless defensive and offensive system. Biotic and tech powers each have their action cost **reduced by 1** (minimum 1 action) and you retain the AC bonus from using both in the same turn. Tech Armor's damage reduction increases by **2**. Your biotic and tech powers deal **+1d4 bonus damage**.
+Your hybrid discipline reaches its apex, blending biotic and tech into a seamless defensive and offensive system. Biotic and tech powers each have their action cost **reduced by 1** (minimum 1 action). Tech Armor's resistance to all damage increases by **2**, to 5 (10 when doubled by using both kinds of power in a turn). Your biotic and tech powers deal **+1d4 bonus damage**.
 *Prerequisite: Improved Sentinel Mastery.*
 
 ---
-*Automation: The +1d4 is added to the damage of your biotic and tech powers. Tech Armor has no damage reduction for the +2 to raise, so that part is left to your GM.*
+*Automation: The +1d4 is added to the damage of your biotic and tech powers. The higher resistance applies while the Tech Armor effect is on you.*
 
 ---
 
 #### Class Feats
 
-*SENTINEL feats are listed in full under **Feats -> Class Feats -> SENTINEL**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20.*
+*SENTINEL feats are listed in full under **Feats -> Class Feats -> SENTINEL**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20. Powers shared with other classes are listed in full under **General & Skill Feats**.*
 
 | Level | Feats |
 |---|---|
-| 1 | Cryo Blast, Lift Grenade, Overload, Tech Armor, Throw, Warp |
-| 8 | Overload Upgrade |
-| 10 | Warp Upgrade |
+| 1 | AI Hacking, Cryo Blast, Damping, Dark Channel, Decoy, Defense Drone, Defense Matrix, Dominate, Energy Drain, Fitness, Flare, Geth Shield Boost, Lash, Lift, Lift Grenade, Neural Shock, Overload, Reave, Slam, Stasis, Throw, Unity, Warp, Weapon Mastery (Assault Rifles) |
+| 2 | Biotic Mastery, Fortification, Tech Mastery |
+| 4 | Improved Fitness, Improved Weapon Mastery (Assault Rifles) |
+| 5 | Improved Unity |
+| 6 | Improved Biotic Mastery, Improved Fortification, Improved Tech Mastery |
+| 8 | Master Fitness, Master Weapon Mastery (Assault Rifles), Overload Upgrade |
+| 9 | Superior Unity |
+| 10 | Master Biotic Mastery, Master Fortification, Master Tech Mastery, Warp Upgrade |
 | 12 | Adaptive Defense, Hybrid Core |
 | 14 | Interference Field |
 | 16 | Battle Hardened |
@@ -1864,20 +2154,32 @@ Your hybrid discipline reaches its apex, blending biotic and tech into a seamles
 
 #### SOLDIER
 
-#### Concussive Shot ◆◆ — Level 1
+#### Combat Training — Level 1
+
+Intensive combat drills sharpen your offensive fundamentals. You gain a **+1 circumstance bonus to attack rolls**.
+*Classes: Soldier, Vanguard, Infiltrator.*
+
+---
+
+#### Concussive Shot ◆ — Level 1
 
 You fire a concentrated kinetic burst that hammers your target to the ground.
 Make a Strike with a ranged weapon. This Strike deals **1d8** additional bludgeoning damage. On a **hit**, the target is knocked **Prone**. On a **critical hit**, the target is also pushed back **10 feet**.
-**Cooldown:** 7 - your Strength modifier rounds (minimum 1).
+**Level scaling:** The extra dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 7 − your Constitution or Strength modifier, whichever is higher, rounds (minimum 1). The Concussive Shot feats share one cooldown.
 *Classes: Soldier.*
+
+---
+*Automation: using this feat puts a Concussive Shot effect on you and starts the cooldown. The effect adds the dice to your next ranged Strike and comes off once that Strike is resolved. A hit knocks the target prone and a critical hit pushes it, while a GM is connected.*
 
 ---
 
 #### Cryo Rounds ◆◆ — Level 1
 
 You have been trained in the use of cryo rounds. Using two actions, you can modify your ammunition to gain the following features:
-Cryogenically-charged rounds that flash-freeze on impact. Your weapon attacks deal an additional **1d4 cold damage**.
-When Cryo Rounds deal direct HP damage, the target becomes **Chilled** (off-guard until the end of their next turn).
+Cryogenically-charged rounds that flash-freeze on impact. Your ranged Strikes deal an additional **1d4 cold damage**.
+When Cryo Rounds deal direct HP damage, the target becomes **Chilled** (off-guard until the start of your next turn).
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
 
 ---
@@ -1885,9 +2187,17 @@ Remove this effect to return to standard ammunition.
 #### Disruptor Rounds ◆◆ — Level 1
 
 You have been trained in the use of disruptor rounds. Using two actions, you can modify your ammunition to gain the following features:
-Rounds that generate a disruptive electrical pulse on impact. Your weapon attacks deal **electricity damage** instead of their normal damage type.
+Rounds that generate a disruptive electrical pulse on impact. Your ranged Strikes deal **electricity damage** instead of their normal damage type.
 Disruptor rounds deal double damage to kinetic shields: all electricity damage against shielded targets is automatically doubled.
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
+
+---
+
+#### Fitness — Level 1
+
+Rigorous physical conditioning increases your survivability. You gain **+4 maximum HP**.
+*Classes: All.*
 
 ---
 
@@ -1896,12 +2206,14 @@ Remove this effect to return to standard ammunition.
 You hurl a standard-issue fragmentation grenade that detonates on impact, shredding targets with lethal shrapnel.
 Choose a point within **60 feet**. All creatures in a 10-foot burst centered on that point must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
-**Success** The target takes **2d6 piercing** damage.
-**Failure** The target takes **4d6 piercing** damage and its Speed is reduced by **10 feet** until the end of your next turn.
-**Critical Failure** The target takes **6d6 piercing** damage, its Speed is reduced by 10 feet until the end of your next turn, and it is knocked **prone**.
+**Success** The target takes **1d6 piercing** damage.
+**Failure** The target takes **2d6 piercing** damage and its Speed is reduced by **10 feet** until the end of your next turn.
+**Critical Failure** The target takes **4d6 piercing** damage, its Speed is reduced by 10 feet until the end of your next turn, and it is knocked **prone**.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 3 rounds.
 
 ---
+*Automation: using the Frag Grenade starts its cooldown on your sheet.*
 *When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
@@ -1909,54 +2221,112 @@ Choose a point within **60 feet**. All creatures in a 10-foot burst centered on 
 #### Incendiary Rounds ◆◆ — Level 1
 
 You have been trained in the use of incendiary rounds. Using two actions, you can modify your ammunition to gain the following features:
-Thermite-tipped rounds that ignite on impact. Your weapon attacks deal **fire damage** instead of their normal damage type.
+Thermite-tipped rounds that ignite on impact. Your ranged Strikes deal **fire damage** instead of their normal damage type.
 Incendiary rounds burn through armor faster: each point of incoming damage depletes 1.5× points of armor.
 On a **critical hit**, the target ignites and suffers **persistent fire damage** (DC 15 flat check to extinguish).
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
 
 ---
 
-#### Adrenaline Rush ◆ — Level 2
+#### Weapon Mastery (Assault Rifles) — Level 1
 
-You spike your body's combat stimulant response, accelerating your reaction speed for a burst of action. Until the end of your turn, you are **Quickened 1** and gain **+15 feet of Speed**.
-**Cooldown:** 7 - your Constitution modifier rounds (minimum 1).
+Extensive training with assault rifles improves your firing discipline. You deal **+2 damage** with assault rifles attacks.
+*Classes: Soldier, Sentinel.*
+
+---
+
+#### Weapon Mastery (Shotguns) — Level 1
+
+Extensive training with shotguns improves your firing discipline. You deal **+2 damage** with shotguns attacks.
+*Classes: Vanguard, Soldier.*
+
+---
+
+#### Adrenaline Rush ◇ — Level 2
+
+You spike your body's combat stimulant response, accelerating your reaction speed for a burst of action.
+Until the end of your turn you are **Quickened**: you gain one extra action, which you can use to Strike, Stride or reload. You also gain **+15 feet of Speed**. You can use Adrenaline Rush only on your own turn.
+**Cooldown:** 7 − your Constitution modifier rounds (minimum 1).
 *Classes: Soldier.*
+
+---
+*Automation: using Adrenaline Rush puts the Adrenaline Rush effect on you, which ends with your turn, and starts its cooldown.*
 
 ---
 
 #### Tactical Reload — Level 2
-*Prerequisite: Improved Combat Training*
+*Prerequisite: Combat Training*
 
 Combat reflexes honed through thousands of engagements let you reload without breaking your rhythm.
 Once per round, you may **reload a weapon as a free action**. This can be used to reload during a multi-attack sequence.
-*Prerequisite: Improved Combat Training. Classes: Soldier.*
+*Prerequisite: Combat Training. Classes: Soldier.*
 
 ---
 
 #### Heavy Weapon Training — Level 4
-*Prerequisite: Weapon Mastery (Assault Rifles), Weapon Mastery (Shotguns)*
+*Prerequisite: Weapon Mastery (Assault Rifles) or Weapon Mastery (Shotguns)*
 
 You've mastered the art of carrying and operating the heaviest weapons in the Alliance's arsenal.
-You gain proficiency with **heavy weapons** (bomb group). You deal **+2 damage** with heavy weapon attacks. Heavy weapons consume Power Cells (tracked as a separate consumable).
+You are proficient with **advanced heavy weapons**, such as the M-920 Cain, as you are with martial weapons. (Every Soldier is already proficient with martial heavy weapons.) You deal **+2 damage** with heavy weapon attacks.
 *Prerequisite: Weapon Mastery (Assault Rifles) or Weapon Mastery (Shotguns). Classes: Soldier.*
 
 ---
 
-#### Improved Concussive Shot ◆◆ — Level 4
+#### Improved Combat Training — Level 4
+*Prerequisite: Combat Training*
+
+Your combat mastery extends to follow-through. You deal **+2 damage** on all Strikes (stacks with Combat Training's attack bonus).
+*Prerequisite: Combat Training. Classes: Infiltrator, Soldier, Vanguard.*
+
+---
+
+#### Improved Concussive Shot ◆ — Level 4
 *Prerequisite: Concussive Shot*
 
 Your concussive fire has grown powerful enough to send enemies sprawling with every hit.
 Make a Strike with a ranged weapon. This Strike deals **2d8** additional bludgeoning damage. On a **hit**, the target is knocked **Prone**. On a **critical hit**, the target is also pushed back **10 feet**.
-**Cooldown:** 7 - your Strength modifier rounds (minimum 1).
+**Level scaling:** The extra dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 7 − your Constitution or Strength modifier, whichever is higher, rounds (minimum 1). The Concussive Shot feats share one cooldown.
 *Prerequisite: Concussive Shot.*
+
+---
+*Automation: using this feat puts a Concussive Shot effect on you and starts the cooldown. The effect adds the dice to your next ranged Strike and comes off once that Strike is resolved. A hit knocks the target prone and a critical hit pushes it, while a GM is connected.*
+
+---
+
+#### Improved Fitness — Level 4
+*Prerequisite: Fitness*
+
+Advanced conditioning deepens your physical resilience. You gain an additional **+4 maximum HP** (total +8 with Fitness) and a **+1 circumstance bonus to Fortitude saves**.
+*Prerequisite: Fitness. Classes: All.*
+
+---
+
+#### Improved Weapon Mastery (Assault Rifles) — Level 4
+*Prerequisite: Weapon Mastery (Assault Rifles)*
+
+Expert assault rifles proficiency. You deal **+4 damage** and gain a **+1 circumstance bonus to attack rolls** with assault rifles (replaces the +2 damage). Your range-fire discipline tightens.
+*Prerequisite: Weapon Mastery (Assault Rifles). Classes: Sentinel, Soldier.*
+
+---
+
+#### Improved Weapon Mastery (Shotguns) — Level 4
+*Prerequisite: Weapon Mastery (Shotguns)*
+
+Expert shotguns proficiency. You deal **+4 damage** and gain a **+1 circumstance bonus to attack rolls** with shotguns (replaces the +2 damage). You do not take penalties for firing while adjacent to a prone or grabbed enemy.
+*Prerequisite: Weapon Mastery (Shotguns). Classes: Soldier, Vanguard.*
 
 ---
 
 #### Ammo Master — Level 6
 *Prerequisite: Incendiary Rounds, Disruptor Rounds*
 
-Years of field experience with specialized ammunition have sharpened your instinct for ammo efficiency. Each ammo power you have active deals **+1 additional damage die** of its type.
+Years of field experience with specialized ammunition have sharpened your instinct for ammo efficiency. Each ammo power you have active deals **+1 additional damage die** of its type. Incendiary and Disruptor Rounds, which add no dice of their own, add 1d4 fire or 1d4 electricity; Armor-Piercing Rounds add none.
 *Prerequisite: Any two ammo powers. Classes: Soldier.*
+
+---
+*Automation: the extra die is added to your ranged Strikes while an ammo effect is on you.*
 
 ---
 
@@ -1968,47 +2338,109 @@ When you use **Concussive Shot**, you may target two creatures that are within *
 *Prerequisite: Concussive Shot. Classes: Soldier.*
 
 ---
+*Automation: the Concussive Shot effect stays on for two Strikes.*
+
+---
 
 #### Improved Adrenaline Rush ↺ — Level 6
 *Prerequisite: Adrenaline Rush*
 
-**Trigger:** You take damage from a Strike while not Flat-Footed.
-Your body automatically triggers an adrenaline response when threatened. Until the end of your turn, you are **Quickened 1**, gain **+20 feet of Speed**, and gain **+1 to attack rolls**.
-**Cooldown:** After using this reaction, you can't use it again for 7 - your Constitution modifier rounds (minimum 1).
+**Trigger:** You take damage from a Strike while not off-guard.
+Your body answers the hit with an adrenaline surge. On your next turn you are **Quickened** (one extra action to Strike, Stride or reload), with **+20 feet of Speed** and a **+1 status bonus to attack rolls**, until that turn ends. This does not use Adrenaline Rush itself or start its cooldown.
+**Cooldown:** After using this reaction, you can't use it again for 7 − your Constitution modifier rounds (minimum 1).
 *Prerequisite: Adrenaline Rush.*
 
 ---
+*Automation: sending this feat to chat puts the Improved Adrenaline Rush effect on you, which comes off when your next turn ends, and starts the reaction's cooldown.*
 
-#### Master Concussive Shot ◆◆ — Level 8
+---
+
+#### Master Combat Training — Level 8
+*Prerequisite: Improved Combat Training*
+
+Elite combat discipline across all dimensions. You deal an additional **+2 damage** on all Strikes (total +4 with the chain) and gain a **+1 circumstance bonus to all saving throws** from battlefield awareness.
+*Prerequisite: Improved Combat Training. Classes: Infiltrator, Soldier, Vanguard.*
+
+---
+
+#### Master Concussive Shot ◆ — Level 8
 *Prerequisite: Improved Concussive Shot*
 
 Your concussive rounds deliver punishing force that ragdolls even armored targets.
 Make a Strike with a ranged weapon. This Strike deals **3d8** additional bludgeoning damage. On a **hit**, the target is knocked **Prone**. On a **critical hit**, the target is also pushed back **10 feet**.
-**Cooldown:** 7 - your Strength modifier rounds (minimum 1).
+**Level scaling:** The extra dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 7 − your Constitution or Strength modifier, whichever is higher, rounds (minimum 1). The Concussive Shot feats share one cooldown.
 *Prerequisite: Improved Concussive Shot.*
+
+---
+*Automation: using this feat puts a Concussive Shot effect on you and starts the cooldown. The effect adds the dice to your next ranged Strike and comes off once that Strike is resolved. A hit knocks the target prone and a critical hit pushes it, while a GM is connected.*
+
+---
+
+#### Master Fitness — Level 8
+*Prerequisite: Improved Fitness*
+
+Peak physical conditioning. You gain an additional **+4 maximum HP** (total +12 with the chain), your Fortitude circumstance bonus increases to **+2**, and your movement speed increases by **5 feet**.
+*Prerequisite: Improved Fitness. Classes: All.*
+
+---
+
+#### Master Weapon Mastery (Assault Rifles) — Level 8
+*Prerequisite: Improved Weapon Mastery (Assault Rifles)*
+
+Master-level assault rifles proficiency. You deal **+6 damage** and gain a **+2 circumstance bonus to attack rolls** with assault rifles (replaces previous bonuses). Critical hits with assault rifles ignore 5 points of the target's damage resistance.
+*Prerequisite: Improved Weapon Mastery (Assault Rifles). Classes: Sentinel, Soldier.*
+
+---
+
+#### Master Weapon Mastery (Shotguns) — Level 8
+*Prerequisite: Improved Weapon Mastery (Shotguns)*
+
+Master-level shotguns proficiency. You deal **+6 damage** and gain a **+2 circumstance bonus to attack rolls** with shotguns (replaces previous bonuses). Critical hits with a shotgun push the target 10 feet and knock them Prone.
+*Prerequisite: Improved Weapon Mastery (Shotguns). Classes: Soldier, Vanguard.*
 
 ---
 
 #### Suppressing Fire — Level 8
-*Prerequisite: Master Combat Training*
+*Prerequisite: Improved Combat Training*
 
 A sustained barrage of fire forces enemies to keep their heads down even when you miss.
-Whenever you make **3 or more Strikes** in a single turn, all enemies you missed with any of those Strikes are **Flat-Footed** until the start of your next turn.
-*Prerequisite: Master Combat Training. Classes: Soldier.*
+Whenever you make **3 or more Strikes** in a single turn, all enemies you missed with any of those Strikes are **off-guard** until the start of your next turn.
+*Prerequisite: Improved Combat Training. Classes: Soldier.*
 
 ---
 
 #### Master Adrenaline Rush ↺ — Level 10
 *Prerequisite: Improved Adrenaline Rush*
 
-**Trigger:** You take damage from any source while not Flat-Footed.
-Your augmented combat systems trigger a full adrenaline surge at the slightest provocation. Until the end of your turn, you are **Quickened 2**, gain **+30 feet of Speed**, and gain **+2 to attack rolls**.
-**Cooldown:** After using this reaction, you can't use it again for 7 - your Constitution modifier rounds (minimum 1).
+**Trigger:** You take damage from any source while not off-guard.
+Your augmented combat systems trigger a full adrenaline surge at the slightest provocation. On your next turn you gain **two extra actions** to Strike, Stride or reload, with **+30 feet of Speed** and a **+2 status bonus to attack rolls**, until that turn ends. This does not use Adrenaline Rush itself or start its cooldown. This is Improved Adrenaline Rush's reaction, made stronger: you have one reaction and one cooldown between the two feats.
+**Cooldown:** After using this reaction, you can't use it again for 7 − your Constitution modifier rounds (minimum 1).
 *Prerequisite: Improved Adrenaline Rush.*
 
 ---
+*Automation: sending this feat to chat puts the Master Adrenaline Rush effect on you, which comes off when your next turn ends, and starts the reaction's cooldown.*
 
-#### Battlefield Commander ◆◆ — Level 14
+---
+
+#### Carnage ◆◆ — Level 12
+
+You overcharge a single round until it leaves the barrel as a rippling ball of plasma.
+Make a Strike with a ranged weapon. Whether it hits or misses, the round bursts where it lands: the target and all other creatures in a 10-foot burst centered on it must attempt a Reflex save against your class DC.
+**Critical Success** Unaffected.
+**Success** The creature takes **1d6 fire** damage.
+**Failure** The creature takes **2d6 fire** damage.
+**Critical Failure** The creature takes **4d6 fire** damage.
+**Level scaling:** All of this power's dice are multiplied by 4 at 12th level, when you gain it (8d6 on a failure), by 5 at 16th and by 6 at 20th.
+**Cooldown:** 7 − your Constitution or Strength modifier, whichever is higher, rounds (minimum 1).
+*Classes: Soldier.*
+
+---
+*Automation: using Carnage starts its cooldown on your sheet. The Strike is yours to roll. When a creature rolls the save above, the damage for its result is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
+
+#### Battlefield Commander ◆ — Level 14
 *Prerequisite: Master Combat Training*
 
 Your experience reading combat situations lets you coordinate allies with a few shouted commands and hand signals.
@@ -2025,11 +2457,26 @@ Each ammo power you have active deals **+1 additional damage die** of its type (
 *Prerequisite: Ammo Master. Classes: Soldier.*
 
 ---
+*Automation: the extra die is added to your ranged Strikes while an ammo effect is on you.*
+
+---
+
+#### Marksman — Level 16
+*Prerequisite: Adrenaline Rush*
+
+Adrenaline narrows the world to your sights.
+On a turn when you have extra actions from Adrenaline Rush or its reaction, your multiple attack penalty is **−4** (−8 on your third and later attacks) instead of −5 (−10).
+*Prerequisite: Adrenaline Rush. Classes: Soldier.*
+
+---
+*Automation: the lower penalty applies while an Adrenaline Rush effect is on you.*
+
+---
 
 #### Legendary Combat — Level 18
 *Prerequisite: Master Combat Training*
 
-You have reached the pinnacle of personal combat effectiveness. You deal an additional **+2 damage** on all Strikes (stacks with the Combat Training chain) and gain a **+2 circumstance bonus to attack rolls**. Critical hits you score ignore **5 points** of the target's damage resistance.
+You have reached the pinnacle of personal combat effectiveness. You deal an additional **+2 damage** on all Strikes (stacks with the Combat Training chain) and gain a **+3 circumstance bonus to attack rolls**. This is in place of the bonus from Weapon Mastery or Combat Training, not on top of it: circumstance bonuses do not stack. Critical hits you score ignore **5 points** of the target's damage resistance.
 *Prerequisite: Master Combat Training. Classes: Soldier.*
 
 ---
@@ -2038,8 +2485,11 @@ You have reached the pinnacle of personal combat effectiveness. You deal an addi
 *Prerequisite: Devastating Rounds*
 
 You are a one-person army. Your weapons, your ammo, and your will are all operating at maximum capacity.
-Your active ammo powers each deal **+2 additional damage dice** (replaces Devastating Rounds' +2 total). You can maintain **two different ammo powers simultaneously** - both effects apply to every Strike.
+You can keep **two different ammo powers** active at once: both apply to every Strike, and each keeps the two additional damage dice from Ammo Master and Devastating Rounds.
 *Prerequisite: Devastating Rounds. Classes: Soldier.*
+
+---
+*Automation: a second ammo effect no longer replaces the first; a third replaces the older of the two.*
 
 ---
 
@@ -2048,12 +2498,14 @@ Your active ammo powers each deal **+2 additional damage dice** (replaces Devast
 #### Combat Drone ◆◆◆ — Level 1
 
 You deploy a hovering AI combat drone that harasses enemies and draws their fire away from your allies.
-You deploy a Combat Drone at a point within **30 feet**. The drone occupies a 5-foot space, has **20 HP**, AC 15, and cannot be healed. It acts on your initiative and persists for up to **1 minute** or until destroyed.
-On each of your turns, you can direct the drone as a free action. The drone's presence applies **Off-Guard** to one adjacent enemy of your choice (your choice, once per your turn). As an action, you can order it to make a ranged Strike (+4 attack, 1d6 electricity, 20-foot range) against a target within 30 feet.
+You deploy a Combat Drone at a point within **30 feet**. The drone occupies a 5-foot space and cannot be healed. It has **HP equal to 15 + 5 × your level** and **AC equal to your class DC − 3**. It acts on your initiative and persists for up to **1 minute** or until destroyed. Deploying it again replaces the drone you have out.
+On each of your turns, you can direct the drone as a free action, and it makes **one ranged Strike** at a target of your choice within 30 feet without costing you an action. Its attack modifier is **your class DC − 10** and it deals **1d6 electricity** damage. The drone's presence also applies **Off-Guard** to one enemy adjacent to it (your choice, once per your turn).
 If the drone is destroyed, it explodes in a 5-foot burst dealing 1d6 electricity damage (basic Reflex save against your class DC).
+**Level scaling:** The dice of the drone's Strike and of its explosion are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
+*Automation: using this power puts a Combat Drone token beside you with its numbers worked out; move it to the point you chose and roll its Strike from its sheet.*
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
@@ -2066,10 +2518,18 @@ All creatures in a 10-foot radius burst within **30 feet** must attempt a Fortit
 **Success** The target takes **1d6 cold** damage.
 **Failure** The target takes **2d6 cold** damage and is **Slowed 1** until the end of its next turn.
 **Critical Failure** The target takes **4d6 cold** damage and is **Immobilized** until the end of its next turn. If the target is already Slowed, it is Immobilized instead.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
+
+#### Fitness — Level 1
+
+Rigorous physical conditioning increases your survivability. You gain **+4 maximum HP**.
+*Classes: All.*
 
 ---
 
@@ -2081,6 +2541,7 @@ Choose a creature within **30 feet**. It must attempt a Reflex save. Incinerate 
 **Success** The target takes **1d6 fire** damage.
 **Failure** The target takes **2d6 fire** damage and **1d4 persistent fire** damage. The target cannot regain HP until the start of your next turn. Armor Frames hit by Incinerate take 1.5× damage.
 **Critical Failure** As failure, but **4d6 fire** damage and **2d4 persistent fire**.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 - your Intelligence modifier rounds (minimum 1).
 
 ---
@@ -2096,6 +2557,7 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The target takes **1d8 electricity** damage.
 **Failure** The target takes **2d8 electricity** damage. Synthetic or mech creatures take an additional **1d8 electricity** damage.
 **Critical Failure** As failure, but **4d8 electricity** damage (plus the synthetic bonus). The target is also **Stunned 1**.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
@@ -2122,10 +2584,58 @@ Choose a qualifying target within **30 feet**. The target must attempt a Will sa
 #### Sentry Turret ◆◆◆ — Level 1
 
 You fabricate and deploy a stationary automated turret from your omni-tool that provides sustained suppressive fire.
-You deploy a Sentry Turret at a point within **30 feet**. The turret occupies a 5-foot space, has **30 HP**, AC 14, and cannot move or be healed. It acts on your initiative and persists for up to **1 minute** or until destroyed.
-On each of your turns, the turret automatically fires at the nearest enemy within 60 feet as a free action: ranged Strike (**+6 attack**, **1d8+2 piercing**, 60-foot range). You can direct it to target a specific creature as a free action on your turn.
+You deploy a Sentry Turret at a point within **30 feet**. The turret occupies a 5-foot space and cannot move or be healed. It has **HP equal to 22 + 8 × your level** and **AC equal to your class DC − 4**. It acts on your initiative and persists for up to **1 minute** or until destroyed.
+On each of your turns, the turret automatically fires at the nearest enemy within 60 feet as a free action: a ranged Strike with an attack modifier of **your class DC − 10**, dealing **1d8+2 piercing** damage (60-foot range). You can direct it to target a specific creature as a free action on your turn.
 If a creature ends its turn within 10 feet of the turret, the turret fires a bonus opportunistic shot (same stats, does not count against its action economy).
+**Level scaling:** The Strike's dice and its +2 are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
+
+---
+*Automation: using this power puts a Sentry Turret token beside you with its numbers worked out; move it to the point you chose and roll its Strike from its sheet.*
+
+---
+
+#### Weapon Mastery (Pistols & SMGs) — Level 1
+
+Extensive training with pistols & smgs improves your firing discipline. You deal **+2 damage** with pistols & smgs attacks.
+*Classes: Adept, Engineer, Infiltrator.*
+
+---
+
+#### Tech Mastery — Level 2
+
+Optimized omni-tool firmware squeezes more out of every discharge. Your tech powers deal **+2 damage** to each creature they damage.
+*Classes: Engineer, Infiltrator, Sentinel.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.*
+
+---
+
+#### Improved Fitness — Level 4
+*Prerequisite: Fitness*
+
+Advanced conditioning deepens your physical resilience. You gain an additional **+4 maximum HP** (total +8 with Fitness) and a **+1 circumstance bonus to Fortitude saves**.
+*Prerequisite: Fitness. Classes: All.*
+
+---
+
+#### Improved Weapon Mastery (Pistols & SMGs) — Level 4
+*Prerequisite: Weapon Mastery (Pistols & SMGs)*
+
+Expert pistols & smgs proficiency. You deal **+4 damage** and gain a **+1 circumstance bonus to attack rolls** with pistols & smgs (replaces the +2 damage). You may draw a pistol or SMG as part of the same action used to Strike with it.
+*Prerequisite: Weapon Mastery (Pistols & SMGs). Classes: Adept, Engineer, Infiltrator.*
+
+---
+
+#### Improved Tech Mastery — Level 6
+*Prerequisite: Tech Mastery*
+
+Advanced omni-tool integration lets you chain tech powers with less downtime. Your tech powers deal **+4 damage** to each creature they damage (replacing the +2 from Tech Mastery), and the cooldowns of your tech powers are **1 round shorter**, to a minimum of 2 rounds.
+*Prerequisite: Tech Mastery. Classes: Engineer, Infiltrator, Sentinel.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted.*
 
 ---
 
@@ -2135,6 +2645,22 @@ If a creature ends its turn within 10 feet of the turret, the turret fires a bon
 You recalibrate your plasma projector for wide-pattern dispersion, turning Incinerate into an area attack.
 Incinerate now targets a **10-foot burst** within 30 feet instead of a single creature. All creatures in the burst make the saving throw. Persistent fire damage applies only to those who critically fail.
 *Prerequisite: Incinerate. Classes: Engineer, Infiltrator.*
+
+---
+
+#### Master Fitness — Level 8
+*Prerequisite: Improved Fitness*
+
+Peak physical conditioning. You gain an additional **+4 maximum HP** (total +12 with the chain), your Fortitude circumstance bonus increases to **+2**, and your movement speed increases by **5 feet**.
+*Prerequisite: Improved Fitness. Classes: All.*
+
+---
+
+#### Master Weapon Mastery (Pistols & SMGs) — Level 8
+*Prerequisite: Improved Weapon Mastery (Pistols & SMGs)*
+
+Master-level pistols & smgs proficiency. You deal **+6 damage** and gain a **+2 circumstance bonus to attack rolls** with pistols & smgs (replaces previous bonuses). Your MAP penalty for subsequent pistol/SMG attacks is -3 instead of -5.
+*Prerequisite: Improved Weapon Mastery (Pistols & SMGs). Classes: Adept, Engineer, Infiltrator.*
 
 ---
 
@@ -2151,8 +2677,22 @@ When Overload destroys a kinetic shield, it automatically chains to **one additi
 *Prerequisite: Combat Drone*
 
 You push your drone's processing routines to the limit, dramatically increasing its combat efficiency.
-Your Combat Drone gains **one additional attack per round** (total two attacks on its turn) and its maximum HP increases by **your level**.
+Your Combat Drone makes **two Strikes** on each of your turns instead of one; the second takes the usual −5 multiple attack penalty. Its maximum HP increases by **your level**.
 *Prerequisite: Combat Drone. Classes: Engineer.*
+
+---
+*Automation: the extra HP is counted when you deploy the drone. The second Strike is yours to roll.*
+
+---
+
+#### Master Tech Mastery — Level 10
+*Prerequisite: Improved Tech Mastery*
+
+Your omni-tool is an extension of your nervous system. Your tech powers deal **+6 damage** to each creature they damage (replacing the +4 from Improved Tech Mastery), and the cooldowns of your tech powers are **2 rounds shorter**, to a minimum of 2 rounds (replacing the 1 round from Improved Tech Mastery). Your deep system knowledge also grants a **+1 circumstance bonus to Will saves**.
+*Prerequisite: Improved Tech Mastery. Classes: Engineer, Infiltrator, Sentinel.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted. The Will bonus is applied automatically.*
 
 ---
 
@@ -2163,9 +2703,10 @@ You hack deeper into an enemy's nervous system or control chip than standard AI 
 Choose a creature within **30 feet**. It must attempt a Will save against your class DC.
 **Critical Success:** Unaffected.
 **Success:** The target is **Stunned 1**.
-**Failure:** The target is **Stunned 2** and takes **3d6 electricity** damage.
-**Critical Failure:** The target is **Stunned 3**, takes 6d6 electricity damage, and acts as if affected by AI Hacking for 1 round.
+**Failure:** The target is **Stunned 2** and takes **8d6 electricity** damage.
+**Critical Failure:** The target is **Stunned 3**, takes 16d6 electricity damage, and acts as if affected by AI Hacking for 1 round.
 Works on organic and synthetic creatures alike.
+**Level scaling:** The damage rises to 10d6 (20d6 on a critical failure) at 16th level and to 12d6 (24d6) at 20th.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2177,7 +2718,8 @@ Works on organic and synthetic creatures alike.
 *Prerequisite: Improved Engineer Mastery*
 
 You deploy a stationary electromagnetic disruption field that continuously drains kinetic shields in the area.
-Deploy a **15-foot burst** field at a point within 30 feet. The field persists for **1 minute** or until destroyed (AC 14, HP equal to twice your level). Each round at the start of your turn, all shielded creatures in the field lose **5 shield HP** (no save). Unshielded creatures take 1d4 electricity damage per round.
+Deploy a **15-foot burst** field at a point within 30 feet. The field persists for **1 minute** or until destroyed (AC 14, HP equal to twice your level). Each round at the start of your turn, all shielded creatures in the field lose **5 shield HP** (no save). Unshielded creatures take **4d4 electricity** damage per round.
+**Level scaling:** The damage rises to 5d4 at 16th level and to 6d4 at 20th.
 *Prerequisite: Improved Engineer Mastery. Classes: Engineer.*
 
 ---
@@ -2186,8 +2728,11 @@ Deploy a **15-foot burst** field at a point within 30 feet. The field persists f
 *Prerequisite: Combat Drone Upgrade*
 
 Your command protocols can run two drone instances simultaneously without interference.
-You may have **two Combat Drones active at the same time**. Deploying a second drone doesn't end the first. Each drone acts independently on your turn.
+You may have **two Combat Drones active at the same time**. Deploying a second drone doesn't end the first. Each drone makes its own Strikes on your turn. Deploying a third drone replaces the one that has been out longest.
 *Prerequisite: Combat Drone Upgrade. Classes: Engineer.*
+
+---
+*Automation: using Combat Drone again adds a second drone token instead of replacing the first.*
 
 ---
 
@@ -2207,8 +2752,9 @@ You synthesize a custom explosive payload on the fly, combining incendiary and e
 Target a point within **30 feet**. All creatures in a 15-foot burst must attempt a basic Reflex save against your class DC.
 **Critical Success:** Unaffected.
 **Success:** Half damage.
-**Failure:** **4d6 fire + 4d6 electricity** damage. Electricity damage is doubled against shields.
-**Critical Failure:** **8d6 fire + 8d6 electricity** damage; Stunned 1.
+**Failure:** **5d6 fire + 5d6 electricity** damage. Electricity damage is doubled against shields.
+**Critical Failure:** **10d6 fire + 10d6 electricity** damage; Stunned 1.
+**Level scaling:** At 20th level the damage is 6d6 fire + 6d6 electricity (12d6 + 12d6 on a critical failure).
 
 ---
 *When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2222,8 +2768,9 @@ Target a point within **30 feet**. All creatures in a 15-foot burst must attempt
 You broadcast a catastrophic shutdown signal across all synthetic systems in the area, freezing them mid-operation.
 All **synthetic** enemies within a 30-foot emanation must attempt a Will save against your class DC.
 **Success:** Stunned 1.
-**Failure:** Stunned 2 and take 4d6 electricity damage.
-**Critical Failure:** Stunned 3 and take 8d6 electricity damage; can't use tech abilities for 1 round.
+**Failure:** Stunned 2 and take 10d6 electricity damage.
+**Critical Failure:** Stunned 3 and take 20d6 electricity damage; can't use tech abilities for 1 round.
+**Level scaling:** At 20th level the damage is 12d6 (24d6 on a critical failure).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2250,10 +2797,19 @@ Choose a point within **60 feet**. All creatures in a 10-foot burst centered on 
 **Success** The target takes **1d6 force** damage.
 **Failure** The target takes **2d6 force** damage and is pushed **5 feet** outward from the burst center.
 **Critical Failure** The target takes **4d6 force** damage, is pushed **10 feet** outward from the burst center, and is knocked **prone**.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** An Adept who damages a Primed creature with this power detonates it.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
+
+#### Fitness — Level 1
+
+Rigorous physical conditioning increases your survivability. You gain **+4 maximum HP**.
+*Classes: All.*
 
 ---
 
@@ -2265,7 +2821,8 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
 **Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2280,7 +2837,9 @@ All creatures in a 60-foot line must attempt a Reflex save against your class DC
 **Success** The creature takes **1d6 bludgeoning** damage.
 **Failure** The creature takes **2d6 bludgeoning** damage and is pushed 10 feet away from you.
 **Critical Failure** As failure, but **4d6 bludgeoning** and also **Knocked Prone**.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** An Adept who damages a Primed creature with this power detonates it.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2295,7 +2854,9 @@ You create a Singularity at a point within **60 feet**. All creatures within a 2
 **Success** The creature is pulled 10 feet toward the singularity's center.
 **Failure** The creature is pulled to the singularity's center and becomes **Restrained** (Escape DC equals your class DC). The singularity persists until the start of your next turn; you may Sustain it as a free action each round for up to 1 minute.
 **Critical Failure** As failure. Additionally, the creature takes **2d6 bludgeoning** damage at the start of each of its turns while restrained.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2310,7 +2871,9 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 **Success** The target is pushed 5 feet away from you.
 **Failure** The target takes **2d8 bludgeoning** damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
 **Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** An Adept who damages a Primed creature with this power detonates it.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2325,10 +2888,72 @@ Choose a creature within **60 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d6 void** damage.
 **Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn. If it is already Primed, an Adept who damages it with this power detonates it instead.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
+
+#### Weapon Mastery (Pistols & SMGs) — Level 1
+
+Extensive training with pistols & smgs improves your firing discipline. You deal **+2 damage** with pistols & smgs attacks.
+*Classes: Adept, Engineer, Infiltrator.*
+
+---
+
+#### Biotic Mastery — Level 2
+
+Refined biotic focus puts more force behind every mass effect field you shape. Your biotic powers deal **+2 damage** to each creature they damage.
+*Classes: Adept, Sentinel, Vanguard.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.*
+
+---
+
+#### Improved Fitness — Level 4
+*Prerequisite: Fitness*
+
+Advanced conditioning deepens your physical resilience. You gain an additional **+4 maximum HP** (total +8 with Fitness) and a **+1 circumstance bonus to Fortitude saves**.
+*Prerequisite: Fitness. Classes: All.*
+
+---
+
+#### Improved Weapon Mastery (Pistols & SMGs) — Level 4
+*Prerequisite: Weapon Mastery (Pistols & SMGs)*
+
+Expert pistols & smgs proficiency. You deal **+4 damage** and gain a **+1 circumstance bonus to attack rolls** with pistols & smgs (replaces the +2 damage). You may draw a pistol or SMG as part of the same action used to Strike with it.
+*Prerequisite: Weapon Mastery (Pistols & SMGs). Classes: Adept, Engineer, Infiltrator.*
+
+---
+
+#### Improved Biotic Mastery — Level 6
+*Prerequisite: Biotic Mastery*
+
+Your fields hit harder than your amp alone can account for. Your biotic powers deal **+4 damage** to each creature they damage (replacing the +2 from Biotic Mastery).
+*Prerequisite: Biotic Mastery. Classes: Adept, Sentinel, Vanguard.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.*
+
+---
+
+#### Master Fitness — Level 8
+*Prerequisite: Improved Fitness*
+
+Peak physical conditioning. You gain an additional **+4 maximum HP** (total +12 with the chain), your Fortitude circumstance bonus increases to **+2**, and your movement speed increases by **5 feet**.
+*Prerequisite: Improved Fitness. Classes: All.*
+
+---
+
+#### Master Weapon Mastery (Pistols & SMGs) — Level 8
+*Prerequisite: Improved Weapon Mastery (Pistols & SMGs)*
+
+Master-level pistols & smgs proficiency. You deal **+6 damage** and gain a **+2 circumstance bonus to attack rolls** with pistols & smgs (replaces previous bonuses). Your MAP penalty for subsequent pistol/SMG attacks is -3 instead of -5.
+*Prerequisite: Improved Weapon Mastery (Pistols & SMGs). Classes: Adept, Engineer, Infiltrator.*
 
 ---
 
@@ -2350,6 +2975,17 @@ All biotic powers you use that deal damage deal an additional **+1d6 void damage
 
 ---
 
+#### Master Biotic Mastery — Level 10
+*Prerequisite: Improved Biotic Mastery*
+
+You have mastered the art of mass effect manipulation. Your biotic powers deal **+6 damage** to each creature they damage (replacing the +4 from Improved Biotic Mastery). Your constant biotic field also adds **+2 damage** to your Strikes.
+*Prerequisite: Improved Biotic Mastery. Classes: Adept, Sentinel, Vanguard.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. The Strike damage is applied automatically.*
+
+---
+
 #### Warp Upgrade — Level 10
 *Prerequisite: Warp*
 
@@ -2363,7 +2999,8 @@ On a **failure**, the target also becomes **Frightened 1** in addition to normal
 *Prerequisite: Warp Upgrade*
 
 You generate a sustained dark energy aura that continuously destabilizes everything around you.
-You project a 15-foot warp aura for **1 minute**. At the start of each of your turns, all enemies within the aura take **1d4 void damage** and must succeed on a Fortitude save against your class DC or become Off-Guard until the start of your next turn. Dismiss as a free action.
+You project a 15-foot warp aura for **1 minute**. At the start of each of your turns, all enemies within the aura take **4d4 void damage** and must succeed on a Fortitude save against your class DC or become Off-Guard until the start of your next turn. Dismiss as a free action.
+**Level scaling:** The damage rises to 5d4 at 16th level and to 6d4 at 20th.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -2387,8 +3024,11 @@ Singularity's radius increases to **30 feet** (up from 25 feet with Singularity 
 *Prerequisite: Biotic Resonance*
 
 When you detonate a Biotic Explosion, the shockwave propagates to nearby enemies, punishing tight formations.
-Whenever you trigger a Biotic Explosion, **one adjacent enemy within 10 feet** of the original target also takes the **full explosion damage** (no save). The adjacent enemy must be a different creature than the primary target.
+Whenever you trigger a Biotic Explosion, **one other enemy within 10 feet** of the detonated creature takes the **full explosion damage** with no save, instead of rolling one.
 *Prerequisite: Biotic Resonance. Classes: Adept.*
+
+---
+*Automation: the nearest other enemy in the burst takes the explosion in full; the rest roll their saves.*
 
 ---
 
@@ -2396,10 +3036,10 @@ Whenever you trigger a Biotic Explosion, **one adjacent enemy within 10 feet** o
 *Prerequisite: Superior Adept Mastery*
 
 You have unlocked a deeper understanding of dark energy manipulation, pushing your biotic abilities beyond any recorded limit.
-All biotic power save DCs you use increase by **2**. Your biotic damage ignores up to **5 points** of void damage resistance. Enemies that critically fail saves against your biotic powers become **Frightened 2** in addition to normal effects.
+Your biotic damage ignores up to **5 points** of void damage resistance. Enemies that critically fail saves against your biotic powers become **Frightened 2** in addition to normal effects.
 
 ---
-*Automation: the +2 is added to your class DC, which your powers use, and creatures that critically fail a save against your biotic powers become Frightened 2. Void resistance is not bypassed automatically.*
+*Automation: creatures that critically fail a save against your biotic powers become Frightened 2. Void resistance is not bypassed automatically.*
 *Prerequisite: Superior Adept Mastery. Classes: Adept.*
 
 ---
@@ -2441,21 +3081,37 @@ Your **Biotic Attack**'s damage die is a **d8** instead of a d6. On a **critical
 
 ---
 
+#### Combat Training — Level 1
+
+Intensive combat drills sharpen your offensive fundamentals. You gain a **+1 circumstance bonus to attack rolls**.
+*Classes: Soldier, Vanguard, Infiltrator.*
+
+---
+
 #### Cryo Rounds ◆◆ — Level 1
 
 You have been trained in the use of cryo rounds. Using two actions, you can modify your ammunition to gain the following features:
-Cryogenically-charged rounds that flash-freeze on impact. Your weapon attacks deal an additional **1d4 cold damage**.
-When Cryo Rounds deal direct HP damage, the target becomes **Chilled** (off-guard until the end of their next turn).
+Cryogenically-charged rounds that flash-freeze on impact. Your ranged Strikes deal an additional **1d4 cold damage**.
+When Cryo Rounds deal direct HP damage, the target becomes **Chilled** (off-guard until the start of your next turn).
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
+
+---
+
+#### Fitness — Level 1
+
+Rigorous physical conditioning increases your survivability. You gain **+4 maximum HP**.
+*Classes: All.*
 
 ---
 
 #### Incendiary Rounds ◆◆ — Level 1
 
 You have been trained in the use of incendiary rounds. Using two actions, you can modify your ammunition to gain the following features:
-Thermite-tipped rounds that ignite on impact. Your weapon attacks deal **fire damage** instead of their normal damage type.
+Thermite-tipped rounds that ignite on impact. Your ranged Strikes deal **fire damage** instead of their normal damage type.
 Incendiary rounds burn through armor faster: each point of incoming damage depletes 1.5× points of armor.
 On a **critical hit**, the target ignites and suffers **persistent fire damage** (DC 15 flat check to extinguish).
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
 
 ---
@@ -2486,7 +3142,8 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
 **Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2501,10 +3158,29 @@ All creatures in a 60-foot line must attempt a Reflex save against your class DC
 **Success** The creature takes **1d6 bludgeoning** damage.
 **Failure** The creature takes **2d6 bludgeoning** damage and is pushed 10 feet away from you.
 **Critical Failure** As failure, but **4d6 bludgeoning** and also **Knocked Prone**.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** An Adept who damages a Primed creature with this power detonates it.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
+
+#### Weapon Mastery (Shotguns) — Level 1
+
+Extensive training with shotguns improves your firing discipline. You deal **+2 damage** with shotguns attacks.
+*Classes: Vanguard, Soldier.*
+
+---
+
+#### Biotic Mastery — Level 2
+
+Refined biotic focus puts more force behind every mass effect field you shape. Your biotic powers deal **+2 damage** to each creature they damage.
+*Classes: Adept, Sentinel, Vanguard.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.*
 
 ---
 
@@ -2514,6 +3190,30 @@ All creatures in a 60-foot line must attempt a Reflex save against your class DC
 You recover from a Biotic Charge almost before you land. Biotic Charge's cooldown is **1 round** instead of 2, so you can charge on every turn.
 *Automation: the Biotic Charge cooldown that Automate Vanguard Powers starts lasts 1 round.*
 *Prerequisite: Biotic Charge. Classes: Vanguard.*
+
+---
+
+#### Improved Combat Training — Level 4
+*Prerequisite: Combat Training*
+
+Your combat mastery extends to follow-through. You deal **+2 damage** on all Strikes (stacks with Combat Training's attack bonus).
+*Prerequisite: Combat Training. Classes: Infiltrator, Soldier, Vanguard.*
+
+---
+
+#### Improved Fitness — Level 4
+*Prerequisite: Fitness*
+
+Advanced conditioning deepens your physical resilience. You gain an additional **+4 maximum HP** (total +8 with Fitness) and a **+1 circumstance bonus to Fortitude saves**.
+*Prerequisite: Fitness. Classes: All.*
+
+---
+
+#### Improved Weapon Mastery (Shotguns) — Level 4
+*Prerequisite: Weapon Mastery (Shotguns)*
+
+Expert shotguns proficiency. You deal **+4 damage** and gain a **+1 circumstance bonus to attack rolls** with shotguns (replaces the +2 damage). You do not take penalties for firing while adjacent to a prone or grabbed enemy.
+*Prerequisite: Weapon Mastery (Shotguns). Classes: Soldier, Vanguard.*
 
 ---
 
@@ -2546,6 +3246,17 @@ You hit like a falling freighter. Biotic Charge's damage dice are **d8s** instea
 
 ---
 
+#### Improved Biotic Mastery — Level 6
+*Prerequisite: Biotic Mastery*
+
+Your fields hit harder than your amp alone can account for. Your biotic powers deal **+4 damage** to each creature they damage (replacing the +2 from Biotic Mastery).
+*Prerequisite: Biotic Mastery. Classes: Adept, Sentinel, Vanguard.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.*
+
+---
+
 #### Charge Upgrade — Level 8
 *Prerequisite: Biotic Charge*
 
@@ -2556,6 +3267,30 @@ Your biotic charge technique has evolved. You may choose one of the following op
 ---
 *Automation: Your choice is made when you take the feat. The extra 2d6 is added to Charge's damage, or using Charge refills your barrier.*
 *Prerequisite: Biotic Charge. Classes: Vanguard.*
+
+---
+
+#### Master Combat Training — Level 8
+*Prerequisite: Improved Combat Training*
+
+Elite combat discipline across all dimensions. You deal an additional **+2 damage** on all Strikes (total +4 with the chain) and gain a **+1 circumstance bonus to all saving throws** from battlefield awareness.
+*Prerequisite: Improved Combat Training. Classes: Infiltrator, Soldier, Vanguard.*
+
+---
+
+#### Master Fitness — Level 8
+*Prerequisite: Improved Fitness*
+
+Peak physical conditioning. You gain an additional **+4 maximum HP** (total +12 with the chain), your Fortitude circumstance bonus increases to **+2**, and your movement speed increases by **5 feet**.
+*Prerequisite: Improved Fitness. Classes: All.*
+
+---
+
+#### Master Weapon Mastery (Shotguns) — Level 8
+*Prerequisite: Improved Weapon Mastery (Shotguns)*
+
+Master-level shotguns proficiency. You deal **+6 damage** and gain a **+2 circumstance bonus to attack rolls** with shotguns (replaces previous bonuses). Critical hits with a shotgun push the target 10 feet and knock them Prone.
+*Prerequisite: Improved Weapon Mastery (Shotguns). Classes: Soldier, Vanguard.*
 
 ---
 
@@ -2575,6 +3310,17 @@ Nova's burst radius increases to **20 feet** (up from 10 feet). Nova's damage in
 **Trigger:** You would be reduced to 0 HP.
 You refuse to fall. Instead of going down, you immediately Charge the nearest enemy within 60 feet as a reaction. You arrive at the target's location with **1 HP** and your Biotic Barrier restored to **full**. If no valid target exists within 60 feet, this ability does not trigger.
 *Prerequisite: Charge Upgrade. Classes: Vanguard.*
+
+---
+
+#### Master Biotic Mastery — Level 10
+*Prerequisite: Improved Biotic Mastery*
+
+You have mastered the art of mass effect manipulation. Your biotic powers deal **+6 damage** to each creature they damage (replacing the +4 from Improved Biotic Mastery). Your constant biotic field also adds **+2 damage** to your Strikes.
+*Prerequisite: Improved Biotic Mastery. Classes: Adept, Sentinel, Vanguard.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. The Strike damage is applied automatically.*
 
 ---
 
@@ -2641,11 +3387,19 @@ Charge always restores your **Biotic Barrier to full**, regardless of the save r
 
 #### INFILTRATOR
 
+#### Combat Training — Level 1
+
+Intensive combat drills sharpen your offensive fundamentals. You gain a **+1 circumstance bonus to attack rolls**.
+*Classes: Soldier, Vanguard, Infiltrator.*
+
+---
+
 #### Cryo Rounds ◆◆ — Level 1
 
 You have been trained in the use of cryo rounds. Using two actions, you can modify your ammunition to gain the following features:
-Cryogenically-charged rounds that flash-freeze on impact. Your weapon attacks deal an additional **1d4 cold damage**.
-When Cryo Rounds deal direct HP damage, the target becomes **Chilled** (off-guard until the end of their next turn).
+Cryogenically-charged rounds that flash-freeze on impact. Your ranged Strikes deal an additional **1d4 cold damage**.
+When Cryo Rounds deal direct HP damage, the target becomes **Chilled** (off-guard until the start of your next turn).
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
 
 ---
@@ -2653,9 +3407,17 @@ Remove this effect to return to standard ammunition.
 #### Disruptor Rounds ◆◆ — Level 1
 
 You have been trained in the use of disruptor rounds. Using two actions, you can modify your ammunition to gain the following features:
-Rounds that generate a disruptive electrical pulse on impact. Your weapon attacks deal **electricity damage** instead of their normal damage type.
+Rounds that generate a disruptive electrical pulse on impact. Your ranged Strikes deal **electricity damage** instead of their normal damage type.
 Disruptor rounds deal double damage to kinetic shields: all electricity damage against shielded targets is automatically doubled.
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
+
+---
+
+#### Fitness — Level 1
+
+Rigorous physical conditioning increases your survivability. You gain **+4 maximum HP**.
+*Classes: All.*
 
 ---
 
@@ -2667,6 +3429,7 @@ Choose a creature within **30 feet**. It must attempt a Reflex save. Incinerate 
 **Success** The target takes **1d6 fire** damage.
 **Failure** The target takes **2d6 fire** damage and **1d4 persistent fire** damage. The target cannot regain HP until the start of your next turn. Armor Frames hit by Incinerate take 1.5× damage.
 **Critical Failure** As failure, but **4d6 fire** damage and **2d4 persistent fire**.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 - your Intelligence modifier rounds (minimum 1).
 
 ---
@@ -2695,9 +3458,10 @@ Choose a qualifying target within **30 feet**. The target must attempt a Will sa
 You deploy a high-adhesive incendiary charge that clings to the first surface it contacts and burns steadily, denying the area.
 Choose a point within **30 feet**. All creatures in a 5-foot burst centered on that point must attempt a Reflex save against your class DC.
 **Critical Success** Unaffected.
-**Success** The target takes **2d6 fire** damage.
-**Failure** The target takes **4d6 fire** damage and gains **Persistent 1d6 fire** damage (DC 12 flat check to end).
-**Critical Failure** The target takes **6d6 fire** damage and gains **Persistent 2d6 fire** damage (DC 15 flat check to end).
+**Success** The target takes **1d6 fire** damage.
+**Failure** The target takes **2d6 fire** damage and gains **Persistent 1d6 fire** damage (DC 12 flat check to end).
+**Critical Failure** The target takes **4d6 fire** damage and gains **Persistent 2d6 fire** damage (DC 15 flat check to end).
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 3 rounds.
 
 ---
@@ -2705,20 +3469,83 @@ Choose a point within **30 feet**. All creatures in a 5-foot burst centered on t
 
 ---
 
-#### Tactical Cloak ◆◆ — Level 1
+#### Weapon Mastery (Pistols & SMGs) — Level 1
 
-You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.
-You become **Undetected** by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect, which adds **+2d6 precision damage** to your first Strike made while Undetected. Remove the effect after making that Strike.
-**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
+Extensive training with pistols & smgs improves your firing discipline. You deal **+2 damage** with pistols & smgs attacks.
+*Classes: Adept, Engineer, Infiltrator.*
+
+---
+
+#### Weapon Mastery (Sniper Rifles) — Level 1
+
+Extensive training with sniper rifles improves your firing discipline. You deal **+2 damage** with sniper rifles attacks.
+*Classes: Infiltrator.*
 
 ---
 
 #### Hunter's Mark ◆ — Level 2
-*Prerequisite: Master Weapon Mastery (Sniper Rifles)*
+*Prerequisite: Weapon Mastery (Sniper Rifles)*
 
 You mark a target through your scope, feeding real-time biometric data to your weapon's targeting system.
-Designate one creature you can see within 120 feet as your **Marked target**. You deal **+2 damage** against the Marked target with all weapon Strikes, and you always know the Marked target's exact location (even if Concealed). The Mark persists until the target is incapacitated or you Mark a new target.
-*Prerequisite: Master Weapon Mastery (Sniper Rifles). Classes: Infiltrator.*
+Designate one creature you can see within 120 feet as your **Marked target**. Your weapon Strikes deal **+2 damage** against the Marked target, and you always know its exact location (even if Concealed). The Mark lasts until the target is incapacitated or you Mark a new target. When your Marked target is reduced to 0 HP, you can Mark another creature as a free action.
+**Level scaling:** The bonus is +4 at 4th level, +6 at 8th, +8 at 12th, +10 at 16th and +12 at 20th.
+*Prerequisite: Weapon Mastery (Sniper Rifles). Classes: Infiltrator.*
+
+---
+*Automation: target one creature and use Hunter's Mark: a Hunter's Mark effect on you records it, and the bonus is added to your Strikes against that creature. Using it again moves the mark.*
+
+---
+
+#### Tech Mastery — Level 2
+
+Optimized omni-tool firmware squeezes more out of every discharge. Your tech powers deal **+2 damage** to each creature they damage.
+*Classes: Engineer, Infiltrator, Sentinel.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.*
+
+---
+
+#### Improved Combat Training — Level 4
+*Prerequisite: Combat Training*
+
+Your combat mastery extends to follow-through. You deal **+2 damage** on all Strikes (stacks with Combat Training's attack bonus).
+*Prerequisite: Combat Training. Classes: Infiltrator, Soldier, Vanguard.*
+
+---
+
+#### Improved Fitness — Level 4
+*Prerequisite: Fitness*
+
+Advanced conditioning deepens your physical resilience. You gain an additional **+4 maximum HP** (total +8 with Fitness) and a **+1 circumstance bonus to Fortitude saves**.
+*Prerequisite: Fitness. Classes: All.*
+
+---
+
+#### Improved Weapon Mastery (Pistols & SMGs) — Level 4
+*Prerequisite: Weapon Mastery (Pistols & SMGs)*
+
+Expert pistols & smgs proficiency. You deal **+4 damage** and gain a **+1 circumstance bonus to attack rolls** with pistols & smgs (replaces the +2 damage). You may draw a pistol or SMG as part of the same action used to Strike with it.
+*Prerequisite: Weapon Mastery (Pistols & SMGs). Classes: Adept, Engineer, Infiltrator.*
+
+---
+
+#### Improved Weapon Mastery (Sniper Rifles) — Level 4
+*Prerequisite: Weapon Mastery (Sniper Rifles)*
+
+Expert sniper rifles proficiency. You deal **+4 damage** and gain a **+1 circumstance bonus to attack rolls** with sniper rifles (replaces the +2 damage). Your range increment penalty with sniper rifles is reduced by 1.
+*Prerequisite: Weapon Mastery (Sniper Rifles). Classes: Infiltrator.*
+
+---
+
+#### Improved Tech Mastery — Level 6
+*Prerequisite: Tech Mastery*
+
+Advanced omni-tool integration lets you chain tech powers with less downtime. Your tech powers deal **+4 damage** to each creature they damage (replacing the +2 from Tech Mastery), and the cooldowns of your tech powers are **1 round shorter**, to a minimum of 2 rounds.
+*Prerequisite: Tech Mastery. Classes: Engineer, Infiltrator, Sentinel.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted.*
 
 ---
 
@@ -2731,6 +3558,38 @@ Incinerate now targets a **10-foot burst** within 30 feet instead of a single cr
 
 ---
 
+#### Master Combat Training — Level 8
+*Prerequisite: Improved Combat Training*
+
+Elite combat discipline across all dimensions. You deal an additional **+2 damage** on all Strikes (total +4 with the chain) and gain a **+1 circumstance bonus to all saving throws** from battlefield awareness.
+*Prerequisite: Improved Combat Training. Classes: Infiltrator, Soldier, Vanguard.*
+
+---
+
+#### Master Fitness — Level 8
+*Prerequisite: Improved Fitness*
+
+Peak physical conditioning. You gain an additional **+4 maximum HP** (total +12 with the chain), your Fortitude circumstance bonus increases to **+2**, and your movement speed increases by **5 feet**.
+*Prerequisite: Improved Fitness. Classes: All.*
+
+---
+
+#### Master Weapon Mastery (Pistols & SMGs) — Level 8
+*Prerequisite: Improved Weapon Mastery (Pistols & SMGs)*
+
+Master-level pistols & smgs proficiency. You deal **+6 damage** and gain a **+2 circumstance bonus to attack rolls** with pistols & smgs (replaces previous bonuses). Your MAP penalty for subsequent pistol/SMG attacks is -3 instead of -5.
+*Prerequisite: Improved Weapon Mastery (Pistols & SMGs). Classes: Adept, Engineer, Infiltrator.*
+
+---
+
+#### Master Weapon Mastery (Sniper Rifles) — Level 8
+*Prerequisite: Improved Weapon Mastery (Sniper Rifles)*
+
+Master-level sniper rifles proficiency. You deal **+6 damage** and gain a **+2 circumstance bonus to attack rolls** with sniper rifles (replaces previous bonuses). You ignore the Prone condition's penalty to ranged attacks when using a sniper rifle.
+*Prerequisite: Improved Weapon Mastery (Sniper Rifles). Classes: Infiltrator.*
+
+---
+
 #### Tactical Cloak Upgrade — Level 8
 *Prerequisite: Tactical Cloak*
 
@@ -2739,13 +3598,30 @@ Tactical Cloak **does not end when you make your first Strike**. The cloak ends 
 *Prerequisite: Tactical Cloak. Classes: Infiltrator.*
 
 ---
+*Automation: the Tactical Cloak effect stays on through your first cloaked Strike and comes off after the second.*
+
+---
 
 #### Ghost Protocol — Level 10
 *Prerequisite: Tactical Cloak Upgrade*
 
-Advanced field harmonics keep your cloaking device stable through multiple weapon discharges.
-Tactical Cloak does not end when you Strike. The cloak remains active until you make your **second Strike** or the start of your next turn (whichever comes first). You may Strike twice from concealment, both attacks gaining the precision damage bonus. The cloak ends automatically after the second Strike.
+Advanced field harmonics let you move as the cloak forms and linger as it fades.
+When you use Tactical Cloak, you can **Stride** up to your Speed as part of the same action. When a Strike ends your cloak, you are **Concealed** until the start of your next turn.
 *Prerequisite: Tactical Cloak Upgrade. Classes: Infiltrator.*
+
+---
+*Automation: when a Strike ends the cloak, a Cloak Wake effect makes you Concealed until the start of your next turn. The Stride is yours to take.*
+
+---
+
+#### Master Tech Mastery — Level 10
+*Prerequisite: Improved Tech Mastery*
+
+Your omni-tool is an extension of your nervous system. Your tech powers deal **+6 damage** to each creature they damage (replacing the +4 from Improved Tech Mastery), and the cooldowns of your tech powers are **2 rounds shorter**, to a minimum of 2 rounds (replacing the 1 round from Improved Tech Mastery). Your deep system knowledge also grants a **+1 circumstance bonus to Will saves**.
+*Prerequisite: Improved Tech Mastery. Classes: Engineer, Infiltrator, Sentinel.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted. The Will bonus is applied automatically.*
 
 ---
 
@@ -2753,8 +3629,22 @@ Tactical Cloak does not end when you Strike. The cloak remains active until you 
 *Prerequisite: Ghost Protocol*
 
 You have optimized your ambush technique to the point of lethal perfection.
-The precision damage bonus from Tactical Cloak increases to **+3d6** per Strike made while cloaked (replaces the base +2d6). Additionally, if your cloaked Strike reduces a target to 0 HP, your Tactical Cloak immediately reactivates at no action cost (once per minute).
+Tactical Cloak's precision damage starts from **3d6** instead of 2d6, before level multiplies it: 12d6 at 12th level, 15d6 at 16th and 18d6 at 20th. Additionally, if your cloaked Strike reduces a target to 0 HP, your Tactical Cloak immediately reactivates at no action cost, whatever its cooldown (once per minute).
 *Prerequisite: Ghost Protocol. Classes: Infiltrator.*
+
+---
+*Automation: the extra dice are added to Strikes while the Tactical Cloak effect is on you. To bring the cloak back after a kill, send this feat to chat: the effect goes back on. The once-a-minute limit is yours to track.*
+
+---
+
+#### Overwatch ◆ — Level 14
+*Prerequisite: Hunter's Mark*
+
+You settle your sights on your mark and wait for it to commit.
+Until the start of your next turn, you gain the following reaction.
+**Trigger** Your Marked target uses a move action, makes an attack or uses a power, and you can see it.
+**Effect** You make a ranged Strike against it. This Strike does not count toward your multiple attack penalty, and your multiple attack penalty does not apply to it. If you are still cloaked when you take the reaction, it is a cloaked Strike.
+*Prerequisite: Hunter's Mark. Classes: Infiltrator.*
 
 ---
 
@@ -2766,14 +3656,18 @@ Once per encounter, when you reduce an enemy to 0 HP, **Tactical Cloak automatic
 *Prerequisite: Ghost Protocol. Classes: Infiltrator.*
 
 ---
+*Automation: to bring the cloak back after a kill, send this feat to chat: the Tactical Cloak effect goes back on, whatever its cooldown. The once-an-encounter limit is yours to track.*
+
+---
 
 #### Death From Above — Level 18
 *Prerequisite: Assassination Protocol*
 
 A critical strike made from the shadows carries terrifying force multipliers that push damage beyond the edge of comprehension.
-When you score a **critical hit** with a Strike made while Tactical Cloak is active, you deal an additional **2d6 precision damage** (stacks with Assassination Protocol's +3d6 for a total of +5d6 on a crit). Enemies that witness this must succeed on a Will save against your class DC or become **Frightened 2**.
+When you score a **critical hit** with a Strike made while Tactical Cloak is active, you deal an additional **2d6 precision damage**, on top of the cloak's own dice. These dice are not doubled and not multiplied by level. Enemies that witness this must succeed on a Will save against your class DC or become **Frightened 2**.
 
 ---
+*Automation: the extra dice are added to a critical hit's damage while the Tactical Cloak effect is on you.*
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 *Prerequisite: Assassination Protocol. Classes: Infiltrator.*
 
@@ -2783,8 +3677,11 @@ When you score a **critical hit** with a Strike made while Tactical Cloak is act
 *Prerequisite: Death From Above*
 
 You have become something beyond human - a ghost, a myth, a phantom that enemies never see coming twice.
-The **first Strike you make each turn** while Tactical Cloak is active is treated as a **critical hit** regardless of the attack roll result (if it would hit). Your Hunter's Mark bonus increases to **+4 damage**. Phantom Protocol now triggers on any kill, not just once per encounter.
+The **first Strike you make each turn** while Tactical Cloak is active is a **critical hit** if it hits. You can use Hunter's Mark as a **free action**. Phantom Protocol now triggers on any kill, not just once per encounter.
 *Prerequisite: Death From Above. Classes: Infiltrator.*
+
+---
+*Automation: a hit with your first cloaked Strike each turn is raised to a critical hit when you roll it, and an "Apex Infiltrator: used this turn" effect then marks it as spent until your next turn.*
 
 ---
 
@@ -2798,10 +3695,18 @@ All creatures in a 10-foot radius burst within **30 feet** must attempt a Fortit
 **Success** The target takes **1d6 cold** damage.
 **Failure** The target takes **2d6 cold** damage and is **Slowed 1** until the end of its next turn.
 **Critical Failure** The target takes **4d6 cold** damage and is **Immobilized** until the end of its next turn. If the target is already Slowed, it is Immobilized instead.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
+
+---
+
+#### Fitness — Level 1
+
+Rigorous physical conditioning increases your survivability. You gain **+4 maximum HP**.
+*Classes: All.*
 
 ---
 
@@ -2813,6 +3718,8 @@ Choose a point within **60 feet**. All creatures in a 15-foot burst centered on 
 **Success** The target is lifted **5 feet** off the ground and becomes **Off-Guard** until the end of your next turn.
 **Failure** The target is lifted **10 feet** and becomes **Grabbed** (suspended by the biotic field). The Grabbed condition ends at the start of your next turn or when the target Escapes (DC equals your class DC).
 **Critical Failure** As failure, and the target takes **2d6 void** damage and is **Stunned 1**.
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 3 rounds.
 
 ---
@@ -2828,21 +3735,11 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The target takes **1d8 electricity** damage.
 **Failure** The target takes **2d8 electricity** damage. Synthetic or mech creatures take an additional **1d8 electricity** damage.
 **Critical Failure** As failure, but **4d8 electricity** damage (plus the synthetic bonus). The target is also **Stunned 1**.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
-
----
-
-#### Tech Armor ◆◆ — Level 1
-
-You activate a hardlight exoskeleton projected from your omni-tool, reinforcing your body with a crackling energy shell that detonates if overwhelmed.
-You gain the Tech Armor effect: **+2 circumstance bonus to AC**. If you take 20 or more damage from a single hit while this effect is active, it detonates — all creatures in a 10-foot emanation take **2d6 electricity** damage (basic Reflex save against your class DC) and the effect ends. You may also voluntarily detonate it as a free action on your turn.
-**Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
-
----
-*When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
 
 ---
 
@@ -2854,7 +3751,9 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 **Success** The target is pushed 5 feet away from you.
 **Failure** The target takes **2d8 bludgeoning** damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.
 **Critical Failure** As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** An Adept who damages a Primed creature with this power detonates it.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -2869,10 +3768,93 @@ Choose a creature within **60 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d6 void** damage.
 **Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn. If it is already Primed, an Adept who damages it with this power detonates it instead.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
+
+#### Weapon Mastery (Assault Rifles) — Level 1
+
+Extensive training with assault rifles improves your firing discipline. You deal **+2 damage** with assault rifles attacks.
+*Classes: Soldier, Sentinel.*
+
+---
+
+#### Biotic Mastery — Level 2
+
+Refined biotic focus puts more force behind every mass effect field you shape. Your biotic powers deal **+2 damage** to each creature they damage.
+*Classes: Adept, Sentinel, Vanguard.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.*
+
+---
+
+#### Tech Mastery — Level 2
+
+Optimized omni-tool firmware squeezes more out of every discharge. Your tech powers deal **+2 damage** to each creature they damage.
+*Classes: Engineer, Infiltrator, Sentinel.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.*
+
+---
+
+#### Improved Fitness — Level 4
+*Prerequisite: Fitness*
+
+Advanced conditioning deepens your physical resilience. You gain an additional **+4 maximum HP** (total +8 with Fitness) and a **+1 circumstance bonus to Fortitude saves**.
+*Prerequisite: Fitness. Classes: All.*
+
+---
+
+#### Improved Weapon Mastery (Assault Rifles) — Level 4
+*Prerequisite: Weapon Mastery (Assault Rifles)*
+
+Expert assault rifles proficiency. You deal **+4 damage** and gain a **+1 circumstance bonus to attack rolls** with assault rifles (replaces the +2 damage). Your range-fire discipline tightens.
+*Prerequisite: Weapon Mastery (Assault Rifles). Classes: Sentinel, Soldier.*
+
+---
+
+#### Improved Biotic Mastery — Level 6
+*Prerequisite: Biotic Mastery*
+
+Your fields hit harder than your amp alone can account for. Your biotic powers deal **+4 damage** to each creature they damage (replacing the +2 from Biotic Mastery).
+*Prerequisite: Biotic Mastery. Classes: Adept, Sentinel, Vanguard.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.*
+
+---
+
+#### Improved Tech Mastery — Level 6
+*Prerequisite: Tech Mastery*
+
+Advanced omni-tool integration lets you chain tech powers with less downtime. Your tech powers deal **+4 damage** to each creature they damage (replacing the +2 from Tech Mastery), and the cooldowns of your tech powers are **1 round shorter**, to a minimum of 2 rounds.
+*Prerequisite: Tech Mastery. Classes: Engineer, Infiltrator, Sentinel.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted.*
+
+---
+
+#### Master Fitness — Level 8
+*Prerequisite: Improved Fitness*
+
+Peak physical conditioning. You gain an additional **+4 maximum HP** (total +12 with the chain), your Fortitude circumstance bonus increases to **+2**, and your movement speed increases by **5 feet**.
+*Prerequisite: Improved Fitness. Classes: All.*
+
+---
+
+#### Master Weapon Mastery (Assault Rifles) — Level 8
+*Prerequisite: Improved Weapon Mastery (Assault Rifles)*
+
+Master-level assault rifles proficiency. You deal **+6 damage** and gain a **+2 circumstance bonus to attack rolls** with assault rifles (replaces previous bonuses). Critical hits with assault rifles ignore 5 points of the target's damage resistance.
+*Prerequisite: Improved Weapon Mastery (Assault Rifles). Classes: Sentinel, Soldier.*
 
 ---
 
@@ -2882,6 +3864,28 @@ Choose a creature within **60 feet**. The target must attempt a Fortitude save a
 Your mastery of electromagnetic pulse technology allows Overload to cascade across nearby shielded systems.
 When Overload destroys a kinetic shield, it automatically chains to **one additional shielded target within 15 feet**, dealing half the original damage (no save).
 *Prerequisite: Overload. Classes: Engineer, Sentinel.*
+
+---
+
+#### Master Biotic Mastery — Level 10
+*Prerequisite: Improved Biotic Mastery*
+
+You have mastered the art of mass effect manipulation. Your biotic powers deal **+6 damage** to each creature they damage (replacing the +4 from Improved Biotic Mastery). Your constant biotic field also adds **+2 damage** to your Strikes.
+*Prerequisite: Improved Biotic Mastery. Classes: Adept, Sentinel, Vanguard.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. The Strike damage is applied automatically.*
+
+---
+
+#### Master Tech Mastery — Level 10
+*Prerequisite: Improved Tech Mastery*
+
+Your omni-tool is an extension of your nervous system. Your tech powers deal **+6 damage** to each creature they damage (replacing the +4 from Improved Tech Mastery), and the cooldowns of your tech powers are **2 rounds shorter**, to a minimum of 2 rounds (replacing the 1 round from Improved Tech Mastery). Your deep system knowledge also grants a **+1 circumstance bonus to Will saves**.
+*Prerequisite: Improved Tech Mastery. Classes: Engineer, Infiltrator, Sentinel.*
+
+---
+*Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted. The Will bonus is applied automatically.*
 
 ---
 
@@ -2898,8 +3902,11 @@ On a **failure**, the target also becomes **Frightened 1** in addition to normal
 *Prerequisite: Tech Armor, Fortification*
 
 Your hybrid conditioning allows your tech and biotic defenses to coexist without interfering with each other.
-Tech Armor and Fortification can both be **active simultaneously**. The combined defensive bonuses apply: Resistance from Fortification reduces damage before Tech Armor's AC bonus applies. You may activate and dismiss each independently.
+Fortification costs you **1 action** instead of 2. When your Tech Armor detonates, it **reforms at the start of your next turn** without waiting for its cooldown.
 *Prerequisite: Tech Armor, Fortification. Classes: Sentinel.*
+
+---
+*Automation: both parts are yours to apply. Put the Tech Armor effect back on at the start of your next turn after a detonation.*
 
 ---
 
@@ -2922,11 +3929,11 @@ You project a **20-foot interference aura** for **1 minute**. The first time eac
 ---
 
 #### Battle Hardened — Level 16
-*Prerequisite: Adaptive Defense*
+*Prerequisite: Adaptive Defense or Hybrid Core*
 
 Decades of surviving the worst the galaxy has to offer have made you immune to conditions that would break lesser warriors.
 You are **immune to the Stunned, Dazed, and Confused conditions**. You gain a **+2 bonus to all saving throws** (untyped, stacks with other bonuses).
-*Prerequisite: Adaptive Defense. Classes: Sentinel.*
+*Prerequisite: Adaptive Defense or Hybrid Core. Classes: Sentinel.*
 
 ---
 
@@ -2944,7 +3951,7 @@ For **1 minute**: Resistance to all damage **20**; **+4 circumstance to AC**; al
 *Prerequisite: Sentinel's Resolve*
 
 You are the ultimate expression of the hybrid warrior - a near-perfect fusion of biotic and tech capability wrapped in impenetrable armor.
-Adrenaline Rush and Fortification can both be activated **simultaneously as free actions** (once per round each). The action cost reductions from Sentinel Mastery apply to every power. Sentinel's Resolve can be used **twice per day**.
+Tech Armor and Fortification can each be activated as a **free action**, once per round each. The action cost reductions from Sentinel Mastery apply to every power. Sentinel's Resolve can be used **twice per day**.
 *Prerequisite: Sentinel's Resolve. Classes: Sentinel.*
 
 ---
@@ -2955,7 +3962,7 @@ Adrenaline Rush and Fortification can both be activated **simultaneously as free
 
 | Ancestry | Feats (level) |
 |---|---|
-| **Asari** | Millennia of Memory (1), Biotic Feedback (5), Melded Understanding (9) |
+| **Asari** | Biotic Adept (1), Huntress Drills (1), Maiden's Wanderlust (1), Millennia of Memory (1), Biotic Feedback (5), Galactic Citizen (5), Melded Understanding (5), Biotic Ward (9), Dominating Meld (9), Matron's Poise (9), Biotic Prodigy (13), Matriarch's Voice (13), Justicar's Resolve (17), Matriarch's Wisdom (17) |
 | **Batarian** | Four-Eyed Vigilance (1), Castes and Leverage (5) |
 | **Drell** | Perfect Recall (1), Toxic Touch (1), Ghost of the Desert (5) |
 | **Elcor** | Crushing Blow (1), Subvocal Network (5) |
@@ -2964,7 +3971,7 @@ Adrenaline Rush and Fortification can both be activated **simultaneously as free
 | **Krogan** | Headbutt (1), Blood Rage (5), Undying Warrior (9) |
 | **Quarian** | Omni-Tool Mastery (1), Suit Integrity (1), Emergency Evacuation Protocol (5) |
 | **Salarian** | Accelerated Mind (1), Chemical Analysis (1), STG Methods (5) |
-| **Turian** | Formation Fighter (1), Hierarchy Command (5), Carapace Resilience (9) |
+| **Turian** | Drilled Response (1), Formation Fighter (1), Long Sight (1), Radiation-Hardened Plates (1), Hierarchy Command (5), Hired Gun (5), Turian Resolve (5), Carapace Resilience (9), Hold the Line (9), Lone Operative (9), Frontier Pragmatist (13), Plated Bulwark (13), Primarch's Authority (17), Unbroken Line (17) |
 | **Volus** | Market Instinct (1), Ammonia Reserve (5) |
 | **Vorcha** | Feral Bite (1), Adaptive Immunity (5) |
 
@@ -2972,7 +3979,9 @@ Adrenaline Rush and Fortification can both be activated **simultaneously as free
 
 ### General & Skill Feats
 
-*Powers and feats that appear on two or more class lists, or are open to any character meeting the prerequisites.*
+*Powers and feats shared by two or more classes. Each class's feat table lists the ones it can take.*
+
+**Power Scaling.** A power's entry prints its dice at 1st level. All of a biotic power's, tech power's or grenade feat's dice are **doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th**: Warp's 2d6 on a failed save is 6d6 at 8th level and 12d6 at 20th. This covers persistent damage and any healing dice. Powers gained at higher levels print the dice for the level you gain them. Biotic Charge and Nova use their own formulas, grenade items keep their printed dice, and flat bonuses from gear and feats are added once. NPC powers follow the same rule.
 
 #### AI Hacking ◆◆◆ — Level 1
 
@@ -2995,6 +4004,7 @@ Choose a qualifying target within **30 feet**. The target must attempt a Will sa
 You have been trained in the use of armor-piercing rounds. Using two actions, you can modify your ammunition to gain the following features:
 Hard alloy sabot rounds designed to penetrate ablative armor plating. These rounds add no bonus damage type.
 When striking a target with an active Combat Armor Frame, 50% of the incoming HP damage bypasses the armor entirely and is dealt directly to shields and HP.
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
 
 ---
@@ -3022,7 +4032,9 @@ Choose a creature within **30 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d6 void** damage.
 **Failure** The target takes **1d6 void** damage and gains **1d6 persistent void** damage (DC 15 flat check to end). When a creature affected by Dark Channel is reduced to 0 HP, the persistent void damage automatically transfers to the nearest enemy within **30 feet**.
 **Critical Failure** As failure, but **2d6 persistent void** damage (DC 18 flat check to end).
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3045,6 +4057,7 @@ You deploy a hovering electrocution drone that follows you and automatically zap
 You deploy a Defense Drone that orbits you. The drone has **10 HP**, is immune to electricity, and cannot move independently (it follows you). It persists for up to **1 minute** or until destroyed.
 At the start of each of your turns, the drone automatically zaps all enemies within **10 feet** of you: each must attempt a basic Reflex save against your class DC or take **1d6 electricity** damage (half on a success).
 Additionally, any enemy that hits you with a melee attack while the drone is active takes **1d4 electricity** damage (no save) as the drone retaliates.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
@@ -3069,7 +4082,7 @@ Choose a creature within **30 feet**. The target must attempt a Will save agains
 **Success** The creature is **Confused** until the end of its next turn.
 **Failure** The creature is under your control for 1 round, treating you and your allies as friends and enemies as foes. It uses its actions as you direct. At the end of each of its turns, it can attempt a new Will save to end the effect.
 **Critical Failure** As failure, but the effect lasts for 1 minute. The creature is also **Stupefied 2** for the duration.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3084,6 +4097,7 @@ Choose a creature within **30 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d8 electricity** damage, or loses 10 shield HP if it has an active kinetic shield.
 **Failure** Against a shielded target: drain up to **20 HP of shields**; you gain that amount as temp HP (stacking with existing shields, up to your maximum). Against an unshielded target: **2d8 electricity** damage and you regain 10 temp HP.
 **Critical Failure** As failure, but drain **40 shield HP** (or 4d8 electricity) and you gain 20 temp HP from the drain.
+**Level scaling:** This power's damage dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th. The shield amounts stay the same.
 **Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
@@ -3097,9 +4111,11 @@ You gather and compress an enormous sphere of biotic dark energy and hurl it for
 You launch a Flare projectile at a point within **60 feet**. On impact, it detonates in a 15-foot radius burst. All creatures in the area must attempt a Reflex save against your class DC.
 **Critical Success** Half damage.
 **Success** Full damage.
-**Failure** **6d6 void** damage. Any Biotic Barriers in the area are immediately depleted.
-**Critical Failure** **12d6 void** damage, all Biotic Barriers depleted, and targets are knocked prone.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Failure** **3d6 void** damage. Any Biotic Barriers in the area are immediately depleted.
+**Critical Failure** **6d6 void** damage, all Biotic Barriers depleted, and targets are knocked prone.
+**Biotic Explosion:** An Adept who damages a Primed creature with this power detonates it.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -3122,7 +4138,9 @@ Choose a creature within **30 feet**. The target must attempt a Reflex save agai
 **Success** The target takes **1d6 bludgeoning** damage.
 **Failure** The target is pulled up to **30 feet** toward you and takes **2d6 bludgeoning** damage. If pulled adjacent to you, it is Off-Guard until the start of your next turn.
 **Critical Failure** As failure, but **4d6 bludgeoning** and the target is also **Grabbed** until the start of your next turn.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3137,7 +4155,8 @@ All creatures in a 10-foot radius burst within **30 feet** must attempt a Reflex
 **Success** The creature is lifted 5 feet off the ground and becomes **Off-Guard** until the start of your next turn.
 **Failure** The creature is lifted 10 feet into the air and becomes **Grabbed** and **Off-Guard** until the start of your next turn. When the effect ends, the creature falls and takes appropriate fall damage.
 **Critical Failure** As failure, but the creature is lifted 20 feet and remains suspended until the end of your next turn.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -3153,6 +4172,7 @@ Choose a qualifying creature within **30 feet**. The target must attempt a Forti
 **Success** The target takes **1d6 electricity** damage.
 **Failure** The target takes **2d6 electricity** damage and is **Stunned 1**.
 **Critical Failure** The target takes **4d6 electricity** damage and is **Stunned 3**. Additionally, the target is **Off-Guard** until the end of its next turn even after the Stunned condition expires.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 − your Intelligence modifier rounds (minimum 1).
 
 ---
@@ -3164,6 +4184,7 @@ Choose a qualifying creature within **30 feet**. The target must attempt a Forti
 
 You have been trained in the use of phasic rounds. Using two actions, you can modify your ammunition to gain the following features:
 Rounds coated in a mass effect field that phases through all defensive layers. Phasic rounds bypass kinetic shields, biotic barriers, and Combat Armor Frames entirely — damage is dealt directly to HP. However, the phasing effect reduces total damage dealt to **40%**.
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
 
 ---
@@ -3176,7 +4197,9 @@ Choose a creature within **30 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d8 void** damage and cannot regain HP until the start of your next turn.
 **Failure** The target takes **2d8 void** damage, cannot regain HP for 1 round, and you regain **1d8 HP**.
 **Critical Failure** As failure, but **4d8 void** damage, you regain **2d8 HP**, and the target cannot regain HP for 1 minute (or until the end of combat).
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn. If it is already Primed, an Adept who damages it with this power detonates it instead.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3186,8 +4209,9 @@ Choose a creature within **30 feet**. The target must attempt a Fortitude save a
 #### Shredder Rounds ◆◆ — Level 1
 
 You have been trained in the use of shredder rounds. Using two actions, you can modify your ammunition to gain the following features:
-Serrated flechette rounds designed to shred unprotected tissue. Your weapon attacks deal an additional **1d6 slashing damage**.
+Serrated flechette rounds designed to shred unprotected tissue. Your ranged Strikes deal an additional **1d6 slashing damage**.
 Most effective against targets with no active shields, barriers, or armor.
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
 
 ---
@@ -3200,7 +4224,9 @@ Choose a creature within **30 feet**. The target must attempt a Fortitude save a
 **Success** The target takes **1d6 bludgeoning** damage and is moved 5 feet in any direction.
 **Failure** The target is lifted 10 feet into the air and then slammed down, taking **3d6 bludgeoning** damage and becoming **Stunned 1** and **Prone**.
 **Critical Failure** As failure, but **6d6 bludgeoning**, **Stunned 2**, and the target's movement speed is halved until the end of its next turn.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** An Adept who damages a Primed creature with this power detonates it.
+**Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
@@ -3215,18 +4241,28 @@ Choose a creature within **30 feet**. The target must attempt a Will save agains
 **Success** The creature is **Immobilized** until the start of your next turn.
 **Failure** The creature is **Paralyzed** until the start of your next turn. At the end of each of its turns, it can attempt a new Will save to end the effect early.
 **Critical Failure** The creature is **Paralyzed** for 1 minute. At the end of each of its turns, it can attempt a new Will save (same DC) to end the effect early.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1).
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
 
 ---
 *When a creature rolls the save above, the result for its degree of success is applied automatically (see the Auto-Apply Power Effects setting).*
 
 ---
 
+#### Unity ◆◆ — Level 1
+
+You project a pulse of restorative biotic energy that knits the wounds of all nearby allies simultaneously. Unlike targeted healing, Unity reaches everyone at once — a single expenditure of focus that can turn the tide of a firefight in an instant.
+All allied creatures within **30 feet** who can see or hear you regain **10 Hit Points**. This healing cannot exceed each creature's maximum HP, and any excess is lost. Unity does not heal you.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
+
+---
+
 #### Warp Rounds ◆◆ — Level 1
 
 You have been trained in the use of warp rounds. Using two actions, you can modify your ammunition to gain the following features:
-Rounds infused with destabilizing dark energy. Your weapon attacks deal an additional **1d4 void damage**.
+Rounds infused with destabilizing dark energy. Your ranged Strikes deal an additional **1d4 void damage**.
 Warp rounds are devastating against biotic barriers: damage to a Biotic Barrier is multiplied by 1.5×. Depleting a barrier with Warp rounds triggers a dark energy detonation.
+Ammo powers change what a gun fires: they do nothing for a melee Strike.
 Remove this effect to return to standard ammunition.
 
 ---
@@ -3235,8 +4271,21 @@ Remove this effect to return to standard ammunition.
 
 You run a hardening current through your armor plating, distributing kinetic energy across the suit's surface to reduce incoming damage.
 Until the start of your next turn, you gain **Resistance 5** to all damage.
-**Cooldown:** 7 - your Constitution modifier rounds (minimum 1).
+**Cooldown:** 7 − your Constitution or key attribute modifier, whichever is higher, rounds (minimum 1).
 *Classes: Soldier, Sentinel.*
+
+---
+*Automation: using this feat puts the Fortification effect on you and starts the cooldown, which the Fortification feats share.*
+
+---
+
+#### Improved Unity ◆◆ — Level 5
+*Prerequisite: Unity*
+
+Your biotic healing pulse has grown powerful enough to not only close wounds but clear the chemical and neural disruption that combat inflicts on a body.
+All allied creatures within **30 feet** who can see or hear you regain **20 Hit Points**. In addition, you may remove one of the following conditions from each affected ally: **Frightened**, **Sickened**, or **Stunned 1**. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
+*Prerequisite: Unity.*
 
 ---
 
@@ -3245,8 +4294,21 @@ Until the start of your next turn, you gain **Resistance 5** to all damage.
 
 Enhanced armor hardening channels additional energy into your plating.
 Until the start of your next turn, you gain **Resistance 8** to all damage and a **+1 circumstance bonus to AC**.
-**Cooldown:** 7 - your Constitution modifier rounds (minimum 1).
+**Cooldown:** 7 − your Constitution or key attribute modifier, whichever is higher, rounds (minimum 1).
 *Prerequisite: Fortification.*
+
+---
+*Automation: using this feat puts the Improved Fortification effect on you and starts the cooldown, which the Fortification feats share.*
+
+---
+
+#### Superior Unity ◆◆ — Level 9
+*Prerequisite: Improved Unity*
+
+At this level of biotic mastery, your Unity pulse carries enough raw regenerative force to drag allies back from the threshold of death itself.
+All allied creatures within **30 feet** who can see or hear you regain **40 Hit Points**. You may remove one negative condition of your choice from each affected ally. In addition, any ally who is **dying** is immediately **stabilized** and regains **20 HP** instead of 40. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.
+**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
+*Prerequisite: Improved Unity.*
 
 ---
 
@@ -3254,9 +4316,12 @@ Until the start of your next turn, you gain **Resistance 8** to all damage and a
 *Prerequisite: Improved Fortification*
 
 Your fortification system creates a near-impenetrable combat shell.
-Until the start of your next turn, you gain **Resistance 12** to all damage, a **+2 circumstance bonus to AC**, and a **+2 circumstance bonus to saving throws**.
-**Cooldown:** 7 - your Constitution modifier rounds (minimum 1).
+Until the start of your next turn, you gain **Resistance 12** to all damage, or resistance equal to **your level** if that is higher, a **+2 circumstance bonus to AC**, and a **+2 circumstance bonus to saving throws**.
+**Cooldown:** 7 − your Constitution or key attribute modifier, whichever is higher, rounds (minimum 1).
 *Prerequisite: Improved Fortification.*
+
+---
+*Automation: using this feat puts the Master Fortification effect on you and starts the cooldown, which the Fortification feats share.*
 
 ---
 
@@ -3274,6 +4339,14 @@ Until the start of your next turn, you gain **Resistance 12** to all damage, a *
 - **scatter-X** — All creatures within X feet of the primary target also take splash damage equal to the damage dice result.
 - **unwieldy** — Cannot be used for more than one Strike per turn.
 - **volley-X** — −2 to attack rolls against targets within X feet of you.
+
+**Weapon Grades**
+
+Every weapon can be upgraded through Starfinder's grades. A grade's cost is added to the weapon's own price: tactical 350 credits, advanced 1,000, superior 10,000, elite 20,000, ultimate 100,000, paragon 400,000. Upgrading costs the difference between the two grades.
+
+- **Attack rolls:** +1 tracking at tactical grade, +2 at superior, +3 at ultimate.
+- **Damage:** the damage listed below is what a weapon rolls up to superior grade. It rolls one more damage die at elite grade and a second at paragon.
+- **One-die weapons** (M-3 Predator, M-8 Avenger, Phaeston) follow the standard progression instead: two dice at advanced grade, three at elite, four at paragon.
 
 #### Pistols & SMGs
 
@@ -3316,15 +4389,26 @@ Until the start of your next turn, you gain **Resistance 12** to all damage, a *
 
 | Name | Level | Bulk | Credits | Damage | Type | Range | Traits |
 |---|---|---|---|---|---|---|---|
+| M-23 Katana | 1 | 2 | 300 cr | 2d10 | P | 20 ft | scatter-5 |
 | M-27 Scimitar | 1 | 2 | 300 cr | 3d6 | P | 15 ft | scatter-5 |
 | AT-12 Raider | 3 | 2 | 1,000 cr | 3d6 | P | 15 ft | scatter-5 |
 | Disciple | 3 | 1 | 1,000 cr | 3d6 | P | 15 ft | scatter-5 |
 | M-23 Eviscerator | 3 | 2 | 1,000 cr | 3d8 | P | 15 ft | scatter-5 |
+| Enkindler | 5 | 2 | 2,500 cr | 3d8 | Fire | 20 ft | scatter-5 |
 | Geth Plasma Shotgun | 5 | 2 | 3,000 cr | 3d6 | Fire | 40 ft | scatter-5 |
 | M-11 Wraith | 5 | 2 | 2,500 cr | 3d8 | P | 15 ft | scatter-5, fatal-d10, kickback |
+| Armax Calibrator | 7 | 2 | 7,000 cr | 3d10 | P | 30 ft | deadly-d10 |
 | Venom Shotgun | 7 | 2 | 7,000 cr | 4d6 | B | 20 ft | scatter-5 |
+| Graal Spike Thrower | 9 | 3 | 20,000 cr | 4d8 | P | 20 ft | scatter-5, kickback |
 | M-300 Claymore | 9 | 3 | 20,000 cr | 5d8 | P | 10 ft | scatter-5, fatal-d12, kickback |
 | N7 Crusader | 9 | 2 | 20,000 cr | 4d8 | P | 25 ft | fatal-d12, kickback |
+| N7 Piranha | 9 | 2 | 20,000 cr | 4d6 | P | 15 ft | scatter-5, automatic |
+| Savage | 9 | 3 | 20,000 cr | 4d10 | P | 30 ft | fatal-d12, kickback |
+| Armageddon | 11 | 3 | 50,000 cr | 4d10 | P | 20 ft | scatter-5, kickback |
+| Executioner | 11 | 3 | 50,000 cr | 5d8 | P | 20 ft | fatal-d12, kickback |
+| HMWSG Master | 11 | 2 | 50,000 cr | 4d10 | P | 20 ft | scatter-5, fatal-d12 |
+| Hydra | 11 | 2 | 50,000 cr | 4d10 | P | 15 ft | scatter-5, fatal-d12 |
+| Reegar Carbine | 11 | 2 | 50,000 cr | 5d8 | E | 10 ft | scatter-5 |
 
 #### Sniper Rifles
 
@@ -3461,7 +4545,7 @@ Biotics can activate a personal mass effect barrier. **HP = 5 × ⌈level ÷ 2�
 
 ### Bio-Amps
 
-A bio-amp plugs into a biotic's implant. Biotic powers cool down for **4 rounds, less the Recharge of the amp you wear** (minimum 1); powers with a fixed cooldown of their own, such as Biotic Charge, keep it. Power adds an item bonus to biotic power damage and class DC, and Hit Points to the Biotic Barrier. Amps don't stack: wearing more than one gives only the highest of each bonus.
+A bio-amp plugs into a biotic's implant. Biotic powers cool down for **4 rounds, less the Recharge of the amp you wear** (minimum 1); powers with a fixed cooldown of their own, such as Biotic Charge, keep it. A 1-round cooldown goes only to the first biotic power used each turn (Nova apart): any others that turn take 2 rounds. Power adds an item bonus to biotic power damage and class DC, and Hit Points to the Biotic Barrier. Amps don't stack: wearing more than one gives only the highest of each bonus.
 
 | Amp | Level | Credits | Recharge | Cooldown | Power |
 |---|---|---|---|---|---|
@@ -3477,10 +4561,10 @@ A bio-amp plugs into a biotic's implant. Biotic powers cool down for **4 rounds,
 | Polaris Bio-Amp II | 12 | 20,000 cr | −2 | 2 rounds | +20 barrier HP |
 | Savant Bio-Amp I | 13 | 30,000 cr | −2 | 2 rounds | +3 damage, +2 class DC, +15 barrier HP |
 | HMBA Advanced Bio-Amp | 14 | 45,000 cr | −2 | 2 rounds | +2 damage, +1 class DC, +10 barrier HP |
-| Gemini Bio-Amp III | 15 | 65,000 cr | −3 | 1 rounds | — |
-| Prodigy Bio-Amp II | 16 | 100,000 cr | −3 | 1 rounds | — |
-| HMBA Master Bio-Amp | 18 | 240,000 cr | −3 | 1 rounds | +2 damage, +1 class DC, +10 barrier HP |
-| Savant Bio-Amp II | 19 | 400,000 cr | −3 | 1 rounds | +3 damage, +2 class DC, +15 barrier HP |
+| Gemini Bio-Amp III | 15 | 65,000 cr | −3 | 1 round (first power each turn), then 2 | — |
+| Prodigy Bio-Amp II | 16 | 100,000 cr | −3 | 1 round (first power each turn), then 2 | — |
+| HMBA Master Bio-Amp | 18 | 240,000 cr | −3 | 1 round (first power each turn), then 2 | +2 damage, +1 class DC, +10 barrier HP |
+| Savant Bio-Amp II | 19 | 400,000 cr | −3 | 1 round (first power each turn), then 2 | +3 damage, +2 class DC, +15 barrier HP |
 
 ### Weapon Modifications
 
@@ -3636,7 +4720,8 @@ A grenade packed with a mass effect field generator that triggers a localized an
 **Critical Success** Unaffected.
 **Success** The creature is lifted 5 feet off the ground and is **Off-Guard** until the start of your next turn.
 **Failure** The creature is lifted 10 feet into the air and becomes **Grabbed** (by the field) and **Off-Guard** until the end of your next turn. When the effect ends, the creature falls and takes fall damage.
-**Critical Failure** As failure, but the creature is lifted 20 feet and suspended until the end of your next turn. This sets up a *Biotic Explosion* combo (Lifted condition acts as a biotic primer).
+**Critical Failure** As failure, but the creature is lifted 20 feet and suspended until the end of your next turn.
+**Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn.
 
 ---
 *When a creature rolls the save above, the damage and conditions for its result are applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.*
@@ -3645,7 +4730,7 @@ A grenade packed with a mass effect field generator that triggers a localized an
 
 # PART II — BESTIARY
 
-*227 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
+*229 ready-to-run adversaries and allies: faction NPCs, hostile creatures and synthetics, and crewed vehicles and ships.*
 
 ---
 
@@ -4080,6 +5165,7 @@ Choose a creature within **60 feet**. The target must attempt a DC 21 Fortitude 
 **Success** The target takes 2d6 void damage.
 **Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -4494,6 +5580,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 21 Reflex sav
 **Success** The target takes 2d6 bludgeoning damage.
 **Failure** The target is pulled up to **30 feet** toward you and takes 4d6 bludgeoning damage. If pulled adjacent to you, it is Off-Guard until the start of your next turn.
 **Critical Failure** As failure, but 8d6 bludgeoning damage and the target is also **Grabbed** until the start of your next turn.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -4574,6 +5661,7 @@ Choose a creature within **60 feet**. The target must attempt a DC 26 Fortitude 
 **Success** The target takes 3d6 void damage.
 **Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5537,6 +6625,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 25 Reflex sav
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
 **Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5588,6 +6677,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 25 Reflex sav
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
 **Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5611,7 +6701,7 @@ The galaxy's most notorious master thief: hooded, cloaked, and never where you a
 **Ranged** ◆ M-12 Locust +21 (range increment 30 ft, tech, automatic), **Damage** 4d6+12 piercing
 **Melee** ◆ Omni-Blade +21 (agile, finesse), **Damage** 5d6+12 slashing
 **Tactical Cloak (NPC)** ◆◆ You activate a personal light-bending cloaking device, becoming completely invisible to enemies while setting up a devastating ambush strike.
-You become **Undetected** by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect, which adds **+2d6 precision damage** to your first Strike made while Undetected. Remove the effect after making that Strike.
+You become **Undetected** by all creatures until the start of your next turn or until you make a Strike, whichever comes first. You gain the Tactical Cloak effect, which adds **+2d6 precision damage** to your first Strike made while Undetected and makes its target off-guard to it. The dice are multiplied as the creature's other powers are: doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th. The effect comes off by itself after that Strike.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5777,6 +6867,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 26 Fortitude 
 **Success** The target takes 3d8 void damage and cannot regain HP until the start of your next turn.
 **Failure** The target takes 6d8 void damage, cannot regain HP for 1 round, and you regain 3d8 HP damage.
 **Critical Failure** As failure, but 12d8 void damage, you regain 6d8 HP damage, and the target cannot regain HP for 1 minute (or until the end of combat).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5804,6 +6895,7 @@ Choose a creature within **60 feet**. The target must attempt a DC 26 Fortitude 
 **Success** The target takes 3d6 void damage.
 **Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5814,6 +6906,7 @@ You create a Singularity at a point within **60 feet**. All creatures within a 2
 **Success** The creature is pulled 10 feet toward the singularity's center.
 **Failure** The creature is pulled to the singularity's center and becomes **Restrained** (Escape DC equals the creature's power DC). The singularity persists until the start of your next turn; you may Sustain it as a free action each round for up to 1 minute.
 **Critical Failure** As failure. Additionally, the creature takes 6d6 bludgeoning damage at the start of each of its turns while restrained.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5824,6 +6917,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 26 Will save 
 **Success** The creature is **Immobilized** until the start of your next turn.
 **Failure** The creature is **Paralyzed** until the start of your next turn. At the end of each of its turns, it can attempt a new Will save to end the effect early.
 **Critical Failure** The creature is **Paralyzed** for 1 minute. At the end of each of its turns, it can attempt a new Will save (same DC) to end the effect early.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5850,6 +6944,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 26 Fortitude 
 **Success** The target takes 3d8 void damage and cannot regain HP until the start of your next turn.
 **Failure** The target takes 6d8 void damage, cannot regain HP for 1 round, and you regain 3d8 HP damage.
 **Critical Failure** As failure, but 12d8 void damage, you regain 6d8 HP damage, and the target cannot regain HP for 1 minute (or until the end of combat).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5918,6 +7013,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 27 Fortitude 
 **Success** The target takes 3d6 void damage.
 **Failure** The target takes 3d6 void damage and gains 3d6 persistent void damage (DC 15 flat check to end). When a creature affected by Dark Channel is reduced to 0 HP, the persistent void damage automatically transfers to the nearest enemy within **30 feet**.
 **Critical Failure** As failure, but 6d6 persistent void damage (DC 18 flat check to end).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5928,6 +7024,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 27 Reflex sav
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
 **Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -5948,6 +7045,7 @@ Choose a point within **60 feet**. All creatures in a 15-foot burst centered on 
 **Success** The target is lifted **5 feet** off the ground and becomes **Off-Guard** until the end of your next turn.
 **Failure** The target is lifted **10 feet** and becomes **Grabbed** (suspended by the biotic field). The Grabbed condition ends at the start of your next turn or when the target Escapes (DC equals the creature's power DC).
 **Critical Failure** As failure, and the target takes 6d6 void damage and is **Stunned 1**.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -6341,6 +7439,7 @@ Choose a creature within **60 feet**. The target must attempt a DC 21 Fortitude 
 **Success** The target takes 2d6 void damage.
 **Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -6463,6 +7562,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 27 Reflex sav
 **Success** The creature is pulled 10 feet toward you.
 **Failure** The creature is pulled up to 20 feet toward you and becomes **Grabbed** until the start of your next turn. The creature is Off-Guard while grabbed this way.
 **Critical Failure** As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also **Knocked Prone**.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -6503,6 +7603,7 @@ Choose a creature within **60 feet**. The target must attempt a DC 27 Fortitude 
 **Success** The target takes 3d6 void damage.
 **Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -6513,6 +7614,7 @@ You create a Singularity at a point within **60 feet**. All creatures within a 2
 **Success** The creature is pulled 10 feet toward the singularity's center.
 **Failure** The creature is pulled to the singularity's center and becomes **Restrained** (Escape DC equals the creature's power DC). The singularity persists until the start of your next turn; you may Sustain it as a free action each round for up to 1 minute.
 **Critical Failure** As failure. Additionally, the creature takes 6d6 bludgeoning damage at the start of each of its turns while restrained.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -6523,6 +7625,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 27 Will save 
 **Success** The creature is **Immobilized** until the start of your next turn.
 **Failure** The creature is **Paralyzed** until the start of your next turn. At the end of each of its turns, it can attempt a new Will save to end the effect early.
 **Critical Failure** The creature is **Paralyzed** for 1 minute. At the end of each of its turns, it can attempt a new Will save (same DC) to end the effect early.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -6533,6 +7636,7 @@ All creatures in a 10-foot radius burst within **30 feet** must attempt a DC 27 
 **Success** The creature is lifted 5 feet off the ground and becomes **Off-Guard** until the start of your next turn.
 **Failure** The creature is lifted 10 feet into the air and becomes **Grabbed** and **Off-Guard** until the start of your next turn. When the effect ends, the creature falls and takes appropriate fall damage.
 **Critical Failure** As failure, but the creature is lifted 20 feet and remains suspended until the end of your next turn.
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -6585,6 +7689,7 @@ Choose a creature within **30 feet**. The target must attempt a DC 27 Fortitude 
 **Success** The target takes 3d8 void damage and cannot regain HP until the start of your next turn.
 **Failure** The target takes 6d8 void damage, cannot regain HP for 1 round, and you regain 3d8 HP damage.
 **Critical Failure** As failure, but 12d8 void damage, you regain 6d8 HP damage, and the target cannot regain HP for 1 minute (or until the end of combat).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -7199,6 +8304,7 @@ Choose a creature within **60 feet**. The target must attempt a DC 18 Fortitude 
 **Success** The target takes 2d6 void damage.
 **Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
 **Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -8003,6 +9109,44 @@ Small opportunistic primate pest, native to Tuchanka
 **Speed** 25 feet
 **Melee** ◆ Bite +5 (agile, finesse, unarmed), **Damage** 1d4-2 piercing
 **Melee** ◆ Thrown Debris +5, **Damage** 1d4 bludgeoning
+
+---
+
+##### Combat Drone — Creature 1
+
+*Small · Construct · Mindless*
+
+An Engineer's hovering combat drone, deployed with the Combat Drone power.
+
+**Perception** +6
+**Abilities** Str -2, Dex +3, Con +0, Int -4, Wis +0, Cha -5
+**AC** 15; **Fort** +6, **Ref** +6, **Will** +6
+**HP** 20
+**Speed** 30 feet
+**Ranged** ◆ Shock +8 (range increment 30 ft), **Damage** 1d6 electricity
+**Engineer's Drone** On each of the Engineer's turns the drone makes **one Shock Strike** at a target the Engineer chooses, without costing the Engineer an action. With Combat Drone Upgrade it makes two, the second with the usual −5 multiple attack penalty. Moving it is part of directing it, and is free.
+**Harassing Presence** Once on each of the Engineer's turns, the Engineer chooses one enemy adjacent to the drone. That enemy is **Off-Guard** until the start of the Engineer's next turn.
+**Overload Core** When the drone is destroyed it explodes in a 5-foot burst, dealing 1d6 electricity damage (basic DC 18 Reflex save against the Engineer's class DC).
+
+---
+*When a creature rolls the save above, the result is applied automatically (see the Auto-Apply Power Effects setting).*
+
+---
+
+##### Sentry Turret — Creature 1
+
+*Small · Construct · Mindless*
+
+An Engineer's stationary automated turret, deployed with the Sentry Turret power.
+
+**Perception** +6
+**Abilities** Str -2, Dex +3, Con +0, Int -4, Wis +0, Cha -5
+**AC** 14; **Fort** +6, **Ref** +6, **Will** +6
+**HP** 30
+**Speed** 0 feet
+**Ranged** ◆ Turret Gun +8 (range increment 60 ft), **Damage** 1d8+2 piercing
+**Automated Fire** On each of the Engineer's turns the turret makes **one Turret Gun Strike** at the nearest enemy within 60 feet, without costing the Engineer an action. The Engineer can name a different target as a free action.
+**Opportunistic Shot** If a creature ends its turn within 10 feet of the turret, the turret makes a Turret Gun Strike against it. This does not use up its Automated Fire.
 
 ---
 

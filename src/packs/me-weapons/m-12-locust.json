@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>Developed by Kassa Fabrication for Shadow Broker operatives, the M-12 Locust bridges the gap between submachine gun and assault rifle. Heavier than standard SMGs but still manageable one-handed, it fires a larger round than its competitors with enough precision to engage targets at significantly greater range. Intelligence operatives who expect contact in confined environments but cannot afford to be caught with a full-sized rifle favor the Locust as their primary weapon.</p>"
+      "value": "<p>Developed by Kassa Fabrication for Shadow Broker operatives, the M-12 Locust bridges the gap between submachine gun and assault rifle. Heavier than standard SMGs but still manageable one-handed, it fires a larger round than its competitors with enough precision to engage targets at significantly greater range. Intelligence operatives who expect contact in confined environments but cannot afford to be caught with a full-sized rifle favor the Locust as their primary weapon.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-12-locust",
     "_migration": {
       "version": 0.955,

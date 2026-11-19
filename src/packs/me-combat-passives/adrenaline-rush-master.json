@@ -14,7 +14,7 @@
     "slug": "me-cp-adrenaline-rush-master",
     "description": {
       "gm": "",
-      "value": "<p><strong>Trigger:</strong> You take damage from any source while not Flat-Footed.</p><p>Your augmented combat systems trigger a full adrenaline surge at the slightest provocation. Until the end of your turn, you are <strong>Quickened 2</strong>, gain <strong>+30 feet of Speed</strong>, and gain <strong>+2 to attack rolls</strong>.</p><p><strong>Cooldown:</strong> After using this reaction, you can't use it again for 7 - your Constitution modifier rounds (minimum 1).</p><p><em>Prerequisite: Improved Adrenaline Rush.</em></p>"
+      "value": "<p><strong>Trigger:</strong> You take damage from any source while not off-guard.</p><p>Your augmented combat systems trigger a full adrenaline surge at the slightest provocation. On your next turn you gain <strong>two extra actions</strong> to Strike, Stride or reload, with <strong>+30 feet of Speed</strong> and a <strong>+2 status bonus to attack rolls</strong>, until that turn ends. This does not use Adrenaline Rush itself or start its cooldown. This is Improved Adrenaline Rush's reaction, made stronger: you have one reaction and one cooldown between the two feats.</p><p><strong>Cooldown:</strong> After using this reaction, you can't use it again for 7 − your Constitution modifier rounds (minimum 1).</p><p><em>Prerequisite: Improved Adrenaline Rush.</em></p><hr/><p><em>Automation: sending this feat to chat puts the @UUID[Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEffAdrnalMastr]{Master Adrenaline Rush} effect on you, which comes off when your next turn ends, and starts the reaction's cooldown.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -52,10 +52,6 @@
       "value": null
     },
     "category": "class",
-    "selfEffect": {
-      "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEffAdrnalMastr",
-      "name": "Master Adrenaline Rush"
-    },
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

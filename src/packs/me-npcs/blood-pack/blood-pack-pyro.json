@@ -422,9 +422,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-451 Firestorm projects a sustained stream of superheated incendiary gel across a short range cone. Originally designed for burning through bulkheads in derelict station salvage operations, it was repurposed as a combat weapon when salvagers discovered its effectiveness against Husks and other Reaper-derived infantry. The fuel tank limits engagement duration, but within those constraints it is capable of clearing a room faster than any conventional weapon.</p>"
+          "value": "<p>The M-451 Firestorm projects a sustained stream of superheated incendiary gel across a short range cone. Originally designed for burning through bulkheads in derelict station salvage operations, it was repurposed as a combat weapon when salvagers discovered its effectiveness against Husks and other Reaper-derived infantry. The fuel tank limits engagement duration, but within those constraints it is capable of clearing a room faster than any conventional weapon.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-451-firestorm",
         "_migration": {
           "version": 0.955,

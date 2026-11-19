@@ -1,0 +1,72 @@
+{
+  "_key": "!items!MEAncFeat0000045",
+  "_id": "MEAncFeat0000045",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Drilled Response",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>Palaven drills contact response until it stops being a decision. Before you have finished registering the threat, your weapon is already up.</p><p>You gain a +1 circumstance bonus to initiative rolls. When you roll initiative, you can Interact to draw one weapon as a free action.</p><hr/><p><em>Automation: The initiative bonus is applied.</em></p>"
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Palaven Soldier Turian heritage"
+        }
+      ]
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "initiative",
+        "type": "circumstance",
+        "value": 1,
+        "label": "Drilled Response"
+      }
+    ],
+    "slug": "drilled-response",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "turian"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

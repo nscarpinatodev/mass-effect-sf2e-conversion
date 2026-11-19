@@ -11,7 +11,7 @@
     },
     "description": {
       "gm": "",
-      "value": "<p>You trained through the full Turian Hierarchy military program on or near Palaven, the turian homeworld, and graduated into frontline service with the fleet or ground forces. Palaven produces soldiers of a quality that other species generally acknowledge, even grudgingly. The training is long, demanding, and designed to produce warriors who function as a unit first and as individuals second.</p><p>You become an expert in Athletics. When you Aid an ally in combat, your Aid bonus is increased by 1 (from +1 to +2, or from +2 to +3 on a critical success). Your Military Discipline ancestry feature applies to two martial weapon groups instead of one.</p>"
+      "value": "<p>You trained through the full Turian Hierarchy military program on or near Palaven, the turian homeworld, and graduated into frontline service with the fleet or ground forces. Palaven produces soldiers of a quality that other species generally acknowledge, even grudgingly. The training is long, demanding, and designed to produce warriors who function as a unit first and as individuals second.</p><p>You become trained in Athletics (or another skill of your choice if you are already trained in it). When you Aid an ally in combat, the circumstance bonus you grant is 1 higher. Your Military Discipline ancestry feature applies to a second weapon group of your choice.</p><hr/><p><em>Automation: Athletics and the second weapon group are granted.</em></p>"
     },
     "publication": {
       "title": "Mass Effect Actor and Ancestry Compendium",
@@ -23,8 +23,41 @@
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
-        "path": "system.skills.ath.rank",
-        "value": 2
+        "path": "system.skills.athletics.rank",
+        "value": 1
+      },
+      {
+        "key": "ChoiceSet",
+        "flag": "palavenWeaponGroup",
+        "prompt": "Choose a second weapon group to become trained in",
+        "choices": [
+          {
+            "label": "Pistols",
+            "value": "pistol"
+          },
+          {
+            "label": "Rifles",
+            "value": "rifle"
+          },
+          {
+            "label": "Shotguns",
+            "value": "shotgun"
+          },
+          {
+            "label": "Sniper Rifles",
+            "value": "sniper"
+          }
+        ],
+        "adjustName": false
+      },
+      {
+        "key": "MartialProficiency",
+        "slug": "palaven-soldier",
+        "label": "Palaven Soldier",
+        "definition": [
+          "item:group:{item|flags.pf2e.rulesSelections.palavenWeaponGroup}"
+        ],
+        "value": 1
       }
     ],
     "traits": {

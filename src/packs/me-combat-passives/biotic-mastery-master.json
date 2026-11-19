@@ -14,9 +14,15 @@
     "slug": "me-cp-biotic-mastery-master",
     "description": {
       "gm": "",
-      "value": "<p>You have mastered the art of mass effect manipulation. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action). Once per round a biotic power may be used as a <strong>free action</strong>. Your constant biotic field adds <strong>+2 damage</strong> to all Strikes.</p><p><em>Prerequisite: Improved Biotic Mastery.</em></p>"
+      "value": "<p>You have mastered the art of mass effect manipulation. Your biotic powers deal <strong>+6 damage</strong> to each creature they damage (replacing the +4 from Improved Biotic Mastery). Your constant biotic field also adds <strong>+2 damage</strong> to your Strikes.</p><p><em>Prerequisite: Improved Biotic Mastery. Classes: Adept, Sentinel, Vanguard.</em></p><hr/><p><em>Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. The Strike damage is applied automatically.</em></p>"
     },
     "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.masteryDamage.biotic",
+        "value": 6
+      },
       {
         "key": "FlatModifier",
         "selector": "strike-damage",
@@ -33,7 +39,10 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "biotic"
+        "adept",
+        "biotic",
+        "sentinel",
+        "vanguard"
       ],
       "rarity": "common"
     },
@@ -59,7 +68,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

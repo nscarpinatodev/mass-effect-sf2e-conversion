@@ -14,7 +14,7 @@
     "slug": "me-upgrade-tactical-cloak",
     "description": {
       "gm": "",
-      "value": "<p>Advanced cloaking algorithms keep the field stable even through the shock of a weapon discharge.</p><p>Tactical Cloak <strong>does not end when you make your first Strike</strong>. The cloak ends after your <strong>second Strike</strong> while cloaked, or at the start of your next turn, whichever comes first. Both Strikes made while cloaked gain the precision damage bonus.</p><p><em>Prerequisite: Tactical Cloak. Classes: Infiltrator.</em></p>"
+      "value": "<p>Advanced cloaking algorithms keep the field stable even through the shock of a weapon discharge.</p><p>Tactical Cloak <strong>does not end when you make your first Strike</strong>. The cloak ends after your <strong>second Strike</strong> while cloaked, or at the start of your next turn, whichever comes first. Both Strikes made while cloaked gain the precision damage bonus.</p><p><em>Prerequisite: Tactical Cloak. Classes: Infiltrator.</em></p><hr/><p><em>Automation: the Tactical Cloak effect stays on through your first cloaked Strike and comes off after the second.</em></p>"
     },
     "rules": [],
     "_migration": {

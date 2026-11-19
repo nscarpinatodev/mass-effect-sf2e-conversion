@@ -6,7 +6,11 @@
   "type": "effect",
   "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
   "effects": [],
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "cloakStrikes": 0
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -14,16 +18,30 @@
     "slug": "me-effect-tactical-cloak",
     "description": {
       "gm": "",
-      "value": "<p>You are concealed by a personal cloaking field. You are <strong>Undetected</strong> by all creatures until you make a Strike or the duration expires.</p><p>Your first Strike made while Undetected deals an additional <strong>2d6 precision damage</strong>. Remove this effect after making that Strike.</p>"
+      "value": "<p>You are hidden by a personal cloaking field: <strong>Undetected</strong> by all creatures until you make a Strike or the start of your next turn.</p><p>Your first Strike while cloaked deals <strong>2d6 precision damage</strong> more, and its target is off-guard to it. The dice are multiplied by level as a power's are: 4d6 at 4th level, 6d6 at 8th, 8d6 at 12th, 10d6 at 16th and 12d6 at 20th. The effect comes off by itself after that Strike.</p>"
     },
     "rules": [
       {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-tactical-cloak"
+      },
+      {
         "key": "DamageDice",
         "selector": "strike-damage",
-        "label": "Tactical Cloak Precision Strike",
-        "diceNumber": 2,
+        "label": "Tactical Cloak",
+        "diceNumber": "2*(1+floor(@actor.level/4))",
         "dieSize": "d6",
-        "damageType": "precision"
+        "category": "precision"
+      },
+      {
+        "key": "EphemeralEffect",
+        "affects": "target",
+        "selectors": [
+          "strike-attack-roll",
+          "strike-damage"
+        ],
+        "uuid": "Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg"
       }
     ],
     "_migration": {
@@ -45,7 +63,7 @@
     "duration": {
       "value": 1,
       "unit": "rounds",
-      "expiry": "turn-end"
+      "expiry": "turn-start"
     },
     "badge": null
   }

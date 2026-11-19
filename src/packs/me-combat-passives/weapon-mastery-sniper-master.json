@@ -14,7 +14,7 @@
     "slug": "me-cp-weapon-mastery-sniper-master",
     "description": {
       "gm": "",
-      "value": "<p>Master-level sniper rifles proficiency. You deal <strong>+6 damage</strong> and gain a <strong>+2 circumstance bonus to attack rolls</strong> with sniper rifles (replaces previous bonuses). You ignore the Prone condition's penalty to ranged attacks when using a sniper rifle.</p><p><em>Prerequisite: Improved Weapon Mastery (Sniper Rifles).</em></p>"
+      "value": "<p>Master-level sniper rifles proficiency. You deal <strong>+6 damage</strong> and gain a <strong>+2 circumstance bonus to attack rolls</strong> with sniper rifles (replaces previous bonuses). You ignore the Prone condition's penalty to ranged attacks when using a sniper rifle.</p><p><em>Prerequisite: Improved Weapon Mastery (Sniper Rifles). Classes: Infiltrator.</em></p>"
     },
     "rules": [
       {
@@ -45,7 +45,9 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "infiltrator"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -70,7 +72,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

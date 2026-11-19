@@ -23,13 +23,13 @@
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
-        "path": "system.skills.itm.rank",
+        "path": "system.skills.intimidation.rank",
         "value": 1
       },
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
-        "path": "system.skills.ath.rank",
+        "path": "system.skills.athletics.rank",
         "value": 1
       }
     ],

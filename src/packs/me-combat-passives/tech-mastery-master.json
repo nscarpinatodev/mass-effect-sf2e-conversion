@@ -14,15 +14,27 @@
     "slug": "me-cp-tech-mastery-master",
     "description": {
       "gm": "",
-      "value": "<p>Your omni-tool is an extension of your nervous system. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action). Once per round a tech power may be used as a <strong>free action</strong>. Your deep system knowledge also grants a <strong>+1 circumstance bonus to Will saves</strong>.</p><p><em>Prerequisite: Improved Tech Mastery.</em></p>"
+      "value": "<p>Your omni-tool is an extension of your nervous system. Your tech powers deal <strong>+6 damage</strong> to each creature they damage (replacing the +4 from Improved Tech Mastery), and the cooldowns of your tech powers are <strong>2 rounds shorter</strong>, to a minimum of 2 rounds (replacing the 1 round from Improved Tech Mastery). Your deep system knowledge also grants a <strong>+1 circumstance bonus to Will saves</strong>.</p><p><em>Prerequisite: Improved Tech Mastery. Classes: Engineer, Infiltrator, Sentinel.</em></p><hr/><p><em>Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted. The Will bonus is applied automatically.</em></p>"
     },
     "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.masteryDamage.tech",
+        "value": 6
+      },
       {
         "key": "FlatModifier",
         "selector": "will",
         "type": "circumstance",
         "value": 1,
         "label": "Tech Mastery"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.techMasteryCooldownCut",
+        "value": 2
       }
     ],
     "_migration": {
@@ -33,6 +45,9 @@
     "traits": {
       "otherTags": [],
       "value": [
+        "engineer",
+        "infiltrator",
+        "sentinel",
         "tech"
       ],
       "rarity": "common"
@@ -59,7 +74,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

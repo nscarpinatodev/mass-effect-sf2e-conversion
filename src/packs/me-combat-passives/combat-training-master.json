@@ -14,7 +14,7 @@
     "slug": "me-cp-combat-training-master",
     "description": {
       "gm": "",
-      "value": "<p>Elite combat discipline across all dimensions. You deal an additional <strong>+2 damage</strong> on all Strikes (total +4 with the chain) and gain a <strong>+1 circumstance bonus to all saving throws</strong> from battlefield awareness.</p><p><em>Prerequisite: Improved Combat Training.</em></p>"
+      "value": "<p>Elite combat discipline across all dimensions. You deal an additional <strong>+2 damage</strong> on all Strikes (total +4 with the chain) and gain a <strong>+1 circumstance bonus to all saving throws</strong> from battlefield awareness.</p><p><em>Prerequisite: Improved Combat Training. Classes: Infiltrator, Soldier, Vanguard.</em></p>"
     },
     "rules": [
       {
@@ -38,7 +38,11 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "infiltrator",
+        "soldier",
+        "vanguard"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -63,7 +67,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The N7 Typhoon is a light machine gun developed for N7 operatives who require sustained suppressive fire without fire support teams. Its three hundred round capacity allows continuous fire long past the point where conventional assault rifles would have overheated, and its oversized kinetic coils deliver heavy round impacts that can stop advancing Brutes and Atlases alike. The weapon's mass makes precise movement during sustained fire impossible, but the wall of lead it produces tends to make movement unnecessary.</p>"
+      "value": "<p>The N7 Typhoon is a light machine gun developed for N7 operatives who require sustained suppressive fire without fire support teams. Its three hundred round capacity allows continuous fire long past the point where conventional assault rifles would have overheated, and its oversized kinetic coils deliver heavy round impacts that can stop advancing Brutes and Atlases alike. The weapon's mass makes precise movement during sustained fire impossible, but the wall of lead it produces tends to make movement unnecessary.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "n7-typhoon",
     "_migration": {
       "version": 0.955,

@@ -14,7 +14,7 @@
     "slug": "me-cp-fortification-improved",
     "description": {
       "gm": "",
-      "value": "<p>Enhanced armor hardening channels additional energy into your plating.</p><p>Until the start of your next turn, you gain <strong>Resistance 8</strong> to all damage and a <strong>+1 circumstance bonus to AC</strong>.</p><p><strong>Cooldown:</strong> 7 - your Constitution modifier rounds (minimum 1).</p><p><em>Prerequisite: Fortification.</em></p>"
+      "value": "<p>Enhanced armor hardening channels additional energy into your plating.</p><p>Until the start of your next turn, you gain <strong>Resistance 8</strong> to all damage and a <strong>+1 circumstance bonus to AC</strong>.</p><p><strong>Cooldown:</strong> 7 − your Constitution or key attribute modifier, whichever is higher, rounds (minimum 1).</p><p><em>Prerequisite: Fortification.</em></p><hr/><p><em>Automation: using this feat puts the @UUID[Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEffFortifictnI]{Improved Fortification} effect on you and starts the cooldown, which the Fortification feats share.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -24,7 +24,10 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "sentinel",
+        "soldier"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -57,10 +60,6 @@
     },
     "onlyLevel1": false,
     "maxTakable": 1,
-    "location": null,
-    "selfEffect": {
-      "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEffFortifictnI",
-      "name": "Improved Fortification"
-    }
+    "location": null
   }
 }

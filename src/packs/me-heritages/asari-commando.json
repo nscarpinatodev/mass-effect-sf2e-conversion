@@ -11,7 +11,7 @@
     },
     "description": {
       "gm": "",
-      "value": "<p>You were trained from a young age in the Asari Commandos-the elite warrior caste whose members combine biotic power with combat precision into a fighting style other species spend lifetimes failing to replicate. Asari commandos move through battle with a fluid efficiency that makes them among the most feared individual combatants in the galaxy.</p><p>You are trained in light and medium armor and gain access to the Quick Draw feat (or become trained in Acrobatics if you already have Quick Draw). Additionally, your biotic abilities (including those from ancestry features and feats) deal an additional 1 damage when used as attacks.</p>"
+      "value": "<p>You were trained from a young age in the Asari Commandos-the elite warrior caste whose members combine biotic power with combat precision into a fighting style other species spend lifetimes failing to replicate. Asari commandos move through battle with a fluid efficiency that makes them among the most feared individual combatants in the galaxy.</p><p>You are trained in light and medium armor, and you gain the Quick Draw feat (or become trained in Acrobatics if you already have it). Your biotic powers and your Telekinetic Projectile deal 1 extra damage.</p><hr/><p><em>Automation: The armor training and the extra damage are applied. Add Quick Draw by hand.</em></p>"
     },
     "publication": {
       "title": "Mass Effect Actor and Ancestry Compendium",
@@ -19,7 +19,32 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.defenses.light.rank",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.proficiencies.defenses.medium.rank",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "flags.mass-effect-sf2e-conversion.bioticDamageBonus",
+        "value": 1
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "telekinetic-projectile-damage",
+        "value": 1,
+        "label": "Commando Asari"
+      }
+    ],
     "traits": {
       "rarity": "common",
       "value": [],

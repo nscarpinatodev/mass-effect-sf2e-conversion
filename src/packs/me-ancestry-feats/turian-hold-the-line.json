@@ -1,0 +1,60 @@
+{
+  "_key": "!items!MEAncFeat0000049",
+  "_id": "MEAncFeat0000049",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Hold the Line",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>A turian line does not bend. Shoulder to shoulder, plates locked, you and the soldiers beside you are simply harder to move than you should be.</p><p>You and each ally adjacent to you gain a +2 circumstance bonus to your Fortitude and Reflex DCs against Shove, Trip and Reposition, and to saving throws against effects that would move you or knock you prone.</p><hr/><p><em>Automation: Applied by hand.</em></p>"
+    },
+    "level": {
+      "value": 9
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "hold-the-line",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "turian"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

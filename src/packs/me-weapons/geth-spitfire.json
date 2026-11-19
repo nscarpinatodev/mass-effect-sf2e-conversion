@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Geth Spitfire is a heavy infantry weapon fielded by Geth Primes during the Reaper War, offering the sustained fire rate of a machine gun with the stopping power of a heavy weapon. Its enormous heat sink capacity sustains two hundred and fifty rounds of high-velocity kinetic fire without interruption. The weapon was designed for Geth platforms that do not fatigue; organic users who attempt to match that fire discipline typically find their arms giving out before the heat sink does.</p>"
+      "value": "<p>The Geth Spitfire is a heavy infantry weapon fielded by Geth Primes during the Reaper War, offering the sustained fire rate of a machine gun with the stopping power of a heavy weapon. Its enormous heat sink capacity sustains two hundred and fifty rounds of high-velocity kinetic fire without interruption. The weapon was designed for Geth platforms that do not fatigue; organic users who attempt to match that fire discipline typically find their arms giving out before the heat sink does.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "geth-spitfire",
     "_migration": {
       "version": 0.955,

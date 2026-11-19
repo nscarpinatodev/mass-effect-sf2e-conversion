@@ -1,0 +1,61 @@
+{
+  "_key": "!items!meAdeptBioExplo0",
+  "_id": "meAdeptBioExplo0",
+  "folder": null,
+  "name": "Biotic Explosion",
+  "type": "feat",
+  "img": "icons/magic/unholy/beam-impact-purple.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-adept-biotic-explosion",
+    "description": {
+      "gm": "",
+      "value": "<p>A mass effect field left on a creature is unstable. Hit it hard enough with a second field and it tears itself apart.</p><p><strong>Priming.</strong> A creature that fails its save against a priming power is <strong>Primed</strong> until the end of the caster's next turn. The priming powers are Warp, Reave, Dark Channel, Singularity, Pull, Lift, Stasis, Lash and the Lift Grenade. Anyone's biotic powers can prime, not only yours.</p><p><strong>Detonating.</strong> When you damage a Primed creature with a detonating power, the priming is spent and the creature explodes. The detonating powers are Throw, Shockwave, Slam, Warp, Reave, Flare and Cluster Grenade. One use of a power either primes or detonates, never both: Warp or Reave on a creature that is already Primed detonates it and does not prime it again.</p><p><strong>The explosion.</strong> A @Template[burst|distance:10]{10-foot burst} centered on the creature. It takes <strong>2d6 force</strong> damage with no save, and each of your other enemies in the burst takes the same damage with a basic Reflex save against your class DC. The damage rises to <strong>3d6 at 4th level, 4d6 at 8th, 5d6 at 12th, 6d6 at 16th and 7d6 at 20th</strong>.</p><p>The explosion is not a power. Its dice are not multiplied by your level, and nothing that adds to your power damage adds to it. If one use of a power sets off more than one explosion, a creature takes explosion damage only once.</p><p><em>Classes: Adept.</em></p><hr/><p><em>Automation: with Auto-Apply Power Effects on, a failed save against a priming power puts the Primed effect on the creature. Your detonating power removes it, rolls the explosion, applies it, and rolls the Reflex saves of your other enemies within 10 feet. A creature with no token on the scene explodes without a burst; resolve that by hand.</em></p>"
+    },
+    "rules": [],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "adept",
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-100 Grenade Launcher fires mass effect-accelerated explosive rounds that detonate on impact, scattering kinetic fragments across a wide area. Its six-round capacity makes it one of the most sustained area-denial weapons available to infantry. Alliance heavy weapons teams use it to flush entrenched enemies from cover positions where direct fire would take too long. The concussive blast is as useful for disruption as it is for casualties.</p>"
+      "value": "<p>The M-100 Grenade Launcher fires mass effect-accelerated explosive rounds that detonate on impact, scattering kinetic fragments across a wide area. Its six-round capacity makes it one of the most sustained area-denial weapons available to infantry. Alliance heavy weapons teams use it to flush entrenched enemies from cover positions where direct fire would take too long. The concussive blast is as useful for disruption as it is for casualties.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-100-grenade-launcher",
     "_migration": {
       "version": 0.955,

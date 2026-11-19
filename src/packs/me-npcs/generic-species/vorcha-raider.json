@@ -392,7 +392,7 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The AT-12 Raider is a compact shotgun favored by Cerberus assault troopers for its reliability and ease of use in close-quarters combat. Its dual-fire mechanism releases two shells per trigger pull in rapid succession, trading ammunition efficiency for a burst of kinetic scatter that overwhelms point-defense systems before they can cycle. Fast, aggressive, and designed for attackers who intend to win the first second of an engagement.</p>"
+          "value": "<p>The AT-12 Raider is a compact shotgun favored by Cerberus assault troopers for its reliability and ease of use in close-quarters combat. Its dual-fire mechanism releases two shells per trigger pull in rapid succession, trading ammunition efficiency for a burst of kinetic scatter that overwhelms point-defense systems before they can cycle. Fast, aggressive, and designed for attackers who intend to win the first second of an engagement.</p><p><strong>Grades:</strong> This weapon gains damage dice with its grade in the standard way: two dice at advanced grade, three at elite and four at paragon.</p>"
         },
         "rules": [],
         "slug": "at-12-raider",

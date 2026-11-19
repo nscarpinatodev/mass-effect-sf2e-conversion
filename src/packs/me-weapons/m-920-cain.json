@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-920 Cain is a man-portable nuclear weapon. It fires a microscale nuclear warhead that detonates in a thermobaric burst capable of vaporizing anything within the blast radius and incinerating everything on its periphery. Alliance High Command classifies its use under battlefield nuclear doctrine despite the manufacturer's insistence that the yield technically falls below treaty thresholds. Anyone who has seen what it does to a Geth armature disagrees.</p>"
+      "value": "<p>The M-920 Cain is a man-portable nuclear weapon. It fires a microscale nuclear warhead that detonates in a thermobaric burst capable of vaporizing anything within the blast radius and incinerating everything on its periphery. Alliance High Command classifies its use under battlefield nuclear doctrine despite the manufacturer's insistence that the yield technically falls below treaty thresholds. Anyone who has seen what it does to a Geth armature disagrees.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-920-cain",
     "_migration": {
       "version": 0.955,

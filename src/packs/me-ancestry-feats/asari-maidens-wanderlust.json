@@ -1,0 +1,80 @@
+{
+  "_key": "!items!MEAncFeat0000033",
+  "_id": "MEAncFeat0000033",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Maiden's Wanderlust",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>An asari's maiden years are spent wandering: crewing freighters, dancing on Omega, digging up Prothean ruins, serving a tour with a mercenary company. You came out of yours with skills no single career would have taught you.</p><p>You become trained in one skill of your choice and in one Lore skill of your choice, and you learn one additional language.</p><hr/><p><em>Automation: The skill and the extra language slot are granted. Add the Lore skill by hand.</em></p>"
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "ChoiceSet",
+        "flag": "maidensWanderlustSkill",
+        "prompt": "PF2E.SpecificRule.Prompt.Skill",
+        "choices": "skills",
+        "adjustName": false
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.{item|flags.pf2e.rulesSelections.maidensWanderlustSkill}.rank",
+        "value": 1
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "system.build.languages.max",
+        "value": 1
+      }
+    ],
+    "slug": "maidens-wanderlust",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "asari"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

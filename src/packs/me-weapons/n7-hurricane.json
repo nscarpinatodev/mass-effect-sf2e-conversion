@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The N7 Hurricane is the premier submachine gun in Alliance service, developed specifically for N7 operatives who require sustained fire at the upper limits of what SMG kinetics can deliver. Its enlarged heat sink holds seventy-five rounds and its oversized coil assembly fires them with enough force to threaten light armor - a capability few weapons in this size class can claim. The weapon requires two hands to manage effectively at its peak fire rate, but the volume of fire it produces has ended more than a few engagements before the enemy could mount a counter.</p>"
+      "value": "<p>The N7 Hurricane is the premier submachine gun in Alliance service, developed specifically for N7 operatives who require sustained fire at the upper limits of what SMG kinetics can deliver. Its enlarged heat sink holds seventy-five rounds and its oversized coil assembly fires them with enough force to threaten light armor - a capability few weapons in this size class can claim. The weapon requires two hands to manage effectively at its peak fire rate, but the volume of fire it produces has ended more than a few engagements before the enemy could mount a counter.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "n7-hurricane",
     "_migration": {
       "version": 0.955,

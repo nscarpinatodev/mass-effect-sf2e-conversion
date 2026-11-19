@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Kishock is a Batarian harpoon gun that fires a mass-accelerated barbed spike at extreme velocity. Originally designed for hunting the armored fauna of Khar'shan's southern continent, it translates to combat with lethal efficiency. The harpoon penetrates kinetic barriers and embeds in the target rather than passing through, ensuring the full kinetic transfer occurs internally. Against unarmored targets the results are immediate and final; against armored ones, the penetration capabilities still prove decisive.</p>"
+      "value": "<p>The Kishock is a Batarian harpoon gun that fires a mass-accelerated barbed spike at extreme velocity. Originally designed for hunting the armored fauna of Khar'shan's southern continent, it translates to combat with lethal efficiency. The harpoon penetrates kinetic barriers and embeds in the target rather than passing through, ensuring the full kinetic transfer occurs internally. Against unarmored targets the results are immediate and final; against armored ones, the penetration capabilities still prove decisive.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "kishock-harpoon-gun",
     "_migration": {
       "version": 0.955,

@@ -31,10 +31,11 @@ const SF2E_PACKS = PACKS.map(({ src, dest }) => ({
   sf2e: true,
 }));
 
-// The same src compiles into both the PF2e (me-*) and SF2e (sf2e-me-*) pack
-// families. Source references (compendiumSource / sourceId) are authored
-// pointing at the me-* packs; when building the SF2e variants we rewrite them
-// to the matching sf2e-me-* pack so each system self-references correctly.
+// The module ships for Starfinder 2e only: every src pack compiles into one sf2e-me-* pack.
+// (Until 2026-11 the same src also compiled into a me-* family for Pathfinder 2e.) The source
+// is still authored in that older form, so the build rewrites it on the way out. Source
+// references (compendiumSource / sourceId) point at me-* pack names and are rewritten to the
+// matching sf2e-me-* pack.
 const SF2E_SOURCE_RX = /(Compendium\.mass-effect-sf2e-conversion\.)(me-)/g;
 
 // Content also hard-codes `systems/pf2e/...` icon paths (strike/action glyphs,
@@ -80,7 +81,11 @@ function rewriteSf2eSources(value) {
     return value
       .replace(SF2E_ASSET_RX, "systems/sf2e/")
       .replace(SF2E_SOURCE_RX, "$1sf2e-me-")
-      .replace(SF2E_FEATS_RX, "Compendium.sf2e.feats.");
+      .replace(SF2E_FEATS_RX, "Compendium.sf2e.feats.")
+      // conditions keep their ids and names; only the compendium differs
+      .replace(/Compendium\.pf2e\.conditionitems\./g, "Compendium.sf2e.conditions.")
+      // rule elements read ChoiceSet selections from the system's own flag scope
+      .replace(/flags\.pf2e\./g, "flags.sf2e.");
   }
   if (Array.isArray(value)) {
     value.forEach((v, i) => { value[i] = rewriteSf2eSources(v); });
@@ -99,7 +104,7 @@ function rewriteSf2eSources(value) {
   return value;
 }
 
-for (const { src, dest, sf2e } of [...PACKS, ...SF2E_PACKS]) {
+for (const { src, dest, sf2e } of SF2E_PACKS) {
   try {
     await fs.access(src);
   } catch {

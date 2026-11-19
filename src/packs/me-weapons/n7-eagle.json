@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The N7 Eagle is a fully automatic heavy pistol engineered for operatives who need the mobility of a one-handed weapon without sacrificing fire rate. Its enlarged kinetic coil assembly cycles rounds faster than any other pistol in production, delivering suppressive fire volumes that rival light submachine guns while maintaining the handling profile of a standard sidearm. For N7 operatives who refuse to be outgunned regardless of what weapon hand they have free, the Eagle is the answer.</p>"
+      "value": "<p>The N7 Eagle is a fully automatic heavy pistol engineered for operatives who need the mobility of a one-handed weapon without sacrificing fire rate. Its enlarged kinetic coil assembly cycles rounds faster than any other pistol in production, delivering suppressive fire volumes that rival light submachine guns while maintaining the handling profile of a standard sidearm. For N7 operatives who refuse to be outgunned regardless of what weapon hand they have free, the Eagle is the answer.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "n7-eagle",
     "_migration": {
       "version": 0.955,

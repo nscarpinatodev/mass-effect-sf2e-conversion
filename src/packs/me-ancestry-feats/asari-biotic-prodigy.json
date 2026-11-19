@@ -1,0 +1,61 @@
+{
+  "_key": "!items!MEAncFeat0000040",
+  "_id": "MEAncFeat0000040",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Biotic Prodigy",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>Your biotics no longer just hit. They move things.</p><p>A creature damaged by your Telekinetic Projectile or your Biotic Feedback is pushed 5 feet away from you (10 feet if the Strike was a critical hit). This is forced movement. A creature more than one size larger than you isn't moved.</p><hr/><p><em>Automation: Move the token by hand.</em></p>"
+    },
+    "level": {
+      "value": 13
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "biotic-prodigy",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "asari",
+        "biotic"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

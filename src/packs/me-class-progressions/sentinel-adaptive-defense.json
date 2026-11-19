@@ -14,7 +14,7 @@
     "slug": "me-sentinel-adaptive-defense",
     "description": {
       "gm": "",
-      "value": "<p>Your hybrid conditioning allows your tech and biotic defenses to coexist without interfering with each other.</p><p>Tech Armor and Fortification can both be <strong>active simultaneously</strong>. The combined defensive bonuses apply: Resistance from Fortification reduces damage before Tech Armor's AC bonus applies. You may activate and dismiss each independently.</p><p><em>Prerequisite: Tech Armor, Fortification. Classes: Sentinel.</em></p>"
+      "value": "<p>Your hybrid conditioning allows your tech and biotic defenses to coexist without interfering with each other.</p><p>Fortification costs you <strong>1 action</strong> instead of 2. When your Tech Armor detonates, it <strong>reforms at the start of your next turn</strong> without waiting for its cooldown.</p><p><em>Prerequisite: Tech Armor, Fortification. Classes: Sentinel.</em></p><hr/><p><em>Automation: both parts are yours to apply. Put the Tech Armor effect back on at the start of your next turn after a detonation.</em></p>"
     },
     "rules": [],
     "_migration": {

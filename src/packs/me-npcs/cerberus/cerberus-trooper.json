@@ -267,7 +267,7 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-8 Avenger is the standard-issue assault rifle of the Systems Alliance military. Reliable, accurate, and easy to maintain, it serves as the backbone of Alliance infantry engagements across the galaxy. Its moderate fire rate and solid kinetic impact make it a dependable choice for soldiers of any experience level.</p>"
+          "value": "<p>The M-8 Avenger is the standard-issue assault rifle of the Systems Alliance military. Reliable, accurate, and easy to maintain, it serves as the backbone of Alliance infantry engagements across the galaxy. Its moderate fire rate and solid kinetic impact make it a dependable choice for soldiers of any experience level.</p><p><strong>Grades:</strong> This weapon gains damage dice with its grade in the standard way: two dice at advanced grade, three at elite and four at paragon.</p>"
         },
         "rules": [],
         "slug": "m-8-avenger",

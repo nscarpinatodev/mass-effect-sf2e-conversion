@@ -14,9 +14,22 @@
     "slug": "me-cp-tech-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>Advanced omni-tool integration lets you chain tech powers seamlessly. All tech powers have their action cost <strong>reduced by 1</strong> (minimum 1 action). Once per round, after destroying a shield with Overload or a similar power, you may use a tech power as a <strong>free action</strong>.</p><p><em>Prerequisite: Tech Mastery.</em></p>"
+      "value": "<p>Advanced omni-tool integration lets you chain tech powers with less downtime. Your tech powers deal <strong>+4 damage</strong> to each creature they damage (replacing the +2 from Tech Mastery), and the cooldowns of your tech powers are <strong>1 round shorter</strong>, to a minimum of 2 rounds.</p><p><em>Prerequisite: Tech Mastery. Classes: Engineer, Infiltrator, Sentinel.</em></p><hr/><p><em>Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself. Using a tech power puts its cooldown on your sheet as an effect, with the shorter cooldown counted.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.masteryDamage.tech",
+        "value": 4
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.techMasteryCooldownCut",
+        "value": 1
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,
@@ -25,6 +38,9 @@
     "traits": {
       "otherTags": [],
       "value": [
+        "engineer",
+        "infiltrator",
+        "sentinel",
         "tech"
       ],
       "rarity": "common"
@@ -51,7 +67,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

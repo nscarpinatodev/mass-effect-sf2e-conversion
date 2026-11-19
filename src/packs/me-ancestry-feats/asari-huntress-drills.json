@@ -1,0 +1,96 @@
+{
+  "_key": "!items!MEAncFeat0000034",
+  "_id": "MEAncFeat0000034",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Huntress Drills",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>Asari huntresses train for close, fast, decisive fights, and they drill with the weapons that suit them until drawing and firing is one motion.</p><p>You are trained in all pistols and shotguns. If your class would make you better than trained with them, use that proficiency instead. At 5th level, you gain the critical specialization effects of pistols and shotguns.</p><hr/><p><em>Automation: The training and, from 5th level, the critical specialization are applied.</em></p>"
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Commando Asari heritage"
+        }
+      ]
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "MartialProficiency",
+        "slug": "huntress-drills",
+        "label": "Huntress Drills",
+        "definition": [
+          {
+            "or": [
+              "item:group:pistol",
+              "item:group:shotgun"
+            ]
+          }
+        ],
+        "value": 1
+      },
+      {
+        "key": "CriticalSpecialization",
+        "predicate": [
+          {
+            "or": [
+              "item:group:pistol",
+              "item:group:shotgun"
+            ]
+          },
+          {
+            "gte": [
+              "self:level",
+              5
+            ]
+          }
+        ]
+      }
+    ],
+    "slug": "huntress-drills",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "asari"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

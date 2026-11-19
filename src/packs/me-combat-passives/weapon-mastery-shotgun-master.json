@@ -14,7 +14,7 @@
     "slug": "me-cp-weapon-mastery-shotgun-master",
     "description": {
       "gm": "",
-      "value": "<p>Master-level shotguns proficiency. You deal <strong>+6 damage</strong> and gain a <strong>+2 circumstance bonus to attack rolls</strong> with shotguns (replaces previous bonuses). Critical hits with a shotgun push the target 10 feet and knock them Prone.</p><p><em>Prerequisite: Improved Weapon Mastery (Shotguns).</em></p>"
+      "value": "<p>Master-level shotguns proficiency. You deal <strong>+6 damage</strong> and gain a <strong>+2 circumstance bonus to attack rolls</strong> with shotguns (replaces previous bonuses). Critical hits with a shotgun push the target 10 feet and knock them Prone.</p><p><em>Prerequisite: Improved Weapon Mastery (Shotguns). Classes: Soldier, Vanguard.</em></p>"
     },
     "rules": [
       {
@@ -45,7 +45,10 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "soldier",
+        "vanguard"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -70,7 +73,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

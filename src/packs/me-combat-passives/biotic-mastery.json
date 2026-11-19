@@ -14,9 +14,16 @@
     "slug": "me-cp-biotic-mastery",
     "description": {
       "gm": "",
-      "value": "<p>Refined biotic focus reduces the effort required to shape mass effect fields. All biotic powers you use have their action cost <strong>reduced by 1</strong> (minimum 1 action).</p><p><em>Classes: Adept, Vanguard, Sentinel.</em></p>"
+      "value": "<p>Refined biotic focus puts more force behind every mass effect field you shape. Your biotic powers deal <strong>+2 damage</strong> to each creature they damage.</p><p><em>Classes: Adept, Sentinel, Vanguard.</em></p><hr/><p><em>Automation: The damage bonus is added when a creature rolls its save against the power and the module applies the damage. Add it by hand to power damage you roll yourself.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "flags.mass-effect-sf2e-conversion.masteryDamage.biotic",
+        "value": 2
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,
@@ -25,7 +32,10 @@
     "traits": {
       "otherTags": [],
       "value": [
-        "biotic"
+        "adept",
+        "biotic",
+        "sentinel",
+        "vanguard"
       ],
       "rarity": "common"
     },
@@ -47,7 +57,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

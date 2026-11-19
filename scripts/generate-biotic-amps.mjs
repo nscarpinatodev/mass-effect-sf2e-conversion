@@ -69,7 +69,9 @@ function amp(model, v, i) {
   if (dc) rules.push({ key: 'FlatModifier', selector: 'class', type: 'item', value: dc, label: name });
   if (barrier) rules.push(flag('barrierBonus', barrier));
 
-  const stats = [`<li><strong>Recharge −${v.recharge}:</strong> your biotic powers' cooldowns are <strong>${cooldown} round${cooldown === 1 ? '' : 's'}</strong> (4 − ${v.recharge}, minimum 1). Powers with a fixed cooldown of their own, such as Biotic Charge, keep it.</li>`];
+  const stats = [cooldown === 1
+    ? `<li><strong>Recharge −${v.recharge}:</strong> the first biotic power you use each turn cools down in <strong>1 round</strong> (4 − ${v.recharge}, minimum 1); any others that turn cool down in <strong>2 rounds</strong>. Nova is not counted and always cools down in 1 round. Powers with a fixed cooldown of their own, such as Biotic Charge, keep it.</li>`
+    : `<li><strong>Recharge −${v.recharge}:</strong> your biotic powers' cooldowns are <strong>${cooldown} rounds</strong> (4 − ${v.recharge}, minimum 1). Powers with a fixed cooldown of their own, such as Biotic Charge, keep it.</li>`];
   if (v.power) {
     stats.push(`<li><strong>Power ${v.power}:</strong> +${damage} item bonus to the damage your biotic powers deal${dc ? `, +${dc} item bonus to your class DC` : ''}, and +${barrier} Hit Points to your Biotic Barrier when you raise it.</li>`);
   } else if (barrier) {
@@ -77,7 +79,7 @@ function amp(model, v, i) {
   }
   const description = `<p>${model.flavor}</p><p><em>${model.maker} · ${tier}</em></p><ul>${stats.join('')}</ul>`
     + '<p>A bio-amp plugs into a biotic implant (or rests against the nervous system of a naturally biotic species, like the asari). Amps don\'t stack: if you wear more than one, you get only the highest of each bonus.</p>'
-    + '<hr/><p><em>Wear it to gain its bonuses. Item bonuses from amps don\'t stack with other item bonuses to the same thing, such as a Power Amplifier\'s damage or a Biotic Feedback Generator\'s class DC. The Vanguard automation applies the Recharge and barrier bonus itself; other biotics count their cooldowns by hand.</em></p>';
+    + '<hr/><p><em>Wear it to gain its bonuses. Item bonuses from amps don\'t stack with other item bonuses to the same thing, such as a Power Amplifier\'s damage or a Biotic Feedback Generator\'s class DC. Using a biotic power puts its cooldown on your sheet as an effect, with the amp\'s Recharge counted; the barrier bonus is added when you raise a Biotic Barrier.</em></p>';
 
   return {
     _id: id, _key: `!items!${id}`, folder: null, name, type: 'equipment', img: IMG,

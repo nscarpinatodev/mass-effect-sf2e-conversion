@@ -503,9 +503,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-76 Revenant is a heavy machine gun designed to provide overwhelming suppressive fire. Its enormous heat sink capacity enables sustained bursts that shred through enemy cover and armor alike. The weapon's considerable mass and recoil make precise movement difficult while firing, but its sheer volume of fire compensates with devastating effect.</p>"
+          "value": "<p>The M-76 Revenant is a heavy machine gun designed to provide overwhelming suppressive fire. Its enormous heat sink capacity enables sustained bursts that shred through enemy cover and armor alike. The weapon's considerable mass and recoil make precise movement difficult while firing, but its sheer volume of fire compensates with devastating effect.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-76-revenant",
         "_migration": {
           "version": 0.955,
@@ -952,9 +983,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-6 Carnifex is a heavy combat pistol that delivers assault-rifle stopping power in a one-handed platform. Its oversized kinetic coils accelerate dense tungsten rounds with considerable force, and the recoil requires a firm grip to manage. Favored by soldiers who trust a single devastating shot over a hail of lighter rounds, the Carnifex earns its name at close range.</p>"
+          "value": "<p>The M-6 Carnifex is a heavy combat pistol that delivers assault-rifle stopping power in a one-handed platform. Its oversized kinetic coils accelerate dense tungsten rounds with considerable force, and the recoil requires a firm grip to manage. Favored by soldiers who trust a single devastating shot over a hail of lighter rounds, the Carnifex earns its name at close range.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-6-carnifex",
         "_migration": {
           "version": 0.955,

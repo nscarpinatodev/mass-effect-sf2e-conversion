@@ -14,7 +14,7 @@
     "slug": "me-cp-fitness-improved",
     "description": {
       "gm": "",
-      "value": "<p>Advanced conditioning deepens your physical resilience. You gain an additional <strong>+4 maximum HP</strong> (total +8 with Fitness) and a <strong>+1 circumstance bonus to Fortitude saves</strong>.</p><p><em>Prerequisite: Fitness.</em></p>"
+      "value": "<p>Advanced conditioning deepens your physical resilience. You gain an additional <strong>+4 maximum HP</strong> (total +8 with Fitness) and a <strong>+1 circumstance bonus to Fortitude saves</strong>.</p><p><em>Prerequisite: Fitness. Classes: All.</em></p>"
     },
     "rules": [
       {
@@ -38,7 +38,14 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "adept",
+        "engineer",
+        "infiltrator",
+        "sentinel",
+        "soldier",
+        "vanguard"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -63,7 +70,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

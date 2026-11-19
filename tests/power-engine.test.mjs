@@ -93,6 +93,28 @@ console.log('SF2e: save cards keep their data in flags.sf2e');
 }
 
 // ── cases ──
+console.log('A target with no token on the scene: damage is applied once and the card says so');
+{
+  // the system's applyDamage changes HP first, then throws if it has no token to name
+  const strict = (name) => {
+    const a = new Actor(name);
+    a.applyDamage = async ({ damage, token }) => { a.damage.push(damage.total); if (!token) throw new TypeError('Cannot read properties of null (reading \'name\')'); };
+    return a;
+  };
+  const t = strict('No Token');
+  t.getTokenDocument = async () => ({ name: 'No Token' });
+  rollCount = 0;
+  const msg = await save('me-tech-overload', 'failure', t, { origin: 'Item.tokenless' });
+  assert(t.damage.length === 1 && t.damage[0] === 16 && rollCount === 1, `applied once, one roll (got ${t.damage}, ${rollCount} rolls)`);
+  assert(msg.includes('16 ') && !msg.includes('apply manually') && !msg.includes('error'), 'the card reports the damage as applied');
+  // if the system still throws after applying, the card repeats the same roll and says to check
+  const broken = strict('Broken');
+  rollCount = 0;
+  const msg2 = await save('me-tech-overload', 'failure', broken, { origin: 'Item.tokenless2' });
+  assert(broken.damage.length === 1 && rollCount === 1, `still one roll, not a second one (got ${rollCount})`);
+  assert(msg2.includes('16 ') && msg2.includes('check the target') && !msg2.includes('apply manually'), 'the card names the same roll and says to check HP');
+}
+
 console.log('Arc Grenade: basic area, one shared roll');
 {
   const a = new Actor('A'), b = new Actor('B'), c = new Actor('C');
@@ -106,9 +128,10 @@ console.log('Arc Grenade: basic area, one shared roll');
 
 console.log('Omni-Grenade: mixed types halve per type');
 {
+  const engineer = new Actor('Engineer'); engineer.level = 16;         // x5: 5d6 fire + 5d6 electricity
   const t = new Actor('T');
-  await save('me-engineer-omni-grenade', 'success', t, { origin: 'Item.omni' });
-  assert(t.damage[0] === 24, `half of 24 fire + 24 electricity = ${t.damage[0]}`);
+  await save('me-engineer-omni-grenade', 'success', t, { caster: engineer, origin: 'Item.omni' });
+  assert(t.damage[0] === 30, `half of 30 fire + 30 electricity = ${t.damage[0]}`);
 }
 
 console.log('Overload: extra damage only against synthetics');
@@ -207,10 +230,10 @@ console.log('Flare: crit failure depletes the target\'s barrier');
   const barrier = barrierItem(9, 10);
   const t = new Actor('T', { items: [barrier] });
   await save('me-biotic-flare', 'criticalFailure', t, { origin: 'Item.flare' });
-  assert(barrier.flags[MOD].barrierCurrent === 0 && t.damage[0] === 72, `barrier 0, 12d6 = ${t.damage}`);
+  assert(barrier.flags[MOD].barrierCurrent === 0 && t.damage[0] === 36, `barrier 0, 3d6 doubled = ${t.damage}`);
   const t2 = new Actor('T2');
   await save('me-biotic-flare', 'criticalSuccess', t2, { origin: 'Item.flare' });
-  assert(t2.damage[0] === 18, `critical success still takes half: ${t2.damage}`);
+  assert(t2.damage[0] === 9, `critical success still takes half: ${t2.damage}`);
 }
 
 console.log('Dark Matter: critical failure against a biotic power frightens');
@@ -353,7 +376,24 @@ console.log('Power Amplifier: item bonus to biotic and tech power damage only');
   await save('me-tech-overload', 'failure', human, { caster, origin: 'Item.ovl-amp' });
   await save('me-frag-grenade', 'failure', other, { caster, origin: 'Item.frag-amp' });
   assert(human.damage[0] === 18, `2d8 + 2 = ${human.damage}`);
-  assert(other.damage[0] === 24, `grenade feat (no power trait) unchanged: ${other.damage}`);
+  assert(other.damage[0] === 12, `grenade feat (no power trait) unchanged: ${other.damage}`);
+}
+
+console.log('Biotic Mastery and Tech Mastery feats: flat bonus to powers of their own trait');
+{
+  const caster = new Actor('Sentinel', { flags: { masteryDamage: { biotic: 4, tech: 6 } } });
+  const bioticOnly = new Actor('Vanguard', { flags: { masteryDamage: { biotic: 6 }, powerDamageBonus: 1 } });
+  const a = new Actor('A', { traits: ['humanoid'] }), b = new Actor('B'), c = new Actor('C'), d = new Actor('D', { traits: ['humanoid'] }), e = new Actor('E');
+  await save('me-tech-overload', 'failure', a, { caster, origin: 'Item.ovl-mastery' });
+  await save('me-biotic-warp', 'failure', b, { caster, origin: 'Item.warp-mastery' });
+  await save('me-frag-grenade', 'failure', c, { caster, origin: 'Item.frag-mastery' });
+  await save('me-tech-overload', 'failure', d, { caster: bioticOnly, origin: 'Item.ovl-biotic-only' });
+  await save('me-biotic-warp', 'failure', e, { caster: bioticOnly, origin: 'Item.warp-biotic-only' });
+  assert(a.damage[0] === 22, `tech power 2d8 + 6 = ${a.damage}`);
+  assert(b.damage[0] === 16, `biotic power 2d6 + 4 = ${b.damage}`);
+  assert(c.damage[0] === 12, `grenade feat (no power trait) unchanged: ${c.damage}`);
+  assert(d.damage[0] === 17, `Biotic Mastery adds nothing to a tech power; item bonus still does: 2d8 + 1 = ${d.damage}`);
+  assert(e.damage[0] === 19, `stacks with an item bonus: 2d6 + 1 + 6 = ${e.damage}`);
 }
 
 console.log('Charge Upgrade and Superior Sentinel Mastery add to power damage');
@@ -404,6 +444,52 @@ console.log('Derived data: action costs and Magazine Upgrade I, never compoundin
   assert(feat.system.actions.value === 1, `2-action biotic power costs 1 (got ${feat.system.actions.value})`);
   assert(rush.system.actions.value === 2, `Rush isn't cut again (got ${rush.system.actions.value})`);
   assert(weapon.system.ammo.capacity === 18, `capacity 12 -> 18 after two prepares (got ${weapon.system.ammo.capacity})`);
+}
+
+console.log('Player powers: dice multiply by 1 + a quarter of the caster\'s level, as NPC powers do');
+{
+  const at = (level, opts = {}) => { const a = new Actor(`Caster ${level}`, opts); a.level = level; return a; };
+  const hit = async (key, outcome, caster, origin, targetOpts = {}) => {
+    const t = new Actor(`Target ${origin}`, targetOpts);
+    const msg = await save(key, outcome, t, { caster, origin: `Item.scale-${origin}` });
+    return { t, msg };
+  };
+  const low = await hit('me-biotic-warp', 'failure', at(3), 'warp3');
+  const mid = await hit('me-biotic-warp', 'failure', at(8), 'warp8');
+  const top = await hit('me-biotic-warp', 'failure', at(20), 'warp20');
+  assert(low.t.damage[0] === 12 && mid.t.damage[0] === 36 && top.t.damage[0] === 72, `Warp 2d6 / 6d6 / 12d6 at 3rd, 8th, 20th (got ${low.t.damage}, ${mid.t.damage}, ${top.t.damage})`);
+  const pers = mid.t.created.find((d) => d.system.slug === 'persistent-damage');
+  assert(pers?.system.persistent.formula === '3d4', `persistent 1d4 x3 = ${pers?.system.persistent.formula}`);
+
+  const geth = await hit('me-tech-overload', 'failure', at(20), 'ovl20', { traits: ['geth', 'construct'] });
+  assert(geth.t.damage[0] === 144, `Overload against a synthetic at 20th: 18d8 = ${geth.t.damage}`);
+
+  const adept = at(4, { hp: 30 });
+  const reave = await hit('me-biotic-reave', 'failure', adept, 'reave4');
+  assert(reave.t.damage[0] === 32 && adept.system.attributes.hp.value === 46, `Reave at 4th: 4d8 = ${reave.t.damage}, heals 2d8 (HP ${adept.system.attributes.hp.value})`);
+
+  const engineer = at(8);
+  const drain = await hit('me-tech-energy-drain', 'failure', engineer, 'drain8');
+  assert(drain.t.damage[0] === 48 && engineer.system.attributes.hp.temp === 10, `Energy Drain at 8th: 6d8 = ${drain.t.damage}; the shield amounts stay flat (${engineer.system.attributes.hp.temp})`);
+
+  const thrown = await hit('me-biotic-throw', 'failure', at(8), 'throw8');
+  assert(thrown.t.damage[0] === 48 && thrown.msg.includes('3d6 more bludgeoning'), `Throw at 8th: 6d8 = ${thrown.t.damage}; the wall damage in its note is 3d6`);
+
+  const frag = await hit('me-frag-grenade', 'failure', at(12), 'frag12');
+  const override = await hit('me-engineer-system-override', 'failure', at(12), 'override12');
+  assert(frag.t.damage[0] === 48 && override.t.damage[0] === 48, `Frag Grenade and System Override at 12th: 8d6 = ${frag.t.damage}, ${override.t.damage}`);
+
+  const flat = await hit('me-biotic-warp', 'failure', at(8, { flags: { masteryDamage: { biotic: 4 } } }), 'warp8-mastery');
+  assert(flat.t.damage[0] === 40, `flat bonuses are added once, not multiplied: 6d6 + 4 = ${flat.t.damage}`);
+
+  const item = await hit('me-grenade-arc', 'failure', at(12), 'arc12');
+  assert(item.t.damage[0] === 16, `a grenade item keeps its printed 2d8 at any level: ${item.t.damage}`);
+
+  const charge = await hit('me-biotic-charge', 'failure', at(8), 'charge8');
+  assert(charge.t.damage[0] === 30, `Biotic Charge keeps its own formula: 5d6 at 8th = ${charge.t.damage}`);
+
+  const incinerate = await hit('me-tech-incinerate', 'failure', at(1, { flags: { masteryDamage: { tech: 2 } } }), 'incinerate-tech');
+  assert(incinerate.t.damage[0] === 14, `Incinerate counts as a tech power: 2d6 + 2 = ${incinerate.t.damage}`);
 }
 
 console.log('NPC biotics: dice scale with the caster\'s level');
@@ -579,6 +665,333 @@ console.log('Heavy Impact and Nova Cascade');
   assert(b.flags[MOD].barrierCurrent === 40, `the next Nova can cascade again (got ${b.flags[MOD].barrierCurrent})`);
 }
 
+console.log('Biotic Explosion: priming');
+const PRIMED = 'me-effect-biotic-primed';
+// a Primed effect the mock actor can find and the engine can delete
+const prime = (actor) => {
+  const effect = { type: 'effect', slug: PRIMED, deleted: false };
+  effect.delete = async () => { effect.deleted = true; actor.itemTypes.effect = actor.itemTypes.effect.filter((e) => e !== effect); };
+  actor.itemTypes.effect.push(effect);
+  return effect;
+};
+const adeptAt = (level, { items = [], flags = {} } = {}) => {
+  const a = new Actor('Adept', { type: 'character', flags, items: [{ type: 'feat', slug: 'me-adept-biotic-explosion' }, ...items] });
+  a.level = level; a.system.attributes.classDC = { value: 30 };
+  return a;
+};
+const primedMade = (actor) => actor.created.filter((d) => d.system?.slug === PRIMED).length;
+{
+  const sentinel = new Actor('Sentinel', { type: 'character' });
+  const a = new Actor('A'), b = new Actor('B'), c = new Actor('C'), d = new Actor('D');
+  const msg = await save('me-biotic-warp', 'failure', a, { caster: sentinel, origin: 'Item.prime-warp' });
+  await save('me-biotic-warp', 'success', b, { caster: sentinel, origin: 'Item.prime-warp2' });
+  await save('me-biotic-throw', 'failure', c, { caster: sentinel, origin: 'Item.prime-throw' });
+  await save('me-npc-biotic-singularity', 'criticalFailure', d, { caster: new Actor('Asari Commando'), origin: 'Item.prime-npc' });
+  assert(primedMade(a) === 1 && msg.includes('Primed for a Biotic Explosion until the end of Sentinel'), 'a failed save against Warp primes, whoever uses it');
+  assert(a.created.find((x) => x.system?.slug === PRIMED).system.duration.expiry === 'turn-end', 'the priming lasts to the end of the caster\'s next turn');
+  assert(primedMade(b) === 0, 'a successful save does not prime');
+  assert(primedMade(c) === 0, 'Throw is not a primer');
+  assert(primedMade(d) === 1, 'an NPC\'s Singularity primes too');
+}
+
+console.log('Biotic Explosion: an Adept\'s detonator sets off a Primed creature');
+{
+  const { explosionDice } = ctx.MassEffectPowers;
+  assert([1, 3, 4, 8, 12, 16, 20].map((level) => explosionDice({ level })).join() === '2,2,3,4,5,6,7', '2d6, +1d6 at 4th and every 4 levels (7d6 at 20th)');
+
+  const adept = adeptAt(8, { flags: { masteryDamage: { biotic: 6 }, ampDamageBonus: 3 } });
+  const t = new Actor('T'); const effect = prime(t);
+  const msg = await save('me-biotic-throw', 'failure', t, { caster: adept, origin: 'Item.det-throw' });
+  assert(t.damage.join() === '57,24', `Throw 6d8 + 3 + 6 = 57, then the explosion 4d6 = 24 with no bonuses (got ${t.damage})`);
+  assert(effect.deleted && msg.includes('Biotic Explosion: 24 more force damage'), 'the priming is spent and the card says so');
+  assert(posted.some((m) => m.content.includes('Biotic Explosion') && m.content.includes('T detonates: 24 force damage (4d6, no save)')), 'the Adept gets a Biotic Explosion card');
+
+  const vanguard = new Actor('Vanguard', { type: 'character' }); vanguard.level = 8;
+  const t2 = new Actor('T2'); const kept = prime(t2);
+  await save('me-biotic-throw', 'failure', t2, { caster: vanguard, origin: 'Item.det-none' });
+  assert(t2.damage.join() === '48' && !kept.deleted, `without the Adept's feature nothing detonates (got ${t2.damage})`);
+
+  const t3 = new Actor('T3'); const kept3 = prime(t3);
+  await save('me-biotic-throw', 'success', t3, { caster: adeptAt(8), origin: 'Item.det-miss' });
+  assert(t3.damage.length === 0 && !kept3.deleted, 'a detonator that deals no damage sets nothing off');
+
+  const t4 = new Actor('T4'); const spent = prime(t4);
+  await save('me-biotic-warp', 'failure', t4, { caster: adeptAt(8), origin: 'Item.det-warp' });
+  assert(t4.damage.join() === '36,24' && spent.deleted && primedMade(t4) === 0, `Warp on a Primed creature detonates and does not prime again (got ${t4.damage})`);
+
+  const t5 = new Actor('T5');
+  await save('me-biotic-warp', 'failure', t5, { caster: adeptAt(8), origin: 'Item.det-warp2' });
+  assert(t5.damage.join() === '36' && primedMade(t5) === 1, 'Warp on an unprimed creature primes it instead');
+}
+
+console.log('Biotic Explosion: the burst, Biotic Cascade, and once per power use');
+{
+  const grid = { size: 100, distance: 5, measurePath: ([a, b]) => ({ distance: 5 * Math.max(Math.abs(a.x - b.x), Math.abs(a.y - b.y)) / 100 }) };
+  const field = () => {
+    const scene = { grid, tokens: [] };
+    const rolls = [];
+    const place = (name, x, disposition = -1, primed = false) => {
+      const actor = new Actor(name);
+      const token = { name, x, y: 0, width: 1, height: 1, parent: scene, actor, hidden: false, disposition };
+      actor.getActiveTokens = () => [token];
+      actor.saves = { reflex: { roll: async (args) => { rolls.push({ name, args }); } } };
+      scene.tokens.push(token);
+      return { actor, token, effect: primed ? prime(actor) : null };
+    };
+    return { place, rolls };
+  };
+  // a save a burst creature rolls, with the roll options the engine gave it
+  const burstSave = async (target, outcome, options, caster) => {
+    uuids['Item.burst'] = { actor: caster };
+    posted.length = 0;
+    await saveHook({ speaker: { actor: target }, token: null, flags: { pf2e: { origin: { uuid: 'Item.burst' }, context: { type: 'saving-throw', outcome, options } } } });
+  };
+
+  const f = field();
+  const primary = f.place('Primary', 0, -1, true), near = f.place('Near', 100), edge = f.place('Edge', 200), far = f.place('Far', 300), friend = f.place('Friend', 100, 1);
+  const adept = adeptAt(12, { items: [{ type: 'feat', slug: 'me-adept-mastery-improved' }] });
+  await save('me-biotic-slam', 'failure', primary.actor, { caster: adept, origin: 'Item.burst-slam' });
+  assert(primary.actor.damage.join() === '72,30', `Slam 12d6 = 72, explosion 5d6 = 30 at 12th (got ${primary.actor.damage})`);
+  assert(f.rolls.map((r) => r.name).join() === 'Near,Edge', `enemies within 10 feet roll; the far one and the ally do not (got ${f.rolls.map((r) => r.name)})`);
+  const opts = f.rolls[0].args.extraRollOptions;
+  assert(f.rolls[0].args.dc.value === 30 && opts.includes('me-power:me-biotic-explosion') && opts.some((o) => o.startsWith('me-explosion:30:')), 'a Reflex save against the class DC that carries the explosion\'s roll');
+  assert(posted.some((m) => m.content.includes('Improved Adept Mastery: you may use a biotic power as a free action')), 'Improved Adept Mastery\'s free power is called out');
+  await burstSave(near.actor, 'success', opts, adept);
+  await burstSave(edge.actor, 'criticalFailure', opts, adept);
+  await burstSave(far.actor, 'failure', opts, adept);
+  assert(near.actor.damage.join() === '15' && edge.actor.damage.join() === '60' && far.actor.damage.join() === '30', `basic save on the same 30: half, double, full (got ${near.actor.damage}, ${edge.actor.damage}, ${far.actor.damage})`);
+  assert(!near.actor.created.some((d) => d.system?.slug === PRIMED), 'the burst does not prime');
+
+  const g = field();
+  const p2 = g.place('Primary', 0, -1, true), n2 = g.place('Near', 100), e2 = g.place('Edge', 200);
+  await save('me-biotic-throw', 'failure', p2.actor, { caster: adeptAt(16, { items: [{ type: 'feat', slug: 'me-adept-biotic-cascade' }] }), origin: 'Item.burst-cascade' });
+  assert(n2.actor.damage.join() === '36' && g.rolls.map((r) => r.name).join() === 'Edge', `Biotic Cascade: the nearest enemy takes the full 6d6 = 36 with no save; the rest roll (got ${n2.actor.damage}; ${g.rolls.map((r) => r.name)})`);
+
+  // Shockwave over two Primed creatures standing together: each takes explosion damage once
+  const h = field();
+  const a = h.place('A', 0, -1, true), b = h.place('B', 100, -1, true), c = h.place('C', 200);
+  const shock = adeptAt(8);
+  await save('me-biotic-shockwave', 'failure', a.actor, { caster: shock, origin: 'Item.burst-shock' });
+  await save('me-biotic-shockwave', 'failure', b.actor, { caster: shock, origin: 'Item.burst-shock' });
+  assert(a.actor.damage.join() === '36,24' && b.actor.damage.join() === '36', `A takes its explosion; B, already in A's burst, is not hit again directly (got ${a.actor.damage}; ${b.actor.damage})`);
+  assert(h.rolls.map((r) => r.name).join() === 'B,C' && a.effect.deleted && b.effect.deleted, `B and C each roll one burst save, A none; both primings are spent (got ${h.rolls.map((r) => r.name)})`);
+
+  const lone = new Actor('Lone'); prime(lone);
+  await save('me-biotic-throw', 'failure', lone, { caster: adeptAt(8), origin: 'Item.burst-none' });
+  assert(posted.some((m) => m.content.includes('no token on the scene: resolve the 10-foot burst by hand')), 'with no token on the scene the burst is left to the GM');
+}
+
+console.log('Biotic cooldowns: every power gets one; Adept Mastery shortens it, never below 2');
+{
+  const { bioticCooldownRounds } = ctx.MassEffectPowers;
+  const rounds = (bioticRecharge, bioticCooldownCut) => bioticCooldownRounds(new Actor('X', { flags: { bioticRecharge, bioticCooldownCut } }));
+  assert([0, 1, 2, 3].map((r) => rounds(r, 0)).join() === '4,3,2,1', 'no mastery: 4 rounds less the amp\'s Recharge');
+  assert([0, 1, 2, 3].map((r) => rounds(r, 1)).join() === '3,2,2,1', 'Adept Mastery: one round less, but only an amp reaches 1');
+
+  const useHook = hooks.on.createChatMessage[1];
+  const use = async (actor, slug, name) => {
+    uuids['Item.cd'] = { slug, name, img: 'warp.webp', actor };
+    posted.length = 0;
+    await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.cd' } } } });
+  };
+  const adept = new Actor('Adept', { type: 'character', flags: { bioticRecharge: 1, bioticCooldownCut: 1 } });
+  await use(adept, 'me-biotic-warp', 'Warp');
+  const cd = adept.created.find((d) => d.system?.slug === 'me-effect-cooldown-me-biotic-warp');
+  assert(cd?.name === 'Warp Cooldown' && cd.system.duration.value === 2 && cd.system.duration.expiry === 'turn-start', `using Warp starts a 2-round Warp Cooldown (got ${cd?.system.duration.value})`);
+  adept.itemTypes.effect.push({ slug: cd.system.slug, remainingDuration: { remaining: 12 } });
+  await use(adept, 'me-biotic-warp', 'Warp');
+  assert(adept.created.filter((d) => d.system?.slug === cd.system.slug).length === 1 && posted.some((m) => m.content.includes('still cooling down (2 rounds left)')), 'used again too soon: no second effect, and the card says how long is left');
+  await use(adept, 'me-biotic-throw', 'Throw');
+  assert(adept.created.some((d) => d.system?.slug === 'me-effect-cooldown-me-biotic-throw'), 'each power has its own cooldown');
+  const npc = new Actor('Commando');
+  await use(npc, 'me-npc-biotic-warp', 'Warp (NPC)');
+  assert(npc.created.length === 0, 'NPCs keep their Recharge roll: no cooldown effect');
+}
+
+console.log('Biotic cooldowns: with Recharge 3, only the first power each turn cools down in 1 round');
+{
+  const useHook = hooks.on.createChatMessage[1];
+  const use = async (actor, slug, name) => {
+    uuids['Item.cd3'] = { slug, name, img: 'p.webp', actor };
+    posted.length = 0;
+    await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.cd3' } } } });
+    const made = actor.created.filter((d) => d.system?.slug === 'me-effect-cooldown-' + slug).at(-1);
+    if (made) actor.itemTypes.effect.push({ slug: made.system.slug, flags: made.flags ?? {}, remainingDuration: { remaining: made.system.duration.value * 6 } });
+    return made;
+  };
+  const adept = new Actor('Adept 15', { type: 'character', flags: { bioticRecharge: 3, bioticCooldownCut: 1 } });
+  const warp = await use(adept, 'me-biotic-warp', 'Warp');
+  assert(warp?.system.duration.value === 1 && warp.flags?.[MOD]?.firstBioticPower === true && warp.system.description.value.includes('the first biotic power this turn'),
+    `the first power of the turn: 1 round, and marked (got ${warp?.system.duration.value})`);
+  const slam = await use(adept, 'me-biotic-slam', 'Slam'), throwCd = await use(adept, 'me-biotic-throw', 'Throw');
+  assert(slam?.system.duration.value === 2 && !slam.flags?.[MOD]?.firstBioticPower && throwCd?.system.duration.value === 2 && slam.system.description.value.includes('only the first biotic power each turn'),
+    `the second and third that turn: 2 rounds each, and the effect says why (got ${slam?.system.duration.value}, ${throwCd?.system.duration.value})`);
+  // next turn: the 1-round effect has ended (or is marked expired); the 2-round ones are still there
+  const mark = adept.itemTypes.effect.find((e) => e.flags?.[MOD]?.firstBioticPower);
+  mark.isExpired = true; mark.slug = 'gone';
+  const reave = await use(adept, 'me-biotic-reave', 'Reave');
+  assert(reave?.system.duration.value === 1 && reave.flags?.[MOD]?.firstBioticPower === true, 'on the next turn the first power is 1 round again');
+
+  const two = new Actor('Adept 13', { type: 'character', flags: { bioticRecharge: 2 } });
+  const a = await use(two, 'me-biotic-warp', 'Warp'), b = await use(two, 'me-biotic-slam', 'Slam');
+  assert(a?.system.duration.value === 2 && b?.system.duration.value === 2 && !a.flags?.[MOD]?.firstBioticPower && a.system.description.value.includes('minimum 1'), 'Recharge 2: every power 2 rounds, nothing marked');
+  assert(ctx.MassEffectPowers.bioticCooldownRounds(adept) === 1, 'Nova\'s own cooldown is still 1 round with Recharge 3, whatever else was used');
+}
+
+console.log('Tech cooldowns: 7 rounds less Intelligence; Tech Mastery and the class masteries never below 2');
+const withInt = (actor, mod) => { actor.system.abilities = { int: { mod } }; return actor; };
+{
+  const { techCooldownRounds } = ctx.MassEffectPowers;
+  const rounds = (int, flags) => techCooldownRounds(withInt(new Actor('X', { flags }), int));
+  assert([0, 4, 5, 6, 7].map((i) => rounds(i, {})).join() === '7,3,2,1,1', 'no feats: 7 less the Intelligence modifier, minimum 1');
+  assert(rounds(3, { techMasteryCooldownCut: 1 }) === 3 && rounds(3, { techMasteryCooldownCut: 2 }) === 2 && rounds(4, { techMasteryCooldownCut: 2 }) === 2 && rounds(5, { techMasteryCooldownCut: 2 }) === 2,
+    'Tech Mastery takes 1 or 2 rounds off, but only to 2');
+  assert(rounds(6, { techMasteryCooldownCut: 2 }) === 1, 'Intelligence +6 still reaches 1 round by itself');
+  assert([4, 5, 6].map((i) => rounds(i, { techCooldownCut: 1 })).join() === '2,2,1', 'Engineer Mastery takes a round off, but only to 2');
+  assert(rounds(4, { techCooldownCut: 1, techMasteryCooldownCut: 2 }) === 2 && rounds(2, { techCooldownCut: 1, techMasteryCooldownCut: 2 }) === 2 && rounds(1, { techCooldownCut: 1, techMasteryCooldownCut: 2 }) === 3,
+    'the two together take up to 3 rounds off, and still stop at 2');
+
+  const useHook = hooks.on.createChatMessage[1];
+  const engineer = withInt(new Actor('Engineer', { type: 'character', flags: { techCooldownCut: 1 } }), 4);
+  uuids['Item.tech-cd'] = { slug: 'me-tech-overload', name: 'Overload', img: 'o.webp', actor: engineer };
+  await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.tech-cd' } } } });
+  const cd = engineer.created.find((d) => d.system?.slug === 'me-effect-cooldown-me-tech-overload');
+  assert(cd?.system.duration.value === 2 && cd.system.description.value.includes('less 4 for Intelligence'), `using Overload starts a 2-round cooldown and says why (got ${cd?.system.duration.value})`);
+}
+
+console.log('Sentinel: tech cooldowns on the better of Intelligence and Charisma; using Tech Armor raises it');
+{
+  const { techCooldownRounds } = ctx.MassEffectPowers;
+  const sentinel = (int, cha, flags = { techCooldownAlt: 'cha' }) => { const a = new Actor('Sentinel', { type: 'character', flags }); a.system.abilities = { int: { mod: int }, cha: { mod: cha } }; return a; };
+  assert(techCooldownRounds(sentinel(1, 4)) === 3 && techCooldownRounds(sentinel(4, 1)) === 3, 'Sentinel Mastery: 7 less the higher of the two');
+  assert(techCooldownRounds(sentinel(1, 4, {})) === 6, 'without it, Charisma does not count');
+
+  const useHook = hooks.on.createChatMessage[1];
+  const s = sentinel(1, 4);
+  uuids['Compendium.' + MOD + '.me-tech-powers.Item.meEffTechArmor00'] = { toObject: () => ({ name: 'Tech Armor', type: 'effect', system: { slug: 'me-effect-tech-armor' } }) };
+  uuids['Item.tech-armor'] = { slug: 'me-tech-armor', name: 'Tech Armor', img: 'a.webp', actor: s };
+  const use = () => useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.tech-armor' } } } });
+  const armors = () => s.created.filter((d) => d.system?.slug === 'me-effect-tech-armor').length;
+  await use();
+  const cd = s.created.find((d) => d.system?.slug === 'me-effect-cooldown-me-tech-armor');
+  assert(armors() === 1 && cd?.system.duration.value === 3 && cd.system.description.value.includes('less 4 for Charisma'), `using Tech Armor adds its effect and a 3-round cooldown on Charisma (got ${cd?.system.duration.value})`);
+  s.itemTypes.effect.push({ slug: 'me-effect-cooldown-me-tech-armor', remainingDuration: { remaining: 12 } });
+  await use();
+  assert(armors() === 1, 'used again during the cooldown: no second effect');
+  s.itemTypes.effect = [{ slug: 'me-effect-tech-armor' }];
+  await use();
+  assert(armors() === 1, 'already up: not added twice');
+}
+
+console.log('Improved Engineer Mastery: a damaging tech power shortens the longest tech cooldown, once a round');
+{
+  const cooldown = (actor, slug, name, left) => {
+    const e = { type: 'effect', slug: `me-effect-cooldown-${slug}`, name: `${name} Cooldown`, remainingDuration: { remaining: left * 6 }, system: { duration: { value: left } }, deleted: false };
+    e.update = async (d) => { e.system.duration.value = d['system.duration.value']; e.remainingDuration.remaining = e.system.duration.value * 6; };
+    e.delete = async () => { e.deleted = true; actor.itemTypes.effect = actor.itemTypes.effect.filter((x) => x !== e); };
+    actor.itemTypes.effect.push(e);
+    return e;
+  };
+  const engineer = new Actor('Engineer', { type: 'character', items: [{ type: 'feat', slug: 'me-engineer-mastery-improved' }] });
+  const incinerate = cooldown(engineer, 'me-tech-incinerate', 'Incinerate', 3), cryo = cooldown(engineer, 'me-tech-cryo-blast', 'Cryo Blast', 1);
+  cooldown(engineer, 'me-biotic-warp', 'Warp', 4);
+  const m1 = await save('me-tech-overload', 'failure', new Actor('T1'), { caster: engineer, origin: 'Item.iem1' });
+  assert(incinerate.system.duration.value === 2 && m1.includes('Incinerate\'s cooldown is 1 round shorter (2 left)'), `the longest tech cooldown loses a round; a biotic one is left alone (got ${incinerate.system.duration.value})`);
+  const m2 = await save('me-tech-overload', 'failure', new Actor('T2'), { caster: engineer, origin: 'Item.iem2' });
+  assert(incinerate.system.duration.value === 2 && !m2.includes('Improved Engineer Mastery'), 'only once a round');
+  const m3 = await save('me-tech-overload', 'criticalSuccess', new Actor('T3'), { caster: new Actor('Other', { type: 'character', items: [{ type: 'feat', slug: 'me-engineer-mastery-improved' }] }), origin: 'Item.iem3' });
+  assert(!m3.includes('Improved Engineer Mastery'), 'no damage, no cut');
+  const last = new Actor('Engineer 2', { type: 'character', items: [{ type: 'feat', slug: 'me-engineer-mastery-improved' }] });
+  const ending = cooldown(last, 'me-tech-cryo-blast', 'Cryo Blast', 1);
+  const m4 = await save('me-tech-overload', 'failure', new Actor('T4'), { caster: last, origin: 'Item.iem4' });
+  assert(ending.deleted && m4.includes('Cryo Blast is ready again') && !cryo.deleted, 'a cooldown with one round left ends');
+}
+
+console.log('Engineer drone and turret: numbers from the Engineer; a token beside them');
+{
+  const { petStats, openSpaceBeside } = ctx.MassEffectPowers;
+  const eng = (level, dc, slugs = []) => { const a = new Actor('Engineer', { type: 'character', items: slugs.map((slug) => ({ type: 'feat', slug })) }); a.level = level; a.system.attributes.classDC = { value: dc }; return a; };
+  const d1 = petStats(eng(1, 18), 'drone'), t1 = petStats(eng(1, 18), 'turret');
+  assert(d1.attack === 8 && d1.damage === '1d6' && d1.ac === 15 && d1.hp === 20 && d1.strikes === 1 && d1.limit === 1, `a 1st-level drone: +8, 1d6, AC 15, 20 HP (got ${JSON.stringify(d1)})`);
+  assert(t1.attack === 8 && t1.damage === '1d8+2' && t1.ac === 14 && t1.hp === 30, `a 1st-level turret: +8, 1d8+2, AC 14, 30 HP (got ${JSON.stringify(t1)})`);
+  const d10 = petStats(eng(10, 32, ['me-engineer-mastery-improved', 'me-upgrade-combat-drone']), 'drone');
+  assert(d10.attack === 22 && d10.damage === '3d6' && d10.ac === 29 && d10.hp === 95 && d10.strikes === 2, `10th with the mastery and the upgrade: +22, 3d6, AC 29, 95 HP, two Strikes (got ${JSON.stringify(d10)})`);
+  const t20 = petStats(eng(20, 48), 'turret'), d14 = petStats(eng(14, 37, ['me-engineer-drone-commander']), 'drone');
+  assert(t20.attack === 38 && t20.damage === '6d8+12' && t20.ac === 44 && t20.hp === 182 && d14.limit === 2, `a 20th-level turret: +38, 6d8+12, AC 44, 182 HP; Drone Commander allows two drones (got ${JSON.stringify(t20)})`);
+
+  const grid = { size: 100, distance: 5 };
+  const scene = { grid, tokens: [] };
+  let made = 0;
+  scene.createEmbeddedDocuments = async (_, docs) => { for (const d of docs) scene.tokens.push({ ...d, id: `tok${++made}`, width: 1, height: 1, parent: scene }); };
+  scene.deleteEmbeddedDocuments = async (_, ids) => { scene.tokens = scene.tokens.filter((t) => !ids.includes(t.id)); };
+  const engineer = eng(10, 32, ['me-engineer-mastery-improved']);
+  Object.assign(engineer, { id: 'eng1', alliance: 'party', ownership: { default: 0, player1: 3 } });
+  const engToken = { id: 'engTok', x: 1000, y: 1000, width: 1, height: 1, parent: scene, actor: engineer, disposition: 1 };
+  scene.tokens.push(engToken, { id: 'wall', x: 900, y: 900, width: 1, height: 1, parent: scene });
+  engineer.getActiveTokens = () => [engToken];
+  const space = openSpaceBeside(engToken);
+  assert(space.x === 1000 && space.y === 900, `the first open space around the Engineer, skipping a taken one (got ${JSON.stringify(space)})`);
+
+  // what deployPet needs from Foundry
+  ctx.game.users.activeGM = { isSelf: true };
+  ctx.game.scenes = { get: () => undefined };
+  ctx.game.actors = [];
+  ctx.foundry.utils.deepClone = (x) => JSON.parse(JSON.stringify(x ?? {}));
+  let pets = 0;
+  Actor.create = async (data) => {
+    const a = new Actor(data.name); a.id = `pet${++pets}`; a.flags = data.flags; a.updates = [];
+    const strike = { type: 'melee', system: { bonus: { value: 8 }, damageRolls: { 0: { damage: '1d6', damageType: 'electricity' } } }, updates: [] };
+    strike.update = async (d) => strike.updates.push(d);
+    a.items = [strike];
+    a.update = async (d) => a.updates.push(d);
+    a.getTokenDocument = async (pos) => ({ toObject: () => ({ ...pos, name: a.name, actorId: a.id }) });
+    ctx.game.actors.push(a);
+    return a;
+  };
+  uuids['Compendium.' + MOD + '.me-creatures.Actor.meEngCombatDrone'] = { toObject: () => ({ _id: 'meEngCombatDrone', name: 'Combat Drone', flags: {} }) };
+  uuids['Item.pet-drone'] = { slug: 'me-tech-combat-drone', name: 'Combat Drone', img: 'd.webp', actor: engineer };
+  const message = { author: { id: 'gm' }, speaker: {}, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.pet-drone' } } } };
+  const useHook = hooks.on.createChatMessage[1], petHook = hooks.on.createChatMessage[2];
+  const droneTokens = () => scene.tokens.filter((t) => t.actorId === 'pet1');
+  const cooldowns = () => engineer.created.filter((d) => d.system?.slug === 'me-effect-cooldown-me-tech-combat-drone').length;
+
+  await useHook(message);
+  assert(cooldowns() === 0, 'with a GM online, the player\'s client leaves the drone\'s cooldown to the GM\'s');
+  posted.length = 0;
+  await petHook(message);
+  const pet = ctx.game.actors[0];
+  assert(pet?.name === 'Engineer\'s Combat Drone' && pet.flags[MOD].pet.owner === 'eng1' && cooldowns() === 1, 'the Engineer gets a drone actor of their own, and the cooldown starts');
+  const u = pet.updates[0];
+  assert(u['system.attributes.ac.value'] === 29 && u['system.attributes.hp.max'] === 85 && u['system.details.level.value'] === 10 && u['system.details.alliance'] === 'party' && u.ownership.player1 === 3,
+    `its sheet takes the Engineer's numbers and owners: AC 29, 85 HP, level 10 (got ${u['system.attributes.ac.value']}, ${u['system.attributes.hp.max']})`);
+  assert(pet.updates[1]['system.attributes.hp.value'] === 85, 'and it arrives at full HP, set after the new maximum');
+  assert(pet.items[0].updates[0]['system.bonus.value'] === 22 && pet.items[0].updates[0]['system.damageRolls.0.damage'] === '3d6', 'its Strike is +22 for 3d6');
+  assert(droneTokens().length === 1 && droneTokens()[0].x === 1000 && droneTokens()[0].y === 900 && droneTokens()[0].actorLink === false && droneTokens()[0].disposition === 1, 'an unlinked token goes into the open space beside the Engineer, on their side');
+  assert(posted.some((m) => m.content.includes('Attack +22, 3d6 electricity; AC 29, 85 HP')), 'the card gives its numbers');
+
+  engineer.itemTypes.effect.push({ slug: 'me-effect-cooldown-me-tech-combat-drone', remainingDuration: { remaining: 12 } });
+  posted.length = 0;
+  await petHook(message);
+  assert(droneTokens().length === 1 && ctx.game.actors.length === 1 && posted.some((m) => m.content.includes('Nothing was deployed')), 'used again during its cooldown: nothing is deployed');
+
+  engineer.itemTypes.effect = [];
+  const first = droneTokens()[0].id;
+  await petHook(message);
+  assert(droneTokens().length === 1 && droneTokens()[0].id !== first && ctx.game.actors.length === 1, 'deployed again: the same actor, and the new drone replaces the old one');
+
+  engineer.items.push({ type: 'feat', slug: 'me-engineer-drone-commander' });
+  await petHook(message);
+  const pair = droneTokens().map((t) => t.id);
+  await petHook(message);
+  assert(pair.length === 2 && droneTokens().length === 2 && !droneTokens().some((t) => t.id === pair[0]) && droneTokens().some((t) => t.id === pair[1]), 'Drone Commander: two drones out; a third replaces the oldest');
+
+  delete ctx.game.users.activeGM;
+  const solo = eng(1, 18);
+  uuids['Item.pet-solo'] = { slug: 'me-tech-sentry-turret', name: 'Sentry Turret', img: 't.webp', actor: solo };
+  await useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.pet-solo' } } } });
+  assert(solo.created.some((d) => d.system?.slug === 'me-effect-cooldown-me-tech-sentry-turret'), 'with no GM online, the player\'s client still starts the cooldown');
+}
+
 console.log('Level brackets in rules leave the migration to the system');
 {
   // A rule value written as level brackets must reach the system unstamped: the system's own
@@ -598,6 +1011,192 @@ console.log('Level brackets in rules leave the migration to the system');
   };
   walk(root);
   assert(stamped.length === 0, `no bracketed item carries a _migration stamp${stamped.length ? `: ${stamped.join(', ')}` : ''}`);
+}
+
+console.log('Infiltrator: Tactical Cloak goes up on use, comes off after its Strikes, and leaves a wake');
+{
+  const { techCooldownRounds, cloakStrikes } = ctx.MassEffectPowers;
+  const infiltrator = (int, slugs = []) => {
+    const a = new Actor('Infiltrator', { type: 'character', flags: { techCooldownCut: 1 }, items: ['me-infiltrator-mastery', ...slugs].map((slug) => ({ type: 'feat', slug })) });
+    a.system.abilities = { int: { mod: int } };
+    return a;
+  };
+  assert(techCooldownRounds(infiltrator(4)) === 2 && techCooldownRounds(infiltrator(5)) === 2 && techCooldownRounds(infiltrator(6)) === 1,
+    'Infiltrator Mastery: 1 round off tech cooldowns, never below 2; Intelligence 6 still reaches 1');
+  assert(cloakStrikes(infiltrator(4)) === 1 && cloakStrikes(infiltrator(4, ['me-upgrade-tactical-cloak'])) === 2, 'the cloak lasts one Strike, two with Tactical Cloak Upgrade');
+
+  const useHook = hooks.on.createChatMessage[1], strikeHook = hooks.on.createChatMessage[5];
+  assert(hooks.on.createChatMessage.length === 7, 'the Strike hook is the sixth chat hook of seven');
+  uuids['Compendium.' + MOD + '.me-tech-powers.Item.meEffTactCloak00'] = { toObject: () => ({ name: 'Tactical Cloak', type: 'effect', img: 'c.webp', flags: {}, system: { slug: 'me-effect-tactical-cloak' } }) };
+  const post = (actor, slug, name) => { uuids['Item.' + slug] = { slug, name, img: 'f.webp', actor }; return useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.' + slug } } } }); };
+  const made = (actor, slug) => actor.created.filter((d) => d.system?.slug === slug);
+
+  // using it
+  const a = infiltrator(4);
+  await post(a, 'me-tech-tactical-cloak', 'Tactical Cloak');
+  const cd = made(a, 'me-effect-cooldown-me-tech-tactical-cloak')[0], up = made(a, 'me-effect-tactical-cloak')[0];
+  assert(up?.flags[MOD].cloakStrikes === 0 && cd?.system.duration.value === 2 && cd.system.description.value.includes('from Infiltrator Mastery'),
+    `using Tactical Cloak adds its effect and a 2-round cooldown (got ${cd?.system.duration.value})`);
+  a.itemTypes.effect.push({ slug: 'me-effect-cooldown-me-tech-tactical-cloak', remainingDuration: { remaining: 12 } });
+  await post(a, 'me-tech-tactical-cloak', 'Tactical Cloak');
+  assert(made(a, 'me-effect-tactical-cloak').length === 1, 'used again during the cooldown: no second cloak');
+  posted.length = 0;
+  await post(a, 'me-infiltrator-phantom-protocol', 'Phantom Protocol');
+  assert(made(a, 'me-effect-tactical-cloak').length === 2 && posted.some((m) => m.content.includes('Tactical Cloak is back up')), 'Phantom Protocol sent to chat brings the cloak back during the cooldown');
+
+  // Strikes under the cloak
+  const cloaked = (actor) => {
+    const e = { type: 'effect', slug: 'me-effect-tactical-cloak', img: 'c.webp', flags: { [MOD]: { cloakStrikes: 0 } }, deleted: false };
+    e.update = async (d) => { e.flags[MOD].cloakStrikes = d[`flags.${MOD}.cloakStrikes`]; };
+    e.delete = async () => { e.deleted = true; actor.itemTypes.effect = actor.itemTypes.effect.filter((x) => x !== e); };
+    actor.itemTypes.effect.push(e);
+    return e;
+  };
+  const roll = (actor, type, extra = {}, author = 'gm') => strikeHook({ author: { id: author }, speaker: { actor }, flags: { pf2e: { context: { type, domains: [type === 'attack-roll' ? 'strike-attack-roll' : 'strike-damage'], ...extra } } } });
+
+  const b = infiltrator(4); let c = cloaked(b);
+  await roll(b, 'attack-roll', { outcome: 'success' });
+  assert(!c.deleted && c.flags[MOD].cloakStrikes === 0, 'a hit does not end the cloak until its damage is rolled');
+  await roll(b, 'attack-roll', { outcome: 'failure', domains: ['spell-attack-roll'] });
+  await roll(b, 'damage-roll', {}, 'someone-else');
+  assert(!c.deleted, 'an attack roll that is not a Strike, or another user\'s message, is ignored');
+  await roll(b, 'damage-roll');
+  assert(c.deleted && !made(b, 'me-effect-cloak-wake').length, 'rolling the damage ends the cloak; no wake without Ghost Protocol or the superior mastery');
+  c = cloaked(b);
+  await roll(b, 'attack-roll', { outcome: 'criticalFailure' });
+  assert(c.deleted, 'a miss ends the cloak when it is rolled');
+
+  const u = infiltrator(5, ['me-upgrade-tactical-cloak']); c = cloaked(u);
+  await roll(u, 'damage-roll');
+  assert(!c.deleted && c.flags[MOD].cloakStrikes === 1, 'Tactical Cloak Upgrade: the first Strike is counted and the cloak stays');
+  await roll(u, 'attack-roll', { outcome: 'failure' });
+  assert(c.deleted, 'and the second Strike ends it');
+
+  // the wake
+  const conditions = ctx.game.pf2e.ConditionManager.getCondition;
+  ctx.game.pf2e.ConditionManager.getCondition = (slug) => ({ sourceId: 'Compendium.pf2e.conditionitems.Item.' + slug });
+  const g = infiltrator(5, ['me-infiltrator-ghost-protocol', 'me-infiltrator-mastery-superior']); c = cloaked(g);
+  const old = { slug: 'me-effect-cloak-wake', deleted: false, delete: async () => { old.deleted = true; } }; g.itemTypes.effect.push(old);
+  posted.length = 0;
+  await roll(g, 'damage-roll');
+  const wake = made(g, 'me-effect-cloak-wake')[0];
+  assert(c.deleted && old.deleted && wake?.system.duration.expiry === 'turn-start' && wake.system.duration.value === 1
+    && wake.system.rules.some((r) => r.key === 'RollOption' && r.option === 'me-cloak-wake')
+    && wake.system.rules.some((r) => r.key === 'GrantItem' && r.uuid.endsWith('.concealed') && r.inMemoryOnly),
+    'Ghost Protocol and the superior mastery: a wake until the next turn, with concealment, replaces the cloak');
+  assert(posted[0]?.content.includes('Ghost Protocol: concealed') && posted[0].content.includes('resistance 5'), 'and a card says what the wake gives');
+  ctx.game.pf2e.ConditionManager.getCondition = conditions;
+
+  // Apex Infiltrator
+  const x = infiltrator(6, ['me-infiltrator-apex-infiltrator', 'me-upgrade-tactical-cloak']); c = cloaked(x);
+  await roll(x, 'attack-roll', { outcome: 'criticalSuccess' });
+  const used = made(x, 'me-effect-apex-infiltrator-used');
+  assert(used.length === 1 && used[0].system.rules[0].option === 'me-apex-used' && used[0].system.duration.expiry === 'turn-start', 'Apex Infiltrator: the first cloaked attack roll marks the automatic critical hit as used until the next turn');
+  x.itemTypes.effect.push({ slug: 'me-effect-apex-infiltrator-used' });
+  await roll(x, 'attack-roll', { outcome: 'success' });
+  assert(made(x, 'me-effect-apex-infiltrator-used').length === 1, 'and it is marked only once a turn');
+}
+
+console.log('Infiltrator: Hunter\'s Mark marks the one targeted creature');
+{
+  const useHook = hooks.on.createChatMessage[1];
+  const h = new Actor('Marksman', { type: 'character', items: [{ type: 'feat', slug: 'me-infiltrator-hunters-mark' }] });
+  uuids['Item.hm'] = { slug: 'me-infiltrator-hunters-mark', name: 'Hunter\'s Mark', img: 'h.webp', actor: h };
+  const use = () => useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.hm' } } } });
+  const marks = () => h.created.filter((d) => d.system?.slug === 'me-effect-hunters-mark');
+  ctx.game.user.targets = new Set();
+  posted.length = 0;
+  await use();
+  assert(!marks().length && posted.some((m) => m.content.includes('Target exactly one creature')), 'with no target it marks nothing and says why');
+  ctx.game.user.targets = new Set([{ document: { name: 'Husk', uuid: 'Scene.s.Token.husk' } }]);
+  const old = { slug: 'me-effect-hunters-mark', deleted: false, delete: async () => { old.deleted = true; } }; h.itemTypes.effect.push(old);
+  await use();
+  const mark = marks()[0];
+  assert(old.deleted && mark?.name === 'Hunter\'s Mark: Husk' && mark.system.rules[0].key === 'TokenMark' && mark.system.rules[0].slug === 'hunters-mark' && mark.system.rules[0].uuid === 'Scene.s.Token.husk',
+    'with one target it replaces the old mark with one on that token');
+  delete ctx.game.user.targets;
+}
+
+console.log('Soldier: cooldowns for its own powers, cut by Improved Soldier Mastery');
+{
+  const { soldierCooldownRounds } = ctx.MassEffectPowers;
+  const soldier = ({ con = 4, str = 2, cha = 0, key = 'con', cut = 0, level = 1, slugs = [] } = {}) => {
+    const a = new Actor('Soldier', { type: 'character', flags: cut ? { soldierCooldownCut: cut } : {}, items: slugs.map((slug) => ({ type: 'feat', slug })) });
+    a.system.abilities = { con: { mod: con }, str: { mod: str }, cha: { mod: cha } }; a.system.details = { keyability: { value: key } }; a.level = level;
+    return a;
+  };
+  assert(soldierCooldownRounds(soldier(), 'me-cp-adrenaline-rush') === 3 && soldierCooldownRounds(soldier({ cut: 1 }), 'me-cp-adrenaline-rush') === 2
+    && soldierCooldownRounds(soldier({ con: 6, cut: 1 }), 'me-cp-adrenaline-rush') === 1, 'Adrenaline Rush: 7 less Constitution; the mastery takes a round off, never below 2');
+  assert(soldierCooldownRounds(soldier({ con: 2, str: 4 }), 'me-cp-concussive-shot-master') === 3 && soldierCooldownRounds(soldier({ con: 2, str: 4 }), 'me-soldier-carnage') === 3,
+    'Concussive Shot and Carnage: the higher of Constitution and Strength');
+  assert(soldierCooldownRounds(soldier({ con: 1, cha: 4, key: 'cha' }), 'me-cp-fortification') === 3, 'Fortification: the higher of Constitution and the key attribute');
+  assert(soldierCooldownRounds(soldier(), 'me-frag-grenade') === 3 && soldierCooldownRounds(soldier({ cut: 1 }), 'me-frag-grenade') === 2, 'Frag Grenade: 3 rounds, 2 with the mastery');
+
+  const useHook = hooks.on.createChatMessage[1], strikeHook = hooks.on.createChatMessage[5], hitHook = hooks.on.createChatMessage[6];
+  const passive = (id, slug) => { uuids['Compendium.' + MOD + '.me-combat-passives.Item.' + id] = { toObject: () => ({ name: slug, type: 'effect', system: { slug } }) }; };
+  passive('meEffAdrenaline0', 'me-effect-adrenaline-rush'); passive('meEffAdrenalinIm', 'me-effect-adrenaline-rush-improved'); passive('meEffAdrnalMastr', 'me-effect-adrenaline-rush-master'); passive('meEffFortifictnM', 'me-effect-fortification-master');
+  const post = (actor, slug, name) => { uuids['Item.' + slug] = { slug, name, img: 'f.webp', actor }; return useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.' + slug } } } }); };
+  const made = (actor, slug) => actor.created.filter((d) => d.system?.slug === slug);
+  const cooling = (actor, group, rounds) => actor.itemTypes.effect.push({ slug: 'me-effect-cooldown-' + group, remainingDuration: { remaining: rounds * 6 } });
+
+  const a = soldier({ cut: 1 });
+  await post(a, 'me-cp-adrenaline-rush', 'Adrenaline Rush');
+  const cd = made(a, 'me-effect-cooldown-adrenaline-rush')[0];
+  assert(made(a, 'me-effect-adrenaline-rush').length === 1 && cd?.system.duration.value === 2 && cd.system.description.value.includes('less 4 for Constitution') && cd.system.description.value.includes('Improved Soldier Mastery'),
+    `using Adrenaline Rush adds its effect and a 2-round cooldown (got ${cd?.system.duration.value})`);
+  cooling(a, 'adrenaline-rush', 2);
+  await post(a, 'me-cp-adrenaline-rush', 'Adrenaline Rush');
+  assert(made(a, 'me-effect-adrenaline-rush').length === 1, 'used again during the cooldown: no second effect');
+  await post(a, 'me-cp-adrenaline-rush-improved', 'Improved Adrenaline Rush');
+  assert(made(a, 'me-effect-adrenaline-rush-improved').length === 1 && made(a, 'me-effect-cooldown-adrenaline-reaction').length === 1, 'the reaction has its own cooldown, apart from Adrenaline Rush');
+  cooling(a, 'adrenaline-reaction', 2);
+  await post(a, 'me-cp-adrenaline-rush-master', 'Master Adrenaline Rush');
+  assert(!made(a, 'me-effect-adrenaline-rush-master').length, 'Improved and Master Adrenaline Rush share that cooldown');
+  await post(a, 'me-cp-fortification-master', 'Master Fortification');
+  assert(made(a, 'me-effect-fortification-master').length === 1 && made(a, 'me-effect-cooldown-fortification')[0]?.system.duration.value === 2, 'Fortification puts its effect on and starts the shared Fortification cooldown');
+
+  // Concussive Shot
+  const c = soldier({ level: 8, slugs: ['me-cp-concussive-volley'] });
+  await post(c, 'me-cp-concussive-shot-improved', 'Improved Concussive Shot');
+  const shot = made(c, 'me-effect-concussive-shot')[0], dice = shot?.system.rules.find((r) => r.key === 'DamageDice');
+  assert(dice?.diceNumber === 6 && dice.dieSize === 'd8' && dice.damageType === 'bludgeoning' && shot.flags[MOD].strikesAllowed === 2 && made(c, 'me-effect-cooldown-concussive-shot').length === 1,
+    `Improved Concussive Shot at 8th: 2d8 x3 = 6d8 on the next Strike, two Strikes with Concussive Volley (got ${dice?.diceNumber}d8)`);
+  const one = soldier({ level: 3 });
+  await post(one, 'me-cp-concussive-shot', 'Concussive Shot');
+  assert(made(one, 'me-effect-concussive-shot')[0]?.system.rules[1].diceNumber === 1 && made(one, 'me-effect-concussive-shot')[0].flags[MOD].strikesAllowed === 1, 'Concussive Shot at 3rd: 1d8, one Strike');
+  const loaded = { type: 'effect', slug: 'me-effect-concussive-shot', flags: { [MOD]: { strikes: 0, strikesAllowed: 1 } }, deleted: false };
+  loaded.delete = async () => { loaded.deleted = true; }; one.itemTypes.effect.push(loaded);
+  await strikeHook({ author: { id: 'gm' }, speaker: { actor: one }, flags: { pf2e: { context: { type: 'attack-roll', domains: ['strike-attack-roll'], outcome: 'success' } } } });
+  assert(!loaded.deleted, 'a hit keeps the Concussive Shot effect until the damage is rolled');
+  await strikeHook({ author: { id: 'gm' }, speaker: { actor: one }, flags: { pf2e: { context: { type: 'damage-roll', domains: ['strike-damage'] } } } });
+  assert(loaded.deleted, 'and rolling the damage takes it off');
+
+  ctx.game.users.activeGM = { isSelf: true };
+  const target = new Actor('Husk'); uuids['Scene.s.Token.husk'] = { actor: target, name: 'Husk' };
+  const hit = (outcome, options = ['me-concussive-shot']) => { posted.length = 0; return hitHook({ speaker: { actor: one }, flags: { pf2e: { context: { type: 'attack-roll', outcome, options, target: { token: 'Scene.s.Token.husk' } } } } }); };
+  await hit('failure'); await hit('success', []);
+  assert(!target.conditions.length, 'a miss, or a Strike without Concussive Shot, knocks no one down');
+  await hit('success');
+  assert(target.conditions.join() === 'prone' && posted[0]?.content.includes('Husk is knocked prone') && !posted[0].content.includes('push'), 'a Concussive Shot that hits knocks the target prone');
+  await hit('criticalSuccess');
+  assert(target.conditions.length === 2 && posted[0]?.content.includes('push it 10 feet by hand'), 'a critical hit also calls for the 10-foot push');
+  delete ctx.game.users.activeGM;
+}
+
+console.log('Soldier: Carnage scales as a power, and turn-bound effects end with the turn');
+{
+  const caster = new Actor('Soldier 12', { type: 'character' }); caster.level = 12;
+  const t = new Actor('Carnage target');
+  await save('me-soldier-carnage', 'failure', t, { caster, origin: 'Item.carnage12' });
+  assert(t.damage[0] === 48, `Carnage on a failure at 12th: 2d6 x4 = 8d6 (got ${t.damage})`);
+
+  ctx.game.users.activeGM = { isSelf: true };
+  const s = new Actor('Rushed', { type: 'character' });
+  const mk = (ends) => { const e = { type: 'effect', flags: { [MOD]: ends ? { endsWithTurn: true } : {} }, deleted: false }; e.delete = async () => { e.deleted = true; }; return e; };
+  const reaction = mk(true), other = mk(false); s.itemTypes.effect.push(reaction, other);
+  await hooks.on['pf2e.endTurn'][0]({ actor: s });
+  assert(reaction.deleted && !other.deleted, 'the Adrenaline Rush reaction\'s effect comes off when its owner\'s turn ends; other effects stay');
+  delete ctx.game.users.activeGM;
 }
 
 console.log('The module scripts load side by side');

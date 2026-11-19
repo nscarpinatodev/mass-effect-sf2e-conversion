@@ -14,7 +14,7 @@
     "slug": "me-adept-biotic-cascade",
     "description": {
       "gm": "",
-      "value": "<p>When you detonate a Biotic Explosion, the shockwave propagates to nearby enemies, punishing tight formations.</p><p>Whenever you trigger a Biotic Explosion, <strong>one adjacent enemy within 10 feet</strong> of the original target also takes the <strong>full explosion damage</strong> (no save). The adjacent enemy must be a different creature than the primary target.</p><p><em>Prerequisite: Biotic Resonance. Classes: Adept.</em></p>"
+      "value": "<p>When you detonate a Biotic Explosion, the shockwave propagates to nearby enemies, punishing tight formations.</p><p>Whenever you trigger a Biotic Explosion, <strong>one other enemy within 10 feet</strong> of the detonated creature takes the <strong>full explosion damage</strong> with no save, instead of rolling one.</p><p><em>Prerequisite: Biotic Resonance. Classes: Adept.</em></p><hr/><p><em>Automation: the nearest other enemy in the burst takes the explosion in full; the rest roll their saves.</em></p>"
     },
     "rules": [],
     "_migration": {

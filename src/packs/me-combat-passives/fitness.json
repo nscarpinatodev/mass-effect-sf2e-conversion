@@ -31,7 +31,14 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "adept",
+        "engineer",
+        "infiltrator",
+        "sentinel",
+        "soldier",
+        "vanguard"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -52,7 +59,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

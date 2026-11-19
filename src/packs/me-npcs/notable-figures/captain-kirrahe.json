@@ -363,9 +363,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-5 Phalanx is a mid-range combat pistol developed for operatives who must engage threats too distant for a standard sidearm. Its integrated laser targeting system reduces aim drift, allowing accurate fire at distances most pistols cannot reliably reach. A favorite of Spectres and special operations personnel who need a one-handed weapon that punches above its weight class.</p>"
+          "value": "<p>The M-5 Phalanx is a mid-range combat pistol developed for operatives who must engage threats too distant for a standard sidearm. Its integrated laser targeting system reduces aim drift, allowing accurate fire at distances most pistols cannot reliably reach. A favorite of Spectres and special operations personnel who need a one-handed weapon that punches above its weight class.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-5-phalanx",
         "_migration": {
           "version": 0.955,

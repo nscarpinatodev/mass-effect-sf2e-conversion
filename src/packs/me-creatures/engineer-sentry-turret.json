@@ -1,0 +1,350 @@
+{
+  "name": "Sentry Turret",
+  "type": "npc",
+  "img": "icons/weapons/guns/gun-blunderbuss-bronze.webp",
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Sentry Turret",
+    "displayName": 20,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/weapons/guns/gun-blunderbuss-bronze.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": true,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {
+      "pf2e": {
+        "linkToActorSize": true,
+        "autoscale": true
+      }
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": "icons/weapons/guns/gun-blunderbuss-bronze.webp"
+      }
+    }
+  },
+  "system": {
+    "slug": "engineer-sentry-turret",
+    "details": {
+      "level": {
+        "value": 1
+      },
+      "publicNotes": "<p>A stationary automated gun fabricated by an Engineer's omni-tool.</p><p><strong>Numbers.</strong> Attack: the Engineer's class DC − 10. Damage: 1d8+2 piercing, with the dice and the bonus multiplied by level as the Engineer's powers are. AC: class DC − 4. HP: 22 + 8 × the Engineer's level. Saves and Perception: class DC − 12.</p><p><strong>In play.</strong> It acts on the Engineer's turn, cannot move, lasts 1 minute and cannot be healed.</p><p><em>This sheet belongs to an Engineer. Its level, attack, damage, AC, HP and saves are set from the Engineer each time the power is used; the numbers here are for a 1st-level Engineer.</em></p>",
+      "privateNotes": "",
+      "publication": {
+        "title": "Mass Effect Compendium",
+        "authors": "nscarpinatodev",
+        "license": "ORC",
+        "remaster": true
+      },
+      "languages": {
+        "value": [],
+        "details": ""
+      },
+      "blurb": "An Engineer's stationary automated turret, deployed with the Sentry Turret power."
+    },
+    "attributes": {
+      "hp": {
+        "value": 30,
+        "max": 30,
+        "temp": 0,
+        "details": "cannot be healed"
+      },
+      "ac": {
+        "value": 14,
+        "details": ""
+      },
+      "speed": {
+        "value": 0,
+        "details": "cannot move"
+      },
+      "immunities": [
+        {
+          "type": "disease"
+        },
+        {
+          "type": "mental"
+        },
+        {
+          "type": "poison"
+        },
+        {
+          "type": "sleep"
+        },
+        {
+          "type": "paralyzed"
+        }
+      ],
+      "resistances": []
+    },
+    "traits": {
+      "value": [
+        "construct",
+        "mindless"
+      ],
+      "size": {
+        "value": "sm"
+      },
+      "rarity": "common"
+    },
+    "abilities": {
+      "str": {
+        "mod": -2
+      },
+      "dex": {
+        "mod": 3
+      },
+      "con": {
+        "mod": 0
+      },
+      "int": {
+        "mod": -4
+      },
+      "wis": {
+        "mod": 0
+      },
+      "cha": {
+        "mod": -5
+      }
+    },
+    "saves": {
+      "fortitude": {
+        "value": 6,
+        "saveDetail": ""
+      },
+      "reflex": {
+        "value": 6,
+        "saveDetail": ""
+      },
+      "will": {
+        "value": 6,
+        "saveDetail": ""
+      }
+    },
+    "skills": {},
+    "_migration": {
+      "version": null,
+      "previous": null
+    },
+    "perception": {
+      "details": "",
+      "mod": 6,
+      "senses": [],
+      "vision": true
+    },
+    "resources": {},
+    "initiative": {
+      "statistic": "perception"
+    }
+  },
+  "items": [
+    {
+      "_id": "meEngTurretStrik",
+      "name": "Turret Gun",
+      "type": "melee",
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "system": {
+        "weaponType": {
+          "value": "ranged"
+        },
+        "slug": "engineer-turret-gun",
+        "bonus": {
+          "value": 8
+        },
+        "damageRolls": {
+          "0": {
+            "damage": "1d8+2",
+            "damageType": "piercing"
+          }
+        },
+        "traits": {
+          "value": [
+            "range-increment-60"
+          ]
+        },
+        "attackEffects": {
+          "value": []
+        },
+        "description": {
+          "value": ""
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        },
+        "rules": [],
+        "publication": {
+          "title": "",
+          "authors": "",
+          "license": "OGL",
+          "remaster": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!meEngSentryTurrt.meEngTurretStrik"
+    },
+    {
+      "_id": "meEngTurretAutom",
+      "name": "Automated Fire",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "system": {
+        "slug": "engineer-turret-automated-fire",
+        "description": {
+          "value": "<p>On each of the Engineer's turns the turret makes <strong>one Turret Gun Strike</strong> at the nearest enemy within 60 feet, without costing the Engineer an action. The Engineer can name a different target as a free action.</p>"
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": []
+        },
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 200000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!meEngSentryTurrt.meEngTurretAutom"
+    },
+    {
+      "_id": "meEngTurretOppor",
+      "name": "Opportunistic Shot",
+      "type": "action",
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "system": {
+        "slug": "engineer-turret-opportunistic-shot",
+        "description": {
+          "value": "<p>If a creature ends its turn within 10 feet of the turret, the turret makes a Turret Gun Strike against it. This does not use up its Automated Fire.</p>"
+        },
+        "rules": [],
+        "traits": {
+          "otherTags": [],
+          "value": []
+        },
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "offensive",
+        "publication": {
+          "title": "Mass Effect Compendium",
+          "authors": "nscarpinatodev",
+          "license": "ORC",
+          "remaster": true
+        },
+        "_migration": {
+          "version": null,
+          "previous": null
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 300000,
+      "flags": {},
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!meEngSentryTurrt.meEngTurretOppor"
+    }
+  ],
+  "_id": "meEngSentryTurrt",
+  "_key": "!actors!meEngSentryTurrt",
+  "effects": []
+}

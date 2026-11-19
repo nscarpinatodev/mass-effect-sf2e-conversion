@@ -1,6 +1,6 @@
 # Mass Effect Compendium
 
-A Foundry VTT module that brings the Mass Effect universe to the **Pathfinder 2e** and **Starfinder 2e** tabletop systems. Play as an Asari Justicar, outfit your squad with Cerberus armor and Geth plasma shotguns, and face down a Thresher Maw — with full rules support for both systems.
+A Foundry VTT module that brings the Mass Effect universe to the **Starfinder 2e** tabletop system. Play as an Asari Justicar, outfit your squad with Cerberus armor and Geth plasma shotguns, and face down a Thresher Maw — with full rules support.
 
 ---
 
@@ -9,10 +9,9 @@ A Foundry VTT module that brings the Mass Effect universe to the **Pathfinder 2e
 | Software | Minimum | Verified |
 |----------|---------|---------|
 | Foundry VTT | v14 | v14 |
-| Pathfinder 2e | 7.0 | 8.1.1 |
 | Starfinder 2e | 1.0 | 1.1.1 |
 
-Both systems are optional — the module works with either one installed.
+The module is built for the Starfinder 2e system. It no longer ships Pathfinder 2e packs: 2.2.0-rc.6 is the last release that has them, and a Pathfinder world should stay on it.
 
 ---
 
@@ -97,7 +96,7 @@ A GM tool for tracking the morality scores of party members across the Paragon (
 - Activatable tier abilities (Inspiring Voice, Beacon of Hope, Noble Sacrifice at Paragon 40/60/80; Ruthless Efficiency, Command Through Fear, Uncompromising at Renegade 40/60/80)
 - Hover perk chips for effect descriptions
 - Score changes are whispered to the GM as chat messages
-- Tier ability uses reset automatically on long rest (PF2e Rest for the Night)
+- Tier ability uses reset automatically on long rest (Rest for the Night)
 - Actors can be ignored (hidden from the tracker) or manually added if not in the party
 - Players can open the tracker to view their own scores (read-only)
 
@@ -125,7 +124,7 @@ A GM tool for tracking the morality scores of party members across the Paragon (
 
 ## Homebrew Traits
 
-The module registers the following homebrew traits for the PF2e system:
+The module registers the following homebrew traits for the system:
 
 **Creature traits:** Asari, Batarian, Drell, Elcor, Hanar, Krogan, Quarian, Salarian, Turian, Volus, Vorcha, Husk, Reaper, Geth, Cerberus, Collector, Mech, Vehicle, Ship, Alliance, Varren, Thresher Maw, Klixen, Aircraft
 

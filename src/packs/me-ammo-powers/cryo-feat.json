@@ -18,7 +18,7 @@
     "slug": "me-feat-cryo",
     "description": {
       "gm": "",
-      "value": "<p>You have been trained in the use of cryo rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Cryogenically-charged rounds that flash-freeze on impact. Your weapon attacks deal an additional <strong>1d4 cold damage</strong>.</p><p>When Cryo Rounds deal direct HP damage, the target becomes <strong>Chilled</strong> (off-guard until the end of their next turn).</p><p>Remove this effect to return to standard ammunition.</p>"
+      "value": "<p>You have been trained in the use of cryo rounds. Using two actions, you can modify your ammunition to gain the following features:</p><p>Cryogenically-charged rounds that flash-freeze on impact. Your ranged Strikes deal an additional <strong>1d4 cold damage</strong>.</p><p>When Cryo Rounds deal direct HP damage, the target becomes <strong>Chilled</strong> (off-guard until the start of your next turn).</p><p>Ammo powers change what a gun fires: they do nothing for a melee Strike.</p><p>Remove this effect to return to standard ammunition.</p>"
     },
     "rules": [],
     "_migration": {

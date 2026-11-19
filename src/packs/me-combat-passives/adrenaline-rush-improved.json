@@ -14,7 +14,7 @@
     "slug": "me-cp-adrenaline-rush-improved",
     "description": {
       "gm": "",
-      "value": "<p><strong>Trigger:</strong> You take damage from a Strike while not Flat-Footed.</p><p>Your body automatically triggers an adrenaline response when threatened. Until the end of your turn, you are <strong>Quickened 1</strong>, gain <strong>+20 feet of Speed</strong>, and gain <strong>+1 to attack rolls</strong>.</p><p><strong>Cooldown:</strong> After using this reaction, you can't use it again for 7 - your Constitution modifier rounds (minimum 1).</p><p><em>Prerequisite: Adrenaline Rush.</em></p>"
+      "value": "<p><strong>Trigger:</strong> You take damage from a Strike while not off-guard.</p><p>Your body answers the hit with an adrenaline surge. On your next turn you are <strong>Quickened</strong> (one extra action to Strike, Stride or reload), with <strong>+20 feet of Speed</strong> and a <strong>+1 status bonus to attack rolls</strong>, until that turn ends. This does not use Adrenaline Rush itself or start its cooldown.</p><p><strong>Cooldown:</strong> After using this reaction, you can't use it again for 7 − your Constitution modifier rounds (minimum 1).</p><p><em>Prerequisite: Adrenaline Rush.</em></p><hr/><p><em>Automation: sending this feat to chat puts the @UUID[Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEffAdrenalinIm]{Improved Adrenaline Rush} effect on you, which comes off when your next turn ends, and starts the reaction's cooldown.</em></p>"
     },
     "rules": [],
     "_migration": {
@@ -52,10 +52,6 @@
       "value": null
     },
     "category": "class",
-    "selfEffect": {
-      "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEffAdrenalinIm",
-      "name": "Improved Adrenaline Rush"
-    },
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

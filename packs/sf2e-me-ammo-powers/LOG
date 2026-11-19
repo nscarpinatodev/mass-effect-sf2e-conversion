@@ -1,5 +1,5 @@
-2026/11/18-08:50:39.504 9970 Delete type=3 #1
-2026/11/18-08:50:39.507 7d98 Level-0 table #5: started
-2026/11/18-08:50:39.515 7d98 Level-0 table #5: 7595 bytes OK
-2026/11/18-08:50:39.519 7d98 Delete type=0 #3
-2026/11/18-08:50:39.519 7d98 Manual compaction at level-0 from '!items!meAmmoAPierceEff' @ 72057594037927935 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at (end)
+2026/11/19-09:38:13.020 5fa0 Delete type=3 #1
+2026/11/19-09:38:13.027 6d84 Level-0 table #5: started
+2026/11/19-09:38:13.034 6d84 Level-0 table #5: 8067 bytes OK
+2026/11/19-09:38:13.039 6d84 Delete type=0 #3
+2026/11/19-09:38:13.039 6d84 Manual compaction at level-0 from '!items!meAmmoAPierceEff' @ 72057594037927935 : 1 .. '!items!meAmmoWarpFeat00' @ 0 : 0; will stop at (end)

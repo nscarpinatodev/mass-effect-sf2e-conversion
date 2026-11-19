@@ -6,22 +6,39 @@
   "img": "systems/pf2e/icons/spells/heal.webp",
   "effects": [],
   "flags": {},
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "system": {
-    "actionType": { "value": "action" },
-    "actions": { "value": 2 },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 2
+    },
     "category": "class",
     "description": {
       "gm": "",
-      "value": "<p>You project a pulse of restorative biotic energy that knits the wounds of all nearby allies simultaneously. Unlike targeted healing, Unity reaches everyone at once — a single expenditure of focus that can turn the tide of a firefight in an instant.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>10 Hit Points</strong>. This healing cannot exceed each creature's maximum HP, and any excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 4 rounds, less your bio-amp's Recharge (minimum 1).</p>"
+      "value": "<p>You project a pulse of restorative biotic energy that knits the wounds of all nearby allies simultaneously. Unlike targeted healing, Unity reaches everyone at once — a single expenditure of focus that can turn the tide of a firefight in an instant.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>10 Hit Points</strong>. This healing cannot exceed each creature's maximum HP, and any excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.</p>"
     },
-    "level": { "value": 1 },
-    "prerequisites": { "value": [] },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
     "rules": [],
     "slug": "unity",
     "traits": {
       "otherTags": [],
-      "value": ["biotic", "healing", "concentrate"],
+      "value": [
+        "adept",
+        "sentinel",
+        "vanguard",
+        "biotic",
+        "healing",
+        "concentrate"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -30,8 +47,16 @@
       "license": "ORC",
       "remaster": true
     },
-    "_migration": { "version": 0.955, "lastMigration": null, "previous": null },
-    "subfeatures": { "proficiencies": {}, "senses": {}, "suppressedFeatures": [] },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
     "onlyLevel1": false,
     "maxTakable": 1,
     "location": null

@@ -409,9 +409,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The Scorpion is a pistol that fires sticky explosive rounds that attach to their target before detonating a moment after impact. Enemies who survive the initial hit are forced to choose between standing still while the charge detonates or moving to let it blow - neither is a good option. The blast radius and concussive force makes it particularly effective against clustered infantry who can't scatter before the detonation chain catches them all.</p>"
+          "value": "<p>The Scorpion is a pistol that fires sticky explosive rounds that attach to their target before detonating a moment after impact. Enemies who survive the initial hit are forced to choose between standing still while the charge detonates or moving to let it blow - neither is a good option. The blast radius and concussive force makes it particularly effective against clustered infantry who can't scatter before the detonation chain catches them all.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "scorpion",
         "_migration": {
           "version": 0.955,

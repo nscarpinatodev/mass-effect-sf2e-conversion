@@ -14,7 +14,7 @@
     "slug": "me-engineer-tech-field",
     "description": {
       "gm": "",
-      "value": "<p>You deploy a stationary electromagnetic disruption field that continuously drains kinetic shields in the area.</p><p>Deploy a <strong>15-foot burst</strong> field at a point within 30 feet. The field persists for <strong>1 minute</strong> or until destroyed (AC 14, HP equal to twice your level). Each round at the start of your turn, all shielded creatures in the field lose <strong>5 shield HP</strong> (no save). Unshielded creatures take 1d4 electricity damage per round.</p><p><em>Prerequisite: Improved Engineer Mastery. Classes: Engineer.</em></p>"
+      "value": "<p>You deploy a stationary electromagnetic disruption field that continuously drains kinetic shields in the area.</p><p>Deploy a <strong>15-foot burst</strong> field at a point within 30 feet. The field persists for <strong>1 minute</strong> or until destroyed (AC 14, HP equal to twice your level). Each round at the start of your turn, all shielded creatures in the field lose <strong>5 shield HP</strong> (no save). Unshielded creatures take <strong>4d4 electricity</strong> damage per round.</p><p><strong>Level scaling:</strong> The damage rises to 5d4 at 16th level and to 6d4 at 20th.</p><p><em>Prerequisite: Improved Engineer Mastery. Classes: Engineer.</em></p>"
     },
     "rules": [],
     "_migration": {

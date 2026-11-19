@@ -14,7 +14,7 @@
     "slug": "me-soldier-legendary-combat",
     "description": {
       "gm": "",
-      "value": "<p>You have reached the pinnacle of personal combat effectiveness. You deal an additional <strong>+2 damage</strong> on all Strikes (stacks with the Combat Training chain) and gain a <strong>+2 circumstance bonus to attack rolls</strong>. Critical hits you score ignore <strong>5 points</strong> of the target's damage resistance.</p><p><em>Prerequisite: Master Combat Training. Classes: Soldier.</em></p>"
+      "value": "<p>You have reached the pinnacle of personal combat effectiveness. You deal an additional <strong>+2 damage</strong> on all Strikes (stacks with the Combat Training chain) and gain a <strong>+3 circumstance bonus to attack rolls</strong>. This is in place of the bonus from Weapon Mastery or Combat Training, not on top of it: circumstance bonuses do not stack. Critical hits you score ignore <strong>5 points</strong> of the target's damage resistance.</p><p><em>Prerequisite: Master Combat Training. Classes: Soldier.</em></p>"
     },
     "rules": [
       {
@@ -27,7 +27,7 @@
         "key": "FlatModifier",
         "selector": "attack-roll",
         "type": "circumstance",
-        "value": 2,
+        "value": 3,
         "label": "Legendary Combat"
       }
     ],

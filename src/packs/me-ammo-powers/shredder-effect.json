@@ -18,16 +18,24 @@
     "slug": "me-ammo-shredder",
     "description": {
       "gm": "",
-      "value": "<p>Serrated flechette rounds designed to shred unprotected tissue. Your weapon attacks deal an additional <strong>1d6 slashing damage</strong>.</p><p>Most effective against targets with no active shields, barriers, or armor.</p><p>Remove this effect to return to standard ammunition.</p>"
+      "value": "<p>Serrated flechette rounds designed to shred unprotected tissue. Your ranged Strikes deal an additional <strong>1d6 slashing damage</strong>.</p><p>Most effective against targets with no active shields, barriers, or armor.</p><p>Remove this effect to return to standard ammunition.</p>"
     },
     "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-ammo:shredder"
+      },
       {
         "key": "DamageDice",
         "selector": "strike-damage",
         "diceNumber": 1,
         "dieSize": "d6",
         "damageType": "slashing",
-        "label": "Shredder Rounds"
+        "label": "Shredder Rounds",
+        "predicate": [
+          "item:ranged"
+        ]
       }
     ],
     "_migration": {

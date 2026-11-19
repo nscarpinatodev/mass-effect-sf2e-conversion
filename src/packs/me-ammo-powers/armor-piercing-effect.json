@@ -20,7 +20,13 @@
       "gm": "",
       "value": "<p>Hard alloy sabot rounds designed to penetrate ablative armor plating. These rounds add no bonus damage type.</p><p>When striking a target with an active Combat Armor Frame, 50% of the incoming HP damage bypasses the armor entirely and is dealt directly to shields and HP.</p><p>Remove this effect to return to standard ammunition.</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-ammo:armor-piercing"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

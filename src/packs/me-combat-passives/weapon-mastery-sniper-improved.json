@@ -14,7 +14,7 @@
     "slug": "me-cp-weapon-mastery-sniper-improved",
     "description": {
       "gm": "",
-      "value": "<p>Expert sniper rifles proficiency. You deal <strong>+4 damage</strong> and gain a <strong>+1 circumstance bonus to attack rolls</strong> with sniper rifles (replaces the +2 damage). Your range increment penalty with sniper rifles is reduced by 1.</p><p><em>Prerequisite: Weapon Mastery (Sniper Rifles).</em></p>"
+      "value": "<p>Expert sniper rifles proficiency. You deal <strong>+4 damage</strong> and gain a <strong>+1 circumstance bonus to attack rolls</strong> with sniper rifles (replaces the +2 damage). Your range increment penalty with sniper rifles is reduced by 1.</p><p><em>Prerequisite: Weapon Mastery (Sniper Rifles). Classes: Infiltrator.</em></p>"
     },
     "rules": [
       {
@@ -45,7 +45,9 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "infiltrator"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -70,7 +72,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

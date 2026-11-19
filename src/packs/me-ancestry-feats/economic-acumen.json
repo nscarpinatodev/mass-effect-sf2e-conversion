@@ -31,7 +31,7 @@
       {
         "key": "ActiveEffectLike",
         "mode": "upgrade",
-        "path": "system.skills.soc.rank",
+        "path": "system.skills.society.rank",
         "value": 1
       },
       {

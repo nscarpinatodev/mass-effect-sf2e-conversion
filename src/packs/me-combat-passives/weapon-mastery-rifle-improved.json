@@ -14,7 +14,7 @@
     "slug": "me-cp-weapon-mastery-rifle-improved",
     "description": {
       "gm": "",
-      "value": "<p>Expert assault rifles proficiency. You deal <strong>+4 damage</strong> and gain a <strong>+1 circumstance bonus to attack rolls</strong> with assault rifles (replaces the +2 damage). Your range-fire discipline tightens.</p><p><em>Prerequisite: Weapon Mastery (Assault Rifles).</em></p>"
+      "value": "<p>Expert assault rifles proficiency. You deal <strong>+4 damage</strong> and gain a <strong>+1 circumstance bonus to attack rolls</strong> with assault rifles (replaces the +2 damage). Your range-fire discipline tightens.</p><p><em>Prerequisite: Weapon Mastery (Assault Rifles). Classes: Sentinel, Soldier.</em></p>"
     },
     "rules": [
       {
@@ -45,7 +45,10 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "sentinel",
+        "soldier"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -70,7 +73,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

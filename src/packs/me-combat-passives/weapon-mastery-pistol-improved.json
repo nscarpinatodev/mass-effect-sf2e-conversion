@@ -14,7 +14,7 @@
     "slug": "me-cp-weapon-mastery-pistol-improved",
     "description": {
       "gm": "",
-      "value": "<p>Expert pistols & smgs proficiency. You deal <strong>+4 damage</strong> and gain a <strong>+1 circumstance bonus to attack rolls</strong> with pistols & smgs (replaces the +2 damage). You may draw a pistol or SMG as part of the same action used to Strike with it.</p><p><em>Prerequisite: Weapon Mastery (Pistols & SMGs).</em></p>"
+      "value": "<p>Expert pistols & smgs proficiency. You deal <strong>+4 damage</strong> and gain a <strong>+1 circumstance bonus to attack rolls</strong> with pistols & smgs (replaces the +2 damage). You may draw a pistol or SMG as part of the same action used to Strike with it.</p><p><em>Prerequisite: Weapon Mastery (Pistols & SMGs). Classes: Adept, Engineer, Infiltrator.</em></p>"
     },
     "rules": [
       {
@@ -45,7 +45,11 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "adept",
+        "engineer",
+        "infiltrator"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -70,7 +74,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

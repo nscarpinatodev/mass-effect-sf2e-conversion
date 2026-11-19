@@ -14,9 +14,19 @@
     "slug": "me-infiltrator-hunters-mark",
     "description": {
       "gm": "",
-      "value": "<p>You mark a target through your scope, feeding real-time biometric data to your weapon's targeting system.</p><p>Designate one creature you can see within 120 feet as your <strong>Marked target</strong>. You deal <strong>+2 damage</strong> against the Marked target with all weapon Strikes, and you always know the Marked target's exact location (even if Concealed). The Mark persists until the target is incapacitated or you Mark a new target.</p><p><em>Prerequisite: Master Weapon Mastery (Sniper Rifles). Classes: Infiltrator.</em></p>"
+      "value": "<p>You mark a target through your scope, feeding real-time biometric data to your weapon's targeting system.</p><p>Designate one creature you can see within 120 feet as your <strong>Marked target</strong>. Your weapon Strikes deal <strong>+2 damage</strong> against the Marked target, and you always know its exact location (even if Concealed). The Mark lasts until the target is incapacitated or you Mark a new target. When your Marked target is reduced to 0 HP, you can Mark another creature as a free action.</p><p><strong>Level scaling:</strong> The bonus is +4 at 4th level, +6 at 8th, +8 at 12th, +10 at 16th and +12 at 20th.</p><p><em>Prerequisite: Weapon Mastery (Sniper Rifles). Classes: Infiltrator.</em></p><hr/><p><em>Automation: target one creature and use Hunter's Mark: a Hunter's Mark effect on you records it, and the bonus is added to your Strikes against that creature. Using it again moves the mark.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "strike-damage",
+        "value": "2*(1+floor(@actor.level/4))",
+        "predicate": [
+          "target:mark:hunters-mark"
+        ],
+        "label": "Hunter's Mark"
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,
@@ -42,7 +52,7 @@
     "prerequisites": {
       "value": [
         {
-          "value": "Master Weapon Mastery (Sniper Rifles)"
+          "value": "Weapon Mastery (Sniper Rifles)"
         }
       ]
     },

@@ -1,0 +1,65 @@
+{
+  "_key": "!items!MEAncFeat0000041",
+  "_id": "MEAncFeat0000041",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Matriarch's Wisdom",
+  "system": {
+    "actionType": {
+      "value": "free"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p><strong>Frequency</strong> once per day</p><p><strong>Trigger</strong> You fail a skill check or a Will save.</p><p>You have made this mistake before, or watched someone else make it four hundred years ago, and you remember how it ended.</p><p>Reroll the check and use the second result.</p>"
+    },
+    "level": {
+      "value": 17
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "matriarchs-wisdom",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "asari",
+        "fortune"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null,
+    "frequency": {
+      "max": 1,
+      "per": "day"
+    }
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

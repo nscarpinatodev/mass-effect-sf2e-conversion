@@ -1,0 +1,64 @@
+{
+  "_key": "!items!MEAncFeat0000052",
+  "_id": "MEAncFeat0000052",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Primarch's Authority",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>You carry yourself like someone the Hierarchy would put in charge of a world, and in a firefight everyone within earshot treats you that way.</p><p>Your Hierarchy Command affects every ally within 30 feet who can hear you, and its circumstance bonus increases to +2.</p>"
+    },
+    "level": {
+      "value": 17
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Hierarchy Command"
+        }
+      ]
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [],
+    "slug": "primarchs-authority",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "turian"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

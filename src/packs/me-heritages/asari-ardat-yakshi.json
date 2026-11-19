@@ -11,7 +11,7 @@
     },
     "description": {
       "gm": "<p>The GM may wish to limit this heritage to certain campaign types given its dark thematic content.</p>",
-      "value": "<p>You carry a rare neurological condition called Ardat-Yakshi-a mutation that causes your biotic nervous system to dominate and overwhelm the neural patterns of any partner during neural melding, causing rapid neurological damage and death. This makes you extraordinarily powerful as a biotic warrior; the same mechanism that kills during melding amplifies your mass effect field output to levels other asari cannot reach. Most Ardat-Yakshi are offered a choice by the Asari Republics: voluntary seclusion or service as a sanctioned operative. Some refuse both.</p><p>Your biotic attacks and innate biotic spells deal additional damage equal to half your level (minimum 1). However, you cannot safely neural meld with others-any attempt to do so forces the target to attempt a DC 20 Fortitude save or become stunned for 1 round and take 2d6 mental damage; on a critical failure, they become unconscious for 1 minute. This applies whether or not you intended harm.</p>"
+      "value": "<p>You carry a rare neurological condition called Ardat-Yakshi-a mutation that causes your biotic nervous system to dominate and overwhelm the neural patterns of any partner during neural melding, causing rapid neurological damage and death. This makes you extraordinarily powerful as a biotic warrior; the same mechanism that kills during melding amplifies your mass effect field output to levels other asari cannot reach. Most Ardat-Yakshi are offered a choice by the Asari Republics: voluntary seclusion or service as a sanctioned operative. Some refuse both.</p><p>Your biotic powers and your Telekinetic Projectile deal 1 extra damage. This rises to 2 at 9th level and 3 at 17th level.</p><p>Your meld is never safe. You can't take the Melded Understanding feat, and you are the only asari who can take Dominating Meld.</p><hr/><p><em>Automation: The extra damage is added to biotic power damage and to Telekinetic Projectile.</em></p>"
     },
     "publication": {
       "title": "Mass Effect Actor and Ancestry Compendium",
@@ -19,7 +19,20 @@
       "license": "ORC",
       "remaster": true
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "ActiveEffectLike",
+        "mode": "add",
+        "path": "flags.mass-effect-sf2e-conversion.bioticDamageBonus",
+        "value": "ternary(gte(@actor.level, 17), 3, ternary(gte(@actor.level, 9), 2, 1))"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "telekinetic-projectile-damage",
+        "value": "ternary(gte(@actor.level, 17), 3, ternary(gte(@actor.level, 9), 2, 1))",
+        "label": "Ardat-Yakshi"
+      }
+    ],
     "traits": {
       "rarity": "rare",
       "value": [],

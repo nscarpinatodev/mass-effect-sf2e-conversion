@@ -13,7 +13,7 @@
     "category": "ancestry",
     "description": {
       "gm": "",
-      "value": "<p>Turian command presence is not about volume or threat. It is about absolute clarity of expectation delivered at exactly the right moment-a tone and manner that cuts through confusion and fear and tells the people around you what to do next with enough authority that they do it without stopping to debate. You have this. It is not something you put on. It is something you are.</p><p>Choose up to two allies within 30 feet who can hear you. Each chosen ally gains a +1 circumstance bonus to their next attack roll or skill check made before the end of their next turn. Additionally, if any chosen ally is currently frightened, they reduce their frightened condition by 1. You can use this ability a number of times per day equal to your Charisma modifier (minimum 1).</p>"
+      "value": "<p><strong>Frequency</strong> once per 10 minutes</p><p>Turian command presence is not about volume or threat. It is about absolute clarity of expectation delivered at exactly the right moment-a tone and manner that cuts through confusion and fear and tells the people around you what to do next with enough authority that they do it without stopping to debate. You have this. It is not something you put on. It is something you are.</p><p>Choose up to two allies within 30 feet who can hear you. Each chosen ally gains a +1 circumstance bonus to their next attack roll or skill check made before the end of their next turn. If a chosen ally is frightened, they reduce their frightened condition by 1.</p>"
     },
     "level": {
       "value": 5
@@ -50,7 +50,11 @@
     },
     "onlyLevel1": false,
     "maxTakable": 1,
-    "location": null
+    "location": null,
+    "frequency": {
+      "max": 1,
+      "per": "PT10M"
+    }
   },
   "type": "feat",
   "effects": [],

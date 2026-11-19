@@ -348,7 +348,7 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-8 Avenger is the standard-issue assault rifle of the Systems Alliance military. Reliable, accurate, and easy to maintain, it serves as the backbone of Alliance infantry engagements across the galaxy. Its moderate fire rate and solid kinetic impact make it a dependable choice for soldiers of any experience level.</p>"
+          "value": "<p>The M-8 Avenger is the standard-issue assault rifle of the Systems Alliance military. Reliable, accurate, and easy to maintain, it serves as the backbone of Alliance infantry engagements across the galaxy. Its moderate fire rate and solid kinetic impact make it a dependable choice for soldiers of any experience level.</p><p><strong>Grades:</strong> This weapon gains damage dice with its grade in the standard way: two dice at advanced grade, three at elite and four at paragon.</p>"
         },
         "rules": [],
         "slug": "m-8-avenger",
@@ -460,9 +460,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-6 Carnifex is a heavy combat pistol that delivers assault-rifle stopping power in a one-handed platform. Its oversized kinetic coils accelerate dense tungsten rounds with considerable force, and the recoil requires a firm grip to manage. Favored by soldiers who trust a single devastating shot over a hail of lighter rounds, the Carnifex earns its name at close range.</p>"
+          "value": "<p>The M-6 Carnifex is a heavy combat pistol that delivers assault-rifle stopping power in a one-handed platform. Its oversized kinetic coils accelerate dense tungsten rounds with considerable force, and the recoil requires a firm grip to manage. Favored by soldiers who trust a single devastating shot over a hail of lighter rounds, the Carnifex earns its name at close range.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-6-carnifex",
         "_migration": {
           "version": 0.955,

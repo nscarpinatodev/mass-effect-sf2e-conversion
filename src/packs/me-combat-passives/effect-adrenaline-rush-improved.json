@@ -6,7 +6,11 @@
   "type": "effect",
   "img": "icons/magic/movement/trail-streak-impact-blue.webp",
   "effects": [],
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "endsWithTurn": true
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -14,9 +18,19 @@
     "slug": "me-effect-adrenaline-rush-improved",
     "description": {
       "gm": "",
-      "value": "<p>Your combat reflexes hit overdrive. You are <strong>Quickened 1</strong> this round (Stride, Strike, or Draw). Your movement speed increases by <strong>20 feet</strong> and you gain a <strong>+1 status bonus to attack rolls</strong>.</p>"
+      "value": "<p>Your combat reflexes hit overdrive. On your next turn you are <strong>Quickened</strong> (one extra action to Strike, Stride or reload), your Speed increases by <strong>20 feet</strong> and you gain a <strong>+1 status bonus to attack rolls</strong>. Ends when that turn does.</p>"
     },
     "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "me-adrenaline"
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl",
+        "inMemoryOnly": true
+      },
       {
         "key": "FlatModifier",
         "selector": "speed",

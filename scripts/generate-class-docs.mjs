@@ -157,6 +157,18 @@ const CLASSES = [
       ['me-combat-passives', 'soldier-mastery-superior.json'],
     ],
     feats: [
+      ['me-combat-passives', 'combat-training.json'],
+      ['me-combat-passives', 'combat-training-improved.json'],
+      ['me-combat-passives', 'combat-training-master.json'],
+      ['me-combat-passives', 'fitness.json'],
+      ['me-combat-passives', 'fitness-improved.json'],
+      ['me-combat-passives', 'fitness-master.json'],
+      ['me-combat-passives', 'weapon-mastery-rifle.json'],
+      ['me-combat-passives', 'weapon-mastery-rifle-improved.json'],
+      ['me-combat-passives', 'weapon-mastery-rifle-master.json'],
+      ['me-combat-passives', 'weapon-mastery-shotgun.json'],
+      ['me-combat-passives', 'weapon-mastery-shotgun-improved.json'],
+      ['me-combat-passives', 'weapon-mastery-shotgun-master.json'],
       ['me-combat-passives', 'adrenaline-rush.json'],
       ['me-combat-passives', 'adrenaline-rush-improved.json'],
       ['me-combat-passives', 'adrenaline-rush-master.json'],
@@ -173,7 +185,9 @@ const CLASSES = [
       ['me-class-progressions', 'soldier-tactical-reload.json'],
       ['me-class-progressions', 'soldier-devastating-rounds.json'],
       ['me-class-progressions', 'soldier-suppressing-fire.json'],
+      ['me-class-progressions', 'soldier-carnage.json'],
       ['me-class-progressions', 'soldier-battlefield-commander.json'],
+      ['me-class-progressions', 'soldier-marksman.json'],
       ['me-class-progressions', 'soldier-legendary-combat.json'],
       ['me-class-progressions', 'soldier-war-machine.json'],
     ],
@@ -183,10 +197,20 @@ const CLASSES = [
     classFile: ['me-classes', 'engineer.json'],
     masteryChain: [
       ['me-combat-passives', 'engineer-mastery.json'],
+      ['me-class-progressions', 'engineer-tech-training.json'],
       ['me-combat-passives', 'engineer-mastery-improved.json'],
       ['me-combat-passives', 'engineer-mastery-superior.json'],
     ],
     feats: [
+      ['me-combat-passives', 'tech-mastery.json'],
+      ['me-combat-passives', 'tech-mastery-improved.json'],
+      ['me-combat-passives', 'tech-mastery-master.json'],
+      ['me-combat-passives', 'fitness.json'],
+      ['me-combat-passives', 'fitness-improved.json'],
+      ['me-combat-passives', 'fitness-master.json'],
+      ['me-combat-passives', 'weapon-mastery-pistol.json'],
+      ['me-combat-passives', 'weapon-mastery-pistol-improved.json'],
+      ['me-combat-passives', 'weapon-mastery-pistol-master.json'],
       ['me-tech-powers', 'incinerate-feat.json'],
       ['me-tech-powers', 'overload-feat.json'],
       ['me-tech-powers', 'cryo-blast-feat.json'],
@@ -210,10 +234,21 @@ const CLASSES = [
     classFile: ['me-classes', 'adept.json'],
     masteryChain: [
       ['me-combat-passives', 'adept-mastery.json'],
+      ['me-class-progressions', 'adept-biotic-explosion.json'],
+      ['me-class-progressions', 'adept-biotic-training.json'],
       ['me-combat-passives', 'adept-mastery-improved.json'],
       ['me-combat-passives', 'adept-mastery-superior.json'],
     ],
     feats: [
+      ['me-combat-passives', 'biotic-mastery.json'],
+      ['me-combat-passives', 'biotic-mastery-improved.json'],
+      ['me-combat-passives', 'biotic-mastery-master.json'],
+      ['me-combat-passives', 'fitness.json'],
+      ['me-combat-passives', 'fitness-improved.json'],
+      ['me-combat-passives', 'fitness-master.json'],
+      ['me-combat-passives', 'weapon-mastery-pistol.json'],
+      ['me-combat-passives', 'weapon-mastery-pistol-improved.json'],
+      ['me-combat-passives', 'weapon-mastery-pistol-master.json'],
       ['me-biotic-powers', 'throw-feat.json'],
       ['me-biotic-powers', 'pull-feat.json'],
       ['me-biotic-powers', 'shockwave-feat.json'],
@@ -239,6 +274,18 @@ const CLASSES = [
       ['me-combat-passives', 'vanguard-mastery-superior.json'],
     ],
     feats: [
+      ['me-combat-passives', 'biotic-mastery.json'],
+      ['me-combat-passives', 'biotic-mastery-improved.json'],
+      ['me-combat-passives', 'biotic-mastery-master.json'],
+      ['me-combat-passives', 'combat-training.json'],
+      ['me-combat-passives', 'combat-training-improved.json'],
+      ['me-combat-passives', 'combat-training-master.json'],
+      ['me-combat-passives', 'fitness.json'],
+      ['me-combat-passives', 'fitness-improved.json'],
+      ['me-combat-passives', 'fitness-master.json'],
+      ['me-combat-passives', 'weapon-mastery-shotgun.json'],
+      ['me-combat-passives', 'weapon-mastery-shotgun-improved.json'],
+      ['me-combat-passives', 'weapon-mastery-shotgun-master.json'],
       ['me-biotic-powers', 'pull-feat.json'],
       ['me-biotic-powers', 'charge-feat.json'],
       ['me-biotic-powers', 'shockwave-feat.json'],
@@ -266,12 +313,27 @@ const CLASSES = [
     classFile: ['me-classes', 'infiltrator.json'],
     masteryChain: [
       ['me-combat-passives', 'infiltrator-mastery.json'],
+      ['me-tech-powers', 'tactical-cloak-feat.json'],
       ['me-combat-passives', 'infiltrator-mastery-improved.json'],
       ['me-combat-passives', 'infiltrator-mastery-superior.json'],
     ],
     feats: [
+      ['me-combat-passives', 'tech-mastery.json'],
+      ['me-combat-passives', 'tech-mastery-improved.json'],
+      ['me-combat-passives', 'tech-mastery-master.json'],
+      ['me-combat-passives', 'combat-training.json'],
+      ['me-combat-passives', 'combat-training-improved.json'],
+      ['me-combat-passives', 'combat-training-master.json'],
+      ['me-combat-passives', 'fitness.json'],
+      ['me-combat-passives', 'fitness-improved.json'],
+      ['me-combat-passives', 'fitness-master.json'],
+      ['me-combat-passives', 'weapon-mastery-pistol.json'],
+      ['me-combat-passives', 'weapon-mastery-pistol-improved.json'],
+      ['me-combat-passives', 'weapon-mastery-pistol-master.json'],
+      ['me-combat-passives', 'weapon-mastery-sniper.json'],
+      ['me-combat-passives', 'weapon-mastery-sniper-improved.json'],
+      ['me-combat-passives', 'weapon-mastery-sniper-master.json'],
       ['me-tech-powers', 'incinerate-feat.json'],
-      ['me-tech-powers', 'tactical-cloak-feat.json'],
       ['me-tech-powers', 'sabotage-feat.json'],
       ['me-tech-powers', 'sticky-grenade-feat.json'],
       ['me-ammo-powers', 'disruptor-feat.json'],
@@ -281,6 +343,7 @@ const CLASSES = [
       ['me-class-progressions', 'infiltrator-ghost-protocol.json'],
       ['me-class-progressions', 'infiltrator-assassination-protocol.json'],
       ['me-class-progressions', 'infiltrator-hunters-mark.json'],
+      ['me-class-progressions', 'infiltrator-overwatch.json'],
       ['me-class-progressions', 'infiltrator-phantom-protocol.json'],
       ['me-class-progressions', 'infiltrator-death-from-above.json'],
       ['me-class-progressions', 'infiltrator-apex-infiltrator.json'],
@@ -291,14 +354,26 @@ const CLASSES = [
     classFile: ['me-classes', 'sentinel.json'],
     masteryChain: [
       ['me-combat-passives', 'sentinel-mastery.json'],
+      ['me-tech-powers', 'armor-feat.json'],
       ['me-combat-passives', 'sentinel-mastery-improved.json'],
       ['me-combat-passives', 'sentinel-mastery-superior.json'],
     ],
     feats: [
+      ['me-combat-passives', 'biotic-mastery.json'],
+      ['me-combat-passives', 'biotic-mastery-improved.json'],
+      ['me-combat-passives', 'biotic-mastery-master.json'],
+      ['me-combat-passives', 'tech-mastery.json'],
+      ['me-combat-passives', 'tech-mastery-improved.json'],
+      ['me-combat-passives', 'tech-mastery-master.json'],
+      ['me-combat-passives', 'fitness.json'],
+      ['me-combat-passives', 'fitness-improved.json'],
+      ['me-combat-passives', 'fitness-master.json'],
+      ['me-combat-passives', 'weapon-mastery-rifle.json'],
+      ['me-combat-passives', 'weapon-mastery-rifle-improved.json'],
+      ['me-combat-passives', 'weapon-mastery-rifle-master.json'],
       ['me-biotic-powers', 'throw-feat.json'],
       ['me-biotic-powers', 'warp-feat.json'],
       ['me-biotic-powers', 'lift-grenade-feat.json'],
-      ['me-tech-powers',   'armor-feat.json'],
       ['me-tech-powers',   'overload-feat.json'],
       ['me-tech-powers',   'cryo-blast-feat.json'],
       ['me-class-progressions', 'upgrade-overload.json'],
@@ -324,6 +399,9 @@ const GENERAL_FEATS = [
   ['me-biotic-powers', 'dark-channel-feat.json'],
   ['me-biotic-powers', 'dominate-feat.json'],
   ['me-biotic-powers', 'flare-feat.json'],
+  ['me-biotic-powers', 'unity-feat.json'],
+  ['me-biotic-powers', 'unity-improved-feat.json'],
+  ['me-biotic-powers', 'unity-superior-feat.json'],
   ['me-tech-powers', 'damping-feat.json'],
   ['me-tech-powers', 'neural-shock-feat.json'],
   ['me-tech-powers', 'geth-shield-boost-feat.json'],
@@ -421,7 +499,7 @@ function renderAncestries(ancestries, heritages, ancestryFeats) {
   }
 
   const L = ['## ANCESTRIES', ''];
-  L.push('*Your ancestry sets your starting Hit Points, size, Speed, attribute boosts and flaw, languages, and any special senses or biology. Choose one heritage at 1st level, then an ancestry feat at 1st level and every even level thereafter. Each species has its own section below, carrying its heritages and its full ancestry feat list.*', '');
+  L.push('*Your ancestry sets your starting Hit Points, size, Speed, attribute boosts and flaw, languages, and any special senses or biology. Choose one heritage at 1st level, then an ancestry feat at 1st level and every four levels thereafter (5th, 9th, 13th and 17th). Each species has its own section below, carrying its heritages and its full ancestry feat list.*', '');
   L.push('| Ancestry | HP | Size | Speed | Boosts | Flaw | Vision | Heritages |', '|---|---|---|---|---|---|---|---|');
   for (const a of sorted) {
     const s = a.system;
@@ -487,7 +565,7 @@ function renderAncestries(ancestries, heritages, ancestryFeats) {
     // section carries an index back to these sections rather than a second copy.
     if (feats.length) {
       L.push(`#### ${a.name} Feats`, '');
-      L.push('*Take one of these at 1st level and every even level thereafter, provided you meet its level requirement.*', '');
+      L.push('*Take one of these at 1st, 5th, 9th, 13th and 17th level, provided you meet its level requirement.*', '');
       for (const f of feats) L.push(renderFeat(f).replace(/^#### /, '##### '), '');
     }
 
@@ -587,6 +665,11 @@ function renderEquipment(weapons, armors, weaponMods, armorMods, grenades, shiel
   L.push('- **scatter-X** — All creatures within X feet of the primary target also take splash damage equal to the damage dice result.');
   L.push('- **unwieldy** — Cannot be used for more than one Strike per turn.');
   L.push('- **volley-X** — −2 to attack rolls against targets within X feet of you.', '');
+  L.push('**Weapon Grades**', '');
+  L.push('Every weapon can be upgraded through Starfinder\'s grades. A grade\'s cost is added to the weapon\'s own price: tactical 350 credits, advanced 1,000, superior 10,000, elite 20,000, ultimate 100,000, paragon 400,000. Upgrading costs the difference between the two grades.', '');
+  L.push('- **Attack rolls:** +1 tracking at tactical grade, +2 at superior, +3 at ultimate.');
+  L.push('- **Damage:** the damage listed below is what a weapon rolls up to superior grade. It rolls one more damage die at elite grade and a second at paragon.');
+  L.push('- **One-die weapons** (M-3 Predator, M-8 Avenger, Phaeston) follow the standard progression instead: two dice at advanced grade, three at elite, four at paragon.', '');
   L.push(...weaponMd(byGroup.pistol, 'Pistols & SMGs'));
   L.push(...weaponMd(byGroup.rifle, 'Assault Rifles'));
   L.push(...weaponMd(byGroup.shotgun, 'Shotguns'));
@@ -615,12 +698,12 @@ function renderEquipment(weapons, armors, weaponMods, armorMods, grenades, shiel
   L.push('Biotics can activate a personal mass effect barrier. **HP = 5 × ⌈level ÷ 2⌉**, calculated at activation, plus a worn bio-amp\'s barrier bonus. Absorbs damage before shields and HP. Does not recharge passively — must be reactivated.', '');
 
   L.push('### Bio-Amps', '');
-  L.push('A bio-amp plugs into a biotic\'s implant. Biotic powers cool down for **4 rounds, less the Recharge of the amp you wear** (minimum 1); powers with a fixed cooldown of their own, such as Biotic Charge, keep it. Power adds an item bonus to biotic power damage and class DC, and Hit Points to the Biotic Barrier. Amps don\'t stack: wearing more than one gives only the highest of each bonus.', '');
+  L.push('A bio-amp plugs into a biotic\'s implant. Biotic powers cool down for **4 rounds, less the Recharge of the amp you wear** (minimum 1); powers with a fixed cooldown of their own, such as Biotic Charge, keep it. A 1-round cooldown goes only to the first biotic power used each turn (Nova apart): any others that turn take 2 rounds. Power adds an item bonus to biotic power damage and class DC, and Hit Points to the Biotic Barrier. Amps don\'t stack: wearing more than one gives only the highest of each bonus.', '');
   L.push('| Amp | Level | Credits | Recharge | Cooldown | Power |', '|---|---|---|---|---|---|');
   for (const a of amps) {
     const s = ampStats(a);
     const power = [s.damage && `+${s.damage} damage`, s.dc && `+${s.dc} class DC`, s.barrier && `+${s.barrier} barrier HP`].filter(Boolean).join(', ') || '—';
-    L.push(`| ${a.name} | ${a.system.level?.value ?? '?'} | ${credits(a.system)} | −${s.recharge} | ${Math.max(1, 4 - s.recharge)} rounds | ${power} |`);
+    L.push(`| ${a.name} | ${a.system.level?.value ?? '?'} | ${credits(a.system)} | −${s.recharge} | ${s.recharge >= 3 ? '1 round (first power each turn), then 2' : `${4 - s.recharge} rounds`} | ${power} |`);
   }
   L.push('');
 
@@ -724,7 +807,8 @@ function renderFeats(classFeatSets, ancestryFeats, ancestries, generalFeats) {
   L.push('', '---', '');
 
   L.push('### General & Skill Feats', '');
-  L.push('*Powers and feats that appear on two or more class lists, or are open to any character meeting the prerequisites.*', '');
+  L.push('*Powers and feats shared by two or more classes. Each class\'s feat table lists the ones it can take.*', '');
+  L.push('**Power Scaling.** A power\'s entry prints its dice at 1st level. All of a biotic power\'s, tech power\'s or grenade feat\'s dice are **doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th**: Warp\'s 2d6 on a failed save is 6d6 at 8th level and 12d6 at 20th. This covers persistent damage and any healing dice. Powers gained at higher levels print the dice for the level you gain them. Biotic Charge and Nova use their own formulas, grenade items keep their printed dice, and flat bonuses from gear and feats are added once. NPC powers follow the same rule.', '');
   for (const f of generalFeats) L.push(renderFeat(f), '', '---', '');
   return L;
 }
@@ -979,12 +1063,20 @@ async function main() {
     if (nonProgression.length) {
       lines.push('#### Class Feats');
       lines.push('');
-      lines.push(`*${titleCase(cls.name)} feats are listed in full under **Feats -> Class Feats -> ${titleCase(cls.name)}**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20.*`);
+      lines.push(`*${titleCase(cls.name)} feats are listed in full under **Feats -> Class Feats -> ${titleCase(cls.name)}**. Class feats are available at levels 1, 2, 4, 6, 8, 10, 12, 14, 16, 18 and 20. Powers shared with other classes are listed in full under **General & Skill Feats**.*`);
       lines.push('');
       lines.push('| Level | Feats |');
       lines.push('|---|---|');
       const byLvl = new Map();
-      for (const f of nonProgression) {
+      // Shared powers: their full text is under General & Skill Feats; the class table only indexes them.
+      const shared = [];
+      for (const [pack, filename] of GENERAL_FEATS) {
+        try {
+          const f = await loadFeat(pack, filename);
+          if ((f.system?.traits?.value ?? []).includes(cls.name.toLowerCase())) shared.push(f);
+        } catch { /* reported when the general list itself loads */ }
+      }
+      for (const f of [...nonProgression, ...shared]) {
         const l = f.system.level.value;
         if (!byLvl.has(l)) byLvl.set(l, []);
         byLvl.get(l).push(f.name);

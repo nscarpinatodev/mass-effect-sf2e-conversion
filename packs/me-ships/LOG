@@ -1,5 +1,0 @@
-2026/11/18-08:50:38.411 7dd8 Delete type=3 #1
-2026/11/18-08:50:38.414 7d98 Level-0 table #5: started
-2026/11/18-08:50:38.418 7d98 Level-0 table #5: 19437 bytes OK
-2026/11/18-08:50:38.422 7d98 Delete type=0 #3
-2026/11/18-08:50:38.422 7d98 Manual compaction at level-0 from '!actors!10821d7b91e590fb' @ 72057594037927935 : 1 .. '!actors.items!sovereignreaper0.sovereignrea0008' @ 0 : 0; will stop at (end)

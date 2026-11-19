@@ -1,0 +1,60 @@
+{
+  "_key": "!items!meSoldierCarnage",
+  "_id": "meSoldierCarnage",
+  "folder": null,
+  "name": "Carnage",
+  "type": "feat",
+  "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-soldier-carnage",
+    "description": {
+      "gm": "",
+      "value": "<p>You overcharge a single round until it leaves the barrel as a rippling ball of plasma.</p><p>Make a Strike with a ranged weapon. Whether it hits or misses, the round bursts where it lands: the target and all other creatures in a @Template[burst|distance:10]{10-foot burst} centered on it must attempt a @Check[reflex|dc:resolve(@actor.system.attributes.classDC.value)|options:me-power:me-soldier-carnage] save against your class DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature takes <strong>1d6 fire</strong> damage.</p><p><strong>Failure</strong> The creature takes <strong>2d6 fire</strong> damage.</p><p><strong>Critical Failure</strong> The creature takes <strong>4d6 fire</strong> damage.</p><p><strong>Level scaling:</strong> All of this power's dice are multiplied by 4 at 12th level, when you gain it (8d6 on a failure), by 5 at 16th and by 6 at 20th.</p><p><strong>Cooldown:</strong> 7 − your Constitution or Strength modifier, whichever is higher, rounds (minimum 1).</p><p><em>Classes: Soldier.</em></p><hr/><p><em>Automation: using Carnage starts its cooldown on your sheet. The Strike is yours to roll. When a creature rolls the save above, the damage for its result is applied automatically (see the Auto-Apply Power Effects setting). Damage is rolled once and shared by every creature in the area.</em></p>"
+    },
+    "rules": [],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "soldier"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 12
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 2
+    },
+    "category": "class",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

@@ -14,7 +14,7 @@
     "slug": "me-cp-concussive-volley",
     "description": {
       "gm": "",
-      "value": "<p>Your concussive burst fans wide enough to catch two targets at once.</p><p>When you use <strong>Concussive Shot</strong>, you may target two creatures that are within <strong>10 feet</strong> of each other. Make a separate attack roll against each target, applying all of Concussive Shot's effects to each.</p><p><em>Prerequisite: Concussive Shot. Classes: Soldier.</em></p>"
+      "value": "<p>Your concussive burst fans wide enough to catch two targets at once.</p><p>When you use <strong>Concussive Shot</strong>, you may target two creatures that are within <strong>10 feet</strong> of each other. Make a separate attack roll against each target, applying all of Concussive Shot's effects to each.</p><p><em>Prerequisite: Concussive Shot. Classes: Soldier.</em></p><hr/><p><em>Automation: the Concussive Shot effect stays on for two Strikes.</em></p>"
     },
     "rules": [],
     "_migration": {

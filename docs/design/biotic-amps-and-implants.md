@@ -5,6 +5,7 @@ How the Mass Effect games handle biotic amps, implants and power recharge, and w
 ## Decided (2026-11-16)
 
 - **Amps replace Charisma** in biotic cooldowns, for every biotic power. A power cools down for **4 rounds, less the amp's Recharge (−1 to −3), minimum 1**. Powers with a fixed cooldown of their own keep it: Biotic Charge (2 rounds, 1 with Improved Charge) and Lift Grenade (3).
+- **Changed 2026-11-19:** a 1-round cooldown (Recharge −3) goes only to the first biotic power used each turn; any others that turn take 2 rounds. Nova is not counted and keeps its 1 round. See the Adept in `docs/class-audit.md`.
 - **Power** comes in three steps, all item bonuses:
 
 | Power | Biotic damage | Class DC | Barrier HP |

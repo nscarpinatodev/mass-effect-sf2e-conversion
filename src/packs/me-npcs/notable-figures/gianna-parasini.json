@@ -285,7 +285,7 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-3 Predator is the most common sidearm in Systems Alliance service, carried as a backup weapon by the majority of Alliance personnel. Lightweight, reliable, and requiring minimal maintenance, it offers adequate stopping power for close-range threats. In the hands of an experienced soldier, its fifteen-round heat sink provides plenty of opportunity to resolve a situation that a primary weapon couldn't finish.</p>"
+          "value": "<p>The M-3 Predator is the most common sidearm in Systems Alliance service, carried as a backup weapon by the majority of Alliance personnel. Lightweight, reliable, and requiring minimal maintenance, it offers adequate stopping power for close-range threats. In the hands of an experienced soldier, its fifteen-round heat sink provides plenty of opportunity to resolve a situation that a primary weapon couldn't finish.</p><p><strong>Grades:</strong> This weapon gains damage dice with its grade in the standard way: two dice at advanced grade, three at elite and four at paragon.</p>"
         },
         "rules": [],
         "slug": "m-3-predator",

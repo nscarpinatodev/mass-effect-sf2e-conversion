@@ -14,7 +14,7 @@
     "slug": "me-upgrade-combat-drone",
     "description": {
       "gm": "",
-      "value": "<p>You push your drone's processing routines to the limit, dramatically increasing its combat efficiency.</p><p>Your Combat Drone gains <strong>one additional attack per round</strong> (total two attacks on its turn) and its maximum HP increases by <strong>your level</strong>.</p><p><em>Prerequisite: Combat Drone. Classes: Engineer.</em></p>"
+      "value": "<p>You push your drone's processing routines to the limit, dramatically increasing its combat efficiency.</p><p>Your Combat Drone makes <strong>two Strikes</strong> on each of your turns instead of one; the second takes the usual −5 multiple attack penalty. Its maximum HP increases by <strong>your level</strong>.</p><p><em>Prerequisite: Combat Drone. Classes: Engineer.</em></p><hr/><p><em>Automation: the extra HP is counted when you deploy the drone. The second Strike is yours to roll.</em></p>"
     },
     "rules": [],
     "_migration": {

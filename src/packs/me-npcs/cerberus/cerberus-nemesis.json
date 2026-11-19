@@ -271,9 +271,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-90 Indra is the only fully automatic sniper rifle in standard production, a design compromise that sacrifices per-shot stopping power to give snipers the ability to engage multiple targets without repositioning. Its twenty-round heat sink allows sustained precision fire at extreme range, making it particularly effective against lightly armored enemies that conventional snipers would waste a full-cycle reload on. Unusual enough in principle to be genuinely surprising in action.</p>"
+          "value": "<p>The M-90 Indra is the only fully automatic sniper rifle in standard production, a design compromise that sacrifices per-shot stopping power to give snipers the ability to engage multiple targets without repositioning. Its twenty-round heat sink allows sustained precision fire at extreme range, making it particularly effective against lightly armored enemies that conventional snipers would waste a full-cycle reload on. Unusual enough in principle to be genuinely surprising in action.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-90-indra",
         "_migration": {
           "version": 0.955,

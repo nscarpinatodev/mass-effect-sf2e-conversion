@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Collector Particle Beam is a heavy weapon of Reaper origin that projects a sustained stream of accelerated particles capable of burning through vehicle armor. Its internal biological reservoir generates ammunition through processes no human engineer fully understands, allowing continuous fire without conventional heat sinks. When wielded against organic enemies it produces results that Cerberus researchers describe clinically as \"total thermal cascade.\" Everyone else calls it something less professional.</p>"
+      "value": "<p>The Collector Particle Beam is a heavy weapon of Reaper origin that projects a sustained stream of accelerated particles capable of burning through vehicle armor. Its internal biological reservoir generates ammunition through processes no human engineer fully understands, allowing continuous fire without conventional heat sinks. When wielded against organic enemies it produces results that Cerberus researchers describe clinically as \"total thermal cascade.\" Everyone else calls it something less professional.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "collector-particle-beam",
     "_migration": {
       "version": 0.955,

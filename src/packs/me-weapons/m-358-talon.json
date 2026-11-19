@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-358 Talon is a heavy pistol that fires two explosive rounds simultaneously, converting the conventional pistol format into a point-blank scatter weapon. The paired detonations punch through kinetic barriers and spread shrapnel across a wide arc, making precise aim less critical than pointing it in the right direction. Mercenaries who operate in close-quarters corridors favor it for exactly that forgiving quality - in a tight space, the Talon rarely misses anything.</p>"
+      "value": "<p>The M-358 Talon is a heavy pistol that fires two explosive rounds simultaneously, converting the conventional pistol format into a point-blank scatter weapon. The paired detonations punch through kinetic barriers and spread shrapnel across a wide arc, making precise aim less critical than pointing it in the right direction. Mercenaries who operate in close-quarters corridors favor it for exactly that forgiving quality - in a tight space, the Talon rarely misses anything.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-358-talon",
     "_migration": {
       "version": 0.955,

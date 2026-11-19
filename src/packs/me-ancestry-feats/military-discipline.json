@@ -13,7 +13,7 @@
     "category": "ancestryfeature",
     "description": {
       "gm": "<p><strong>Assurance:</strong> Manually grant the Assurance skill feat to this actor for whichever skill they chose (Athletics or Acrobatics). Assurance cannot be auto-granted without a compendium UUID.</p>",
-      "value": "<p>Every turian who reaches adulthood has served in the military. This is not mere cultural tradition-it is the core institution through which turian society transmits its values, builds its identity, and produces the competence it expects from all citizens. Fifteen years of mandatory military service instills combat training, unit cohesion, and an unfailing confidence in one's physical capabilities that most other species simply cannot replicate through any other means.</p><p>You gain the Assurance feat for your choice of Athletics or Acrobatics. Additionally, choose one martial weapon group; you become trained in all weapons of that group.</p>"
+      "value": "<p>Every turian who reaches adulthood has served in the military. This is not mere cultural tradition-it is the core institution through which turian society transmits its values, builds its identity, and produces the competence it expects from all citizens. Fifteen years of mandatory military service instills combat training, unit cohesion, and an unfailing confidence in one's physical capabilities that most other species simply cannot replicate through any other means.</p><p>You gain the Assurance feat for your choice of Athletics or Acrobatics. Additionally, choose one weapon group (pistols, rifles, shotguns or sniper rifles); you become trained in all weapons of that group.</p>"
     },
     "level": {
       "value": 0
@@ -31,23 +31,34 @@
       {
         "key": "ChoiceSet",
         "flag": "militaryDisciplineWeaponGroup",
-        "prompt": "Choose a martial weapon group to become trained in",
+        "prompt": "Choose a weapon group to become trained in",
         "choices": [
-          { "label": "Firearms", "value": "firearm" },
-          { "label": "Swords", "value": "sword" },
-          { "label": "Axes", "value": "axe" },
-          { "label": "Bows", "value": "bow" },
-          { "label": "Knives", "value": "knife" },
-          { "label": "Polearms", "value": "polearm" },
-          { "label": "Hammers", "value": "hammer" },
-          { "label": "Flails", "value": "flail" }
+          {
+            "label": "Pistols",
+            "value": "pistol"
+          },
+          {
+            "label": "Rifles",
+            "value": "rifle"
+          },
+          {
+            "label": "Shotguns",
+            "value": "shotgun"
+          },
+          {
+            "label": "Sniper Rifles",
+            "value": "sniper"
+          }
         ],
         "adjustName": false
       },
       {
-        "key": "ActiveEffectLike",
-        "mode": "upgrade",
-        "path": "system.martial.{item|flags.pf2e.rulesSelections.militaryDisciplineWeaponGroup}.rank",
+        "key": "MartialProficiency",
+        "slug": "military-discipline",
+        "label": "Military Discipline",
+        "definition": [
+          "item:group:{item|flags.pf2e.rulesSelections.militaryDisciplineWeaponGroup}"
+        ],
         "value": 1
       }
     ],

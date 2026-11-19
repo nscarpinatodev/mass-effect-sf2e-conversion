@@ -14,7 +14,7 @@
     "slug": "me-cp-combat-training-improved",
     "description": {
       "gm": "",
-      "value": "<p>Your combat mastery extends to follow-through. You deal <strong>+2 damage</strong> on all Strikes (stacks with Combat Training's attack bonus).</p><p><em>Prerequisite: Combat Training.</em></p>"
+      "value": "<p>Your combat mastery extends to follow-through. You deal <strong>+2 damage</strong> on all Strikes (stacks with Combat Training's attack bonus).</p><p><em>Prerequisite: Combat Training. Classes: Infiltrator, Soldier, Vanguard.</em></p>"
     },
     "rules": [
       {
@@ -31,7 +31,11 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "infiltrator",
+        "soldier",
+        "vanguard"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -56,7 +60,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

@@ -420,9 +420,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The N7 Crusader is a precision combat shotgun designed for N7 operatives who must engage heavily armored targets in confined environments where a sniper rifle is impractical. Its single large-bore round does not scatter - it penetrates. The kinetic payload is sufficient to punch through heavy armor, and at the ranges where a shotgun is fired, there is nowhere to dodge. Slow to cycle but absolutely decisive when it connects.</p>"
+          "value": "<p>The N7 Crusader is a precision combat shotgun designed for N7 operatives who must engage heavily armored targets in confined environments where a sniper rifle is impractical. Its single large-bore round does not scatter - it penetrates. The kinetic payload is sufficient to punch through heavy armor, and at the ranges where a shotgun is fired, there is nowhere to dodge. Slow to cycle but absolutely decisive when it connects.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "n7-crusader",
         "_migration": {
           "version": 0.955,

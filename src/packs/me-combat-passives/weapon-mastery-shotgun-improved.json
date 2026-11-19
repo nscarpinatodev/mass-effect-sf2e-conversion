@@ -14,7 +14,7 @@
     "slug": "me-cp-weapon-mastery-shotgun-improved",
     "description": {
       "gm": "",
-      "value": "<p>Expert shotguns proficiency. You deal <strong>+4 damage</strong> and gain a <strong>+1 circumstance bonus to attack rolls</strong> with shotguns (replaces the +2 damage). You do not take penalties for firing while adjacent to a prone or grabbed enemy.</p><p><em>Prerequisite: Weapon Mastery (Shotguns).</em></p>"
+      "value": "<p>Expert shotguns proficiency. You deal <strong>+4 damage</strong> and gain a <strong>+1 circumstance bonus to attack rolls</strong> with shotguns (replaces the +2 damage). You do not take penalties for firing while adjacent to a prone or grabbed enemy.</p><p><em>Prerequisite: Weapon Mastery (Shotguns). Classes: Soldier, Vanguard.</em></p>"
     },
     "rules": [
       {
@@ -45,7 +45,10 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "soldier",
+        "vanguard"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -70,7 +73,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

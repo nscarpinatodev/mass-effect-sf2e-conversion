@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Venom Shotgun is a Cerberus-developed weapon that fires charged explosive rounds rather than conventional scatter shot. The rounds detonate on impact in a concussive blast that knocks enemies off their feet regardless of their armor rating. Users who miss a direct hit still benefit from the blast radius. With only five rounds before requiring a heat sink swap, each shot must count - but the Venom rewards the patience to make them do exactly that.</p>"
+      "value": "<p>The Venom Shotgun is a Cerberus-developed weapon that fires charged explosive rounds rather than conventional scatter shot. The rounds detonate on impact in a concussive blast that knocks enemies off their feet regardless of their armor rating. Users who miss a direct hit still benefit from the blast radius. With only five rounds before requiring a heat sink swap, each shot must count - but the Venom rewards the patience to make them do exactly that.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "venom-shotgun",
     "_migration": {
       "version": 0.955,

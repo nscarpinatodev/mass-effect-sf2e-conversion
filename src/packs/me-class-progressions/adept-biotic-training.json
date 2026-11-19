@@ -1,0 +1,208 @@
+{
+  "_key": "!items!meAdeptBioTrain0",
+  "_id": "meAdeptBioTrain0",
+  "folder": null,
+  "name": "Biotic Training",
+  "type": "feat",
+  "img": "icons/magic/control/debuff-energy-hold-levitate-teal-blue.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "slug": "me-adept-biotic-training",
+    "description": {
+      "gm": "",
+      "value": "<p>Your training covered more than one way to bend a mass effect field.</p><p>Choose <strong>two 1st-level biotic powers</strong> that an Adept can take, from the <em>ME Biotic Powers</em> compendium. You gain them as bonus feats, on top of your 1st-level class feat. Choose two different powers.</p><p><em>Classes: Adept.</em></p><hr/><p><em>Automation: adding this feature asks for each power in turn and adds both to your sheet.</em></p>"
+    },
+    "rules": [
+      {
+        "key": "ChoiceSet",
+        "flag": "bioticTrainingFirst",
+        "prompt": "Biotic Training: choose your first extra biotic power",
+        "choices": [
+          {
+            "label": "Cluster Grenade",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticCluster0"
+          },
+          {
+            "label": "Dark Channel",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticDarkChan"
+          },
+          {
+            "label": "Dominate",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticDominate"
+          },
+          {
+            "label": "Flare",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticFlare000"
+          },
+          {
+            "label": "Lash",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticLash0000"
+          },
+          {
+            "label": "Lift",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticLift0000"
+          },
+          {
+            "label": "Pull",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticPull0000"
+          },
+          {
+            "label": "Reave",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticReave000"
+          },
+          {
+            "label": "Shockwave",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticShockwav"
+          },
+          {
+            "label": "Singularity",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticSingulry"
+          },
+          {
+            "label": "Slam",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticSlam0000"
+          },
+          {
+            "label": "Stasis",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticStasis00"
+          },
+          {
+            "label": "Throw",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticThrow000"
+          },
+          {
+            "label": "Unity",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.mePwrUnity000001"
+          },
+          {
+            "label": "Warp",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticWarp0000"
+          }
+        ],
+        "adjustName": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "{item|flags.pf2e.rulesSelections.bioticTrainingFirst}",
+        "flag": "bioticTrainingFirstPower"
+      },
+      {
+        "key": "ChoiceSet",
+        "flag": "bioticTrainingSecond",
+        "prompt": "Biotic Training: choose your second extra biotic power",
+        "choices": [
+          {
+            "label": "Cluster Grenade",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticCluster0"
+          },
+          {
+            "label": "Dark Channel",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticDarkChan"
+          },
+          {
+            "label": "Dominate",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticDominate"
+          },
+          {
+            "label": "Flare",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticFlare000"
+          },
+          {
+            "label": "Lash",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticLash0000"
+          },
+          {
+            "label": "Lift",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticLift0000"
+          },
+          {
+            "label": "Pull",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticPull0000"
+          },
+          {
+            "label": "Reave",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticReave000"
+          },
+          {
+            "label": "Shockwave",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticShockwav"
+          },
+          {
+            "label": "Singularity",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticSingulry"
+          },
+          {
+            "label": "Slam",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticSlam0000"
+          },
+          {
+            "label": "Stasis",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticStasis00"
+          },
+          {
+            "label": "Throw",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticThrow000"
+          },
+          {
+            "label": "Unity",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.mePwrUnity000001"
+          },
+          {
+            "label": "Warp",
+            "value": "Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meBioticWarp0000"
+          }
+        ],
+        "adjustName": false
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "{item|flags.pf2e.rulesSelections.bioticTrainingSecond}",
+        "flag": "bioticTrainingSecondPower"
+      }
+    ],
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "adept",
+        "biotic"
+      ],
+      "rarity": "common"
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "level": {
+      "value": 1
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "classfeature",
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  }
+}

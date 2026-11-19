@@ -1,5 +1,0 @@
-2026/11/18-08:50:38.714 7dd8 Delete type=3 #1
-2026/11/18-08:50:38.719 7d98 Level-0 table #5: started
-2026/11/18-08:50:38.725 7d98 Level-0 table #5: 31988 bytes OK
-2026/11/18-08:50:38.731 7d98 Delete type=0 #3
-2026/11/18-08:50:38.731 7d98 Manual compaction at level-0 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)

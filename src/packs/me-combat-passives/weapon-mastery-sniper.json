@@ -35,7 +35,9 @@
     },
     "traits": {
       "otherTags": [],
-      "value": [],
+      "value": [
+        "infiltrator"
+      ],
       "rarity": "common"
     },
     "publication": {
@@ -56,7 +58,7 @@
     "actions": {
       "value": null
     },
-    "category": "classfeature",
+    "category": "class",
     "subfeatures": {
       "proficiencies": {},
       "senses": {},

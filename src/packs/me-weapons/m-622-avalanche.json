@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The M-622 Avalanche fires cryogenic containment pods that detonate on contact, flash-freezing everything within the blast radius. Targets that survive the initial cold damage are slowed dramatically as their kinetic barriers and armor systems seize in the sudden temperature drop. Originally developed for crowd control in dangerous environments, it has since proven devastatingly effective against organic and synthetic targets alike.</p>"
+      "value": "<p>The M-622 Avalanche fires cryogenic containment pods that detonate on contact, flash-freezing everything within the blast radius. Targets that survive the initial cold damage are slowed dramatically as their kinetic barriers and armor systems seize in the sudden temperature drop. Originally developed for crowd control in dangerous environments, it has since proven devastatingly effective against organic and synthetic targets alike.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "m-622-avalanche",
     "_migration": {
       "version": 0.955,

@@ -14,7 +14,7 @@
     "slug": "me-soldier-war-machine",
     "description": {
       "gm": "",
-      "value": "<p>You are a one-person army. Your weapons, your ammo, and your will are all operating at maximum capacity.</p><p>Your active ammo powers each deal <strong>+2 additional damage dice</strong> (replaces Devastating Rounds' +2 total). You can maintain <strong>two different ammo powers simultaneously</strong> - both effects apply to every Strike.</p><p><em>Prerequisite: Devastating Rounds. Classes: Soldier.</em></p>"
+      "value": "<p>You are a one-person army. Your weapons, your ammo, and your will are all operating at maximum capacity.</p><p>You can keep <strong>two different ammo powers</strong> active at once: both apply to every Strike, and each keeps the two additional damage dice from Ammo Master and Devastating Rounds.</p><p><em>Prerequisite: Devastating Rounds. Classes: Soldier.</em></p><hr/><p><em>Automation: a second ammo effect no longer replaces the first; a third replaces the older of the two.</em></p>"
     },
     "rules": [],
     "_migration": {

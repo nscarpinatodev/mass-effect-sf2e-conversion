@@ -11,9 +11,40 @@
   "system": {
     "description": {
       "gm": "",
-      "value": "<p>The Collector Sniper Rifle projects a sustained beam of superheated particle energy rather than discrete kinetic rounds. Recovered from Collector casualties during the Suicide Mission, its biological ammunition reservoir requires no conventional heat sinks. The beam burns through barriers and scorches everything behind them, delivering incendiary damage at extreme range with a precision that implies the weapon was designed to assassinate specific targets rather than engage formations.</p>"
+      "value": "<p>The Collector Sniper Rifle projects a sustained beam of superheated particle energy rather than discrete kinetic rounds. Recovered from Collector casualties during the Suicide Mission, its biological ammunition reservoir requires no conventional heat sinks. The beam burns through barriers and scorches everything behind them, delivering incendiary damage at extreme range with a precision that implies the weapon was designed to assassinate specific targets rather than engage formations.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              12
+            ]
+          }
+        ],
+        "label": "Elite grade",
+        "slug": "me-grade-dice-elite"
+      },
+      {
+        "key": "DamageDice",
+        "selector": "{item|_id}-damage",
+        "diceNumber": 1,
+        "predicate": [
+          {
+            "gte": [
+              "item:level",
+              19
+            ]
+          }
+        ],
+        "label": "Paragon grade",
+        "slug": "me-grade-dice-paragon"
+      }
+    ],
     "slug": "collector-sniper-rifle",
     "_migration": {
       "version": 0.955,

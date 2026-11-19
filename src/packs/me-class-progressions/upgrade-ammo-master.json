@@ -14,9 +14,82 @@
     "slug": "me-upgrade-ammo-master",
     "description": {
       "gm": "",
-      "value": "<p>Years of field experience with specialized ammunition have sharpened your instinct for ammo efficiency. Each ammo power you have active deals <strong>+1 additional damage die</strong> of its type.</p><p><em>Prerequisite: Any two ammo powers. Classes: Soldier.</em></p>"
+      "value": "<p>Years of field experience with specialized ammunition have sharpened your instinct for ammo efficiency. Each ammo power you have active deals <strong>+1 additional damage die</strong> of its type. Incendiary and Disruptor Rounds, which add no dice of their own, add 1d4 fire or 1d4 electricity; Armor-Piercing Rounds add none.</p><p><em>Prerequisite: Any two ammo powers. Classes: Soldier.</em></p><hr/><p><em>Automation: the extra die is added to your ranged Strikes while an ammo effect is on you.</em></p>"
     },
-    "rules": [],
+    "rules": [
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "label": "Ammo Master (Cryo Rounds)",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "cold",
+        "predicate": [
+          "item:ranged",
+          "me-ammo:cryo"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "label": "Ammo Master (Phasic Rounds)",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "force",
+        "predicate": [
+          "item:ranged",
+          "me-ammo:phasic"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "label": "Ammo Master (Shredder Rounds)",
+        "diceNumber": 1,
+        "dieSize": "d6",
+        "damageType": "slashing",
+        "predicate": [
+          "item:ranged",
+          "me-ammo:shredder"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "label": "Ammo Master (Warp Rounds)",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "void",
+        "predicate": [
+          "item:ranged",
+          "me-ammo:warp"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "label": "Ammo Master (Incendiary Rounds)",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "fire",
+        "predicate": [
+          "item:ranged",
+          "me-ammo:incendiary"
+        ]
+      },
+      {
+        "key": "DamageDice",
+        "selector": "strike-damage",
+        "label": "Ammo Master (Disruptor Rounds)",
+        "diceNumber": 1,
+        "dieSize": "d4",
+        "damageType": "electricity",
+        "predicate": [
+          "item:ranged",
+          "me-ammo:disruptor"
+        ]
+      }
+    ],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

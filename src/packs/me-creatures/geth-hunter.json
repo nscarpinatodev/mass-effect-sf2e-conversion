@@ -551,9 +551,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The Geth Plasma Shotgun charges a sphere of superheated plasma before releasing it in a wide burst of scorching fire. Unlike kinetic scatter weapons, its plasma dispersal can penetrate barrier fields before detonating against the target beneath. The charge time between shots is longer than conventional shotguns, but the incendiary devastation it delivers makes the wait worthwhile.</p>"
+          "value": "<p>The Geth Plasma Shotgun charges a sphere of superheated plasma before releasing it in a wide burst of scorching fire. Unlike kinetic scatter weapons, its plasma dispersal can penetrate barrier fields before detonating against the target beneath. The charge time between shots is longer than conventional shotguns, but the incendiary devastation it delivers makes the wait worthwhile.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "geth-plasma-shotgun",
         "_migration": {
           "version": 0.955,

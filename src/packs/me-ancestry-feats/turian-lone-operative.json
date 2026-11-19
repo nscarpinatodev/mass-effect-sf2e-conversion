@@ -1,0 +1,86 @@
+{
+  "_key": "!items!MEAncFeat0000048",
+  "_id": "MEAncFeat0000048",
+  "img": "systems/pf2e/icons/features/feats/feats.webp",
+  "name": "Lone Operative",
+  "system": {
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "category": "ancestry",
+    "description": {
+      "gm": "",
+      "value": "<p>Most turians are at their best in a unit. You were trained for the jobs where there is no unit, no backup and no record that you were ever there.</p><p>While no ally is within 30 feet of you, you gain a +1 circumstance bonus to Stealth checks, Deception checks and Perception checks.</p><hr/><p><em>Automation: Turn on the toggle while no ally is within 30 feet.</em></p>"
+    },
+    "level": {
+      "value": 9
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Spectre-Trained Turian heritage"
+        }
+      ]
+    },
+    "publication": {
+      "title": "Mass Effect Actor and Ancestry Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "rules": [
+      {
+        "key": "RollOption",
+        "domain": "all",
+        "option": "lone-operative",
+        "toggleable": true,
+        "label": "No ally within 30 feet"
+      },
+      {
+        "key": "FlatModifier",
+        "selector": [
+          "stealth",
+          "deception",
+          "perception"
+        ],
+        "type": "circumstance",
+        "value": 1,
+        "label": "Lone Operative",
+        "predicate": [
+          "lone-operative"
+        ]
+      }
+    ],
+    "slug": "lone-operative",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "turian"
+      ],
+      "otherTags": []
+    },
+    "_migration": {
+      "version": 0.955,
+      "lastMigration": null,
+      "previous": null
+    },
+    "subfeatures": {
+      "proficiencies": {},
+      "senses": {},
+      "suppressedFeatures": []
+    },
+    "onlyLevel1": false,
+    "maxTakable": 1,
+    "location": null
+  },
+  "type": "feat",
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

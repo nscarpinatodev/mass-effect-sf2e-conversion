@@ -14,7 +14,7 @@
     "slug": "me-sentinel-apex-sentinel",
     "description": {
       "gm": "",
-      "value": "<p>You are the ultimate expression of the hybrid warrior - a near-perfect fusion of biotic and tech capability wrapped in impenetrable armor.</p><p>Adrenaline Rush and Fortification can both be activated <strong>simultaneously as free actions</strong> (once per round each). The action cost reductions from Sentinel Mastery apply to every power. Sentinel's Resolve can be used <strong>twice per day</strong>.</p><p><em>Prerequisite: Sentinel's Resolve. Classes: Sentinel.</em></p>"
+      "value": "<p>You are the ultimate expression of the hybrid warrior - a near-perfect fusion of biotic and tech capability wrapped in impenetrable armor.</p><p>Tech Armor and Fortification can each be activated as a <strong>free action</strong>, once per round each. The action cost reductions from Sentinel Mastery apply to every power. Sentinel's Resolve can be used <strong>twice per day</strong>.</p><p><em>Prerequisite: Sentinel's Resolve. Classes: Sentinel.</em></p>"
     },
     "rules": [],
     "_migration": {

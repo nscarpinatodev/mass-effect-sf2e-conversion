@@ -388,9 +388,40 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-97 Viper is a semi-automatic sniper rifle built for sustained precision fire. Where bolt-action rifles demand patience between shots, the Viper allows follow-up strikes without breaking scope alignment. Its heat sink holds twelve rounds before requiring a swap, enabling snipers to handle multiple targets at range without repositioning. The trade-off is a somewhat lighter kinetic impact per shot compared to the Mantis.</p>"
+          "value": "<p>The M-97 Viper is a semi-automatic sniper rifle built for sustained precision fire. Where bolt-action rifles demand patience between shots, the Viper allows follow-up strikes without breaking scope alignment. Its heat sink holds twelve rounds before requiring a swap, enabling snipers to handle multiple targets at range without repositioning. The trade-off is a somewhat lighter kinetic impact per shot compared to the Mantis.</p><p><strong>Grades:</strong> This weapon rolls one more damage die at elite grade (a greater striking rune in Pathfinder) and a second at paragon grade (major striking).</p>"
         },
-        "rules": [],
+        "rules": [
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  12
+                ]
+              }
+            ],
+            "label": "Elite grade",
+            "slug": "me-grade-dice-elite"
+          },
+          {
+            "key": "DamageDice",
+            "selector": "{item|_id}-damage",
+            "diceNumber": 1,
+            "predicate": [
+              {
+                "gte": [
+                  "item:level",
+                  19
+                ]
+              }
+            ],
+            "label": "Paragon grade",
+            "slug": "me-grade-dice-paragon"
+          }
+        ],
         "slug": "m-97-viper",
         "_migration": {
           "version": 0.955,
@@ -678,7 +709,7 @@
       "system": {
         "description": {
           "gm": "",
-          "value": "<p>The M-3 Predator is the most common sidearm in Systems Alliance service, carried as a backup weapon by the majority of Alliance personnel. Lightweight, reliable, and requiring minimal maintenance, it offers adequate stopping power for close-range threats. In the hands of an experienced soldier, its fifteen-round heat sink provides plenty of opportunity to resolve a situation that a primary weapon couldn't finish.</p>"
+          "value": "<p>The M-3 Predator is the most common sidearm in Systems Alliance service, carried as a backup weapon by the majority of Alliance personnel. Lightweight, reliable, and requiring minimal maintenance, it offers adequate stopping power for close-range threats. In the hands of an experienced soldier, its fifteen-round heat sink provides plenty of opportunity to resolve a situation that a primary weapon couldn't finish.</p><p><strong>Grades:</strong> This weapon gains damage dice with its grade in the standard way: two dice at advanced grade, three at elite and four at paragon.</p>"
         },
         "rules": [],
         "slug": "m-3-predator",
