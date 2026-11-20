@@ -216,11 +216,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 13
+          "value": 15
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+6",
+            "damage": "3d6+10",
             "damageType": "bludgeoning",
             "category": null
           }
@@ -358,7 +358,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000010",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

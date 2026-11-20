@@ -14,23 +14,9 @@
     "slug": "me-infiltrator-apex-infiltrator",
     "description": {
       "gm": "",
-      "value": "<p>You have become something beyond human - a ghost, a myth, a phantom that enemies never see coming twice.</p><p>The <strong>first Strike you make each turn</strong> while Tactical Cloak is active is a <strong>critical hit</strong> if it hits. You can use Hunter's Mark as a <strong>free action</strong>. Phantom Protocol now triggers on any kill, not just once per encounter.</p><p><em>Prerequisite: Death From Above. Classes: Infiltrator.</em></p><hr/><p><em>Automation: a hit with your first cloaked Strike each turn is raised to a critical hit when you roll it, and an \"Apex Infiltrator: used this turn\" effect then marks it as spent until your next turn.</em></p>"
+      "value": "<p>You have become something beyond human - a ghost, a myth, a phantom that enemies never see coming twice.</p><p>You can use Hunter's Mark as a <strong>free action</strong>. Phantom Protocol now triggers on any kill, not just once per encounter.</p><p><em>Prerequisite: Death From Above. Classes: Infiltrator.</em></p>"
     },
-    "rules": [
-      {
-        "key": "AdjustDegreeOfSuccess",
-        "selector": "strike-attack-roll",
-        "adjustment": {
-          "success": "one-degree-better"
-        },
-        "predicate": [
-          "me-tactical-cloak",
-          {
-            "not": "me-apex-used"
-          }
-        ]
-      }
-    ],
+    "rules": [],
     "_migration": {
       "version": 0.955,
       "lastMigration": null,

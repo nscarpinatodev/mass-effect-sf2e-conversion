@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/Abomination.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -210,11 +214,11 @@
       "system": {
         "slug": "leaper-claw-slash",
         "bonus": {
-          "value": 15
+          "value": 17
         },
         "damageRolls": {
           "0": {
-            "damage": "2d6+5",
+            "damage": "2d6+8",
             "damageType": "slashing"
           }
         },

@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/thane.png",
   "folder": "menpcfoldr000009",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,8 +119,8 @@
     },
     "attributes": {
       "hp": {
-        "value": 155,
-        "max": 155,
+        "value": 171,
+        "max": 171,
         "temp": 0,
         "details": ""
       },
@@ -215,11 +219,11 @@
         },
         "slug": "thane-mantis",
         "bonus": {
-          "value": 23
+          "value": 25
         },
         "damageRolls": {
           "0": {
-            "damage": "3d8+13",
+            "damage": "3d8+20",
             "damageType": "piercing",
             "category": null
           }
@@ -278,11 +282,11 @@
         },
         "slug": "thane-shuriken",
         "bonus": {
-          "value": 23
+          "value": 25
         },
         "damageRolls": {
           "0": {
-            "damage": "5d4+13",
+            "damage": "5d4+19",
             "damageType": "piercing",
             "category": null
           }
@@ -423,7 +427,7 @@
       "system": {
         "slug": "me-npc-biotic-throw",
         "description": {
-          "value": "<p>You project a mass effect field that hurls a creature or object with violent force.</p><p>Choose a creature or unattended object within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-throw] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is pushed 5 feet away from you.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[bludgeoning]] damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.</p><p><strong>Critical Failure</strong> As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "value": "<p>You project a mass effect field that hurls a creature or object with violent force.</p><p>Choose a creature or unattended object within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3)+2*floor((@actor.system.details.level.value+97)/100))|options:me-power:me-npc-biotic-throw] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is pushed 5 feet away from you.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d8[bludgeoning]] damage and is pushed 10 feet away from you. If pushed into a solid object, the target takes an additional 1d6 bludgeoning damage and is knocked prone.</p><p><strong>Critical Failure</strong> As failure, but 4d8 bludgeoning damage and pushed 20 feet. If pushed into an obstacle, additional 2d6 bludgeoning and knocked prone.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],

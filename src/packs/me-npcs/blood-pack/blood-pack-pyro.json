@@ -207,11 +207,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 12
+          "value": 14
         },
         "damageRolls": {
           "dmg00szG7": {
-            "damage": "3d8+4",
+            "damage": "3d8+8",
             "damageType": "fire",
             "category": null
           }
@@ -270,11 +270,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 10
+          "value": 12
         },
         "damageRolls": {
           "dmg00W24l": {
-            "damage": "1d8+3",
+            "damage": "1d8+5",
             "damageType": "slashing",
             "category": null
           }
@@ -653,7 +653,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000007",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

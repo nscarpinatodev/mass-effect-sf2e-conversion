@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 38,
-        "temp": 30,
-        "max": 38,
+        "value": 53,
+        "temp": 15,
+        "max": 53,
         "details": ""
       },
       "ac": {
@@ -216,13 +216,13 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "2d6+1",
+            "damage": "2d6+3",
             "damageType": "bludgeoning",
             "category": null
           }
         },
         "bonus": {
-          "value": 9
+          "value": 11
         },
         "description": {
           "value": "",
@@ -275,11 +275,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 12
+          "value": 14
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "3d6+6",
+            "damage": "3d6+10",
             "damageType": "piercing",
             "category": null
           }
@@ -627,8 +627,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -638,7 +638,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -702,7 +702,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000011",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

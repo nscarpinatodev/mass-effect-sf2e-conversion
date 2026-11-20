@@ -211,6 +211,8 @@ Hooks.once('init', () => {
     hint: 'Using Activate Biotic Barrier raises the barrier at once, at full HP, instead of waiting for its Apply Effect button. A barrier already up is replaced with a fresh one.',
     scope: 'world', config: true, type: Boolean, default: true,
   });
+  // Which balance pass this world's characters have been brought up to (see migrateBalance).
+  game.settings.register(MODULE_ID, 'balanceVersion', { scope: 'world', config: false, type: Number, default: 0 });
   game.settings.register(MODULE_ID, 'shieldRechargeDelay', {
     name: 'Shield Recharge Delay (rounds)',
     hint: 'Rounds a kinetic barrier must go without taking damage before it resumes recharging. Recharge Accelerator mods reduce this.',
@@ -240,6 +242,7 @@ Hooks.once('ready', async () => {
   if (game.user.isGM) {
     await syncEffects(version);
     await migrateActorItems();
+    await migrateBalance();
   }
 
   // ── SF2e: Replace UPB currency with Omni-Gel ─────────────────────────────
@@ -1198,11 +1201,11 @@ function phasicBypassHtml(armorCurrent, armorMax) {
 // Maps equipment item name → required flags with their correct values.
 // Matched by name only — no flag pre-condition, so items with no ME flags are found.
 const EQUIPMENT_FLAG_DEFAULTS = {
-  'Kinetic Shield':            { shieldMax: 30, shieldRegen: 10 },
-  'Shield HP Mod - Tier 1':    { shieldHpBonus: 10 },
-  'Shield HP Mod - Tier 2':    { shieldHpBonus: 20 },
-  'Shield HP Mod - Tier 3':    { shieldHpBonus: 40 },
-  'Shield HP Mod - Tier 4':    { shieldHpBonus: 70 },
+  'Kinetic Shield':            { shieldMax: 15, shieldRegen: 5 },
+  'Shield HP Mod - Tier 1':    { shieldHpBonus: 5 },
+  'Shield HP Mod - Tier 2':    { shieldHpBonus: 10 },
+  'Shield HP Mod - Tier 3':    { shieldHpBonus: 20 },
+  'Shield HP Mod - Tier 4':    { shieldHpBonus: 35 },
   'Shield Regen Mod - Tier 1': { regenMult: 1.5 },
   'Shield Regen Mod - Tier 2': { regenMult: 2.0 },
   'Shield Regen Mod - Tier 3': { regenMult: 2.5 },
@@ -1216,6 +1219,97 @@ const ARMOR_FRAME_DEFAULTS = {
   'Heavy Combat Frame':    100,
   'Titan Combat Frame':    200,
 };
+
+// ── 2026-11 REBALANCE ─────────────────────────────────────────────────────────
+// The kinetic shield went to half size and half recharge, and a handful of class
+// features changed (see docs/power-level-review.md, "The tiered design"). Items
+// already on a character are copies, so they keep the old numbers until refreshed.
+// This runs once per world (GM only) and brings player characters up to date:
+//   - shield items still holding exactly the old values get the new ones, and
+//     temp HP is capped at the new maximum;
+//   - the changed class features take their text and rules from the compendium.
+// NPCs in the world are left alone: re-import them to get the new stat blocks.
+// Version 2 (2026-11-20): Improved Adept Mastery gained its knockdown. A world already
+// at version 1 runs this once more, for the features changed since then only.
+const BALANCE_VERSION = 2;
+const SHIELD_REBALANCE = {
+  'Kinetic Shield':         { shieldMax: [30, 15], shieldRegen: [10, 5] },
+  'Shield HP Mod - Tier 1': { shieldHpBonus: [10, 5] },
+  'Shield HP Mod - Tier 2': { shieldHpBonus: [20, 10] },
+  'Shield HP Mod - Tier 3': { shieldHpBonus: [40, 20] },
+  'Shield HP Mod - Tier 4': { shieldHpBonus: [70, 35] },
+};
+// slug → the balance version that last changed it. (A power's text on a character is rewritten
+// for its level, so "differs from the compendium" cannot tell which features are out of date.)
+const REBALANCED_SLUGS = new Map([
+  ...['me-soldier-mastery', 'me-soldier-mastery-improved', 'me-soldier-mastery-superior',
+    'me-adept-mastery', 'me-adept-mastery-superior',
+    'me-infiltrator-mastery-improved', 'me-infiltrator-apex-infiltrator', 'me-infiltrator-assassination-protocol',
+    'me-engineer-apex-engineer', 'me-tech-tactical-cloak', 'me-biotic-nova'].map((slug) => [slug, 1]),
+  ['me-adept-mastery-improved', 2],
+]);
+
+async function migrateBalance() {
+  if (!game.user.isGM) return;
+  const from = game.settings.get(MODULE_ID, 'balanceVersion') ?? 0;
+  if (from >= BALANCE_VERSION) return;
+  const log = new Map();
+  const note = (actor, msg) => { if (!log.has(actor.name)) log.set(actor.name, []); log.get(actor.name).push(msg); };
+  try {
+    // slug or name → compendium document, from this module's item packs
+    const bySlug = new Map(), byName = new Map();
+    for (const pack of game.packs.filter((p) => p.metadata.packageName === MODULE_ID && p.documentName === 'Item')) {
+      const index = await pack.getIndex({ fields: ['system.slug'] });
+      for (const e of index) {
+        if (e.system?.slug && (REBALANCED_SLUGS.get(e.system.slug) ?? 0) > from) bySlug.set(e.system.slug, e.uuid);
+        if (SHIELD_REBALANCE[e.name]) byName.set(e.name, e.uuid);
+      }
+    }
+    for (const actor of game.actors.contents) {
+      if (actor.type !== 'character') continue;
+      let shieldChanged = false;
+      for (const item of (actor.itemTypes?.equipment ?? [])) {
+        const map = SHIELD_REBALANCE[item.name]; if (!map) continue;
+        const updates = {};
+        for (const [key, [was, now]] of Object.entries(map)) if (item.getFlag(MODULE_ID, key) === was) updates[`flags.${MODULE_ID}.${key}`] = now;
+        if (!Object.keys(updates).length) continue;
+        const src = byName.has(item.name) ? await fromUuid(byName.get(item.name)) : null;
+        if (src) updates['system.description.value'] = src.system.description.value;
+        await item.update(updates);
+        note(actor, `${item.name}: ${Object.entries(map).map(([k, [was, now]]) => `${k} ${was} → ${now}`).join(', ')}`);
+        shieldChanged = true;
+      }
+      if (shieldChanged) {
+        const max = (getShieldEffect(actor)?.getFlag(MODULE_ID, 'shieldMax') ?? 0) + (getShieldHpMod(actor)?.getFlag(MODULE_ID, 'shieldHpBonus') ?? 0);
+        // not damage: tell the routing hook to leave this change alone
+        if (max > 0 && (actor.system.attributes.hp.temp ?? 0) > max) await actor.update({ 'system.attributes.hp.temp': max }, { [MODULE_ID]: { shieldRemoval: true } });
+      }
+      for (const item of actor.items) {
+        const slug = item.system?.slug ?? item.slug; if (!slug || !bySlug.has(slug)) continue;
+        const src = await fromUuid(bySlug.get(slug)); if (!src) continue;
+        const data = src.toObject();
+        await item.update({ 'system.rules': data.system.rules ?? [], 'system.description.value': data.system.description.value });
+        note(actor, `${item.name}: updated to the current rules`);
+      }
+    }
+    await game.settings.set(MODULE_ID, 'balanceVersion', BALANCE_VERSION);
+  } catch (err) {
+    console.error('ME Shields | Rebalance update failed; it will run again next time the world loads.', err);
+    return;
+  }
+  if (!log.size) { console.log('ME Shields | Rebalance update: no characters needed changes.'); return; }
+  console.log(`ME Shields | Rebalance update: ${log.size} character(s) brought up to date.`);
+  const rows = [...log.entries()].map(([name, fixes]) => `<li><strong>${name}</strong><ul>${fixes.map((x) => `<li>${x}</li>`).join('')}</ul></li>`).join('');
+  const what = from < 1 ? 'Kinetic shields are now half the size, and some class features changed.' : 'Some class features changed.';
+  const content = `<p>${what} Updated <strong>${log.size}</strong> character(s):</p><ul>${rows}</ul>${from < 1 ? '<p>NPCs already in this world keep their old numbers. Re-import them from the compendium for the new stat blocks.</p>' : ''}`;
+  try {
+    const DialogV2 = foundry.applications?.api?.DialogV2;
+    if (DialogV2?.prompt) DialogV2.prompt({ window: { title: 'Mass Effect: rebalance update' }, content, rejectClose: false, ok: { label: 'OK' } }).catch(() => {});
+    else new Dialog({ title: 'Mass Effect: rebalance update', content, buttons: { ok: { label: 'OK' } }, default: 'ok' }).render(true);
+  } catch (err) {
+    ui.notifications.info(`Mass Effect: rebalance update applied to ${log.size} character(s). The console lists them.`);
+  }
+}
 
 async function migrateActorItems() {
   if (!game.user.isGM) return;

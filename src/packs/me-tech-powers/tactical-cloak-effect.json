@@ -18,7 +18,7 @@
     "slug": "me-effect-tactical-cloak",
     "description": {
       "gm": "",
-      "value": "<p>You are hidden by a personal cloaking field: <strong>Undetected</strong> by all creatures until you make a Strike or the start of your next turn.</p><p>Your first Strike while cloaked deals <strong>2d6 precision damage</strong> more, and its target is off-guard to it. The dice are multiplied by level as a power's are: 4d6 at 4th level, 6d6 at 8th, 8d6 at 12th, 10d6 at 16th and 12d6 at 20th. The effect comes off by itself after that Strike.</p>"
+      "value": "<p>You are hidden by a personal cloaking field: <strong>Undetected</strong> by all creatures until you make a Strike or the start of your next turn.</p><p>Your first Strike while cloaked deals <strong>3d6 precision damage</strong> more, and its target is off-guard to it. The dice are multiplied by level as a power's are: 6d6 at 4th level, 9d6 at 8th, 12d6 at 12th, 15d6 at 16th and 18d6 at 20th. The effect comes off by itself after that Strike.</p>"
     },
     "rules": [
       {
@@ -30,7 +30,7 @@
         "key": "DamageDice",
         "selector": "strike-damage",
         "label": "Tactical Cloak",
-        "diceNumber": "2*(1+floor(@actor.level/4))",
+        "diceNumber": "3*(1+floor(@actor.level/4))",
         "dieSize": "d6",
         "category": "precision"
       },

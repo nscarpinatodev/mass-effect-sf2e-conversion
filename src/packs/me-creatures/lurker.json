@@ -204,7 +204,7 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "1d6+2",
+            "damage": "1d6+4",
             "damageType": "piercing",
             "category": null
           },
@@ -215,7 +215,7 @@
           }
         },
         "bonus": {
-          "value": 10
+          "value": 12
         },
         "description": {
           "value": "<p>On a critical hit, the target takes 1d6 persistent poison damage.</p>",
@@ -303,7 +303,11 @@
   ],
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

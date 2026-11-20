@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/james-vega.png",
   "folder": "menpcfoldr000009",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,9 +119,9 @@
     },
     "attributes": {
       "hp": {
-        "value": 130,
-        "max": 130,
-        "temp": 40,
+        "value": 150,
+        "max": 150,
+        "temp": 20,
         "details": ""
       },
       "ac": {
@@ -209,11 +213,11 @@
         },
         "slug": "vega-mattock",
         "bonus": {
-          "value": 18
+          "value": 20
         },
         "damageRolls": {
           "0": {
-            "damage": "4d6+10",
+            "damage": "4d6+16",
             "damageType": "piercing",
             "category": null
           }
@@ -268,11 +272,11 @@
       "system": {
         "slug": "vega-knife",
         "bonus": {
-          "value": 20
+          "value": 22
         },
         "damageRolls": {
           "0": {
-            "damage": "1d6+10",
+            "damage": "1d6+13",
             "damageType": "piercing"
           }
         },
@@ -602,8 +606,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -613,7 +617,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -682,7 +686,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 10
+          "shieldHpBonus": 5
         }
       },
       "ownership": {
@@ -692,7 +696,7 @@
         "slug": "me-shield-hp-mod-t1",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+10 HP</strong> (base 30 → 40).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+5 HP</strong> (base 15 → 20).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {

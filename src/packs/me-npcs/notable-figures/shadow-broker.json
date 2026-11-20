@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 319,
-        "temp": 100,
-        "max": 319,
+        "value": 411,
+        "temp": 50,
+        "max": 411,
         "details": ""
       },
       "ac": {
@@ -217,8 +217,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -228,7 +228,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -298,7 +298,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 70
+          "shieldHpBonus": 35
         }
       },
       "ownership": {
@@ -308,7 +308,7 @@
         "slug": "me-shield-hp-mod-t4",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+70 HP</strong> (base 30 → 100).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+35 HP</strong> (base 15 → 50).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {
@@ -457,11 +457,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 31
+          "value": 33
         },
         "damageRolls": {
           "0": {
-            "damage": "6d10+20",
+            "damage": "6d10+33",
             "damageType": "bludgeoning",
             "category": null
           }
@@ -513,11 +513,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 29
+          "value": 31
         },
         "damageRolls": {
           "0": {
-            "damage": "6d8+15",
+            "damage": "6d8+26",
             "damageType": "electricity",
             "category": null
           }
@@ -614,7 +614,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Lightning Surge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Arcs leap from the Broker's armor. Each creature in a @Template[emanation|distance:15]{15-foot emanation} takes @Damage[6d8+15[electricity]] damage with a @Check[reflex|dc:34|basic] save; a creature that critically fails is also stunned 1. Kinetic shields take double damage from this effect. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
+          "value": "<p><strong>Lightning Surge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Arcs leap from the Broker's armor. Each creature in a @Template[emanation|distance:15]{15-foot emanation} takes @Damage[6d8+15[electricity]] damage with a @Check[reflex|dc:36|basic] save; a creature that critically fails is also stunned 1. Kinetic shields take double damage from this effect. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
           "gm": ""
         },
         "rules": [],
@@ -660,7 +660,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Overpowering Charge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>The Broker Strides twice in a straight line and makes a Fist Strike at the end. If it hits, the target must succeed at a @Check[fortitude|dc:34] save or be pushed 10 feet and knocked prone.</p>",
+          "value": "<p><strong>Overpowering Charge</strong> <span class=\"action-glyph\">2</span></p><hr /><p>The Broker Strides twice in a straight line and makes a Fist Strike at the end. If it hits, the target must succeed at a @Check[fortitude|dc:36] save or be pushed 10 feet and knocked prone.</p>",
           "gm": ""
         },
         "rules": [],
@@ -744,7 +744,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000010",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

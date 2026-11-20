@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/wrex.png",
   "folder": "menpcfoldr000009",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,9 +119,9 @@
     },
     "attributes": {
       "hp": {
-        "value": 182,
-        "max": 182,
-        "temp": 70,
+        "value": 242,
+        "max": 242,
+        "temp": 35,
         "details": ""
       },
       "ac": {
@@ -212,11 +216,11 @@
         },
         "slug": "wrex-claymore",
         "bonus": {
-          "value": 26
+          "value": 28
         },
         "damageRolls": {
           "0": {
-            "damage": "6d8+15",
+            "damage": "6d8+26",
             "damageType": "piercing",
             "category": null
           }
@@ -274,11 +278,11 @@
         },
         "slug": "wrex-headbutt",
         "bonus": {
-          "value": 28
+          "value": 30
         },
         "damageRolls": {
           "0": {
-            "damage": "4d8+13",
+            "damage": "4d8+21",
             "damageType": "bludgeoning"
           }
         },
@@ -369,7 +373,7 @@
       "system": {
         "slug": "me-npc-biotic-charge",
         "description": {
-          "value": "<p>You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to <strong>60 feet</strong> in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-charge] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(3*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and is knocked <strong>prone</strong>. Your Biotic Barrier recharges half of its maximum barrier HP.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(6*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and pushed <strong>5 feet</strong> away from you. Your Biotic Barrier recharges to full.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "value": "<p>You surround yourself with a biotic field and launch forward in a devastating dash, crashing into enemies with tremendous impact force. You move up to <strong>60 feet</strong> in a straight line towards an enemy you can see, so long as that enemy does not have total cover, phasing through any obstacles in your path. That target must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3)+2*floor((@actor.system.details.level.value+97)/100))|options:me-power:me-npc-biotic-charge] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(3*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and is knocked <strong>prone</strong>. Your Biotic Barrier recharges half of its maximum barrier HP.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(6*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and pushed <strong>5 feet</strong> away from you. Your Biotic Barrier recharges to full.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -659,8 +663,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -670,7 +674,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -739,7 +743,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 40
+          "shieldHpBonus": 20
         }
       },
       "ownership": {
@@ -749,7 +753,7 @@
         "slug": "me-shield-hp-mod-t3",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 15 → 35).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {

@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/ME3_Banshee.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,8 +119,8 @@
     },
     "attributes": {
       "hp": {
-        "value": 210,
-        "max": 210,
+        "value": 239,
+        "max": 239,
         "temp": 0,
         "details": ""
       },
@@ -212,11 +216,11 @@
       "system": {
         "slug": "banshee-claw",
         "bonus": {
-          "value": 29
+          "value": 31
         },
         "damageRolls": {
           "0": {
-            "damage": "3d8+16",
+            "damage": "3d8+23",
             "damageType": "slashing"
           }
         },
@@ -265,11 +269,11 @@
         },
         "slug": "banshee-biotic-blast",
         "bonus": {
-          "value": 31
+          "value": 33
         },
         "damageRolls": {
           "0": {
-            "damage": "4d6+14",
+            "damage": "4d6+21",
             "damageType": "force"
           }
         },

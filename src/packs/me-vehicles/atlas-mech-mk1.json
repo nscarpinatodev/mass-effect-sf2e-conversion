@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/atlas-mech.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,8 +119,8 @@
     },
     "attributes": {
       "hp": {
-        "value": 175,
-        "max": 175,
+        "value": 193,
+        "max": 193,
         "temp": 0,
         "details": ""
       },
@@ -219,11 +223,11 @@
         },
         "slug": "atlas-mech-cannon",
         "bonus": {
-          "value": 21
+          "value": 23
         },
         "damageRolls": {
           "0": {
-            "damage": "3d8+9",
+            "damage": "3d8+15",
             "damageType": "piercing"
           }
         },
@@ -275,7 +279,7 @@
           "value": 2
         },
         "description": {
-          "value": "<p>The Atlas fires missiles at up to 2 targets within 120 feet. Each target takes @Damage[3d10+8[piercing]] (@Check[reflex|dc:27|basic] for half). Recharge [[/br 1d4 #rounds]] rounds.</p>",
+          "value": "<p>The Atlas fires missiles at up to 2 targets within 120 feet. Each target takes @Damage[3d10+8[piercing]] (@Check[reflex|dc:29|basic] for half). Recharge [[/br 1d4 #rounds]] rounds.</p>",
           "gm": ""
         },
         "traits": {

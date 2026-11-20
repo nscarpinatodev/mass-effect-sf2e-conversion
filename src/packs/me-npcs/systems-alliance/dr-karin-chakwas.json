@@ -218,11 +218,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 12
+          "value": 14
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "1d6+6",
+            "damage": "1d6+8",
             "damageType": "piercing",
             "category": null
           }
@@ -430,7 +430,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000001",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

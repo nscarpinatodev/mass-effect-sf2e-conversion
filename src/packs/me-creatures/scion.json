@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/Scion_Frontal.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,8 +119,8 @@
     },
     "attributes": {
       "hp": {
-        "value": 160,
-        "max": 160,
+        "value": 186,
+        "max": 186,
         "temp": 0,
         "details": ""
       },
@@ -245,11 +249,11 @@
       "system": {
         "slug": "scion-tentacle-slam",
         "bonus": {
-          "value": 24
+          "value": 26
         },
         "damageRolls": {
           "0": {
-            "damage": "3d8+12",
+            "damage": "3d8+18",
             "damageType": "bludgeoning"
           }
         },

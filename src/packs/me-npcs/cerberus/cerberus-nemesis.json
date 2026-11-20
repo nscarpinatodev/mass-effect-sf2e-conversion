@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/cerberus-nemesis.png",
   "folder": "menpcfoldr000004",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -207,11 +211,11 @@
         },
         "slug": "cerberus-nemesis-sniper",
         "bonus": {
-          "value": 15
+          "value": 17
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+8",
+            "damage": "3d6+13",
             "damageType": "piercing",
             "category": null
           }

@@ -40,7 +40,8 @@ const DamageRoll = () => game.pf2e?.DamageRoll ?? CONFIG.Dice.rolls.find((r) => 
 //   conditions  — [ "off-guard", "stunned:1", "slowed:1", ... ]  (":" = value)
 //   push        — feet the target is moved straight away from the caster's token
 //   note        — reminder text shown in the result card (manual rulings)
-const novaDice = (barrierHP) => 2 + Math.floor(barrierHP / 5);
+// Nova: 2d6, plus 1d6 for every 10 HP the barrier held (every 5 until the 2026-11 rebalance).
+const novaDice = (barrierHP) => 2 + Math.floor(barrierHP / 10);
 const basic = (damage, extra = {}) => ({
   success:         { damage, scale: 0.5, ...extra.success },
   failure:         { damage, ...extra.failure },
@@ -209,7 +210,7 @@ const POWERS = {
     name: 'Nova', save: 'fortitude', trait: 'biotic', area: true,
     // each detonation rolls its own damage, however soon the next one comes
     useKey: ({ caster }) => caster?.getFlag(MODULE_ID, 'novaAt') ?? '',
-    // 2d6, +1d6 per 5 HP the barrier held when Nova was used (recorded by the Nova hook below)
+    // 2d6, +1d6 per 10 HP the barrier held when Nova was used (recorded by the Nova hook below)
     damage: ({ caster }) => {
       const hp = caster?.getFlag(MODULE_ID, 'novaCharge');
       return hp > 0 ? `${novaDice(hp)}d6[force]` : null;
@@ -541,6 +542,8 @@ Hooks.on('createChatMessage', async (message) => {
     addCondition('prone');                                                  // Unstoppable Charge
   }
   const failed = ctx.outcome === 'failure' || ctx.outcome === 'criticalFailure';
+  // Improved Adept Mastery: a failed save against the Adept's Biotic Explosion knocks the creature prone
+  if (slug === 'me-biotic-explosion' && failed && casterHas(EXPLOSION_KNOCKDOWN_FEATURE)) addCondition('prone');
   if (slug === 'me-biotic-charge' && failed && casterHas('me-vanguard-heavy-impact')) {
     addCondition('off-guard');                                              // Heavy Impact
     degree.note = [degree.note, 'Off-guard until the end of the Vanguard\'s next turn (Heavy Impact).'].filter(Boolean).join(' ');
@@ -1857,13 +1860,12 @@ async function pushAway(tokenDoc, fromDoc, feet) {
 // it and comes off after the first (the second with Tactical Cloak Upgrade): a miss counts
 // when the attack is rolled, a hit when its damage is. When a Strike ends the cloak, Ghost
 // Protocol and Superior Infiltrator Mastery leave a wake until the start of the user's next
-// turn (concealment and the mastery's resistance). Apex Infiltrator's automatic critical hit
-// is marked as used for the turn by the first cloaked attack roll. Hunter's Mark marks the
-// user's one target. All of it runs on the client that made the roll or posted the card.
+// turn (concealment and the mastery's resistance). Hunter's Mark marks the user's one target.
+// All of it runs on the client that made the roll or posted the card. (Apex Infiltrator's
+// automatic critical hit was removed in the 2026-11 rebalance, and its marker with it.)
 const CLOAK_SLUG = 'me-effect-tactical-cloak';
 const WAKE_SLUG = 'me-effect-cloak-wake';
 const MARK_SLUG = 'me-effect-hunters-mark';
-const APEX_USED_SLUG = 'me-effect-apex-infiltrator-used';
 const CLOAK_RETURNS = ['me-infiltrator-phantom-protocol', 'me-infiltrator-assassination-protocol'];
 const cloakOf = (actor) => actor.itemTypes?.effect?.find((e) => e.slug === CLOAK_SLUG);
 /** Strikes the cloak lasts through: one, or two with Tactical Cloak Upgrade. */
@@ -1928,12 +1930,6 @@ Hooks.on('createChatMessage', async (message) => {
   const domains = ctx.domains ?? [];
   if (ctx.type === 'attack-roll') {
     if (domains.length && !domains.includes('strike-attack-roll')) return;      // a Strike, not some other attack roll
-    // Apex Infiltrator: the automatic critical hit is spent for this turn, hit or miss
-    if (cloak && actor.items.some((i) => i.slug === 'me-infiltrator-apex-infiltrator') && !actor.itemTypes.effect.some((e) => e.slug === APEX_USED_SLUG)) {
-      await actor.createEmbeddedDocuments('Item', [untilNextTurn('Apex Infiltrator: used this turn', APEX_USED_SLUG, cloak.img,
-        '<p>Your first cloaked Strike this turn has had its automatic critical hit. Ends at the start of your next turn.</p>',
-        [{ key: 'RollOption', domain: 'all', option: 'me-apex-used' }])]);
-    }
     if (ctx.outcome === 'failure' || ctx.outcome === 'criticalFailure') await spent();
     return;
   }
@@ -2137,8 +2133,10 @@ async function addPersistentDamage(actor, formula, damageType, dc = 15) {
 // power, the priming is spent and the creature explodes: it takes 2d6 force, +1d6 per 4
 // levels of the Adept, with no save, and the Adept's other enemies within 10 feet roll a
 // basic Reflex save against the class DC for the same roll. One use of a power primes or
-// detonates, never both, and a creature takes explosion damage once from one use.
+// detonates, never both, and a creature takes explosion damage once from one use. With
+// Improved Adept Mastery, a creature that fails that Reflex save is also knocked prone.
 const EXPLOSION_FEATURE = 'me-adept-biotic-explosion';
+const EXPLOSION_KNOCKDOWN_FEATURE = 'me-adept-mastery-improved';
 const PRIMED_SLUG = 'me-effect-biotic-primed';
 const EXPLOSION_OPT = 'me-explosion:';
 const EXPLOSION_RADIUS = 10;
@@ -2230,12 +2228,12 @@ async function bioticExplosion({ caster, actor, tokenDoc, primed, use }) {
   const dc = caster.system?.attributes?.classDC?.value;
   if (others.length) {
     const names = others.map((t) => t.name).join(', ');
-    lines.push(dc ? `10-foot burst: ${names} ${others.length === 1 ? 'rolls' : 'roll'} a basic Reflex save (DC ${dc})`
-      : `No class DC found: roll a basic Reflex save by hand for ${names} (${roll.total} force)`);
+    const knockdown = caster.items.some((i) => i.slug === EXPLOSION_KNOCKDOWN_FEATURE) ? '; a failure also knocks the creature Prone' : '';
+    lines.push(dc ? `10-foot burst: ${names} ${others.length === 1 ? 'rolls' : 'roll'} a basic Reflex save (DC ${dc})${knockdown}`
+      : `No class DC found: roll a basic Reflex save by hand for ${names} (${roll.total} force)${knockdown}`);
   } else if (scene) {
     lines.push('10-foot burst: no other enemy in reach');
   }
-  if (caster.items.some((i) => i.slug === 'me-adept-mastery-improved')) lines.push('Improved Adept Mastery: you may use a biotic power as a free action (once per round).');
   postResult(caster, 'Biotic Explosion', 'Detonated', lines, { owners: true });
   if (dc) {
     const feature = caster.items.find((i) => i.slug === EXPLOSION_FEATURE);

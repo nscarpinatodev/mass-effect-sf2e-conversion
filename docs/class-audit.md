@@ -6,6 +6,15 @@ Status words: **confirmed** means checked against the source files; **measured**
 
 How these classes compare with base Starfinder 2e classes, and how 20th-level fights go against level 20 enemies, is in `power-level-review.md` (2026-11-19).
 
+**Later the same day the classes were retuned by role, and everything below describes them as they were before that.** The change, its numbers and what was checked are in `power-level-review.md` under "The tiered design: damage by role". In short:
+- **Infiltrator:** Tactical Cloak 3d6 a step (was 2d6), Improved Infiltrator Mastery 4d6 on cloaked Strikes (was 2d6), no automatic critical hit from Apex Infiltrator.
+- **Vanguard:** Nova gains 1d6 for every 10 barrier HP (was every 5).
+- **Soldier:** each step of the Soldier Mastery chain adds +1 damage (was +2).
+- **Adept:** the Adept Mastery chain no longer adds to the class DC or gives a free power after a Biotic Explosion. On 2026-11-20 Improved Adept Mastery gained a knockdown in its place: other enemies that fail the Reflex save against a Biotic Explosion are knocked Prone.
+- **Engineer:** Apex Engineer no longer makes the first tech power of a round free.
+- **Everyone:** the kinetic shield is half the size (15 points, 50 with the Tier 4 mod).
+- One target at 10th / 16th / 20th after the change (simulated): Infiltrator 80 / 162 / 216, Vanguard 82 / 136 / 178, Soldier 66 / 131 / 186, Adept 82 / 121 / 178, Engineer 76 / 126 / 168, Sentinel 63 / 100 / 146 (unchanged).
+
 ## Problems that cut across classes
 
 ### X1. Powers did not scale with level (fixed 2026-11-18)

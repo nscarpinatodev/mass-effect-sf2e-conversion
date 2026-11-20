@@ -1,5 +1,15 @@
-2026/11/19-09:38:13.237 c29c Delete type=3 #1
-2026/11/19-09:38:13.240 6d84 Level-0 table #5: started
-2026/11/19-09:38:13.244 6d84 Level-0 table #5: 21345 bytes OK
-2026/11/19-09:38:13.247 6d84 Delete type=0 #3
-2026/11/19-09:38:13.247 6d84 Manual compaction at level-0 from '!items!meClsAdept000000' @ 72057594037927935 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.727 5e14 Recovering log #8
+2026/11/20-04:12:59.741 5e14 Delete type=0 #8
+2026/11/20-04:12:59.741 5e14 Delete type=3 #6
+2026/11/20-04:12:59.747 4a08 Level-0 table #14: started
+2026/11/20-04:12:59.752 4a08 Level-0 table #14: 21345 bytes OK
+2026/11/20-04:12:59.757 4a08 Delete type=0 #12
+2026/11/20-04:12:59.757 4a08 Manual compaction at level-0 from '!items!meClsAdept000000' @ 72057594037927935 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.757 4a08 Manual compaction at level-1 from '!items!meClsAdept000000' @ 72057594037927935 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at '!items!meClsVanguard000' @ 18 : 1
+2026/11/20-04:12:59.757 4a08 Compacting 1@1 + 1@2 files
+2026/11/20-04:12:59.764 4a08 Generated table #15@1: 6 keys, 21345 bytes
+2026/11/20-04:12:59.764 4a08 Compacted 1@1 + 1@2 files => 21345 bytes
+2026/11/20-04:12:59.768 4a08 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/20-04:12:59.769 4a08 Delete type=2 #10
+2026/11/20-04:12:59.769 4a08 Delete type=2 #14
+2026/11/20-04:12:59.769 4a08 Manual compaction at level-1 from '!items!meClsVanguard000' @ 18 : 1 .. '!items!meClsVanguard000' @ 0 : 0; will stop at (end)

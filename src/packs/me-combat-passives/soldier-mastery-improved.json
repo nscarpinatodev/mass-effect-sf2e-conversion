@@ -14,14 +14,14 @@
     "slug": "me-soldier-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>Years of combat experience make you a force multiplier on the battlefield. Your weapon Strikes deal <strong>+2 additional damage</strong> (total +4 with Soldier Mastery) and you retain the <strong>+1 bonus</strong> to attack rolls against off-guard enemies. The cooldowns of Adrenaline Rush, its reaction, Concussive Shot, Fortification, the Frag Grenade and Carnage are <strong>1 round shorter</strong>, to a minimum of 2 rounds.</p><p><em>Prerequisite: Soldier Mastery.</em></p><hr/><p><em>Automation: The extra Strike damage is applied automatically, and the shorter cooldown is counted when one of those powers starts its cooldown.</em></p>"
+      "value": "<p>Years of combat experience make you a force multiplier on the battlefield. Your weapon Strikes deal <strong>+1 additional damage</strong> (total +2 with Soldier Mastery) and you retain the <strong>+1 bonus</strong> to attack rolls against off-guard enemies. The cooldowns of Adrenaline Rush, its reaction, Concussive Shot, Fortification, the Frag Grenade and Carnage are <strong>1 round shorter</strong>, to a minimum of 2 rounds.</p><p><em>Prerequisite: Soldier Mastery.</em></p><hr/><p><em>Automation: The extra Strike damage is applied automatically, and the shorter cooldown is counted when one of those powers starts its cooldown.</em></p>"
     },
     "rules": [
       {
         "key": "FlatModifier",
         "selector": "strike-damage",
         "type": "untyped",
-        "value": 2,
+        "value": 1,
         "label": "Improved Soldier Mastery"
       },
       {

@@ -1,5 +1,15 @@
-2026/11/19-09:38:12.396 5fa0 Delete type=3 #1
-2026/11/19-09:38:12.401 6d84 Level-0 table #5: started
-2026/11/19-09:38:12.406 6d84 Level-0 table #5: 40280 bytes OK
-2026/11/19-09:38:12.410 6d84 Delete type=0 #3
-2026/11/19-09:38:12.410 6d84 Manual compaction at level-0 from '!items!MEHeritage000001' @ 72057594037927935 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:58.637 5e14 Recovering log #8
+2026/11/20-04:12:58.651 5e14 Delete type=0 #8
+2026/11/20-04:12:58.651 5e14 Delete type=3 #6
+2026/11/20-04:12:58.655 4a08 Level-0 table #14: started
+2026/11/20-04:12:58.662 4a08 Level-0 table #14: 40281 bytes OK
+2026/11/20-04:12:58.666 4a08 Delete type=0 #12
+2026/11/20-04:12:58.666 4a08 Manual compaction at level-0 from '!items!MEHeritage000001' @ 72057594037927935 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:58.666 4a08 Manual compaction at level-1 from '!items!MEHeritage000001' @ 72057594037927935 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at '!items!MEHeritage000044' @ 132 : 1
+2026/11/20-04:12:58.666 4a08 Compacting 1@1 + 1@2 files
+2026/11/20-04:12:58.671 4a08 Generated table #15@1: 44 keys, 40281 bytes
+2026/11/20-04:12:58.671 4a08 Compacted 1@1 + 1@2 files => 40281 bytes
+2026/11/20-04:12:58.675 4a08 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/20-04:12:58.675 4a08 Delete type=2 #10
+2026/11/20-04:12:58.675 4a08 Delete type=2 #14
+2026/11/20-04:12:58.675 4a08 Manual compaction at level-1 from '!items!MEHeritage000044' @ 132 : 1 .. '!items!MEHeritage000044' @ 0 : 0; will stop at (end)

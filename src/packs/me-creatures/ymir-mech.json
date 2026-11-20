@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/ymir-mech.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -220,11 +224,11 @@
         },
         "slug": "ymir-mech-minigun",
         "bonus": {
-          "value": 18
+          "value": 20
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+6",
+            "damage": "3d6+10",
             "damageType": "piercing"
           }
         },
@@ -276,7 +280,7 @@
           "value": 2
         },
         "description": {
-          "value": "<p>The YMIR fires a rocket at a target point within 120 feet. Each creature within 20 feet of the impact takes @Damage[4d10[fire]] (@Check[reflex|dc:24|basic] for half). Recharge [[/br 1d3 #rounds]] rounds.</p>",
+          "value": "<p>The YMIR fires a rocket at a target point within 120 feet. Each creature within 20 feet of the impact takes @Damage[4d10[fire]] (@Check[reflex|dc:26|basic] for half). Recharge [[/br 1d3 #rounds]] rounds.</p>",
           "gm": ""
         },
         "traits": {

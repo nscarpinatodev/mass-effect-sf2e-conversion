@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 280,
+        "value": 308,
         "temp": 0,
-        "max": 280,
+        "max": 308,
         "details": ""
       },
       "ac": {
@@ -219,7 +219,7 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "4d10+12",
+            "damage": "4d10+22",
             "damageType": "piercing",
             "category": null
           },
@@ -230,7 +230,7 @@
           }
         },
         "bonus": {
-          "value": 28
+          "value": 30
         },
         "description": {
           "value": "<p>The maw's jaws are coated in corrosive fluid. On a critical hit, the target is grabbed.</p>",
@@ -281,13 +281,13 @@
       "system": {
         "damageRolls": {
           "dmgroll0003": {
-            "damage": "2d12+12",
+            "damage": "2d12+18",
             "damageType": "bludgeoning",
             "category": null
           }
         },
         "bonus": {
-          "value": 26
+          "value": 28
         },
         "description": {
           "value": "",
@@ -422,7 +422,11 @@
   ],
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

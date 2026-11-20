@@ -211,11 +211,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 14
+          "value": 16
         },
         "damageRolls": {
           "dmg00Jo0E": {
-            "damage": "4d8+4",
+            "damage": "4d8+10",
             "damageType": "piercing",
             "category": null
           }
@@ -275,11 +275,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 14
+          "value": 16
         },
         "damageRolls": {
           "dmg00ibrj": {
-            "damage": "1d10+5",
+            "damage": "1d10+8",
             "damageType": "bludgeoning",
             "category": null
           }
@@ -706,7 +706,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000007",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 244,
-        "temp": 70,
-        "max": 244,
+        "value": 310,
+        "temp": 35,
+        "max": 310,
         "details": ""
       },
       "ac": {
@@ -219,11 +219,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 24
+          "value": 26
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "4d8+14",
+            "damage": "4d8+22",
             "damageType": "piercing",
             "category": null
           }
@@ -523,8 +523,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -534,7 +534,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -604,7 +604,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 40
+          "shieldHpBonus": 20
         }
       },
       "ownership": {
@@ -614,7 +614,7 @@
         "slug": "me-shield-hp-mod-t3",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 15 → 35).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {
@@ -769,7 +769,7 @@
       "system": {
         "slug": "me-npc-biotic-dark-channel",
         "description": {
-          "value": "<p>You mark a target with a persistent dark energy curse that eats away at them from within — and leaps to a new host when they fall.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-dark-channel] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage and gains @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[persistent,void]] damage (DC 15 flat check to end). When a creature affected by Dark Channel is reduced to 0 HP, the persistent void damage automatically transfers to the nearest enemy within <strong>30 feet</strong>.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[persistent,void]] damage (DC 18 flat check to end).</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "value": "<p>You mark a target with a persistent dark energy curse that eats away at them from within — and leaps to a new host when they fall.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3)+2*floor((@actor.system.details.level.value+97)/100))|options:me-power:me-npc-biotic-dark-channel] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage and gains @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[persistent,void]] damage (DC 15 flat check to end). When a creature affected by Dark Channel is reduced to 0 HP, the persistent void damage automatically transfers to the nearest enemy within <strong>30 feet</strong>.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[persistent,void]] damage (DC 18 flat check to end).</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -819,7 +819,7 @@
       "system": {
         "slug": "me-npc-biotic-pull",
         "description": {
-          "value": "<p>You project a focused mass effect field that seizes a single target and yanks them toward you.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-pull] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is pulled 10 feet toward you.</p><p><strong>Failure</strong> The creature is pulled up to 20 feet toward you and becomes <strong>Grabbed</strong> until the start of your next turn. The creature is Off-Guard while grabbed this way.</p><p><strong>Critical Failure</strong> As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also <strong>Knocked Prone</strong>.</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "value": "<p>You project a focused mass effect field that seizes a single target and yanks them toward you.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3)+2*floor((@actor.system.details.level.value+97)/100))|options:me-power:me-npc-biotic-pull] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is pulled 10 feet toward you.</p><p><strong>Failure</strong> The creature is pulled up to 20 feet toward you and becomes <strong>Grabbed</strong> until the start of your next turn. The creature is Off-Guard while grabbed this way.</p><p><strong>Critical Failure</strong> As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also <strong>Knocked Prone</strong>.</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -869,7 +869,7 @@
       "system": {
         "slug": "me-npc-biotic-slam",
         "description": {
-          "value": "<p>You seize a target with a biotic field, lift them helplessly into the air, then slam them into the ground with crushing force.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-slam] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and is moved 5 feet in any direction.</p><p><strong>Failure</strong> The target is lifted 10 feet into the air and then slammed down, taking @Damage[(3*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and becoming <strong>Stunned 1</strong> and <strong>Prone</strong>.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(6*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage, <strong>Stunned 2</strong>, and the target's movement speed is halved until the end of its next turn.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "value": "<p>You seize a target with a biotic field, lift them helplessly into the air, then slam them into the ground with crushing force.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3)+2*floor((@actor.system.details.level.value+97)/100))|options:me-power:me-npc-biotic-slam] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and is moved 5 feet in any direction.</p><p><strong>Failure</strong> The target is lifted 10 feet into the air and then slammed down, taking @Damage[(3*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and becoming <strong>Stunned 1</strong> and <strong>Prone</strong>.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(6*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage, <strong>Stunned 2</strong>, and the target's movement speed is halved until the end of its next turn.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -919,7 +919,7 @@
       "system": {
         "slug": "me-npc-lift-grenade",
         "description": {
-          "value": "<p>You throw a hybrid tech-biotic device that projects a localized mass-effect lift field on detonation, suspending targets in the air.</p><p>Choose a point within <strong>60 feet</strong>. All creatures in a @Template[burst|distance:15]{15-foot burst} centered on that point must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-lift-grenade] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is lifted <strong>5 feet</strong> off the ground and becomes <strong>Off-Guard</strong> until the end of your next turn.</p><p><strong>Failure</strong> The target is lifted <strong>10 feet</strong> and becomes <strong>Grabbed</strong> (suspended by the biotic field). The Grabbed condition ends at the start of your next turn or when the target Escapes (DC equals the creature's power DC).</p><p><strong>Critical Failure</strong> As failure, and the target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage and is <strong>Stunned 1</strong>.</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "value": "<p>You throw a hybrid tech-biotic device that projects a localized mass-effect lift field on detonation, suspending targets in the air.</p><p>Choose a point within <strong>60 feet</strong>. All creatures in a @Template[burst|distance:15]{15-foot burst} centered on that point must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3)+2*floor((@actor.system.details.level.value+97)/100))|options:me-power:me-npc-lift-grenade] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target is lifted <strong>5 feet</strong> off the ground and becomes <strong>Off-Guard</strong> until the end of your next turn.</p><p><strong>Failure</strong> The target is lifted <strong>10 feet</strong> and becomes <strong>Grabbed</strong> (suspended by the biotic field). The Grabbed condition ends at the start of your next turn or when the target Escapes (DC equals the creature's power DC).</p><p><strong>Critical Failure</strong> As failure, and the target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage and is <strong>Stunned 1</strong>.</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -963,7 +963,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Echoes of the Past</strong> <span class=\"action-glyph\">1</span></p><hr /><p>Javik touches a creature or object and reads the memories it carries. He learns one fact about the target's recent history, or about who last handled it, as if he had succeeded at a Recall Knowledge check. A creature can resist with a @Check[will|dc:30] save.</p>",
+          "value": "<p><strong>Echoes of the Past</strong> <span class=\"action-glyph\">1</span></p><hr /><p>Javik touches a creature or object and reads the memories it carries. He learns one fact about the target's recent history, or about who last handled it, as if he had succeeded at a Recall Knowledge check. A creature can resist with a @Check[will|dc:32] save.</p>",
           "gm": ""
         },
         "rules": [],
@@ -1048,7 +1048,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000009",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

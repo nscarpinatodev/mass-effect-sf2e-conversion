@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/ME3_Harvester.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,8 +119,8 @@
     },
     "attributes": {
       "hp": {
-        "value": 255,
-        "max": 255,
+        "value": 369,
+        "max": 369,
         "temp": 0,
         "details": ""
       },
@@ -208,11 +212,11 @@
       "system": {
         "slug": "harvester-claw",
         "bonus": {
-          "value": 30
+          "value": 32
         },
         "damageRolls": {
           "0": {
-            "damage": "4d8+18",
+            "damage": "4d8+27",
             "damageType": "slashing"
           }
         },
@@ -260,11 +264,11 @@
         },
         "slug": "harvester-acid-spit",
         "bonus": {
-          "value": 26
+          "value": 28
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+14",
+            "damage": "3d6+20",
             "damageType": "acid"
           },
           "1": {

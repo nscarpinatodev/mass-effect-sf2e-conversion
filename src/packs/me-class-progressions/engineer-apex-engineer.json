@@ -14,7 +14,7 @@
     "slug": "me-engineer-apex-engineer",
     "description": {
       "gm": "",
-      "value": "<p>Your mastery of omni-tool tech is without parallel. Every system you touch becomes a weapon.</p><p>All tech powers you use deal <strong>+1d6 electricity damage</strong> in addition to their normal effects. Once per round, the first tech power you use costs <strong>0 actions</strong> (free action). You also deal <strong>+2 damage</strong> with all weapon Strikes (passive omni-field amplification).</p><p><em>Prerequisite: Superior Engineer Mastery. Classes: Engineer.</em></p>"
+      "value": "<p>Your mastery of omni-tool tech is without parallel. Every system you touch becomes a weapon.</p><p>All tech powers you use deal <strong>+1d6 electricity damage</strong> in addition to their normal effects. You also deal <strong>+2 damage</strong> with all weapon Strikes (passive omni-field amplification).</p><p><em>Prerequisite: Superior Engineer Mastery. Classes: Engineer.</em></p>"
     },
     "rules": [
       {

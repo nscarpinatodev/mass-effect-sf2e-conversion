@@ -14,7 +14,7 @@
     "slug": "me-adept-mastery-improved",
     "description": {
       "gm": "",
-      "value": "<p>Your biotic efficiency reaches exceptional levels. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and your biotic power DCs keep the <strong>+1</strong>. Once per round, after triggering a Biotic Explosion, you may use a biotic power as a <strong>free action</strong>.</p><p><em>Prerequisite: Adept Mastery.</em></p><hr/><p><em>Automation: the Biotic Explosion card reminds you of the free power; using it is up to you.</em></p>"
+      "value": "<p>Your biotic efficiency reaches exceptional levels. All biotic powers have their action cost <strong>reduced by 1</strong> (minimum 1 action) and you keep Adept Mastery's shorter cooldowns.</p><p>Your Biotic Explosions throw the creatures around them off their feet. Each of your other enemies that <strong>fails its Reflex save</strong> against your Biotic Explosion is knocked <strong>Prone</strong>. The detonated creature rolls no save and is not knocked down.</p><p><em>Prerequisite: Adept Mastery.</em></p>"
     },
     "rules": [],
     "_migration": {

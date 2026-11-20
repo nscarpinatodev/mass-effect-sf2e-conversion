@@ -8,7 +8,7 @@
   "effects": [],
   "flags": {
     "mass-effect-sf2e-conversion": {
-      "shieldHpBonus": 20
+      "shieldHpBonus": 10
     }
   },
   "ownership": {
@@ -18,7 +18,7 @@
     "slug": "me-shield-hp-mod-t2",
     "description": {
       "gm": "",
-      "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 30 → 50).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+      "value": "<p>Increases kinetic shield capacity by <strong>+10 HP</strong> (base 15 → 25).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
     },
     "rules": [],
     "_migration": {

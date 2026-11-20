@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 169,
-        "temp": 70,
-        "max": 169,
+        "value": 228,
+        "temp": 35,
+        "max": 228,
         "details": ""
       },
       "ac": {
@@ -221,11 +221,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 20
+          "value": 22
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "4d8+11",
+            "damage": "4d8+18",
             "damageType": "cold",
             "category": null
           }
@@ -285,11 +285,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 20
+          "value": 22
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "4d8+11",
+            "damage": "4d8+18",
             "damageType": "piercing",
             "category": null
           }
@@ -730,8 +730,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -741,7 +741,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -811,7 +811,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 40
+          "shieldHpBonus": 20
         }
       },
       "ownership": {
@@ -821,7 +821,7 @@
         "slug": "me-shield-hp-mod-t3",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 15 → 35).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {
@@ -970,7 +970,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Rocket Barrage</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Reegar fires his rocket launcher at a point within 120 feet. Each creature in a @Template[burst|distance:10]{10-foot burst} takes @Damage[5d6+10[fire]] damage with a @Check[reflex|dc:26|basic] save; geth and other synthetics take a -2 circumstance penalty to this save. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
+          "value": "<p><strong>Rocket Barrage</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Reegar fires his rocket launcher at a point within 120 feet. Each creature in a @Template[burst|distance:10]{10-foot burst} takes @Damage[5d6+10[fire]] damage with a @Check[reflex|dc:28|basic] save; geth and other synthetics take a -2 circumstance penalty to this save. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
           "gm": ""
         },
         "rules": [],
@@ -1102,7 +1102,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000008",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

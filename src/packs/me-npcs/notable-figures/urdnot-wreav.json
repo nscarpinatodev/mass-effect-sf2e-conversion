@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 244,
-        "temp": 70,
-        "max": 244,
+        "value": 310,
+        "temp": 35,
+        "max": 310,
         "details": ""
       },
       "ac": {
@@ -218,11 +218,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 24
+          "value": 26
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "6d8+14",
+            "damage": "6d8+24",
             "damageType": "piercing",
             "category": null
           }
@@ -526,8 +526,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -537,7 +537,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -607,7 +607,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 40
+          "shieldHpBonus": 20
         }
       },
       "ownership": {
@@ -617,7 +617,7 @@
         "slug": "me-shield-hp-mod-t3",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 15 → 35).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {
@@ -766,11 +766,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 24
+          "value": 26
         },
         "damageRolls": {
           "0": {
-            "damage": "4d10+13",
+            "damage": "4d10+22",
             "damageType": "bludgeoning",
             "category": null
           }
@@ -863,7 +863,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Clan Chief's Roar</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Wreav bellows a challenge. Each enemy within 30 feet must succeed at a @Check[will|dc:30] save or be frightened 1 (frightened 2 on a critical failure). Krogan allies within 30 feet gain a +1 status bonus to attack rolls until the end of their next turn. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
+          "value": "<p><strong>Clan Chief's Roar</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Wreav bellows a challenge. Each enemy within 30 feet must succeed at a @Check[will|dc:32] save or be frightened 1 (frightened 2 on a critical failure). Krogan allies within 30 feet gain a +1 status bonus to attack rolls until the end of their next turn. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
           "gm": ""
         },
         "rules": [],
@@ -953,7 +953,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000010",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

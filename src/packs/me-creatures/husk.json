@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/Husk_ME_adversarybox.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -202,11 +206,11 @@
       "system": {
         "slug": "husk-spine-strike",
         "bonus": {
-          "value": 12
+          "value": 14
         },
         "damageRolls": {
           "0": {
-            "damage": "1d6+4",
+            "damage": "1d6+7",
             "damageType": "piercing"
           },
           "1": {

@@ -1,5 +1,15 @@
-2026/11/19-09:38:12.898 c29c Delete type=3 #1
-2026/11/19-09:38:12.902 6d84 Level-0 table #5: started
-2026/11/19-09:38:12.906 6d84 Level-0 table #5: 30107 bytes OK
-2026/11/19-09:38:12.910 6d84 Delete type=0 #3
-2026/11/19-09:38:12.910 6d84 Manual compaction at level-0 from '!actors!018df662e4af7e0e' @ 72057594037927935 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.328 5e14 Recovering log #8
+2026/11/20-04:12:59.339 5e14 Delete type=0 #8
+2026/11/20-04:12:59.339 5e14 Delete type=3 #6
+2026/11/20-04:12:59.343 4a08 Level-0 table #14: started
+2026/11/20-04:12:59.350 4a08 Level-0 table #14: 30153 bytes OK
+2026/11/20-04:12:59.354 4a08 Delete type=0 #12
+2026/11/20-04:12:59.354 4a08 Manual compaction at level-0 from '!actors!018df662e4af7e0e' @ 72057594037927935 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.354 4a08 Manual compaction at level-1 from '!actors!018df662e4af7e0e' @ 72057594037927935 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at '!actors.items!lx2exoframe00001.lx2vise000000001' @ 132 : 1
+2026/11/20-04:12:59.355 4a08 Compacting 1@1 + 1@2 files
+2026/11/20-04:12:59.362 4a08 Generated table #15@1: 47 keys, 30153 bytes
+2026/11/20-04:12:59.362 4a08 Compacted 1@1 + 1@2 files => 30153 bytes
+2026/11/20-04:12:59.365 4a08 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/20-04:12:59.366 4a08 Delete type=2 #10
+2026/11/20-04:12:59.366 4a08 Delete type=2 #14
+2026/11/20-04:12:59.366 4a08 Manual compaction at level-1 from '!actors.items!lx2exoframe00001.lx2vise000000001' @ 132 : 1 .. '!actors.items!lx2exoframe00001.lx2vise000000001' @ 0 : 0; will stop at (end)

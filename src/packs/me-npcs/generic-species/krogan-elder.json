@@ -213,13 +213,13 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "1d8+6",
+            "damage": "1d8+9",
             "damageType": "bludgeoning",
             "category": null
           }
         },
         "bonus": {
-          "value": 11
+          "value": 13
         },
         "description": {
           "value": "",
@@ -265,7 +265,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000011",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

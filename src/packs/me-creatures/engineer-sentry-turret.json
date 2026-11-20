@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "icons/weapons/guns/gun-blunderbuss-bronze.webp",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },

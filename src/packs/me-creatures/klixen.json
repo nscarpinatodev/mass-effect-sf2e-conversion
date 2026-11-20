@@ -208,7 +208,7 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "1d8+4",
+            "damage": "1d8+7",
             "damageType": "slashing",
             "category": null
           },
@@ -219,7 +219,7 @@
           }
         },
         "bonus": {
-          "value": 11
+          "value": 13
         },
         "description": {
           "value": "<p>Acidic residue on the claws adds acid damage to each strike.</p>",
@@ -309,7 +309,11 @@
   ],
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/npcs/jack.png",
   "folder": "menpcfoldr000009",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,9 +119,9 @@
     },
     "attributes": {
       "hp": {
-        "value": 165,
-        "max": 165,
-        "temp": 40,
+        "value": 206,
+        "max": 206,
+        "temp": 20,
         "details": ""
       },
       "ac": {
@@ -212,11 +216,11 @@
         },
         "slug": "jack-eviscerator",
         "bonus": {
-          "value": 21
+          "value": 23
         },
         "damageRolls": {
           "0": {
-            "damage": "5d8+12",
+            "damage": "5d8+21",
             "damageType": "piercing",
             "category": null
           }
@@ -319,7 +323,7 @@
       "system": {
         "slug": "me-npc-biotic-pull",
         "description": {
-          "value": "<p>You project a focused mass effect field that seizes a single target and yanks them toward you.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-pull] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is pulled 10 feet toward you.</p><p><strong>Failure</strong> The creature is pulled up to 20 feet toward you and becomes <strong>Grabbed</strong> until the start of your next turn. The creature is Off-Guard while grabbed this way.</p><p><strong>Critical Failure</strong> As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also <strong>Knocked Prone</strong>.</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "value": "<p>You project a focused mass effect field that seizes a single target and yanks them toward you.</p><p>Choose a creature within <strong>30 feet</strong>. The target must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3)+2*floor((@actor.system.details.level.value+97)/100))|options:me-power:me-npc-biotic-pull] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature is pulled 10 feet toward you.</p><p><strong>Failure</strong> The creature is pulled up to 20 feet toward you and becomes <strong>Grabbed</strong> until the start of your next turn. The creature is Off-Guard while grabbed this way.</p><p><strong>Critical Failure</strong> As failure, but the creature is pulled 30 feet. If pulled adjacent to you, it is also <strong>Knocked Prone</strong>.</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -369,7 +373,7 @@
       "system": {
         "slug": "me-npc-biotic-shockwave",
         "description": {
-          "value": "<p>You slam biotic energy into the ground, sending a rolling kinetic shockwave along the surface that topples everything in its path.</p><p>All creatures in a @Template[line|distance:60]{60-foot line} must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-shockwave] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage.</p><p><strong>Failure</strong> The creature takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and is pushed 10 feet away from you.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and also <strong>Knocked Prone</strong>.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "value": "<p>You slam biotic energy into the ground, sending a rolling kinetic shockwave along the surface that topples everything in its path.</p><p>All creatures in a @Template[line|distance:60]{60-foot line} must attempt a @Check[reflex|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3)+2*floor((@actor.system.details.level.value+97)/100))|options:me-power:me-npc-biotic-shockwave] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The creature takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage.</p><p><strong>Failure</strong> The creature takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and is pushed 10 feet away from you.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d6[bludgeoning]] damage and also <strong>Knocked Prone</strong>.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -702,8 +706,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -713,7 +717,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -782,7 +786,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 10
+          "shieldHpBonus": 5
         }
       },
       "ownership": {
@@ -792,7 +796,7 @@
         "slug": "me-shield-hp-mod-t1",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+10 HP</strong> (base 30 → 40).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+5 HP</strong> (base 15 → 20).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {

@@ -142,21 +142,21 @@ console.log('Overload: extra damage only against synthetics');
   assert(human.damage[0] === 16 && geth.damage[0] === 24, `2d8 vs 3d8: ${human.damage} / ${geth.damage}`);
 }
 
-console.log('Nova: 2d6 + 1d6 per 5 barrier HP recorded on use');
+console.log('Nova: 2d6 + 1d6 per 10 barrier HP recorded on use');
 {
   const vanguard = new Actor('Vanguard', { flags: { novaCharge: 14 } });
   const t1 = new Actor('T1'), t2 = new Actor('T2');
   await save('me-biotic-nova', 'failure', t1, { caster: vanguard, origin: 'Item.nova' });
   await save('me-biotic-nova', 'criticalFailure', t2, { caster: vanguard, origin: 'Item.nova' });
-  assert(t1.damage[0] === 24 && t2.damage[0] === 48, `14 HP = 4d6: 24 / doubled 48: ${t1.damage} / ${t2.damage}`);
+  assert(t1.damage[0] === 18 && t2.damage[0] === 36, `14 HP = 3d6: 18 / doubled 36: ${t1.damage} / ${t2.damage}`);
   // Nova Upgrade: +2d6, Stunned 1 on a failure, Stunned 3 on a critical failure
   const upgraded = new Actor('Upgraded', { flags: { novaCharge: 5 } });
   upgraded.items = [{ slug: 'me-upgrade-nova' }];
   const t3 = new Actor('T3'), t4 = new Actor('T4');
   await save('me-biotic-nova', 'failure', t3, { caster: upgraded, origin: 'Item.nova-up' });
   await save('me-biotic-nova', 'criticalFailure', t4, { caster: upgraded, origin: 'Item.nova-up2' });
-  assert(t3.damage[0] === 30 && t3.conditions.includes('stunned:1'), `5 HP = 3d6 + 2d6 = 30, Stunned 1: ${t3.damage} ${t3.conditions}`);
-  assert(t4.damage[0] === 60 && t4.conditions.includes('stunned:3') && t4.conditions.includes('prone'), `doubled 60, Stunned 3, prone: ${t4.damage} ${t4.conditions}`);
+  assert(t3.damage[0] === 24 && t3.conditions.includes('stunned:1'), `5 HP = 2d6 + 2d6 = 24, Stunned 1: ${t3.damage} ${t3.conditions}`);
+  assert(t4.damage[0] === 48 && t4.conditions.includes('stunned:3') && t4.conditions.includes('prone'), `doubled 48, Stunned 3, prone: ${t4.damage} ${t4.conditions}`);
   assert(t2.conditions.includes('prone'), 'crit failure knocks prone');
   // one detonation shares one roll; the next detonation, even seconds later, rolls anew
   const again = new Actor('Again', { flags: { novaCharge: 10, novaAt: 1 } });
@@ -604,7 +604,7 @@ console.log('Bio-amps: cooldowns are 4 rounds less the amp\'s Recharge; amp dama
   const amped = new Actor('Amped', { flags: { novaCharge: 14, ampDamageBonus: 3, powerDamageBonus: 1 } });
   const n1 = new Actor('N1');
   await save('me-biotic-nova', 'failure', n1, { caster: amped, origin: 'Item.nova-amp' });
-  assert(n1.damage[0] === 27, `Nova 4d6 (24) + 3 from the amp, not + the Power Amplifier's 1 too (got ${n1.damage[0]})`);
+  assert(n1.damage[0] === 21, `Nova 3d6 (18) + 3 from the amp, not + the Power Amplifier's 1 too (got ${n1.damage[0]})`);
   const human = new Actor('Human', { traits: ['humanoid'] });
   await save('me-tech-overload', 'failure', human, { caster: amped, origin: 'Item.overload-amp' });
   assert(human.damage[0] === 17, `a tech power takes the Power Amplifier's +1 but not the amp's +3 (got ${human.damage[0]})`);
@@ -755,12 +755,32 @@ console.log('Biotic Explosion: the burst, Biotic Cascade, and once per power use
   assert(f.rolls.map((r) => r.name).join() === 'Near,Edge', `enemies within 10 feet roll; the far one and the ally do not (got ${f.rolls.map((r) => r.name)})`);
   const opts = f.rolls[0].args.extraRollOptions;
   assert(f.rolls[0].args.dc.value === 30 && opts.includes('me-power:me-biotic-explosion') && opts.some((o) => o.startsWith('me-explosion:30:')), 'a Reflex save against the class DC that carries the explosion\'s roll');
-  assert(posted.some((m) => m.content.includes('Improved Adept Mastery: you may use a biotic power as a free action')), 'Improved Adept Mastery\'s free power is called out');
+  assert(!posted.some((m) => m.content.includes('free action')), 'no free power is offered after a Biotic Explosion (removed in the 2026-11 rebalance)');
   await burstSave(near.actor, 'success', opts, adept);
   await burstSave(edge.actor, 'criticalFailure', opts, adept);
   await burstSave(far.actor, 'failure', opts, adept);
   assert(near.actor.damage.join() === '15' && edge.actor.damage.join() === '60' && far.actor.damage.join() === '30', `basic save on the same 30: half, double, full (got ${near.actor.damage}, ${edge.actor.damage}, ${far.actor.damage})`);
   assert(!near.actor.created.some((d) => d.system?.slug === PRIMED), 'the burst does not prime');
+  // Improved Adept Mastery: a failed burst save knocks the creature prone
+  assert(!near.actor.conditions.includes('prone') && edge.actor.conditions.includes('prone') && far.actor.conditions.includes('prone'),
+    `Improved Adept Mastery: a failure or critical failure against the burst knocks prone, a success does not (got ${near.actor.conditions}; ${edge.actor.conditions}; ${far.actor.conditions})`);
+  {
+    // Throw knocks no one down itself, so this shows the detonated creature is left standing
+    const w = field();
+    const p = w.place('Primary', 0, -1, true); w.place('Near', 100);
+    await save('me-biotic-throw', 'failure', p.actor, { caster: adeptAt(12, { items: [{ type: 'feat', slug: 'me-adept-mastery-improved' }] }), origin: 'Item.burst-stand' });
+    assert(posted.some((m) => m.content.includes('knocks the creature Prone')), 'the Biotic Explosion card says a failed burst save knocks prone');
+    assert(!p.actor.conditions.includes('prone'), `the detonated creature rolls no save and stays standing (got ${p.actor.conditions})`);
+  }
+  {
+    const k = field();
+    const p = k.place('Primary', 0, -1, true), n = k.place('Near', 100);
+    const plain = adeptAt(12);
+    await save('me-biotic-throw', 'failure', p.actor, { caster: plain, origin: 'Item.burst-plain' });
+    assert(!posted.some((m) => m.content.includes('knocks the creature Prone')), 'without Improved Adept Mastery the card promises no knockdown');
+    await burstSave(n.actor, 'criticalFailure', k.rolls[0].args.extraRollOptions, plain);
+    assert(n.actor.damage.join() === '60' && !n.actor.conditions.includes('prone'), `without Improved Adept Mastery the burst deals its damage and knocks no one down (got ${n.actor.damage}; ${n.actor.conditions})`);
+  }
 
   const g = field();
   const p2 = g.place('Primary', 0, -1, true), n2 = g.place('Near', 100), e2 = g.place('Edge', 200);
@@ -1087,14 +1107,34 @@ console.log('Infiltrator: Tactical Cloak goes up on use, comes off after its Str
   assert(posted[0]?.content.includes('Ghost Protocol: concealed') && posted[0].content.includes('resistance 5'), 'and a card says what the wake gives');
   ctx.game.pf2e.ConditionManager.getCondition = conditions;
 
-  // Apex Infiltrator
+  // Apex Infiltrator no longer has an automatic critical hit (2026-11 rebalance), so nothing marks one as used
   const x = infiltrator(6, ['me-infiltrator-apex-infiltrator', 'me-upgrade-tactical-cloak']); c = cloaked(x);
   await roll(x, 'attack-roll', { outcome: 'criticalSuccess' });
-  const used = made(x, 'me-effect-apex-infiltrator-used');
-  assert(used.length === 1 && used[0].system.rules[0].option === 'me-apex-used' && used[0].system.duration.expiry === 'turn-start', 'Apex Infiltrator: the first cloaked attack roll marks the automatic critical hit as used until the next turn');
-  x.itemTypes.effect.push({ slug: 'me-effect-apex-infiltrator-used' });
-  await roll(x, 'attack-roll', { outcome: 'success' });
-  assert(made(x, 'me-effect-apex-infiltrator-used').length === 1, 'and it is marked only once a turn');
+  assert(made(x, 'me-effect-apex-infiltrator-used').length === 0, 'Apex Infiltrator: a cloaked attack roll leaves no automatic-critical marker');
+}
+
+console.log('2026-11 rebalance: the changed features and the shield read as designed in the packs');
+{
+  const pack = (rel) => JSON.parse(readFileSync(new URL(`../src/packs/${rel}`, import.meta.url), 'utf8'));
+  const flags = (rel) => pack(rel).flags['mass-effect-sf2e-conversion'];
+  const rule = (rel, pred) => pack(rel).system.rules.filter(pred);
+  const shield = flags('me-shields/kinetic-shield.json');
+  assert(shield.shieldMax === 15 && shield.shieldRegen === 5, `Kinetic Shield: 15 points, recharging 5 (got ${shield.shieldMax} / ${shield.shieldRegen})`);
+  const mods = [1, 2, 3, 4].map((t) => flags(`me-shields/shield-hp-mod-t${t}.json`).shieldHpBonus);
+  assert(mods.join() === '5,10,20,35', `Shield HP mods: +5 / +10 / +20 / +35 (got ${mods})`);
+  const cloak = rule('me-tech-powers/tactical-cloak-effect.json', (r) => r.key === 'DamageDice')[0];
+  assert(cloak.diceNumber === '3*(1+floor(@actor.level/4))', `Tactical Cloak: 3d6 a step (got ${cloak.diceNumber})`);
+  const mastery = rule('me-combat-passives/infiltrator-mastery-improved.json', (r) => r.key === 'DamageDice')[0];
+  assert(mastery.diceNumber === 4, `Improved Infiltrator Mastery: 4d6 on cloaked Strikes (got ${mastery.diceNumber})`);
+  assert(rule('me-class-progressions/infiltrator-apex-infiltrator.json', (r) => r.key === 'AdjustDegreeOfSuccess').length === 0, 'Apex Infiltrator: no automatic critical hit');
+  const soldier = ['', '-improved', '-superior'].map((s) => rule(`me-combat-passives/soldier-mastery${s}.json`, (r) => r.key === 'FlatModifier' && r.selector === 'strike-damage')[0].value);
+  assert(soldier.join() === '1,1,1', `Soldier Mastery chain: +1 a step (got ${soldier})`);
+  const adeptDc = ['', '-improved', '-superior'].flatMap((s) => rule(`me-combat-passives/adept-mastery${s}.json`, (r) => r.selector === 'class'));
+  assert(adeptDc.length === 0, 'Adept Mastery chain: no bonus to the class DC');
+  const improvedAdept = pack('me-combat-passives/adept-mastery-improved.json').system;
+  assert(improvedAdept.slug === 'me-adept-mastery-improved' && /fails its Reflex save<\/strong> against your Biotic Explosion is knocked <strong>Prone/.test(improvedAdept.description.value),
+    'Improved Adept Mastery: its text gives the Biotic Explosion knockdown under the slug the engine reads');
+  assert(!pack('me-class-progressions/engineer-apex-engineer.json').system.description.value.includes('0 actions'), 'Apex Engineer: no free tech power');
 }
 
 console.log('Infiltrator: Hunter\'s Mark marks the one targeted creature');

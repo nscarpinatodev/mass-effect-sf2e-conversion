@@ -352,7 +352,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000001",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

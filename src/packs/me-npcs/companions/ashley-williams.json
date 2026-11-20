@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 219,
-        "temp": 70,
-        "max": 219,
+        "value": 283,
+        "temp": 35,
+        "max": 283,
         "details": ""
       },
       "ac": {
@@ -218,11 +218,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 23
+          "value": 25
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "3d10+13",
+            "damage": "3d10+20",
             "damageType": "piercing",
             "category": null
           }
@@ -283,11 +283,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 23
+          "value": 25
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "3d8+13",
+            "damage": "3d8+20",
             "damageType": "piercing",
             "category": null
           }
@@ -729,8 +729,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -740,7 +740,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -810,7 +810,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 40
+          "shieldHpBonus": 20
         }
       },
       "ownership": {
@@ -820,7 +820,7 @@
         "slug": "me-shield-hp-mod-t3",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+40 HP</strong> (base 30 → 70).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 15 → 35).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {
@@ -969,7 +969,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Concussive Shot</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Ashley makes a ranged Strike. On a hit, the target must succeed at a @Check[fortitude|dc:29] save or be knocked prone and pushed 10 feet away. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
+          "value": "<p><strong>Concussive Shot</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Ashley makes a ranged Strike. On a hit, the target must succeed at a @Check[fortitude|dc:31] save or be knocked prone and pushed 10 feet away. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
           "gm": ""
         },
         "rules": [],
@@ -1059,7 +1059,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Inferno Grenade</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Ashley throws an incendiary grenade at a point within 60 feet. Each creature in a @Template[burst|distance:10]{10-foot burst} takes @Damage[4d6+12[fire]] damage with a @Check[reflex|dc:29|basic] save; on a failure it also takes @Damage[2d6[persistent,fire]]. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
+          "value": "<p><strong>Inferno Grenade</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Ashley throws an incendiary grenade at a point within 60 feet. Each creature in a @Template[burst|distance:10]{10-foot burst} takes @Damage[4d6+12[fire]] damage with a @Check[reflex|dc:31|basic] save; on a failure it also takes @Damage[2d6[persistent,fire]]. [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
           "gm": ""
         },
         "rules": [],
@@ -1101,7 +1101,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000009",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

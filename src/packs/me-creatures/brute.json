@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/ME3_Brute.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,8 +119,8 @@
     },
     "attributes": {
       "hp": {
-        "value": 190,
-        "max": 190,
+        "value": 219,
+        "max": 219,
         "temp": 0,
         "details": ""
       },
@@ -202,11 +206,11 @@
       "system": {
         "slug": "brute-slam",
         "bonus": {
-          "value": 28
+          "value": 30
         },
         "damageRolls": {
           "0": {
-            "damage": "3d10+16",
+            "damage": "3d10+24",
             "damageType": "bludgeoning"
           }
         },

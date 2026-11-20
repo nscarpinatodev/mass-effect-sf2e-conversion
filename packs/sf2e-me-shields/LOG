@@ -1,5 +1,15 @@
-2026/11/19-09:38:12.971 a1bc Delete type=3 #1
-2026/11/19-09:38:12.974 6d84 Level-0 table #5: started
-2026/11/19-09:38:12.982 6d84 Level-0 table #5: 7385 bytes OK
-2026/11/19-09:38:12.987 6d84 Delete type=0 #3
-2026/11/19-09:38:12.987 6d84 Manual compaction at level-0 from '!items!meActivateBbarFt' @ 72057594037927935 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.416 b1f8 Recovering log #8
+2026/11/20-04:12:59.427 b1f8 Delete type=0 #8
+2026/11/20-04:12:59.427 b1f8 Delete type=3 #6
+2026/11/20-04:12:59.430 4a08 Level-0 table #14: started
+2026/11/20-04:12:59.435 4a08 Level-0 table #14: 7388 bytes OK
+2026/11/20-04:12:59.439 4a08 Delete type=0 #12
+2026/11/20-04:12:59.440 4a08 Manual compaction at level-0 from '!items!meActivateBbarFt' @ 72057594037927935 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.440 4a08 Manual compaction at level-1 from '!items!meActivateBbarFt' @ 72057594037927935 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at '!items!meTitanCombatFrm' @ 38 : 1
+2026/11/20-04:12:59.440 4a08 Compacting 1@1 + 1@2 files
+2026/11/20-04:12:59.444 4a08 Generated table #15@1: 16 keys, 7388 bytes
+2026/11/20-04:12:59.444 4a08 Compacted 1@1 + 1@2 files => 7388 bytes
+2026/11/20-04:12:59.449 4a08 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/20-04:12:59.449 4a08 Delete type=2 #10
+2026/11/20-04:12:59.449 4a08 Delete type=2 #14
+2026/11/20-04:12:59.449 4a08 Manual compaction at level-1 from '!items!meTitanCombatFrm' @ 38 : 1 .. '!items!meTitanCombatFrm' @ 0 : 0; will stop at (end)

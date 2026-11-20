@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/ME3_Ravager.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,8 +119,8 @@
     },
     "attributes": {
       "hp": {
-        "value": 155,
-        "max": 155,
+        "value": 181,
+        "max": 181,
         "temp": 0,
         "details": ""
       },
@@ -201,11 +205,11 @@
         },
         "slug": "ravager-acid-barrage",
         "bonus": {
-          "value": 22
+          "value": 24
         },
         "damageRolls": {
           "0": {
-            "damage": "3d6+10",
+            "damage": "3d6+15",
             "damageType": "acid"
           },
           "1": {

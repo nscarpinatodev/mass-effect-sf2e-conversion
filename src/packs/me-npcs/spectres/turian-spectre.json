@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 140,
-        "temp": 100,
-        "max": 140,
+        "value": 214,
+        "temp": 50,
+        "max": 214,
         "details": ""
       },
       "ac": {
@@ -223,13 +223,13 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "3d6+7",
+            "damage": "3d6+11",
             "damageType": "piercing",
             "category": null
           }
         },
         "bonus": {
-          "value": 19
+          "value": 21
         },
         "description": {
           "value": "",
@@ -280,11 +280,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 20
+          "value": 22
         },
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "4d6+11",
+            "damage": "4d6+17",
             "damageType": "piercing",
             "category": null
           }
@@ -588,8 +588,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -599,7 +599,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -668,7 +668,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 70
+          "shieldHpBonus": 35
         }
       },
       "ownership": {
@@ -678,7 +678,7 @@
         "slug": "me-shield-hp-mod-t4",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+70 HP</strong> (base 30 → 100).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+35 HP</strong> (base 15 → 50).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {
@@ -742,7 +742,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000003",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

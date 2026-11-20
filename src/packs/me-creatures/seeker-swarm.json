@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/SwarmME3.jpg",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -212,11 +216,11 @@
       "system": {
         "slug": "seeker-swarm-envelop",
         "bonus": {
-          "value": 12
+          "value": 14
         },
         "damageRolls": {
           "0": {
-            "damage": "1d4",
+            "damage": "1d4+1",
             "damageType": "piercing"
           }
         },

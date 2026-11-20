@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 144,
-        "temp": 50,
-        "max": 144,
+        "value": 169,
+        "temp": 25,
+        "max": 169,
         "details": ""
       },
       "ac": {
@@ -218,11 +218,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 18
+          "value": 20
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "2d8+10",
+            "damage": "2d8+15",
             "damageType": "piercing",
             "category": null
           }
@@ -283,11 +283,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 18
+          "value": 20
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "4d6+10",
+            "damage": "4d6+16",
             "damageType": "piercing",
             "category": null
           }
@@ -698,8 +698,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -709,7 +709,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -779,7 +779,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 20
+          "shieldHpBonus": 10
         }
       },
       "ownership": {
@@ -789,7 +789,7 @@
         "slug": "me-shield-hp-mod-t2",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 30 → 50).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+10 HP</strong> (base 15 → 25).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {
@@ -938,7 +938,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Carnage</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Darius fires a high-explosive round. He makes a ranged Strike; on a hit it deals an extra @Damage[3d6+10[fire]] damage, and creatures adjacent to the target take @Damage[3d6+6[fire]] damage (@Check[reflex|dc:25|basic]). [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
+          "value": "<p><strong>Carnage</strong> <span class=\"action-glyph\">2</span></p><hr /><p>Darius fires a high-explosive round. He makes a ranged Strike; on a hit it deals an extra @Damage[3d6+10[fire]] damage, and creatures adjacent to the target take @Damage[3d6+6[fire]] damage (@Check[reflex|dc:27|basic]). [[/br 1d4 #Recharge]]{Recharge 1d4 rounds}.</p>",
           "gm": ""
         },
         "rules": [],
@@ -1115,7 +1115,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000010",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

@@ -18,7 +18,7 @@
     "slug": "me-shield-regen-mod-t4",
     "description": {
       "gm": "",
-      "value": "<p>Boosts kinetic shield recharge rate by <strong>+200%</strong> (base 10 → 30 HP/turn).</p><p>Only one Shield Regen Mod can be installed at a time.</p>"
+      "value": "<p>Boosts kinetic shield recharge rate by <strong>+200%</strong> (base 5 → 15 HP/turn).</p><p>Only one Shield Regen Mod can be installed at a time.</p>"
     },
     "rules": [],
     "_migration": {

@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/Harbinger_LE2_enemybox.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -115,8 +119,8 @@
     },
     "attributes": {
       "hp": {
-        "value": 155,
-        "max": 155,
+        "value": 176,
+        "max": 176,
         "temp": 0,
         "details": ""
       },
@@ -209,11 +213,11 @@
         },
         "slug": "harbinger-biotic-blast",
         "bonus": {
-          "value": 25
+          "value": 27
         },
         "damageRolls": {
           "0": {
-            "damage": "3d8+12",
+            "damage": "3d8+18",
             "damageType": "force"
           }
         },

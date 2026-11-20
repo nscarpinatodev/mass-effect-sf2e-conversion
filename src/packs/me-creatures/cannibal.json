@@ -3,7 +3,11 @@
   "type": "npc",
   "img": "modules/mass-effect-sf2e-conversion/assets/img/creatures/ME3_Cannibal.png",
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   },
@@ -205,11 +209,11 @@
         },
         "slug": "cannibal-shotgun",
         "bonus": {
-          "value": 17
+          "value": 19
         },
         "damageRolls": {
           "0": {
-            "damage": "4d8+9",
+            "damage": "4d8+16",
             "damageType": "piercing",
             "category": null
           }
@@ -265,11 +269,11 @@
       "system": {
         "slug": "cannibal-bone-fist",
         "bonus": {
-          "value": 18
+          "value": 20
         },
         "damageRolls": {
           "0": {
-            "damage": "2d8+6",
+            "damage": "2d8+10",
             "damageType": "bludgeoning"
           }
         },

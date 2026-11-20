@@ -1,5 +1,15 @@
-2026/11/19-09:38:13.119 3438 Delete type=3 #1
-2026/11/19-09:38:13.123 6d84 Level-0 table #5: started
-2026/11/19-09:38:13.129 6d84 Level-0 table #5: 36391 bytes OK
-2026/11/19-09:38:13.132 6d84 Delete type=0 #3
-2026/11/19-09:38:13.133 6d84 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.581 1fa8 Recovering log #8
+2026/11/20-04:12:59.596 1fa8 Delete type=0 #8
+2026/11/20-04:12:59.596 1fa8 Delete type=3 #6
+2026/11/20-04:12:59.601 4a08 Level-0 table #14: started
+2026/11/20-04:12:59.607 4a08 Level-0 table #14: 36679 bytes OK
+2026/11/20-04:12:59.612 4a08 Delete type=0 #12
+2026/11/20-04:12:59.612 4a08 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.612 4a08 Manual compaction at level-1 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at '!items!npctechtecharmor' @ 91 : 1
+2026/11/20-04:12:59.612 4a08 Compacting 1@1 + 1@2 files
+2026/11/20-04:12:59.618 4a08 Generated table #15@1: 37 keys, 36679 bytes
+2026/11/20-04:12:59.620 4a08 Compacted 1@1 + 1@2 files => 36679 bytes
+2026/11/20-04:12:59.626 4a08 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/20-04:12:59.626 4a08 Delete type=2 #10
+2026/11/20-04:12:59.626 4a08 Delete type=2 #14
+2026/11/20-04:12:59.627 4a08 Manual compaction at level-1 from '!items!npctechtecharmor' @ 91 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)

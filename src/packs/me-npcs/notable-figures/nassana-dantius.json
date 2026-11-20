@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 95,
-        "temp": 50,
-        "max": 95,
+        "value": 120,
+        "temp": 25,
+        "max": 120,
         "details": ""
       },
       "ac": {
@@ -219,11 +219,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 17
+          "value": 19
         },
         "damageRolls": {
           "dmg0": {
-            "damage": "4d6+9",
+            "damage": "4d6+15",
             "damageType": "piercing",
             "category": null
           }
@@ -423,8 +423,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -434,7 +434,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -504,7 +504,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 20
+          "shieldHpBonus": 10
         }
       },
       "ownership": {
@@ -514,7 +514,7 @@
         "slug": "me-shield-hp-mod-t2",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+20 HP</strong> (base 30 → 50).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+10 HP</strong> (base 15 → 25).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {
@@ -669,7 +669,7 @@
       "system": {
         "slug": "me-npc-biotic-warp",
         "description": {
-          "value": "<p>You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.</p><p>Choose a creature within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3))|options:me-power:me-npc-biotic-warp] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage and @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d4[persistent,void]] damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
+          "value": "<p>You suffuse a creature with destabilizing dark energy that tears apart molecular bonds and prevents regeneration.</p><p>Choose a creature within <strong>60 feet</strong>. The target must attempt a @Check[fortitude|dc:resolve(13+@actor.system.details.level.value+floor(@actor.system.details.level.value/3)+2*floor((@actor.system.details.level.value+97)/100))|options:me-power:me-npc-biotic-warp] save against the creature's power DC.</p><p><strong>Critical Success</strong> Unaffected.</p><p><strong>Success</strong> The target takes @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage.</p><p><strong>Failure</strong> The target takes @Damage[(2*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage and @Damage[(1*(1+floor(@actor.system.details.level.value/4)))d4[persistent,void]] damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.</p><p><strong>Critical Failure</strong> As failure, but @Damage[(4*(1+floor(@actor.system.details.level.value/4)))d6[void]] damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).</p><p><strong>Biotic Explosion</strong> A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.</p><p><strong>Recharge</strong> The creature can't use this power again for [[/br 1d4 #Recharge]]{1d4 rounds}.</p><hr/><p><em>NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).</em></p>",
           "gm": ""
         },
         "rules": [],
@@ -798,7 +798,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000010",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

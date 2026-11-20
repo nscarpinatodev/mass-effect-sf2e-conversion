@@ -1,5 +1,15 @@
-2026/11/19-09:38:13.201 5fa0 Delete type=3 #1
-2026/11/19-09:38:13.204 6d84 Level-0 table #5: started
-2026/11/19-09:38:13.208 6d84 Level-0 table #5: 21228 bytes OK
-2026/11/19-09:38:13.212 6d84 Delete type=0 #3
-2026/11/19-09:38:13.212 6d84 Manual compaction at level-0 from '!items!meAmpgemini10000' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.680 a164 Recovering log #8
+2026/11/20-04:12:59.693 a164 Delete type=0 #8
+2026/11/20-04:12:59.693 a164 Delete type=3 #6
+2026/11/20-04:12:59.697 4a08 Level-0 table #14: started
+2026/11/20-04:12:59.702 4a08 Level-0 table #14: 21228 bytes OK
+2026/11/20-04:12:59.704 4a08 Delete type=0 #12
+2026/11/20-04:12:59.704 4a08 Manual compaction at level-0 from '!items!meAmpgemini10000' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)
+2026/11/20-04:12:59.704 4a08 Manual compaction at level-1 from '!items!meAmpgemini10000' @ 72057594037927935 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at '!items!meItemOmniGel001' @ 66 : 1
+2026/11/20-04:12:59.704 4a08 Compacting 1@1 + 1@2 files
+2026/11/20-04:12:59.711 4a08 Generated table #15@1: 22 keys, 21228 bytes
+2026/11/20-04:12:59.712 4a08 Compacted 1@1 + 1@2 files => 21228 bytes
+2026/11/20-04:12:59.716 4a08 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/20-04:12:59.716 4a08 Delete type=2 #10
+2026/11/20-04:12:59.717 4a08 Delete type=2 #14
+2026/11/20-04:12:59.717 4a08 Manual compaction at level-1 from '!items!meItemOmniGel001' @ 66 : 1 .. '!items!meItemOmniGel001' @ 0 : 0; will stop at (end)

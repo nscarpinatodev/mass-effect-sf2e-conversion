@@ -217,13 +217,13 @@
       "system": {
         "damageRolls": {
           "dmgroll0001": {
-            "damage": "1d8+3",
+            "damage": "1d8+5",
             "damageType": "piercing",
             "category": null
           }
         },
         "bonus": {
-          "value": 10
+          "value": 12
         },
         "description": {
           "value": "<p>On a hit, the target must succeed at a DC 18 Fortitude save or take 1d6 persistent bleed damage (DC 18 to recover).</p>",
@@ -273,13 +273,13 @@
       "system": {
         "damageRolls": {
           "dmgroll0002": {
-            "damage": "1d6+3",
+            "damage": "1d6+5",
             "damageType": "slashing",
             "category": null
           }
         },
         "bonus": {
-          "value": 10
+          "value": 12
         },
         "description": {
           "value": "",
@@ -325,7 +325,11 @@
   ],
   "effects": [],
   "folder": null,
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }

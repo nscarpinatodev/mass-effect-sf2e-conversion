@@ -7,9 +7,9 @@
   "system": {
     "attributes": {
       "hp": {
-        "value": 60,
-        "temp": 40,
-        "max": 60,
+        "value": 80,
+        "temp": 20,
+        "max": 80,
         "details": ""
       },
       "ac": {
@@ -207,11 +207,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 14
+          "value": 16
         },
         "damageRolls": {
           "0": {
-            "damage": "4d6+7",
+            "damage": "4d6+12",
             "damageType": "piercing",
             "category": null
           }
@@ -271,11 +271,11 @@
       "system": {
         "slug": null,
         "bonus": {
-          "value": 13
+          "value": 15
         },
         "damageRolls": {
           "0": {
-            "damage": "2d6+5",
+            "damage": "2d6+8",
             "damageType": "slashing",
             "category": null
           }
@@ -328,7 +328,7 @@
       "system": {
         "slug": null,
         "description": {
-          "value": "<p><strong>Flashbang</strong> <span class=\"action-glyph\">2</span></p><hr /><p>The officer throws a flashbang at a point within 30 feet. Each creature in a @Template[burst|distance:10]{10-foot burst} must attempt a @Check[fortitude|dc:21] save. [[/br 1d4 #Recharge Flashbang]]{Recharge 1d4 rounds}.</p><p><strong>Success</strong> Deafened until the end of its next turn.</p><p><strong>Failure</strong> Blinded until the start of its next turn and deafened for 1 minute.</p><p><strong>Critical Failure</strong> As failure, and stunned 1.</p>",
+          "value": "<p><strong>Flashbang</strong> <span class=\"action-glyph\">2</span></p><hr /><p>The officer throws a flashbang at a point within 30 feet. Each creature in a @Template[burst|distance:10]{10-foot burst} must attempt a @Check[fortitude|dc:23] save. [[/br 1d4 #Recharge Flashbang]]{Recharge 1d4 rounds}.</p><p><strong>Success</strong> Deafened until the end of its next turn.</p><p><strong>Failure</strong> Blinded until the start of its next turn and deafened for 1 minute.</p><p><strong>Critical Failure</strong> As failure, and stunned 1.</p>",
           "gm": ""
         },
         "rules": [],
@@ -662,8 +662,8 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldMax": 30,
-          "shieldRegen": 10
+          "shieldMax": 15,
+          "shieldRegen": 5
         }
       },
       "ownership": {
@@ -673,7 +673,7 @@
         "slug": "me-kinetic-shield",
         "description": {
           "gm": "",
-          "value": "<p>A personal kinetic barrier providing <strong>30 Shield HP</strong>. Recharges <strong>10 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
+          "value": "<p>A personal kinetic barrier providing <strong>15 Shield HP</strong>. Recharges <strong>5 HP per turn</strong>.</p><p>Equip <strong>Shield HP</strong> and <strong>Regen</strong> mods to upgrade your barrier. If fully depleted, the wearer must <strong>Take Cover</strong> before the shield will begin recharging.</p>"
         },
         "rules": [],
         "_migration": {
@@ -742,7 +742,7 @@
       "effects": [],
       "flags": {
         "mass-effect-sf2e-conversion": {
-          "shieldHpBonus": 10
+          "shieldHpBonus": 5
         }
       },
       "ownership": {
@@ -752,7 +752,7 @@
         "slug": "me-shield-hp-mod-t1",
         "description": {
           "gm": "",
-          "value": "<p>Increases kinetic shield capacity by <strong>+10 HP</strong> (base 30 → 40).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
+          "value": "<p>Increases kinetic shield capacity by <strong>+5 HP</strong> (base 15 → 20).</p><p>Only one Shield HP Mod can be installed at a time.</p>"
         },
         "rules": [],
         "_migration": {
@@ -895,7 +895,11 @@
   ],
   "effects": [],
   "folder": "menpcfoldr000002",
-  "flags": {},
+  "flags": {
+    "mass-effect-sf2e-conversion": {
+      "enemyRule": 1
+    }
+  },
   "ownership": {
     "default": 0
   }
