@@ -654,6 +654,15 @@ You become trained in Thievery and Deception. You gain a +1 circumstance bonus t
 Humans do not have the longest lifespans, the most efficient minds, or the best physical equipment. What they have is an unusual capacity to learn across domains-to pick up skills that evolution never prepared them for and develop competence in areas that the species has only been exposed to for a generation. Where other species often excel within a defined area of specialization, humans accumulate breadth. This is, depending on your perspective, either their greatest strength or evidence that they cannot commit to anything.
 You gain one additional skill in which you are trained (your choice). Additionally, when you receive a critical success on a check to learn a new skill or when you attempt a downtime activity to Earn Income using a skill, you gain a +1 circumstance bonus to your next check using that same skill within 24 hours.
 
+##### Biotic Adept — Level 1
+*Prerequisite: Biotic Affinity, or the Alliance Biotic Human heritage*
+
+Where most biotics settle for the reflexive push they were born with, you have trained it into a weapon that grows with you.
+Your **Telekinetic Projectile** Strike deals an extra 1d6 force damage at 5th level, and another 1d6 at 9th, 13th and 17th level (5d6 in all at 17th).
+
+---
+*Automation: The extra dice are added to the Telekinetic Projectile Strike.*
+
 ##### Tenacious Survivor — Level 1
 
 Humanity's rapid expansion into the galaxy happened faster than most species thought was biologically possible, and the humans who survived the early colonial period were selected hard for a very specific trait: the refusal to stop. This is not mere stubbornness. It is a deep, physiological drive toward continued function even in conditions that would have convinced a more rational organism to quit.
@@ -1315,7 +1324,7 @@ At the end of each of your turns, you can attempt a DC 15 flat check to reduce t
 
 ## CLASSES
 
-*The six Mass Effect classes. Each entry covers its class feature, advancement and mastery chain, plus an index of its feats — the feats themselves are catalogued under Feats.*
+*The six Mass Effect classes. Each entry covers its advancement and every class feature in full, plus an index of its feats — the feats themselves are catalogued under Feats.*
 
 ---
 
@@ -1377,9 +1386,9 @@ Masters of combat in every environment, Soldiers rely on weapon proficiency, tac
 
 ---
 
-#### Class Mastery
+#### Class Features
 
-*These features are automatically granted at the indicated levels.*
+*These features are automatically granted at the indicated levels. The proficiency features in the Advancement table are described under Class Proficiency Features.*
 
 #### Soldier Mastery — Level 1
 
@@ -1402,6 +1411,12 @@ Years of combat experience make you a force multiplier on the battlefield. Your 
 
 ---
 
+#### Soldier Expertise — Level 9
+
+Your command of your ammo powers deepens. Your proficiency rank for your soldier class DC increases to expert. Your powers use your class DC.
+
+---
+
 #### Superior Soldier Mastery — Level 13
 *Prerequisite: Improved Soldier Mastery*
 
@@ -1410,6 +1425,12 @@ You are a living weapon, honed to perfection through countless battles. Your wea
 
 ---
 *Automation: The extra Strike damage is applied automatically, and a critical hit posts a Stunned 1 reminder.*
+
+---
+
+#### Master Soldier — Level 19
+
+Your command of your ammo powers deepens. Your proficiency rank for your soldier class DC increases to master. Your powers use your class DC.
 
 ---
 
@@ -1491,9 +1512,9 @@ Specialists in technical warfare, Engineers control the battlefield through dron
 
 ---
 
-#### Class Mastery
+#### Class Features
 
-*These features are automatically granted at the indicated levels.*
+*These features are automatically granted at the indicated levels. The proficiency features in the Advancement table are described under Class Proficiency Features.*
 
 #### Engineer Mastery — Level 1
 
@@ -1516,6 +1537,12 @@ Choose **two 1st-level tech powers** that an Engineer can take, from the *ME Tec
 
 ---
 
+#### Engineer Expertise — Level 7
+
+Your command of your tech powers deepens. Your proficiency rank for your engineer class DC increases to expert. Your powers use your class DC.
+
+---
+
 #### Improved Engineer Mastery — Level 7
 *Prerequisite: Engineer Mastery*
 
@@ -1535,6 +1562,18 @@ Your mastery of omni-tool systems reaches the pinnacle of technical achievement.
 
 ---
 *Automation: Your class DC bonus rises to +2 total. The +1d6 against off-guard targets is tracked by hand. The drone HP is the same bonus Improved Engineer Mastery gives and is counted when you deploy the drone.*
+
+---
+
+#### Master Engineer — Level 15
+
+Your command of your tech powers deepens. Your proficiency rank for your engineer class DC increases to master. Your powers use your class DC.
+
+---
+
+#### Legendary Engineer — Level 19
+
+Your command of your tech powers deepens. Your proficiency rank for your engineer class DC increases to legendary. Your powers use your class DC.
 
 ---
 
@@ -1616,9 +1655,31 @@ The most powerful biotic class in the galaxy, Adepts use mass effect fields to d
 
 ---
 
-#### Class Mastery
+#### Class Features
 
-*These features are automatically granted at the indicated levels.*
+*These features are automatically granted at the indicated levels. The proficiency features in the Advancement table are described under Class Proficiency Features.*
+
+#### Activate Biotic Barrier ◆◆ — Level 1
+
+You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
+The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
+
+| Level | Barrier HP |
+| --- | --- |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
+
+*With the Auto-Apply Biotic Barrier setting, using this action raises the barrier at once, at full HP; the card's Apply Effect button is not needed.*
+
+---
 
 #### Adept Mastery — Level 1
 
@@ -1627,6 +1688,15 @@ Refined biotic focus reduces the effort required to shape mass effect fields. Al
 
 ---
 *Automation: Biotic powers show their reduced action cost, and the +1 is added to your class DC, which your powers use. The action cost reduction from each mastery tier is the same reduction; they don't stack. Using a biotic power puts its cooldown on your sheet as an effect, with the shorter cooldown counted.*
+
+---
+
+#### Biotic Attack — Level 1
+
+You wrap your fist in a mass effect field and drive it into the target: the biotic punch every Vanguard and Adept learns before anything else.
+You gain a **Biotic Attack** unarmed Strike in the brawling group. It deals **1d6 bludgeoning** damage and has the finesse, shove and unarmed traits.
+Nothing you carry can improve it, so it grows as a graded weapon would. Its damage dice rise to **2d6** at 4th level, **3d6** at 12th, and **4d6** at 19th, and it gains an **item bonus** to attack rolls of **+1** at 2nd level, **+2** at 10th, and **+3** at 16th. It can't benefit from striking or potency from gear, such as handwraps.
+*Classes: Adept, Vanguard.*
 
 ---
 
@@ -1655,6 +1725,12 @@ Choose **two 1st-level biotic powers** that an Adept can take, from the *ME Biot
 
 ---
 
+#### Adept Expertise — Level 7
+
+Your command of your biotic powers deepens. Your proficiency rank for your adept class DC increases to expert. Your powers use your class DC.
+
+---
+
 #### Improved Adept Mastery — Level 7
 *Prerequisite: Adept Mastery*
 
@@ -1674,6 +1750,18 @@ You have mastered the art of mass effect manipulation. All biotic powers have th
 
 ---
 *Automation: Your class DC bonus rises to +2 total; the Strike damage and void resistance are applied automatically.*
+
+---
+
+#### Master Adept — Level 15
+
+Your command of your biotic powers deepens. Your proficiency rank for your adept class DC increases to master. Your powers use your class DC.
+
+---
+
+#### Legendary Adept — Level 19
+
+Your command of your biotic powers deepens. Your proficiency rank for your adept class DC increases to legendary. Your powers use your class DC.
 
 ---
 
@@ -1757,9 +1845,49 @@ The most aggressive class in the galaxy, Vanguards combine biotic power with clo
 
 ---
 
-#### Class Mastery
+#### Class Features
 
-*These features are automatically granted at the indicated levels.*
+*These features are automatically granted at the indicated levels. The proficiency features in the Advancement table are described under Class Proficiency Features.*
+
+#### Activate Biotic Barrier ◆◆ — Level 1
+
+You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
+The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
+
+| Level | Barrier HP |
+| --- | --- |
+| 1-2 | 5 |
+| 3-4 | 10 |
+| 5-6 | 15 |
+| 7-8 | 20 |
+| 9-10 | 25 |
+| 11-12 | 30 |
+| 13-14 | 35 |
+| 15-16 | 40 |
+| 17-18 | 45 |
+| 19-20 | 50 |
+
+*With the Auto-Apply Biotic Barrier setting, using this action raises the barrier at once, at full HP; the card's Apply Effect button is not needed.*
+
+---
+
+#### Biotic Attack — Level 1
+
+You wrap your fist in a mass effect field and drive it into the target: the biotic punch every Vanguard and Adept learns before anything else.
+You gain a **Biotic Attack** unarmed Strike in the brawling group. It deals **1d6 bludgeoning** damage and has the finesse, shove and unarmed traits.
+Nothing you carry can improve it, so it grows as a graded weapon would. Its damage dice rise to **2d6** at 4th level, **3d6** at 12th, and **4d6** at 19th, and it gains an **item bonus** to attack rolls of **+1** at 2nd level, **+2** at 10th, and **+3** at 16th. It can't benefit from striking or potency from gear, such as handwraps.
+*Classes: Adept, Vanguard.*
+
+---
+
+#### Biotic Melee — Level 1
+
+Your biotic field rides every blow you land up close. Your **melee Strikes**, with a melee weapon or your Biotic Attack, deal an extra **1d6 force** damage.
+**Heightened (+4)** The extra damage increases by 1d6: **2d6** at 5th level, **3d6** at 9th, **4d6** at 13th, and **5d6** at 17th.
+*A Vanguard who fights with a shotgun keeps pace through better shotguns instead.*
+*Classes: Vanguard.*
+
+---
 
 #### Vanguard Mastery — Level 1
 
@@ -1782,6 +1910,12 @@ Your combat biotic synergy reaches its peak efficiency. All biotic powers have t
 
 ---
 
+#### Vanguard Expertise — Level 7
+
+Your command of your biotic powers deepens. Your proficiency rank for your vanguard class DC increases to expert. Your powers use your class DC.
+
+---
+
 #### Superior Vanguard Mastery — Level 13
 *Prerequisite: Improved Vanguard Mastery*
 
@@ -1790,6 +1924,18 @@ Your barrier and body move as one unstoppable force. All biotic powers have thei
 
 ---
 *Automation: The +1 to attack and damage switches on by itself whenever your Biotic Barrier is at full HP.*
+
+---
+
+#### Master Vanguard — Level 15
+
+Your command of your biotic powers deepens. Your proficiency rank for your vanguard class DC increases to master. Your powers use your class DC.
+
+---
+
+#### Legendary Vanguard — Level 19
+
+Your command of your biotic powers deepens. Your proficiency rank for your vanguard class DC increases to legendary. Your powers use your class DC.
 
 ---
 
@@ -1873,9 +2019,9 @@ Elite marksmen who combine precision weapon skills with just enough tech to gain
 
 ---
 
-#### Class Mastery
+#### Class Features
 
-*These features are automatically granted at the indicated levels.*
+*These features are automatically granted at the indicated levels. The proficiency features in the Advancement table are described under Class Proficiency Features.*
 
 #### Infiltrator Mastery — Level 1
 
@@ -1910,6 +2056,12 @@ Your tactical precision reaches a lethal edge. All tech powers have their action
 
 ---
 
+#### Infiltrator Expertise — Level 7
+
+Your command of your tech powers deepens. Your proficiency rank for your infiltrator class DC increases to expert. Your powers use your class DC.
+
+---
+
 #### Superior Infiltrator Mastery — Level 13
 *Prerequisite: Improved Infiltrator Mastery*
 
@@ -1918,6 +2070,18 @@ You are the perfect predator — invisible, precise, and lethal. All tech powers
 
 ---
 *Automation: The resistance applies while the Tactical Cloak effect is on you and, after a Strike ends the cloak, while the Cloak Wake effect that replaces it lasts. The +2 is added to your class DC while the Tactical Cloak effect is on you.*
+
+---
+
+#### Master Infiltrator — Level 15
+
+Your command of your tech powers deepens. Your proficiency rank for your infiltrator class DC increases to master. Your powers use your class DC.
+
+---
+
+#### Legendary Infiltrator — Level 19
+
+Your command of your tech powers deepens. Your proficiency rank for your infiltrator class DC increases to legendary. Your powers use your class DC.
 
 ---
 
@@ -1999,9 +2163,9 @@ The most defensively robust class in the game, Sentinels combine Tech Armor with
 
 ---
 
-#### Class Mastery
+#### Class Features
 
-*These features are automatically granted at the indicated levels.*
+*These features are automatically granted at the indicated levels. The proficiency features in the Advancement table are described under Class Proficiency Features.*
 
 #### Sentinel Mastery — Level 1
 
@@ -2037,6 +2201,12 @@ You have refined your dual-discipline approach into a seamless defense. Biotic a
 
 ---
 
+#### Sentinel Expertise — Level 7
+
+Your command of your biotic and tech powers deepens. Your proficiency rank for your sentinel class DC increases to expert. Your powers use your class DC.
+
+---
+
 #### Superior Sentinel Mastery — Level 13
 *Prerequisite: Improved Sentinel Mastery*
 
@@ -2045,6 +2215,18 @@ Your hybrid discipline reaches its apex, blending biotic and tech into a seamles
 
 ---
 *Automation: The +1d4 is added to the damage of your biotic and tech powers. The higher resistance applies while the Tech Armor effect is on you.*
+
+---
+
+#### Master Sentinel — Level 15
+
+Your command of your biotic and tech powers deepens. Your proficiency rank for your sentinel class DC increases to master. Your powers use your class DC.
+
+---
+
+#### Legendary Sentinel — Level 19
+
+Your command of your biotic and tech powers deepens. Your proficiency rank for your sentinel class DC increases to legendary. Your powers use your class DC.
 
 ---
 
@@ -2072,81 +2254,117 @@ Your hybrid discipline reaches its apex, blending biotic and tech into a seamles
 
 ### CLASS PROFICIENCY FEATURES
 
-*Shared by the classes that list them in their Advancement table. Each class's own DC features (such as Adept Expertise, Master Adept and Legendary Adept) raise that class DC to expert, master and legendary; every power uses your class DC.*
+*Shared by the classes that list them in their Advancement table, at the levels given here. Each class's own class DC features (such as Adept Expertise, Master Adept and Legendary Adept) are printed with that class; every power uses your class DC.*
 
 **Armor Expertise** Your proficiency ranks for light, medium, and heavy armor and for unarmored defense increase to expert.
 
+*Soldier 11th, Vanguard 11th, Sentinel 11th*
+
 **Armor Mastery** Your proficiency ranks for light, medium, and heavy armor and for unarmored defense increase to master.
+
+*Soldier 17th, Sentinel 19th*
 
 **Fortitude Expertise** Your proficiency rank for Fortitude saves increases to expert.
 
+*Engineer 3rd, Adept 3rd, Infiltrator 3rd*
+
 **Fortitude Mastery** Your proficiency rank for Fortitude saves increases to master. When you roll a success on a Fortitude save, you get a critical success instead.
+
+*Soldier 7th, Vanguard 9th, Sentinel 17th*
 
 **Greater Weapon Specialization** Your damage from Weapon Specialization increases to 4 with weapons and unarmed attacks in which you are an expert, 6 if you are a master, and 8 if you are legendary.
 
+*Soldier 15th, Vanguard 15th, Infiltrator 15th, Sentinel 15th*
+
 **Light Armor Expertise** Your proficiency ranks for light armor and unarmored defense increase to expert.
+
+*Adept 11th*
 
 **Medium Armor Expertise** Your proficiency ranks for light armor, medium armor, and unarmored defense increase to expert.
 
+*Engineer 11th, Infiltrator 11th*
+
 **Perception Expertise** Your proficiency rank for Perception increases to expert.
+
+*Soldier 5th, Engineer 11th, Adept 11th, Vanguard 11th, Sentinel 11th*
 
 **Perception Mastery** Your proficiency rank for Perception increases to master.
 
+*Infiltrator 7th*
+
 **Reflex Expertise** Your proficiency rank for Reflex saves increases to expert.
+
+*Vanguard 3rd, Sentinel 3rd*
 
 **Reflex Mastery** Your proficiency rank for Reflex saves increases to master. When you roll a success on a Reflex save, you get a critical success instead.
 
+*Soldier 15th, Engineer 17th, Adept 17th, Infiltrator 9th*
+
 **Soldier Weapon Expertise** Your proficiency ranks for unarmed attacks, simple weapons, and martial weapons increase to expert.
+
+*Soldier 5th*
 
 **Soldier Weapon Mastery** Your proficiency ranks for unarmed attacks, simple weapons, and martial weapons increase to master.
 
+*Soldier 13th*
+
 **Weapon Expertise** Your proficiency ranks for unarmed attacks, simple weapons, and the weapons your class trains you in increase to expert.
+
+*Engineer 11th, Adept 11th, Vanguard 5th, Infiltrator 5th, Sentinel 5th*
 
 **Weapon Mastery** Your proficiency ranks for unarmed attacks, simple weapons, and the weapons your class trains you in increase to master.
 
+*Vanguard 13th, Infiltrator 13th, Sentinel 13th*
+
 **Weapon Specialization** You deal 2 additional damage with weapons and unarmed attacks in which you are an expert. This damage increases to 3 if you are a master, and to 4 if you are legendary.
+
+*Soldier 7th, Engineer 13th, Adept 13th, Vanguard 7th, Infiltrator 7th, Sentinel 7th*
 
 **Will Expertise** Your proficiency rank for Will saves increases to expert.
 
+*Soldier 3rd*
+
 **Will Mastery** Your proficiency rank for Will saves increases to master. When you roll a success on a Will save, you get a critical success instead.
+
+*Engineer 9th, Adept 9th, Vanguard 17th, Infiltrator 17th, Sentinel 9th*
 
 ---
 
 ## BACKGROUNDS
 
-*Choose one background during character creation. Backgrounds grant two ability boosts, skill training, a Lore skill, and a 1st-level skill feat.*
+*Choose one background during character creation. Each background grants two attribute boosts (one from the pair listed, one free), skill training, a Lore skill, and one 1st-level skill feat.*
 
-| Background | Ability Boosts | Skill | Lore | Skill Feat | Description |
+| Background | Attribute Boosts | Skill | Lore | Skill Feat | Description |
 |---|---|---|---|---|---|
-| Alliance Soldier | Con or Str, Cha or Con or Dex or Int or Str or Wis | Athletics | Systems Alliance Lore | Quick Jump | You served in the Systems Alliance military, humanity's primary defense force and its voice in galactic politics. Years of training, deployment, and combat experience hardened your body and sharpened your instincts. Whether you survived the Skyllian Blitz, patrolled the Terminus border, or served aboard an Alliance frigate, military service left an indelible mark on how you move, think, and solve problems. |
-| Biotic Prodigy | Con or Cha, Cha or Con or Dex or Int or Str or Wis | Occultism | Element Zero Lore | Oddity Identification | Element zero exposure before birth - or a rare, unexplained neurological event - gifted you with exceptional biotic potential. You were identified early and sent for training at a biotic academy, where instructors noted your unusual raw ability even among students with similar exposure. Most biotics develop adequate field application. You developed something else entirely. |
-| Cerberus Agent | Int or Str, Cha or Con or Dex or Int or Str or Wis | Intimidation | Cerberus Lore | Quick Coercion | You believed - or needed to believe - in humanity's manifest destiny among the stars. Cerberus recruited you, trained you, and deployed you against threats the Alliance refused to acknowledge. The organization gave you resources, a mission, and the uncomfortable knowledge of what humanity's enemies are actually capable of. Whatever doubts you carry now, the skills remain. |
-| Citadel Bureaucrat | Int or Cha, Cha or Con or Dex or Int or Str or Wis | Society | Citadel Council Lore | Experienced Professional | The Citadel's administrative machinery is vast enough that millions of careers disappear into it without trace. Yours didn't. You navigated the Presidium's endless layered jurisdictions, learned which regulations were enforced and which were merely words, and developed an instinct for institutional power that most people never acquire. The Council doesn't govern the galaxy so much as it ratifies what the bureaucracy has already decided. |
-| Citadel Wards | Cha or Wis, Cha or Con or Dex or Int or Str or Wis | Society | Citadel Lore | Streetwise | The Presidium gleams for visiting dignitaries. The Wards are where everyone else lives. Millions of beings from dozens of species crowd into residential towers, commercial districts, and service corridors that most Presidium residents never see. Growing up in the Wards means learning the rhythms of a genuinely multicultural society - who trusts whom, which districts belong to which communities, and what the actual power structures are beneath the ones on the organization chart. |
-| Colonist | Con or Wis, Cha or Con or Dex or Int or Str or Wis | Survival | Frontier Lore | Forager | You grew up somewhere humanity wasn't supposed to be able to survive - a colony world at the edge of explored space, an outpost that measured its isolation in months of travel time, a settlement that built everything it needed from whatever the planet provided. That experience gave you a pragmatic relationship with hardship that people raised in the inner systems simply don't have. |
-| Corporate Operative | Int or Cha, Cha or Con or Dex or Int or Str or Wis | Diplomacy | Corporate Lore | Bargain Hunter | The major corporations operating in galactic space - Eldfell-Ashland, Binary Helix, Synthetic Insights - answer to no government and employ their own security, intelligence, and negotiation assets. You were one of those assets. Your work required knowing when to talk, when to listen, and when to let the contract speak for itself. |
-| Earth Native | Cha or Wis, Cha or Con or Dex or Int or Str or Wis | Performance | Earth Lore | Impressive Performance | Humanity's homeworld carries the weight of the species' entire history - every war, every art form, every scientific breakthrough, every catastrophic failure. Earth is the cultural core of the Systems Alliance and the reference point against which humanity measures everything it has become in the galaxy. Growing up here means you were shaped by that history: the music, the politics, the literature, the sports, and the contradictions of a species that nearly destroyed its own planet and then decided to expand into someone else's galaxy. |
-| Illium | Int or Cha, Cha or Con or Dex or Int or Str or Wis | Deception | Illium Lore | Charming Liar | Technically, Illium is a lawfully governed asari world. Practically, it operates as a free market with diplomatic immunity - a planet where anything can be bought, sold, or contracted if the paperwork is correct. You navigated that system, which means you know how to read a contract, understand which regulations are enforced, and recognize when someone is using legality as a tool rather than a constraint. The smile and the clause are both part of the negotiation. |
-| Infiltrator | Dex or Int, Cha or Con or Dex or Int or Str or Wis | Deception | Infiltrator Lore | Lie to Me | You gathered information that wasn't meant to be gathered. Whether you worked for Alliance Intelligence, a private security firm, or a client you never met in person, your value was your ability to be somewhere you weren't supposed to be and leave without anyone knowing you'd been there. The work changed how you process every room you enter. |
-| Mercenary | Str or Con, Cha or Con or Dex or Int or Str or Wis | Athletics | Mercenary Lore | Titan Wrestler | The Blue Suns, Eclipse, Blood Pack, and dozens of smaller outfits provide the galaxy with armed professionals willing to do what standing militaries won't or can't. You were one of them. The work was rarely clean, always dangerous, and paid well enough that you kept taking contracts. You've learned to evaluate threats fast, because in your line of work you don't get a second chance to reassess. |
-| Noble | Cha or Int, Cha or Con or Dex or Int or Str or Wis | Diplomacy | Politics Lore | Hobnobber | Wealth and influence are not the same thing, but you have both. Your family - or the institution you were born into - provided access to education, connections, and resources that most people spend careers trying to acquire. You've been in rooms where galaxy-shaping decisions were made, watched them be made badly, and understood that the real power usually belongs to whoever controls what gets said next. |
-| Omega | Dex or Cha, Cha or Con or Dex or Int or Str or Wis | Stealth | Omega Lore | Experienced Smuggler | There is nowhere else in the galaxy quite like Omega. The Terminus's largest station has no government, no law, and no shortage of people willing to fill those vacancies violently. You grew up here, which means you learned early that visibility is a liability, that everyone wants something, and that the station's endless crowds are simultaneously your greatest danger and your best cover. Aria T'Loak keeps Omega from destroying itself. Everything else is negotiable. |
-| Omni-Tool Engineer | Int or Dex, Cha or Con or Dex or Int or Str or Wis | Crafting | Omni-Tool Lore | Quick Repair | You didn't just learn to use an omni-tool. You learned to understand it - the hardware layer, the firmware, the edge cases the manufacturer never anticipated, and the modifications that turn consumer hardware into something else entirely. That knowledge made you valuable to anyone who needed tech that worked in conditions where it wasn't supposed to. |
-| Palaven | Dex or Wis, Cha or Con or Dex or Int or Str or Wis | Acrobatics | Palaven Lore | Cat Fall | Every turian serves. This is not metaphor or tradition - it is the organizing principle of an entire civilization. Palaven's mandatory military service structures society around collective duty, hierarchy, and the understanding that the individual exists in service of something larger. Your fifteen years of service gave you military training, a place in the hierarchy, and a set of physical instincts that civilian life cannot replicate. You learned to move through danger efficiently, because fear doesn't excuse failure. |
-| Quarian Pilgrim | Wis or Dex, Cha or Con or Dex or Int or Str or Wis | Crafting | Migrant Fleet Lore | Specialty Crafting | Your Pilgrimage took you away from the Flotilla and into a galaxy that had no reason to trust you. Quarians are tolerated at best, viewed with suspicion at worst. The year or more you spent away from the Fleet - finding something to bring back, finding yourself in the process - changed you in ways that even the Fleet elders couldn't have predicted. You brought back more than a gift. |
-| Scientist | Int or Wis, Cha or Con or Dex or Int or Str or Wis | Arcana | Academia Lore | Quick Identification | The fundamental questions - of life, mass effect fields, dark energy, the Protheans, what lies beyond the relay network - pulled you into a life of research. You've worked in corporate labs, university positions, or independent settings where funding was uncertain and curiosity was the only constant. Science is the only methodology you trust completely, which makes you both valuable and occasionally difficult to work with. |
-| Smuggler | Dex or Cha, Cha or Con or Dex or Int or Str or Wis | Thievery | Smuggling Lore | Subtle Theft | The galaxy runs on legal commerce and officially sanctioned contracts. The parts that matter, though, frequently don't. You've moved cargo that couldn't be declared, navigated inspection protocols designed to fail against creative interpretation, and developed a working relationship with people who exist in the spaces between law and its enforcement. You know what things are actually worth and who actually wants them. |
-| Spectre Candidate | Str or Dex, Cha or Con or Dex or Int or Str or Wis | Stealth | Spectre Lore | Terrain Stalker | The Council's Special Tactics and Reconnaissance operatives answer to no one but the Council itself, receive no public acknowledgment, and operate by a mandate that begins and ends with results. You were identified as a potential candidate - screened, evaluated, and subjected to a preparation process that most people never know exists. Whether you've been formally inducted yet or not, you were changed by the process. |
-| Sur'Kesh | Int or Dex, Cha or Con or Dex or Int or Str or Wis | Nature | Sur'Kesh Lore | Dubious Knowledge | The salarian homeworld is a humid jungle world of extraordinary biological complexity - ecosystems dense enough that new species are still being catalogued, and a culture sophisticated enough to be cataloguing them. Sur'Kesh produced the Special Tasks Group, the galaxy's most effective intelligence service, and the scientific methodologies that underpin much of modern research. Growing up here means an instinctive relationship with living systems - their structures, their vulnerabilities, and their potential applications. |
-| Terminus Survivor | Wis or Con, Cha or Con or Dex or Int or Str or Wis | Medicine | Terminus Systems Lore | Battle Medicine | The Terminus Systems exist outside Council space and outside Council law. You grew up in a region where medical care was whatever you could provide yourself, law enforcement was whoever had the bigger weapon, and trust was the most dangerous luxury available. That environment taught you to assess injuries fast and treat them faster - survival in the Terminus often depends on being able to get back up before your enemies notice you went down. |
-| Thessia | Int or Wis, Cha or Con or Dex or Int or Str or Wis | Occultism | Thessia Lore | Schooled in Secrets | The asari homeworld is everything the species has spent three thousand years becoming - prosperous, cultured, suffused with biotic tradition and diplomatic sophistication. Thessia's schools are among the galaxy's finest. Its biotic academies are the oldest. Growing up here means you absorbed a civilization's worth of accumulated knowledge - including the biotic theory that underlies everything from L2 amplifiers to singularity fields. The galaxy looks different when you can read its physics. |
-| Tuchanka | Str or Con, Cha or Con or Dex or Int or Str or Wis | Intimidation | Tuchanka Lore | Intimidating Glare | Before the Genophage, Tuchanka was a krogan world of warring clans and fierce territorial contests. After it, the planet became something else - a blasted, radiation-scarred demonstration of what happens when a species is biologically broken by design. Growing up here demanded physical toughness and the ability to project power, because the alternative was to become prey. Tuchanka does not produce diplomats. It produces survivors who understand exactly what they survived. |
+| Alliance Soldier | Constitution or Strength, Free | Athletics | Systems Alliance Lore | Quick Jump | You served in the Systems Alliance military, humanity's primary defense force and its voice in galactic politics. Years of training, deployment, and combat experience hardened your body and sharpened your instincts. Whether you survived the Skyllian Blitz, patrolled the Terminus border, or served aboard an Alliance frigate, military service left an indelible mark on how you move, think, and solve problems. |
+| Biotic Prodigy | Constitution or Charisma, Free | Occultism | Element Zero Lore | Oddity Identification | Element zero exposure before birth - or a rare, unexplained neurological event - gifted you with exceptional biotic potential. You were identified early and sent for training at a biotic academy, where instructors noted your unusual raw ability even among students with similar exposure. Most biotics develop adequate field application. You developed something else entirely. |
+| Cerberus Agent | Intelligence or Strength, Free | Intimidation | Cerberus Lore | Quick Coercion | You believed - or needed to believe - in humanity's manifest destiny among the stars. Cerberus recruited you, trained you, and deployed you against threats the Alliance refused to acknowledge. The organization gave you resources, a mission, and the uncomfortable knowledge of what humanity's enemies are actually capable of. Whatever doubts you carry now, the skills remain. |
+| Citadel Bureaucrat | Intelligence or Charisma, Free | Society | Citadel Council Lore | Experienced Professional | The Citadel's administrative machinery is vast enough that millions of careers disappear into it without trace. Yours didn't. You navigated the Presidium's endless layered jurisdictions, learned which regulations were enforced and which were merely words, and developed an instinct for institutional power that most people never acquire. The Council doesn't govern the galaxy so much as it ratifies what the bureaucracy has already decided. |
+| Citadel Wards | Charisma or Wisdom, Free | Society | Citadel Lore | Streetwise | The Presidium gleams for visiting dignitaries. The Wards are where everyone else lives. Millions of beings from dozens of species crowd into residential towers, commercial districts, and service corridors that most Presidium residents never see. Growing up in the Wards means learning the rhythms of a genuinely multicultural society - who trusts whom, which districts belong to which communities, and what the actual power structures are beneath the ones on the organization chart. |
+| Colonist | Constitution or Wisdom, Free | Survival | Frontier Lore | Forager | You grew up somewhere humanity wasn't supposed to be able to survive - a colony world at the edge of explored space, an outpost that measured its isolation in months of travel time, a settlement that built everything it needed from whatever the planet provided. That experience gave you a pragmatic relationship with hardship that people raised in the inner systems simply don't have. |
+| Corporate Operative | Intelligence or Charisma, Free | Diplomacy | Corporate Lore | Bargain Hunter | The major corporations operating in galactic space - Eldfell-Ashland, Binary Helix, Synthetic Insights - answer to no government and employ their own security, intelligence, and negotiation assets. You were one of those assets. Your work required knowing when to talk, when to listen, and when to let the contract speak for itself. |
+| Earth Native | Charisma or Wisdom, Free | Performance | Earth Lore | Impressive Performance | Humanity's homeworld carries the weight of the species' entire history - every war, every art form, every scientific breakthrough, every catastrophic failure. Earth is the cultural core of the Systems Alliance and the reference point against which humanity measures everything it has become in the galaxy. Growing up here means you were shaped by that history: the music, the politics, the literature, the sports, and the contradictions of a species that nearly destroyed its own planet and then decided to expand into someone else's galaxy. |
+| Illium | Intelligence or Charisma, Free | Deception | Illium Lore | Charming Liar | Technically, Illium is a lawfully governed asari world. Practically, it operates as a free market with diplomatic immunity - a planet where anything can be bought, sold, or contracted if the paperwork is correct. You navigated that system, which means you know how to read a contract, understand which regulations are enforced, and recognize when someone is using legality as a tool rather than a constraint. The smile and the clause are both part of the negotiation. |
+| Infiltrator | Dexterity or Intelligence, Free | Deception | Infiltrator Lore | Lie to Me | You gathered information that wasn't meant to be gathered. Whether you worked for Alliance Intelligence, a private security firm, or a client you never met in person, your value was your ability to be somewhere you weren't supposed to be and leave without anyone knowing you'd been there. The work changed how you process every room you enter. |
+| Mercenary | Strength or Constitution, Free | Athletics | Mercenary Lore | Titan Wrestler | The Blue Suns, Eclipse, Blood Pack, and dozens of smaller outfits provide the galaxy with armed professionals willing to do what standing militaries won't or can't. You were one of them. The work was rarely clean, always dangerous, and paid well enough that you kept taking contracts. You've learned to evaluate threats fast, because in your line of work you don't get a second chance to reassess. |
+| Noble | Charisma or Intelligence, Free | Diplomacy | Politics Lore | Hobnobber | Wealth and influence are not the same thing, but you have both. Your family - or the institution you were born into - provided access to education, connections, and resources that most people spend careers trying to acquire. You've been in rooms where galaxy-shaping decisions were made, watched them be made badly, and understood that the real power usually belongs to whoever controls what gets said next. |
+| Omega | Dexterity or Charisma, Free | Stealth | Omega Lore | Experienced Smuggler | There is nowhere else in the galaxy quite like Omega. The Terminus's largest station has no government, no law, and no shortage of people willing to fill those vacancies violently. You grew up here, which means you learned early that visibility is a liability, that everyone wants something, and that the station's endless crowds are simultaneously your greatest danger and your best cover. Aria T'Loak keeps Omega from destroying itself. Everything else is negotiable. |
+| Omni-Tool Engineer | Intelligence or Dexterity, Free | Crafting | Omni-Tool Lore | Quick Repair | You didn't just learn to use an omni-tool. You learned to understand it - the hardware layer, the firmware, the edge cases the manufacturer never anticipated, and the modifications that turn consumer hardware into something else entirely. That knowledge made you valuable to anyone who needed tech that worked in conditions where it wasn't supposed to. |
+| Palaven | Dexterity or Wisdom, Free | Acrobatics | Palaven Lore | Cat Fall | Every turian serves. This is not metaphor or tradition - it is the organizing principle of an entire civilization. Palaven's mandatory military service structures society around collective duty, hierarchy, and the understanding that the individual exists in service of something larger. Your fifteen years of service gave you military training, a place in the hierarchy, and a set of physical instincts that civilian life cannot replicate. You learned to move through danger efficiently, because fear doesn't excuse failure. |
+| Quarian Pilgrim | Wisdom or Dexterity, Free | Crafting | Migrant Fleet Lore | Specialty Crafting | Your Pilgrimage took you away from the Flotilla and into a galaxy that had no reason to trust you. Quarians are tolerated at best, viewed with suspicion at worst. The year or more you spent away from the Fleet - finding something to bring back, finding yourself in the process - changed you in ways that even the Fleet elders couldn't have predicted. You brought back more than a gift. |
+| Scientist | Intelligence or Wisdom, Free | Arcana | Academia Lore | Quick Identification | The fundamental questions - of life, mass effect fields, dark energy, the Protheans, what lies beyond the relay network - pulled you into a life of research. You've worked in corporate labs, university positions, or independent settings where funding was uncertain and curiosity was the only constant. Science is the only methodology you trust completely, which makes you both valuable and occasionally difficult to work with. |
+| Smuggler | Dexterity or Charisma, Free | Thievery | Smuggling Lore | Subtle Theft | The galaxy runs on legal commerce and officially sanctioned contracts. The parts that matter, though, frequently don't. You've moved cargo that couldn't be declared, navigated inspection protocols designed to fail against creative interpretation, and developed a working relationship with people who exist in the spaces between law and its enforcement. You know what things are actually worth and who actually wants them. |
+| Spectre Candidate | Strength or Dexterity, Free | Stealth | Spectre Lore | Terrain Stalker | The Council's Special Tactics and Reconnaissance operatives answer to no one but the Council itself, receive no public acknowledgment, and operate by a mandate that begins and ends with results. You were identified as a potential candidate - screened, evaluated, and subjected to a preparation process that most people never know exists. Whether you've been formally inducted yet or not, you were changed by the process. |
+| Sur'Kesh | Intelligence or Dexterity, Free | Nature | Sur'Kesh Lore | Dubious Knowledge | The salarian homeworld is a humid jungle world of extraordinary biological complexity - ecosystems dense enough that new species are still being catalogued, and a culture sophisticated enough to be cataloguing them. Sur'Kesh produced the Special Tasks Group, the galaxy's most effective intelligence service, and the scientific methodologies that underpin much of modern research. Growing up here means an instinctive relationship with living systems - their structures, their vulnerabilities, and their potential applications. |
+| Terminus Survivor | Wisdom or Constitution, Free | Medicine | Terminus Systems Lore | Battle Medicine | The Terminus Systems exist outside Council space and outside Council law. You grew up in a region where medical care was whatever you could provide yourself, law enforcement was whoever had the bigger weapon, and trust was the most dangerous luxury available. That environment taught you to assess injuries fast and treat them faster - survival in the Terminus often depends on being able to get back up before your enemies notice you went down. |
+| Thessia | Intelligence or Wisdom, Free | Occultism | Thessia Lore | Schooled in Secrets | The asari homeworld is everything the species has spent three thousand years becoming - prosperous, cultured, suffused with biotic tradition and diplomatic sophistication. Thessia's schools are among the galaxy's finest. Its biotic academies are the oldest. Growing up here means you absorbed a civilization's worth of accumulated knowledge - including the biotic theory that underlies everything from L2 amplifiers to singularity fields. The galaxy looks different when you can read its physics. |
+| Tuchanka | Strength or Constitution, Free | Intimidation | Tuchanka Lore | Intimidating Glare | Before the Genophage, Tuchanka was a krogan world of warring clans and fierce territorial contests. After it, the planet became something else - a blasted, radiation-scarred demonstration of what happens when a species is biologically broken by design. Growing up here demanded physical toughness and the ability to project power, because the alternative was to become prey. Tuchanka does not produce diplomats. It produces survivors who understand exactly what they survived. |
 
 ---
 
 ## FEATS
 
-*Class feats, racial (ancestry) feats, and general/skill feats.*
+*Class feats by class, an index of racial (ancestry) feats, and the powers and feats several classes share.*
 
 ---
 
@@ -3967,7 +4185,7 @@ Tech Armor and Fortification can each be activated as a **free action**, once pe
 | **Drell** | Perfect Recall (1), Toxic Touch (1), Ghost of the Desert (5) |
 | **Elcor** | Crushing Blow (1), Subvocal Network (5) |
 | **Hanar** | Enkindler's Grace (1), Bioluminescent Display (5) |
-| **Human** | Adaptive Learner (1), Tenacious Survivor (1), Battle-Hardened (5) |
+| **Human** | Adaptive Learner (1), Biotic Adept (1), Tenacious Survivor (1), Battle-Hardened (5) |
 | **Krogan** | Headbutt (1), Blood Rage (5), Undying Warrior (9) |
 | **Quarian** | Omni-Tool Mastery (1), Suit Integrity (1), Emergency Evacuation Protocol (5) |
 | **Salarian** | Accelerated Mind (1), Chemical Analysis (1), STG Methods (5) |
@@ -4332,8 +4550,10 @@ Until the start of your next turn, you gain **Resistance 12** to all damage, or 
 *All Mass Effect weapons carry the **tech** trait. Action cost to Strike is ◆ unless noted. Damage type: P = piercing, B = bludgeoning, S = slashing, E = electricity.*
 
 **Trait Key**
+- **agile** — The multiple attack penalty with this weapon is −4 and −8 instead of −5 and −10.
 - **automatic** — Can fire a burst; all targets in a 10-ft cone make Reflex saves instead of individual attack rolls.
 - **burst-fire** — Makes 3 attacks as a 2-action activity; all share the same roll, each deals half damage.
+- **deadly-dX** — On a critical hit, add one die of size dX to the damage after doubling.
 - **fatal-dX** — On a critical hit, the damage die increases to dX and you roll one additional die.
 - **kickback** — −2 to attack rolls unless you have both hands on the weapon or brace against a surface.
 - **scatter-X** — All creatures within X feet of the primary target also take splash damage equal to the damage dice result.
@@ -4534,14 +4754,14 @@ Kinetic shields are worn equipment that provide Shield HP — temporary protecti
 
 | Frame | Armor Points |
 |---|---|
-| Heavy Combat Frame | 100 |
 | Light Combat Frame | 20 |
 | Standard Combat Frame | 50 |
+| Heavy Combat Frame | 100 |
 | Titan Combat Frame | 200 |
 
 #### Biotic Barrier
 
-Biotics can activate a personal mass effect barrier. **HP = 5 × ⌈level ÷ 2⌉**, calculated at activation, plus a worn bio-amp's barrier bonus. Absorbs damage before shields and HP. Does not recharge passively — must be reactivated.
+A biotic raises a personal mass effect barrier with **Activate Biotic Barrier** (◆◆). **HP = 5 × ⌈level ÷ 2⌉**, calculated at activation, plus a worn bio-amp's barrier bonus. It absorbs damage before shields and Hit Points and does not recharge on its own: at 0 HP it stays up as an empty field until it is reactivated at full strength or refilled by an ability such as Biotic Charge.
 
 ### Bio-Amps
 
@@ -4554,84 +4774,632 @@ A bio-amp plugs into a biotic's implant. Biotic powers cool down for **4 rounds,
 | Solaris Bio-Amp II | 5 | 1,600 cr | −1 | 3 rounds | +1 damage, +5 barrier HP |
 | Unity Bio-Amp I | 5 | 1,600 cr | −1 | 3 rounds | +1 damage, +5 barrier HP |
 | Polaris Bio-Amp I | 6 | 2,500 cr | −1 | 3 rounds | +10 barrier HP |
-| Prodigy Bio-Amp I | 8 | 5,000 cr | −2 | 2 rounds | — |
+| Prodigy Bio-Amp I *(uncommon)* | 8 | 5,000 cr | −2 | 2 rounds | — |
 | Gemini Bio-Amp II | 9 | 7,000 cr | −2 | 2 rounds | — |
-| HMBA Basic Bio-Amp | 10 | 9,000 cr | −2 | 2 rounds | +2 damage, +1 class DC, +10 barrier HP |
+| HMBA Basic Bio-Amp *(uncommon)* | 10 | 9,000 cr | −2 | 2 rounds | +2 damage, +1 class DC, +10 barrier HP |
 | Unity Bio-Amp II | 11 | 14,000 cr | −2 | 2 rounds | +2 damage, +1 class DC, +10 barrier HP |
 | Polaris Bio-Amp II | 12 | 20,000 cr | −2 | 2 rounds | +20 barrier HP |
-| Savant Bio-Amp I | 13 | 30,000 cr | −2 | 2 rounds | +3 damage, +2 class DC, +15 barrier HP |
-| HMBA Advanced Bio-Amp | 14 | 45,000 cr | −2 | 2 rounds | +2 damage, +1 class DC, +10 barrier HP |
+| Savant Bio-Amp I *(rare)* | 13 | 30,000 cr | −2 | 2 rounds | +3 damage, +2 class DC, +15 barrier HP |
+| HMBA Advanced Bio-Amp *(uncommon)* | 14 | 45,000 cr | −2 | 2 rounds | +2 damage, +1 class DC, +10 barrier HP |
 | Gemini Bio-Amp III | 15 | 65,000 cr | −3 | 1 round (first power each turn), then 2 | — |
-| Prodigy Bio-Amp II | 16 | 100,000 cr | −3 | 1 round (first power each turn), then 2 | — |
-| HMBA Master Bio-Amp | 18 | 240,000 cr | −3 | 1 round (first power each turn), then 2 | +2 damage, +1 class DC, +10 barrier HP |
-| Savant Bio-Amp II | 19 | 400,000 cr | −3 | 1 round (first power each turn), then 2 | +3 damage, +2 class DC, +15 barrier HP |
+| Prodigy Bio-Amp II *(uncommon)* | 16 | 100,000 cr | −3 | 1 round (first power each turn), then 2 | — |
+| HMBA Master Bio-Amp *(uncommon)* | 18 | 240,000 cr | −3 | 1 round (first power each turn), then 2 | +2 damage, +1 class DC, +10 barrier HP |
+| Savant Bio-Amp II *(rare)* | 19 | 400,000 cr | −3 | 1 round (first power each turn), then 2 | +3 damage, +2 class DC, +15 barrier HP |
 
 ### Weapon Modifications
 
 Weapon mods install into a single weapon and provide passive or triggered bonuses. Most weapons accept one mod.
 
-| Mod | Level | Credits | Effect |
-|---|---|---|---|
-| Extended Barrel I | 3 | 1,000 cr | A longer barrel with an extended kinetic acceleration chamber that increases the muzzle velocity of… |
-| High-Velocity Barrel I | 3 | 1,000 cr | A specially rifled barrel with hardened interior lining that increases round velocity to levels suff… |
-| Magazine Upgrade I | 3 | 1,000 cr | An extended heat sink and thermal clip assembly that increases the number of rounds a weapon can fir… |
-| Melee Stunner I | 3 | 1,000 cr | A compact electroshock emitter fitted to the weapon's frame near the barrel that discharges on conta… |
-| Power Magnifier I | 3 | 1,000 cr | A focusing-resonance amplifier wired into the weapon's omni-tool interface. It sharpens the user's o… |
-| Scope I | 3 | 1,000 cr | A low-magnification targeting scope with an integrated rangefinder and windage compensation system.… |
-| Shredder Mod I | 3 | 1,000 cr | A modified shot dispersal pattern that introduces irregular, tumbling pellets into the spread. The i… |
-| Smart Choke I | 3 | 1,000 cr | An adjustable choke collar that narrows the shot spread at the muzzle, tightening pellet groupings a… |
-| Stability Damper I | 3 | 1,000 cr | A recoil-absorbing stock and foregrip assembly that counteracts the muzzle climb and barrel drift ca… |
-| Ultralight Materials I | 3 | 1,000 cr | A partial frame replacement using carbon-ceramic composite materials that retain the weapon's struct… |
-| Omni-Blade | 5 | 2,500 cr | A micro-fabricated crystalline blade generated from the weapon's omni-tool interface and bonded to t… |
-| Thermal Scope I | 5 | 2,500 cr | A thermal imaging scope that overlays heat signatures onto the targeting display, allowing the snipe… |
-| Ultralight Materials II | 5 | 2,500 cr | A full-frame reconstruction in featherlight alloys so responsive the weapon barely registers in the… |
-| Cranial Trauma System | 7 | 7,000 cr | A targeting VI and barrel assembly optimized for precision shots against the head and upper cervical… |
-| Extended Barrel II | 7 | 7,000 cr | A military-specification extended barrel with a reinforced acceleration chamber and precision-tuned… |
-| High-Velocity Barrel II | 7 | 7,000 cr | An advanced high-velocity barrel with a tungsten-lined bore and enhanced mass effect coil configurat… |
-| Magazine Upgrade II | 7 | 7,000 cr | A double-capacity heat sink assembly using high-density composite thermal materials that absorb near… |
-| Melee Stunner II | 7 | 7,000 cr | A high-voltage frame-mounted stun emitter that delivers a full nervous system override on contact, b… |
-| Power Magnifier II | 7 | 7,000 cr | A military-grade resonance amplifier with a dedicated power-conditioning circuit feeding cleaner ene… |
-| Scope II | 7 | 7,000 cr | A high-magnification combat scope with an advanced rangefinder VI, atmospheric correction algorithms… |
-| Shredder Mod II | 7 | 7,000 cr | An advanced shredder configuration using serrated flechette sub-projectiles that deploy on impact an… |
-| Smart Choke II | 7 | 7,000 cr | A precision variable-choke system controlled by a targeting VI that dynamically adjusts spread angle… |
-| Stability Damper II | 7 | 7,000 cr | An advanced gyroscopic stabilization system integrated into the weapon's frame that actively counter… |
-| Thermal Scope II | 9 | 20,000 cr | An advanced multi-spectrum thermal scope combining infrared imaging with a predictive targeting VI t… |
+---
+
+#### Extended Barrel I — Level 3 · 1,000 cr
+
+A longer barrel with an extended kinetic acceleration chamber that increases the muzzle velocity of outgoing rounds. The additional distance allows the mass effect coils more time to impart momentum, resulting in harder-hitting impacts across all fire modes. Compatible with any ranged weapon. Grants a +1 item bonus to weapon damage rolls.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +1 is added to this weapon's damage.*
+
+---
+
+#### High-Velocity Barrel I — Level 3 · 1,000 cr
+
+A specially rifled barrel with hardened interior lining that increases round velocity to levels sufficient to punch through light armor plating. Rounds traveling at these velocities carry enough kinetic force that conventional armor weaves cannot fully absorb the impact. Your weapon's attacks ignore 5 points of physical resistance.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. Neither system lets an attachment ignore resistance, so the damage card shows a reminder to apply it.*
+
+---
+
+#### Magazine Upgrade I — Level 3 · 1,000 cr
+
+An extended heat sink and thermal clip assembly that increases the number of rounds a weapon can fire before requiring a heat sink swap. The larger thermal mass absorbs more heat per cycle, allowing the weapon to sustain fire well past the point a standard configuration would demand a reload. Compatible with any ranged weapon. Increases the weapon's ammo capacity by 50% (round up).
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This weapon's ammo capacity rises by half, rounded up.*
+
+---
+
+#### Melee Stunner I — Level 3 · 1,000 cr
+
+A compact electroshock emitter fitted to the weapon's frame near the barrel that discharges on contact during a pistol-whip or frame strike. The charge is calibrated to disrupt nervous system function without lethal effect, creating a brief window of incapacitation that operatives can exploit. Designed for pistols. When you Strike with a pistol as a melee weapon and hit, the target is flat-footed until the start of your next turn.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a pistol.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. A hit shows the effect as a reminder.*
+
+---
+
+#### Power Magnifier I — Level 3 · 1,000 cr
+
+A focusing-resonance amplifier wired into the weapon's omni-tool interface. It sharpens the user's offensive biotic and tech powers, forcing enemies to fight harder to resist them.
+Grants a +1 item bonus to your **class DC** — the DC enemies must beat when they attempt a save against your biotic and tech powers.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +1 is added to your class DC while the host weapon is equipped.*
+
+---
+
+#### Scope I — Level 3 · 1,000 cr
+
+A low-magnification targeting scope with an integrated rangefinder and windage compensation system. Allows the user to reliably engage targets at distances beyond the weapon's standard effective range. Compatible with any ranged weapon. Increases the weapon's range increment by 20 feet.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This weapon's range increment rises by 20 feet.*
+
+---
+
+#### Shredder Mod I — Level 3 · 1,000 cr
+
+A modified shot dispersal pattern that introduces irregular, tumbling pellets into the spread. The irregular projectiles tear rather than punch through tissue, leaving wounds that resist natural clotting. Particularly effective against organic targets that lack full-body armor coverage. Designed for shotguns. On a hit, the target takes 1d4 persistent bleed damage.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a shotgun.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The persistent bleed is added to this shotgun's damage.*
+
+---
+
+#### Smart Choke I — Level 3 · 1,000 cr
+
+An adjustable choke collar that narrows the shot spread at the muzzle, tightening pellet groupings at range. The choke's internal geometry is tuned to maintain lethality at the tighter spread angle rather than just redirecting the pellets. Useful when a shotgun needs to reach targets beyond its standard effective envelope. Designed for shotguns. Increases the weapon's range increment by 10 feet.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a shotgun.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This shotgun's range increment rises by 10 feet.*
+
+---
+
+#### Stability Damper I — Level 3 · 1,000 cr
+
+A recoil-absorbing stock and foregrip assembly that counteracts the muzzle climb and barrel drift caused by sustained automatic fire. The damper allows the shooter to maintain a tighter grouping during full-auto bursts without physical strength compensating for weapon movement. Designed for use with rifles and submachine guns. Grants a +1 item bonus to attack rolls made with automatic fire.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a weapon with the automatic trait.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +1 is added to this weapon's attack rolls when it fires automatic.*
+
+---
+
+#### Ultralight Materials I — Level 3 · 1,000 cr
+
+A partial frame replacement using carbon-ceramic composite materials that retain the weapon's structural integrity while substantially reducing its mass. The lighter weapon is easier to move with, transitions between targets faster, and contributes less fatigue to extended carry. Favored by operatives who spend long missions on foot. Reduces the weapon's Bulk by 1 (minimum 0).
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This weapon's Bulk drops by 1.*
+
+---
+
+#### Omni-Blade — Level 5 · 2,500 cr · Uncommon
+
+A micro-fabricated crystalline blade generated from the weapon's omni-tool interface and bonded to the barrel or foregrip. Unlike standalone omni-blades, the weapon-mounted version is structurally reinforced against the recoil forces of sustained fire and can be deployed without removing the hand from the grip. The blade glows orange with thermal energy from the weapon's heat dissipation system. Your weapon gains the versatile (slashing) trait and deals 1d6 slashing damage on melee Strikes.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The Omni-Blade Strike appears on your sheet while the host weapon is equipped.*
+
+---
+
+#### Thermal Scope I — Level 5 · 2,500 cr · Uncommon
+
+A thermal imaging scope that overlays heat signatures onto the targeting display, allowing the sniper to identify biological targets behind light cover and track movement through smoke or debris. The heat signature mapping highlights organ-dense areas and joint gaps in armor, guiding rounds toward targets' most vulnerable points. Designed for sniper rifles. On a successful aimed shot, deal an additional 1d6 precision damage.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a sniper rifle.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. Turn on the Aimed Shot toggle for this rifle; its Strikes then add the precision damage.*
+
+---
+
+#### Ultralight Materials II — Level 5 · 2,500 cr · Uncommon
+
+A full-frame reconstruction in featherlight alloys so responsive the weapon barely registers in the hand, freeing the wearer's focus for split-second power use. Originally developed for Salarian STG agents who weave gunfire and tech in the same breath.
+Once per turn, you may activate a biotic or tech power that normally costs **1 action** as a **free action**, provided that power is not on cooldown.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The free-action power is yours to use.*
+
+---
+
+#### Cranial Trauma System — Level 7 · 7,000 cr · Rare
+
+A targeting VI and barrel assembly optimized for precision shots against the head and upper cervical spine. The system calculates the minimum kinetic energy required to defeat helmet plating at specific trajectories and adjusts round velocity accordingly, ensuring penetration without sacrificing accuracy at range. Designed for pistols. When you hit a target with a pistol against their flat-footed or off-guard AC, deal an additional 1d6 precision damage.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a pistol.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The precision damage is added to this pistol's Strikes against off-guard targets.*
+
+---
+
+#### Extended Barrel II — Level 7 · 7,000 cr · Uncommon
+
+A military-specification extended barrel with a reinforced acceleration chamber and precision-tuned coil spacing. Rounds exit with significantly greater force than a standard barrel configuration allows, and the added length improves accuracy over the weapon's effective range as a secondary benefit. Compatible with any ranged weapon. Grants a +2 item bonus to weapon damage rolls.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +2 is added to this weapon's damage.*
+
+---
+
+#### High-Velocity Barrel II — Level 7 · 7,000 cr · Uncommon
+
+An advanced high-velocity barrel with a tungsten-lined bore and enhanced mass effect coil configuration. Rounds exit at velocities that defeat medium armor plating and penetrate kinetic barrier fields before the field can fully dampen the impact. Originally developed for anti-Geth operations where standard round velocities proved insufficient. Your weapon's attacks ignore 10 points of physical resistance.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. Neither system lets an attachment ignore resistance, so the damage card shows a reminder to apply it.*
+
+---
+
+#### Magazine Upgrade II — Level 7 · 7,000 cr · Uncommon
+
+A double-capacity heat sink assembly using high-density composite thermal materials that absorb nearly twice the heat of a standard clip before requiring replacement. Soldiers equipped with this modification can sustain fire through engagements that would exhaust standard-capacity weapons multiple times over. Compatible with any ranged weapon. Doubles the weapon's ammo capacity.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This weapon's ammo capacity doubles.*
+
+---
+
+#### Melee Stunner II — Level 7 · 7,000 cr · Uncommon
+
+A high-voltage frame-mounted stun emitter that delivers a full nervous system override on contact, briefly overwhelming the target's ability to take voluntary action. The system includes a charge capacitor that can sustain multiple discharges per engagement without drawing from the weapon's heat sink. Developed by Alliance Intelligence for close-quarters capture operations. Designed for pistols. When you Strike with a pistol as a melee weapon and hit, the target is stunned 1.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a pistol.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. A hit shows the effect as a reminder.*
+
+---
+
+#### Power Magnifier II — Level 7 · 7,000 cr · Uncommon
+
+A military-grade resonance amplifier with a dedicated power-conditioning circuit feeding cleaner energy to the user's implants and omni-tool emitters. Offensive powers bite deeper, overwhelming enemy defenses with markedly greater force.
+Grants a +2 item bonus to your **class DC** — the DC enemies must beat when they attempt a save against your biotic and tech powers.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +2 is added to your class DC while the host weapon is equipped.*
+
+---
+
+#### Scope II — Level 7 · 7,000 cr · Uncommon
+
+A high-magnification combat scope with an advanced rangefinder VI, atmospheric correction algorithms, and integrated target tracking. Designed for engagements at distances where standard iron sights become unreliable. Widely used by scout and infiltrator units who operate ahead of the main line. Compatible with any ranged weapon. Increases the weapon's range increment by 40 feet.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This weapon's range increment rises by 40 feet.*
+
+---
+
+#### Shredder Mod II — Level 7 · 7,000 cr · Uncommon
+
+An advanced shredder configuration using serrated flechette sub-projectiles that deploy on impact and embed in tissue before the main pellet mass follows through. The flechettes tear open wounds that are difficult to seal even with medi-gel, and the sheer volume of penetrating fragments makes clean wounds nearly impossible. Originally developed by mercenary groups for anti-personnel operations in close quarters. Designed for shotguns. On a hit, the target takes 1d6 persistent bleed damage.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a shotgun.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The persistent bleed is added to this shotgun's damage.*
+
+---
+
+#### Smart Choke II — Level 7 · 7,000 cr · Uncommon
+
+A precision variable-choke system controlled by a targeting VI that dynamically adjusts spread angle based on target range data fed from the weapon's sensors. At close range it widens for maximum coverage; at distance it tightens to near-rifle precision. The result is a shotgun that can perform effectively at ranges previously requiring a dedicated rifle. Designed for shotguns. Increases the weapon's range increment by 20 feet.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a shotgun.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. This shotgun's range increment rises by 20 feet.*
+
+---
+
+#### Stability Damper II — Level 7 · 7,000 cr · Uncommon
+
+An advanced gyroscopic stabilization system integrated into the weapon's frame that actively counteracts recoil forces during automatic fire. The internal gyros detect barrel deviation in real time and correct before the next round fires, keeping the weapon on-target regardless of fire rate. Originally developed for Cerberus heavy infantry operating automatic weapons at extreme sustained rates. Grants a +2 item bonus to attack rolls made with automatic fire.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a weapon with the automatic trait.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. The +2 is added to this weapon's attack rolls when it fires automatic.*
+
+---
+
+#### Thermal Scope II — Level 9 · 20,000 cr · Rare
+
+An advanced multi-spectrum thermal scope combining infrared imaging with a predictive targeting VI that calculates optimal impact points in real time. The system cross-references enemy species anatomy databases to identify the most lethal aiming solutions, accounting for environmental interference and barrier field distortion. Used exclusively by N7 infiltrators and Shadow Broker wetwork specialists. Designed for sniper rifles. On a successful aimed shot, deal an additional 2d6 precision damage.
+**Activate** - Install on weapon during a 10-minute field maintenance procedure. Requires a sniper rifle.
+
+---
+*Installation: Drag it onto a weapon in your inventory to install it. It affects only that weapon. Turn on the Aimed Shot toggle for this rifle; its Strikes then add the precision damage.*
+
+---
 
 ### Armor Modifications
 
 Armor mods install into a single suit of armor. Most armors accept one mod.
 
-| Mod | Level | Credits | Effect |
-|---|---|---|---|
-| Ablative Coating I | 1 | 200 cr | A layer of impact-absorbing nanocomposite material bonded to the inner surface of the armor chassis.… |
-| Arc Resistance Grid I | 3 | 1,000 cr | A Faraday mesh woven into the suit's outer shell that diverts electrical charge around the wearer ra… |
-| Cryo Resistance Lining I | 3 | 1,000 cr | An internal suit lining using phase-change thermal regulation materials that resist extreme cold by… |
-| Damage Amplifier I | 3 | 1,000 cr | A targeting VI module integrated into the helmet's HUD system, providing continuous ballistic calcul… |
-| Fire Resistance Layer I | 3 | 1,000 cr | A ceramic-composite thermal insulation layer bonded between the outer shell and the suit's inner pad… |
-| Kinetic Dampeners | 3 | 1,000 cr | A micro-suspension system installed in the joints and weight-bearing structures of the armor that ab… |
-| Melee Actuators I | 3 | 1,000 cr | Motorized exoskeletal actuators in the arm and shoulder sections of the suit that engage automatical… |
-| Power Amplifier I | 3 | 1,000 cr | A neural interface booster and omni-tool amplification module that increases the output power of bot… |
-| Recharge Accelerator I | 3 | 1,000 cr | An auxiliary power-routing module that primes the kinetic barrier emitters the instant fire slackens… |
-| Servo Actuators I | 3 | 1,000 cr | Leg and hip servo motors that actively assist the wearer's walking and running gait, effectively car… |
-| Shield Capacitor I | 3 | 1,000 cr | An supplementary kinetic barrier emitter cell that augments the output of the armor's existing barri… |
-| Trauma Module I | 3 | 1,000 cr | A medi-gel dispenser and automated triage system integrated into the armor's inner layer. Pressure s… |
-| Ablative Coating II | 5 | 2,500 cr | An advanced multi-layer ablative coating using graded-density alloy composites that progressively ab… |
-| Precision Targeting | 5 | 2,500 cr | A biometric targeting overlay system that combines thermal imaging, structural weak-point mapping, a… |
-| Recharge Module I | 5 | 2,500 cr | A power cycling optimization module that streamlines the energy routing between the suit's main reac… |
-| Arc Resistance Grid II | 7 | 7,000 cr | A high-conductance superconducting mesh integrated throughout the suit structure, capable of safely… |
-| Biotic Feedback Generator | 7 | 7,000 cr | A dark energy resonance amplifier tuned specifically to biotic L5 implant frequencies. The device cr… |
-| Cryo Resistance Lining II | 7 | 7,000 cr | A full-suit cryogenic insulation system incorporating active thermal countermeasures - small resista… |
-| Damage Amplifier II | 7 | 7,000 cr | An advanced ballistic VI suite integrating real-time target modeling, predictive movement algorithms… |
-| Fire Resistance Layer II | 7 | 7,000 cr | A reinforced thermal protection system using active heat-sink channels that continuously wick therma… |
-| Melee Actuators II | 7 | 7,000 cr | Heavy-duty combat actuators that replace the standard elbow and shoulder servo assemblies with hydra… |
-| Power Amplifier II | 7 | 7,000 cr | A high-performance multicore amplifier system that significantly increases the destructive output of… |
-| Recharge Accelerator II | 7 | 7,000 cr | A redundant field generator that holds a reserve charge dedicated to emergency barrier restoration,… |
-| Servo Actuators II | 7 | 7,000 cr | High-output military-grade leg actuators with full-body kinetic assist, including hip, knee, and ank… |
-| Shield Capacitor II | 7 | 7,000 cr | A high-density barrier capacitor array using superconducting loop technology to sustain a substantia… |
-| Tech Integrator | 7 | 7,000 cr | A custom heuristics module that integrates directly with the wearer's omni-tool, replacing the stand… |
-| Trauma Module II | 7 | 7,000 cr | An advanced battlefield triage system combining medi-gel infusion, nanoscale wound sealants, and a m… |
-| Ablative Coating III | 9 | 20,000 cr | Military-grade lattice shunting technology derived from dreadnought hull plating adapted for infantr… |
-| Recharge Module II | 9 | 20,000 cr | A high-capacity power cell and smart routing module that dramatically accelerates the cooldown cycle… |
+---
+
+#### Ablative Coating I — Level 1 · 200 cr
+
+A layer of impact-absorbing nanocomposite material bonded to the inner surface of the armor chassis. Microscale shock absorbers distribute kinetic energy across the suit's structural lattice, reducing trauma transfer to the wearer. Increases maximum Hit Points by 5.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Arc Resistance Grid I — Level 3 · 1,000 cr
+
+A Faraday mesh woven into the suit's outer shell that diverts electrical charge around the wearer rather than through them. Provides meaningful protection against arc projectors, Geth electromagnetic discharges, and the Javelin sniper rifle's penetrating arc bolts. Provides resistance 5 to electricity damage.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Cryo Resistance Lining I — Level 3 · 1,000 cr
+
+An internal suit lining using phase-change thermal regulation materials that resist extreme cold by absorbing thermal energy from the environment before it can reach the wearer. Effective against cryo weapons, cryogenic grenade blasts, and the vacuum of space exposure. Provides resistance 5 to cold damage.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Damage Amplifier I — Level 3 · 1,000 cr
+
+A targeting VI module integrated into the helmet's HUD system, providing continuous ballistic calculation and micro-adjustment recommendations that improve hit placement across all weapon types. The system's feedback loop tightens shot grouping and ensures impacts strike against target weak points rather than center mass. Grants a +1 item bonus to weapon damage rolls.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Fire Resistance Layer I — Level 3 · 1,000 cr
+
+A ceramic-composite thermal insulation layer bonded between the outer shell and the suit's inner padding. Designed to mitigate incendiary weapons, flamethrowers, and pyrotechnic explosives encountered in Terminus Systems operations. Provides resistance 5 to fire damage.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Kinetic Dampeners — Level 3 · 1,000 cr
+
+A micro-suspension system installed in the joints and weight-bearing structures of the armor that absorbs and counters the movement resistance created by the suit's mass. By dynamically compensating for the armor's inertia, the wearer experiences significantly less impediment to agility-dependent tasks. Reduces the armor's check penalty by 1.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. The host armor's check penalty drops by 1.*
+
+---
+
+#### Melee Actuators I — Level 3 · 1,000 cr
+
+Motorized exoskeletal actuators in the arm and shoulder sections of the suit that engage automatically during close-combat strikes, adding mechanical force multiplied through the suit's frame to the wearer's natural striking power. Originally developed for Krogan-operated hardsuits, scaled for human and humanoid physiology. Grants a +1 item bonus to melee damage rolls.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Power Amplifier I — Level 3 · 1,000 cr
+
+A neural interface booster and omni-tool amplification module that increases the output power of both tech and biotic abilities. For tech users, it improves omni-tool field generation efficiency; for biotics, it enhances the dark energy focusing resonators built into the suit. Grants a +1 item bonus to ability/spell damage rolls (tech and biotic powers).
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. The +1 is added to the damage your biotic and tech powers deal.*
+
+---
+
+#### Recharge Accelerator I — Level 3 · 1,000 cr
+
+An auxiliary power-routing module that primes the kinetic barrier emitters the instant fire slackens, eliminating the lag between a hit and the start of the recharge cycle.
+Your kinetic barrier normally waits **one full round** after taking damage before it begins recharging. This module removes that delay — your barrier resumes recharging on your next turn, even if it was hit on the previous round.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Servo Actuators I — Level 3 · 1,000 cr
+
+Leg and hip servo motors that actively assist the wearer's walking and running gait, effectively carrying a portion of the suit's weight and adding mechanical thrust to each stride. Originally developed for heavy-labor hardsuit use in low-gravity environments, the combat adaptation provides a meaningful increase in ground speed during tactical movement. Increases your Speed by 5 feet.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Shield Capacitor I — Level 3 · 1,000 cr
+
+An supplementary kinetic barrier emitter cell that augments the output of the armor's existing barrier projectors. The additional capacitor stores charge between barrier cycles, allowing the field to sustain a higher maximum strength before collapsing under fire. Increases kinetic barrier pool by 5.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Trauma Module I — Level 3 · 1,000 cr
+
+A medi-gel dispenser and automated triage system integrated into the armor's inner layer. Pressure sensors detect tissue trauma and trigger controlled medi-gel release directly against damaged areas, stimulating rapid cellular repair throughout combat. Grants Fast Healing 1 (regain 1 HP at the start of each of your turns while above 0 HP).
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Ablative Coating II — Level 5 · 2,500 cr
+
+An advanced multi-layer ablative coating using graded-density alloy composites that progressively absorb and redirect kinetic and thermal impact across the suit frame. A significant improvement over standard weave, substantially increasing the wearer's survivability in sustained firefights. Increases maximum Hit Points by 10.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Precision Targeting — Level 5 · 2,500 cr · Uncommon
+
+A biometric targeting overlay system that combines thermal imaging, structural weak-point mapping, and real-time ballistic compensation to guide rounds into joints, optics, and other critical target vulnerabilities. When properly applied, the system transforms a competent shot into a devastating one. When you make a targeted attack (aiming for a specific location or vulnerability), you deal an additional 1d6 precision damage on a hit.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Recharge Module I — Level 5 · 2,500 cr
+
+A power cycling optimization module that streamlines the energy routing between the suit's main reactor cell and its ability-generation systems. By eliminating inefficiencies in the standard cooling and recharge loop, it meaningfully reduces the downtime between power uses. Reduces power recharge time by 1 round.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. Power cooldowns are tracked by hand.*
+
+---
+
+#### Arc Resistance Grid II — Level 7 · 7,000 cr
+
+A high-conductance superconducting mesh integrated throughout the suit structure, capable of safely shunting even sustained high-voltage arc discharge into the ground without harm to the wearer. Originally developed for Alliance engineers working around mass effect drive cores. Provides resistance 10 to electricity damage.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Biotic Feedback Generator — Level 7 · 7,000 cr · Uncommon
+
+A dark energy resonance amplifier tuned specifically to biotic L5 implant frequencies. The device creates a sympathetic field loop that reinforces the user's own dark energy output, enhancing the precision and control of mass effect field manipulation. Developed by Sirta Foundation researchers studying elite biotic performance. Grants a +2 item bonus to biotic ability checks and attack rolls.
+**Activate** - Install in armor during a 10-minute field maintenance procedure. Requires an active biotic implant.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. Powers use your class DC, so the +2 is added there. Item bonuses to class DC don't stack.*
+
+---
+
+#### Cryo Resistance Lining II — Level 7 · 7,000 cr
+
+A full-suit cryogenic insulation system incorporating active thermal countermeasures - small resistance heating elements throughout the suit that engage automatically when temperature sensors detect hazardous cold. Originally developed for Alliance Marines operating in arctic and deep-space environments. Provides resistance 10 to cold damage.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Damage Amplifier II — Level 7 · 7,000 cr · Uncommon
+
+An advanced ballistic VI suite integrating real-time target modeling, predictive movement algorithms, and kinetic coil feedback that optimizes round velocity for each trigger pull. The system substantially improves effective damage output across all weapon platforms by ensuring rounds strike optimal impact angles against barrier fields, armor weaves, and organic tissue. Grants a +2 item bonus to weapon damage rolls.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Fire Resistance Layer II — Level 7 · 7,000 cr
+
+A reinforced thermal protection system using active heat-sink channels that continuously wick thermal energy away from vulnerable suit components. Provides meaningful protection against even the heaviest incendiary ordnance and sustained flamethrower exposure. Provides resistance 10 to fire damage.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Melee Actuators II — Level 7 · 7,000 cr · Uncommon
+
+Heavy-duty combat actuators that replace the standard elbow and shoulder servo assemblies with hydraulic force amplifiers, dramatically increasing the kinetic energy delivered in each close-combat strike. The system is tuned for combat applications rather than general movement, meaning strikes hit with a force well beyond what the wearer's musculature alone could generate. Grants a +2 item bonus to melee damage rolls.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Power Amplifier II — Level 7 · 7,000 cr · Uncommon
+
+A high-performance multicore amplifier system that significantly increases the destructive output of both tech and biotic powers. The module includes a dedicated power draw circuit that prioritizes ability generation over secondary suit functions when activated, ensuring maximum energy delivery to the field effect. Grants a +2 item bonus to ability/spell damage rolls (tech and biotic powers).
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. The +2 is added to the damage your biotic and tech powers deal.*
+
+---
+
+#### Recharge Accelerator II — Level 7 · 7,000 cr
+
+A redundant field generator that holds a reserve charge dedicated to emergency barrier restoration, dumping it straight into the projectors the moment they fall offline.
+This module removes your kinetic barrier's recharge delay *and* allows it to begin recharging from full depletion (0 HP) **without Taking Cover**. Your barrier resumes recharging on your next turn regardless of cover or recent damage.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Servo Actuators II — Level 7 · 7,000 cr · Uncommon
+
+High-output military-grade leg actuators with full-body kinetic assist, including hip, knee, and ankle joints that work in concert to multiply the wearer's natural stride length and frequency. The system includes a combat movement VI that anticipates directional changes and pre-loads actuator tension, making the suit feel almost weightless during sprints and direction changes. Increases your Speed by 10 feet.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Shield Capacitor II — Level 7 · 7,000 cr
+
+A high-density barrier capacitor array using superconducting loop technology to sustain a substantially larger kinetic field than standard emitter hardware. The expanded field envelope intercepts more incoming mass-accelerated rounds before collapsing, giving the wearer a meaningful advantage in sustained engagements. Increases kinetic barrier pool by 10.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Tech Integrator — Level 7 · 7,000 cr · Uncommon
+
+A custom heuristics module that integrates directly with the wearer's omni-tool, replacing the standard combat VI with a specialized offensive technology suite. The module pre-computes optimal hack vectors, incinerate plasma trajectories, and combat drone deployment windows, allowing the user to execute tech abilities with significantly improved effectiveness and accuracy. Grants a +2 item bonus to tech ability checks and attack rolls.
+**Activate** - Install in armor during a 10-minute field maintenance procedure. Requires an omni-tool.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. Powers use your class DC, so the +2 is added there. Item bonuses to class DC don't stack.*
+
+---
+
+#### Trauma Module II — Level 7 · 7,000 cr · Uncommon
+
+An advanced battlefield triage system combining medi-gel infusion, nanoscale wound sealants, and a medical VI that monitors vitals and prioritizes treatment in real time. The system operates continuously during combat, aggressively countering trauma as fast as it occurs. Grants Fast Healing 2 (regain 2 HP at the start of each of your turns while above 0 HP).
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Ablative Coating III — Level 9 · 20,000 cr
+
+Military-grade lattice shunting technology derived from dreadnought hull plating adapted for infantry scale. The coating actively redistributes impact forces through a reactive polymer mesh, dramatically expanding the trauma tolerance of the wearer's suit. Increases maximum Hit Points by 20.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. *
+
+---
+
+#### Recharge Module II — Level 9 · 20,000 cr · Uncommon
+
+A high-capacity power cell and smart routing module that dramatically accelerates the cooldown cycle for tech and biotic abilities. The system includes a predictive charge algorithm that begins the recharge sequence earlier in the activation window, shaving significant time from consecutive power use. Reduces power recharge time by 2 rounds.
+**Activate** - Install in armor during a 10-minute field maintenance procedure.
+
+---
+*Installation: Drag it onto armor in your inventory to install it. Its bonus applies while the armor it is installed in is worn. Power cooldowns are tracked by hand.*
+
+---
+
+### Medi-Gel & Omni-Gel
+
+Field consumables, and the dispenser upgrades that raise what a dose of medi-gel heals.
+
+---
+
+#### Omni-Gel — Level 0 · 1 cr
+
+A technological compound composed of reusable industrial plastics, ceramics, and light alloys kept in a semi-molten state. Omni-gel has a wide variety of field applications — emergency repairs, electronic bypassing, fabrication, and as a trade commodity. Synthesized by breaking down obsolete or non-essential equipment, it converts dead weight into a universally useful resource.
+One microunit of omni-gel is valued at one standard galactic credit (1 sp).
+**Activate ◆ (manipulate):** Spend one unit of omni-gel to do one of the following:
+- Reduce the DC of a Crafting check to *Repair* a piece of equipment by 2.
+- Attempt to bypass a simple electronic lock (Thievery DC 15, or DC 20 for a military-grade lock).
+- Improvise a structural patch, seal a breach, or perform a related field fabrication task at the GM's discretion.
+
+---
+
+#### Medi-Gel — Level 1 · 80 cr
+
+A synthetic tissue-regeneration compound delivered via dermally-absorbed nanites. Standard issue across the galaxy for both military and civilian use, medi-gel is fast, effective, and requires no medical training to apply.
+**Activate ◆ (manipulate):** Apply medi-gel to yourself or an adjacent willing or unconscious creature. The target regains 25 healing Hit Points. This healing cannot exceed the target's maximum HP — any excess is lost. Medi-gel does not grant temporary HP.
+If applied to a dying creature, the creature is immediately stabilized (their dying value becomes 0) before the healing is applied.
+
+---
+*If the applying character owns a **Medi-Gel Upgrade**, use its higher healing value instead: Upgrade I = 40 healing, II = 55 healing, III = 70 healing, IV = 85 healing.*
+
+---
+
+#### Medi-Gel Upgrade I — Level 5 · 400 cr
+
+A refined medi-gel formula loaded into your dispenser, increasing the regenerative payload of every dose you administer.
+Whenever **you** apply Medi-Gel to a creature (including yourself), it restores 40 healing Hit Points instead of the base 25. This bonus is determined by the character *applying* the medi-gel, not the recipient. As normal, healing cannot exceed the target's maximum HP, and excess is lost.
+
+---
+*This is a tiered upgrade. Purchasing a higher tier replaces this one — a character benefits only from their single highest Medi-Gel Upgrade.*
+
+---
+
+#### Medi-Gel Upgrade II — Level 8 · 1,000 cr
+
+A further-refined medi-gel formula with denser nanite concentration, accelerating tissue regeneration beyond standard field issue.
+Whenever **you** apply Medi-Gel to a creature (including yourself), it restores 55 healing Hit Points instead of the base 25. This bonus is determined by the character *applying* the medi-gel, not the recipient. As normal, healing cannot exceed the target's maximum HP, and excess is lost.
+
+---
+*This is a tiered upgrade. It replaces Medi-Gel Upgrade I — a character benefits only from their single highest Medi-Gel Upgrade.*
+
+---
+
+#### Medi-Gel Upgrade III — Level 11 · 2,500 cr · Uncommon
+
+A military-grade medi-gel formula incorporating advanced cellular scaffolding agents, capable of repairing severe trauma in seconds.
+Whenever **you** apply Medi-Gel to a creature (including yourself), it restores 70 healing Hit Points instead of the base 25. This bonus is determined by the character *applying* the medi-gel, not the recipient. As normal, healing cannot exceed the target's maximum HP, and excess is lost.
+
+---
+*This is a tiered upgrade. It replaces Medi-Gel Upgrade II — a character benefits only from their single highest Medi-Gel Upgrade.*
+
+---
+
+#### Medi-Gel Upgrade IV — Level 14 · 6,000 cr · Rare
+
+The pinnacle of medi-gel engineering — a Spectre-grade formula whose regenerative nanites can pull a critically wounded soldier back to full combat readiness almost instantly.
+Whenever **you** apply Medi-Gel to a creature (including yourself), it restores 85 healing Hit Points instead of the base 25. This bonus is determined by the character *applying* the medi-gel, not the recipient. As normal, healing cannot exceed the target's maximum HP, and excess is lost.
+
+---
+*This is a tiered upgrade. It replaces Medi-Gel Upgrade III — a character benefits only from their single highest Medi-Gel Upgrade.*
+
+---
 
 ### Grenades
 
@@ -5148,7 +5916,9 @@ Captain of the Destiny Ascension, the Citadel Fleet's asari flagship.
 **Ranged** ◆ M-3 Predator +17 (range increment 40 ft, tech), **Damage** 2d6+9 piercing
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -5288,7 +6058,9 @@ Your Biotic Barrier is immediately depleted after using this power. Using Nova r
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -6059,7 +6831,9 @@ Biotic shock trooper of Eclipse.
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -6118,7 +6892,9 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -6660,7 +7436,9 @@ Former Alliance marine turned Cerberus operative; a steady biotic with a shotgun
 **Ranged** ◆ M-5 Phalanx +21 (range increment 50 ft, tech), **Damage** 3d6+12 piercing
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -7102,7 +7880,9 @@ Ancient krogan battlemaster and clan chief; centuries of war made flesh, with bi
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -7586,7 +8366,9 @@ Asari matriarch, Liara's mother, and Saren's indoctrinated lieutenant.
 **Ranged** ◆ M-3 Predator +24 (range increment 40 ft, tech), **Damage** 2d6+14 piercing
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -7661,7 +8443,9 @@ Ardat-Yakshi and Samara's daughter, whose embrace kills.
 **Ranged** ◆ M-6 Carnifex +24 (range increment 45 ft, tech, kickback), **Damage** 4d6+14 piercing
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -7725,7 +8509,9 @@ Ancient krogan warlord and geneticist, building the perfect krogan in a tank.
 **Melee** ◆ Headbutt +24, **Damage** 4d10+13 bludgeoning
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -7900,7 +8686,9 @@ Asari mercenary combatant
 **Ranged** ◆ M-3 Predator +9 (range increment 40 ft, tech), **Damage** 1d6+3 piercing
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -8411,7 +9199,9 @@ Choose a creature or unattended object within **60 feet**. The target must attem
 *NPC version. Its DC is 13 + level + a third of level (the moderate DC for the creature's level), and its damage dice multiply every 4 levels. When a creature rolls the save, the result is applied automatically (see the Auto-Apply Power Effects setting).*
 **Activate Biotic Barrier (NPC)** ◆◆ You project a protective mass effect field. You gain a biotic barrier with Hit Points equal to 5 × half your level (rounded up). The barrier absorbs damage before your shields and actual HP.
 The barrier persists until dismissed. It does not recharge automatically - spend 2 actions to reactivate at full strength. Reactivating replaces any remaining barrier HP with a fresh full barrier. When depleted, the barrier remains as an empty field (0 HP) rather than disappearing; certain abilities can restore HP to an empty barrier without a full reactivation.
-| **Level** | **Barrier HP** |
+
+| Level | Barrier HP |
+| --- | --- |
 | 1-2 | 5 |
 | 3-4 | 10 |
 | 5-6 | 15 |
@@ -9605,15 +10395,15 @@ Combat frames sit between shields and Hit Points and provide **Armor Points**. A
 
 ## BIOTIC BARRIER
 
-A biotic can raise a personal mass effect field as an action. Barrier HP is calculated at activation as **5 × ⌈level ÷ 2⌉** plus any bio-amp barrier bonus, and it absorbs damage *before* both shields and Hit Points.
+A biotic raises a personal mass effect field with **Activate Biotic Barrier** (◆◆). Barrier HP is calculated at activation as **5 × ⌈level ÷ 2⌉** plus any bio-amp barrier bonus, and it absorbs damage *before* both shields and Hit Points.
 
-A barrier does **not** recharge passively. Once depleted it must be reactivated, or refilled by spending actions or using Charge.
+A barrier does **not** recharge passively, and it is never lost: at 0 HP it stays up as an empty field. Reactivating it replaces whatever is left with a fresh full barrier, and some abilities refill it without a reactivation: Biotic Charge restores half of it, or all of it when the target critically fails its save.
 
 ---
 
 ## AMMO POWERS VS. DEFENCES
 
-*Ammo powers are the counterplay to the layered defences — each is tuned against a specific layer. All multipliers are configurable in module settings.*
+*Ammo powers are the counterplay to the layered defences — each is tuned against a specific layer. They change what a gun fires, so they apply to ranged Strikes only: a melee Strike gets nothing from them. The numbers below are the module's default settings, and each can be changed in module settings.*
 
 | Ammo | Targets | Effect |
 |---|---|---|

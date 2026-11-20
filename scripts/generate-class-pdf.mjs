@@ -103,34 +103,32 @@ await page.goto(`file:///${HTML_PATH.replace(/\\/g, '/')}`, {
 // Wait for fonts to finish loading
 await page.evaluateHandle('document.fonts.ready');
 
-// ── Inject TOC page numbers ──────────────────────────────────────────────────
-// Switch to print media so CSS page-break rules are applied to the layout,
-// then measure each section's offsetTop and convert to a page number.
+// ── Contents page numbers ────────────────────────────────────────────────────
+// The page a section lands on is only known once Chrome has paginated the document, so the
+// PDF is made twice. The first pass carries an estimate; its real page numbers are read back
+// from the file and written into the contents, and the second pass is the one that is kept.
 await page.emulateMediaType('print');
 
-const ANCESTRY_SLUGS = ['asari', 'batarian', 'drell', 'elcor', 'hanar', 'human', 'krogan', 'quarian', 'salarian', 'turian', 'volus', 'vorcha'];
-const SECTION_IDS = ['character-options', 'ancestries', ...ANCESTRY_SLUGS.map(s => `ancestry-${s}`), 'classes', 'soldier', 'engineer', 'adept', 'vanguard', 'infiltrator', 'sentinel', 'backgrounds', 'feats', 'feats-class', 'feats-racial', 'feats-general', 'equipment', 'equip-weapons', 'equip-weapon-mods', 'equip-armor', 'equip-armor-mods', 'equip-grenades', 'bestiary', 'npcs', 'creatures', 'vehicles', 'shield-mechanics', 'damage-routing', 'kinetic-shields', 'combat-frames', 'biotic-barrier', 'ammo-vs-defences'];
 // Letter at 96 dpi = 1056 px per page; 48 px bottom margin = 1008 px content height.
 const PAGE_H = 1008;
 
-const offsets = await page.evaluate((ids) => {
-  const out = {};
-  for (const id of ids) {
+// Every contents entry carries a <span id="toc-pg-SECTION">, so the list of sections comes
+// from the page itself: a section added to the HTML generator gets its page number with
+// nothing to update here.
+const sectionIds = await page.evaluate((pageH) => {
+  const ids = [];
+  for (const span of document.querySelectorAll('[id^="toc-pg-"]')) {
+    const id = span.id.slice('toc-pg-'.length);
     const el = document.getElementById(id);
-    if (el) out[id] = el.getBoundingClientRect().top + window.scrollY;
+    if (!el) continue;
+    ids.push(id);
+    // The estimate ignores forced page breaks, so it runs low. It only holds the space.
+    span.textContent = Math.floor((el.getBoundingClientRect().top + window.scrollY) / pageH) + 1;
   }
-  return out;
-}, SECTION_IDS);
+  return ids;
+}, PAGE_H);
 
-await page.evaluate((offs, pageH) => {
-  for (const [id, top] of Object.entries(offs)) {
-    const span = document.getElementById('toc-pg-' + id);
-    if (span) span.textContent = Math.floor(top / pageH) + 1;
-  }
-}, offsets, PAGE_H);
-// ────────────────────────────────────────────────────────────────────────────
-
-await page.pdf({
+const PDF_OPTIONS = {
   path: PDF_PATH,
   format: 'Letter',
   printBackground: true,
@@ -142,7 +140,70 @@ await page.pdf({
   footerTemplate: FOOTER_TEMPLATE,
   outline: true,
   preferCSSPageSize: false,
-});
+};
+
+/**
+ * The page each named destination sits on, read from a PDF Chrome wrote. Chrome gives every
+ * element a link points at (so every contents entry's section) a named destination, and writes
+ * its catalog, page tree and destinations as plain objects, which is all this reads.
+ * Returns null if the file is not laid out that way.
+ */
+function destinationPages(pdfPath) {
+  const pdf = readFileSync(pdfPath).toString('latin1');
+  const object = (n) => {
+    const head = `\n${n} 0 obj\n`;
+    const start = pdf.indexOf(head);
+    return start < 0 ? null : pdf.slice(start + head.length, pdf.indexOf('\nendobj', start));
+  };
+  const catalogAt = pdf.indexOf('/Type /Catalog');
+  if (catalogAt < 0) return null;
+  const catalog = pdf.slice(catalogAt, pdf.indexOf('endobj', catalogAt));
+  const pagesRoot = /\/Pages (\d+) 0 R/.exec(catalog)?.[1];
+  const dests = object(/\/Dests (\d+) 0 R/.exec(catalog)?.[1]);
+  if (!pagesRoot || !dests) return null;
+
+  const pageOf = new Map();   // page object number -> page number
+  const walk = (n) => {
+    const node = object(n);
+    if (!node) return;
+    if (!/\/Type \/Pages\b/.test(node)) { pageOf.set(n, pageOf.size + 1); return; }
+    for (const kid of (/\/Kids \[([^\]]*)\]/.exec(node)?.[1] ?? '').matchAll(/(\d+) 0 R/g)) walk(kid[1]);
+  };
+  walk(pagesRoot);
+
+  const out = {};
+  for (const [, name, ref] of dests.matchAll(/\/([^\s/[\]<>]+) \[(\d+) 0 R/g)) {
+    if (pageOf.has(ref)) out[name] = pageOf.get(ref);
+  }
+  return { pages: out, count: pageOf.size };
+}
+
+const setPageNumbers = (numbers) => page.evaluate((nums) => {
+  for (const [id, n] of Object.entries(nums)) {
+    const span = document.getElementById('toc-pg-' + id);
+    if (span) span.textContent = n;
+  }
+}, numbers);
+
+await page.pdf(PDF_OPTIONS);
+let read = destinationPages(PDF_PATH);
+const missing = read ? sectionIds.filter((id) => !(id in read.pages)) : sectionIds;
+if (!read || missing.length) {
+  console.warn(`  WARNING: could not read page numbers back from the PDF${missing.length && read ? ` for: ${missing.join(', ')}` : ''}. The contents page carries estimates.`);
+} else {
+  // Filling in the numbers must not move anything; if it does, go round again (twice at most).
+  for (let pass = 0; pass < 3; pass++) {
+    const numbers = Object.fromEntries(sectionIds.map((id) => [id, read.pages[id]]));
+    await setPageNumbers(numbers);
+    await page.pdf(PDF_OPTIONS);
+    const check = destinationPages(PDF_PATH);
+    const settled = check && sectionIds.every((id) => check.pages[id] === numbers[id]);
+    read = check ?? read;
+    if (settled) break;
+    if (pass === 2) console.warn('  WARNING: contents page numbers did not settle; check them against the PDF.');
+  }
+  console.log(`Contents: ${sectionIds.length} entries numbered from the PDF's own page tree (${read.count} pages)`);
+}
 
 await browser.close();
 

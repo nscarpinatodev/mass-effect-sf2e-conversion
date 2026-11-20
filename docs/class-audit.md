@@ -4,6 +4,8 @@ A working map of what is wrong or missing in each of the six classes, with optio
 
 Status words: **confirmed** means checked against the source files; **measured** means a simulation number; **suspected** means it needs a closer look.
 
+How these classes compare with base Starfinder 2e classes, and how 20th-level fights go against level 20 enemies, is in `power-level-review.md` (2026-11-19).
+
 ## Problems that cut across classes
 
 ### X1. Powers did not scale with level (fixed 2026-11-18)
