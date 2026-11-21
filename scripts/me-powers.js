@@ -475,6 +475,9 @@ globalThis.MassEffectPowers = {
   explosionDice: (caster) => explosionDice(caster),
   cloakStrikes: (actor) => cloakStrikes(actor),
   soldierCooldownRounds: (actor, slug) => soldierCooldownRounds(actor, slug),
+  unityPercent: (caster) => unityPercent(caster),
+  unityOn: (caster, actor) => unityOn(caster, actor),
+  ensureUnitySpell: (actor) => ensureUnitySpell(actor),
 };
 
 // ── SETTINGS ────────────────────────────────────────────────────────────────
@@ -2068,6 +2071,183 @@ Hooks.on('pf2e.endTurn', async (combatant) => {
   const ending = combatant?.actor?.itemTypes?.effect?.filter((e) => e.flags?.[MODULE_ID]?.endsWithTurn) ?? [];
   for (const effect of ending) await effect.delete();
 });
+
+// ── UNITY ───────────────────────────────────────────────────────────────────
+// Unity is a focus spell, not a feat with a cooldown: the Unity feat puts the spell on the
+// character (in a "Biotic Focus" entry), the system spends the Focus Point when it is cast,
+// and the GM's client does the rest: the caster and each ally within 30 feet regain a share
+// of their maximum HP (10%, +10% at 5th, 9th, 13th and 17th) and a full kinetic shield, and
+// a creature at 0 HP is revived. Improved Unity and Superior Unity add to what the pulse does.
+const UNITY_FEAT = 'unity';
+const UNITY_IMPROVED = 'unity-improved';
+const UNITY_SUPERIOR = 'unity-superior';
+const UNITY_SPELL = 'me-spell-unity';
+const UNITY_RANGE = 30;
+// the system marks a spell's card with this when it was cast (and paid for), not just shown in chat
+const CAST_OPTION = 'origin:action:slug:cast-a-spell';
+
+/** The share of maximum HP Unity restores: 10% at 1st to 4th level, up to 50% from 17th. */
+const unityPercent = (caster) => 10 * Math.min(5, Math.max(1, Math.ceil((caster?.level ?? 1) / 4)));
+
+/** Give a character with the Unity feat its spell and a Biotic Focus entry to hold it. True if anything was added. */
+async function ensureUnitySpell(actor) {
+  if (actor?.type !== 'character' || !actor.itemTypes?.feat?.some((i) => i.slug === UNITY_FEAT)) return false;
+  if (actor.itemTypes.spell?.some((s) => s.slug === UNITY_SPELL)) return false;
+  const pack = game.system.id === 'sf2e' ? 'sf2e-me-biotic-powers' : 'me-biotic-powers';
+  const spell = await fromUuid(`Compendium.${MODULE_ID}.${pack}.Item.meSpellUnity0001`).catch(() => null);
+  if (!spell) return false;
+  let entry = actor.itemTypes.spellcastingEntry?.find((e) => e.flags?.[MODULE_ID]?.bioticFocus);
+  if (!entry) {
+    [entry] = await actor.createEmbeddedDocuments('Item', [{
+      name: 'Biotic Focus',
+      type: 'spellcastingEntry',
+      flags: { [MODULE_ID]: { bioticFocus: true } },
+      system: { tradition: { value: 'occult' }, prepared: { value: 'focus' }, ability: { value: 'cha' }, proficiency: { value: 1 } },
+    }]);
+  }
+  if (!entry) return false;
+  const before = actor.system.resources?.focus?.max ?? 0;
+  const source = spell.toObject();
+  source.system.location = { ...(source.system.location ?? {}), value: entry.id };
+  await actor.createEmbeddedDocuments('Item', [source]);
+  // the Focus Point the spell adds to the pool starts filled
+  const focus = actor.system.resources?.focus;
+  if (focus && focus.max > before && (focus.value ?? 0) < focus.max) {
+    await actor.update({ 'system.resources.focus.value': Math.min(focus.max, (focus.value ?? 0) + (focus.max - before)) });
+  }
+  return true;
+}
+
+// Taking the feat brings the spell; losing the feat takes it away again.
+Hooks.on('createItem', async (item, _options, userId) => {
+  if (userId !== game.user.id || item.type !== 'feat' || item.slug !== UNITY_FEAT) return;
+  try {
+    await ensureUnitySpell(item.actor);
+  } catch (err) {
+    console.warn('ME Powers | could not add the Unity spell', err);
+  }
+});
+Hooks.on('deleteItem', async (item, _options, userId) => {
+  const actor = item.actor;
+  if (userId !== game.user.id || item.type !== 'feat' || item.slug !== UNITY_FEAT || actor?.type !== 'character') return;
+  if (actor.itemTypes.feat.some((i) => i.slug === UNITY_FEAT)) return;
+  try {
+    const spells = actor.itemTypes.spell.filter((s) => s.slug === UNITY_SPELL).map((s) => s.id);
+    const entries = actor.itemTypes.spellcastingEntry
+      .filter((e) => e.flags?.[MODULE_ID]?.bioticFocus && !actor.itemTypes.spell.some((s) => s.system.location?.value === e.id && !spells.includes(s.id)))
+      .map((e) => e.id);
+    if (spells.length || entries.length) await actor.deleteEmbeddedDocuments('Item', [...spells, ...entries]);
+  } catch (err) {
+    console.warn('ME Powers | could not remove the Unity spell', err);
+  }
+});
+// Characters who took Unity before it was a spell (or while no hook ran) get it when the world loads.
+Hooks.once('ready', async () => {
+  if (!game.users?.activeGM?.isSelf) return;
+  for (const actor of game.actors ?? []) {
+    try {
+      if (await ensureUnitySpell(actor)) console.log(`ME Powers | ${actor.name}: Unity is now a focus spell (Biotic Focus)`);
+    } catch (err) {
+      console.warn(`ME Powers | could not add the Unity spell to ${actor.name}`, err);
+    }
+  }
+});
+
+// The cast itself: the GM's client can heal everyone the pulse reaches.
+Hooks.on('createChatMessage', async (message) => {
+  if (!game.users?.activeGM?.isSelf || !game.settings.get(MODULE_ID, 'autoApplyPowerEffects')) return;
+  const origin = sysFlags(message)?.origin;
+  if (origin?.type !== 'spell' || !origin.uuid) return;
+  const item = await fromUuid(origin.uuid).catch(() => null);
+  if (item?.slug !== UNITY_SPELL || !item.actor) return;
+  const caster = item.actor;
+  if (!(origin.rollOptions ?? []).includes(CAST_OPTION)) {
+    return postResult(caster, 'Unity', 'Not cast', ['Unity was shown in chat, not cast: no Focus Point was spent and no one was healed. Cast it from Biotic Focus on the spells tab.'], { owners: true });
+  }
+  try {
+    await runUnity(message, caster);
+  } catch (err) {
+    console.warn('ME Powers | Unity automation failed', err);
+    postResult(caster, 'Unity', 'Not automated', ['Something went wrong; apply this Unity by hand.'], { owners: true });
+  }
+});
+
+/** One Unity: the caster, then each ally with a token within 30 feet of the caster's. */
+async function runUnity(message, caster) {
+  const source = speakerToken(message, caster);
+  const reached = [caster];
+  if (source) {
+    const ally = (t) => (typeof caster.isAllyOf === 'function' ? caster.isAllyOf(t.actor) : t.disposition === source.disposition);
+    for (const t of source.parent.tokens) {
+      if (t === source || !t.actor || reached.includes(t.actor) || !ally(t)) continue;
+      if (feetBetween(source, t) <= UNITY_RANGE) reached.push(t.actor);
+    }
+  }
+  const lines = [];
+  for (const actor of reached) lines.push(await unityOn(caster, actor));
+  if (!source) lines.push(`${caster.name} has no token on the scene, so no allies were found: apply Unity to them by hand.`);
+  postResult(caster, 'Unity', `${unityPercent(caster)}% of maximum HP`, lines, { owners: true });
+}
+
+/** Unity on one creature. Returns the line that says what it did. */
+async function unityOn(caster, actor) {
+  const hp = actor.system?.attributes?.hp;
+  if (!(hp?.max > 0)) return `${actor.name}: no Hit Points to restore`;
+  const has = (slug) => !!actor.hasCondition?.(slug);
+  const valueOf = (slug) => Number(actor.getCondition?.(slug)?.value) || 0;
+  const drop = async (slug) => { if (has(slug)) { await actor.decreaseCondition(slug, { forceRemove: true }); return true; } return false; };
+  const down = (hp.value ?? 0) <= 0;
+  if (down && actor.isDead === true && !has('dying') && !has('unconscious')) return `${actor.name}: dead, beyond Unity's reach`;
+  const improved = caster.items.some((i) => i.slug === UNITY_IMPROVED);
+  const superior = caster.items.some((i) => i.slug === UNITY_SUPERIOR);
+  const parts = [];
+
+  // ── Hit Points, and the revive ──
+  const wasDying = has('dying');
+  const wounded = valueOf('wounded');
+  const was = hp.value ?? 0;
+  const now = Math.min(hp.max, was + Math.max(1, Math.floor(hp.max * unityPercent(caster) / 100)));
+  if (now > was) await actor.update({ 'system.attributes.hp.value': now });
+  parts.push(now > was ? `${was} → ${now} HP` : 'HP already full');
+  if (down) {
+    await drop('dying');
+    await drop('unconscious');
+    // losing the dying condition leaves a creature wounded 1 higher; Superior Unity spares it that
+    const want = wasDying && !superior ? wounded + 1 : wounded;
+    for (let i = valueOf('wounded'); i < want; i++) await actor.increaseCondition('wounded');
+    for (let i = valueOf('wounded'); i > want; i--) await actor.decreaseCondition('wounded', i === 1 ? { forceRemove: true } : undefined);
+    const stood = superior && await drop('prone');
+    parts.push(`revived${want > wounded ? ` (Wounded ${want})` : wasDying ? ' (not wounded by it)' : ''}${stood ? ' and on their feet' : ''}`);
+  }
+
+  // ── The kinetic shield, back to full ──
+  const gear = [...(actor.itemTypes?.equipment ?? []), ...(actor.itemTypes?.effect ?? [])];
+  const base = gear.find((i) => i.flags?.[MODULE_ID]?.shieldMax != null);
+  const shieldMax = globalThis.MassEffectShields?.shieldMax?.(actor)
+    ?? (base ? (base.flags[MODULE_ID].shieldMax ?? 0) + Math.max(0, ...gear.map((i) => Number(i.flags?.[MODULE_ID]?.shieldHpBonus) || 0)) : 0);
+  const temp = hp.temp ?? 0;
+  if (shieldMax > temp) {
+    await actor.update({ 'system.attributes.hp.temp': shieldMax });
+    parts.push(`shield ${temp} → ${shieldMax}`);
+  }
+
+  // ── Improved Unity, Superior Unity ──
+  const lost = [];
+  if (improved) {
+    if (await drop('frightened')) lost.push('Frightened');
+    if (await drop('sickened')) lost.push('Sickened');
+    if (valueOf('stunned') === 1 && await drop('stunned')) lost.push('Stunned 1');
+  }
+  if (lost.length) parts.push(`no longer ${lost.join(', ')}`);
+  if (superior) {
+    const burning = (actor.itemTypes?.condition ?? []).filter((c) => c.slug === 'persistent-damage').map((c) => c.id);
+    if (burning.length) {
+      await actor.deleteEmbeddedDocuments('Item', burning);
+      parts.push('persistent damage ended');
+    }
+  }
+  return `${actor.name}: ${parts.join(', ')}`;
+}
 
 // ── TARGETS AND CASTERS ─────────────────────────────────────────────────────
 const SYNTHETIC_TRAITS = ['construct', 'geth', 'mech', 'robot'];

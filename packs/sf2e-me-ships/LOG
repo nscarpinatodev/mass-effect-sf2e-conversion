@@ -1,15 +1,15 @@
-2026/11/20-04:12:59.373 1fa8 Recovering log #8
-2026/11/20-04:12:59.383 1fa8 Delete type=0 #8
-2026/11/20-04:12:59.383 1fa8 Delete type=3 #6
-2026/11/20-04:12:59.388 4a08 Level-0 table #14: started
-2026/11/20-04:12:59.392 4a08 Level-0 table #14: 19437 bytes OK
-2026/11/20-04:12:59.397 4a08 Delete type=0 #12
-2026/11/20-04:12:59.397 4a08 Manual compaction at level-0 from '!actors!10821d7b91e590fb' @ 72057594037927935 : 1 .. '!actors.items!sovereignreaper0.sovereignrea0008' @ 0 : 0; will stop at (end)
-2026/11/20-04:12:59.397 4a08 Manual compaction at level-1 from '!actors!10821d7b91e590fb' @ 72057594037927935 : 1 .. '!actors.items!sovereignreaper0.sovereignrea0008' @ 0 : 0; will stop at '!actors.items!sovereignreaper0.sovereignrea0008' @ 100 : 1
-2026/11/20-04:12:59.397 4a08 Compacting 1@1 + 1@2 files
-2026/11/20-04:12:59.403 4a08 Generated table #15@1: 34 keys, 19437 bytes
-2026/11/20-04:12:59.403 4a08 Compacted 1@1 + 1@2 files => 19437 bytes
-2026/11/20-04:12:59.407 4a08 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/11/20-04:12:59.407 4a08 Delete type=2 #10
-2026/11/20-04:12:59.407 4a08 Delete type=2 #14
-2026/11/20-04:12:59.407 4a08 Manual compaction at level-1 from '!actors.items!sovereignreaper0.sovereignrea0008' @ 100 : 1 .. '!actors.items!sovereignreaper0.sovereignrea0008' @ 0 : 0; will stop at (end)
+2026/11/20-21:10:42.903 40c0 Recovering log #13
+2026/11/20-21:10:42.911 40c0 Delete type=0 #13
+2026/11/20-21:10:42.911 40c0 Delete type=3 #11
+2026/11/20-21:10:42.917 39cc Level-0 table #19: started
+2026/11/20-21:10:42.922 39cc Level-0 table #19: 19440 bytes OK
+2026/11/20-21:10:42.927 39cc Delete type=0 #17
+2026/11/20-21:10:42.927 39cc Manual compaction at level-0 from '!actors!10821d7b91e590fb' @ 72057594037927935 : 1 .. '!actors.items!sovereignreaper0.sovereignrea0008' @ 0 : 0; will stop at (end)
+2026/11/20-21:10:42.927 39cc Manual compaction at level-1 from '!actors!10821d7b91e590fb' @ 72057594037927935 : 1 .. '!actors.items!sovereignreaper0.sovereignrea0008' @ 0 : 0; will stop at '!actors.items!sovereignreaper0.sovereignrea0008' @ 134 : 1
+2026/11/20-21:10:42.927 39cc Compacting 1@1 + 1@2 files
+2026/11/20-21:10:42.932 39cc Generated table #20@1: 34 keys, 19440 bytes
+2026/11/20-21:10:42.932 39cc Compacted 1@1 + 1@2 files => 19440 bytes
+2026/11/20-21:10:42.936 39cc compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/20-21:10:42.936 39cc Delete type=2 #15
+2026/11/20-21:10:42.936 39cc Delete type=2 #19
+2026/11/20-21:10:42.937 39cc Manual compaction at level-1 from '!actors.items!sovereignreaper0.sovereignrea0008' @ 134 : 1 .. '!actors.items!sovereignreaper0.sovereignrea0008' @ 0 : 0; will stop at (end)

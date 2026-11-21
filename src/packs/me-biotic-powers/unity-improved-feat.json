@@ -11,18 +11,18 @@
   },
   "system": {
     "actionType": {
-      "value": "action"
+      "value": "passive"
     },
     "actions": {
-      "value": 2
+      "value": null
     },
     "category": "class",
     "description": {
       "gm": "",
-      "value": "<p>Your biotic healing pulse has grown powerful enough to not only close wounds but clear the chemical and neural disruption that combat inflicts on a body.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>20 Hit Points</strong>. In addition, you may remove one of the following conditions from each affected ally: <strong>Frightened</strong>, <strong>Sickened</strong>, or <strong>Stunned 1</strong>. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.</p><p><em>Prerequisite: Unity.</em></p>"
+      "value": "<p>Your Unity pulse steadies minds and bodies as well as mending them.</p><p>Each creature your @UUID[Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meSpellUnity0001]{Unity} spell reaches, you included, also loses <strong>Frightened</strong> and <strong>Sickened</strong>, and loses <strong>Stunned 1</strong> if it has it. A higher Stunned value is not reduced.</p><p><em>Prerequisite: Unity.</em></p>"
     },
     "level": {
-      "value": 5
+      "value": 6
     },
     "prerequisites": {
       "value": [
@@ -39,9 +39,7 @@
         "adept",
         "sentinel",
         "vanguard",
-        "biotic",
-        "healing",
-        "concentrate"
+        "biotic"
       ],
       "rarity": "common"
     },

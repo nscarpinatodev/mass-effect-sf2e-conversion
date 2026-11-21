@@ -1772,11 +1772,9 @@ Your command of your biotic powers deepens. Your proficiency rank for your adept
 | 1 | Cluster Grenade, Dark Channel, Dominate, Fitness, Flare, Lash, Lift, Pull, Reave, Shockwave, Singularity, Slam, Stasis, Throw, Unity, Warp, Weapon Mastery (Pistols & SMGs) |
 | 2 | Biotic Mastery |
 | 4 | Improved Fitness, Improved Weapon Mastery (Pistols & SMGs) |
-| 5 | Improved Unity |
-| 6 | Improved Biotic Mastery |
+| 6 | Improved Biotic Mastery, Improved Unity |
 | 8 | Master Fitness, Master Weapon Mastery (Pistols & SMGs), Singularity Upgrade |
-| 9 | Superior Unity |
-| 10 | Biotic Resonance, Master Biotic Mastery, Warp Upgrade |
+| 10 | Biotic Resonance, Master Biotic Mastery, Superior Unity, Warp Upgrade |
 | 12 | Warp Field |
 | 14 | Gravity Well |
 | 16 | Biotic Cascade |
@@ -1946,11 +1944,9 @@ Your command of your biotic powers deepens. Your proficiency rank for your vangu
 | 1 | Armor-Piercing Rounds, Biotic Charge, Biotic Warrior, Combat Training, Cryo Rounds, Dark Channel, Dominate, Fitness, Flare, Incendiary Rounds, Lash, Lift, Nova, Phasic Rounds, Pull, Reave, Shockwave, Shredder Rounds, Slam, Stasis, Unity, Warp Rounds, Weapon Mastery (Shotguns) |
 | 2 | Biotic Mastery |
 | 4 | Improved Charge, Improved Combat Training, Improved Fitness, Improved Weapon Mastery (Shotguns), Vanguard Rush |
-| 5 | Improved Unity |
-| 6 | Barrier Siphon, Heavy Impact, Improved Biotic Mastery |
+| 6 | Barrier Siphon, Heavy Impact, Improved Biotic Mastery, Improved Unity |
 | 8 | Charge Upgrade, Master Combat Training, Master Fitness, Master Weapon Mastery (Shotguns), Nova Upgrade |
-| 9 | Superior Unity |
-| 10 | Death's Embrace, Master Biotic Mastery |
+| 10 | Death's Embrace, Master Biotic Mastery, Superior Unity |
 | 12 | Unstoppable Charge |
 | 14 | Vanguard Strike |
 | 16 | Rampage |
@@ -2237,11 +2233,9 @@ Your command of your biotic and tech powers deepens. Your proficiency rank for y
 | 1 | AI Hacking, Cryo Blast, Damping, Dark Channel, Decoy, Defense Drone, Defense Matrix, Dominate, Energy Drain, Fitness, Flare, Geth Shield Boost, Lash, Lift, Lift Grenade, Neural Shock, Overload, Reave, Slam, Stasis, Throw, Unity, Warp, Weapon Mastery (Assault Rifles) |
 | 2 | Biotic Mastery, Fortification, Tech Mastery |
 | 4 | Improved Fitness, Improved Weapon Mastery (Assault Rifles) |
-| 5 | Improved Unity |
-| 6 | Improved Biotic Mastery, Improved Fortification, Improved Tech Mastery |
+| 6 | Improved Biotic Mastery, Improved Fortification, Improved Tech Mastery, Improved Unity |
 | 8 | Master Fitness, Master Weapon Mastery (Assault Rifles), Overload Upgrade |
-| 9 | Superior Unity |
-| 10 | Master Biotic Mastery, Master Fortification, Master Tech Mastery, Warp Upgrade |
+| 10 | Master Biotic Mastery, Master Fortification, Master Tech Mastery, Superior Unity, Warp Upgrade |
 | 12 | Adaptive Defense, Hybrid Core |
 | 14 | Interference Field |
 | 16 | Battle Hardened |
@@ -4462,11 +4456,12 @@ Choose a creature within **30 feet**. The target must attempt a Will save agains
 
 ---
 
-#### Unity ◆◆ — Level 1
+#### Unity — Level 1
 
 You project a pulse of restorative biotic energy that knits the wounds of all nearby allies simultaneously. Unlike targeted healing, Unity reaches everyone at once — a single expenditure of focus that can turn the tide of a firefight in an instant.
-All allied creatures within **30 feet** who can see or hear you regain **10 Hit Points**. This healing cannot exceed each creature's maximum HP, and any excess is lost. Unity does not heal you.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
+You gain the Unity focus spell and a focus pool of **1 Focus Point**. The spell is added to your sheet under **Biotic Focus**.
+For 2 actions and 1 Focus Point, you and each ally within **30 feet** regain **10% of their maximum Hit Points** and their **kinetic shields recharge to full**. A creature at 0 Hit Points is revived. The healing rises to 20% at 5th level, 30% at 9th, 40% at 13th and 50% at 17th.
+You regain the Focus Point when you Refocus (10 minutes). Unity has no cooldown.
 
 ---
 
@@ -4492,16 +4487,6 @@ Until the start of your next turn, you gain **Resistance 5** to all damage.
 
 ---
 
-#### Improved Unity ◆◆ — Level 5
-*Prerequisite: Unity*
-
-Your biotic healing pulse has grown powerful enough to not only close wounds but clear the chemical and neural disruption that combat inflicts on a body.
-All allied creatures within **30 feet** who can see or hear you regain **20 Hit Points**. In addition, you may remove one of the following conditions from each affected ally: **Frightened**, **Sickened**, or **Stunned 1**. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
-*Prerequisite: Unity.*
-
----
-
 #### Improved Fortification ◆◆ — Level 6
 *Prerequisite: Fortification*
 
@@ -4515,13 +4500,12 @@ Until the start of your next turn, you gain **Resistance 8** to all damage and a
 
 ---
 
-#### Superior Unity ◆◆ — Level 9
-*Prerequisite: Improved Unity*
+#### Improved Unity — Level 6
+*Prerequisite: Unity*
 
-At this level of biotic mastery, your Unity pulse carries enough raw regenerative force to drag allies back from the threshold of death itself.
-All allied creatures within **30 feet** who can see or hear you regain **40 Hit Points**. You may remove one negative condition of your choice from each affected ally. In addition, any ally who is **dying** is immediately **stabilized** and regains **20 HP** instead of 40. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.
-**Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
-*Prerequisite: Improved Unity.*
+Your Unity pulse steadies minds and bodies as well as mending them.
+Each creature your Unity spell reaches, you included, also loses **Frightened** and **Sickened**, and loses **Stunned 1** if it has it. A higher Stunned value is not reduced.
+*Prerequisite: Unity.*
 
 ---
 
@@ -4535,6 +4519,16 @@ Until the start of your next turn, you gain **Resistance 12** to all damage, or 
 
 ---
 *Automation: using this feat puts the Master Fortification effect on you and starts the cooldown, which the Fortification feats share.*
+
+---
+
+#### Superior Unity — Level 10
+*Prerequisite: Improved Unity*
+
+At this level of biotic mastery, your Unity pulse carries enough raw regenerative force to drag allies back from the threshold of death itself.
+A creature your Unity spell revives from 0 Hit Points **does not become wounded** (or more wounded) from it, and **stands up** for free.
+Unity also ends **persistent damage** on each creature it reaches, you included.
+*Prerequisite: Improved Unity.*
 
 ---
 

@@ -39,6 +39,7 @@ Hooks.once('init', () => {
   for (const [slug, label] of Object.entries(ME_FEAT_TRAITS)) {
     config.featTraits[slug] ??= label;
     config.actionTraits[slug] ??= label;
+    if (config.spellTraits) config.spellTraits[slug] ??= label;   // the Unity focus spell is biotic
   }
 });
 })(); // end IIFE

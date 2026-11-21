@@ -1231,7 +1231,9 @@ const ARMOR_FRAME_DEFAULTS = {
 // NPCs in the world are left alone: re-import them to get the new stat blocks.
 // Version 2 (2026-11-20): Improved Adept Mastery gained its knockdown. A world already
 // at version 1 runs this once more, for the features changed since then only.
-const BALANCE_VERSION = 2;
+// Version 3 (2026-11-20): Unity became a focus spell, and its three feats became passive
+// (the engine adds the spell itself; see ensureUnitySpell in me-powers.js).
+const BALANCE_VERSION = 3;
 const SHIELD_REBALANCE = {
   'Kinetic Shield':         { shieldMax: [30, 15], shieldRegen: [10, 5] },
   'Shield HP Mod - Tier 1': { shieldHpBonus: [10, 5] },
@@ -1247,7 +1249,10 @@ const REBALANCED_SLUGS = new Map([
     'me-infiltrator-mastery-improved', 'me-infiltrator-apex-infiltrator', 'me-infiltrator-assassination-protocol',
     'me-engineer-apex-engineer', 'me-tech-tactical-cloak', 'me-biotic-nova'].map((slug) => [slug, 1]),
   ['me-adept-mastery-improved', 2],
+  ['unity', 3], ['unity-improved', 3], ['unity-superior', 3],
 ]);
+// These changed in more than text and rules: action cost, level, traits and prerequisites too.
+const REBUILT_SLUGS = new Set(['unity', 'unity-improved', 'unity-superior']);
 
 async function migrateBalance() {
   if (!game.user.isGM) return;
@@ -1288,7 +1293,14 @@ async function migrateBalance() {
         const slug = item.system?.slug ?? item.slug; if (!slug || !bySlug.has(slug)) continue;
         const src = await fromUuid(bySlug.get(slug)); if (!src) continue;
         const data = src.toObject();
-        await item.update({ 'system.rules': data.system.rules ?? [], 'system.description.value': data.system.description.value });
+        const update = { 'system.rules': data.system.rules ?? [], 'system.description.value': data.system.description.value };
+        if (REBUILT_SLUGS.has(slug)) {
+          Object.assign(update, {
+            'system.actionType': data.system.actionType, 'system.actions': data.system.actions, 'system.level.value': data.system.level.value,
+            'system.traits.value': data.system.traits.value, 'system.prerequisites': data.system.prerequisites,
+          });
+        }
+        await item.update(update);
         note(actor, `${item.name}: updated to the current rules`);
       }
     }
@@ -1530,5 +1542,11 @@ globalThis.MassEffectShields = {
   debug:            debugShields,
   refreshTokenBars: refreshMETokenBars,
   cleanAmmoFeats,
+  /** The actor's kinetic shield maximum (0 without a shield), as damage routing counts it. */
+  shieldMax: (actor) => {
+    const shield = getShieldEffect(actor);
+    if (!shield) return 0;
+    return (shield.getFlag(MODULE_ID, 'shieldMax') ?? 0) + (getShieldHpMod(actor)?.getFlag(MODULE_ID, 'shieldHpBonus') ?? 0);
+  },
 };
 })(); // end IIFE

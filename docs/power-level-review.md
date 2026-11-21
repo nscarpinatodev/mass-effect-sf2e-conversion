@@ -1205,3 +1205,60 @@ Added 2026-11-20. The user chose the knockdown from three sized options (the oth
 **Not checked:** a plain failure (as opposed to a critical one) was only run in the unit tests; no fight was played.
 
 **Seen in passing, not changed:** the engine remembers which creatures one use of a power has already caught in an explosion for 30 seconds of real time, keyed by the power. An Adept who primes and detonates the same creature twice with the same detonator inside 30 seconds gets no second explosion. In play that needs two full prime-and-detonate cycles in half a minute, so it is unlikely, but scripted tests will meet it.
+
+## Unity: a focus spell
+
+Decided with the user on 2026-11-20 and built the same day. Unity was three feats (10, 20 and 40 HP to allies, on the biotic cooldown) with no automation, and the engine never tracked its cooldown.
+
+### The design
+
+- **One focus spell.** Unity costs two actions and 1 Focus Point. The Unity feat grants the spell and a pool of 1 Focus Point, so it works once per fight and returns with a 10-minute Refocus. It has no cooldown.
+- **Who it reaches.** The caster and each ally within 30 feet.
+- **Healing.** 10% of each creature's maximum HP, rising to 20% at 5th level, 30% at 9th, 40% at 13th and 50% at 17th. These are the levels a focus spell gains its odd ranks, so the spell reads "Heightened (+2)".
+- **Shield.** Each creature's kinetic shield recharges to full. A Biotic Barrier is not refilled.
+- **Revive.** A creature at 0 HP loses dying and unconscious and wakes with the healing and the shield. It becomes wounded 1 higher, as the rules say for losing dying. Unity does not raise the dead.
+- **Improved Unity (6th).** Each creature reached also loses Frightened, Sickened and Stunned 1.
+- **Superior Unity (10th).** A revived creature does not become wounded (or more wounded) and stands up; Unity ends persistent damage on each creature reached.
+
+### Why these numbers
+
+Compared with the stock three-action Heal (1d8 a rank to everyone in 30 feet). Ally HP is **estimated** for an average party member; shield sizes are the module's (**confirmed** from the packs), with the capacity mod for that level.
+
+| Level | HP restored | Shield refilled | Most a creature gets | Stock area Heal |
+|---|---|---|---|---|
+| 1 | 10%, about 2 | 15 | about 17 | about 5 |
+| 5 | 20%, about 12 | 20 | about 32 | about 14 |
+| 9 | 30%, about 32 | 35 | about 67 | about 23 |
+| 13 | 40%, about 64 | 50 | about 114 | about 32 |
+| 17 | 50%, about 106 | 50 | about 156 | about 41 |
+
+- The HP part, which is what carries between fights, runs from 0.4 to 2.6 times the stock area Heal.
+- With shields fully down the swing in a fight is 2.5 to 4 times the stock area Heal at every tier. A shield refills on its own at 5 to 15 points a turn and is full at the start of every fight, so the shield half is worth about three turns of recharge.
+- Rejected on the way: a full 25 / 50 / 75 / 100% heal (5.6 times the stock area Heal at the top), and four or five separate feats (the upgrade levels have no class feat slot, and five feats is more than any other power asks).
+- **Low levels gain the most**: at 1st a 15-point shield is most of an 18-HP character's health. Left as it is because the pool is one point.
+
+### What was built
+
+- `src/packs/me-biotic-powers/unity-spell.json` (new): the spell, slug `me-spell-unity`.
+- `unity-feat.json`, `unity-improved-feat.json`, `unity-superior-feat.json`: now passive, at 1st, 6th and 10th. Slugs unchanged.
+- `scripts/me-powers.js`: taking the Unity feat adds a "Biotic Focus" spellcasting entry and the spell, and fills the new Focus Point; losing the feat removes them; characters who already have the feat get the spell when the world loads. When the spell is cast, the GM's client heals, recharges and revives, and posts one card listing each creature. A Unity card that was only shown in chat (not cast, so no Focus Point spent) heals no one and says why.
+- `scripts/shield-system.js`: the one-time character update is version 3 and refreshes the three feats, including their action cost and level. `MassEffectShields.shieldMax(actor)` is new.
+- `scripts/me-classes.js`: "biotic" is registered as a spell trait.
+- `tests/power-engine.test.mjs`: 22 new checks. All tests pass.
+- The conversion document (Markdown, HTML, PDF) regenerated from the packs.
+
+### Checked in Foundry (**confirmed**, test world, v14 build 369, SF2e 1.7.1)
+
+- **The grant.** A new character given the Unity feat got a "Biotic Focus" entry, the Unity spell inside it at the right rank (3rd at 5th level, 5th at 9th) and a focus pool of 1 of 1. The sheet's spells tab shows the entry, the Focus Pool pip and a Cast button. Removing the feat removed the spell and the entry, and the pool went back to 0.
+- **The cast at 5th level** (20%, everyone at 60 maximum HP): the caster went 30 to 42; an ally at 30 feet went 20 to 32 and its shield 3 to 15; a dying ally 15 feet away went 0 to 12 with a 15-point shield, lost dying, unconscious and blinded, went from Wounded 1 to Wounded 2 and stayed prone. An ally at 35 feet and an adjacent enemy were not touched. Frightened, Sickened and persistent damage stayed, as plain Unity leaves them. The Focus Point was spent.
+- **No Focus Point:** a second cast was refused by the system and posted nothing.
+- **Shown in chat, not cast:** no one was healed and the card said why.
+- **Improved and Superior Unity at 9th level** (30%): the dying ally went 0 to 18, kept Wounded 2, was no longer prone and lost its persistent damage; the hurt ally lost Frightened 2, Sickened 1, Stunned 1 and persistent damage; the caster healed and kept its Stunned 2.
+- **The world-load update.** A character holding the three feats in their old form (two actions, 5th and 9th level, old text) with the world set back to version 2: on reload the feats became passive at 1st, 6th and 10th with the new text, the spell and entry were added with 1 Focus Point, and the dialog named the characters changed.
+- The world was left as found: 18 actors, 3152 chat messages, 9 scenes, no `ZZ` actors, no test scene, no combat. Its `balanceVersion` is now 3. The installed copy of the module holds this build.
+
+**Changed along the way:** the SF2e system on this machine had been updated from 1.7.0 to 1.7.1 since the last check, so Foundry migrated the test world when it was launched. Its own backup was taken first ("Before SF2e 1.7.1 migration (Unity test)").
+
+**Not checked:** no fight was played, and Unity was not cast by a player's client with a separate GM connected (the test ran as the Gamemaster alone). The sheet was checked on the system's own character sheet only.
+
+**To know:** Biotic Mastery's action discount applies to feats, so it no longer shortens Unity, which stays at two actions.

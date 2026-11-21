@@ -1046,7 +1046,7 @@ console.log('Infiltrator: Tactical Cloak goes up on use, comes off after its Str
   assert(cloakStrikes(infiltrator(4)) === 1 && cloakStrikes(infiltrator(4, ['me-upgrade-tactical-cloak'])) === 2, 'the cloak lasts one Strike, two with Tactical Cloak Upgrade');
 
   const useHook = hooks.on.createChatMessage[1], strikeHook = hooks.on.createChatMessage[5];
-  assert(hooks.on.createChatMessage.length === 7, 'the Strike hook is the sixth chat hook of seven');
+  assert(hooks.on.createChatMessage.length === 8, 'the Strike hook is the sixth chat hook of eight (Unity\'s cast is the last)');
   uuids['Compendium.' + MOD + '.me-tech-powers.Item.meEffTactCloak00'] = { toObject: () => ({ name: 'Tactical Cloak', type: 'effect', img: 'c.webp', flags: {}, system: { slug: 'me-effect-tactical-cloak' } }) };
   const post = (actor, slug, name) => { uuids['Item.' + slug] = { slug, name, img: 'f.webp', actor }; return useHook({ author: { id: 'gm' }, flags: { pf2e: { origin: { type: 'feat', uuid: 'Item.' + slug } } } }); };
   const made = (actor, slug) => actor.created.filter((d) => d.system?.slug === slug);
@@ -1237,6 +1237,118 @@ console.log('Soldier: Carnage scales as a power, and turn-bound effects end with
   await hooks.on['pf2e.endTurn'][0]({ actor: s });
   assert(reaction.deleted && !other.deleted, 'the Adrenaline Rush reaction\'s effect comes off when its owner\'s turn ends; other effects stay');
   delete ctx.game.users.activeGM;
+}
+
+console.log('Unity: a share of maximum HP, a full shield and a revive, for the caster and allies in range');
+{
+  const { unityPercent, unityOn } = ctx.MassEffectPowers;
+  const at = (level) => unityPercent({ level });
+  assert([1, 4, 5, 8, 9, 12, 13, 16, 17, 20].map(at).join() === '10,10,20,20,30,30,40,40,50,50', `10% a step at 5th, 9th, 13th and 17th (got ${[1, 4, 5, 8, 9, 12, 13, 16, 17, 20].map(at)})`);
+
+  // a creature with conditions the way the system keeps them (max HP is 60 in these mocks)
+  const unit = (name, { hp = 60, temp = 0, conditions = {}, items = [] } = {}) => {
+    const a = new Actor(name, { hp, temp, items, type: 'character' });
+    a.cond = { ...conditions };
+    a.hasCondition = (s) => s in a.cond;
+    a.getCondition = (s) => (s in a.cond ? { value: a.cond[s] } : null);
+    a.decreaseCondition = async (s, o) => { if (o?.forceRemove || !(a.cond[s] > 1)) delete a.cond[s]; else a.cond[s]--; };
+    a.increaseCondition = async (s) => { a.cond[s] = (a.cond[s] || 0) + 1; };
+    a.itemTypes.condition = [];
+    a.deleteEmbeddedDocuments = async (_, ids) => { a.itemTypes.condition = a.itemTypes.condition.filter((c) => !ids.includes(c.id)); };
+    return a;
+  };
+  const shield = () => [{ type: 'equipment', flags: { [MOD]: { shieldMax: 15 } } }, { type: 'equipment', flags: { [MOD]: { shieldHpBonus: 5 } } }];
+  const caster = unit('Caster'); caster.level = 5;                        // 20% of 60 = 12
+
+  const hurt = unit('Hurt', { hp: 20, temp: 3, items: shield(), conditions: { frightened: 2, 'persistent-damage': null } });
+  hurt.itemTypes.condition = [{ id: 'burn', slug: 'persistent-damage' }];
+  let line = await unityOn(caster, hurt);
+  assert(hurt.system.attributes.hp.value === 32 && hurt.system.attributes.hp.temp === 20, `20% of 60 and a full 20-point shield (got ${hurt.system.attributes.hp.value} HP, ${hurt.system.attributes.hp.temp} shield)`);
+  assert(line.includes('20 → 32 HP') && line.includes('shield 3 → 20'), `the line says so: ${line}`);
+  assert(hurt.cond.frightened === 2 && hurt.itemTypes.condition.length === 1, 'plain Unity leaves conditions and persistent damage alone');
+
+  const nearFull = unit('Near full', { hp: 55 });
+  await unityOn(caster, nearFull);
+  assert(nearFull.system.attributes.hp.value === 60 && nearFull.system.attributes.hp.temp === 0, 'healing stops at maximum HP, and a creature without a shield gets none');
+  assert((await unityOn(caster, unit('Full'))).includes('HP already full'), 'a creature at full HP is told so');
+
+  const downed = unit('Downed', { hp: 0, items: shield(), conditions: { dying: 2, unconscious: null, prone: null, wounded: 1 } });
+  line = await unityOn(caster, downed);
+  assert(downed.system.attributes.hp.value === 12 && !('dying' in downed.cond) && !('unconscious' in downed.cond), `a dying ally wakes with the healing (got ${downed.system.attributes.hp.value} HP, ${Object.keys(downed.cond)})`);
+  assert(downed.cond.wounded === 2 && 'prone' in downed.cond && downed.system.attributes.hp.temp === 20, `Wounded 1 → 2, still prone, shield full (got wounded ${downed.cond.wounded})`);
+  assert(line.includes('revived (Wounded 2)'), `the line says so: ${line}`);
+
+  const fresh = unit('First time down', { hp: 0, conditions: { dying: 1, unconscious: null } });
+  await unityOn(caster, fresh);
+  assert(fresh.cond.wounded === 1, `a creature that was not wounded becomes Wounded 1 (got ${fresh.cond.wounded})`);
+
+  const dead = unit('Dead', { hp: 0 }); dead.isDead = true;
+  assert((await unityOn(caster, dead)).includes('dead') && dead.system.attributes.hp.value === 0, 'Unity does not raise the dead');
+
+  // Improved Unity: Frightened, Sickened and Stunned 1 go; a higher Stunned stays
+  caster.items = [{ slug: 'unity-improved' }];
+  const shaken = unit('Shaken', { hp: 30, conditions: { frightened: 2, sickened: 1, stunned: 1 } });
+  const stunned = unit('Stunned 2', { hp: 30, conditions: { stunned: 2 } });
+  line = await unityOn(caster, shaken); await unityOn(caster, stunned);
+  assert(!Object.keys(shaken.cond).length && line.includes('no longer Frightened, Sickened, Stunned 1'), `Improved Unity clears all three: ${line}`);
+  assert(stunned.cond.stunned === 2, 'Stunned 2 is not reduced');
+
+  // Superior Unity: no Wounded from the revive, on their feet, persistent damage ended
+  caster.items = [{ slug: 'unity-improved' }, { slug: 'unity-superior' }];
+  const saved = unit('Saved', { hp: 0, conditions: { dying: 1, unconscious: null, prone: null, wounded: 1 } });
+  saved.itemTypes.condition = [{ id: 'burn', slug: 'persistent-damage' }, { id: 'other', slug: 'clumsy' }];
+  line = await unityOn(caster, saved);
+  assert(saved.cond.wounded === 1 && !('prone' in saved.cond) && !('dying' in saved.cond), `Superior Unity: Wounded stays 1, no longer prone (got ${JSON.stringify(saved.cond)})`);
+  assert(saved.itemTypes.condition.map((c) => c.id).join() === 'other' && line.includes('persistent damage ended') && line.includes('on their feet'), `persistent damage ends, other conditions stay: ${line}`);
+  const clean = unit('Clean', { hp: 0, conditions: { dying: 1, unconscious: null } });
+  await unityOn(caster, clean);
+  assert(!('wounded' in clean.cond), 'Superior Unity: a creature that was not wounded stays that way');
+}
+
+console.log('Unity: the cast heals the caster and allies within 30 feet; a card only shown in chat does nothing');
+{
+  const person = (name, hp) => {
+    const a = new Actor(name, { hp, type: 'character' });
+    a.hasCondition = () => false; a.getCondition = () => null; a.itemTypes.condition = [];
+    return a;
+  };
+  const caster = person('Caster', 10); caster.level = 9;                  // 30% of 60 = 18
+  caster.isAllyOf = (other) => other.side === 'party';
+  const near = person('Near', 10), far = person('Far', 10), foe = person('Foe', 10);
+  near.side = 'party'; far.side = 'party'; foe.side = 'opposition';
+  const scene = { grid: { size: 100, distance: 5, measurePath: ([a, b]) => ({ distance: Math.max(Math.abs(a.x - b.x), Math.abs(a.y - b.y)) / 20 }) } };
+  const token = (actor, squares) => ({ actor, parent: scene, x: squares * 100, y: 0, width: 1, height: 1 });
+  const source = token(caster, 0);
+  scene.tokens = [source, token(near, 6), token(far, 7), token(foe, 1)];   // 30 feet, 35 feet, 5 feet
+  caster.getActiveTokens = () => [source];
+  ctx.game.users.activeGM = { isSelf: true };
+  ctx.game.users.filter = () => [];
+  ctx.game.scenes = { get: () => null };
+  uuids['Item.unity-spell'] = { slug: 'me-spell-unity', actor: caster };
+  const cast = async (rollOptions) => {
+    posted.length = 0;
+    const message = { speaker: {}, flags: { pf2e: { origin: { type: 'spell', uuid: 'Item.unity-spell', rollOptions } } } };
+    for (const hook of hooks.on.createChatMessage) { try { await hook(message); } catch { /* hooks for other cards */ } }
+    return posted.map((p) => p.content).join(' ');
+  };
+  const hpOf = () => [caster, near, far, foe].map((a) => a.system.attributes.hp.value).join();
+
+  let card = await cast([]);
+  assert(hpOf() === '10,10,10,10' && card.includes('shown in chat, not cast'), `shown in chat only: no one healed, and the card says why (${hpOf()})`);
+  card = await cast(['origin:action:slug:cast-a-spell']);
+  assert(hpOf() === '28,28,10,10', `cast at 9th: the caster and the ally at 30 feet regain 18; the ally at 35 feet and the enemy do not (${hpOf()})`);
+  assert(card.includes('30% of maximum HP') && card.includes('Near: 10 → 28 HP') && !card.includes('Far') && !card.includes('Foe'), 'the card lists who it reached');
+  delete ctx.game.users.activeGM; delete ctx.game.scenes;
+}
+
+console.log('Unity: the pack has the focus spell, and the feats are passive');
+{
+  const read = (f) => JSON.parse(readFileSync(new URL(`../src/packs/me-biotic-powers/${f}`, import.meta.url), 'utf8'));
+  const spell = read('unity-spell.json');
+  assert(spell.type === 'spell' && spell.system.slug === 'me-spell-unity' && spell.system.traits.value.includes('focus') && spell.system.time.value === '2', 'Unity is a two-action focus spell');
+  const feats = ['unity-feat.json', 'unity-improved-feat.json', 'unity-superior-feat.json'].map(read);
+  assert(feats.every((f) => f.system.actionType.value === 'passive' && f.system.description.value.includes('Item.meSpellUnity0001')), 'the three feats are passive and link the spell');
+  assert(feats.map((f) => f.system.level.value).join() === '1,6,10' && feats.map((f) => f.system.slug).join() === 'unity,unity-improved,unity-superior', 'levels 1, 6 and 10; slugs unchanged');
 }
 
 console.log('The module scripts load side by side');

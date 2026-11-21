@@ -11,15 +11,15 @@
   },
   "system": {
     "actionType": {
-      "value": "action"
+      "value": "passive"
     },
     "actions": {
-      "value": 2
+      "value": null
     },
     "category": "class",
     "description": {
       "gm": "",
-      "value": "<p>You project a pulse of restorative biotic energy that knits the wounds of all nearby allies simultaneously. Unlike targeted healing, Unity reaches everyone at once — a single expenditure of focus that can turn the tide of a firefight in an instant.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>10 Hit Points</strong>. This healing cannot exceed each creature's maximum HP, and any excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.</p>"
+      "value": "<p>You project a pulse of restorative biotic energy that knits the wounds of all nearby allies simultaneously. Unlike targeted healing, Unity reaches everyone at once — a single expenditure of focus that can turn the tide of a firefight in an instant.</p><p>You gain the @UUID[Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meSpellUnity0001]{Unity} focus spell and a focus pool of <strong>1 Focus Point</strong>. The spell is added to your sheet under <strong>Biotic Focus</strong>.</p><p>For 2 actions and 1 Focus Point, you and each ally within <strong>30 feet</strong> regain <strong>10% of their maximum Hit Points</strong> and their <strong>kinetic shields recharge to full</strong>. A creature at 0 Hit Points is revived. The healing rises to 20% at 5th level, 30% at 9th, 40% at 13th and 50% at 17th.</p><p>You regain the Focus Point when you Refocus (10 minutes). Unity has no cooldown.</p>"
     },
     "level": {
       "value": 1
@@ -35,9 +35,7 @@
         "adept",
         "sentinel",
         "vanguard",
-        "biotic",
-        "healing",
-        "concentrate"
+        "biotic"
       ],
       "rarity": "common"
     },

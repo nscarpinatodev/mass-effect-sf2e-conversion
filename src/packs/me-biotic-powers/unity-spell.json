@@ -1,0 +1,66 @@
+{
+  "_id": "meSpellUnity0001",
+  "_key": "!items!meSpellUnity0001",
+  "name": "Unity",
+  "type": "spell",
+  "img": "systems/pf2e/icons/spells/heal.webp",
+  "effects": [],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "area": {
+      "type": "emanation",
+      "value": 30
+    },
+    "cost": {
+      "value": ""
+    },
+    "counteraction": false,
+    "damage": {},
+    "defense": null,
+    "description": {
+      "gm": "",
+      "value": "<p>You release a pulse of restorative biotic energy that pulls your whole squad back into the fight at once.</p><p>You and each ally within <strong>30 feet</strong> regain Hit Points equal to <strong>10% of their maximum Hit Points</strong>, and their <strong>kinetic shields recharge to full</strong>.</p><p>A creature at 0 Hit Points is <strong>revived</strong>: it loses the dying condition and wakes up with that healing and a full shield. It becomes wounded as it normally would. Unity cannot raise the dead and does not refill a Biotic Barrier.</p><p>Unity costs <strong>1 Focus Point</strong>, which you regain when you Refocus. It has no cooldown.</p><hr /><p><strong>Heightened (+2)</strong> The healing increases by 10% of maximum Hit Points: 20% at 5th level, 30% at 9th, 40% at 13th and 50% at 17th.</p><p><strong>Improved Unity</strong> Each creature Unity reaches also loses Frightened, Sickened and Stunned 1.</p><p><strong>Superior Unity</strong> A creature Unity revives does not become wounded (or more wounded) and stands up for free, and Unity ends persistent damage on each creature it reaches.</p>"
+    },
+    "duration": {
+      "sustained": false,
+      "value": ""
+    },
+    "level": {
+      "value": 1
+    },
+    "location": {
+      "value": null
+    },
+    "publication": {
+      "title": "Mass Effect Compendium",
+      "authors": "nscarpinatodev",
+      "license": "ORC",
+      "remaster": true
+    },
+    "range": {
+      "value": ""
+    },
+    "requirements": "",
+    "rules": [],
+    "slug": "me-spell-unity",
+    "target": {
+      "value": "you and each ally in the area"
+    },
+    "time": {
+      "value": "2"
+    },
+    "traits": {
+      "rarity": "common",
+      "traditions": [],
+      "value": [
+        "biotic",
+        "concentrate",
+        "focus",
+        "healing"
+      ]
+    }
+  }
+}

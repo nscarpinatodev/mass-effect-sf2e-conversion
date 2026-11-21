@@ -11,18 +11,18 @@
   },
   "system": {
     "actionType": {
-      "value": "action"
+      "value": "passive"
     },
     "actions": {
-      "value": 2
+      "value": null
     },
     "category": "class",
     "description": {
       "gm": "",
-      "value": "<p>At this level of biotic mastery, your Unity pulse carries enough raw regenerative force to drag allies back from the threshold of death itself.</p><p>All allied creatures within <strong>30 feet</strong> who can see or hear you regain <strong>40 Hit Points</strong>. You may remove one negative condition of your choice from each affected ally. In addition, any ally who is <strong>dying</strong> is immediately <strong>stabilized</strong> and regains <strong>20 HP</strong> instead of 40. This healing cannot exceed each creature's maximum HP, and excess is lost. Unity does not heal you.</p><p><strong>Cooldown:</strong> 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.</p><p><em>Prerequisite: Improved Unity.</em></p>"
+      "value": "<p>At this level of biotic mastery, your Unity pulse carries enough raw regenerative force to drag allies back from the threshold of death itself.</p><p>A creature your @UUID[Compendium.mass-effect-sf2e-conversion.me-biotic-powers.Item.meSpellUnity0001]{Unity} spell revives from 0 Hit Points <strong>does not become wounded</strong> (or more wounded) from it, and <strong>stands up</strong> for free.</p><p>Unity also ends <strong>persistent damage</strong> on each creature it reaches, you included.</p><p><em>Prerequisite: Improved Unity.</em></p>"
     },
     "level": {
-      "value": 9
+      "value": 10
     },
     "prerequisites": {
       "value": [
@@ -39,9 +39,7 @@
         "adept",
         "sentinel",
         "vanguard",
-        "biotic",
-        "healing",
-        "concentrate"
+        "biotic"
       ],
       "rarity": "common"
     },

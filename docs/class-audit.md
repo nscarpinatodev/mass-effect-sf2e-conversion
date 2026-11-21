@@ -124,7 +124,7 @@ This unblocked System Override (Engineer), the Sentinel's 12th–20th line, and 
 
 Still open from this work:
 - **Flare was a 1st-level power that dealt 6d6 in a 15-foot burst.** Cut to 3d6 with the X1 fix; what remains open is listed there.
-- **Improved Unity (5th) and Superior Unity (9th) sit at levels with no class feat slot.** They can only be taken at 6th and 10th.
+- **Improved Unity (5th) and Superior Unity (9th) sat at levels with no class feat slot.** Resolved 2026-11-20: Unity became a focus spell that scales on its own, and the two feats were relisted at 6th and 10th with new effects (see `docs/power-level-review.md`, "Unity: a focus spell").
 - **Fortification's cooldown is 7 rounds less Constitution**, long for a Sentinel keyed on Charisma or Intelligence.
 - **The Sentinel now has 25 feats to choose from at 1st level**, the Vanguard 23, the Infiltrator 22.
 

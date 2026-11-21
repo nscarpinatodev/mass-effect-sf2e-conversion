@@ -1,15 +1,15 @@
-2026/11/20-04:12:59.511 5e14 Recovering log #8
-2026/11/20-04:12:59.524 5e14 Delete type=0 #8
-2026/11/20-04:12:59.524 5e14 Delete type=3 #6
-2026/11/20-04:12:59.529 4a08 Level-0 table #14: started
-2026/11/20-04:12:59.535 4a08 Level-0 table #14: 42521 bytes OK
-2026/11/20-04:12:59.541 4a08 Delete type=0 #12
-2026/11/20-04:12:59.541 4a08 Manual compaction at level-0 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)
-2026/11/20-04:12:59.541 4a08 Manual compaction at level-1 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at '!items!npcbiowarp000000' @ 102 : 1
-2026/11/20-04:12:59.541 4a08 Compacting 1@1 + 1@2 files
-2026/11/20-04:12:59.551 4a08 Generated table #15@1: 39 keys, 42521 bytes
-2026/11/20-04:12:59.551 4a08 Compacted 1@1 + 1@2 files => 42521 bytes
-2026/11/20-04:12:59.557 4a08 compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/11/20-04:12:59.557 4a08 Delete type=2 #10
-2026/11/20-04:12:59.557 4a08 Delete type=2 #14
-2026/11/20-04:12:59.557 4a08 Manual compaction at level-1 from '!items!npcbiowarp000000' @ 102 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)
+2026/11/20-21:10:43.117 b1fc Recovering log #13
+2026/11/20-21:10:43.128 b1fc Delete type=0 #13
+2026/11/20-21:10:43.128 b1fc Delete type=3 #11
+2026/11/20-21:10:43.133 39cc Level-0 table #19: started
+2026/11/20-21:10:43.140 39cc Level-0 table #19: 44161 bytes OK
+2026/11/20-21:10:43.142 39cc Delete type=0 #17
+2026/11/20-21:10:43.142 39cc Manual compaction at level-0 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)
+2026/11/20-21:10:43.142 39cc Manual compaction at level-1 from '!folders!mebioticnpcfoldr' @ 72057594037927935 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at '!items!npcbiowarp000000' @ 141 : 1
+2026/11/20-21:10:43.142 39cc Compacting 1@1 + 1@2 files
+2026/11/20-21:10:43.151 39cc Generated table #20@1: 40 keys, 44161 bytes
+2026/11/20-21:10:43.151 39cc Compacted 1@1 + 1@2 files => 44161 bytes
+2026/11/20-21:10:43.155 39cc compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/20-21:10:43.155 39cc Delete type=2 #15
+2026/11/20-21:10:43.156 39cc Delete type=2 #19
+2026/11/20-21:10:43.156 39cc Manual compaction at level-1 from '!items!npcbiowarp000000' @ 141 : 1 .. '!items!npcbiowarp000000' @ 0 : 0; will stop at (end)
