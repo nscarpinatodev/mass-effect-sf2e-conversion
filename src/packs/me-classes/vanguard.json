@@ -100,7 +100,7 @@
     "hp": 10,
     "items": {
       "van00": {
-        "img": "icons/magic/movement/abstract-ribbons-blue-purple.webp",
+        "img": "icons/magic/movement/trail-streak-impact-blue.webp",
         "level": 1,
         "name": "Vanguard Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meVanguardMast00"
@@ -142,7 +142,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
       },
       "van04": {
-        "img": "icons/magic/movement/abstract-ribbons-blue-purple.webp",
+        "img": "icons/magic/movement/trail-streak-impact-blue.webp",
         "level": 7,
         "name": "Improved Vanguard Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meVanguardMastI0"
@@ -178,7 +178,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfPercExpert"
       },
       "van10": {
-        "img": "icons/magic/movement/abstract-ribbons-blue-purple.webp",
+        "img": "icons/magic/movement/trail-streak-impact-blue.webp",
         "level": 13,
         "name": "Superior Vanguard Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meVanguardMastS0"

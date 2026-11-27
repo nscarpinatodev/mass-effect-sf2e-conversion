@@ -314,7 +314,7 @@
       "_id": "jacka00000000002",
       "name": "Pull (NPC)",
       "type": "action",
-      "img": "icons/magic/movement/arrow-down-blue.webp",
+      "img": "icons/magic/control/energy-stream-link-blue.webp",
       "effects": [],
       "flags": {},
       "ownership": {

@@ -3,7 +3,7 @@
   "_key": "!items!npcbiodominate00",
   "name": "Dominate (NPC)",
   "type": "action",
-  "img": "icons/magic/control/silhouette-hold-mind.webp",
+  "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
   "folder": "mebioticnpcfoldr",
   "effects": [],
   "flags": {},

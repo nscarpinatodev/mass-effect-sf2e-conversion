@@ -98,7 +98,7 @@
     "hp": 6,
     "items": {
       "ade00": {
-        "img": "icons/magic/light/orb-shining-teal.webp",
+        "img": "icons/magic/unholy/orb-swirling-teal.webp",
         "level": 1,
         "name": "Adept Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meAdeptMastery00"
@@ -134,7 +134,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCAdeptExp0000"
       },
       "ade04": {
-        "img": "icons/magic/light/orb-shining-teal.webp",
+        "img": "icons/magic/unholy/orb-swirling-teal.webp",
         "level": 7,
         "name": "Improved Adept Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meAdeptMastImpr0"
@@ -164,7 +164,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
       },
       "ade09": {
-        "img": "icons/magic/light/orb-shining-teal.webp",
+        "img": "icons/magic/unholy/orb-swirling-teal.webp",
         "level": 13,
         "name": "Superior Adept Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meAdeptMastSupe0"

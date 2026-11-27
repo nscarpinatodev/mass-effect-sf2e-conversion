@@ -3,7 +3,7 @@
   "_key": "!items!npcbiolift000000",
   "name": "Lift (NPC)",
   "type": "action",
-  "img": "icons/magic/movement/pinwheel-blue-purple.webp",
+  "img": "icons/magic/movement/pinwheel-turning-blue.webp",
   "folder": "mebioticnpcfoldr",
   "effects": [],
   "flags": {},

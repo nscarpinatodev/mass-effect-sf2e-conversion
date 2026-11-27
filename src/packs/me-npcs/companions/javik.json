@@ -760,7 +760,7 @@
       "_id": "javik00000000007",
       "name": "Dark Channel (NPC)",
       "type": "action",
-      "img": "icons/magic/unholy/beam-impact-purple-small.webp",
+      "img": "icons/magic/unholy/beam-ringed-impact-purple.webp",
       "effects": [],
       "flags": {},
       "ownership": {
@@ -810,7 +810,7 @@
       "_id": "javik00000000008",
       "name": "Pull (NPC)",
       "type": "action",
-      "img": "icons/magic/movement/arrow-down-blue.webp",
+      "img": "icons/magic/control/energy-stream-link-blue.webp",
       "effects": [],
       "flags": {},
       "ownership": {
@@ -860,7 +860,7 @@
       "_id": "javik00000000009",
       "name": "Slam (NPC)",
       "type": "action",
-      "img": "icons/magic/earth/spike-stone-attack-orange.webp",
+      "img": "icons/magic/earth/strike-body-stone-crumble.webp",
       "effects": [],
       "flags": {},
       "ownership": {

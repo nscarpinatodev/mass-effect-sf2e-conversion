@@ -682,7 +682,7 @@
       "_id": "feronbroker00006",
       "name": "Throw (NPC)",
       "type": "action",
-      "img": "icons/magic/movement/arrow-up-from-portal.webp",
+      "img": "icons/magic/sonic/projectile-shock-wave-blue.webp",
       "effects": [],
       "flags": {},
       "ownership": {

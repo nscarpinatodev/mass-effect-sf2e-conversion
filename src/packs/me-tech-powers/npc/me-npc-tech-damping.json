@@ -3,7 +3,7 @@
   "_key": "!items!npctechdamping00",
   "name": "Damping (NPC)",
   "type": "action",
-  "img": "icons/magic/unholy/beam-impact-teal-purple.webp",
+  "img": "icons/magic/light/beam-impact-deflect-teal.webp",
   "folder": "metechnpcfolder0",
   "effects": [],
   "flags": {},

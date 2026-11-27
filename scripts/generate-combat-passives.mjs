@@ -111,7 +111,7 @@ ITEMS.push(makePassiveFeat({
   id:    'meCPFitness00000',
   name:  'Fitness',
   slug:  'me-cp-fitness',
-  img:   'icons/magic/life/heart-cross-strong-flame-red.webp',
+  img:   'icons/magic/life/heart-glowing-red.webp',
   level: 1,
   rules: [{ key: 'FlatModifier', selector: 'hp', value: 4, label: 'Fitness' }],
   description:
@@ -123,7 +123,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPFitnessImpvd',
   name:    'Improved Fitness',
   slug:    'me-cp-fitness-improved',
-  img:     'icons/magic/life/heart-cross-strong-flame-red.webp',
+  img:     'icons/magic/life/heart-glowing-red.webp',
   level:   4,
   prereqs: ['Fitness'],
   rules: [
@@ -139,7 +139,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPFitnessMastr',
   name:    'Master Fitness',
   slug:    'me-cp-fitness-master',
-  img:     'icons/magic/life/heart-cross-strong-flame-red.webp',
+  img:     'icons/magic/life/heart-glowing-red.webp',
   level:   8,
   prereqs: ['Improved Fitness'],
   rules: [
@@ -158,7 +158,7 @@ ITEMS.push(makePassiveFeat({
   id:    'meCPCombatTrain0',
   name:  'Combat Training',
   slug:  'me-cp-combat-training',
-  img:   'icons/skills/melee/sword-shield-stylized-blue.webp',
+  img:   'icons/skills/melee/sword-shield-stylized-white.webp',
   level: 1,
   rules: [{ key: 'FlatModifier', selector: 'attack-roll', type: 'circumstance', value: 1, label: 'Combat Training' }],
   description:
@@ -170,7 +170,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPCombatTrnImp',
   name:    'Improved Combat Training',
   slug:    'me-cp-combat-training-improved',
-  img:     'icons/skills/melee/sword-shield-stylized-blue.webp',
+  img:     'icons/skills/melee/sword-shield-stylized-white.webp',
   level:   4,
   prereqs: ['Combat Training'],
   rules: [
@@ -185,7 +185,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPCombatTrnMst',
   name:    'Master Combat Training',
   slug:    'me-cp-combat-training-master',
-  img:     'icons/skills/melee/sword-shield-stylized-blue.webp',
+  img:     'icons/skills/melee/sword-shield-stylized-white.webp',
   level:   8,
   prereqs: ['Improved Combat Training'],
   rules: [
@@ -204,7 +204,7 @@ ITEMS.push(makePassiveFeat({
   id:    'meCPBioticMast00',
   name:  'Biotic Mastery',
   slug:  'me-cp-biotic-mastery',
-  img:   'icons/magic/light/orb-shining-teal.webp',
+  img:   'icons/magic/unholy/orb-swirling-teal.webp',
   level: 2,
   traits: ['biotic'],
   description:
@@ -216,7 +216,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPBioticMastIm',
   name:    'Improved Biotic Mastery',
   slug:    'me-cp-biotic-mastery-improved',
-  img:     'icons/magic/light/orb-shining-teal.webp',
+  img:     'icons/magic/unholy/orb-swirling-teal.webp',
   level:   6,
   prereqs: ['Biotic Mastery'],
   traits:  ['biotic'],
@@ -229,7 +229,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPBioticMastMs',
   name:    'Master Biotic Mastery',
   slug:    'me-cp-biotic-mastery-master',
-  img:     'icons/magic/light/orb-shining-teal.webp',
+  img:     'icons/magic/unholy/orb-swirling-teal.webp',
   level:   10,
   prereqs: ['Improved Biotic Mastery'],
   traits:  ['biotic'],
@@ -245,7 +245,7 @@ ITEMS.push(makePassiveFeat({
   id:    'meCPTechMastery0',
   name:  'Tech Mastery',
   slug:  'me-cp-tech-mastery',
-  img:   'icons/equipment/wrist/bracer-runed-steel-orange.webp',
+  img:   'icons/equipment/wrist/bracer-orange-fancy.webp',
   level: 2,
   traits: ['tech'],
   description:
@@ -257,7 +257,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPTechMastryIm',
   name:    'Improved Tech Mastery',
   slug:    'me-cp-tech-mastery-improved',
-  img:     'icons/equipment/wrist/bracer-runed-steel-orange.webp',
+  img:     'icons/equipment/wrist/bracer-orange-fancy.webp',
   level:   6,
   prereqs: ['Tech Mastery'],
   traits:  ['tech'],
@@ -270,7 +270,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPTechMastryMs',
   name:    'Master Tech Mastery',
   slug:    'me-cp-tech-mastery-master',
-  img:     'icons/equipment/wrist/bracer-runed-steel-orange.webp',
+  img:     'icons/equipment/wrist/bracer-orange-fancy.webp',
   level:   10,
   prereqs: ['Improved Tech Mastery'],
   traits:  ['tech'],
@@ -316,10 +316,10 @@ const weaponMastery = [
 ];
 
 const WPN_IMGS = {
-  rifle:   'icons/weapons/guns/gun-pistol-flintlock-black.webp',
-  sniper:  'icons/weapons/guns/gun-pistol-flintlock-black.webp',
-  shotgun: 'icons/weapons/guns/gun-pistol-flintlock-black.webp',
-  pistol:  'icons/weapons/guns/gun-pistol-flintlock-black.webp',
+  rifle:   'icons/weapons/guns/rifle-assault-heavy.webp',
+  sniper:  'icons/weapons/guns/rifle-sniper-long.webp',
+  shotgun: 'icons/weapons/guns/shotgun-pump.webp',
+  pistol:  'icons/weapons/guns/pistol-sci-fi.webp',
 };
 
 const WPN_ID_PREFIXES = {
@@ -388,7 +388,7 @@ ITEMS.push(makePassiveFeat({
   id:    'meCPConcussShot0',
   name:  'Concussive Shot',
   slug:  'me-cp-concussive-shot',
-  img:   'icons/magic/air/wind-tornado-small-blue.webp',
+  img:   'icons/magic/air/wind-tornado-funnel-blue.webp',
   level: 1,
   description:
     '<p>Your shots carry a concussive punch that staggers targets on a well-placed hit.</p>'
@@ -400,7 +400,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPConcusShtImp',
   name:    'Improved Concussive Shot',
   slug:    'me-cp-concussive-shot-improved',
-  img:     'icons/magic/air/wind-tornado-small-blue.webp',
+  img:     'icons/magic/air/wind-tornado-funnel-blue.webp',
   level:   4,
   prereqs: ['Concussive Shot'],
   description:
@@ -413,7 +413,7 @@ ITEMS.push(makePassiveFeat({
   id:      'meCPConcusShtMst',
   name:    'Master Concussive Shot',
   slug:    'me-cp-concussive-shot-master',
-  img:     'icons/magic/air/wind-tornado-small-blue.webp',
+  img:     'icons/magic/air/wind-tornado-funnel-blue.webp',
   level:   8,
   prereqs: ['Improved Concussive Shot'],
   description:
@@ -514,7 +514,7 @@ ITEMS.push(makeActionFeat({
 
 // ── FORTIFICATION ─────────────────────────────────────────────────────────────
 
-const FORT_IMG   = 'icons/magic/defensive/shield-barrier-deflect.webp';
+const FORT_IMG   = 'icons/magic/defensive/shield-barrier-deflect-teal.webp';
 const UNLIMITED  = { value: -1, unit: 'unlimited', expiry: null };
 
 ITEMS.push(makeEffect({

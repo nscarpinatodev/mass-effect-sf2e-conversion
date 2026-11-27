@@ -117,7 +117,7 @@ const GRENADES = [
     id: 'meGrenadeCryo000',
     name: 'Cryo Grenade',
     slug: 'me-cryo-grenade',
-    img: 'icons/magic/water/ice-spike-crystal-white-blue.webp',
+    img: 'icons/magic/water/ice-crystal-white.webp',
     level: 2,
     price: { gp: 100 },
     traits: ['cold', 'thrown'],
@@ -135,7 +135,7 @@ const GRENADES = [
     id: 'meGrenadeArc0000',
     name: 'Arc Grenade',
     slug: 'me-arc-grenade',
-    img: 'icons/magic/lightning/orb-lightning-bolt-blue.webp',
+    img: 'icons/magic/lightning/orb-ball-spiral-blue.webp',
     level: 2,
     price: { gp: 120 },
     traits: ['electricity', 'thrown'],
@@ -154,7 +154,7 @@ const GRENADES = [
     id: 'meGrenadeProxMin',
     name: 'Proximity Mine',
     slug: 'me-proximity-mine',
-    img: 'icons/equipment/weapon/bomb-fuse-red.webp',
+    img: 'icons/weapons/thrown/bomb-detonator.webp',
     level: 1,
     price: { gp: 80 },
     traits: ['thrown'],
@@ -192,7 +192,7 @@ const GRENADES = [
     id: 'meGrenadeLift000',
     name: 'Lift Grenade',
     slug: 'me-lift-grenade',
-    img: 'icons/magic/movement/pinwheel-blue-purple.webp',
+    img: 'icons/magic/movement/pinwheel-turning-blue.webp',
     level: 4,
     price: { gp: 200 },
     traits: ['thrown'],
@@ -238,7 +238,7 @@ const CLASSES = [
     id: 'meClassEngineer0',
     name: 'Engineer',
     slug: 'me-class-engineer',
-    img: 'icons/equipment/wrist/bracer-runed-steel-orange.webp',
+    img: 'icons/equipment/wrist/bracer-orange-fancy.webp',
     rules: [
       {
         key: 'FlatModifier',
@@ -263,7 +263,7 @@ const CLASSES = [
     id: 'meClassAdept0000',
     name: 'Adept',
     slug: 'me-class-adept',
-    img: 'icons/magic/light/orb-shining-teal.webp',
+    img: 'icons/magic/unholy/orb-swirling-teal.webp',
     rules: [
       {
         key: 'FlatModifier',
@@ -288,7 +288,7 @@ const CLASSES = [
     id: 'meClassVanguard0',
     name: 'Vanguard',
     slug: 'me-class-vanguard',
-    img: 'icons/magic/movement/abstract-ribbons-blue-purple.webp',
+    img: 'icons/magic/movement/trail-streak-impact-blue.webp',
     rules: [
       {
         key: 'FlatModifier',
@@ -338,7 +338,7 @@ const CLASSES = [
     id: 'meClassSentinel0',
     name: 'Sentinel',
     slug: 'me-class-sentinel',
-    img: 'icons/magic/defensive/shield-barrier-deflect.webp',
+    img: 'icons/magic/defensive/shield-barrier-deflect-teal.webp',
     rules: [
       {
         key: 'FlatModifier',

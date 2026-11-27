@@ -3,7 +3,7 @@
   "_key": "!items!npcbiopull000000",
   "name": "Pull (NPC)",
   "type": "action",
-  "img": "icons/magic/movement/arrow-down-blue.webp",
+  "img": "icons/magic/control/energy-stream-link-blue.webp",
   "folder": "mebioticnpcfoldr",
   "effects": [],
   "flags": {},

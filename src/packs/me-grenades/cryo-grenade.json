@@ -4,7 +4,7 @@
   "folder": null,
   "name": "Cryo Grenade",
   "type": "consumable",
-  "img": "icons/magic/water/ice-spike-crystal-white-blue.webp",
+  "img": "icons/magic/water/ice-crystal-white.webp",
   "effects": [],
   "flags": {},
   "ownership": {

@@ -105,7 +105,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meClassSentinel0"
       },
       "sen01": {
-        "img": "icons/magic/symbols/ring-circle-runes-teal.webp",
+        "img": "icons/magic/symbols/ring-circle-smoke-blue.webp",
         "level": 1,
         "name": "Sentinel Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSentinelMast00"
@@ -123,7 +123,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
       },
       "sen04": {
-        "img": "icons/magic/symbols/ring-circle-runes-teal.webp",
+        "img": "icons/magic/symbols/ring-circle-smoke-blue.webp",
         "level": 7,
         "name": "Improved Sentinel Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSentinelMastI0"
@@ -159,7 +159,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfPercExpert"
       },
       "sen10": {
-        "img": "icons/magic/symbols/ring-circle-runes-teal.webp",
+        "img": "icons/magic/symbols/ring-circle-smoke-blue.webp",
         "level": 13,
         "name": "Superior Sentinel Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSentinelMastS0"
@@ -201,7 +201,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCSentinelLeg0"
       },
       "senTA": {
-        "img": "icons/equipment/chest/breastplate-banded-gray.webp",
+        "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
         "level": 1,
         "name": "Tech Armor",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-tech-powers.Item.meTechArmor00000"

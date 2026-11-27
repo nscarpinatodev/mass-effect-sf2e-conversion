@@ -498,7 +498,7 @@
       "_id": "matriarchben0005",
       "name": "Singularity (NPC)",
       "type": "action",
-      "img": "icons/magic/control/debuff-gravity-pull-blue-purple.webp",
+      "img": "icons/magic/air/wind-vortex-swirl-blue-purple.webp",
       "effects": [],
       "flags": {},
       "ownership": {
@@ -600,7 +600,7 @@
       "_id": "matriarchben0007",
       "name": "Lift (NPC)",
       "type": "action",
-      "img": "icons/magic/movement/pinwheel-blue-purple.webp",
+      "img": "icons/magic/movement/pinwheel-turning-blue.webp",
       "effects": [],
       "flags": {},
       "ownership": {

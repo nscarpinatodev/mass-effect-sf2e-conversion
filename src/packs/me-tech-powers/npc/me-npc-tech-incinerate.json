@@ -3,7 +3,7 @@
   "_key": "!items!npctechincinerat",
   "name": "Incinerate (NPC)",
   "type": "action",
-  "img": "icons/magic/fire/flame-burning-orange.webp",
+  "img": "icons/magic/fire/flame-burning-embers-orange.webp",
   "folder": "metechnpcfolder0",
   "effects": [],
   "flags": {},

@@ -99,7 +99,7 @@
     "hp": 8,
     "items": {
       "inf00": {
-        "img": "icons/magic/perception/eye-ringed-violet.webp",
+        "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
         "level": 1,
         "name": "Infiltrator Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meInfiltrMast000"
@@ -123,7 +123,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
       },
       "inf04": {
-        "img": "icons/magic/perception/eye-ringed-violet.webp",
+        "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
         "level": 7,
         "name": "Improved Infiltrator Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meInfiltrMastIm0"
@@ -159,7 +159,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfMedArmExp0"
       },
       "inf10": {
-        "img": "icons/magic/perception/eye-ringed-violet.webp",
+        "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
         "level": 13,
         "name": "Superior Infiltrator Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meInfiltrMastSu0"

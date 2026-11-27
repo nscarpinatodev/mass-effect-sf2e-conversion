@@ -323,7 +323,7 @@
       "_id": "liaraa0000000002",
       "name": "Singularity (NPC)",
       "type": "action",
-      "img": "icons/magic/control/debuff-gravity-pull-blue-purple.webp",
+      "img": "icons/magic/air/wind-vortex-swirl-blue-purple.webp",
       "effects": [],
       "flags": {},
       "ownership": {

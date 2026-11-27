@@ -1055,7 +1055,7 @@ async function createChilledEffect(actor) {
   await actor.createEmbeddedDocuments('Item', [{
     name: 'Chilled',
     type: 'effect',
-    img: 'icons/magic/water/ice-snowflake-cold-blue.webp',
+    img: 'icons/magic/water/snowflake-ice-blue.webp',
     flags: {},
     system: {
       slug: 'me-chilled',

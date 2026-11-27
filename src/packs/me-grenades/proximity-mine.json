@@ -4,7 +4,7 @@
   "folder": null,
   "name": "Proximity Mine",
   "type": "consumable",
-  "img": "icons/equipment/weapon/bomb-fuse-red.webp",
+  "img": "icons/weapons/thrown/bomb-detonator.webp",
   "effects": [],
   "flags": {},
   "ownership": {

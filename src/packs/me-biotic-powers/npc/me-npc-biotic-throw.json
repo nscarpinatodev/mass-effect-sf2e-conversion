@@ -3,7 +3,7 @@
   "_key": "!items!npcbiothrow00000",
   "name": "Throw (NPC)",
   "type": "action",
-  "img": "icons/magic/movement/arrow-up-from-portal.webp",
+  "img": "icons/magic/sonic/projectile-shock-wave-blue.webp",
   "folder": "mebioticnpcfoldr",
   "effects": [],
   "flags": {},

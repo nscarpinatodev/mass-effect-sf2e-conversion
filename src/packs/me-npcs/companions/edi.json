@@ -925,7 +925,7 @@
       "_id": "edi0000000000009",
       "name": "Incinerate (NPC)",
       "type": "action",
-      "img": "icons/magic/fire/flame-burning-orange.webp",
+      "img": "icons/magic/fire/flame-burning-embers-orange.webp",
       "effects": [],
       "flags": {},
       "ownership": {
@@ -976,7 +976,7 @@
       "_id": "edi0000000000010",
       "name": "Defense Matrix (NPC)",
       "type": "action",
-      "img": "icons/magic/defensive/shield-barrier-deflect.webp",
+      "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
       "effects": [],
       "flags": {},
       "ownership": {

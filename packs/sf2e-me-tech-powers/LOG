@@ -1,15 +1,5 @@
-2026/11/20-21:10:43.177 40c0 Recovering log #13
-2026/11/20-21:10:43.185 40c0 Delete type=0 #13
-2026/11/20-21:10:43.185 40c0 Delete type=3 #11
-2026/11/20-21:10:43.195 39cc Level-0 table #19: started
-2026/11/20-21:10:43.199 39cc Level-0 table #19: 36679 bytes OK
-2026/11/20-21:10:43.214 39cc Delete type=0 #17
-2026/11/20-21:10:43.215 39cc Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
-2026/11/20-21:10:43.215 39cc Manual compaction at level-1 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at '!items!npctechtecharmor' @ 128 : 1
-2026/11/20-21:10:43.215 39cc Compacting 1@1 + 1@2 files
-2026/11/20-21:10:43.221 39cc Generated table #20@1: 37 keys, 36679 bytes
-2026/11/20-21:10:43.221 39cc Compacted 1@1 + 1@2 files => 36679 bytes
-2026/11/20-21:10:43.225 39cc compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/11/20-21:10:43.225 39cc Delete type=2 #15
-2026/11/20-21:10:43.225 39cc Delete type=2 #19
-2026/11/20-21:10:43.225 39cc Manual compaction at level-1 from '!items!npctechtecharmor' @ 128 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)
+2026/11/26-21:52:14.780 ae48 Delete type=3 #1
+2026/11/26-21:52:14.784 b0d4 Level-0 table #5: started
+2026/11/26-21:52:14.789 b0d4 Level-0 table #5: 36824 bytes OK
+2026/11/26-21:52:14.793 b0d4 Delete type=0 #3
+2026/11/26-21:52:14.793 b0d4 Manual compaction at level-0 from '!folders!metechnpcfolder0' @ 72057594037927935 : 1 .. '!items!npctechtecharmor' @ 0 : 0; will stop at (end)

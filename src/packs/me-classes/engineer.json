@@ -98,7 +98,7 @@
     "hp": 8,
     "items": {
       "eng00": {
-        "img": "icons/equipment/wrist/bracer-runed-steel-orange.webp",
+        "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
         "level": 1,
         "name": "Engineer Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEngineerMast00"
@@ -122,7 +122,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meDCEngineerExp0"
       },
       "eng04": {
-        "img": "icons/equipment/wrist/bracer-runed-steel-orange.webp",
+        "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
         "level": 7,
         "name": "Improved Engineer Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEngineerMastI0"
@@ -152,7 +152,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfWpnExpert0"
       },
       "eng09": {
-        "img": "icons/equipment/wrist/bracer-runed-steel-orange.webp",
+        "img": "icons/equipment/wrist/bracer-orange-fancy.webp",
         "level": 13,
         "name": "Superior Engineer Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meEngineerMastS0"

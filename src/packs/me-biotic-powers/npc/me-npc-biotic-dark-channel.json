@@ -3,7 +3,7 @@
   "_key": "!items!npcbiodarkchanne",
   "name": "Dark Channel (NPC)",
   "type": "action",
-  "img": "icons/magic/unholy/beam-impact-purple-small.webp",
+  "img": "icons/magic/unholy/beam-ringed-impact-purple.webp",
   "folder": "mebioticnpcfoldr",
   "effects": [],
   "flags": {},

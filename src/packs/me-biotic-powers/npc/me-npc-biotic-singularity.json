@@ -3,7 +3,7 @@
   "_key": "!items!npcbiosingularit",
   "name": "Singularity (NPC)",
   "type": "action",
-  "img": "icons/magic/control/debuff-gravity-pull-blue-purple.webp",
+  "img": "icons/magic/air/wind-vortex-swirl-blue-purple.webp",
   "folder": "mebioticnpcfoldr",
   "effects": [],
   "flags": {},

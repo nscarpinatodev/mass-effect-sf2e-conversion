@@ -89,7 +89,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meClassSoldier00"
       },
       "sol01": {
-        "img": "icons/skills/ranged/target-bullseye-arrow-red-white.webp",
+        "img": "icons/skills/ranged/target-bullseye-arrow-white.webp",
         "level": 1,
         "name": "Soldier Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSoldierMast000"
@@ -119,7 +119,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfFortMaster"
       },
       "sol06": {
-        "img": "icons/skills/ranged/target-bullseye-arrow-red-white.webp",
+        "img": "icons/skills/ranged/target-bullseye-arrow-white.webp",
         "level": 7,
         "name": "Improved Soldier Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSoldierMastIm0"
@@ -149,7 +149,7 @@
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-class-progressions.Item.meProfSolWpnMst0"
       },
       "sol11": {
-        "img": "icons/skills/ranged/target-bullseye-arrow-red-white.webp",
+        "img": "icons/skills/ranged/target-bullseye-arrow-white.webp",
         "level": 13,
         "name": "Superior Soldier Mastery",
         "uuid": "Compendium.mass-effect-sf2e-conversion.me-combat-passives.Item.meSoldierMastSu0"

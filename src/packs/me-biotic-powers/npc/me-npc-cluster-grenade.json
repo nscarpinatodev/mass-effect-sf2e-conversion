@@ -3,7 +3,7 @@
   "_key": "!items!npcbioclustergre",
   "name": "Cluster Grenade (NPC)",
   "type": "action",
-  "img": "icons/magic/fire/explosion-fireball-medium-purple.webp",
+  "img": "icons/magic/fire/explosion-fireball-medium-purple-pink.webp",
   "folder": "mebioticnpcfoldr",
   "effects": [],
   "flags": {},

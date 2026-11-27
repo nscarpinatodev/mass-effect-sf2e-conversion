@@ -55,7 +55,7 @@ const PARAGON_ITEMS = {
     descHTML: 'Reaction (1/day). Trigger: ally in 30 ft would drop to 0 HP. Effect: ally set to 1 HP; you take damage equal to your level.',
   }),
   'Paragon 100 — Living Legend': {
-    type: 'effect', name: 'Paragon 100 — Living Legend', img: 'icons/svg/star.svg',
+    type: 'effect', name: 'Paragon 100 — Living Legend', img: 'icons/svg/angel.svg',
     system: {
       description: { value: '+1 status to Diplomacy and Medicine.' },
       duration: { value: -1, unit: 'unlimited' }, start: { value: 0 }, tokenIcon: { show: true },
@@ -77,7 +77,7 @@ const RENEGADE_ITEMS = {
     },
   },
   'Renegade 40 — Ruthless Efficiency': mkAction({
-    name: 'Renegade 40 — Ruthless Efficiency', img: 'icons/svg/bolt.svg',
+    name: 'Renegade 40 — Ruthless Efficiency', img: 'icons/svg/lightning.svg',
     atype: 'free', category: 'offensive', perDay: 1,
     descHTML: 'Free Action (1/day). Fortune on one Intimidation or Deception check (keep higher).',
     rules: [{ key: 'RollTwice', selector: ['intimidation', 'deception'], keep: 'higher', effectType: 'fortune', removeAfterRoll: true }],
@@ -200,7 +200,7 @@ async function useTier(actor, track, tier) {
   } else if (name.includes('Ruthless Efficiency')) {
     await ChatMessage.create({ speaker, content: '<b>Ruthless Efficiency</b>: Fortune on one Intimidation or Deception check (keep higher).' });
     await actor.createEmbeddedDocuments('Item', [{
-      type: 'effect', name: 'Ruthless Efficiency (Fortune)', img: 'icons/svg/bolt.svg',
+      type: 'effect', name: 'Ruthless Efficiency (Fortune)', img: 'icons/svg/lightning.svg',
       system: { description: { value: 'Roll Twice (fortune): Intimidation/Deception; remove after first eligible roll.' },
         duration: { value: 1, unit: 'minutes' }, start: { value: 0 }, tokenIcon: { show: true },
         rules: [{ key: 'RollTwice', selector: ['intimidation', 'deception'], keep: 'higher', effectType: 'fortune', removeAfterRoll: true }] },

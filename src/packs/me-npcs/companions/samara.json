@@ -279,7 +279,7 @@
       "_id": "samara0000000001",
       "name": "Reave (NPC)",
       "type": "action",
-      "img": "icons/magic/life/ankh-gold-green.webp",
+      "img": "icons/magic/life/ankh-shadow-green.webp",
       "effects": [],
       "flags": {},
       "ownership": {
@@ -330,7 +330,7 @@
       "_id": "samara0000000002",
       "name": "Throw (NPC)",
       "type": "action",
-      "img": "icons/magic/movement/arrow-up-from-portal.webp",
+      "img": "icons/magic/sonic/projectile-shock-wave-blue.webp",
       "effects": [],
       "flags": {},
       "ownership": {

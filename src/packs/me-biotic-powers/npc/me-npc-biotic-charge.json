@@ -3,7 +3,7 @@
   "_key": "!items!npcbiobioticchar",
   "name": "Biotic Charge (NPC)",
   "type": "action",
-  "img": "icons/magic/movement/abstract-ribbons-blue-purple.webp",
+  "img": "icons/magic/movement/trail-streak-impact-blue.webp",
   "folder": "mebioticnpcfoldr",
   "effects": [],
   "flags": {},
