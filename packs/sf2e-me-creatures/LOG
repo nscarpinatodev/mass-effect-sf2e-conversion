@@ -1,5 +1,5 @@
-2026/11/26-21:52:14.349 ab84 Delete type=3 #1
-2026/11/26-21:52:14.356 b0d4 Level-0 table #5: started
-2026/11/26-21:52:14.364 b0d4 Level-0 table #5: 135820 bytes OK
-2026/11/26-21:52:14.368 b0d4 Delete type=0 #3
-2026/11/26-21:52:14.368 b0d4 Manual compaction at level-0 from '!actors!031fdf30b5260503' @ 72057594037927935 : 1 .. '!actors.items!meEngSentryTurrt.meEngTurretStrik' @ 0 : 0; will stop at (end)
+2026/11/26-22:41:05.939 2644 Delete type=3 #1
+2026/11/26-22:41:05.944 a4f0 Level-0 table #5: started
+2026/11/26-22:41:05.953 a4f0 Level-0 table #5: 135820 bytes OK
+2026/11/26-22:41:05.957 a4f0 Delete type=0 #3
+2026/11/26-22:41:05.957 a4f0 Manual compaction at level-0 from '!actors!031fdf30b5260503' @ 72057594037927935 : 1 .. '!actors.items!meEngSentryTurrt.meEngTurretStrik' @ 0 : 0; will stop at (end)

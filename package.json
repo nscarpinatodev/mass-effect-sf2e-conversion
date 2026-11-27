@@ -1,6 +1,6 @@
 {
   "name": "mass-effect-sf2e-conversion",
-  "version": "2.1.0-rc.2",
+  "version": "3.0.0-rc.1",
   "type": "module",
   "private": true,
   "scripts": {

@@ -8,10 +8,14 @@ A Foundry VTT module that brings the Mass Effect universe to the **Starfinder 2e
 
 | Software | Minimum | Verified |
 |----------|---------|---------|
-| Foundry VTT | v14 | v14 |
-| Starfinder 2e | 1.0 | 1.1.1 |
+| Foundry VTT | v14 | 14.371 |
+| Starfinder 2e | 1.7.1 | 1.7.1 |
 
-The module is built for the Starfinder 2e system. It no longer ships Pathfinder 2e packs: 2.2.0-rc.6 is the last release that has them, and a Pathfinder world should stay on it.
+It also needs the free [Scorpious187's Lib](https://github.com/nscarpinatodev/scorpious187s-lib) module, which Foundry offers to install with it. Optional: **Sequencer** with **JB2A** for the Biotic Charge and Nova animations, and **Tokenizer 2** to frame tokens as they are dropped.
+
+**Starfinder 2e only.** From 3.0.0 the module no longer ships Pathfinder 2e packs. 2.2.0-rc.6 is the last release that has them, and a Pathfinder world should stay on it.
+
+**Updating a world from 2.x.** The first time a Gamemaster opens the world, the module brings existing player characters up to date (halved kinetic shields, the changed class features, Unity, Warp) and replaces item icons that pointed at files that do not exist. It lists what it changed. NPCs already in the world keep their old numbers: re-import them from the compendium. Biotic cooldowns now come from a bio-amp, so give each biotic character one.
 
 ---
 
@@ -34,52 +38,75 @@ Download the latest release zip, extract it into your Foundry `Data/modules/` fo
 
 ### Player Options
 - **Ancestries** — Asari, Batarian, Drell, Elcor, Hanar, Human, Krogan, Quarian, Salarian, Turian, Volus, Vorcha
-- **Heritages** — Multiple heritages per ancestry covering cultural and physiological variation
-- **Ancestry Feats** — Ancestry-specific feats and features
-- **Backgrounds** — Alliance Soldier, Citadel Bureaucrat, Infiltrator, Mercenary, Smuggler, Omega, and more
-- **Classes** — Mass Effect class conversions with full progression tables
-- **Combat Passives** — Passive combat abilities tied to classes and training
+- **Heritages** — 44 heritages across the twelve ancestries, covering cultural and physiological variation
+- **Ancestry Feats** — 77 ancestry feats, with 14 each for Asari and Turian
+- **Backgrounds** — 23 backgrounds: Alliance Soldier, Citadel Bureaucrat, Infiltrator, Mercenary, Smuggler, Omega, and more
+- **Classes** — Soldier, Engineer, Adept, Vanguard, Infiltrator and Sentinel, each with a 1st-to-20th progression and its own class feats
+- **Combat Passives** — Class masteries, weapon and armor training, Fitness, and the other passive lines the classes draw on
 
 ### Gear
-- **Weapons** — 29 weapons covering pistols, SMGs, assault rifles, shotguns, sniper rifles, and heavy weapons (M-8 Avenger, M-92 Mantis, M-920 Cain, and many more)
-- **Weapon Mods** — Scope, barrel, and stock modifications
-- **Armors** — 15+ armor sets in Light, Medium, and Heavy variants (Assassin, Colossus, Explorer, Gladiator, Kestrel, and more)
-- **Armor Mods** — Kinetic shield upgrades and armor enhancements
-- **Shields** — Kinetic barrier equipment items
-- **Grenades** — Frag, incendiary, cryo, and tech grenades
+- **Weapons** — 65 weapons covering pistols, SMGs, assault rifles, shotguns, sniper rifles, and heavy weapons (M-8 Avenger, M-92 Mantis, M-920 Cain, and many more)
+- **Weapon Mods** — 24 scope, barrel, and stock modifications
+- **Armors** — 55 armors in Light, Medium, and Heavy variants (Assassin, Colossus, Explorer, Gladiator, Kestrel, and more)
+- **Armor Mods** — 29 mods, including shield capacitors, recharge modules and power amplifiers
+- **Shields and Frames** — The Kinetic Shield, its capacity and recharge mods, and four Combat Armor Frames
+- **Bio-Amps** — 16 amps across seven makers (Solaris, Gemini, Unity, Polaris, Prodigy, Savant, HMBA). The amp a biotic wears sets how fast biotic powers cool down, and the stronger ones add power damage, class DC and barrier HP
+- **Grenades** — Arc, cluster, cryo, incendiary and lift grenades, and the proximity mine
+- **Medi-Gel and Omni-Gel** — Medi-gel in five grades, and omni-gel
 
 ### Combat Systems
-- **Biotic Powers** — Pull, Throw, Warp, Singularity, Charge, Nova, and more
-- **Tech Powers** — Incinerate, Cryo Blast, Overload, AI Hacking, Tactical Scan, and more
-- **Ammo Powers** — Incendiary, Cryo, Disruptor, Warp, and Armor-Piercing ammo
+- **Biotic Powers** — Pull, Throw, Warp, Singularity, Charge, Nova, Unity, and more
+- **Tech Powers** — Incinerate, Cryo Blast, Overload, AI Hacking, Tactical Cloak, Combat Drone, and more
+- **Ammo Powers** — Incendiary, Cryo, Disruptor, Warp, Armor-Piercing, Phasic and Shredder rounds, for ranged Strikes
 
 ### GM Content
-- **NPCs** — 60+ named and generic NPCs across all major factions and species, including full companion stat blocks (Garrus, Tali, Liara, Mordin, Thane, Grunt, Legion, Samara, Jack, Wrex, and more)
-- **Creatures** — 37 creatures covering Reaper forces (Husk, Brute, Banshee, Marauder, Praetorian), Geth units, Collectors, mechs (LOKI, Rampart, YMIR, Atlas), and wildlife (Varren, Thresher Maw, Klixen)
-- **Vehicles & Ships** — Ground vehicles and starship stat blocks
+- **NPCs** — 172 named and generic NPCs across eleven factions, including full companion stat blocks (Garrus, Tali, Liara, Mordin, Thane, Grunt, Legion, Samara, Jack, Wrex, and more)
+- **Creatures** — 38 creatures covering Reaper forces (Husk, Brute, Banshee, Marauder, Praetorian), Geth units, Collectors, mechs (LOKI, Rampart, YMIR, Atlas), and wildlife (Varren, Thresher Maw, Klixen)
+- **Vehicles & Ships** — 9 ground vehicles and 10 starship stat blocks
 
 ---
 
 ## Module Systems
 
-### Kinetic Shield System
+### Shields, Barriers and Armor
 
-All actors equipped with a **Kinetic Shield** item gain an active barrier that absorbs incoming damage before HP is affected. Shields:
+Damage is taken by each defensive layer in turn, and the module applies this whenever damage is dealt:
 
-- Are displayed as a temporary HP bar on the actor sheet
-- Recharge automatically at the start of each turn (regeneration rate varies by shield tier)
-- Can be upgraded with **Shield HP Mod** items that increase maximum capacity
-- Are bypassed by certain damage types (configurable per shield item via flags)
+**Biotic Barrier → Kinetic Shield → Combat Armor Frame → Hit Points**
+
+- **Kinetic Shield** — Shown as temporary HP. The baseline shield holds 15 Shield HP and recharges 5 at the start of each turn, after 1 round without damage. A single hit worth more than half the shield's maximum collapses it, and a shield at 0 stays down until its wearer Takes Cover. Shield HP Mods and Regen Mods raise both numbers.
+- **Biotic Barrier** — Raised with Activate Biotic Barrier for 5 HP per two levels (rounded up), plus any bio-amp bonus. It does not recharge on its own; Biotic Charge refills it.
+- **Combat Armor Frame** — 20 to 200 Armor Points that do not come back. A spent frame is destroyed.
+- **Counters** — Each ammo power is tuned against one layer: Disruptor Rounds double damage to shields, Warp Rounds deal 1.5× to barriers, Incendiary Rounds burn armor 1.5× faster. The Warp power counts double against a barrier and 1.5× against armor, and a critical failure against it detonates the barrier. Incinerate counts 1.5× against armor. Every multiplier is a module setting.
+
+Tokens show a purple barrier bar and a yellow armor bar beside HP.
 
 Shield items use the `mass-effect-sf2e-conversion` flag namespace:
 ```json
 "flags": {
   "mass-effect-sf2e-conversion": {
-    "shieldMax": 40,
-    "shieldRegen": 12
+    "shieldMax": 15,
+    "shieldRegen": 5
   }
 }
 ```
+
+### Power Automation
+
+Biotic and tech powers are feats with a save button. When the target rolls, the module applies the result for its degree of success: damage through the layers above, persistent damage, conditions, forced movement, and each power's own extras. It also:
+
+- puts each power's **cooldown** on the sheet as an effect and refuses a second use while it runs. Biotic cooldowns are 4 rounds less the worn bio-amp's Recharge; tech cooldowns come from Intelligence (or Charisma for a Sentinel)
+- scales every power's dice with the user's level, for players and NPCs alike
+- runs the Vanguard's Biotic Charge and Nova in one click, with optional animations
+- deploys the Engineer's Combat Drone and Sentry Turret as tokens that scale with the Engineer
+- sets off the Adept's Biotic Explosions when a detonating power damages a Primed creature
+- adds Unity to its owner's sheet as a focus spell that heals, recharges shields and revives
+
+Automation is on by default and can be turned off in module settings.
+
+### Datapad
+
+Journal entries can be shown in a Mass Effect datapad. A Gamemaster can push an entry or a single page to every player with **Show in Datapad**; each player sees it only if they are allowed to read it.
 
 ### Paragon / Renegade Tracker
 

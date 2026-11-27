@@ -236,6 +236,60 @@ console.log('Flare: crit failure depletes the target\'s barrier');
   assert(t2.damage[0] === 9, `critical success still takes half: ${t2.damage}`);
 }
 
+console.log('Warp: its damage tells the shield system to count double against a barrier and 1.5x against armor');
+{
+  const settings = ctx.game.settings.get;
+  ctx.game.settings.get = (_, key) => ({ warpPowerBarrierMult: 2, warpPowerArmorMult: 1.5, incineratePowerArmorMult: 1.5 }[key] ?? true);
+  // what the shield system would read while each point of damage is being applied
+  const watched = (name, items = []) => {
+    const a = new Actor(name, { items });
+    a.seen = [];
+    a.applyDamage = async ({ damage }) => { a.damage.push(damage.total); a.seen.push(JSON.stringify(ctx.MassEffectPowers.damageSource())); };
+    return a;
+  };
+  const barrier = barrierItem(30, 30);
+  const frame = { type: 'effect', flags: { [MOD]: { armorMax: 20, armorCurrent: 20 } } };
+  const t = watched('T', [barrier, frame]);
+  const card = await save('me-biotic-warp', 'failure', t, { origin: 'Item.warp' });
+  assert(t.damage[0] === 12 && t.seen[0] === '{"layers":{"barrier":2,"armor":1.5}}', `2d6 applied with both multipliers (got ${t.damage}, ${t.seen})`);
+  assert(ctx.MassEffectPowers.damageSource() === null, 'nothing is left set once the damage is applied');
+  assert(card.includes('double against its Biotic Barrier') && card.includes('1.5× against its Armor Frame'), 'the card names both layers');
+  assert(barrier.flags[MOD].barrierCurrent === 30 && t.damage.length === 1, 'a failure does not detonate the barrier');
+
+  const plain = watched('Plain');
+  const plainCard = await save('me-biotic-warp', 'success', plain, { origin: 'Item.warp' });
+  assert(plain.damage[0] === 6 && !plainCard.includes('against its'), 'no barrier or armor: nothing extra on the card');
+
+  const o = watched('O', [barrierItem(30, 30)]);
+  await save('me-tech-overload', 'failure', o, { origin: 'Item.overload' });
+  assert(o.seen[0] === '{"layers":{}}', `another power is still marked as a power, with no multipliers (got ${o.seen})`);
+
+  // Incinerate burns armor: 1.5x against a frame, nothing against a barrier
+  const inc = watched('Inc', [barrierItem(30, 30), { type: 'effect', flags: { [MOD]: { armorMax: 20, armorCurrent: 20 } } }]);
+  const incCard = await save('me-tech-incinerate', 'failure', inc, { origin: 'Item.incinerate' });
+  assert(inc.damage[0] === 12 && inc.seen[0] === '{"layers":{"armor":1.5}}', `Incinerate: 2d6 with the armor multiplier only (got ${inc.damage}, ${inc.seen})`);
+  assert(incCard.includes('1.5× against its Armor Frame') && !incCard.includes('Biotic Barrier'), 'its card names the Armor Frame and not the barrier');
+
+  // a critical failure detonates an active barrier: it empties, and the burst is rolled once
+  const b2 = barrierItem(9, 30);
+  const c = watched('C', [b2]);
+  const critCard = await save('me-biotic-warp', 'criticalFailure', c, { origin: 'Item.warp' });
+  assert(c.damage.join() === '24,12' && b2.flags[MOD].barrierCurrent === 0, `4d6, then a 2d6 burst, barrier 0 (got ${c.damage}, barrier ${b2.flags[MOD].barrierCurrent})`);
+  assert(critCard.includes('Biotic Barrier detonates'), 'the card reports the detonation');
+
+  const adept = new Actor('Adept', { type: 'character' });
+  adept.level = 8;
+  const b3 = barrierItem(5, 30);
+  const high = watched('High', [b3]);
+  await save('me-biotic-warp', 'criticalFailure', high, { caster: adept, origin: 'Item.warp8' });
+  assert(high.damage.join() === '72,36', `at 8th level the burst is 6d6 beside 12d6 (got ${high.damage})`);
+
+  const spent = watched('Spent', [barrierItem(0, 30)]);
+  await save('me-biotic-warp', 'criticalFailure', spent, { origin: 'Item.warp' });
+  assert(spent.damage.join() === '24', `an empty barrier does not detonate (got ${spent.damage})`);
+  ctx.game.settings.get = settings;
+}
+
 console.log('Dark Matter: critical failure against a biotic power frightens');
 {
   const adept = new Actor('Adept', { flags: { critFailFrightened: 2 } });

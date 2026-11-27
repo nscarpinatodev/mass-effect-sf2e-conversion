@@ -2749,8 +2749,9 @@ You launch a superheated plasma projectile from your omni-tool that burns throug
 Choose a creature within **30 feet**. It must attempt a Reflex save. Incinerate ignores up to 5 points of fire resistance.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 fire** damage.
-**Failure** The target takes **2d6 fire** damage and **1d4 persistent fire** damage. The target cannot regain HP until the start of your next turn. Armor Frames hit by Incinerate take 1.5× damage.
+**Failure** The target takes **2d6 fire** damage and **1d4 persistent fire** damage. The target cannot regain HP until the start of your next turn.
 **Critical Failure** As failure, but **4d6 fire** damage and **2d4 persistent fire**.
+**Armor:** This power's damage counts 1.5× against an Armor Frame. Its persistent damage does not.
 **Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 - your Intelligence modifier rounds (minimum 1).
 
@@ -3096,8 +3097,9 @@ You suffuse a creature with destabilizing dark energy that tears apart molecular
 Choose a creature within **60 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 void** damage.
-**Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
-**Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn.
+**Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, the barrier detonates: what is left of it is gone, and the target and each of your enemies within 10 feet of it take **2d6 void** damage with no save.
+**Barriers and armor:** This power's damage counts double against a Biotic Barrier and 1.5× against an Armor Frame. Its persistent damage does not.
 **Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn. If it is already Primed, an Adept who damages it with this power detonates it instead.
 **Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
@@ -3637,8 +3639,9 @@ You launch a superheated plasma projectile from your omni-tool that burns throug
 Choose a creature within **30 feet**. It must attempt a Reflex save. Incinerate ignores up to 5 points of fire resistance.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 fire** damage.
-**Failure** The target takes **2d6 fire** damage and **1d4 persistent fire** damage. The target cannot regain HP until the start of your next turn. Armor Frames hit by Incinerate take 1.5× damage.
+**Failure** The target takes **2d6 fire** damage and **1d4 persistent fire** damage. The target cannot regain HP until the start of your next turn.
 **Critical Failure** As failure, but **4d6 fire** damage and **2d4 persistent fire**.
+**Armor:** This power's damage counts 1.5× against an Armor Frame. Its persistent damage does not.
 **Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 7 - your Intelligence modifier rounds (minimum 1).
 
@@ -3973,8 +3976,9 @@ You suffuse a creature with destabilizing dark energy that tears apart molecular
 Choose a creature within **60 feet**. The target must attempt a Fortitude save against your class DC.
 **Critical Success** Unaffected.
 **Success** The target takes **1d6 void** damage.
-**Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
-**Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Failure** The target takes **2d6 void** damage and **1d4 persistent void** damage. The target cannot regain HP until the start of your next turn.
+**Critical Failure** As failure, but **4d6 void** damage. If the target has an active Biotic Barrier, the barrier detonates: what is left of it is gone, and the target and each of your enemies within 10 feet of it take **2d6 void** damage with no save.
+**Barriers and armor:** This power's damage counts double against a Biotic Barrier and 1.5× against an Armor Frame. Its persistent damage does not.
 **Biotic Explosion:** A creature that fails this save is Primed until the end of your next turn. If it is already Primed, an Adept who damages it with this power detonates it instead.
 **Level scaling:** All of this power's dice are doubled at 4th level, tripled at 8th, and multiplied by 4 at 12th, by 5 at 16th and by 6 at 20th.
 **Cooldown:** 4 rounds, less your bio-amp's Recharge (minimum 1). Only the first biotic power you use each turn can cool down in 1 round; any others that turn take 2 rounds.
@@ -5922,8 +5926,9 @@ The barrier persists until dismissed. It does not recharge automatically - spend
 Choose a creature within **60 feet**. The target must attempt a DC 23 Fortitude save against the creature's power DC.
 **Critical Success** Unaffected.
 **Success** The target takes 2d6 void damage.
-**Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
-**Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn.
+**Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, the barrier detonates: what is left of it is gone, and the target and each of this creature's enemies within 10 feet of it take 4d6 void damage with no save.
+**Barriers and armor:** This power's damage counts double against a Biotic Barrier and 1.5× against an Armor Frame. Its persistent damage does not.
 **Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
@@ -6420,8 +6425,9 @@ Genetically perfected Cerberus operative and powerful biotic. Liaison for the La
 Choose a creature within **60 feet**. The target must attempt a DC 28 Fortitude save against the creature's power DC.
 **Critical Success** Unaffected.
 **Success** The target takes 3d6 void damage.
-**Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
-**Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn.
+**Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, the barrier detonates: what is left of it is gone, and the target and each of this creature's enemies within 10 feet of it take 6d6 void damage with no save.
+**Barriers and armor:** This power's damage counts double against a Biotic Barrier and 1.5× against an Armor Frame. Its persistent damage does not.
 **Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
@@ -7546,8 +7552,9 @@ Choose a creature within **30 feet**. The target must attempt a DC 28 Reflex sav
 Choose a creature within **30 feet**. It must attempt a DC 28 Reflex save. Incinerate ignores up to 5 points of fire resistance.
 **Critical Success** Unaffected.
 **Success** The target takes 3d6 fire damage.
-**Failure** The target takes 6d6 fire damage and 3d4 persistent fire damage. The target cannot regain HP until the start of your next turn. Armor Frames hit by Incinerate take 1.5× damage.
+**Failure** The target takes 6d6 fire damage and 3d4 persistent fire damage. The target cannot regain HP until the start of your next turn.
 **Critical Failure** As failure, but 12d6 fire damage and 6d4 persistent fire.
+**Armor:** This power's damage counts 1.5× against an Armor Frame. Its persistent damage does not.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -7660,8 +7667,9 @@ Asari archaeologist, biotic powerhouse, and galaxy-spanning information broker (
 Choose a creature within **60 feet**. The target must attempt a DC 28 Fortitude save against the creature's power DC.
 **Critical Success** Unaffected.
 **Success** The target takes 3d6 void damage.
-**Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
-**Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn.
+**Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, the barrier detonates: what is left of it is gone, and the target and each of this creature's enemies within 10 feet of it take 6d6 void damage with no save.
+**Barriers and armor:** This power's damage counts double against a Biotic Barrier and 1.5× against an Armor Frame. Its persistent damage does not.
 **Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
@@ -8062,8 +8070,9 @@ Mordin's former student, working on a genophage cure for the krogan who took him
 Choose a creature within **30 feet**. It must attempt a DC 21 Reflex save. Incinerate ignores up to 5 points of fire resistance.
 **Critical Success** Unaffected.
 **Success** The target takes 2d6 fire damage.
-**Failure** The target takes 4d6 fire damage and 2d4 persistent fire damage. The target cannot regain HP until the start of your next turn. Armor Frames hit by Incinerate take 1.5× damage.
+**Failure** The target takes 4d6 fire damage and 2d4 persistent fire damage. The target cannot regain HP until the start of your next turn.
 **Critical Failure** As failure, but 8d6 fire damage and 4d4 persistent fire.
+**Armor:** This power's damage counts 1.5× against an Armor Frame. Its persistent damage does not.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
 ---
@@ -8206,8 +8215,9 @@ Asari diplomat turned Illium magnate, protected by Eclipse and marked by a drell
 Choose a creature within **60 feet**. The target must attempt a DC 23 Fortitude save against the creature's power DC.
 **Critical Success** Unaffected.
 **Success** The target takes 2d6 void damage.
-**Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
-**Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn.
+**Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, the barrier detonates: what is left of it is gone, and the target and each of this creature's enemies within 10 feet of it take 4d6 void damage with no save.
+**Barriers and armor:** This power's damage counts double against a Biotic Barrier and 1.5× against an Armor Frame. Its persistent damage does not.
 **Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
@@ -8372,8 +8382,9 @@ The barrier persists until dismissed. It does not recharge automatically - spend
 Choose a creature within **60 feet**. The target must attempt a DC 29 Fortitude save against the creature's power DC.
 **Critical Success** Unaffected.
 **Success** The target takes 3d6 void damage.
-**Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
-**Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Failure** The target takes 6d6 void damage and 3d4 persistent void damage. The target cannot regain HP until the start of your next turn.
+**Critical Failure** As failure, but 12d6 void damage. If the target has an active Biotic Barrier, the barrier detonates: what is left of it is gone, and the target and each of this creature's enemies within 10 feet of it take 6d6 void damage with no save.
+**Barriers and armor:** This power's damage counts double against a Biotic Barrier and 1.5× against an Armor Frame. Its persistent damage does not.
 **Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
@@ -9079,8 +9090,9 @@ Tech-and-biotic hybrid specialist with defensive armor.
 Choose a creature within **60 feet**. The target must attempt a DC 20 Fortitude save against the creature's power DC.
 **Critical Success** Unaffected.
 **Success** The target takes 2d6 void damage.
-**Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.
-**Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).
+**Failure** The target takes 4d6 void damage and 2d4 persistent void damage. The target cannot regain HP until the start of your next turn.
+**Critical Failure** As failure, but 8d6 void damage. If the target has an active Biotic Barrier, the barrier detonates: what is left of it is gone, and the target and each of this creature's enemies within 10 feet of it take 4d6 void damage with no save.
+**Barriers and armor:** This power's damage counts double against a Biotic Barrier and 1.5× against an Armor Frame. Its persistent damage does not.
 **Biotic Explosion** A creature that fails this save is Primed until the end of this creature's next turn. An Adept can detonate it.
 **Recharge** The creature can't use this power again for 1d4 rounds.
 
@@ -10403,3 +10415,7 @@ A barrier does **not** recharge passively, and it is never lost: at 0 HP it stay
 | Phasic Rounds | Combat Frames | Bypass frames completely, but total damage is reduced to **60%** |
 | Shredder Rounds | Hit Points | Most effective against targets with no shields, barriers or armor |
 | Cryo Rounds | Hit Points | Apply the **Chilled** condition on direct HP damage |
+
+**Warp, the power.** Warp is the biotic answer to a barrier. Its damage counts **double** against a Biotic Barrier and **1.5×** against a Combat Armor Frame (its persistent damage does not), and a critical failure against it detonates an active barrier: what is left of the barrier is gone, and the target and each of the caster's enemies within 10 feet take the burst with no save. Both multipliers can be changed in module settings.
+
+**Incinerate.** Incinerate burns through armor: its damage counts **1.5×** against a Combat Armor Frame (its persistent fire does not). The multiplier can be changed in module settings.

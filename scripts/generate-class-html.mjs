@@ -1722,6 +1722,12 @@ function renderShieldMechanicsSection(shields) {
       </tbody>
     </table>
   </div></div>
+  <div class="mech-block">
+    <h4>Warp, the Power</h4>
+    <p>Warp is the biotic answer to a barrier. Its damage counts <strong>double</strong> against a Biotic Barrier and <strong>1.5×</strong> against a Combat Armor Frame (its persistent damage does not), and a critical failure against it detonates an active barrier: what is left of the barrier is gone, and the target and each of the caster's enemies within 10 feet take the burst with no save. Both multipliers can be changed in module settings.</p>
+    <h4>Incinerate</h4>
+    <p>Incinerate burns through armor: its damage counts <strong>1.5×</strong> against a Combat Armor Frame (its persistent fire does not). The multiplier can be changed in module settings.</p>
+  </div>
 </div></section>`;
 }
 

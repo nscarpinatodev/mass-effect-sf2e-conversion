@@ -106,8 +106,9 @@ const BIOTIC_FEATS = [
       + '<p>Choose a creature within <strong>60 feet</strong>. The target must attempt a <strong>Fortitude</strong> save against your class DC.</p>'
       + '<p><strong>Critical Success</strong> Unaffected.</p>'
       + '<p><strong>Success</strong> The target takes <strong>1d6 void</strong> damage.</p>'
-      + '<p><strong>Failure</strong> The target takes <strong>2d6 void</strong> damage and <strong>1d4 persistent void</strong> damage. The target cannot regain HP until the start of your next turn. Warp damage also deals 1.5× damage to Biotic Barriers.</p>'
-      + '<p><strong>Critical Failure</strong> As failure, but <strong>4d6 void</strong> damage. If the target has an active Biotic Barrier, it detonates in a dark energy explosion (2d6 void in a 10-foot burst).</p>',
+      + '<p><strong>Failure</strong> The target takes <strong>2d6 void</strong> damage and <strong>1d4 persistent void</strong> damage. The target cannot regain HP until the start of your next turn.</p>'
+      + '<p><strong>Critical Failure</strong> As failure, but <strong>4d6 void</strong> damage. If the target has an active Biotic Barrier, the barrier detonates: what is left of it is gone, and the target and each of your enemies within 10 feet of it take <strong>2d6 void</strong> damage with no save.</p>'
+      + '<p><strong>Barriers and armor:</strong> This power\'s damage counts double against a Biotic Barrier and 1.5× against an Armor Frame. Its persistent damage does not.</p>',
   }),
 
   makeFeat({
@@ -568,8 +569,9 @@ const TECH_FEATS = [
       + '<p>Choose a creature within <strong>30 feet</strong>. The target must attempt a <strong>Reflex</strong> save against your class DC. Incinerate ignores up to 5 points of fire resistance.</p>'
       + '<p><strong>Critical Success</strong> Unaffected.</p>'
       + '<p><strong>Success</strong> The target takes <strong>1d6 fire</strong> damage.</p>'
-      + '<p><strong>Failure</strong> The target takes <strong>2d6 fire</strong> damage and <strong>1d4 persistent fire</strong> damage. The target cannot regain HP until the start of your next turn. Armor Frames hit by Incinerate take 1.5× damage.</p>'
-      + '<p><strong>Critical Failure</strong> As failure, but <strong>4d6 fire</strong> damage and <strong>2d4 persistent fire</strong>.</p>',
+      + '<p><strong>Failure</strong> The target takes <strong>2d6 fire</strong> damage and <strong>1d4 persistent fire</strong> damage. The target cannot regain HP until the start of your next turn.</p>'
+      + '<p><strong>Critical Failure</strong> As failure, but <strong>4d6 fire</strong> damage and <strong>2d4 persistent fire</strong>.</p>'
+      + '<p><strong>Armor:</strong> This power\'s damage counts 1.5× against an Armor Frame. Its persistent damage does not.</p>',
   }),
 
   makeFeat({

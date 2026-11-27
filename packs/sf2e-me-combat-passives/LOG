@@ -1,5 +1,5 @@
-2026/11/26-21:52:14.944 ae48 Delete type=3 #1
-2026/11/26-21:52:14.950 b0d4 Level-0 table #5: started
-2026/11/26-21:52:14.957 b0d4 Level-0 table #5: 37498 bytes OK
-2026/11/26-21:52:14.962 b0d4 Delete type=0 #3
-2026/11/26-21:52:14.962 b0d4 Manual compaction at level-0 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)
+2026/11/26-22:41:06.524 af30 Delete type=3 #1
+2026/11/26-22:41:06.528 a4f0 Level-0 table #5: started
+2026/11/26-22:41:06.533 a4f0 Level-0 table #5: 37498 bytes OK
+2026/11/26-22:41:06.535 a4f0 Delete type=0 #3
+2026/11/26-22:41:06.535 a4f0 Manual compaction at level-0 from '!items!meAdeptMastImpr0' @ 72057594037927935 : 1 .. '!items!meVanguardMastS0' @ 0 : 0; will stop at (end)

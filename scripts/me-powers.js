@@ -279,10 +279,13 @@ const POWERS = {
   },
   'me-biotic-warp': {
     name: 'Warp', save: 'fortitude', trait: 'biotic',
+    // the barrier's counter: the shield system multiplies this power's damage against these
+    // layers (world settings; the games' Warp does 2x to barriers and 1.5x to armor)
+    layers: { barrier: 'warpPowerBarrierMult', armor: 'warpPowerArmorMult' },
     degrees: {
       success:         { damage: '1d6[void]' },
       failure:         { damage: '2d6[void]', persistent: { formula: '1d4', type: 'void' }, note: 'Cannot regain HP until the start of the caster\'s next turn.' },
-      criticalFailure: { damage: '4d6[void]', persistent: { formula: '1d4', type: 'void' }, note: 'Cannot regain HP until the start of the caster\'s next turn. An active Biotic Barrier detonates for 2d6 void in a 10-foot burst.' },
+      criticalFailure: { damage: '4d6[void]', persistent: { formula: '1d4', type: 'void' }, barrierBurst: '2d6[void]', note: 'Cannot regain HP until the start of the caster\'s next turn.' },
     },
   },
   'me-adept-warp-field': {
@@ -411,12 +414,15 @@ const POWERS = {
   'me-tech-incinerate': {
     name: 'Incinerate',
     save: 'reflex', trait: 'tech',
+    // burns through armor: the shield system counts this power's damage 1.5x against an
+    // Armor Frame (a world setting; Mass Effect 3's Incinerate does 1.5x to armor)
+    layers: { armor: 'incineratePowerArmorMult' },
     degrees: {
       success:         { damage: '1d6[fire]' },
       failure:         { damage: '2d6[fire]', persistent: { formula: '1d4', type: 'fire', dc: 15 },
-                         note: 'Target cannot regain HP until the start of your next turn. Armor Frames take 1.5× damage.' },
+                         note: 'Target cannot regain HP until the start of your next turn.' },
       criticalFailure: { damage: '4d6[fire]', persistent: { formula: '2d4', type: 'fire', dc: 15 },
-                         note: 'Target cannot regain HP until the start of your next turn. Armor Frames take 1.5× damage.' },
+                         note: 'Target cannot regain HP until the start of your next turn.' },
     },
   },
 };
@@ -436,7 +442,7 @@ const scaleDegrees = (source) => {
   const degrees = {};
   for (const [name, degree] of Object.entries(source)) {
     const d = { ...degree };
-    for (const field of ['damage', 'vsSynthetic', 'casterHeal', 'note']) if (d[field]) d[field] = scaledByCaster(d[field]);
+    for (const field of ['damage', 'vsSynthetic', 'casterHeal', 'note', 'barrierBurst']) if (d[field]) d[field] = scaledByCaster(d[field]);
     if (d.persistent) d.persistent = { ...d.persistent, formula: scaledByCaster(d.persistent.formula) };
     if (d.drain) d.drain = { ...d.drain, damage: scaledByCaster(d.drain.damage) };
     degrees[name] = d;
@@ -463,6 +469,7 @@ for (const [key, power] of Object.entries(POWERS)) {
 // For macros and debugging: the full registry, PC and NPC entries alike.
 globalThis.MassEffectPowers = {
   registry: POWERS,
+  damageSource: () => damageSource,
   chargeLanding: (...a) => chargeLanding(...a),
   pushAway: (...a) => pushAway(...a),
   feetBetween: (...a) => feetBetween(...a),
@@ -593,6 +600,7 @@ Hooks.on('createChatMessage', async (message) => {
   const formula = base && extra.length ? addTerms(base, extra) : base;
   if (spec && !formula) log.push('No damage recorded for this use; roll it by hand.');
   let dealt = false;                 // whether this power damaged the target (a detonation needs it)
+  const barrierBefore = getBarrier(actor)?.flags[MODULE_ID].barrierCurrent ?? 0;   // before this power's damage reaches it
   if (formula) {
     let roll = null;
     try {
@@ -600,8 +608,9 @@ Hooks.on('createChatMessage', async (message) => {
       const use = power.useKey?.({ actor, caster, options }) ?? '';
       roll = await rollPowerDamage(power.area ? `${slug}|${origin}|${use}` : null, { ...degree, damage: formula });
       if (roll) {
-        await actor.applyDamage({ damage: roll, token: await damageToken(actor, tokenDoc) });
-        log.push(`${roll.total} ${describeFormula(formula)} damage`);
+        const against = layerNotes(actor, power);
+        await applyPowerDamage(actor, roll, tokenDoc, power);
+        log.push(`${roll.total} ${describeFormula(formula)} damage${against}`);
         dealt = roll.total > 0;
       } else {
         log.push('No damage (halved to 0)');
@@ -634,7 +643,7 @@ Hooks.on('createChatMessage', async (message) => {
     } else {
       const drainDamage = typeof d.damage === 'function' ? d.damage({ actor, caster }) : d.damage;
       const roll = await new (DamageRoll())(drainDamage).evaluate();
-      await actor.applyDamage({ damage: roll, token: await damageToken(actor, tokenDoc) });
+      await applyPowerDamage(actor, roll, tokenDoc, power);
       log.push(`${roll.total} ${describeFormula(drainDamage)} damage`);
       gain = d.gainUnshielded;
     }
@@ -668,6 +677,9 @@ Hooks.on('createChatMessage', async (message) => {
       await setBarrier(barrier, 0);
       log.push('Biotic Barrier depleted');
     }
+  }
+  if (degree.barrierBurst && barrierBefore > 0) {
+    log.push(...await barrierDetonation({ caster, actor, tokenDoc, power, formula: typeof degree.barrierBurst === 'function' ? degree.barrierBurst({ actor, caster }) : degree.barrierBurst }));
   }
   if (degree.casterBarrier) log.push(await refillCasterBarrier(caster, degree.casterBarrier));
 
@@ -2393,7 +2405,7 @@ async function bioticExplosion({ caster, actor, tokenDoc, primed, use }) {
   const roll = await new (DamageRoll())(`${dice}d6[force]`).evaluate();
   const lines = [];
   if (hitsTarget) {
-    await actor.applyDamage({ damage: roll, token: await damageToken(actor, tokenDoc) });
+    await applyPowerDamage(actor, roll, tokenDoc);
     lines.push(`${actor.name} detonates: ${roll.total} force damage (${dice}d6, no save)`);
   } else {
     lines.push(`${actor.name} detonates (${roll.total} force), but was already caught in an explosion from this power`);
@@ -2402,7 +2414,7 @@ async function bioticExplosion({ caster, actor, tokenDoc, primed, use }) {
   // Biotic Cascade: the nearest other enemy in the burst takes the explosion in full
   if (others.length && caster.items.some((i) => i.slug === 'me-adept-biotic-cascade')) {
     const t = others.shift();
-    await t.actor.applyDamage({ damage: roll, token: t });
+    await applyPowerDamage(t.actor, roll, t);
     lines.push(`Biotic Cascade: ${t.name} takes the full ${roll.total} force damage, no save`);
   }
   const dc = caster.system?.attributes?.classDC?.value;
@@ -2438,6 +2450,69 @@ async function bioticExplosion({ caster, actor, tokenDoc, primed, use }) {
 async function damageToken(actor, tokenDoc) {
   if (tokenDoc) return tokenDoc.object ?? tokenDoc;
   try { return (await actor.getTokenDocument?.()) ?? null; } catch { return null; }
+}
+
+// ── POWER DAMAGE AND THE DEFENSIVE LAYERS ───────────────────────────────────
+// The shield system routes every HP change through barrier, shield and armor. While a power's
+// damage is being applied it reads this to learn that the damage is a power's (so no weapon's
+// ammo applies to it) and what the power does to each layer: Warp counts double against a
+// Biotic Barrier and 1.5x against an Armor Frame, and Incinerate 1.5x against an Armor Frame.
+let damageSource = null;
+
+/** A power's layer multipliers, read from the world settings it names. */
+function powerLayers(power) {
+  const layers = {};
+  for (const [layer, setting] of Object.entries(power?.layers ?? {})) {
+    const value = Number(game.settings.get(MODULE_ID, setting));
+    if (value > 0 && value !== 1) layers[layer] = value;
+  }
+  return layers;
+}
+
+async function applyPowerDamage(actor, roll, tokenDoc, power = null) {
+  const token = await damageToken(actor, tokenDoc);
+  damageSource = { layers: powerLayers(power) };
+  try { await actor.applyDamage({ damage: roll, token }); } finally { damageSource = null; }
+}
+
+const timesText = (n) => (n === 2 ? 'double' : `${n}×`);
+
+/** For the result card: which of the target's layers this power's damage is multiplied against. */
+function layerNotes(actor, power) {
+  const layers = powerLayers(power);
+  const parts = [];
+  if (layers.barrier && (getBarrier(actor)?.flags[MODULE_ID].barrierCurrent ?? 0) > 0) parts.push(`${timesText(layers.barrier)} against its Biotic Barrier`);
+  const armored = actor?.items?.some?.((i) => i.flags?.[MODULE_ID]?.armorMax != null && (i.flags[MODULE_ID].armorCurrent ?? i.flags[MODULE_ID].armorMax) > 0);
+  if (layers.armor && armored) parts.push(`${timesText(layers.armor)} against its Armor Frame`);
+  return parts.length ? ` (${parts.join(', ')})` : '';
+}
+
+/**
+ * A critical failure against Warp detonates the target's Biotic Barrier: what is left of the
+ * barrier is gone, and the target and each of the caster's enemies within 10 feet of it take
+ * the burst's damage, with no save.
+ */
+async function barrierDetonation({ caster, actor, tokenDoc, power, formula }) {
+  const lines = [];
+  const barrier = getBarrier(actor);
+  if (barrier && (barrier.flags[MODULE_ID].barrierCurrent ?? 0) > 0) await setBarrier(barrier, 0);
+  const roll = await new (DamageRoll())(formula).evaluate();
+  const scene = tokenDoc?.parent?.tokens ? tokenDoc.parent : null;
+  let others = [];
+  if (scene && caster) {
+    const casterToken = caster.getActiveTokens?.(true, true).find((t) => t.parent === scene);
+    const standing = (t) => !((t.actor.system.attributes?.hp?.max ?? 0) > 0 && (t.actor.system.attributes.hp.value ?? 0) <= 0);
+    const ally = (t) => t.actor === caster || (typeof caster.isAllyOf === 'function' ? caster.isAllyOf(t.actor)
+      : casterToken ? t.disposition === casterToken.disposition : t.disposition !== tokenDoc.disposition);
+    others = scene.tokens.filter((t) => t !== tokenDoc && t.actor && t.actor !== actor && !t.hidden && standing(t) && !ally(t)
+      && feetBetween(tokenDoc, t) <= EXPLOSION_RADIUS);
+  }
+  await applyPowerDamage(actor, roll, tokenDoc, power);
+  lines.push(`Biotic Barrier detonates: ${actor.name} takes ${roll.total} ${describeFormula(formula)} damage, no save`);
+  for (const t of others) await applyPowerDamage(t.actor, roll, t, power);
+  if (others.length) lines.push(`10-foot burst: ${others.map((t) => t.name).join(', ')} ${others.length === 1 ? 'takes' : 'take'} the same ${roll.total} damage, no save`);
+  else if (!scene) lines.push(`${actor.name} has no token on the scene: resolve the 10-foot burst by hand (${roll.total} damage, no save).`);
+  return lines;
 }
 
 // ── DAMAGE ROLLS ────────────────────────────────────────────────────────────

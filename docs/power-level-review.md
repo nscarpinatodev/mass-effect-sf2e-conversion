@@ -318,6 +318,8 @@ Simulated only:
 
 Seen in passing, not looked into: a 20th-level Warp that critically failed dealt its 77 damage to an enemy's Biotic Barrier at face value, though the power's text says Warp deals 1.5 times damage to barriers.
 
+**Fixed 2026-11-26.** Nothing applied that line: only Warp Rounds had a multiplier. The Mass Effect Wiki gives the power double damage to barriers (Mass Effect 2 and 3) and 1.5 times to armor (Mass Effect 3), so Warp's damage now counts double against a Biotic Barrier and 1.5 times against a Combat Armor Frame, and a critical failure detonates an active barrier as its text always said. Checked in Foundry on 14.371: a 10-point Warp took 20 from a 30-point barrier where an 11-point Throw took 11; with 6 barrier and 50 armor a 5-point Warp emptied the barrier and took 3 armor; a critical failure emptied a 10-point barrier and its burst hit the target and an enemy 5 feet away, not a party ally. The games' half damage to kinetic shields was not built.
+
 ## Rebalancing options
 
 Each row is the mixed module party at 20th against module-style enemies: rounds / share of HP lost / chance a character drops (measured). The first row is the target.

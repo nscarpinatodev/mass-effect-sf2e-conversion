@@ -636,6 +636,8 @@ function renderShieldMechanics(shields) {
   L.push('| Shredder Rounds | Hit Points | Most effective against targets with no shields, barriers or armor |');
   L.push('| Cryo Rounds | Hit Points | Apply the **Chilled** condition on direct HP damage |');
   L.push('');
+  L.push('**Warp, the power.** Warp is the biotic answer to a barrier. Its damage counts **double** against a Biotic Barrier and **1.5×** against a Combat Armor Frame (its persistent damage does not), and a critical failure against it detonates an active barrier: what is left of the barrier is gone, and the target and each of the caster\'s enemies within 10 feet take the burst with no save. Both multipliers can be changed in module settings.', '');
+  L.push('**Incinerate.** Incinerate burns through armor: its damage counts **1.5×** against a Combat Armor Frame (its persistent fire does not). The multiplier can be changed in module settings.', '');
   return L;
 }
 

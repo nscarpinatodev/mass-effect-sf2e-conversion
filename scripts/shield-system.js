@@ -152,6 +152,24 @@ Hooks.once('init', () => {
     scope: 'world', config: true, type: Number, default: 1.5,
     range: { min: 1.0, max: 3.0, step: 0.1 },
   });
+  game.settings.register(MODULE_ID, 'warpPowerBarrierMult', {
+    name: 'Warp (power) — Barrier Damage Multiplier',
+    hint: 'How much the Warp power\'s damage counts against a Biotic Barrier. The games\' Warp does double damage to barriers.',
+    scope: 'world', config: true, type: Number, default: 2.0,
+    range: { min: 1.0, max: 3.0, step: 0.1 },
+  });
+  game.settings.register(MODULE_ID, 'warpPowerArmorMult', {
+    name: 'Warp (power) — Armor Damage Multiplier',
+    hint: 'How much the Warp power\'s damage counts against an Armor Frame. Mass Effect 3\'s Warp does 1.5× damage to armor.',
+    scope: 'world', config: true, type: Number, default: 1.5,
+    range: { min: 1.0, max: 3.0, step: 0.1 },
+  });
+  game.settings.register(MODULE_ID, 'incineratePowerArmorMult', {
+    name: 'Incinerate (power) — Armor Damage Multiplier',
+    hint: 'How much the Incinerate power\'s damage counts against an Armor Frame. Mass Effect 3\'s Incinerate does 1.5× damage to armor.',
+    scope: 'world', config: true, type: Number, default: 1.5,
+    range: { min: 1.0, max: 3.0, step: 0.1 },
+  });
   game.settings.register(MODULE_ID, 'disruptorMult', {
     name: 'Disruptor Rounds — Shield Damage Multiplier',
     hint: 'Damage multiplier applied to kinetic shields when hit by Disruptor Rounds.',
@@ -213,6 +231,8 @@ Hooks.once('init', () => {
   });
   // Which balance pass this world's characters have been brought up to (see migrateBalance).
   game.settings.register(MODULE_ID, 'balanceVersion', { scope: 'world', config: false, type: Number, default: 0 });
+  // Which icon cleanup this world's actors and items have had (see migrateIcons).
+  game.settings.register(MODULE_ID, 'iconFixVersion', { scope: 'world', config: false, type: Number, default: 0 });
   game.settings.register(MODULE_ID, 'shieldRechargeDelay', {
     name: 'Shield Recharge Delay (rounds)',
     hint: 'Rounds a kinetic barrier must go without taking damage before it resumes recharging. Recharge Accelerator mods reduce this.',
@@ -243,6 +263,7 @@ Hooks.once('ready', async () => {
     await syncEffects(version);
     await migrateActorItems();
     await migrateBalance();
+    await migrateIcons();
   }
 
   // ── SF2e: Replace UPB currency with Omni-Gel ─────────────────────────────
@@ -431,7 +452,7 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
   if (!barrier && !shield && !armorFrame) {
     // No defensive layers: every point reaches HP, so only the ammo's riders are left to apply.
     const lost = actor.system.attributes.hp.value - (foundry.utils.getProperty(changes, 'system.attributes.hp.value') ?? actor.system.attributes.hp.value);
-    if (lost > 0) applyAmmoRiders(actor, getAttackerAmmoTypes(), lost);
+    if (lost > 0 && !globalThis.MassEffectPowers?.damageSource?.()) applyAmmoRiders(actor, getAttackerAmmoTypes(), lost);
     return;
   }
 
@@ -448,7 +469,10 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
 
   // Ammo detection: check attacker's active effects for all routing-relevant types.
   // Electricity also falls back to chat message scan so natural-electric weapons work.
-  const attackerAmmo = getAttackerAmmoTypes();
+  // A power's damage carries no weapon's ammo, and may count for more against a layer (Warp).
+  const powerSource = globalThis.MassEffectPowers?.damageSource?.() ?? null;
+  const powerLayers = powerSource?.layers ?? {};
+  const attackerAmmo = powerSource ? new Set() : getAttackerAmmoTypes();
   const attackerAmmoType = [...attackerAmmo].join('+') || null;
   const detectedTypes    = detectDamageTypes();
   // Double-check via attacker ammo type flag in case the rule element's override
@@ -480,13 +504,13 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
   console.log(`  PRE-STATE  barrier:${barrierHPBefore ?? '-'}  shields:${currentTemp}/${shieldMax}  armor:${armorCurrent}/${armorMax}  HP:${currentHP}`);
   console.log(`  DAMAGE     total:${totalDamage}  ammo:${attackerAmmoType ?? 'standard'}`);
 
-  // ── Step 1: Barrier absorption (Warp = 1.5×) ──────────────────────────────
+  // ── Step 1: Barrier absorption (Warp Rounds 1.5×, the Warp power 2×) ──────
   let overflow       = totalDamage;
   let barrierDepleted = false;
   let warpDetonated   = false;
 
   if (barrier && barrierHPBefore > 0) {
-    const warpMult = isWarp ? game.settings.get(MODULE_ID, 'warpMult') : 1.0;
+    const warpMult = Math.max(isWarp ? game.settings.get(MODULE_ID, 'warpMult') : 1.0, powerLayers.barrier ?? 1.0);
     const effectiveBarrierDamage = Math.min(Math.floor(overflow * warpMult), barrierHPBefore);
     const originalAbsorbed = Math.min(overflow, Math.ceil(effectiveBarrierDamage / warpMult));
     overflow -= originalAbsorbed;
@@ -536,10 +560,11 @@ Hooks.on('preUpdateActor', (actor, changes, options, _userId) => {
       console.log(`  ARMOR      BYPASSED (phasic)  HP:${hpDamage}`);
     } else {
       // Incendiary burns faster; AP lets a portion bleed through
-      const armorDmgMult = isIncendiary ? game.settings.get(MODULE_ID, 'incendiaryArmorMult') : 1.0;
+      const armorDmgMult = Math.max(isIncendiary ? game.settings.get(MODULE_ID, 'incendiaryArmorMult') : 1.0, powerLayers.armor ?? 1.0);
       armorDamageTaken   = Math.min(Math.floor(hpDamage * armorDmgMult), armorCurrent);
       newArmorHP         = armorCurrent - armorDamageTaken;
-      const hpNeutralized  = Math.min(hpDamage, Math.floor(armorDamageTaken / armorDmgMult));
+      // rounded up, as the barrier step does: with a 1.5x multiplier an odd hit would otherwise leak 1 point to HP
+      const hpNeutralized  = Math.min(hpDamage, Math.ceil(armorDamageTaken / armorDmgMult));
       const apBleedPct     = game.settings.get(MODULE_ID, 'apBleedThrough') / 100;
       const apBleedThrough = isAP ? Math.floor(hpDamage * apBleedPct) : 0;
       finalHpDamage = Math.max(apBleedThrough, hpDamage - hpNeutralized);
@@ -1233,7 +1258,10 @@ const ARMOR_FRAME_DEFAULTS = {
 // at version 1 runs this once more, for the features changed since then only.
 // Version 3 (2026-11-20): Unity became a focus spell, and its three feats became passive
 // (the engine adds the spell itself; see ensureUnitySpell in me-powers.js).
-const BALANCE_VERSION = 3;
+// Version 4 (2026-11-26): Warp counts double against Biotic Barriers and 1.5x against armor,
+// and a critical failure detonates the barrier; its text says so. Incinerate counts 1.5x
+// against armor, as its text already said.
+const BALANCE_VERSION = 4;
 const SHIELD_REBALANCE = {
   'Kinetic Shield':         { shieldMax: [30, 15], shieldRegen: [10, 5] },
   'Shield HP Mod - Tier 1': { shieldHpBonus: [10, 5] },
@@ -1250,6 +1278,7 @@ const REBALANCED_SLUGS = new Map([
     'me-engineer-apex-engineer', 'me-tech-tactical-cloak', 'me-biotic-nova'].map((slug) => [slug, 1]),
   ['me-adept-mastery-improved', 2],
   ['unity', 3], ['unity-improved', 3], ['unity-superior', 3],
+  ['me-biotic-warp', 4], ['me-tech-incinerate', 4],
 ]);
 // These changed in more than text and rules: action cost, level, traits and prerequisites too.
 const REBUILT_SLUGS = new Set(['unity', 'unity-improved', 'unity-superior']);
@@ -1321,6 +1350,104 @@ async function migrateBalance() {
   } catch (err) {
     ui.notifications.info(`Mass Effect: rebalance update applied to ${log.size} character(s). The console lists them.`);
   }
+}
+
+// ── FIRST-RUN ICON CLEANUP ───────────────────────────────────────────────────
+// Up to 3.0.0 many of the module's feats, powers and effects pointed at icons that are not in
+// Foundry's core library, so they showed as broken images. The compendium is fixed, but an
+// item already on an actor is a copy and keeps the old path. This runs once per world (GM
+// only) and repoints every such copy: on world actors, on unlinked tokens in every scene and
+// in the Items directory. Only the icon changes: an item is never removed and re-added, so
+// feat slots, choices, quantities and what is equipped stay as they are. An icon someone
+// chose by hand is not in this list and is left alone.
+const ICON_FIX_VERSION = 1;
+const ICON_FIXES = {
+  'icons/equipment/chest/breastplate-banded-gray.webp': 'icons/equipment/chest/breastplate-banded-steel-grey.webp',
+  'icons/equipment/weapon/bomb-fuse-red.webp': 'icons/weapons/thrown/bomb-detonator.webp',
+  'icons/equipment/wrist/bracer-runed-steel-orange.webp': 'icons/equipment/wrist/bracer-orange-fancy.webp',
+  'icons/magic/air/wind-tornado-small-blue.webp': 'icons/magic/air/wind-tornado-funnel-blue.webp',
+  'icons/magic/control/debuff-chains-yellow.webp': 'icons/magic/control/debuff-chains-green.webp',
+  'icons/magic/control/debuff-gravity-pull-blue-purple.webp': 'icons/magic/air/wind-vortex-swirl-blue-purple.webp',
+  'icons/magic/control/silhouette-hold-blue.webp': 'icons/magic/control/silhouette-hold-change-blue.webp',
+  'icons/magic/control/silhouette-hold-mind.webp': 'icons/magic/control/hypnosis-mesmerism-eye.webp',
+  'icons/magic/defensive/shield-barrier-deflect.webp': 'icons/magic/defensive/shield-barrier-deflect-teal.webp',
+  'icons/magic/earth/spike-stone-attack-orange.webp': 'icons/magic/earth/strike-body-stone-crumble.webp',
+  'icons/magic/fire/explosion-fireball-medium-purple.webp': 'icons/magic/fire/explosion-fireball-medium-purple-pink.webp',
+  'icons/magic/fire/flame-burning-orange.webp': 'icons/magic/fire/flame-burning-embers-orange.webp',
+  'icons/magic/life/ankh-gold-green.webp': 'icons/magic/life/ankh-shadow-green.webp',
+  'icons/magic/life/heart-cross-strong-flame-red.webp': 'icons/magic/life/heart-glowing-red.webp',
+  'icons/magic/light/orb-shining-teal.webp': 'icons/magic/unholy/orb-swirling-teal.webp',
+  'icons/magic/lightning/ball-medium-yellow.webp': 'icons/magic/lightning/orb-ball-blue.webp',
+  'icons/magic/lightning/bolt-strike-yellow.webp': 'icons/magic/lightning/bolt-strike-sparks-yellow.webp',
+  'icons/magic/lightning/orb-lightning-bolt-blue.webp': 'icons/magic/lightning/orb-ball-spiral-blue.webp',
+  'icons/magic/movement/abstract-ribbons-blue-purple.webp': 'icons/magic/movement/trail-streak-impact-blue.webp',
+  'icons/magic/movement/abstract-ribbons-purple.webp': 'icons/magic/air/wind-swirl-pink-purple.webp',
+  'icons/magic/movement/arrow-down-blue.webp': 'icons/magic/control/energy-stream-link-blue.webp',
+  'icons/magic/movement/arrow-up-from-portal.webp': 'icons/magic/sonic/projectile-shock-wave-blue.webp',
+  'icons/magic/movement/pinwheel-blue-purple.webp': 'icons/magic/movement/pinwheel-turning-blue.webp',
+  'icons/magic/perception/eye-ringed-violet.webp': 'icons/magic/perception/shadow-stealth-eyes-purple.webp',
+  'icons/magic/symbols/ring-circle-runes-teal.webp': 'icons/magic/symbols/ring-circle-smoke-blue.webp',
+  'icons/magic/unholy/beam-impact-purple-small.webp': 'icons/magic/unholy/beam-ringed-impact-purple.webp',
+  'icons/magic/unholy/beam-impact-teal-purple.webp': 'icons/magic/light/beam-impact-deflect-teal.webp',
+  'icons/magic/water/ice-snowflake-cold-blue.webp': 'icons/magic/water/snowflake-ice-blue.webp',
+  'icons/magic/water/ice-spike-crystal-white-blue.webp': 'icons/magic/water/ice-crystal-white.webp',
+  'icons/skills/melee/sword-shield-stylized-blue.webp': 'icons/skills/melee/sword-shield-stylized-white.webp',
+  'icons/skills/ranged/arrow-flying-gray.webp': 'icons/skills/ranged/tracers-triple-orange.webp',
+  'icons/skills/ranged/target-bullseye-arrow-red-white.webp': 'icons/skills/ranged/target-bullseye-arrow-white.webp',
+  'icons/svg/bolt.svg': 'icons/svg/lightning.svg',
+  'icons/svg/star.svg': 'icons/svg/angel.svg',
+  'icons/weapons/ammunition/bullets-cartridge-brass.webp': 'icons/weapons/ammunition/ammunition-brass-automatic.webp',
+  'icons/weapons/artillery/cannon-barrel-black.webp': 'icons/weapons/artillery/cannon-tech-white.webp',
+  'icons/weapons/thrown/bomb-fire.webp': 'icons/weapons/thrown/grenade-frag-green.webp',
+};
+// Weapon Mastery shared one icon across its four weapon groups; each now has its own.
+const WEAPON_MASTERY_ICON = 'icons/weapons/guns/gun-pistol-flintlock-black.webp';
+const WEAPON_MASTERY_ICONS = [
+  [/Sniper Rifles/, 'icons/weapons/guns/rifle-sniper-long.webp'],
+  [/Assault Rifles/, 'icons/weapons/guns/rifle-assault-heavy.webp'],
+  [/Shotguns/, 'icons/weapons/guns/shotgun-pump.webp'],
+  [/Pistols/, 'icons/weapons/guns/pistol-sci-fi.webp'],
+];
+
+/** The icon an item should have instead of the one it has, or null if its icon is fine. */
+function fixedIcon(item) {
+  const img = item?.img;
+  if (!img) return null;
+  if (img === WEAPON_MASTERY_ICON) return WEAPON_MASTERY_ICONS.find(([group]) => group.test(item.name ?? ''))?.[1] ?? 'icons/weapons/guns/pistol-sci-fi.webp';
+  return ICON_FIXES[img] ?? null;
+}
+
+async function migrateIcons() {
+  if (!game.user.isGM) return;
+  if ((game.settings.get(MODULE_ID, 'iconFixVersion') ?? 0) >= ICON_FIX_VERSION) return;
+  let items = 0;
+  const owners = new Set();
+  const fixActor = async (actor, label) => {
+    const updates = actor.items.map((item) => ({ _id: item.id, img: fixedIcon(item) })).filter((u) => u.img);
+    if (!updates.length) return;
+    await actor.updateEmbeddedDocuments('Item', updates);
+    items += updates.length;
+    owners.add(label);
+  };
+  try {
+    for (const actor of game.actors.contents) await fixActor(actor, actor.name);
+    // an unlinked token carries its own copy of the actor's items
+    for (const scene of game.scenes.contents) {
+      for (const token of scene.tokens.contents) {
+        if (token.actorLink || !token.actor) continue;
+        await fixActor(token.actor, `${token.name} (${scene.name})`);
+      }
+    }
+    const loose = game.items.contents.map((item) => ({ _id: item.id, img: fixedIcon(item) })).filter((u) => u.img);
+    if (loose.length) { await Item.updateDocuments(loose); items += loose.length; owners.add('the Items directory'); }
+    await game.settings.set(MODULE_ID, 'iconFixVersion', ICON_FIX_VERSION);
+  } catch (err) {
+    console.error('ME Shields | Icon cleanup failed; it will run again next time the world loads.', err);
+    return;
+  }
+  if (!items) { console.log('ME Shields | Icon cleanup: nothing in this world used a missing icon.'); return; }
+  console.log(`ME Shields | Icon cleanup: ${items} item(s) repointed on ${[...owners].join(', ')}.`);
+  ui.notifications?.info(`Mass Effect: replaced ${items} broken item icon(s) on ${owners.size} actor(s). The console lists them.`);
 }
 
 async function migrateActorItems() {
