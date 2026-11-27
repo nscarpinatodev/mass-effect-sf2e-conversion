@@ -1423,5 +1423,18 @@ console.log('The module scripts load side by side');
   assert(clashes.length === 0, `${manifest.scripts.length} scripts${clashes.length ? `; ${clashes.join('; ')}` : ''}`);
 }
 
+console.log('The manifest keeps this release away from Pathfinder installs');
+{
+  // Foundry offers an update on version alone, from the manifest URL the installed copy saved.
+  // Copies of 2.2.0-rc.6 and earlier (the last with Pathfinder packs) saved releases/latest, so
+  // this line must never be served from there, and must list Starfinder 2e as its only system.
+  const manifest = JSON.parse(readFileSync(new URL('../module.json', import.meta.url), 'utf8'));
+  assert(!/releases\/latest/.test(manifest.manifest) && /releases\/download\/sf2e\/module\.json$/.test(manifest.manifest), `its own manifest URL (${manifest.manifest})`);
+  assert(!/releases\/latest/.test(manifest.download), 'the download is pinned to a tag');
+  const systems = manifest.relationships.systems.map((s) => s.id);
+  assert(systems.join() === 'sf2e', `Starfinder 2e only (${systems})`);
+  assert(manifest.packs.every((p) => p.system === 'sf2e'), 'every pack is a Starfinder 2e pack');
+}
+
 console.log(failures ? `\n${failures} FAILED` : '\nall passed');
 process.exitCode = failures ? 1 : 0;

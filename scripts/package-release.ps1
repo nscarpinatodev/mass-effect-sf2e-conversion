@@ -52,3 +52,8 @@ $check.Dispose()
 "zipped module.json version: $($inner.version)  download: $($inner.download)"
 "size: {0:N1} MB" -f ((Get-Item $zip).Length / 1MB)
 if ($backslash -or $locks -or $packDirs -ne $manifest.packs.Count) { throw 'package verification failed' }
+# 3.x is Starfinder 2e only. Copies installed from releases/latest (2.2.0-rc.6 and earlier, which
+# Pathfinder worlds still use) must never be offered it, so this line keeps its own manifest URL.
+if ($inner.manifest -match 'releases/latest') { throw 'module.json points its manifest at releases/latest: Pathfinder installs would be offered this release' }
+if (@($inner.relationships.systems | Where-Object { $_.id -ne 'sf2e' }).Count) { throw 'module.json lists a system other than sf2e' }
+"manifest: $($inner.manifest)"

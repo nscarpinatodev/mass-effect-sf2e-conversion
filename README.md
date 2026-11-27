@@ -13,7 +13,9 @@ A Foundry VTT module that brings the Mass Effect universe to the **Starfinder 2e
 
 It also needs the free [Scorpious187's Lib](https://github.com/nscarpinatodev/scorpious187s-lib) module, which Foundry offers to install with it. Optional: **Sequencer** with **JB2A** for the Biotic Charge and Nova animations, and **Tokenizer 2** to frame tokens as they are dropped.
 
-**Starfinder 2e only.** From 3.0.0 the module no longer ships Pathfinder 2e packs. 2.2.0-rc.6 is the last release that has them, and a Pathfinder world should stay on it.
+**Starfinder 2e only.** From 3.0.0 the module no longer ships Pathfinder 2e packs. 2.2.0-rc.6 is the last release that has them. It stays where it always was, at `https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/latest/download/module.json`, and Foundry never offers a copy installed from there an update to 3.x, so a Pathfinder world keeps working as it is.
+
+**Coming from 2.x on Starfinder 2e.** Foundry will not offer you 3.x by itself, for the same reason. Install it once from the manifest URL under Installation below: Foundry replaces the copy you have, and later 3.x updates arrive as usual.
 
 **Updating a world from 2.x.** The first time a Gamemaster opens the world, the module brings existing player characters up to date (halved kinetic shields, the changed class features, Unity, Warp) and replaces item icons that pointed at files that do not exist. It lists what it changed. NPCs already in the world keep their old numbers: re-import them from the compendium. Biotic cooldowns now come from a bio-amp, so give each biotic character one.
 
@@ -25,12 +27,12 @@ It also needs the free [Scorpious187's Lib](https://github.com/nscarpinatodev/sc
 1. In Foundry, go to **Add-on Modules → Install Module**
 2. Paste the manifest URL into the search bar:
    ```
-   https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/latest/download/module.json
+   https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases/download/sf2e/module.json
    ```
 3. Click Install, then enable the module in your world
 
 **Manual:**
-Download the latest release zip, extract it into your Foundry `Data/modules/` folder, and restart Foundry.
+Download `module.zip` from the newest 3.x release on the [releases page](https://github.com/nscarpinatodev/mass-effect-sf2e-conversion/releases), extract it into your Foundry `Data/modules/` folder, and restart Foundry. (GitHub's "Latest" badge stays on 2.2.0-rc.6, the last Pathfinder release.)
 
 ---
 
